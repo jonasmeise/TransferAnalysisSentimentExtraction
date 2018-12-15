@@ -53,9 +53,9 @@ public class FileUtils {
 			
 		    String line;
 		    while ((line = br.readLine()) != null) {
-		    	if(!line.isEmpty() && line!="") {
+		    	//if(!line.isEmpty() && line!="") {
 					list.add(line);
-				}
+				//}
 		    }
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

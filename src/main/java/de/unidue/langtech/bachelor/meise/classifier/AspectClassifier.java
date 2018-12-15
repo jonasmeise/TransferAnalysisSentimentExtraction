@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.apache.uima.fit.factory.JCasFactory;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
@@ -22,13 +23,18 @@ public class AspectClassifier {
 		fu = new FileUtils();
 	}
 	
+	public static void main(String[] args) {
+		AspectClassifier ac = new AspectClassifier();
+		ac.run();
+	}
+	
 	public AspectClassifier(String sourcePath) {
 		this();
 		this.sourcePath = sourcePath;
 	}
 	
 	public void run() {
-		
+		JCasFactory jcasFactory;
 	}
 	
 	   /** Erzeugt ein Evaluation Objekt, mit dem der Klassifikator auf die gegebenen Daten angewendet wird.

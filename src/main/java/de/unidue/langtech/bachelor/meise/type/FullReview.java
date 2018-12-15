@@ -22,11 +22,13 @@ public class FullReview {
 		//prevents Null-access errors
 		rawReview = new ReviewData();
 		dependencies = new ArrayList<DoubleLink<Token, Integer, String>>();
+		sentiments = new ArrayList<DoubleLink<Token, Integer, String>>();
 		aspectRatingLinks = new ArrayList<DoubleLink<Token, Token, Boolean>>();
+		tokens = new ArrayList<Token>();
 	}
 	
 	public Token fetchToken(int pos) {
-		if((pos-1)>=0 && pos<getTokens().size()) {
+		if((pos-1)>=0 && (pos-1)<getTokens().size()) {
 			return getTokens().get(pos-1);
 		} else {
 			System.out.println("Can't fetch Token Pos@" + pos + ": Only " + getTokens().size() + " Tokens available!");

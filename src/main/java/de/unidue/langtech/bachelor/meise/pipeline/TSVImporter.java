@@ -47,7 +47,11 @@ public class TSVImporter {
 		ArrayList<FullReview> fullReviews = importFromTsv(filePath);
 		
 		for(FullReview fullReview : fullReviews) {
-			myLog.log(fullReview.getRawReview().getContent());
+			for(DoubleLink<Token, Integer, String> sentiment : fullReview.getSentiments()) {
+				myLog.log(sentiment.getObjectA().getWord() + "(" + sentiment.getObjectA().getPos() + ") --> " + 
+						fullReview.fetchToken(sentiment.getObjectB()).getWord() + "(" + fullReview.fetchToken(sentiment.getObjectB()).getPos() + ") " +
+						"=" + sentiment.getDescription() + " (" + sentiment.getSentiment() + ")");
+			}
 		}
 	}
 	
@@ -68,13 +72,15 @@ public class TSVImporter {
 			//find relevant lines first:
 			ArrayList<String> singleReviewData = new ArrayList<String>();
 			
-			while(rawFileContent.get(readerLinePos).length()>3) { //random check: if nothing good written in there => ignore
+			while(rawFileContent.get(readerLinePos).length()>3 ) { //random check: if nothing good written in there => ignore
 				singleReviewData.add(rawFileContent.get(readerLinePos));
 				readerLinePos++;
+				
+				if(readerLinePos >= rawFileContent.size()) { break; }
 			}
 			
 			//since we've read all relevant lines, parsing is next;
-			returnList.add(parseFullReviewData(singleReviewData, idCounter));
+			returnList.add(parseFullReviewData(singleReviewData, ++idCounter));
 			readerLinePos++;
 		}
 		
@@ -90,20 +96,24 @@ public class TSVImporter {
 			return null; //basically error
 		} 
 		
-		String[] titleAndText = rawString.remove(0).substring(6).split(". ");
-		myLog.log("Found " + (titleAndText.length-1) + " different sentences in the text");
+		myLog.log(rawString.get(0));
+		
+		String[] titleAndText = rawString.remove(0).substring(6).split("\\.");
+		myLog.log("Found " + (titleAndText.length-1) + " different words (not accounting symbols) in the sentence!");
 		newReview.getRawReview().setTitle(titleAndText[0]);
 		
 		for(int i=1;i<titleAndText.length;i++) {
 			newReview.getRawReview().addText(titleAndText[i]);
 		}
 		
-		for(String line : rawString) {
-			allContent.add(line.split("\t"));
-		}
+		//TODO: do something with this
+		//for(String line : rawString) {
+		//	allContent.add(line.split("\t"));
+		//}
 		
 		for(String line : rawString) {
-			myLog.log(parseFullReviewContent(line, allContent, newReview));
+			int reviewId = parseFullReviewContent(line, allContent, newReview);
+			myLog.log("Parsed... " + reviewId + "/" + idCounter);
 		}
 		
 		return newReview;
@@ -125,6 +135,7 @@ public class TSVImporter {
 			
 			returnId = getSplit(id, line, 0);
 			
+			
 			Token token = new Token(getSplit(id, line, 1));
 			token.setBegin(getSplit(beginEnd, line, 0));
 			token.setEnd(getSplit(beginEnd, line, 1));
@@ -137,55 +148,70 @@ public class TSVImporter {
 			
 			String aspect = split[aspectPosition];
 			
-			if(aspect.compareTo(blank)!=0) { //actually relevant position
-				if(split[selfTagPosition].compareTo(split[idPosition])==0) { //sanity-check for actual self-reference
-					DoubleLink<Token, Integer, String> selfDependency = new DoubleLink<Token, Integer, String>();
-					selfDependency.setObjectA(token);
-					selfDependency.setObjectB(token.getId());
-					selfDependency.setDescription(split[selfSemPosition]);
-					output.getSentiments().add(selfDependency);
+			myLog.log("Starts to parse line #" + returnId + " '" + rawLine + "' ---- WORD: " + word);
+			
+			try
+				{
+				if(aspect.compareTo(blank)!=0) { //actually relevant position
+					if(split[selfTagPosition].compareTo(split[idPosition])==0) { //sanity-check for actual self-reference
+						DoubleLink<Token, Integer, String> selfDependency = new DoubleLink<Token, Integer, String>();
+						selfDependency.setObjectA(token);
+						selfDependency.setObjectB(token.getId());
+						selfDependency.setDescription(split[aspectPosition]);
+						selfDependency.setSentiment(split[selfSemPosition]);
+						output.getSentiments().add(selfDependency);
+					}
 				}
-			}
-			
-			DoubleLink<Token, Integer, String> dependency = new DoubleLink<Token, Integer, String>();
-			dependency.setObjectA(token);
-			dependency.setObjectB(getSplit(split[dependencyTokenPosition],line,1));
-			dependency.setDescription(split[dependencyPosition]);
-			output.getDependencies().add(dependency);
-			
-			//check for all available s
-			int multipleOccurencesCount = split[aspectSemPosition].split("|").length;
-			for(int i=0;i<multipleOccurencesCount;i++) {
-				DoubleLink<Token, Integer, String> newSentimentDependency = new DoubleLink<Token, Integer, String>();
 				
-				String currentSentiment = getSplitString(split[aspectSemPosition],"|",i); 
+				DoubleLink<Token, Integer, String> dependency = new DoubleLink<Token, Integer, String>();
+				dependency.setObjectA(token);
+				dependency.setObjectB(getSplit(split[dependencyTokenPosition],line,1));
+				dependency.setDescription(split[dependencyPosition]);
+				output.getDependencies().add(dependency);
 				
-				if(currentSentiment.compareTo(blank)!=0) {
-					int currentRelation = getSplit(split[aspectRelationPosition],"|",i);
+				//check for all available s
+				int multipleOccurencesCount = split[aspectSemPosition].split("\\|").length;
+				for(int i=0;i<multipleOccurencesCount;i++) {
+					DoubleLink<Token, Integer, String> newSentimentDependency = new DoubleLink<Token, Integer, String>();
 					
+					String currentSentiment = getSplitString(split[aspectSemPosition],"\\|",i); 
 					
-					newSentimentDependency.setObjectA(token);
-					newSentimentDependency.setObjectB(currentRelation);
-					newSentimentDependency.setDescription(split[aspectPosition]);
-					newSentimentDependency.setSentiment(currentSentiment);
-					
-					output.getSentiments().add(newSentimentDependency);	
+					if(currentSentiment.compareTo(blank)!=0) {
+						int currentRelation = getSplit(getSplitString(split[aspectRelationPosition],"\\|",i),line,1);
+						
+						//Check case:
+						//If the token Position@aspectRelationPosition refers to THIS token itself, then it refers to the Token mentioned at pos@dependencyTokenPosition instead!
+						if(currentRelation == token.getId()) { //the case that it self-references
+							//instead refer to the token in dependencyTokenPosition
+							//TODO: SHIT THIS DOESN'T WORK
+							currentRelation = getSplit(split[dependencyTokenPosition],line,1);
+						}
+						
+						newSentimentDependency.setObjectA(token);
+						newSentimentDependency.setObjectB(currentRelation);
+						newSentimentDependency.setDescription(split[aspectPosition]);
+						newSentimentDependency.setSentiment(currentSentiment);
+						
+						output.getSentiments().add(newSentimentDependency);	
+					}
 				}
+				
+				output.getTokens().add(token);
+				
+				return returnId;
+			} catch (NumberFormatException e) {
+				myLog.log("!!ERROR!! " + e.getMessage());
 			}
-			
-			output.getTokens().add(token);
-			
-			return returnId;
 		}
 		
 		return -1;
 	}
 	
-	public int getSplit(String string, String splitSymbol, int number) {
+	public int getSplit(String string, String splitSymbol, int number) throws NumberFormatException{
 		//check for validity beforehand or just BlessRNG
 		return(Integer.parseInt(string.split(splitSymbol)[number]));
 	}
-	public String getSplitString(String string, String splitSymbol, int number) {
+	public String getSplitString(String string, String splitSymbol, int number){
 		//check for validity beforehand or just BlessRNG
 		return(string.split(splitSymbol)[number]);
 	}
