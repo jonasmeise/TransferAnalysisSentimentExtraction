@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:12 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:08 CET 2018
  * XML source: C:/Users/Jonas/Downloads/de.unidue.langtech.bachelor.meise/de.unidue.langtech.bachelor.meise/typesystem.xml
  * @generated */
 public class Stem extends Annotation {

@@ -115,5 +115,19 @@
     	<artifactId>LibSVM</artifactId>
     	<version>1.0.10</version>
 	</dependency>
+	<dependency>
+    	<groupId>de.tudarmstadt.ukp.clarin.webanno</groupId>
+    	<artifactId>
+    		webanno-io-xmi
+    	</artifactId>
+    	<version>3.2.2</version>
+	</dependency>	
+	<dependency>
+    	<groupId>org.dkpro.core</groupId>
+    	<artifactId>
+    		dkpro-core-io-webanno-asl
+    	</artifactId>
+    	<version>1.10.0</version>
+	</dependency>
   </dependencies>
 </project>

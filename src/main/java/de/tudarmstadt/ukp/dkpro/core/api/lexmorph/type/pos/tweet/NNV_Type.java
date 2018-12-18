@@ -9,7 +9,7 @@ import org.apache.uima.cas.Type;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.N_Type;
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:11 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:07 CET 2018
  * @generated */
 public class NNV_Type extends N_Type {
   /** @generated */

@@ -8,7 +8,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:14 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:09 CET 2018
  * @generated */
 public class WHPP_Type extends Constituent_Type {
   /** @generated */

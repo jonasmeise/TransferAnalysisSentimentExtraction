@@ -9,7 +9,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:13 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:08 CET 2018
  * @generated */
 public class SemArg_Type extends Annotation_Type {
   /** @generated */

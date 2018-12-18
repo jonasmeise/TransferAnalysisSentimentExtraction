@@ -8,7 +8,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:13 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:08 CET 2018
  * @generated */
 public class VC_Type extends Chunk_Type {
   /** @generated */

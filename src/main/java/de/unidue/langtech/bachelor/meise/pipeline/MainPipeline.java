@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -12,10 +14,16 @@ import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
+import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.apache.uima.fit.util.JCasUtil;
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.metadata.TypeSystemDescription;
+import org.apache.uima.util.CasCreationUtils;
 
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import org.dkpro.core.io.webanno.tsv.WebannoTsv3XReader;
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpLemmatizer;
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpParser;
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpPosTagger;
@@ -28,12 +36,8 @@ public class MainPipeline {
 	
 	String inputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\review_output.xml";
 	String outputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\output.tsv";
-	
-	String xmiAbsolutePath;
-	
+
 	public MainPipeline() {
-		File file = new File("/resources/");
-		String xmiAbsolutePath = file.getAbsolutePath();
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -43,7 +47,7 @@ public class MainPipeline {
 	
 	public void run() throws UIMAException, IOException {
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
-                RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, xmiAbsolutePath,
+                RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFilePath,
                 RawJsonReviewReader.PARAM_LANGUAGE, "en");
 		
         AnalysisEngineDescription tokenizer = AnalysisEngineFactory.createEngineDescription(ClearNlpSegmenter.class, ClearNlpSegmenter.PARAM_LANGUAGE, "en");
@@ -60,15 +64,23 @@ public class MainPipeline {
 	}
 	
 	public void run_read() throws UIMAException, IOException {
-		
-		TypeSystemDescription local = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath(
-                "src/main/resources/typesystem.xml");
-		
-		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
-                JCasReader.class, local, JCasReader.PARAM_SOURCE_LOCATION, xmiAbsolutePath);			
-        
-		AnalysisEngineDescription test = AnalysisEngineFactory.createEngineDescription(TestReader.class);
-        
-        SimplePipeline.runPipeline(reader, test);
-	}
+		 TypeSystemDescription core = TypeSystemDescriptionFactory.createTypeSystemDescription();
+		 TypeSystemDescription custom = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath("typesystem.xml");
+	     List<TypeSystemDescription> systemsList = Arrays.asList(core, custom);
+	     TypeSystemDescription merged = CasCreationUtils.mergeTypeSystems(systemsList);
+	     
+	     CollectionReaderDescription tsvReader= CollectionReaderFactory.createReaderDescription(
+	             WebannoTsv3XReader.class,
+	             merged,
+	             WebannoTsv3XReader.PARAM_SOURCE_LOCATION, "output.xmi",
+	               WebannoTsv3XReader.PARAM_LANGUAGE, "en"
+	      );
+
+	      for (JCas jcas : new JCasIterable(tsvReader)) {
+	          int i=0;
+	          for(Sentence sent : JCasUtil.select(jcas, Sentence.class)){
+	        	  System.out.println(sent.getCoveredText());
+	          }
+          }
+      }
 }

@@ -11,7 +11,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.N;
 
 
 /** 
- * Updated by JCasGen Sat Dec 15 00:23:11 CET 2018
+ * Updated by JCasGen Tue Dec 18 17:19:07 CET 2018
  * XML source: C:/Users/Jonas/Downloads/de.unidue.langtech.bachelor.meise/de.unidue.langtech.bachelor.meise/typesystem.xml
  * @generated */
 public class NPV extends N {
