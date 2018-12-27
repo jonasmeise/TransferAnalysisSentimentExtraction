@@ -103,18 +103,4 @@ public class TSVExporter extends JCasAnnotator_ImplBase{
 		
 		return 0;
 	}
-	
-	private void printTokens(JCas aJCas)
-    {
-        Collection<Token> tokens = JCasUtil.select(aJCas, Token.class);
-        for(Token token : tokens) {
-            System.out.print(token.getCoveredText() + "(" + token.getPos().getPosValue() + ") ");
-        }
-        
-        Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
-        for(Dependency dependency : dependencies) {
-        	System.out.println(dependency.getBegin() + "-" + dependency.getEnd() + " " + dependency.getCoveredText() + ";" + dependency.getGovernor().getCoveredText() + "->" + dependency.getDependent().getCoveredText() + " (" + dependency.getDependencyType() + ")");
-        }
-    }
-	
 }
