@@ -9,6 +9,8 @@ import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import webanno.custom.AspectRating;
+import webanno.custom.Valence;
 
 public class TestReader extends JCasAnnotator_ImplBase{
 	
@@ -27,6 +29,14 @@ public class TestReader extends JCasAnnotator_ImplBase{
         Collection<Dependency> dependencies = JCasUtil.select(aJCas, Dependency.class);
         for(Dependency dependency : dependencies) {
         	System.out.println(dependency.getBegin() + "-" + dependency.getEnd() + " " + dependency.getCoveredText() + ";" + dependency.getGovernor().getCoveredText() + "->" + dependency.getDependent().getCoveredText() + " (" + dependency.getDependencyType() + ")");
+        }
+        
+        Collection<Valence> valences = JCasUtil.select(aJCas, Valence.class);
+        for(Valence valence : valences) {
+        	System.out.println(valence.getGovernor().getCoveredText() + " (" + 
+        			valence.getGovernor().getAspect() + ") --(" + valence.getValenceRating() + ")--> " +
+        			valence.getDependent().getCoveredText() + " (" + 
+        			valence.getDependent().getAspect() + ")");
         }
     }
 }

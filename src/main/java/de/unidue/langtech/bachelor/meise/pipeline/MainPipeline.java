@@ -1,35 +1,19 @@
 package de.unidue.langtech.bachelor.meise.pipeline;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-
 import org.apache.uima.UIMAException;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
-import org.apache.uima.fit.factory.TypeSystemDescriptionFactory;
-import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.fit.pipeline.SimplePipeline;
-import org.apache.uima.fit.util.JCasUtil;
-import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.resource.metadata.TypeSystemDescription;
-import org.apache.uima.util.CasCreationUtils;
 
-import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
-import org.dkpro.core.io.webanno.tsv.WebannoTsv3XReader;
+import de.tudarmstadt.ukp.dkpro.core.io.xmi.XmiReader;
+
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpLemmatizer;
-import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpParser;
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpPosTagger;
 import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.maltparser.MaltParser;
-import de.unidue.langtech.bachelor.meise.files.JCasReader;
 import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 
 public class MainPipeline {
@@ -41,8 +25,21 @@ public class MainPipeline {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		MainPipeline myPipeline = new MainPipeline();
-		myPipeline.run_read();
+		//MainPipeline myPipeline = new MainPipeline();
+		//myPipeline.run_read();
+		
+		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+	        
+	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
+	                XmiReader.PARAM_SOURCE_LOCATION,
+	                "src/main/resources/",
+	                XmiReader.PARAM_PATTERNS, "*.xmi",
+	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
+	        
+	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestReader.class);
+	        
+	        SimplePipeline.runPipeline(reader, report);
 	}
 	
 	public void run() throws UIMAException, IOException {
@@ -64,23 +61,17 @@ public class MainPipeline {
 	}
 	
 	public void run_read() throws UIMAException, IOException {
-		 TypeSystemDescription core = TypeSystemDescriptionFactory.createTypeSystemDescription();
-		 TypeSystemDescription custom = TypeSystemDescriptionFactory.createTypeSystemDescriptionFromPath("typesystem.xml");
-	     List<TypeSystemDescription> systemsList = Arrays.asList(core, custom);
-	     TypeSystemDescription merged = CasCreationUtils.mergeTypeSystems(systemsList);
-	     
-	     CollectionReaderDescription tsvReader= CollectionReaderFactory.createReaderDescription(
-	             WebannoTsv3XReader.class,
-	             merged,
-	             WebannoTsv3XReader.PARAM_SOURCE_LOCATION, "output.xmi",
-	               WebannoTsv3XReader.PARAM_LANGUAGE, "en"
-	      );
-
-	      for (JCas jcas : new JCasIterable(tsvReader)) {
-	          int i=0;
-	          for(Sentence sent : JCasUtil.select(jcas, Sentence.class)){
-	        	  System.out.println(sent.getCoveredText());
-	          }
-          }
+		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+	        
+	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
+	                XmiReader.PARAM_SOURCE_LOCATION,
+	                "src/main/resources/",
+	                XmiReader.PARAM_PATTERNS, "*.xmi",
+	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
+	        
+	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestReader.class);
+	        
+	        SimplePipeline.runPipeline(reader, report);
       }
 }
