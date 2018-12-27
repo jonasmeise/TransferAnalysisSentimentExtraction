@@ -10,8 +10,8 @@ import de.unidue.langtech.bachelor.meise.type.ReviewData;
 public class DataParser {	
 	//conversion of ReviewData->XML format and vice versa
 	
-	private String folderPath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit";
-	private String outputPath = folderPath + "\\review_output.xml";
+	private String folderPath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\resources\\dataset2";
+	private String outputPath = folderPath + "\\review_2_output.xml";
 	private final ConsoleLog myLog;
 	private final FileUtils fu;
 	
@@ -74,6 +74,11 @@ public class DataParser {
 				if(currentLine.contains("user avatar image")) { //a review starts
 					ReviewData newData = new ReviewData();
 					newData.setUserName(allSourceData.get(i+1));
+					
+					if(allSourceData.get(i+1).split(" ").length >= 3) { //corner-case: Name & Location are set on the same line
+						i--;
+					}
+
 					newData.setScore(Double.valueOf(allSourceData.get(i+3)));
 					newData.setDate(allSourceData.get(i+4).split("Reviewed:")[1]);
 					newData.setTitle(allSourceData.get(i+5));

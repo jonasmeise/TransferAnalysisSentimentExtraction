@@ -18,16 +18,16 @@ import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 
 public class MainPipeline {
 	
-	String inputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\review_output.xml";
-	String outputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\output.tsv";
+	String inputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\resources\\dataset2\\review_2_output.xml";
+	String outputFilePath = "C:\\Users\\Jonas\\Documents\\Bachelorarbeit\\resources\\dataset2\\output_2.tsv";
 
 	public MainPipeline() {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		//MainPipeline myPipeline = new MainPipeline();
-		//myPipeline.run_read();
-		
+		MainPipeline myPipeline = new MainPipeline();
+		myPipeline.run();
+		/*
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 	        
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
@@ -40,6 +40,7 @@ public class MainPipeline {
 	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestReader.class);
 	        
 	        SimplePipeline.runPipeline(reader, report);
+	        */
 	}
 	
 	public void run() throws UIMAException, IOException {
