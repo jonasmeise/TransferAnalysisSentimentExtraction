@@ -1,6 +1,5 @@
 package de.unidue.langtech.bachelor.meise.files;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -20,17 +19,25 @@ public class DataParser {
 		myLog = new ConsoleLog();
 	}
 	
+	
+	//fileType: .txt   Output: .xml
+	public DataParser(String inputFolder, String outputFile) {
+		this();
+		folderPath = inputFolder;
+		outputPath = outputFile;
+	}
+	
 	public static void main(String[] args) {
 		DataParser dataParser = new DataParser();
-		dataParser.run();
+		//dataParser.run(fileType);
 	}
 	
 	
 	//parses a "raw-text-file" with data into a
 	//XML-based file system. Might need other parseData() instances and versions
 	//if the syntax differs
-	public void run() {
-		ArrayList<ReviewData> dataList = parseData(fu.getFilesInFolder(folderPath,  ".txt", true));
+	public void run(String fileType) {
+		ArrayList<ReviewData> dataList = parseData(fu.getFilesInFolder(folderPath, fileType, true));
 		
 		try {
 			fu.createWriter(outputPath);

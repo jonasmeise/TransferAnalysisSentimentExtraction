@@ -28,13 +28,14 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
 	//every data-entry refers to a single line
 	public ArrayList<String> relations;
-	public ArrayList<ArrayList<String>> data; //matriox of Sentence/relation
+	public ArrayList<ArrayList<String>> data; //matrix of Sentence/relation
 	
     public void initialize(UimaContext aContext) throws ResourceInitializationException {
     	super.initialize(aContext);
     	relationName = "";
     	fu = new FileUtils();
     	myLog = new ConsoleLog();
+    	data = new ArrayList<ArrayList<String>>();
     	
 		relations = generateRelations();
     	
@@ -94,15 +95,9 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	}
     }
 
-    public ArrayList<String> generateRelations() {
-    	return null;
-    	//TODO: generate for each sub-class
-    }
+    public abstract ArrayList<String> generateRelations();
     
-    public ArrayList<ArrayList<String>> generateData(JCas arg0) {
-    	return null;
-    	//TODO: generate for each sub-class
-    }
+    public abstract ArrayList<ArrayList<String>> generateData(JCas arg0);
     
 	@Override
 	public void process(JCas arg0) throws AnalysisEngineProcessException {
@@ -110,6 +105,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	}	
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
+		myLog.log("Finished! Total of " + data.size() + " entries added.");
 		fu.close();
 	}
 }
