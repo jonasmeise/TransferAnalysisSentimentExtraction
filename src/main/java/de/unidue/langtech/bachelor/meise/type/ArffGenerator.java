@@ -35,7 +35,6 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
     public void initialize(UimaContext aContext) throws ResourceInitializationException {
     	super.initialize(aContext);
-    	relationName = "";
     	fu = new FileUtils();
     	myLog = new ConsoleLog();
     	data = new ArrayList<ArrayList<String>>();
@@ -68,6 +67,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     
     public void writeOutput() {
     	String completeOutput;
+    	int counter=0;
+    	
     	if(fu.fileWriter!=null) {	
     		completeOutput = "@relation " + relationName + "\n\n";
     		 
@@ -79,6 +80,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     		completeOutput = completeOutput + "\n@data\n";
     		
     		for(ArrayList<String> dataLine : data) {
+    			myLog.log(counter + "/" + data.size());
     			if(dataLine.size() != relations.size()) {
     				myLog.log("Argument mismatch: " + relations.size() + " arguments expected, " + dataLine.size() + " arguments found in + " + dataLine + "!");    				
     				break;
@@ -90,6 +92,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	    			//TODO: check if -1 wegmachen, falls zuviel weggeccuttet wird....
 	    			completeOutput = completeOutput.substring(0,completeOutput.length()-1) + "\n";
     			}
+    			
+    			counter++;
     		}
     		
     		fu.write(completeOutput);
@@ -97,9 +101,11 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     		myLog.log("Writer isn't available!");
     	}
     	
-    	if (fu.fileWriter != null) {
-    		fu.close();
-    	}
+    	fu.close();
+    }
+    
+    public String clearString(String string) {
+    	return string.replace("\"", "?").replace("'", "?");
     }
     
     public abstract ArrayList<String> generateRelations();

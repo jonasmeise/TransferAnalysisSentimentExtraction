@@ -92,11 +92,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	        	}
 	        	
 	        	ArrayList<String> singleLine = new ArrayList<String>();
-	    		ArrayList<Token> tokens = new ArrayList<Token>();
-	        	
-	    		for(Token token : selectCovered(Token.class, sentence)) {
-	    			tokens.add(token);
-	    		}
+	    		Collection<Token> tokens = selectCovered(Token.class, sentence);
 	    		
 	        	Collection<Valence> valences = selectCovered(Valence.class, sentence);
 	            HashSet<Integer> h = new HashSet<Integer>(); 
@@ -143,50 +139,60 @@ public class TestClassifierGenerator extends ArffGenerator{
 	        			}
 	        		}
 	        	}
-	        	
-	        	for(Valence valence : valences) {
+
+	        	for(Valence valence : selectCovered(Valence.class, sentence)) {
 	        		AspectRating t1 = valence.getDependent();
 	        		AspectRating t2 = valence.getGovernor();
 	        		
-		        	dependencyDistance=0;
+		        	dependencyDistance=-1;
 		        	tokenDistance=0;
 	        		
 	        		singleLine = new ArrayList<String>();
 	        		
 	        		for(Tree<Token> tree : treeCollection) {
-        				dependencyDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
-        				if(dependencyDistance >= 0) {
-        					System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
+        				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
+        				if(newDistance > dependencyDistance) {
+        					dependencyDistance = newDistance;
+        					//System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
         				}
         			}
         			
-        			//dependencyDistance > 0 ==> has to be in the same sentence
-    				for(Token sentenceToken : tokens) {
-    					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
-    						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
-    						tokenDistance++;
-    					}
-    				}
-    				
-    				//add actual data
-    				singleLine.add("" + valueId);
-    				valueId++;
-    				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
-    				singleLine.add("" + tokenDistance);
-    				singleLine.add("" + dependencyDistance);			
-    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
-    				
-    				if(t1.getAspect() != null) {
-	    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
-	    					singleLine.add(t2.getAspect() + "-" + valence.getValenceRating());
-	    				} else {
-	    					singleLine.add(t1.getAspect() + "-" + valence.getValenceRating());
+	        		System.out.println(t1.getCoveredText() + " -> " + t2.getCoveredText() + " >" + dependencyDistance);
+	        		
+	        		if(dependencyDistance >= 0) {
+	        			//dependencyDistance > 0 ==> has to be in the same sentence
+	    				for(Token sentenceToken : tokens) {
+	    					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
+	    						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
+	    						tokenDistance++;
+	    					}
 	    				}
-    				} else {
-    					singleLine.add("NONE");
-    				}
-    				
-    	        	returnList.add(singleLine);
+	    				
+	    				//add actual data
+	    				singleLine.add("" + valueId);
+	    				valueId++;
+	    				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
+	    				singleLine.add("" + tokenDistance);
+	    				singleLine.add("" + dependencyDistance);			
+	    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
+	    				
+	    				if(t1.getAspect() != null) {
+	    					String currentValence=valence.getValenceRating();
+	    					if(valence.getValenceRating()==null) {
+	    						currentValence="positive";
+	    					}
+	    					
+		    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
+		    					singleLine.add(t2.getAspect().replace("?", "ae") + "-" + currentValence);
+		    				} else {
+		    					singleLine.add(t1.getAspect().replace("?", "ae") + "-" + currentValence);
+		    				}
+	    				} else {
+	    					singleLine.add("NONE");
+	    				}
+	    				
+	    	        	returnList.add(singleLine);
+	        		}
 	        	}
 	        	id++;
     		}
@@ -198,5 +204,6 @@ public class TestClassifierGenerator extends ArffGenerator{
 	@Override
 	public void process(JCas arg0) throws AnalysisEngineProcessException {
 			data.addAll(this.generateData(arg0));
+			id=0;
 	}
 }
