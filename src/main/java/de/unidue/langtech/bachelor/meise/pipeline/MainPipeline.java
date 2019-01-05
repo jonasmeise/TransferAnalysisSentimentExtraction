@@ -8,6 +8,7 @@ import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.factory.AnalysisEngineFactory;
 import org.apache.uima.fit.factory.CollectionReaderFactory;
 import org.apache.uima.fit.pipeline.SimplePipeline;
+import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.io.xmi.XmiReader;
 
@@ -24,13 +25,15 @@ public class MainPipeline {
 	static String inputFilePath = "src/main/resources/dataset3/";
 	static String outputFilePath = "src/main/resources/dataset3/output_3.tsv";
 	
-	
 	public MainPipeline() {
 	}
 	
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
-		myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
+
+		myPipeline.run_read("src/main/resources/", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src/main/resources/test_model.arff", "src/main/resources/typesystem.xml");
+		//myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -65,18 +68,37 @@ public class MainPipeline {
         SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator);
 	}
 	
-	public void run_read() throws UIMAException, IOException {
+	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 	        
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
 	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
 	                XmiReader.PARAM_SOURCE_LOCATION,
-	                "src/main/resources/",
-	                XmiReader.PARAM_PATTERNS, "*.xmi",
+	                inputFile,
+	                XmiReader.PARAM_PATTERNS, typeFile,
 	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
 	        
-	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestReader.class);
+	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class, 
+	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		TestClassifierGenerator.PARAM_RELATION_NAME, "test_model");
 	        
 	        SimplePipeline.runPipeline(reader, report);
-      }
+	}
+	
+	public void run_read(String inputFile, String typeFile) throws UIMAException, IOException {
+		System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+		
+        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
+                XmiReader.PARAM_SOURCE_LOCATION,
+                inputFile,
+                XmiReader.PARAM_PATTERNS, typeFile,
+                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
+        
+        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class,
+        TestClassifierGenerator.PARAM_OUTPUT_PATH, "I don't care",
+        TestClassifierGenerator.PARAM_RELATION_NAME, "model_test");
+        
+        SimplePipeline.runPipeline(reader, report);
+	}
 }

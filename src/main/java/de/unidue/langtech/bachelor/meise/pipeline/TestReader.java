@@ -9,7 +9,6 @@ import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
-import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
 public class TestReader extends JCasAnnotator_ImplBase{

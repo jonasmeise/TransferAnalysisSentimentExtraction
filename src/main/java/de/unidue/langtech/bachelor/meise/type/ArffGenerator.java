@@ -2,6 +2,7 @@ package de.unidue.langtech.bachelor.meise.type;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -10,6 +11,7 @@ import org.apache.uima.fit.descriptor.ConfigurationParameter;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 
@@ -19,6 +21,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     @ConfigurationParameter(name = PARAM_OUTPUT_PATH, mandatory = true)
     private String outputPath;
     private FileUtils fu;
+    public int cutoff, id=0;
     private ConsoleLog myLog;
 	
 	//Header for .arff file, 
@@ -93,16 +96,18 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	} else {
     		myLog.log("Writer isn't available!");
     	}
+    	
+    	if (fu.fileWriter != null) {
+    		fu.close();
+    	}
     }
-
+    
     public abstract ArrayList<String> generateRelations();
     
     public abstract ArrayList<ArrayList<String>> generateData(JCas arg0);
     
 	@Override
-	public void process(JCas arg0) throws AnalysisEngineProcessException {
-		data.addAll(generateData(arg0));
-	}	
+	public abstract void process(JCas arg0) throws AnalysisEngineProcessException;	
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
