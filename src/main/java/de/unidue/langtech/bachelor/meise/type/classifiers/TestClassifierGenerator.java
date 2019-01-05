@@ -15,6 +15,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.Tree;
+import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
 public class TestClassifierGenerator extends ArffGenerator{
@@ -29,11 +30,12 @@ public class TestClassifierGenerator extends ArffGenerator{
 		relations.add("id numeric");
 		relations.add("text string");
 		relations.add("tokendistance numeric");
-		relations.add("dependencytreedistance numeric");
-		relations.add("emotionalrating numeric");
+		relations.add("dependencydistance numeric");
+		relations.add("pos string");
+		//relations.add("emotionalrating numeric");
 		//relations.add("negated boolean");
 		
-		String[] types = new String[16];
+		String[] types = new String[18];
 		types[0] = "Ausstattung-positive";
 		types[1] = "Hotelpersonal-positive";
 		types[2] = "Lage-positive";
@@ -50,6 +52,8 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[13] = "Preis-Leistungs-Verhaeltnis-negative";
 		types[14] = "WLAN-negative";
 		types[15] = "Sauberkeit-negative";
+		types[16] = "RatingOfAspect";
+		types[17] = "NONE";
 		
 		relations.add("aspecttype " + generateTupel(types));
 		
@@ -85,8 +89,6 @@ public class TestClassifierGenerator extends ArffGenerator{
 		        	tree.setParentDependencyType("ROOT");
 		        	
 		        	treeCollection.add(tree);
-		        	
-		        	System.out.println(tree.printTree(0));
 	        	}
 	        	
 	        	ArrayList<String> singleLine = new ArrayList<String>();
@@ -104,35 +106,92 @@ public class TestClassifierGenerator extends ArffGenerator{
 	            	h.add(valence.getDependent().getBegin() * 1000 + (valence.getGovernor().getBegin()));  	
 	            }
 	            
-	            int checkValue, checkValueAlt, distance;
+	            int checkValue, checkValueAlt, dependencyDistance=0, tokenDistance=0;
 	        	//generate Tokens-Relationship
 	        	for(Token t1 : tokens) {
 	        		for(Token t2 : tokens) {
+	        			singleLine = new ArrayList<String>();
 	        			checkValue = t1.getBegin() * 1000 + (t2.getBegin());
 	        			checkValueAlt = t2.getBegin() * 1000 + (t1.getBegin());
 	        			
 	        			for(Tree<Token> tree : treeCollection) {
-	        				distance = tree.tokenDistanceInTree(t1, t2);
-	        				if(distance >= 0) {
-	        					System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + distance);
+	        				dependencyDistance = tree.tokenDistanceInTree(t1, t2);
+	        				if(dependencyDistance >= 0) {
+	        					//System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
 	        				}
 	        			}
 	        			
-	        			if(!h.contains(checkValue) && !h.contains(checkValueAlt)) { //is not an already Dependency relation
+	        			//dependencyDistance > 0 ==> has to be in the same sentence
+	        			if(!h.contains(checkValue) && !h.contains(checkValueAlt) && dependencyDistance >= 0) { //is not already Dependency relation
+	        				for(Token sentenceToken : tokens) {
+	        					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
+	        						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
+	        						tokenDistance++;
+	        					}
+	        				}
+	        				
 	        				//add actual data
 	        				singleLine.add("" + valueId);
 	        				valueId++;
-	        				singleLine.add(t1.getCoveredText() + " " + t2.getCoveredText());
-	        				singleLine.add("" + Math.abs((t1.getBegin() - t2.getBegin()))); //TODO: actual "word" spacing distance, not raw distance
+	        				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
+	        				singleLine.add("" + tokenDistance);
+	        				singleLine.add("" + dependencyDistance);
+	        				singleLine.add("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'");
+	        				singleLine.add("NONE");
 	        				
+	        	        	returnList.add(singleLine);
 	        			}
 	        		}
 	        	}
 	        	
-	        	returnList.add(singleLine);
+	        	for(Valence valence : valences) {
+	        		AspectRating t1 = valence.getDependent();
+	        		AspectRating t2 = valence.getGovernor();
+	        		
+		        	dependencyDistance=0;
+		        	tokenDistance=0;
+	        		
+	        		singleLine = new ArrayList<String>();
+	        		
+	        		for(Tree<Token> tree : treeCollection) {
+        				dependencyDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
+        				if(dependencyDistance >= 0) {
+        					System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
+        				}
+        			}
+        			
+        			//dependencyDistance > 0 ==> has to be in the same sentence
+    				for(Token sentenceToken : tokens) {
+    					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
+    						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
+    						tokenDistance++;
+    					}
+    				}
+    				
+    				//add actual data
+    				singleLine.add("" + valueId);
+    				valueId++;
+    				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
+    				singleLine.add("" + tokenDistance);
+    				singleLine.add("" + dependencyDistance);			
+    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
+    				
+    				if(t1.getAspect() != null) {
+	    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
+	    					singleLine.add(t2.getAspect() + "-" + valence.getValenceRating());
+	    				} else {
+	    					singleLine.add(t1.getAspect() + "-" + valence.getValenceRating());
+	    				}
+    				} else {
+    					singleLine.add("NONE");
+    				}
+    				
+    	        	returnList.add(singleLine);
+	        	}
 	        	id++;
     		}
         }
+        
 		return returnList;
 	}
 

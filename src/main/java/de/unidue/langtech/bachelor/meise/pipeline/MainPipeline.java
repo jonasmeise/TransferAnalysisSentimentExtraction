@@ -31,8 +31,8 @@ public class MainPipeline {
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
-		myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src/main/resources/test_model.arff", "src/main/resources/typesystem.xml");
+		//myPipeline.run_read("src/main/resources/", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/test.arff", "*.xmi");
 		//myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
 	}
 	
@@ -80,7 +80,7 @@ public class MainPipeline {
 	        
 	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class, 
 	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		TestClassifierGenerator.PARAM_RELATION_NAME, "test_model");
+	        		TestClassifierGenerator.PARAM_RELATION_NAME, "test");
 	        
 	        SimplePipeline.runPipeline(reader, report);
 	}

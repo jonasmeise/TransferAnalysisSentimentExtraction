@@ -111,6 +111,6 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
-		fu.close();
+		writeOutput();
 	}
 }

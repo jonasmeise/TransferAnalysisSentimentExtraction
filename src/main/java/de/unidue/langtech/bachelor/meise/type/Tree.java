@@ -7,6 +7,7 @@ import java.util.List;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import webanno.custom.AspectRating;
 
 public class Tree<T> {
 
@@ -118,6 +119,28 @@ public class Tree<T> {
 		return false;
 	}
 	
+	public Tree<AspectRating> findToken(AspectRating token, Collection<Tree<AspectRating>> treeList) {
+		Collection<Tree<AspectRating>> newTreeList = new ArrayList<Tree<AspectRating>>();
+		
+		for(Tree<AspectRating> treeToken : treeList) {
+			if(!treeToken.data.equals(token)) {
+				if(treeToken.getChildren().size() > 0) {
+					for(Tree<AspectRating> child : treeToken.getChildren()) {
+						newTreeList.add(child);
+					}
+				}
+			} else {
+				return treeToken;
+			}
+		}
+		
+		if(newTreeList.size() > 0) {
+			return findToken(token, newTreeList);
+		} else {
+			return null;
+		}
+	}
+	
 	public Tree<Token> findToken(Token token, Collection<Tree<Token>> treeList) {
 		Collection<Tree<Token>> newTreeList = new ArrayList<Tree<Token>>();
 		
@@ -150,6 +173,56 @@ public class Tree<T> {
 		Collection<Tree<Token>> treeCollection2 = new ArrayList<Tree<Token>>();
 		treeCollection1.add((Tree<Token>) this);
 		treeCollection2.add((Tree<Token>) this);
+		
+		tree1 = findToken(t1, treeCollection1);
+		tree2 = findToken(t2, treeCollection2);
+		
+		if(tree1!=null && tree2!=null) {
+			if(!t1.equals(t2)) {
+				//System.out.println(tree1 + " " + tree2);
+				while(!found) {	
+					treeDepth1 = tree1.getDepth();
+					treeDepth2 = tree2.getDepth();
+					
+					//System.out.println(treeDepth1 + "  " + treeDepth2);
+
+					if(tree1 == tree2) {
+						found=true;
+					}
+					if(treeDepth1 == treeDepth2 && treeDepth1 == 0) {
+						break;
+					}
+					
+					if(treeDepth1 >= treeDepth2) {
+						tree1 = tree1.getParent();
+					} else if (treeDepth1 < treeDepth2) {
+						tree2 = tree2.getParent();
+					}
+					
+					distance++;
+				}
+				
+				if(found) {
+					return distance;
+				}
+			} else {
+				return 0;
+			}
+		}
+		
+		return -1;
+	}
+	
+	public int tokenDistanceInTree(AspectRating t1, AspectRating t2) {
+		Tree<AspectRating> tree1;
+		Tree<AspectRating> tree2;
+		int treeDepth1, treeDepth2, distance=0;
+		boolean found = false;
+		
+		Collection<Tree<AspectRating>> treeCollection1 = new ArrayList<Tree<AspectRating>>();
+		Collection<Tree<AspectRating>> treeCollection2 = new ArrayList<Tree<AspectRating>>();
+		treeCollection1.add((Tree<AspectRating>) this);
+		treeCollection2.add((Tree<AspectRating>) this);
 		
 		tree1 = findToken(t1, treeCollection1);
 		tree2 = findToken(t2, treeCollection2);
