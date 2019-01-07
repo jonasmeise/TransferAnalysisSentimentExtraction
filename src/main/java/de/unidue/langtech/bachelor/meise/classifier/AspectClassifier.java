@@ -40,7 +40,7 @@ public class AspectClassifier {
 	private FileUtils fu;
 	private ConsoleLog myLog;
 	
-	String fileType = ".arff";
+	String fileType = "data400.arff";
 	int seed;
 	int folds = 5;
 	
@@ -68,7 +68,7 @@ public class AspectClassifier {
 	public static void main(String[] args) throws Exception {
 		AspectClassifier ac = new AspectClassifier();
 		ac.sourcePath = "C:\\Users\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources";
-		ac.run("C:\\Users\\\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources\\test.model");
+		ac.run("C:\\Users\\\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources\\data400.model");
 	}
 	
 	
@@ -140,14 +140,14 @@ public class AspectClassifier {
 	}
 	
 	public void run(String outputPath) throws Exception {
-		/*try {
+		try {
 			instances = getData(sourcePath, fileType, true, 1);
 			learnAndExport(instances, outputPath);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
-		
+		/*
 		loadModels(outputPath);
 		
 		Instances sourceInstances = getData(sourcePath, fileType, false, 1);
@@ -176,7 +176,7 @@ public class AspectClassifier {
     	   if(prediction[i]>0.1) {
     		   System.out.println("Probability of class "+testInstance.classAttribute().value(i)+" : "+Double.toString(prediction[i]));
     	   }
-       }
+       }*/
 	   
 	}
 	

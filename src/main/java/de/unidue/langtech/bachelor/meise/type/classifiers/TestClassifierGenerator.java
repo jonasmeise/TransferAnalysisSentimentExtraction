@@ -3,10 +3,8 @@ package de.unidue.langtech.bachelor.meise.type.classifiers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
-import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
@@ -20,8 +18,10 @@ import webanno.custom.Valence;
 
 public class TestClassifierGenerator extends ArffGenerator{
 
-	int cutoff = 200;
-	int valueId = 0;
+	int cutoff = 200; //Maximale Saetze/Datensatz
+	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
+	int valueId=0;
+	int contextWidth = 2;
 	
 	@Override
 	public ArrayList<String> generateRelations() {
@@ -32,10 +32,11 @@ public class TestClassifierGenerator extends ArffGenerator{
 		relations.add("tokendistance numeric");
 		relations.add("dependencydistance numeric");
 		relations.add("pos string");
+		relations.add("context string");
 		//relations.add("emotionalrating numeric");
 		//relations.add("negated boolean");
 		
-		String[] types = new String[18];
+		String[] types = new String[17];
 		types[0] = "Ausstattung-positive";
 		types[1] = "Hotelpersonal-positive";
 		types[2] = "Lage-positive";
@@ -52,8 +53,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[13] = "Preis-Leistungs-Verh?ltnis-negative";
 		types[14] = "WLAN-negative";
 		types[15] = "Sauberkeit-negative";
-		types[16] = "RatingOfAspect";
-		types[17] = "NONE";
+		types[16] = "NONE";
 		
 		relations.add("aspecttype " + generateTupel(types));
 		
@@ -61,150 +61,175 @@ public class TestClassifierGenerator extends ArffGenerator{
 	}
 
 	@Override
-	public ArrayList<ArrayList<String>> generateData(JCas arg0) {
+	public Collection<Collection<String>> generateFeaturesFromCas(Sentence sentence) {
+		Collection<Collection<String>> returnList = new ArrayList<Collection<String>>();
 		
-		System.out.println("OKAY");
-		
-		ArrayList<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
-		Collection<Sentence> sentences = JCasUtil.select(arg0, Sentence.class);
-		
-        for(Sentence sentence : sentences) {
-    		if(id < cutoff) {
-	        	System.out.println(sentence.getCoveredText());
-	        	//TODO: Inner-sentence functions, Word Distance, Parsing Tree....
-	        	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
-	        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
-	        	
-	        	//find root
-	        	ArrayList<Token> roots = new ArrayList<Token>();
-	        	for(Dependency dpElement : dependencies) {
-					if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
-						roots.add(dpElement.getGovernor());
-					}
+		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
+        	System.out.println(sentence.getCoveredText());
+        	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
+        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
+        	
+        	//find root and sentence start
+        	ArrayList<Token> roots = new ArrayList<Token>();
+        	for(Dependency dpElement : dependencies) {
+				if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
+					roots.add(dpElement.getGovernor());
 				}
+			}
+        	
+        	for(Token root : roots) {
+	        	Tree<Token> tree = new Tree<Token>(root);
+	        	tree.generateTreeOfDependency(dependencies, root);
+	        	tree.setParentDependencyType("ROOT");
 	        	
-	        	for(Token root : roots) {
-		        	Tree<Token> tree = new Tree<Token>(root);
-		        	tree.generateTreeOfDependency(dependencies, root);
-		        	tree.setParentDependencyType("ROOT");
-		        	
-		        	treeCollection.add(tree);
-	        	}
-	        	
-	        	ArrayList<String> singleLine = new ArrayList<String>();
-	    		Collection<Token> tokens = selectCovered(Token.class, sentence);
-	    		
-	        	Collection<Valence> valences = selectCovered(Valence.class, sentence);
-	            HashSet<Integer> h = new HashSet<Integer>(); 
-	        	
-	            for(Valence valence : valences) {
-	            	//unique Token-Token identifier
-	            	h.add(valence.getDependent().getBegin() * 1000 + (valence.getGovernor().getBegin()));  	
-	            }
-	            
-	            int checkValue, checkValueAlt, dependencyDistance=0, tokenDistance=0;
-	        	//generate Tokens-Relationship
-	        	for(Token t1 : tokens) {
-	        		for(Token t2 : tokens) {
-	        			tokenDistance=0;
-	        			singleLine = new ArrayList<String>();
-	        			checkValue = t1.getBegin() * 1000 + (t2.getBegin());
-	        			checkValueAlt = t2.getBegin() * 1000 + (t1.getBegin());
-	        			
-	        			for(Tree<Token> tree : treeCollection) {
-	        				dependencyDistance = tree.tokenDistanceInTree(t1, t2);
-	        				if(dependencyDistance >= 0) {
-	        					//System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
-	        				}
-	        			}
-	        			
-	        			//dependencyDistance > 0 ==> has to be in the same sentence
-	        			if(!h.contains(checkValue) && !h.contains(checkValueAlt) && dependencyDistance >= 0) { //is not already Dependency relation
-	        				for(Token sentenceToken : tokens) {
-	        					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
-	        						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
-	        						tokenDistance++;
-	        					}
-	        				}
-	        				
-	        				//add actual data
-	        				singleLine.add("" + valueId);
-	        				valueId++;
-	        				singleLine.add("'" + t1.getCoveredText().replace("\"", "").replace("'","") + " " + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
-	        				singleLine.add("" + tokenDistance);
-	        				singleLine.add("" + dependencyDistance);
-	        				singleLine.add("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'");
-	        				singleLine.add("NONE");
-	        				
-	        	        	returnList.add(singleLine);
-	        			}
-	        		}
-	        	}
-
-	        	for(Valence valence : selectCovered(Valence.class, sentence)) {
-	        		AspectRating t1 = valence.getDependent();
-	        		AspectRating t2 = valence.getGovernor();
-	        		
-		        	dependencyDistance=-1;
-		        	tokenDistance=0;
-	        		
-	        		singleLine = new ArrayList<String>();
-	        		
-	        		for(Tree<Token> tree : treeCollection) {
-        				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
-        				if(newDistance > dependencyDistance) {
-        					dependencyDistance = newDistance;
-        					//System.out.println(t1.getCoveredText() + " - " + t2.getCoveredText() + " = " + dependencyDistance);
-        				}
+	        	treeCollection.add(tree);
+        	}
+        	
+        	ArrayList<String> singleLine = new ArrayList<String>();
+    		Collection<Token> tokens = selectCovered(Token.class, sentence);
+    		
+        	Collection<Valence> valences = selectCovered(Valence.class, sentence);
+            HashSet<Integer> h = new HashSet<Integer>(); 
+        	
+            for(Valence valence : valences) {
+            	//unique Token-Token identifier
+            	h.add(valence.getDependent().getBegin() * 1000 + (valence.getGovernor().getBegin()));  	
+            }
+            
+            int checkValue, checkValueAlt, dependencyDistance=0, tokenDistance;
+        	//generate Tokens-Relationship
+        	for(Token t1 : tokens) {
+        		for(Token t2 : tokens) {
+        			tokenDistance=-1;
+        			singleLine = new ArrayList<String>();
+        			checkValue = t1.getBegin() * 1000 + (t2.getBegin());
+        			checkValueAlt = t2.getBegin() * 1000 + (t1.getBegin());
+        			
+        			for(Tree<Token> tree : treeCollection) {
+        				dependencyDistance = tree.tokenDistanceInTree(t1, t2);
         			}
         			
-	        		System.out.println(t1.getCoveredText() + " -> " + t2.getCoveredText() + " >" + dependencyDistance);
-	        		
-	        		if(dependencyDistance >= 0) {
-	        			//dependencyDistance > 0 ==> has to be in the same sentence
-	    				for(Token sentenceToken : tokens) {
-	    					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
-	    						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
-	    						tokenDistance++;
-	    					}
-	    				}
-	    				
-	    				//add actual data
-	    				singleLine.add("" + valueId);
-	    				valueId++;
-	    				singleLine.add("'" + t1.getCoveredText().replace("\"", "").replace("'","") + " " + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
-	    				singleLine.add("" + tokenDistance);
-	    				singleLine.add("" + dependencyDistance);			
-	    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
-	    				
-	    				if(t1.getAspect() != null) {
-	    					String currentValence=valence.getValenceRating();
-	    					if(valence.getValenceRating()==null) {
-	    						currentValence="positive";
-	    					}
-	    					
-		    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
-		    					singleLine.add(t2.getAspect() + "-" + currentValence);
-		    				} else {
-		    					singleLine.add(t1.getAspect() + "-" + currentValence);
-		    				}
+        			//dependencyDistance > 0 ==> has to be in the same sentence
+        			if(!h.contains(checkValue) && !h.contains(checkValueAlt) && dependencyDistance >= 0) { //is not already Dependency relation
+        				for(Token sentenceToken : tokens) {
+        					if((sentenceToken.getBegin() >= t1.getBegin() && sentenceToken.getBegin() <= t2.getBegin()) ||
+        						(sentenceToken.getBegin() >= t2.getBegin() && sentenceToken.getBegin() <= t1.getBegin())) {
+        						tokenDistance++;
+        					}
+        				}
+        				
+        				//add actual data
+        				singleLine.add("" + valueId);
+        				singleLine.add("'_" + t1.getCoveredText().replace("\"", "").replace("'","") + " _" + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
+        				singleLine.add("" + tokenDistance);
+        				singleLine.add("" + dependencyDistance);
+        				singleLine.add("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'");
+        				
+        				//context-Generator
+        				Collection<Token> originalTokens = new ArrayList<Token>();
+        				originalTokens.add(t1);
+        				originalTokens.add(t2);
+        				
+        				Collection<Token> context = getContext(sentence,treeCollection, contextWidth, 200, originalTokens);
+        				String contextString = "";
+        				for(Token contextToken : context) {
+        					contextString = contextString + contextToken.getCoveredText() + " ";
+        				}
+        				if(contextString.length()>1) {
+        					singleLine.add("'" + contextString.substring(0,contextString.length()-1).replace("\"", "").replace("'","") + "'");
+        				} else {
+        					singleLine.add("''");
+        				}
+        				
+        				singleLine.add("NONE");
+        				
+        	        	returnList.add(singleLine);
+        	        	valueId++;
+        			}
+        		}
+        	}
+
+        	//copy-pasta'd since Valence can't be cast to Token....
+        	for(Valence valence : selectCovered(Valence.class, sentence)) {
+        		AspectRating t1 = valence.getDependent();
+        		AspectRating t2 = valence.getGovernor();
+        		
+	        	dependencyDistance=-1;
+	        	tokenDistance=0;
+        		
+        		singleLine = new ArrayList<String>();
+        		
+        		for(Tree<Token> tree : treeCollection) {
+    				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
+    				if(newDistance > dependencyDistance) {
+    					dependencyDistance = newDistance;
+    				}
+    			}
+    			
+        		System.out.println(t1.getCoveredText() + " -> " + t2.getCoveredText() + " >" + dependencyDistance);
+        		
+        		if(dependencyDistance >= 0) {
+        			//dependencyDistance > 0 ==> has to be in the same sentence
+    				for(Token sentenceToken : tokens) {
+    					if((sentenceToken.getBegin() > t1.getBegin() && sentenceToken.getBegin() < t2.getBegin()) ||
+    						(sentenceToken.getBegin() > t2.getBegin() && sentenceToken.getBegin() < t1.getBegin())) {
+    						tokenDistance++;
+    					}
+    				}
+    				
+    				//add actual data
+    				singleLine.add("" + valueId);
+    				System.out.println(t1.getAspect() + "(T1) -> " + t2.getAspect() + "(T2)");
+    				singleLine.add("'_" + t1.getCoveredText().replace("\"", "").replace("'","") + " _" + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
+    				singleLine.add("" + tokenDistance);
+    				singleLine.add("" + dependencyDistance);			
+    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
+    				
+    				//context-Generator
+    				Collection<Token> originalTokens = new ArrayList<Token>();
+    				originalTokens.add(selectCovered(Token.class,t1).get(0));
+    				originalTokens.add(selectCovered(Token.class,t2).get(0));
+    				
+    				Collection<Token> context = getContext(sentence,treeCollection, contextWidth, 200, originalTokens);
+    				String contextString = "";
+    				for(Token contextToken : context) {
+    					contextString = contextString + contextToken.getCoveredText() + " ";
+    				}
+    				
+    				if(contextString.length()>1) {
+    					singleLine.add("'" + contextString.substring(0,contextString.length()-1).replace("\"", "").replace("'","") + "'");
+    				} else {
+    					singleLine.add("''");
+    				}
+    				
+    				if(t1.getAspect() != null && valence.getValenceRating()!=null) {
+    					String currentValence=valence.getValenceRating();
+    					if(valence.getValenceRating()==null) {
+    						currentValence="positive";
+    					}
+    					
+	    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
+	    					//non-negated
+	    					singleLine.add(t2.getAspect() + "-" + currentValence);
 	    				} else {
-	    					singleLine.add("NONE");
+	    					//negated1
+	    					singleLine.add(t1.getAspect() + "-" + currentValence);
 	    				}
-	    				
-	    	        	returnList.add(singleLine);
-	        		}
-	        	}
-	        	id++;
-    		}
-        }
-        
+    				} else {
+    					singleLine.add("NONE");
+    				}
+    				
+    	        	returnList.add(singleLine);
+    	        	valueId++;
+        		}
+        	}
+		}       
+    		
 		return returnList;
 	}
 
 	@Override
 	public void process(JCas arg0) throws AnalysisEngineProcessException {
-			data.addAll(this.generateData(arg0));
-			id=0;
+		generateData(arg0, cutoff);
 	}
 }

@@ -32,7 +32,7 @@ public class MainPipeline {
 		MainPipeline myPipeline = new MainPipeline();
 
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/test.arff", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/data400.arff", "*.xmi");
 		//myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
 	}
 	

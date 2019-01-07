@@ -213,7 +213,7 @@ public class Tree<T> {
 		return -1;
 	}
 	
-	public int tokenDistanceInTree(AspectRating t1, AspectRating t2) {
+	/*public int tokenDistanceInTree(AspectRating t1, AspectRating t2) {
 		Tree<AspectRating> tree1;
 		Tree<AspectRating> tree2;
 		int treeDepth1, treeDepth2, distance=0;
@@ -261,7 +261,7 @@ public class Tree<T> {
 		}
 		
 		return -1;
-	}
+	}*/
 	
 	public int getDepth() {
 		if(parentDependencyType=="ROOT") {
