@@ -41,7 +41,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[2] = "Lage-positive";
 		types[3] = "OTHER-positive";
 		types[4] = "Komfort-positive";
-		types[5] = "Preis-Leistungs-Verhaeltnis-positive";
+		types[5] = "Preis-Leistungs-Verh?ltnis-positive";
 		types[6] = "WLAN-positive";
 		types[7] = "Sauberkeit-positive";
 		types[8] = "Ausstattung-negative";
@@ -49,7 +49,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[10] = "Lage-negative";
 		types[11] = "OTHER-negative";
 		types[12] = "Komfort-negative";
-		types[13] = "Preis-Leistungs-Verhaeltnis-negative";
+		types[13] = "Preis-Leistungs-Verh?ltnis-negative";
 		types[14] = "WLAN-negative";
 		types[15] = "Sauberkeit-negative";
 		types[16] = "RatingOfAspect";
@@ -106,6 +106,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	        	//generate Tokens-Relationship
 	        	for(Token t1 : tokens) {
 	        		for(Token t2 : tokens) {
+	        			tokenDistance=0;
 	        			singleLine = new ArrayList<String>();
 	        			checkValue = t1.getBegin() * 1000 + (t2.getBegin());
 	        			checkValueAlt = t2.getBegin() * 1000 + (t1.getBegin());
@@ -129,7 +130,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	        				//add actual data
 	        				singleLine.add("" + valueId);
 	        				valueId++;
-	        				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
+	        				singleLine.add("'" + t1.getCoveredText().replace("\"", "").replace("'","") + " " + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
 	        				singleLine.add("" + tokenDistance);
 	        				singleLine.add("" + dependencyDistance);
 	        				singleLine.add("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'");
@@ -171,7 +172,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	    				//add actual data
 	    				singleLine.add("" + valueId);
 	    				valueId++;
-	    				singleLine.add("'" + t1.getCoveredText() + " " + t2.getCoveredText() + "'");
+	    				singleLine.add("'" + t1.getCoveredText().replace("\"", "").replace("'","") + " " + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
 	    				singleLine.add("" + tokenDistance);
 	    				singleLine.add("" + dependencyDistance);			
 	    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
@@ -183,9 +184,9 @@ public class TestClassifierGenerator extends ArffGenerator{
 	    					}
 	    					
 		    				if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
-		    					singleLine.add(t2.getAspect().replace("?", "ae") + "-" + currentValence);
+		    					singleLine.add(t2.getAspect() + "-" + currentValence);
 		    				} else {
-		    					singleLine.add(t1.getAspect().replace("?", "ae") + "-" + currentValence);
+		    					singleLine.add(t1.getAspect() + "-" + currentValence);
 		    				}
 	    				} else {
 	    					singleLine.add("NONE");

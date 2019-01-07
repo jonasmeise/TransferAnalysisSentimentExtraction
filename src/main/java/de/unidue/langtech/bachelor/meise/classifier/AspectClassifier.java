@@ -2,19 +2,27 @@ package de.unidue.langtech.bachelor.meise.classifier;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import org.apache.uima.fit.factory.JCasFactory;
+
+import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.LibSVM;
 import weka.classifiers.meta.FilteredClassifier;
+import weka.core.DenseInstance;
+import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SelectedTag;
 import weka.core.stemmers.LovinsStemmer;
@@ -25,19 +33,23 @@ import weka.filters.unsupervised.attribute.StringToWordVector;
 public class AspectClassifier {
 	//a single Aspect Classifier for a set of Instances
 	
-	String sourcePath;
-	FilteredClassifier classifier;
-	Instances instances;
-	Evaluation evaluation;
-	FileUtils fu;
+	public String sourcePath;
+	private FilteredClassifier classifier;
+	public Instances instances;
+	public Evaluation evaluation;
+	private FileUtils fu;
+	private ConsoleLog myLog;
+	
 	String fileType = ".arff";
 	int seed;
-	int folds = 10;
+	int folds = 5;
 	
 	public AspectClassifier() {
 		fu = new FileUtils();
 		sourcePath = "";
 		instances = null;
+		classifier = new FilteredClassifier();
+		myLog = new ConsoleLog();
 	}
 	
 	public Classifier getClassifier() {
@@ -53,13 +65,54 @@ public class AspectClassifier {
 		this.sourcePath = sourcePath;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		AspectClassifier ac = new AspectClassifier();
-		ac.run();
+		ac.sourcePath = "C:\\Users\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources";
+		ac.run("C:\\Users\\\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources\\test.model");
+	}
+	
+	
+	//Trains Classifier for given training Data
+	public Instances buildClassifier(Instances train) throws Exception{ 
+		   // further processing, classification, etc.
+			LibSVM svm = new LibSVM();
+			
+			List<Integer> stringIndices=new ArrayList<Integer>(); //random length
+			for(int i=0;i<train.numAttributes();i++) {
+				if(train.attribute(i).isString()) {
+					System.out.println(train.attribute(i).name());
+					stringIndices.add(i-1);
+				}
+			}
+			
+			Remove removeFilter = new Remove();
+			//remove ID-Feature
+			removeFilter.setAttributeIndicesArray(new int[]{0});
+			
+			Instances newData = null;
+			try {
+				removeFilter.setInputFormat(train);
+				newData = Filter.useFilter(train, removeFilter);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+			
+			//remove the ID-Feature again
+
+			StringToWordVector s2wFilter = createS2WVector(convertIntegers(stringIndices));
+
+			svm.setKernelType(new SelectedTag(0, LibSVM.TAGS_KERNELTYPE));
+			svm.setSVMType(new SelectedTag(0, LibSVM.TAGS_SVMTYPE));
+			svm.setProbabilityEstimates(true);
+			
+			classifier.setFilter(s2wFilter); 
+			classifier.setClassifier(svm);	
+			
+			return newData;
 	}
 	
 	public void learn(Instances data) throws Exception {
-		 Random rand = new Random(seed);   // create seeded number generator
+		Random rand = new Random(seed);   // create seeded number generator
 		 Instances randData = new Instances(data);   // create copy of original data
 		 randData.randomize(rand);         // randomize data with number generator
 		 
@@ -67,72 +120,86 @@ public class AspectClassifier {
 			   Instances train = randData.trainCV(folds, n, rand);
 			   Instances test = randData.testCV(folds, n);
 
-			   // further processing, classification, etc.
-				LibSVM svm = new LibSVM();
+			   buildClassifier(train);
+			   
+			   evaluation = evalModel(classifier, test, folds, new Random());
 				
-				StringToWordVector s2wFilter;
-				Remove removeFilter = new Remove();
-				removeFilter.setAttributeIndicesArray(new int[]{1, 3});
-				
-				Instances newData = null;
-				try {
-					removeFilter.setInputFormat(train);
-					newData = Filter.useFilter(train, removeFilter);
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
-				
-				s2wFilter = new StringToWordVector(); 
-				s2wFilter.setAttributeIndices("1");
-				s2wFilter.setIDFTransform(true);
-				s2wFilter.setLowerCaseTokens(true);
-
-				svm.setKernelType(new SelectedTag(0, LibSVM.TAGS_KERNELTYPE));
-				svm.setSVMType(new SelectedTag(0, LibSVM.TAGS_SVMTYPE));
-				svm.setProbabilityEstimates(true);
-				
-				classifier.setFilter(s2wFilter); 
-				classifier.setClassifier(svm);
-				classifier.buildClassifier(newData);
-				
-				evaluation = evalModel(classifier, test, 10, new Random());
-				
-				System.out.println(evaluation.toSummaryString());
-
-			 }
+			   System.out.println(evaluation.toSummaryString());
+		 }
 	}
 	
-	public void run() {
-		try {
+	//import Instances -> learn and export model
+	public void learnAndExport(String inputPath, String outputPath) throws IOException, URISyntaxException, Exception {
+		learnAndExport(getData(inputPath, 1), outputPath);
+	}
+	
+	public void learnAndExport(Instances data, String outputPath) throws IOException, URISyntaxException, Exception {
+		Instances newData = buildClassifier(data);
+		classifier.buildClassifier(newData);
+		saveModel(outputPath, classifier);
+	}
+	
+	public void run(String outputPath) throws Exception {
+		/*try {
 			instances = getData(sourcePath, fileType, true, 1);
-			learn(instances);
+			learnAndExport(instances, outputPath);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
+		
+		
+		loadModels(outputPath);
+		
+		Instances sourceInstances = getData(sourcePath, fileType, false, 1);
+		sourceInstances.deleteAttributeAt(0);
+		Instance testInstance = new DenseInstance(5);
+
+		//testInstance.setValue(sourceInstances.attribute(0), 0);
+		testInstance.setValue(sourceInstances.attribute(0), "helpful staff");
+		testInstance.setValue(sourceInstances.attribute(1), 0);
+		testInstance.setValue(sourceInstances.attribute(2), 2);
+		testInstance.setValue(sourceInstances.attribute(3), "NN JJ");
+		//testInstance.setValue(sourceInstances.attribute(4), "?");
+		testInstance.setDataset(sourceInstances);
+		
+		System.out.println("Instance: " + testInstance);
+		
+	   double clsLabel = classifier.classifyInstance(testInstance);
+	   testInstance.setClassValue(clsLabel);
+	   System.out.println(testInstance.toString(testInstance.classAttribute()));
+	   
+	   double[] prediction=classifier.distributionForInstance(testInstance);
+
+       //output predictions
+       for(int i=0; i<prediction.length; i=i+1)
+       {
+    	   if(prediction[i]>0.1) {
+    		   System.out.println("Probability of class "+testInstance.classAttribute().value(i)+" : "+Double.toString(prediction[i]));
+    	   }
+       }
+	   
 	}
 	
-	   /** Erzeugt ein Evaluation Objekt, mit dem der Klassifikator auf die gegebenen Daten angewendet wird.
-    *
-    * @param classifier Der Klassifikator
-    * @param data Die Daten
-    * @param numberIterations Die Anzahl der Unterteilungen des Datensatzes waehrend der Kreuzvalidierung
-    * @param randData Ein Zufallszahlengenerator
-    * @return Das Evaluation Objekt
-    */
+	private StringToWordVector createS2WVector(int[] ignoreAttributeArray) {
+		StringToWordVector s2wFilter;
+		s2wFilter = new StringToWordVector(); 
+		s2wFilter.setAttributeIndicesArray(ignoreAttributeArray);
+		s2wFilter.setIDFTransform(true);
+		s2wFilter.setLowerCaseTokens(true);
+		
+		return s2wFilter;
+		
+	}
+	
    private Evaluation evalModel(Classifier classifier, Instances data, Integer numberIterations, Random randData ) throws Exception {
        Evaluation eval = new Evaluation(data);
        eval.crossValidateModel(classifier, data, numberIterations, randData);
        return eval;
    }
-
-   /** Liest aus einer ARFF Datei Daten mit Attribut- und Datenbeschreibungen
-    *
-    * @param filename Pfad und Name der Datei
-    * @param posClass 1-basierter Index der Klassendefinition vom Ende der Attributliste aus gesehen.
-    * @return Ein Instances Objekt
- * @throws URISyntaxException 
- * @throws IOException 
-    */
+   
+   public void loadModels(String filePath) throws Exception {
+			classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
+		}
    
    private Instances getData( String folderName, String fileType, boolean includeSubfolders, Integer posClass) throws IOException, URISyntaxException {
 	   Instances returnInstances = null;
@@ -148,6 +215,28 @@ public class AspectClassifier {
 	   }
 	   
 	   return returnInstances;
+   }
+   
+   public void saveModel(String fileName, FilteredClassifier classifier) {
+		try {
+           ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));
+           out.writeObject(classifier);
+           out.close();
+			myLog.log("Exported Model to:" + fileName);
+       } 
+		catch (Exception e) {
+			System.out.println("Problem found when writing: " + fileName);
+		}
+	}
+   
+   public static int[] convertIntegers(List<Integer> integers)
+   {
+       int[] returnArray = new int[integers.size()];
+       for (int i=0; i < returnArray.length; i++)
+       {
+    	   returnArray[i] = integers.get(i).intValue();
+       }
+       return returnArray;
    }
    
    private Instances getData(String fileName, Integer posClass ) throws IOException, URISyntaxException {

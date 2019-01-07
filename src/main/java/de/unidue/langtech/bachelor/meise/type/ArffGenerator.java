@@ -94,6 +94,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     			}
     			
     			counter++;
+    			
+    				//if(counter>2000) { break; }
     		}
     		
     		fu.write(completeOutput);
