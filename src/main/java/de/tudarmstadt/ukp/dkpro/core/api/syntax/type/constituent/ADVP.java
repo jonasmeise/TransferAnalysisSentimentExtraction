@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:09 CET 2018
+ * Updated by JCasGen Mon Jan 07 22:47:39 CET 2019
  * XML source: C:/Users/Jonas/Downloads/de.unidue.langtech.bachelor.meise/de.unidue.langtech.bachelor.meise/typesystem.xml
  * @generated */
 public class ADVP extends Constituent {

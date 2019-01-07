@@ -9,7 +9,7 @@ import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:08 CET 2018
+ * Updated by JCasGen Mon Jan 07 22:47:38 CET 2019
  * @generated */
 public class Document_Type extends Annotation_Type {
   /** @generated */

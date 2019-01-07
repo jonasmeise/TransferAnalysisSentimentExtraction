@@ -18,12 +18,16 @@ import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.maltparser.MaltParser;
 import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.type.classifiers.*;
+import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import de.unidue.langtech.bachelor.meise.files.DataParser;
 
 public class MainPipeline {
 	
-	static String inputFilePath = "src/main/resources/dataset3/";
-	static String outputFilePath = "src/main/resources/dataset3/output_3.tsv";
+	String inputFilePath = "src/main/resources/dataset3/";
+	String outputFilePath = "src/main/resources/dataset3/output_3.tsv";
+	String modelFilePath = "src/main/resources/data400.model";
+	String arffFilePath = "src/main/resources/data400.arff";
+	String tsvOutput = "src/main/resources/data400_output3.tsv";
 	
 	public MainPipeline() {
 	}
@@ -31,8 +35,10 @@ public class MainPipeline {
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
+		myPipeline.run_read();
+		
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/data400.arff", "*.xmi");
+		//myPipeline.createArff("src/main/resources/dataset3/", "src/main/resources/data4.arff", "*.xmi");
 		//myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
 	}
 	
@@ -71,6 +77,11 @@ public class MainPipeline {
 	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 	        
+		 	if(new File(modelFilePath).exists() && new File(arffFilePath).exists()) {
+		 		//jump directly to learning
+		 		
+		 	}
+		 
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
 	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
 	                XmiReader.PARAM_SOURCE_LOCATION,
@@ -85,20 +96,28 @@ public class MainPipeline {
 	        SimplePipeline.runPipeline(reader, report);
 	}
 	
-	public void run_read(String inputFile, String typeFile) throws UIMAException, IOException {
+	public void run_read() throws UIMAException, IOException {
 		System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 		
-        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
                 XmiReader.PARAM_SOURCE_LOCATION,
-                inputFile,
-                XmiReader.PARAM_PATTERNS, typeFile,
+                inputFilePath,
+                XmiReader.PARAM_PATTERNS, "*.xmi",
                 XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
         
-        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class,
-        TestClassifierGenerator.PARAM_OUTPUT_PATH, "I don't care",
-        TestClassifierGenerator.PARAM_RELATION_NAME, "model_test");
+        //AnalysisEngineDescription tokenizer = AnalysisEngineFactory.createEngineDescription(ClearNlpSegmenter.class, ClearNlpSegmenter.PARAM_LANGUAGE, "en");
+		
+        //AnalysisEngineDescription tagger = AnalysisEngineFactory.createEngineDescription(ClearNlpPosTagger.class, ClearNlpPosTagger.PARAM_LANGUAGE, "en");
         
-        SimplePipeline.runPipeline(reader, report);
+        //AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class, ClearNlpLemmatizer.PARAM_LANGUAGE, "en");
+        
+        //AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
+        
+        AnalysisEngineDescription classifierHandler = AnalysisEngineFactory.createEngineDescription(ClassifierHandler.class,
+    			ClassifierHandler.PARAM_ARFF_FILE, arffFilePath,
+				ClassifierHandler.PARAM_MODEL_FILE, modelFilePath);
+        
+        SimplePipeline.runPipeline(reader, classifierHandler);
 	}
 }

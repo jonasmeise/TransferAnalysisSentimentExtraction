@@ -8,7 +8,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:09 CET 2018
+ * Updated by JCasGen Mon Jan 07 22:47:39 CET 2019
  * @generated */
 public class NX_Type extends Constituent_Type {
   /** @generated */

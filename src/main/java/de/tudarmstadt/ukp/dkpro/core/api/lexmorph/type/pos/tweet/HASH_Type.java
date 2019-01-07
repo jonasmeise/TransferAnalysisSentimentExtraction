@@ -9,7 +9,7 @@ import org.apache.uima.cas.Type;
 import de.tudarmstadt.ukp.dkpro.core.api.lexmorph.type.pos.O_Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:07 CET 2018
+ * Updated by JCasGen Mon Jan 07 22:47:37 CET 2019
  * @generated */
 public class HASH_Type extends O_Type {
   /** @generated */

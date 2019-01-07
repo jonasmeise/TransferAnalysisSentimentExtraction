@@ -147,7 +147,7 @@ public class AspectClassifier {
 			e.printStackTrace();
 		}
 		
-		/*
+		
 		loadModels(outputPath);
 		
 		Instances sourceInstances = getData(sourcePath, fileType, false, 1);
@@ -176,7 +176,7 @@ public class AspectClassifier {
     	   if(prediction[i]>0.1) {
     		   System.out.println("Probability of class "+testInstance.classAttribute().value(i)+" : "+Double.toString(prediction[i]));
     	   }
-       }*/
+       }
 	   
 	}
 	
@@ -201,7 +201,7 @@ public class AspectClassifier {
 			classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
 		}
    
-   private Instances getData( String folderName, String fileType, boolean includeSubfolders, Integer posClass) throws IOException, URISyntaxException {
+   public Instances getData( String folderName, String fileType, boolean includeSubfolders, Integer posClass) throws IOException, URISyntaxException {
 	   Instances returnInstances = null;
 	   
 	   ArrayList<String> fileList  = fu.getFilesInFolder(folderName, fileType, includeSubfolders);
@@ -239,8 +239,9 @@ public class AspectClassifier {
        return returnArray;
    }
    
-   private Instances getData(String fileName, Integer posClass ) throws IOException, URISyntaxException {
+   public Instances getData(String fileName, Integer posClass ) throws IOException, URISyntaxException {
        File file = new File(fileName);
+       myLog.log("Loading instances from " + fileName);
        BufferedReader inputReader = new BufferedReader(new FileReader(file));
        Instances data = new Instances(inputReader);
        data.setClassIndex(data.numAttributes() - posClass);

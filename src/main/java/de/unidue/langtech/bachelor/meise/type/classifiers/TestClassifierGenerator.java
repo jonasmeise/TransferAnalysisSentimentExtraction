@@ -61,8 +61,8 @@ public class TestClassifierGenerator extends ArffGenerator{
 	}
 
 	@Override
-	public Collection<Collection<String>> generateFeaturesFromCas(Sentence sentence) {
-		Collection<Collection<String>> returnList = new ArrayList<Collection<String>>();
+	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
+		Collection<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
 		
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
         	System.out.println(sentence.getCoveredText());
@@ -123,7 +123,7 @@ public class TestClassifierGenerator extends ArffGenerator{
         				singleLine.add("'_" + t1.getCoveredText().replace("\"", "").replace("'","") + " _" + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
         				singleLine.add("" + tokenDistance);
         				singleLine.add("" + dependencyDistance);
-        				singleLine.add("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'");
+        				singleLine.add(new String("'" + t1.getPos().getPosValue() + " " + t2.getPos().getPosValue() + "'").replace("''", ""));
         				
         				//context-Generator
         				Collection<Token> originalTokens = new ArrayList<Token>();
@@ -135,13 +135,18 @@ public class TestClassifierGenerator extends ArffGenerator{
         				for(Token contextToken : context) {
         					contextString = contextString + contextToken.getCoveredText() + " ";
         				}
+        				
         				if(contextString.length()>1) {
         					singleLine.add("'" + contextString.substring(0,contextString.length()-1).replace("\"", "").replace("'","") + "'");
         				} else {
         					singleLine.add("''");
         				}
-        				
-        				singleLine.add("NONE");
+	        				
+        				if(!learningModeActivated) {
+	        				singleLine.add("NONE");
+        				} else {
+        					singleLine.add("?");
+        				}
         				
         	        	returnList.add(singleLine);
         	        	valueId++;
@@ -183,7 +188,7 @@ public class TestClassifierGenerator extends ArffGenerator{
     				singleLine.add("'_" + t1.getCoveredText().replace("\"", "").replace("'","") + " _" + t2.getCoveredText().replace("\"", "").replace("'","") + "'");
     				singleLine.add("" + tokenDistance);
     				singleLine.add("" + dependencyDistance);			
-    				singleLine.add("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'");
+    				singleLine.add(new String("'" + selectCovered(Token.class, t1).get(0).getPos().getPosValue() + " " + selectCovered(Token.class, t2).get(0).getPos().getPosValue() + "'").replace("''", ""));
     				
     				//context-Generator
     				Collection<Token> originalTokens = new ArrayList<Token>();
@@ -202,7 +207,8 @@ public class TestClassifierGenerator extends ArffGenerator{
     					singleLine.add("''");
     				}
     				
-    				if(t1.getAspect() != null && valence.getValenceRating()!=null) {
+    				
+    				if(t1.getAspect() != null && valence.getValenceRating()!=null && !learningModeActivated) {
     					String currentValence=valence.getValenceRating();
     					if(valence.getValenceRating()==null) {
     						currentValence="positive";
@@ -215,9 +221,12 @@ public class TestClassifierGenerator extends ArffGenerator{
 	    					//negated
 	    					singleLine.add(t1.getAspect() + "-" + currentValence);
 	    				}
+    				} else if(learningModeActivated){
+    					singleLine.add("?");
     				} else {
     					singleLine.add("NONE");
     				}
+
     				
     	        	returnList.add(singleLine);
     	        	valueId++;

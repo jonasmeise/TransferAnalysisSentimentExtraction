@@ -26,6 +26,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     private FileUtils fu;
     public int cutoff, id=0, numberOfFeatures;
     private ConsoleLog myLog;
+    public boolean learningModeActivated=false;
 	
 	//Header for .arff file, 
 	public static final String PARAM_RELATION_NAME = "relationName";
@@ -51,8 +52,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 			e.printStackTrace();
 		}
     }
-	
-    public String generateTupel(String[] tupel) {
+
+	public String generateTupel(String[] tupel) {
     	String returnString;
     	if(tupel.length > 0) {
     		returnString = "{" + tupel[0];
@@ -119,7 +120,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	return returnString.substring(0,returnString.length()-1);
     }
     
-    public abstract Collection<Collection<String>> generateFeaturesFromCas(Sentence sentence);
+    public abstract Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence);
     
     public abstract ArrayList<String> generateRelations();
     
@@ -127,7 +128,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	int counter=0;
     	for(Sentence sentence : JCasUtil.select(arg0, Sentence.class)) {
     		if(counter<cutoff) {
-	    		Collection<Collection<String>> newData = generateFeaturesFromCas(sentence);
+	    		Collection<ArrayList<String>> newData = generateFeaturesFromCas(sentence);
 	    		
 	    		if(!newData.isEmpty()) {
 		    		for(Collection<String> dataLine : newData) {
@@ -138,7 +139,6 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	    		}
     		}
     		counter++;
-    		System.out.println("COUNTAAS:" + counter);
     	}
     }
     
@@ -197,5 +197,14 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
 		writeOutput();
+	}	
+	
+    public boolean isLearningModeActivated() {
+		return learningModeActivated;
 	}
+
+	public void setLearningModeActivated(boolean learningModeActivated) {
+		this.learningModeActivated = learningModeActivated;
+	}
+
 }

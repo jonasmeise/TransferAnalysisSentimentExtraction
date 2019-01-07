@@ -8,7 +8,7 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:10 CET 2018
+ * Updated by JCasGen Mon Jan 07 17:09:16 CET 2019
  * @generated */
 public class REF_Type extends Dependency_Type {
   /** @generated */

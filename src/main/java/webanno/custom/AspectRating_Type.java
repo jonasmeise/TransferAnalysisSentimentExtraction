@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:10 CET 2018
+ * Updated by JCasGen Mon Jan 07 17:09:17 CET 2019
  * @generated */
 public class AspectRating_Type extends Annotation_Type {
   /** @generated */

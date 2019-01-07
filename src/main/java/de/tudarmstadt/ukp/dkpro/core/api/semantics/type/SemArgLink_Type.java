@@ -11,7 +11,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:08 CET 2018
+ * Updated by JCasGen Mon Jan 07 22:47:38 CET 2019
  * @generated */
 public class SemArgLink_Type extends TOP_Type {
   /** @generated */

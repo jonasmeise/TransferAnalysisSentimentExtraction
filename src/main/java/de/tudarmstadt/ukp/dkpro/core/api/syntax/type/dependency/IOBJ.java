@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Tue Dec 18 17:19:09 CET 2018
- * XML source: C:/Users/Jonas/Downloads/de.unidue.langtech.bachelor.meise/de.unidue.langtech.bachelor.meise/typesystem.xml
+ * Updated by JCasGen Mon Jan 07 17:09:16 CET 2019
+ * XML source: C:/Users/Jonas/Downloads/de.unidue.langtech.bachelor.meise/de.unidue.langtech.bachelor.meise/src/main/resources/typesystem.xml
  * @generated */
 public class IOBJ extends Dependency {
   /** @generated
