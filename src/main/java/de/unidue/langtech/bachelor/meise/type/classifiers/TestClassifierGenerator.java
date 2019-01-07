@@ -212,7 +212,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	    					//non-negated
 	    					singleLine.add(t2.getAspect() + "-" + currentValence);
 	    				} else {
-	    					//negated1
+	    					//negated
 	    					singleLine.add(t1.getAspect() + "-" + currentValence);
 	    				}
     				} else {
