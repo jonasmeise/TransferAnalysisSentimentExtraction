@@ -23,11 +23,11 @@ import de.unidue.langtech.bachelor.meise.files.DataParser;
 
 public class MainPipeline {
 	
-	String inputFilePath = "src/main/resources/dataset3/";
-	String outputFilePath = "src/main/resources/dataset3/output_3.tsv";
+	String inputFilePath = "src/main/resources/dataset4";
+	String outputFilePath = "src/main/resources/dataset4/output_4.tsv";
 	String modelFilePath = "src/main/resources/data400.model";
 	String arffFilePath = "src/main/resources/data400.arff";
-	String tsvOutput = "src/main/resources/data400_output3.tsv";
+	String tsvOutput = "src/main/resources/output3.tsv";
 	
 	public MainPipeline() {
 	}
@@ -35,11 +35,10 @@ public class MainPipeline {
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
-		myPipeline.run_read();
-		
+		//myPipeline.run_read();
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
 		//myPipeline.createArff("src/main/resources/dataset3/", "src/main/resources/data4.arff", "*.xmi");
-		//myPipeline.run(inputFilePath + "/output.xml", outputFilePath);
+		myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -71,7 +70,7 @@ public class MainPipeline {
         AnalysisEngineDescription exporter = AnalysisEngineFactory.createEngineDescription(TSVExporter.class, TSVExporter.PARAM_OUTPUT_PATH, outputFile);
         
         //SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator, exporter);
-        SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator);
+        SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, exporter);
 	}
 	
 	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
@@ -97,7 +96,7 @@ public class MainPipeline {
 	}
 	
 	public void run_read() throws UIMAException, IOException {
-		System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+		/*System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 		
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
@@ -116,8 +115,9 @@ public class MainPipeline {
         
         AnalysisEngineDescription classifierHandler = AnalysisEngineFactory.createEngineDescription(ClassifierHandler.class,
     			ClassifierHandler.PARAM_ARFF_FILE, arffFilePath,
-				ClassifierHandler.PARAM_MODEL_FILE, modelFilePath);
+				ClassifierHandler.PARAM_MODEL_FILE, modelFilePath,
+        		ClassifierHandler.PARAM_TSV_OUTPUT, tsvOutput);
         
-        SimplePipeline.runPipeline(reader, classifierHandler);
+        SimplePipeline.runPipeline(reader, classifierHandler);*/
 	}
 }

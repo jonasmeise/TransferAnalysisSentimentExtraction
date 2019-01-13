@@ -198,8 +198,8 @@ public class AspectClassifier {
    }
    
    public void loadModels(String filePath) throws Exception {
-			classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
-		}
+		classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
+   }
    
    public Instances getData( String folderName, String fileType, boolean includeSubfolders, Integer posClass) throws IOException, URISyntaxException {
 	   Instances returnInstances = null;
