@@ -23,10 +23,10 @@ import de.unidue.langtech.bachelor.meise.files.DataParser;
 
 public class MainPipeline {
 	
-	String inputFilePath = "src/main/resources/dataset4";
-	String outputFilePath = "src/main/resources/dataset4/output_4.tsv";
-	String modelFilePath = "src/main/resources/data400.model";
-	String arffFilePath = "src/main/resources/data400.arff";
+	String inputFilePath = "src/main/resources/dataset5";
+	String outputFilePath = "src/main/resources/dataset5/output_5.tsv";
+	String modelFilePath = "src/main/resources/data800.model";
+	String arffFilePath = "src/main/resources/data800.arff";
 	String tsvOutput = "src/main/resources/output3.tsv";
 	
 	public MainPipeline() {
@@ -37,7 +37,7 @@ public class MainPipeline {
 
 		//myPipeline.run_read();
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/dataset3/", "src/main/resources/data4.arff", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
 		myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 	}
 	

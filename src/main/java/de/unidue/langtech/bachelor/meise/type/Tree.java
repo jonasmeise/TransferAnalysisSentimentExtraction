@@ -77,6 +77,18 @@ public class Tree<T> {
 		return null;
 	}
 	
+	public ArrayList<T> getAllObjects(){
+		ArrayList<T> returnList = new ArrayList<T>();
+		
+		returnList.add(data);
+		
+		for(Tree child : getChildren()) {
+			returnList.addAll(child.getAllObjects());
+		}
+		
+		return returnList;
+	}
+	
 	public String printTree(int depth) {
 		String returnwert;
 		returnwert = ((Token) getData()).getCoveredText();

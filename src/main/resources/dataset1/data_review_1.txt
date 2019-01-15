@@ -2,8 +2,6 @@
 
 ;;;Hôtel Gouverneur Montréal
 
-;;;page20 / 191-200
-
 ;;;Cleanliness7.0
 ;;;Comfort7.2
 ;;;Facilities6.5

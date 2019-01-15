@@ -85,7 +85,7 @@ public class DataParser {
 					if(allSourceData.get(i+1).split(" ").length >= 3) { //corner-case: Name & Location are set on the same line
 						i--;
 					}
-
+					
 					newData.setScore(Double.valueOf(allSourceData.get(i+3)));
 					newData.setDate(allSourceData.get(i+4).split("Reviewed:")[1]);
 					newData.setTitle(allSourceData.get(i+5));

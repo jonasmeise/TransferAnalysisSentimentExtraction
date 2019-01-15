@@ -1,5 +1,6 @@
 package de.unidue.langtech.bachelor.meise.type;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -22,11 +23,12 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
 	public static final String PARAM_OUTPUT_PATH = "outputPath";
     @ConfigurationParameter(name = PARAM_OUTPUT_PATH, mandatory = true)
-    private String outputPath;
-    private FileUtils fu;
-    public int cutoff, id=0, numberOfFeatures;
-    private ConsoleLog myLog;
+    public String outputPath;
+    public FileUtils fu;
+    public int cutoff, id=0, numberOfFeatures, classAttributeAt;
+    public ConsoleLog myLog;
     public boolean learningModeActivated=false;
+    public boolean outputIntoFolderActivated=false;
 	
 	//Header for .arff file, 
 	public static final String PARAM_RELATION_NAME = "relationName";
@@ -34,25 +36,40 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public String relationName;
 	
 	//every data-entry refers to a single line
-	public ArrayList<String> relations;
+	public ArrayList<ArrayList<String>> relations;
 	public ArrayList<String> data; //matrix of Sentence/relation
+	public ArrayList<String> allClassAttributes;
 	
     public void initialize(UimaContext aContext) throws ResourceInitializationException {
     	super.initialize(aContext);
     	fu = new FileUtils();
     	myLog = new ConsoleLog();
     	data = new ArrayList<String>();
+    	allClassAttributes = new ArrayList<String>();
+    	relations = new ArrayList<ArrayList<String>>();
     	
 		relations = generateRelations();
-    	numberOfFeatures = relations.size();
+    	numberOfFeatures = relations.get(0).size();
 		
     	try {
-			fu.createWriter(outputPath);
+			if(!new File(outputPath).isDirectory()) {
+				fu.createWriter(outputPath);
+			} else {
+				outputIntoFolderActivated=true;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
 
+    public void setOutputFile(String fileName) {
+    	try {
+			fu.createWriter(fileName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
 	public String generateTupel(String[] tupel) {
     	String returnString;
     	if(tupel.length > 0) {
@@ -78,7 +95,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     		completeOutput = "@relation " + relationName + "\n\n";
     		 
     		//write all relational attributes
-    		for(String relation : relations) {
+    		for(String relation : relations.get(0)) {
     			completeOutput = completeOutput + "@attribute " + relation + "\n";
     		}
     		
@@ -102,7 +119,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     }
     
     public String clearString(String string) {
-    	return string.replace("\"", "?").replace("'", "?");
+    	return string.replace("\"", "").replace("'", "");
     }
     
     public String generateArffLine(Collection<String> features) {
@@ -122,7 +139,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     
     public abstract Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence);
     
-    public abstract ArrayList<String> generateRelations();
+    public abstract ArrayList<ArrayList<String>> generateRelations();
     
     public void generateData(JCas arg0, int cutoff) {
     	int counter=0;
@@ -131,7 +148,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	    		Collection<ArrayList<String>> newData = generateFeaturesFromCas(sentence);
 	    		
 	    		if(!newData.isEmpty()) {
-		    		for(Collection<String> dataLine : newData) {
+		    		for(ArrayList<String> dataLine : newData) {
 			    		if(!dataLine.isEmpty()) {
 			    			data.add(generateArffLine(dataLine));
 			    		}
@@ -182,6 +199,39 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	    			}
 	    		}
         	}
+    	}
+    	
+    	return returnList;
+    }
+    
+    public Collection<ArrayList<Token>> divideIntoSubSentences(Sentence sentence, Collection<Tree<Token>> allTrees) {
+    	Collection<ArrayList<Token>> returnList = new ArrayList<ArrayList<Token>>();
+    	
+    	for(Tree<Token> tree : allTrees) {
+    		Collection<Token> currentTokens = tree.getAllObjects();
+    		ArrayList<Token> sentenceOrder = new ArrayList<Token>();
+        	
+        	//Sorted in-place insertion; Ascending Tokens from 0 (first Token in sentence) to n (last Token)
+        	for(Token token : currentTokens) {
+        		if(sentenceOrder.size()==0) { //start
+    				sentenceOrder.add(token);
+        		} else {
+        			if(sentenceOrder.get(sentenceOrder.size()-1).getBegin()<=token.getBegin()) { //no search needed
+        				sentenceOrder.add(token);
+        			} else {
+    	    			for(int i=0;i<sentenceOrder.size();i++) {
+    	    				Token comparisonToken = sentenceOrder.get(i);
+    	    				
+    	    				if(token.getBegin() < comparisonToken.getBegin()) {
+    	    					sentenceOrder.add(i, token);
+    	    					break;
+    	    				}
+    	    			}
+        			}
+        		}
+        	}
+        	
+    		returnList.add(sentenceOrder);
     	}
     	
     	return returnList;
