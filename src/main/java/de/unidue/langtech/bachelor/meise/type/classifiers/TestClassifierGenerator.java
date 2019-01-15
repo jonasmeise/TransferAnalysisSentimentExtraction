@@ -393,6 +393,9 @@ public class TestClassifierGenerator extends ArffGenerator{
 				
 				fu.write(completeOutput);
 				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
+				
+				
+				fu.close();
 			}
 		} else {
 			myLog.log("Output path not a folder, can't generate output files....");
