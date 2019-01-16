@@ -1,7 +1,6 @@
 package de.unidue.langtech.bachelor.meise.classifier;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -38,14 +37,20 @@ public abstract class ClassifierHandler extends JCasAnnotator_ImplBase{
 	
 	//Path of the .model-Path
 		public static final String PARAM_MODEL_FILE = "modelFileInput";
-	    @ConfigurationParameter(name = PARAM_MODEL_FILE, mandatory = true)
+	    @ConfigurationParameter(name = PARAM_MODEL_FILE, mandatory = false)
 		private String modelFileInput;
 	    private Collection<String> modelFileInputFolder;
 	
+    //Path of the raw .arffs to learn from
+  		public static final String PARAM_ARFF_FOLDER = "arffGenerationFolder";
+  	    @ConfigurationParameter(name = PARAM_ARFF_FILE, mandatory = true)
+  		private String arffGenerationFolder;   
+	    
     //Path of the .model-Path
   		public static final String PARAM_ARFF_FILE = "arffFileInput";
   	    @ConfigurationParameter(name = PARAM_ARFF_FILE, mandatory = true)
   		private String arffFileInput;
+  	    private ArrayList<String> arffFileInputs;
   	    
   	//Path of the .tsv-Path
   		public static final String PARAM_TSV_OUTPUT = "tsvOutputPath";
@@ -64,11 +69,6 @@ public abstract class ClassifierHandler extends JCasAnnotator_ImplBase{
   		private String paramUseFolderForModels;
   	    private boolean useFolderForModels;
   	
-	    
-	public ClassifierHandler() {
-		
-	}
-	
 	public void loadModels(String inputFile) throws Exception {
 		aspectClassifier.loadModels(inputFile);
 		myLog.log("Loaded model from '" + inputFile + "'.");
@@ -82,6 +82,14 @@ public abstract class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    	minAcceptanceValue = Double.valueOf(featureMinAcceptanceValue);
 	    	indexPos = Integer.valueOf(paramIndexPos);
 	    	useFolderForModels = Boolean.valueOf(paramUseFolderForModels);
+	    	
+	    	if(new File(arffFileInput).isDirectory() && modelFileInput==null) {
+	    		//generate .model files first for each .arff file in arffFileInputs
+	    		arffFileInputs.addAll(fu.getFilesInFolder(arffFileInput, ".arff", true));
+	    		
+	    	} else {
+	    		arffFileInputs.add(arffFileInput);
+	    	}
 	    	
 	    	modelFileInputFolder = new ArrayList<String>();
 	    	if(useFolderForModels) {

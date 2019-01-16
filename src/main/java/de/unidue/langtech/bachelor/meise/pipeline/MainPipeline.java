@@ -37,8 +37,8 @@ public class MainPipeline {
 
 		//myPipeline.run_read();
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
-		myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
+		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
+		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {

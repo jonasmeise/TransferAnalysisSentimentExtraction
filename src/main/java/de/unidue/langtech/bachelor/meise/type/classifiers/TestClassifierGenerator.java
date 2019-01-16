@@ -26,7 +26,9 @@ public class TestClassifierGenerator extends ArffGenerator{
 	
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
-		classAttributeAt = 2;
+		ignoreFeatures = new int[1];
+		ignoreFeatures[0]=2;
+		identifierAttributeAt=2;
 		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
@@ -367,25 +369,41 @@ public class TestClassifierGenerator extends ArffGenerator{
 		//cycle through all the 
 		myLog.log("Output into Folder activated: " + outputIntoFolderActivated);
 		if(outputIntoFolderActivated) {
-			myLog.log("Found that many class attributes: " + allClassAttributes.size());
+			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
 			
 			for(String singleClass : allClassAttributes) {
 				setOutputFile(outputPath + "/" + singleClass + ".arff");
 
 				String completeOutput;
-				completeOutput = "@relation " + relationName + "\n\n";
+				completeOutput = "@relation " + singleClass + "\n\n";
 	    		 
 	    		//write all relational attributes
-	    		for(String relation : relations.get(0)) {
-	    			completeOutput = completeOutput + "@attribute " + relation + "\n";
+	    		for(int n=0;n<relations.get(0).size();n++) {
+	    			
+	    			String relation = relations.get(0).get(n);
+	    			
+	    			if(ignoreFeatures.length>0) {
+	    				boolean allFine=true;
+	    				for(int i=0;i<ignoreFeatures.length;i++) {
+	    					if(ignoreFeatures[i]==n) {
+	    						allFine=false;
+	    					}
+	    				}
+	    				
+	    				if(allFine) {				
+	    					completeOutput = completeOutput + "@attribute " + relation + "\n";
+	    				}
+	    			} else {
+	    				completeOutput = completeOutput + "@attribute " + relation + "\n";
+	    			}
 	    		}
 	    		
 	    		completeOutput = completeOutput + "\n@data\n";
 	    		
 				
 				for(ArrayList<String> singleLine : sortedLines) {
-					if(singleLine.get(classAttributeAt)!=null) {
-						if(singleLine.get(classAttributeAt).compareTo(singleClass)==0) {
+					if(singleLine.get(identifierAttributeAt)!=null) {
+						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
 							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
 						}
 					}

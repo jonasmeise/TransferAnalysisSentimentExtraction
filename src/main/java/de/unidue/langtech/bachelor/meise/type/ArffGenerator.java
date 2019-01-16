@@ -25,7 +25,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     @ConfigurationParameter(name = PARAM_OUTPUT_PATH, mandatory = true)
     public String outputPath;
     public FileUtils fu;
-    public int cutoff, id=0, numberOfFeatures, classAttributeAt;
+    public int cutoff, id=0, numberOfFeatures, identifierAttributeAt;
+    public int[] ignoreFeatures;
     public ConsoleLog myLog;
     public boolean learningModeActivated=false;
     public boolean outputIntoFolderActivated=false;
@@ -42,6 +43,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
     public void initialize(UimaContext aContext) throws ResourceInitializationException {
     	super.initialize(aContext);
+    	ignoreFeatures = new int[0];
     	fu = new FileUtils();
     	myLog = new ConsoleLog();
     	data = new ArrayList<String>();
@@ -122,18 +124,32 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	return string.replace("\"", "").replace("'", "");
     }
     
-    public String generateArffLine(Collection<String> features) {
+    public String generateArffLine(ArrayList<String> features) {
     	String returnString = "";
     	
     	if(features.size()!=numberOfFeatures) {
-    		myLog.log("Wrong number of features! Expected " + numberOfFeatures + ", found " + features.size() + " instead!");
-    		return null;
-    	} else {
-    		for(String feature : features) {
-    			returnString = returnString + feature + ",";
-    		}
+    		myLog.log("WARNING: Wrong number of features! Expected " + numberOfFeatures + ", found " + features.size() + " instead!");
     	}
     	
+		for(int n=0;n<features.size();n++) {
+			String feature = features.get(n);
+			
+			if(ignoreFeatures.length>0) {
+				boolean allFine=true;
+				for(int i=0;i<ignoreFeatures.length;i++) {
+					if(ignoreFeatures[i]==n) {
+						allFine=false;
+					}
+				}
+				
+				if(allFine) {				
+					returnString = returnString + feature + ",";
+				}
+			} else {
+				returnString = returnString + feature + ",";
+			}
+		}
+		
     	return returnString.substring(0,returnString.length()-1);
     }
     
