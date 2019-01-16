@@ -35,9 +35,9 @@ public class MainPipeline {
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
-		//myPipeline.run_read();
+		myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 	}
 	
@@ -95,8 +95,8 @@ public class MainPipeline {
 	        SimplePipeline.runPipeline(reader, report);
 	}
 	
-	public void run_read() throws UIMAException, IOException {
-		/*System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+	public void run_read(String inputFilePath, String arffFilePath, String modelFilePath, String outputPath) throws UIMAException, IOException {
+		System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 		
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
@@ -115,9 +115,11 @@ public class MainPipeline {
         
         AnalysisEngineDescription classifierHandler = AnalysisEngineFactory.createEngineDescription(ClassifierHandler.class,
     			ClassifierHandler.PARAM_ARFF_FILE, arffFilePath,
-				ClassifierHandler.PARAM_MODEL_FILE, modelFilePath,
-        		ClassifierHandler.PARAM_TSV_OUTPUT, tsvOutput);
+    			ClassifierHandler.PARAM_IGNORE_FEATURES, "0 2",
+    			ClassifierHandler.PARAM_MODEL_FILE, arffFilePath,
+    			ClassifierHandler.PARAM_ACCEPTANCE_VALUE, "0",
+    			ClassifierHandler.PARAM_ANALYIS_OUTPUT_PATH, outputPath);
         
-        SimplePipeline.runPipeline(reader, classifierHandler);*/
+        SimplePipeline.runPipeline(reader, classifierHandler);
 	}
 }

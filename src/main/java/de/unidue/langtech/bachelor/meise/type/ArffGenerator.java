@@ -64,6 +64,19 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 		}
     }
 
+    //for non-pipelined access
+    public ArffGenerator() {
+    	ignoreFeatures = new int[0];
+    	fu = new FileUtils();
+    	myLog = new ConsoleLog();
+    	data = new ArrayList<String>();
+    	allClassAttributes = new ArrayList<String>();
+    	relations = new ArrayList<ArrayList<String>>();
+    	
+		relations = generateRelations();
+    	numberOfFeatures = relations.get(0).size();
+    }
+    
     public void setOutputFile(String fileName) {
     	try {
 			fu.createWriter(fileName);

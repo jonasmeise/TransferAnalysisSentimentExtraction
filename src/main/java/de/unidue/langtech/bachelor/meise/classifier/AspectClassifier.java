@@ -40,9 +40,8 @@ public class AspectClassifier {
 	private FileUtils fu;
 	private ConsoleLog myLog;
 	
-	String fileType = "data400.arff";
 	int seed;
-	int folds = 5;
+	int folds = 10;
 	
 	public AspectClassifier() {
 		fu = new FileUtils();
@@ -64,13 +63,6 @@ public class AspectClassifier {
 		this();
 		this.sourcePath = sourcePath;
 	}
-	
-	public static void main(String[] args) throws Exception {
-		AspectClassifier ac = new AspectClassifier();
-		ac.sourcePath = "C:\\Users\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources";
-		ac.run("C:\\Users\\\\Jonas\\Downloads\\de.unidue.langtech.bachelor.meise\\de.unidue.langtech.bachelor.meise\\src\\main\\resources\\data400.model");
-	}
-	
 	
 	//Trains Classifier for given training Data
 	public Instances buildClassifier(Instances train) throws Exception{ 
@@ -139,47 +131,6 @@ public class AspectClassifier {
 		saveModel(outputPath, classifier);
 	}
 	
-	public void run(String outputPath) throws Exception {
-		try {
-			instances = getData(sourcePath, fileType, true, 1);
-			learnAndExport(instances, outputPath);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		loadModels(outputPath);
-		
-		Instances sourceInstances = getData(sourcePath, fileType, false, 1);
-		sourceInstances.deleteAttributeAt(0);
-		Instance testInstance = new DenseInstance(5);
-
-		//testInstance.setValue(sourceInstances.attribute(0), 0);
-		testInstance.setValue(sourceInstances.attribute(0), "helpful staff");
-		testInstance.setValue(sourceInstances.attribute(1), 0);
-		testInstance.setValue(sourceInstances.attribute(2), 2);
-		testInstance.setValue(sourceInstances.attribute(3), "NN JJ");
-		//testInstance.setValue(sourceInstances.attribute(4), "?");
-		testInstance.setDataset(sourceInstances);
-		
-		System.out.println("Instance: " + testInstance);
-		
-	   double clsLabel = classifier.classifyInstance(testInstance);
-	   testInstance.setClassValue(clsLabel);
-	   System.out.println(testInstance.toString(testInstance.classAttribute()));
-	   
-	   double[] prediction=classifier.distributionForInstance(testInstance);
-
-       //output predictions
-       for(int i=0; i<prediction.length; i=i+1)
-       {
-    	   if(prediction[i]>0.1) {
-    		   System.out.println("Probability of class "+testInstance.classAttribute().value(i)+" : "+Double.toString(prediction[i]));
-    	   }
-       }
-	   
-	}
-	
 	private StringToWordVector createS2WVector(int[] ignoreAttributeArray) {
 		StringToWordVector s2wFilter;
 		s2wFilter = new StringToWordVector(); 
@@ -198,7 +149,8 @@ public class AspectClassifier {
    }
    
    public void loadModels(String filePath) throws Exception {
-		classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
+	   sourcePath = new File(filePath).getName();
+	   classifier = (FilteredClassifier) weka.core.SerializationHelper.read(filePath);
    }
    
    public Instances getData( String folderName, String fileType, boolean includeSubfolders, Integer posClass) throws IOException, URISyntaxException {
@@ -241,7 +193,7 @@ public class AspectClassifier {
    
    public Instances getData(String fileName, Integer posClass ) throws IOException, URISyntaxException {
        File file = new File(fileName);
-       myLog.log("Loading instances from " + fileName);
+       myLog.log("Loading instances from " + fileName + "...");
        BufferedReader inputReader = new BufferedReader(new FileReader(file));
        Instances data = new Instances(inputReader);
        data.setClassIndex(data.numAttributes() - posClass);

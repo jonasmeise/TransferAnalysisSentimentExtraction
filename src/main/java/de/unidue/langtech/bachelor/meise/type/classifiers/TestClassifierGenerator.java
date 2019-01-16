@@ -24,6 +24,11 @@ public class TestClassifierGenerator extends ArffGenerator{
 	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
 	
+	//for non-pipelined access
+	public TestClassifierGenerator() {
+		super();
+	}
+	
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
 		ignoreFeatures = new int[1];
@@ -70,7 +75,8 @@ public class TestClassifierGenerator extends ArffGenerator{
 
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
-		Collection<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
+		ArrayList<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
+		Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
 		
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
         	/*System.out.println(sentence.getCoveredText());
@@ -243,7 +249,6 @@ public class TestClassifierGenerator extends ArffGenerator{
 
         	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
         	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
-        	Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
 			
         	ArrayList<Token> roots = new ArrayList<Token>();
         	for(Dependency dpElement : dependencies) {
@@ -358,6 +363,19 @@ public class TestClassifierGenerator extends ArffGenerator{
 				}
 			}
 		}       
+		
+		//since we don't need duplicates for every class...
+		if(learningModeActivated) {
+			int onlyTakeFirst = subSentences.size();
+			ArrayList<ArrayList<String>> alternativeReturnList = new ArrayList<ArrayList<String>>();
+			
+			for(int i=0;i<onlyTakeFirst;i++) {
+				alternativeReturnList.add(returnList.get(i));
+			}
+			
+			return alternativeReturnList;
+		}
+		
 		return returnList;
 	}
 
@@ -409,7 +427,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 					}
 				}
 				
-				fu.write(completeOutput);
+				fu.write(completeOutput.substring(0, completeOutput.length()-1));
 				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
 				
 				

@@ -23,16 +23,19 @@ public class FileUtils {
 	public ArrayList<String> getFilesInFolder(File folder, String fileType, boolean includeSubfolders) {
 		ArrayList<String> returnList = new ArrayList<String>();
 		
-	    for (final File fileEntry : folder.listFiles()) {
-	        if (fileEntry.isDirectory() && includeSubfolders) {
-	            returnList.addAll(getFilesInFolder(fileEntry, fileType, true));
-	        } else {
-	        	if(fileType.isEmpty() || (!fileType.isEmpty() & fileEntry.getAbsolutePath().endsWith(fileType))) {
-	        		returnList.add(fileEntry.getAbsolutePath());
-	        		myLog.log("Added '" + fileEntry.getAbsolutePath() + "' to the list!");
-	        	}
-	        }
-	    }
+		
+		if(folder!=null) {	
+		    for (final File fileEntry : folder.listFiles()) {
+		        if (fileEntry.isDirectory() && includeSubfolders) {
+		            returnList.addAll(getFilesInFolder(fileEntry, fileType, true));
+		        } else {
+		        	if(fileType.isEmpty() || (!fileType.isEmpty() & fileEntry.getAbsolutePath().endsWith(fileType))) {
+		        		returnList.add(fileEntry.getAbsolutePath());
+		        		myLog.log("Added '" + fileEntry.getAbsolutePath() + "' to the list!");
+		        	}
+		        }
+		    }
+		}
 	    
 	    myLog.log("--------");
 	    myLog.log("Found " + returnList.size() + " files in folder '" + folder.getPath() + "'.");
@@ -41,7 +44,13 @@ public class FileUtils {
 	}
 	
 	public ArrayList<String> getFilesInFolder(String folder, String fileType, boolean includeSubfolders) {
-		return getFilesInFolder(new File(folder), fileType, includeSubfolders);
+		ArrayList<String> returnList = new ArrayList<String>();
+		
+		if(folder!=null) {
+			returnList.addAll(getFilesInFolder(new File(folder), fileType, includeSubfolders));
+		}
+		
+		return returnList;
 	}
 	
 	public ArrayList<String> readFromFileArrayList(String filePath) {
