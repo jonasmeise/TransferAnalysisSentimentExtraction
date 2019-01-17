@@ -1,4 +1,4 @@
-@relation Preis-Leistungs-Verhaeltnis-positive
+@relation Preis-Leistungs-Verhltnis-positive
 
 @attribute id numeric
 @attribute text string
@@ -18,7 +18,7 @@
 175,'Enjoyed our stay . ',false
 176,'Comfortable and Foot rest . ',false
 177,'Next to elevators ',false
-253,'Was more economical than other properties I searched in the area but there is room for improvement . ',false
+253,'Was more economical than other properties I searched in the area but there is room for improvement . ',true
 254,'Location was close to the event we were attending . ',false
 255,'There is a parking structure attacked to the hotel so you did not need to park outside . ',false
 256,'You can travel with pets and our request for a mini fridge in the room for medication storage was honoured at no charge . ',false
@@ -124,7 +124,7 @@
 1871,'Overall nice one . ',false
 1872,'Location . ',false
 1873,'Facilities ',false
-1944,'Good value for money . ',false
+1944,'Good value for money . ',true
 1945,'Great location , next to Metro station , big n modern food court , supermarket . ',false
 1946,'Walkable to city centre . ',false
 1947,'erred an electric teapot to a coffee maker . ',false
@@ -132,7 +132,7 @@
 1949,'. ',false
 1950,'sheet is big enough to be tucked under the matress . ',false
 1951,'So that it wo nt be rolled up . ',false
-2062,'Good cost effectiveness . ',false
+2062,'Good cost effectiveness . ',true
 2063,'Good location . ',false
 2064,'Good location . ',false
 2065,'Breakfest could be better . ',false
@@ -159,7 +159,7 @@
 2411,'The restaurant in the hotel was good . ',false
 2412,'The location of the hotel is great for access to St. Catherine s street and getting downtown . ',false
 2413,'The bathrooms were outdated , and seemed a little scummy . ',false
-2484,'Good value . ',false
+2484,'Good value . ',true
 2485,'The location was very convenient and the view from our room was outstanding . ',false
 2486,'It needs to be updated . ',false
 2487,'It took a full five minutes running the shower before the water was really warm . ',false
@@ -336,7 +336,7 @@
 5243,'Everything needs to be upgraded . ',false
 5244,'Difficult for staff to keep clean under the circumstances . ',false
 5245,'Bathrooms particularly looking old and seedy - caulking mouldy . ',false
-5246,'However , the price is less than half tht of the modern hotels in downtown Montreal , so it is still good value for money . ',false
+5246,'However , the price is less than half tht of the modern hotels in downtown Montreal , so it is still good value for money . ',true
 5247,'Just do nt look too deeply . ',false
 5343,'Central Montreal . ',false
 5344,'Location . ',false
@@ -349,8 +349,8 @@
 5411,'Too bad , no freezer and tea bag in the room . ',false
 5482,'Good . ',false
 5483,'The electrical outlets in the room were very loose and the plug ins for chargers kept falling out . ',false
-5529,'Affordable average hotel in central location . ',false
-5530,'Liked the central location , the view , the price . ',false
+5529,'Affordable average hotel in central location . ',true
+5530,'Liked the central location , the view , the price . ',true
 5531,'A lot of homeless people in the area and drug use , the pool only being open 6-10 , rooms could use updating , more plug ins near the bed would be nice , some plug ins didn?ft work . ',false
 5532,'Your website also isn?ft updated - our room had a fridge but that wasn?ft expected so it would have been nice to know and the shower was nicer then what the picture showed and that might attract more people . ',false
 5533,'The man that ushered people into the elevators when it was busy was extremely rude and pushy ',false
@@ -416,7 +416,7 @@
 6573,'Older hotel . ',false
 6574,'Walking distance to shopping , restaurants . ',false
 6575,'Comfy beds , good location , nice basic hotel room . ',false
-6576,'One of the better prices for a downtown hotel . ',false
+6576,'One of the better prices for a downtown hotel . ',true
 6577,'Older hotel , no info in the rooms for room service , pool hours etc. Had to call front desk . ',false
 6578,'Shower curtain a little stinky . ',false
 6579,'Water pressure a little low . ',false
@@ -435,7 +435,7 @@
 6807,'You need to pay for parking ',false
 6863,'Good . ',false
 6864,'The hotel is older , and has its kinks , but the location is amazing , and my view was incredible . ',false
-6865,'I got a room on the 30th floor , and it was completely worth it . ',false
+6865,'I got a room on the 30th floor , and it was completely worth it . ',true
 6916,'Good . ',false
 6917,'It?fs close to everything . ',false
 6918,'The check - in staff could be friendlier . ',false
@@ -460,7 +460,7 @@
 7122,'The rooms had lovely views of the city but I felt the Rooms themselves are becoming a bit dated , furniture is in ok condition air vents could be cleansed bathrooms updated it?fs like an holiday inn from the 90?fs and all the electrical outlets were loose fitting . ',false
 7123,'The restaurants ambience is ok again a bit dated in design and furniture . ',false
 7294,'Good . ',false
-7295,'The breakfast buffet was expensive for what you got , but they let you take food to your room . ',false
+7295,'The breakfast buffet was expensive for what you got , but they let you take food to your room . ',true
 7296,'The hotel room was 78 degrees and the thermostat did not work to change the temperature . ',false
 7297,'It was held onto the wall with a piece of tape . ',false
 7298,'The location was GREAT for where I needed to be . ',false
@@ -496,7 +496,7 @@
 7783,'The front desk was indeifferent . ',false
 7784,'The hallways were dated and worn . ',false
 7785,'I had an executive room on the top floor and my room was fine but others in my group complained the rooms were run down . ',false
-7881,'Was decent for price . ',false
+7881,'Was decent for price . ',true
 7882,'Comfy beds . ',false
 7883,'Great reception staff . ',false
 7884,'Showers small and could use good clean . ',false
@@ -639,7 +639,7 @@
 10096,'Location and view of my room was great . ',false
 10097,'Staff was not very comfortable in English so little difficulty in communicating with the staff and house keeping was not done regularly . ',false
 10143,'Pleasant . ',false
-10144,'It was an ideal price . ',false
+10144,'It was an ideal price . ',true
 10145,'The area was a little rough , it was not expected to see soo many homeless ',false
 10191,'Good . ',false
 10192,'The area was close to everything . ',false
@@ -802,7 +802,7 @@
 12669,'there are plenty of restaurant in the neighborhood that serve a better breakfast . ',false
 12730,'Pleasant . ',false
 12731,'It is an old hotel , and its facilities reflect it . ',false
-12777,'Great location and great value ! ',false
+12777,'Great location and great value ! ',true
 12778,'The view was amazing and the beds were very comfortable ! ',false
 12779,'The music is very loud across the street on weekends but it ends at 11 pm . ',false
 12780,'. ',false
@@ -1071,7 +1071,7 @@
 16913,'It is also ? ',false
 16914,'4 for a small bottle of water in the hotel reception so I would advise buying these from a supermarket . ',false
 16915,'I would recommend this hotel for location and view but not really anything else you could get just as good rooms and service for a lot lower in cost . ',false
-17131,'Very large hotel in a good location , good value for city hotel . ',false
+17131,'Very large hotel in a good location , good value for city hotel . ',true
 17132,'Breakfast was reasonable . ',false
 17133,'The hotel bar Spagos was very comfortable and had a good atmosphere for a hotel bar with nightly entertainment . ',false
 17134,'The hotel was very well located and local transport was minutes was away . ',false
@@ -1172,7 +1172,7 @@
 18614,'Okay and great . ',false
 18615,'Non ',false
 18701,'Berlin has something for everyone and it is sad UK is leaving the EU . ',false
-18702,'Location is perfect for the cost . ',false
+18702,'Location is perfect for the cost . ',true
 18703,'Christmas market is directly outside . ',false
 18704,'Alexanderplatz train and underground stations within 200 m , tram 100 m , bus to airport 250m . ',false
 18705,'Bars and restaurants close by . ',false
@@ -1319,14 +1319,14 @@
 20996,'The hop on hop off tour also stops outside which is handy if you use that . ',false
 20997,'The room was quiet we were on floor 17 , great views of the city . ',false
 20998,'The room was sufficient for what we needed , it was fairly modernised and adequate in size for two people . ',false
-20999,'Good price 4 nights for ??280 . ',false
+20999,'Good price 4 nights for ??280 . ',true
 21000,'Overall location was the highlight of staying here easy to get to places and get back to . ',false
 21001,'Didn?ft get any food in the hotel as ate out the rest of the time . ',false
 21002,'The beds were uncomfortable , it probably wouldn?ft put me Off staying there again though , but they could go with improving . ',false
 21003,'We were in standard room , no facilities to make a cup of tea but there was for coffee . ',false
 21134,'Enjoyable . ',false
 21135,'The staff are very friendly and helpful , our room was comfortable and very clean with a powerful shower . ',false
-21136,'The hotel is located in a perfect location for a weekend break and good value for money . ',false
+21136,'The hotel is located in a perfect location for a weekend break and good value for money . ',true
 21137,'Thank you . ',false
 21138,'The shower tray had a black mould growing around the base , that gave off a strong damp smell when we used the shower . ',false
 21139,'This was the only negative during our stay , everything else worked perfectly . ',false
@@ -1439,7 +1439,7 @@
 22851,'Many people expecting for check in at 15h / big queue . ',false
 22852,'No fridge in the room . ',false
 22853,'One employe not very nice but it was just one , most of them were very kind and patient . ',false
-22984,'Great value for money , located in a very central location . ',false
+22984,'Great value for money , located in a very central location . ',true
 22985,'I liked the location of the hotel . ',false
 22986,'It was perfect and easily accessible to everything you would possibly need . ',false
 22987,'We were on the 17th floor and the view was also quite nice . ',false
@@ -1453,7 +1453,7 @@
 23135,'Good . ',false
 23136,'Location . ',false
 23137,'The size of room and bed , too small ',false
-23213,'Value for money , great location and view from the room . ',false
+23213,'Value for money , great location and view from the room . ',true
 23214,'However - uncomfortable beds and pillows . ',false
 23215,'Excellent location and view from the room on 26th floor , there was no need for us to visit roof tops . ',false
 23216,'The lady at the reception was very nice and when she saw us as a young couple , she promised to give us a good room . ',false
@@ -1539,7 +1539,7 @@
 24456,'The cleaning could be better . ',false
 24457,'Big hotel , so it?Ls also bit crowdy . ',false
 24458,'The interior and equipment looks little old ... ',false
-24459,'But it?Ls still very good for the price . ',false
+24459,'But it?Ls still very good for the price . ',true
 24600,'Very Good . ',false
 24601,'Staff and location were excellent , hotel was really nice . ',false
 24602,'The bed was terrible We were given a double bed for two of us that was rock hard and slim pillows that we may as well not have even had and no extras to try and bulk it up . ',false
@@ -1576,7 +1576,7 @@
 25123,'The museums are within a walking distance . ',false
 25124,'There is also a bus line from Tegel airport arriving there . ',false
 25125,'The hotel itself is a skyscrapper with excellent view from the rooms , a cosy lobby , a very good restaurant , and a rooftop cafe . ',false
-25126,'Also , it has a reasonable price compared to other hotels around . ',false
+25126,'Also , it has a reasonable price compared to other hotels around . ',true
 25127,'The room was too small for a 4 - star hotel . ',false
 25128,'I stayed alone , but I imagine that for a couple it will be too small . ',false
 25129,'The pillows of the bed were not comfortable at all . ',false
@@ -1598,7 +1598,7 @@
 25445,'Location very good . ',false
 25446,'Room are small , shower in the room . ',false
 25447,'Be careful depending on who share your room ',false
-25503,'Nothing Special , but good value for money . ',false
+25503,'Nothing Special , but good value for money . ',true
 25504,'The view , the facilities and the location was perfect . ',false
 25505,'Beds were a bit solid and a lack of pillows . ',false
 25551,'Good but not extra ordinary . ',false
@@ -1611,7 +1611,7 @@
 25673,'Excellent location , exactly at Alexandrplatz , many shops and restaurants around , 100 m to train station with convenient routs around the city . ',false
 25674,'The breakfast was excellent . ',false
 25675,'The room at 15 floor in general was cozy and had good view at the city . ',false
-25676,'Good value for money . ',false
+25676,'Good value for money . ',true
 25677,'The hotel in general , furniture and interior are a bit old , windows are dirty . ',false
 25678,'The receptionists at check - in blocked an extra amount of money , in excess of the room fee , to  guarantee everything is ok  . ',false
 25679,'We arrived early and found that luggage room in the hotel is paid , even for guests , access to the observation deck at 40th floor is paid as well . ',false
@@ -1742,7 +1742,7 @@
 27709,'They ( staff ) selectively checked some and not all people coming to eat for their passes . ',false
 27780,'Good . ',false
 27781,'WiFi stability & speed has improved since last year . ',false
-27782,'Breakfast is good and value for money . ',false
+27782,'Breakfast is good and value for money . ',true
 27783,'Pillows are very flat and uncomfortable ',false
 27854,'I am so glad we stayed here rather than in the Zoo district as originally planned . ',false
 27855,'The breakfast was very good quality , the staff were very efficient also . ',false
@@ -1754,7 +1754,7 @@
 27941,'Overall the staff and facility was amazing . ',false
 27942,'The lady at Concierge desk . ',false
 27943,'Was very rude . ',false
-28004,'Great location , nice staff clean rooms comfortable beds and value for money i recommended to any one . ',false
+28004,'Great location , nice staff clean rooms comfortable beds and value for money i recommended to any one . ',true
 28005,'Location . ',false
 28006,'Bar man at the hotel ! ',false
 28007,'the older guy ',false
@@ -1849,10 +1849,10 @@
 29441,'price is exaggerated free cancellation policy is very early before check in No rewards points from bookings through booking.com ',false
 29497,'Overall , great location , breakfast and bar . ',false
 29498,'Fabulous bar with friendly and helpful staff . ',false
-29499,'Amazing breakfast and great value . ',false
+29499,'Amazing breakfast and great value . ',true
 29500,'toilet and shower in the room , no privacy . ',false
 29501,'Also the tv didn?ft work despite requesting assistance . ',false
-29577,'Inexpensive at a cost . ',false
+29577,'Inexpensive at a cost . ',true
 29578,'The location of the Park Inn as a hub for almost anything in Berlin is excellent . ',false
 29579,'Great coffee making facilities in the room ..... ',false
 29580,'just no coffee . ',false
@@ -1916,7 +1916,7 @@
 30558,'Location is perfect for a short stay ! ',false
 30559,'The room was big and exactly as on the pictures . ',false
 30560,'It was nice that they helped me to arrange the surprise for my husband , thanks a lot ! ',false
-30561,'It was great that for a small price you can keep your baggage there as long as you want . ',false
+30561,'It was great that for a small price you can keep your baggage there as long as you want . ',true
 30562,'The room has glass doors to shower / toilet - it may be not very comfortable , there was a curtain so you can separate the room from bath are but it was not working all the way to hide the shower . ',false
 30563,'And even with your significant other it may be ok to see the shower ( someone might like it ) but it is very gross to see the silhouette of someone using the toilet . ',false
 30564,'The Hotel s hall is not really dedicated to hotel , so it is not really comfortable to stay there . ',false
@@ -1933,7 +1933,7 @@
 30760,'The rooms are small and are okay for a stay for a couple of days . ',false
 30761,'The sopagas restaurant is a nice place for morning breakfast and is locatd in the hotel . ',false
 30762,'The panorama bar provides excellent view to the city and is perfect for a chilled out evening . ',false
-30763,'Overall , an efficient , budget hotel for the first time tourist in Berlin ',false
+30763,'Overall , an efficient , budget hotel for the first time tourist in Berlin ',true
 30909,'Pleasant . ',false
 30910,'Good location to explore Berlin from . ',false
 30911,'Roof top view was nice although the trip to the roof may not be possible for many visitors as quite some stairs need to be climbed . ',false
@@ -2016,7 +2016,7 @@
 32103,'Location is not on JR line ',false
 32169,'Four - star stay for half the money . ',false
 32170,'Good hospitality , lots of facilities in the hotel such as a spa , public bath , hairdresser , and an open market right outside the hotel . ',false
-32171,'Good value for the money , and close to tourist attractions in Asakusa . ',false
+32171,'Good value for the money , and close to tourist attractions in Asakusa . ',true
 32172,'The rooms were much smaller than I expected . ',false
 32173,'Almost the size of a closet . ',false
 32254,'Good . ',false
@@ -2087,7 +2087,7 @@
 33219,'Plus : Onsen till 1 AM ! ',false
 33300,'Wonderful . ',false
 33301,'The location , accessibility and facilities . ',false
-33302,'Price was great . ',false
+33302,'Price was great . ',true
 33303,'Rooms were nice and clean but a bit dusty ',false
 33374,'Good . ',false
 33375,'We like the hotspring . ',false
@@ -2120,7 +2120,7 @@
 33832,'Convenient location to Metro . ',false
 33833,'Close proximity to Asakusa line , which was great for visiting other areas of Tokyo . ',false
 33834,'Good restaurants and sites a short walk away . ',false
-33835,'The staff at check - in was very nice , the bed was comfortable , and it was very reasonably priced . ',false
+33835,'The staff at check - in was very nice , the bed was comfortable , and it was very reasonably priced . ',true
 33836,'The floor looked like it desperately needed to be cleaned . ',false
 33837,'The cover on the bed looked a little dirty as well . ',false
 33838,'Very cramped room , but we weren ? ',false
@@ -2128,7 +2128,7 @@
 33935,'Good . ',false
 33936,'good location , very clean . ',false
 33937,'poor breakfast , only 3 options everyday , tv with only one english channel , small rooms ',false
-34003,'Great location and Value for money . ',false
+34003,'Great location and Value for money . ',true
 34004,'Location is excellent , walking distance to Tawaramachi station . ',false
 34005,'Staff were very helpful whenever you need their guidance . ',false
 34006,'Small cafeteria downstairs , good enough for breakfast . ',false
@@ -2196,7 +2196,7 @@
 35003,'fs to be expected . ',false
 35004,'Rooms are a little smaller than other hotels I ? ',false
 35005,'fve stayed at in Japan . ',false
-35076,'Great value on the edge of Asakusa . ',false
+35076,'Great value on the edge of Asakusa . ',true
 35077,'Good deal on the edge of Asakusa . ',false
 35078,'Good facilities , small room . ',false
 35079,'You climb into the bed . ',false
@@ -2204,7 +2204,7 @@
 35156,'The hotel is clean and modern . ',false
 35157,'It s situated directly above the subway station in a very nice neighborhood . ',false
 35158,'The staff is friendly . ',false
-35159,'The included sento is a great value . ',false
+35159,'The included sento is a great value . ',true
 35160,'Room is small as others have noted . ',false
 35161,'Desk is too close to the bed . ',false
 35242,'Very Good . ',false
@@ -2227,9 +2227,9 @@
 35504,'I like the property and our room . ',false
 35505,'The breakfast ',false
 35571,'Good . ',false
-35572,'The hotel has a good position , it offers many services and is located in beautiful area . ',false
-35573,'The staff is nice , speak at a sufficient level in English and helped us when we needed . ',false
-35574,'The double room where we slept was too small . ',false
+35572,'The hotel has a good position , it offers many services and is located in beautiful area . ',true
+35573,'The staff is nice , speak at a sufficient level in English and helped us when we needed . ',true
+35574,'The double room where we slept was too small . ',true
 35575,'Really it was not possible to keep our luggages opened and going to the toilet at the same time . ',false
 35576,'The window could not be opened . ',false
 35577,'I can not suggest to stay in this hotel for more than one or two nights honestly . ',false
@@ -2243,8 +2243,8 @@
 35700,'Check in time is not good . ',false
 35701,'Should allow early as 2:00 PM . ',false
 35832,'Excellent . ',false
-35833,'Value for money , stone throw to Tawaramachi MRT station , 15walk to Asakusa Shrine . ',false
-35834,'Perfect for the price u pay . ',false
+35833,'Value for money , stone throw to Tawaramachi MRT station , 15walk to Asakusa Shrine . ',true
+35834,'Perfect for the price u pay . ',true
 35835,'The front desk didn ? ',false
 35836,'ft allow me to check in earlier as I arrived hotel at 12:30 pm due to morning flight , despite there are rooms available . ',false
 35837,'The staff asking for extra 1000 Yen per room for early check in which I think is not about the money , is the service . ',false
@@ -2273,7 +2273,7 @@
 36195,'The public bath on the top floor did not allow people with tattoos to enter , an antiquated restriction that did nt make sense in a hotel filled with foreign travelers . ',false
 36281,'Clean rooms , comfy pillows , chic environment . ',false
 36282,'They had a hot bath area , separate for women and men . ',false
-36283,'Tokyo sized room with queen bed but with all amenities and value for money . ',false
+36283,'Tokyo sized room with queen bed but with all amenities and value for money . ',true
 36284,'Hotel / room looks very chic and modern . ',false
 36285,'Good security and nice location , close to the Metro station . ',false
 36351,'Overall it was very good . ',false
@@ -2292,7 +2292,7 @@
 36529,'Check - in was efficient but very impersonal ',false
 36570,'Exceptional . ',false
 36571,'Pillow are too thin ',false
-36607,'Good value for money . ',false
+36607,'Good value for money . ',true
 36608,'Room was a comfortable size for two guests Very discreet and effective cleaning staff Comfortable bed . ',false
 36609,'Not close to JR station Slow elevators Unable to use onsen as a couple and due to having tattoos Only one coin washing machine and drier in 14F bathroom making it difficult to accessibly wash clothes ',false
 36685,'Location was key to us enjoying this stay . ',false
@@ -2314,7 +2314,7 @@
 36896,'Near Tawaramachi station . ',false
 36897,'Too much noise at the hall of the second floor . ',false
 36953,'Very Good . ',false
-36954,'Good value for money , you get what you pay for . ',false
+36954,'Good value for money , you get what you pay for . ',true
 36955,'Metro is right at the corner . ',false
 36956,'Ueno station is 1 km away . ',false
 36957,'Poor breakfast in cafe ',false
@@ -2339,7 +2339,7 @@
 37331,'Great location and good room . ',false
 37332,'Breakfast can be improved . ',false
 37333,'Loved the location , clean , and good room . ',false
-37334,'Great facility , especially for the price . ',false
+37334,'Great facility , especially for the price . ',true
 37335,'Room could have been cleaner . ',false
 37336,'Breakfast was not a buffet , they had a collaboration with a cafe attached to the hotel , which served breakfast too . ',false
 37337,'You can only choose from 3 courses for breakfast , and the amount was little . ',false
@@ -2393,10 +2393,10 @@
 38135,'Room was really cramped . ',false
 38136,'No room to move around specially if your visiting to shop . ',false
 38137,'But if just for business , you ll be fine . ',false
-38243,'Price / Value Unbeatable , Great Spa ( Onsen ) . ',false
+38243,'Price / Value Unbeatable , Great Spa ( Onsen ) . ',true
 38244,'The onsens are open late and just wonderful . ',false
 38245,'The women s outdoor onsen has a view of the Skytree Tower and both the men s and women s onsens include a jacuzzi . ',false
-38246,'The price and location are unbeatable . ',false
+38246,'The price and location are unbeatable . ',true
 38247,'The room was incredibly small but we expected that and made it work . ',false
 38248,'The room could have used two luggage stands but we made do with using the chair for one and sticking the bags at the foot of the bed . ',false
 38249,'It would have been nice to be able to open the window too . ',false
@@ -2451,7 +2451,7 @@
 39103,'Very Good . ',false
 39104,'. ',false
 39105,'. ',false
-39171,'Good value . ',false
+39171,'Good value . ',true
 39172,'- Great location . ',false
 39173,'- Great onsen . ',false
 39174,'- Comfortable bed . ',false
@@ -2552,7 +2552,7 @@
 40719,'Exceptional . ',false
 40720,'Train station Tawarimachi is very close by , 711 is across the street , walking distance to Asakusa Kaminarimon Gate . ',false
 40721,'Small , no closet space but expected but still manageable ',false
-40772,'A great room for a great price . ',false
+40772,'A great room for a great price . ',true
 40773,'The staff were a great help ! ',false
 40774,'We had a small issue with our bathroom door and we were given all care and attention to make us happy ! ',false
 40775,'Nothing bad to say ! ',false
@@ -2622,7 +2622,7 @@
 41799,'I did not realise when I booked the room there was only one Bed for 3 people , it should have been an added option . ',false
 41860,'Exceptional . ',false
 41861,'location is good , room is small but extremely clean & tidy with a large 55  TV . ',false
-41862,'It is a good deal for just around 100 USD per night . ',false
+41862,'It is a good deal for just around 100 USD per night . ',true
 41863,'Nil ',false
 41924,'Excellent . ',false
 41925,'Great location , very convenient if going to the subway stations often . ',false
@@ -2710,7 +2710,7 @@
 43237,'Really close to the metro station and the temples in asakusa . ',false
 43238,'The price is okay . ',false
 43239,'It is an APA : the room is small but convenient . ',false
-43295,'Good value for money . ',false
+43295,'Good value for money . ',true
 43296,'Comfortable mattress and pillow ( better than my average experience in Japan ) . ',false
 43297,'Very small room ( but is fairly customary in Japan and probably even more in Tokyo ) ',false
 43358,'Exceptional . ',false
@@ -2735,7 +2735,7 @@
 43622,'Directly on a subway station , walkable distance to Sens ? ',false
 43623,'- ji and even to Ueno ( but that takes perhaps 20-30 mins and it s a bit of a boring walk ) . ',false
 43624,'Also , it is in ( for Tokyo ) a calm neighbourhood . ',false
-43625,'Of course , smaller rooms , but I guess very nice for Tokyo for the price you pay ! ',false
+43625,'Of course , smaller rooms , but I guess very nice for Tokyo for the price you pay ! ',true
 43721,'Good . ',false
 43722,'Good location , close to sights in Asakusa and easy to access other areas by metro / JR line . ',false
 43723,'Good selection of restaurants in neighbourhood . ',false
@@ -2743,7 +2743,7 @@
 43725,'Very thin single pillow . ',false
 43806,'Well situated budget hotel for those who just need a place to sleep . ',false
 43807,'Excellent location almost on top of Tawaramachi subway station ( Ginza line ) meaning easy connection to Ginza and Shibuya as well as a short walk to the Asakusa area and its Senso - Ji temple . ',false
-43808,'Good value for money . ',false
+43808,'Good value for money . ',true
 43809,'Taito is an interesting part of Tokyo and the Kappabashi cooking equipment street is just a short stroll away . ',false
 43810,'Small rooms for small people with minimal luggage . ',false
 43811,'Cafe attached to hotel is pretty basic in terms of choices - for breakfast , head instead for the little Yamazaki bakery and cafe round the corner ( left out of the hotel and left at the junction ) . ',false
@@ -2776,7 +2776,7 @@
 44113,'I think it is about the size of my bathroom at home . ',false
 44114,'We had one big luggage and one medium luggage , but we were only able to open one at a time . ',false
 44115,'When opening , we are only able to open at 90 degrees straight . ',false
-44116,'I think for this cheap price , the room is okay because other hotel s room in Japan is very small too . ',false
+44116,'I think for this cheap price , the room is okay because other hotel s room in Japan is very small too . ',true
 44117,'The bathroom is really small too , but there is a bathtub just okay for one person to take a bath . ',false
 44118,'The check in and check out process is quite fast . ',false
 44119,'The staff only knows minimum English . ',false
@@ -2843,7 +2843,7 @@
 45360,'It is also 10 - min walk from Asakusa shopping district . ',false
 45361,'The room is very clean . ',false
 45362,'The room is a bit small to open lugagges . ',false
-45363,'Given the price and it is in Tokyo , it is definitely worth the money . ',false
+45363,'Given the price and it is in Tokyo , it is definitely worth the money . ',true
 45364,'The hotel only has one washer and one dryer in each public bath area ( overall 2 washers and 2 dryers in male and female public bath area ) . ',false
 45365,'It is difficult to wash and dry clothes given travellers have limited time to rest after a long day . ',false
 45471,'Good . ',false
@@ -2866,7 +2866,7 @@
 45723,'The beds were very comfortable , the soft pillows as well ( the standard thin , hard ones not so much ) . ',false
 45724,'Everything was clean , spa was great , location very good ( near subway and in a great neighbourhood ) . ',false
 45725,'Staff was very helpful ! ',false
-45726,'The rooms were small , but it has everything you need , even its own bathroom with bathtub , for a reasonable price ( especially compared to other hotels in Tokyo ) . ',false
+45726,'The rooms were small , but it has everything you need , even its own bathroom with bathtub , for a reasonable price ( especially compared to other hotels in Tokyo ) . ',true
 45727,'The pillows were very uncomfortable , but there are soft pillows available at request ! ',false
 45853,'Awesome hotel , definitely will return . ',false
 45854,'The check in process is awesome , it s computerized . ',false
@@ -2901,7 +2901,7 @@
 46223,'It ? ',false
 46224,'fs a bit far from shinjuku , about 35-40 mins and one transfer , so not ideal for day trips . ',false
 46225,'Also a bit far from tokyo station . ',false
-46361,'Great value for money ! ',false
+46361,'Great value for money ! ',true
 46362,'Very nice big hotel , bed is comfortable , lot of facilities inside the hotel , good location , one minute away from a metro station and 10 minutes away from a bigger station . ',false
 46363,'Lots of things to do around . ',false
 46364,'Very nice view from the room - we asked for a high floor and they were nice enough to give us a room at the highest one . ',false
@@ -2915,7 +2915,7 @@
 46527,'Wonderful . ',false
 46528,'Location was great . ',false
 46529,'Rooms where too small ',false
-46580,'Good for Price . ',false
+46580,'Good for Price . ',true
 46581,'Staff was very accommodating when I advised them of an issue and changed my room without fuss . ',false
 46582,'Spa is wonderful and was unexpected at this price point . ',false
 46583,'I had to change rooms because I was above a smoking floor and the smell overtook my room . ',false
@@ -2981,7 +2981,7 @@
 47548,'The pre-paid breakfast in the attached coffee shop was not worth the money . ',false
 47549,'There are plenty of breakfast options in the neighborhood that are a better deal with better food . ',false
 47625,'Very Good . ',false
-47626,'Really deserves the price , it is very well located 50 m away from an subway station , an it has great services included ( pool ) . ',false
+47626,'Really deserves the price , it is very well located 50 m away from an subway station , an it has great services included ( pool ) . ',true
 47627,'Everything in the room looks new and nice to make you feel very confortable . ',false
 47628,'Check in / out it is done automatically . ',false
 47629,'The room is a little bit tiny ; and the staff may need to improve a little bit their english . ',false
@@ -3010,7 +3010,7 @@
 48017,'Room was too small for men 1.75 Meters and restroom also small , you have to book the upper room type not for standard room ',false
 48058,'Very Good . ',false
 48059,'Rooms too small ',false
-48125,'Good Bed , Good Price , Good Location ! ',false
+48125,'Good Bed , Good Price , Good Location ! ',true
 48126,'The bed was super soft and comfortable ! ',false
 48127,'The shower head had the right amount of pressure to feel refreshing . ',false
 48128,'Tip : ask for an extra pillow at the front desk if needed and you will get a Western style one if it s available . ',false
@@ -3019,7 +3019,7 @@
 48131,'Great little bakery around the corner up Kokusai Dori , Bakery & Cafe Yamazaki , as well as many other food options . ',false
 48132,'There is only one washing machine and dryer in each of the men s and women s changing rooms for the Onsen , and it was always busy . ',false
 48133,'There is a coin-op laundry around the corner a few blocks north on the right hand side of Kokusai Dori if needed . ',false
-48249,'Friendly staff and good location for low price . ',false
+48249,'Friendly staff and good location for low price . ',true
 48250,'Modern hotel in a convenient location . ',false
 48251,'The staff were friendly and helpful . ',false
 48252,'The hotel is clean and well organized . ',false
@@ -3029,7 +3029,7 @@
 48371,'Small , cheap , great location , friendly staff , attached coffee shop is yummy . ',false
 48372,'Bed is super comfy , location great , bathroom great , literally right next to the subway entrance and either a 30 minute walk or 4 minute subway journey to the nearest JR station . ',false
 48373,'24 hours convenience store located across the road with plenty of others around . ',false
-48374,'Coin laundry is available on site and it is located in the locker area of the public baths , although there is only one washing machine and one dryer per gender in the baths , it was nt too expensive either , offer luggage storage prior to check in . ',false
+48374,'Coin laundry is available on site and it is located in the locker area of the public baths , although there is only one washing machine and one dryer per gender in the baths , it was nt too expensive either , offer luggage storage prior to check in . ',true
 48375,'Room can sometimes feel uncomfortably small but exceeds expectations given to me via the images online . ',false
 48376,'the air conditioning in summer is at a fixed temperature ( a bit cold , even thought there is a temperature controller that essentially does nt change it ) and it sort of bounces off the wall and blows in your face while trying to sleep . ',false
 48377,'Do nt pay for breakfast at the attached restaurant as you do nt get much for the money , I would use the convenience store across the street and keep a little stock of food during your stay as there is a fridge that also has a small freezer compartment . ',false
@@ -3067,7 +3067,7 @@
 48959,'Clean and good location hotel . ',false
 48960,'Public bath with jacuzzi pool is very relaxing Clean hotel room and bathroom Bed is comfortable Convenient location , very near to metro station and eateries . ',false
 48961,'Twin room is too small , no space for 2 big luggages Pillow too flat ',false
-49117,'Good value , clean accommodation with good continental self service breakfast . ',false
+49117,'Good value , clean accommodation with good continental self service breakfast . ',true
 49118,'Great location . ',false
 49119,'Location of the hotel is very close to Termini though we got a shuttle taxi from Fiumicino . ',false
 49120,'Colosseum and Forum are 15 to 20 mins away . ',false
@@ -3082,13 +3082,13 @@
 49129,'The temperature was 36 to 38 degrees during our stay and stayed high at night and the towels worked surprisingly well . ',false
 49130,'The air conditioning was a real bonus . ',false
 49131,'The beds looked firm but I m quite sensitive to firm beds so was pleasantly surprised that I slept very well . ',false
-49132,'kfast was included and very good value . ',false
+49132,'kfast was included and very good value . ',true
 49133,'Broadly self service and continental with a real emphasis on sweet danish , croissants and cake . ',false
 49134,'We liked the cereal , muesli , yogurt and fresh breads with cheese and ham . ',false
 49135,'Teenage children loved the Nutella . ',false
 49136,'stay was mainly about being out and about sightseeing and out to dinner , not about lounging . ',false
 49137,'nd in the rooms or bar area so not sure if they had a bar . ',false
-49138,'We would stay here again as a family as it represents very good value , but we might upgrade if we were going with friends and wanted somewhere more luxurious . ',false
+49138,'We would stay here again as a family as it represents very good value , but we might upgrade if we were going with friends and wanted somewhere more luxurious . ',true
 49139,'There are currently road works going on on this road and on weekdays work starts at 8 til 4.30 ish which could ruin it for those who are after a relaxing break . ',false
 49140,'The lift for luggage in our block next door but one to the main entrance , was tiny and could take one person with large luggage . ',false
 49141,'Once in we used the stairs mainly as we were on 1 st floor , but this could be a problem for people with mobility problems . ',false
@@ -3163,14 +3163,14 @@
 50475,'Great breakfast . ',false
 50476,'The water for the shower was not consistent and at times was cold . ',false
 50477,'The towels were actually like sheets , very thin . ',false
-50553,'Good value for money . ',false
+50553,'Good value for money . ',true
 50554,'Location to Termini excellent . ',false
-50555,'Breakfast included was good value . ',false
+50555,'Breakfast included was good value . ',true
 50556,'Facility to leave bags after check out . ',false
 50557,'Floor of room above was noisy . ',false
 50683,'Adequate accommodation with pleasant staff in a convenient location . ',false
 50684,'The location is good and the staff friendly . ',false
-50685,'Good restaurants in the area at reasonable prices . ',false
+50685,'Good restaurants in the area at reasonable prices . ',true
 50686,'Breakfast included which was adequate . ',false
 50687,'Multiple entrances to hotel and then to rooms . ',false
 50688,'Basic room with bad lighting . ',false
@@ -3426,7 +3426,7 @@
 54613,'That would have cost us only 6 euro . ',false
 54714,'Brecfast . ',false
 54715,'Location ',false
-54746,'Good hotel in this price . ',false
+54746,'Good hotel in this price . ',true
 54747,'Good location ',false
 54783,'Good and bad . ',false
 54784,'Location is easy to go to the airport.Breakfast is delicious . ',false
@@ -3455,7 +3455,7 @@
 55132,'We told the staff and all we got was a small fan , they did nt repair it . ',false
 55133,'It was dingy and the bedspread was probably 20 years old . ',false
 55219,'Super location , cheap , you get what you pay for . ',false
-55220,'Good value for money . ',false
+55220,'Good value for money . ',true
 55221,'Didn ? ',false
 55222,'ft cost a fortune so you need to expect simple basic facilities . ',false
 55223,'The location to Termini was fantastic therefore it ? ',false
@@ -3468,7 +3468,7 @@
 55350,'Great location , right beside the main train station . ',false
 55351,'Quiet enough at night but loads of restaurants near by . ',false
 55417,' It does what is says on the tin  . ',false
-55418,'The room was clean and the breakfast was good . ',false
+55418,'The room was clean and the breakfast was good . ',true
 55419,'Very convenient location if you need to get to the train station or if you are getting the shuttle bus from the airport . ',false
 55420,'Terrible towels and the room is exceptionally small . ',false
 55421,'Air con is nt the most efficient system I have ever seen . ',false
@@ -3489,7 +3489,7 @@
 55666,'Staff was helpful but there was nt even tea kettle in a room . ',false
 55667,'If you need a hot water , pls refer to the point . ',false
 55798,'Good location . ',false
-55799,'Value for money stay . ',false
+55799,'Value for money stay . ',true
 55800,'Location Central , a 5 minute walk from the main train station Termini . ',false
 55801,'Has a number of eating joints close by , which remain open till pretty late . ',false
 55802,'Room Family rooms are pretty big in size . ',false
@@ -3502,7 +3502,7 @@
 55809,'Breakfast starts at 7 am , so keep that in mind if you are planning an early check out . ',false
 55810,'Service Courteous and helpful staff at the reception . ',false
 55811,'Had to pay city tax in cash ',false
-55967,'Good value and excellent location to the train station . ',false
+55967,'Good value and excellent location to the train station . ',true
 55968,'Front desk personnel was very helpful & friendly . ',false
 55969,'Morning breakfast staff a bit grumpy . ',false
 56015,'Pleasant . ',false
@@ -3546,7 +3546,7 @@
 56623,'Enjoyable . ',false
 56624,'Friendly staff , great location , very clean , overall a nice place to stay . ',false
 56625,'No complaints ',false
-56686,'Good value , location close to the Rome Central station and not as bad as other reviews make out !! ',false
+56686,'Good value , location close to the Rome Central station and not as bad as other reviews make out !! ',true
 56687,'Very close to the station . ',false
 56688,'Good WiFi . ',false
 56689,'Breakfast basic but a good start to the day . ',false
@@ -3573,7 +3573,7 @@
 57065,'WE LOVE ROMA !!! ',false
 57066,'Handy hotel , close to Termini central railway station for easy travel into the city from Fiumicino Airport . ',false
 57067,'Good location for walking in various directions , or taking the Metro , plus lots of local cafes and restaurants . ',false
-57068,'Helpful staff , really no problems considering it is reasonably priced . ',false
+57068,'Helpful staff , really no problems considering it is reasonably priced . ',true
 57069,'We stayed six nights , and enjoyed ourselves thoroughly . ',false
 57135,'Excellent . ',false
 57136,'Perfect location . ',false
@@ -3645,7 +3645,7 @@
 58187,'The room was spacious enough and had all the necessary facilities . ',false
 58188,'When we entered the room , we smelled chlorum : ( However , the room was really clean and the sheets as well as towels were changed every day . ',false
 58189,'I would advise the hotel to be more environmentally friendly and change the towels every two or three days or when people put them on the floor , as a sign to replace them . ',false
-58255,'Confortable and well located hotel for great money . ',false
+58255,'Confortable and well located hotel for great money . ',true
 58256,'Bidet in bathroom , confortable bed matress and pillow , comfortable chairs and couch in reception , very polite staff , big windows , lift , nice decoration . ',false
 58257,'Towels material , shower water temperature difficult to regulate , no egg on breskfast , bad accustic in room do noise from corridor and neighboor room can be heard ',false
 58303,'Comfortable and clean good location close to amenities and travel links . ',false
@@ -3695,7 +3695,7 @@
 59007,'Short break in Rome . ',false
 59008,'Very close to the station . ',false
 59009,'Very small shower ',false
-59055,'Overall good value for money . ',false
+59055,'Overall good value for money . ',true
 59056,'The location . ',false
 59057,'Bath cubicle ',false
 59103,'Good . ',false
@@ -3712,7 +3712,7 @@
 59269,'Location is good . ',false
 59270,'Room is clean . ',false
 59271,'Convenient ',false
-59327,'Good value for money . ',false
+59327,'Good value for money . ',true
 59328,'Location . ',false
 59329,'Bathroom ',false
 59380,'Good . ',false
@@ -3724,7 +3724,7 @@
 59461,'Very close to the train station and underground , so you do not waste time upon arrival or departure . ',false
 59462,'The staff was very friendly and helpful and tried to solve problems promptly , be it connectivity , techs , where to dine , shower , etc. WiFi connection is excellent in lobby or breakfast room . ',false
 59463,'Shower cabin is OK however small . ',false
-59464,'Good price value given the facilities and location . ',false
+59464,'Good price value given the facilities and location . ',true
 59465,'WiFi not always that good in the room . ',false
 59561,'Over all a good stay and rome is an excellent stay . ',false
 59562,'We were 5 mins late for checkout and the staff where unawear that we could understand italian . ',false
@@ -3837,7 +3837,7 @@
 61229,'This is really not a 3 star hotel any more . ',false
 61230,'We were not in the hotel itself but in a building next door that had an open door . ',false
 61231,'This raises security problems in this , not so great area near Termini . ',false
-61332,'Value for money . ',false
+61332,'Value for money . ',true
 61333,'Location which so close to Termini . ',false
 61334,'Bed is too small and the door is very difficult to open . ',false
 61335,'This is a fire risk . ',false
@@ -3859,7 +3859,7 @@
 61616,'Rome was lovely , location was good , plenty or restaurants in the area . ',false
 61617,'Hotel staff very not very welcoming , only 3 tv channels working , tea / coffee facilities in room would of been nice , ',false
 61668,'Good . ',false
-61669,'Close to the railway station good price . ',false
+61669,'Close to the railway station good price . ',true
 61670,'for Rome room was ok I would stay here again . ',false
 61671,'Nothing really ',false
 61722,'Good . ',false
@@ -3973,13 +3973,13 @@
 63450,'Very comfortable . ',false
 63451,'The breakfast needed a bit more fruit ',false
 63487,'Good . ',false
-63488,'The hotel Contilia is a good choice by price / quality . ',false
+63488,'The hotel Contilia is a good choice by price / quality . ',true
 63489,'The location is near the main railway station which helps not to worry if you have an early train . ',false
 63535,'Convenient pleasant . ',false
 63536,'The location to public transport excellent . ',false
 63537,'The area close to Termini station dodgy and unsafe but not the hotels fault ',false
-63598,'Great value hotel close to the main station . ',false
-63599,'Great value for money . ',false
+63598,'Great value hotel close to the main station . ',true
+63599,'Great value for money . ',true
 63600,'This was our first time in Italy and thus I appreciated arriving into Rome and staying at a hotel so easily accessible by train and easy to find . ',false
 63601,'The breakfast was good . ',false
 63602,'It is a less upmarket part of town . ',false
@@ -3997,3 +3997,874 @@
 63829,'Location . ',false
 63830,'Near by restaurants and train station . ',false
 63831,'Needs more breakfast options . ',false
+63892,'Great place to stay ?? ',false
+63893,'Excellent stay at the Marriot courtyard hotel , definitely recommend to friends and family . ',false
+63894,'Greeted and served by friendly faces . ',false
+63895,'A big thank you to Prashant and Daniel and Niraj from mono restaurant for making me feel at home . ',false
+63976,'Exceptional . ',false
+63977,'- Excellent service and staff , always smiling . ',false
+63978,'e pool area was quite and nobody was there ... ',false
+63979,'great . ',false
+63980,'e very near location from terminal T2 ( about 10 min during the night ) . ',false
+63981,'e amazing breakfast . ',false
+63982,'e comfort of the bed . ',false
+63983,'- Nothing comes in my mind ',false
+64129,'amazing . ',false
+64130,'everything was fabulous from the moment we arrived , especially the staff . ',false
+64131,'every single staff was always helpful and willing to help , serve and answer questions . ',false
+64132,'room was big enough , and very comfortable . ',false
+64133,'breakfast was excellent and very rich . ',false
+64134,'we tried the dinner buffet as well which was good and tasty but i think it could be better . ',false
+64135,'we have stayed at the Marriot , Weligama Srilanka and we had dinner there and and we have expected almost the same . ',false
+64136,'( there was no sea food and there was only one type of very simple fish ) . ',false
+64137,'however , the dinner was still very good and tasty and we were very satisfied . ',false
+64138,'i ca nt say i did nt like it , since it was good , but as i wrote it could be better . ',false
+64139,'we have stayed at the Marriot , Weligama Srilanka and we had dinner there and and we have expected almost the same . ',false
+64140,'( there was no sea food and there was only one type of very simple fish ) . ',false
+64141,'however , the dinner was still very good and tasty and we were very satisfied . ',false
+64297,'Great . ',false
+64298,'Generally overall experience was good . ',false
+64299,'The spa pedicure . ',false
+64300,'. ',false
+64301,'ink you need to improve facilities and training and bring standards up in this area of service . ',false
+64387,'As a whole the management is wonderful . ',false
+64388,'The room is very clean with comfortable bed . ',false
+64389,'the complimentary breakfast should be improved . ',false
+64390,'The front desk staffs are very helpful . ',false
+64391,'The complimentary lunch was an exceptional performance . ',false
+64392,'The breakfast should be improved like other 5 star hotel . ',false
+64393,'All other services are wonderful . ',false
+64479,'Exceptional . ',false
+64480,'Great staff service , amazing Marriot Member discounts . ',true
+64481,'The road outside the hotel is not that nice , always crowded . ',false
+64522,'Nice comfy hotel near airport , great value for money . ',true
+64523,'Nice comfy hotel near airport , great value for money . ',true
+64559,'Good . ',false
+64560,'The bacon was cooked just right . ',false
+64561,'The check out service ',false
+64682,'Good . ',false
+64683,'Breakfast was delicious . ',false
+64684,'bed was fluffy . ',false
+64685,'f was very welcoming . ',false
+64686,'I booked the hotel because:. lose to the airport .... ',false
+64687,'not really . ',false
+64688,'ree airport shuttle .... ',false
+64689,'no , I had to pay ... ',false
+64690,'and way over priced . ',false
+64691,'thought they could help me with securing a taxi to Pune the next morning . ',false
+64692,'They did not help . ',false
+64693,'They did not talk to the taxi for me they only were able to offer me a WAY over priced car service of 20,000 rupees . ',false
+64694,'ead , I had to hire a cab back to the airport and haggle with the taxi company for a 2000 rupee ride . ',false
+64695,'. ',false
+64696,'leaves me feeling cheated . ',false
+64697,'I should have stayed at a much cheaper hotel . ',false
+64698,'worth the price . ',true
+64699,'s very disappointed and felt taken advantage of . ',false
+64920,'Amazing hospitality . ',false
+64921,'Breakfast was amazing . ',false
+64922,'Location is good . ',false
+64923,'Staff were courteous and polite . ',false
+64924,'Check in & check out was quick . ',false
+64925,'Room was clean and smelled fresh . ',false
+64926,'Enjoyed the stay . ',false
+64927,'Limited menu offering ',false
+65023,'STay was homely and quite comfortable . ',false
+65024,'Service . ',false
+65025,'not any particular thing ',false
+65076,'Lovely place would stay here again . ',false
+65077,'Staff are great , great gym and breakfast and dinner . ',false
+65078,'Loved the lamb chops for dinner . ',false
+65079,'Drinks were expensive , location itself does have any shops nearby except dominos . ',false
+65140,'Very good experience . ',false
+65141,'Breakfast was extraordinarily good . ',false
+65142,'Great service by staff . ',false
+65143,'Restaurant food comparatively expensive ',false
+65199,'Very Good . ',false
+65200,'Location . ',false
+65201,'Exagerrated tatings not a 5 star ',false
+65247,'Excellent . ',false
+65248,'Yes . ',false
+65249,'Location ',false
+65300,'Very good experience . ',false
+65301,'Staff was very friendly and helpful specially Hardik and Yash in the restaurant ? ',false
+65302,'eSe . ',false
+65303,'Security was compulsory every time you go in . ',false
+65354,'All good otherwise . ',false
+65355,'My omelette order took 20 minutes and was not what I orders ',false
+65386,'Good . ',false
+65387,'Was denied checkin , staff said room sold out ',false
+65473,'Close to Airport and Mumbai Exhibition Center . ',false
+65474,'We took this hotel because of proximity to Mumbai Exhaust Center and Airport . ',false
+65475,'The decision was right . ',false
+65476,'It s not a hotel close to tourist places but we came for business . ',false
+65477,'To the Gate of India for example on rush hour takes 1h . ',false
+65478,'But to airport 20 minutes and to the MEC 20 minutes also . ',false
+65479,'The staff is really friendly and the breakfast is just great , with Asian options , Indian options and European options . ',false
+65480,'Menu for lunch and dinner in the restaurant have a 20 % discount and have also food from everywhere . ',true
+65481,'They gave us the option for 14 ? ',false
+65482,'person for executive room that includes an open bar from 17.30 till 21.30 with alcohol included and higher floor room . ',false
+65483,'Pool is open till late and really deserves a swimsuit in the baggage . ',false
+65484,'Checking Indian Prices .... ',false
+65485,'maybe a bit expensive . ',false
+65626,'Wonderful . ',false
+65627,'Foods bar ',false
+65678,'Newer facility near the airport . ',false
+65679,'Nice sized rooms , Very good buffet breakfast , located near the airport . ',false
+65680,'Helpful staff . ',false
+65681,'For a quick trip the location was convenient . ',false
+65682,'It ? ',false
+65683,'fs a bit of travel to various sights if staying longer in city ',false
+65789,'Fabulous stay ! ',false
+65790,'Staff and facilities amazing ! ',false
+65791,'Breakfast superb ! ',false
+65792,'The staff were excellent , namely new staff Ahmed , during breakfast , who was hardworking , and had great customer services skills . ',false
+65793,'The room was very clean and very comfortable . ',false
+65794,'Room service and breakfast first class !! ',false
+65795,'We were first put on the smoking floor , which was disgusting ! ',false
+65796,'Checking out was slow , and no queuing system . ',false
+65797,'We were pleased when a duty manager came to our rescue ! ',false
+65913,'Excellent . ',false
+65914,'The staff at the ground floor restaurant ( Momo ? ) ',false
+65915,'especially Mr.Patwardhan were excellent . ',false
+65916,'Room TV . ',false
+65917,'Not working properly . ',false
+65988,'A comfortable business hotel very close to the international airport in Mumbai . ',false
+65989,'Nice , comfortable and spacious room , close to the Sahar ( international ) terminal . ',false
+65990,'The bed was too soft . ',false
+65991,'A more firm bed would be better ',false
+66052,'Good . ',false
+66053,'It ? ',false
+66054,'fs has very cheerful and helpful staff . ',false
+66055,'Everything was good ',false
+66111,'Excellent Value for Money property . ',true
+66112,'Very wide variety of Breakfast options . ',false
+66113,'Friendly staff ',false
+66169,'Good . ',false
+66170,'Doors of bathrooms difficult to open , shower controls not working properly , can ? ',false
+66171,'ft shut hand shower when . ',false
+66172,'Head shower is working .. ',false
+66173,'it always dribbles ',false
+66239,'Wonderful . ',false
+66240,'Great staff good breakfast . ',false
+66241,'Food is too expensive ',false
+66317,'An enjoyable stay ! ',false
+66318,'The best asset of this hotel is the staff . ',false
+66319,'The restaurant staff was very responsive to our suggestions - thank you Chef Lucky Singh ! ',false
+66320,'The Concierge went out of the way to help us - in particular Mr. Nivrutti Kamble . ',false
+66321,'These observations have more to do with the ergonomic design of facilities in the room . ',false
+66322,'The toilet in the room should have the hygiene faucet - its pretty standard in ALL hotels in India . ',false
+66323,'The sliding door of the toilet is heavy and does not slide smoothly . ',false
+66324,'The hand grip is installed the other - way - round , thus it is difficult to grip it from the inside . ',false
+66325,'The wardrobe doors are difficult to open because the recess given for the grip provides insufficient support . ',false
+66426,'Exceptional . ',false
+66427,'All fine ',false
+66463,'The stay was comfortable . ',false
+66464,'The room . ',false
+66465,'Nothing specific ',false
+66506,'It was good stay . ',false
+66507,'Courtesy , cleanliness s. Nil ',false
+66543,'Wonderful . ',false
+66544,'Good . ',false
+66545,'Good ',false
+66616,'Very friendly and helpful . ',false
+66617,'Prompt and efficient service and comfortable stay . ',false
+66618,'Good value . ',true
+66619,'Wi Fi , Shower , Comfort of bed and linen . ',false
+66620,'Breakfast and staff helpfulness . ',false
+66621,'Breakfast lady who helped me to my table was nt very smiley or helpful . ',false
+66622,'Just wanted room number and told me table number . ',false
+66623,'Did nt tell me where to find things or ask if I wanted anything . ',false
+66719,'Nice place , nice staff , old and expensive room . ',false
+66720,'Location was perfect . ',false
+66721,'The furniture of the room was old ',false
+66772,'Comfortable stay with very friendly and helpful staff . ',false
+66773,'Access to executive lounge was excellent . ',false
+66774,'Got a decent snack when we did nt want a full dinner and was able to print and scan documents . ',false
+66775,'No decent walking area in neighborhood . ',false
+66826,'Amazing . ',false
+66827,'Breakfast and staff support ',false
+66863,'Excellent . ',false
+66864,'This hotel is situated where my business contacts are close by . ',false
+66865,'The see through glass between bathroom and bedroom and no hand bidets ',false
+66906,'Wonderful . ',false
+66907,'food was good staff very helpful , area in lobby was bright and appealing , overall very nice ',false
+66943,'Comfortable and enjoyable . ',false
+66944,'Clean and super friendly staff . ',false
+66945,'Electrical sockets seem worn out and need replacement . ',false
+66986,'Exceptional . ',false
+66987,'Masala tea and Overall Spread ',false
+67043,'Comfortable & cozy stay . ',false
+67044,'The location of the hotel is outstanding with various modes of transportation nearby . ',false
+67045,'The hotel itself is very clean & elegant & they have improved their in-room dining as well . ',false
+67046,'The pillows were soft & comfortable & the service was excellent . ',false
+67047,'The breakfast was superb with a variety of options at the buffet . ',false
+67048,'Overall an amazing experience & would like to visit again . ',false
+67049,'As mentioned in my previous review , considering the hotel has Asian guests ( especially Indians ) , they should keep a water faucet . ',false
+67150,'Good . ',false
+67151,'The hotel s policy of blocking an additional amount on the credit card for expected charges over and above the room rent . ',false
+67152,'This amount is ad hoc and without basis . ',false
+67153,'Absence of blocking an amount for additional charges would lead to having to pay for services as consumed instead of settling bill at check - out . ',false
+67154,'This is unusual . ',false
+67155,'Hotels are justified in blocking the room rent charges but not ad hoc amounts for perceived consumption which may not happen ',false
+67226,'Wonderful . ',false
+67227,'Very quite room , very close to Airport , well spread break fast . ',false
+67278,'Nice Stay . ',false
+67279,'Value for the Money . ',true
+67280,'Rooms are spacious , Fast internet . ',false
+67281,'Staff was helpful Nice bar . ',false
+67282,'a Bit Far from airport , If your arrival or deprature are in working hours or during 8 am - 10 pm . ',false
+67283,'Give teh traffice 45-60 min to arrive to the airport ',false
+67359,'Good . ',false
+67360,'Nothing . ',false
+67361,'Noisy room not sound proof specially u listen noise of metroPassing by and loud music on the street.check in and checkout process very lousy . ',false
+67407,'Good . ',false
+67408,'Mukhtar at the reception was really helpful ... ',false
+67409,'great guy .. ',false
+67455,'Excellent . ',false
+67456,'Masala tea for breakfast abd a good choice of breakfast items . ',false
+67457,'No bidet in the toilet ',false
+67523,'Worth the money paid . ',true
+67524,'I had requested a hard bed as I have issues with my back and management was kind to oblige . ',false
+67525,'Staff in breakfast area very helpful and friendly ..... ',false
+67526,'to name some .... ',false
+67527,'vinod .... ',false
+67528,'ankur .. ',false
+67529,'Liked the clean and friendly staff and helpful too . ',false
+67615,'Pleasant stay . ',false
+67616,'Clean & fresh room , as a courtesy they upgraded room to executive category . ',false
+67617,'Nice food & good sleep ',false
+67663,'Excellent . ',false
+67664,'Swimming pool . ',false
+67665,'Tea at lobby breakfast ',false
+67716,'It was ok , . ',false
+67717,'Less outlets , not much to do inside the hotel . ',false
+67718,'I did not try women ? ',false
+67719,'fs room as I was told no sauna or jacuzzi except steam ',false
+67770,'very good . ',false
+67771,'some servises are over priced ',false
+67817,'When in Mumbai this is the hotel to stay . ',false
+67818,'this hotel happens to be my favorite for stays in Mumbai ... ',false
+67819,'been here 7-8 time earlier as well ... ',false
+67820,'every time I visit things remains absolute perfect . ',false
+67821,'Nothing ',false
+67887,'It was a very comfortable stay and I could unwind after a long day at work . ',false
+67888,'Bed was extra comfy . ',false
+67889,'None ',false
+67950,'Good . ',false
+67951,'The corridors on the floors smelled musty owing to lack of air circulation . ',false
+67952,'There was a bad odour in one area . ',false
+67953,'Looked like the air conditioning in the corridor wasn ? ',false
+67954,'ft working efficiently . ',false
+67955,'Same was the case in the 4th floor which I happened to go to . ',false
+68031,'Good . ',false
+68032,'Location . ',false
+68033,'Nothing ',false
+68079,'Very Good . ',false
+68080,'Close to airport , good Indian breakfast , spacious bathrooms . ',false
+68081,'A bit of wear and tear in room ',false
+68122,'Good . ',false
+68123,'The hotel staff was very friendly and the food was also great , they where not demanding for little things like other hotels do The hotel room was very clean , value for money ',true
+68154,'Exceptional . ',false
+68155,'late checkout ',false
+68216,'Highly recommended stay , excellent staff . ',false
+68217,'I now know why this property has such good ratings . ',false
+68218,'The staff are excellence above par . ',false
+68219,'They were very helpful and pleasant to communicate with . ',false
+68220,'You could see how easily the guest was their No. 1 priority . ',false
+68221,'I have encountered friendly staff before but the entire team at the hotel especially the security , reception , concierge desk and the all - day dining restaurant were just great . ',false
+68222,'They put the guests completely at ease and truly make you feel at home . ',false
+68223,'Also , the mattress and the pillows were great . ',false
+68324,'Good . ',false
+68325,'Don ? ',false
+68326,'ft confuse it with the other Marriott . ',false
+68327,'Location is not that great . ',false
+68383,'Perfect for a business traveller . ',false
+68384,'Great service , fantastic amenities , clean rooms . ',false
+68385,'Excellent property ',false
+68426,'People shouldstay once in the hotel . ',false
+68427,'Comfortable ',false
+68463,'Good . ',false
+68464,'staff , breakfast . ',false
+68465,'no ',false
+68516,'Excellent . ',false
+68517,'Efficient , clean and business like . ',false
+68518,'Breakfast spread was fantastic . ',false
+68519,'Service by the restaurant staff was equally good . ',false
+68575,'Good . ',false
+68576,'Room change request was not attended to in a timely manner . ',false
+68577,'We had to wait for one hour in our room to shift our luggage to the new room . ',false
+68658,'Value for money . ',true
+68659,'The hotel is very clean . ',false
+68660,'Rooms are spacious and bed is comfortable . ',false
+68661,'Pool is of a good size . ',false
+68662,'Food is very good and so is the breakfast . ',false
+68663,'That my request for a interconnecting room was not adhered to . ',false
+68664,'As I was traveling with my family and my son being an autistic boy I had a tough time going from my room to his every now and then to check on him . ',false
+68665,'Had made the request when I had booked the room . ',false
+68666,'Also rooms booked through booking.com are not eligible for Marriott rewards . ',false
+68667,'That is something which will stop me from going through booking.com again ',false
+68783,'Wonderful . ',false
+68784,'Everything s just fine except for the wifi , lower than my expectations . ',false
+68785,'Breakfast has everything you want . ',false
+68841,'Convenient place but bit expensive . ',false
+68842,'Clean and comfortable room . ',false
+68843,'High pressure of shower water . ',false
+68844,'Airport transfer service is too expensive . ',false
+68845,'It costs 3000Rs for go and back of just 15min . ',false
+68911,'Exceptional . ',false
+68912,'Everything in hotel . ',false
+68913,'Outside of hotel was crowded ',false
+68969,'Good . ',false
+68970,'Back view room with a dirty construction site . ',false
+68971,'Water logging with green layered growth . ',false
+68972,'Could not open curtains . ',false
+68973,'Looked over crowded but reasonably managed . ',false
+69039,'Exceptional . ',false
+69040,'Thumbs for Public Relations . ',false
+69041,'Bidet in the room s toilet is highly recommended . ',false
+69092,'Very Good . ',false
+69093,'It is a typical Courtyard hotel so nothing to complain in terms of the rooms , service etc. The breakfast buffet was quite good too both in terms of spread and quality . ',false
+69094,'Quite expensive for what is essentially a Courtyard . ',false
+69095,'The VIvanta seemed better value for money . ',false
+69151,'good stay overall . ',false
+69152,'Staff very friendly and helpful . ',false
+69153,'Pillows smelled .... ',false
+69199,'Valie for Money . ',false
+69200,'Food is Good Specially Breakfast at Mojo . ',false
+69201,'They Should improve Room Service - its Good but need little improvement , Have to call 2/3 Times to Order n have to do D followup ',false
+69252,'Good . ',false
+69253,'Quite near to airport . ',false
+69254,'Meeting room for small group not available . ',false
+69255,'There were 6 pax and was told that the smaller meeting could only take 3 pax . ',false
+69311,'Good . ',false
+69312,'The breakfast was a good spread . ',false
+69313,'Staff was really helpful about everything . ',false
+69384,'May be not expensive while booking but every bit of additional service will cost you more . ',true
+69385,'Breakfast is great . ',false
+69386,'Many choices and always very sunny and helpful staff in the MOMO restaurant . ',false
+69387,'Front desk staff was less helpful than those when we stayed here in March , because of whom that I chose this hotel again for staying 8 nights . ',false
+69388,'However , I am very disappointed this time . ',false
+69389,'We only got free wifi service after we called the room service and waited several minutes on phone before someone picked up . ',false
+69390,'We were charged for using executive lounge this time and were not allowed to meet two visitors there at first until I complained and confirmed that we would leave before 5:30 pm . ',false
+69391,'We booked a car in the hotel to Pune and they charged us around 200 USD while the car was a common Toyota and the driver can barely speak English sentence . ',false
+69502,'Exceptional . ',false
+69503,'Everything excelent . ',false
+69504,'Dint have bidet . ',false
+69505,'You are based in asia . ',false
+69506,'Asian prefer t.paper with bidet . ',false
+69507,'Europen prefer t.paper . ',false
+69588,'Close to airport , good place for business travel . ',false
+69589,'Loved the food the pool the steam room . ',false
+69590,'Also liked the wide spread available on buffet . ',false
+69591,'The approach to hotel was not impressive , too much construction ',false
+69662,'Very Good . ',false
+69663,'Nice and clean room . ',false
+69664,'Excellent pool and nice gym . ',false
+69665,'The breakfast spread wasn ? ',false
+69666,'ft very inspired . ',false
+69667,'No one followed through on my request for a couple of bottles of water on the day of my checkout . ',false
+69743,'Good . ',false
+69744,'Hospitable staff . ',false
+69745,'Rooms can be more cleaner ',false
+69796,'Upmarket hotel , great for being close to the airport . ',false
+69797,'Excellent breakfast choice , iron in the room , very upmarket . ',false
+69798,'Could have been quicker with room service . ',false
+69799,'Surrounding area is business related only ',false
+69850,'Wonderful . ',false
+69851,'Super breakfast Kind staffs Good location ',false
+69897,'Beautiful hotel , excellent staff ... ',false
+69898,'very courteous and polite . ',false
+69899,'Great food . ',false
+69900,'Extremely friendly staff . ',false
+69901,'Toilets did not have health faucets ',false
+69967,'Good . ',false
+69968,'House keeping coming at 8.00 am to check if any consumption done at bar in room . ',false
+69969,'Just not accepted so early morning to come and knock door and check . ',false
+70050,'Notably caring staff and well maintained new property . ',false
+70051,'Notably warm and caring staff - efficient front desk staff . ',false
+70052,'It took us less than 10 minutes to settle in our room - helpful restaurant staff . ',false
+70053,'Although buffet breakfast , the staff served us bringing the food for us to the table . ',false
+70054,'One isolated section of the breakfast area had pork bacon . ',false
+70055,'The staff offered us new and disposable utensils to make us feel comfortable and assured that the kitchens are separate . ',false
+70056,'- my Son left a new dress in the room , the staff couriered it to our address not demanding us anything ! ',false
+70057,'Very caring !! ',false
+70058,'Drastic difference once outside the hotel premises . ',false
+70059,'Location not so good . ',false
+70175,'overall a wholesome place . ',false
+70176,'one of the best breakfast spreads . ',false
+70177,'but a busy restaurant right since the morning , hence a bit of waiting always . ',false
+70218,'Good . ',false
+70219,'pretty expensive compare to this location ',false
+70250,'Exceptional . ',false
+70251,'Cleanliness and the courteous staff . ',false
+70287,'I would recommend my coworkers to stay at this hotel . ',false
+70288,'The staff is excellent . ',false
+70289,'They make you feel welcome . ',false
+70340,'Good . ',false
+70341,'Staff is always doing their job helpfully . ',false
+70342,'Nothing much do around . ',false
+70343,'On the other hand is very close to the airport ... ',false
+70394,'Good . ',false
+70395,'I think WiFi should be free when you are charged so much ',false
+70476,'Very Good . ',false
+70477,'The staffs are very nice and quick response . ',false
+70478,'The food is fantastic . ',false
+70479,'The location is quite convenience just 15 minutes to the international airport . ',false
+70480,'There will be domino pizza near the hotel . ',false
+70481,'I will stay here again when I go to Mumbai . ',false
+70482,'The pillow cover is quite dirty . ',false
+70483,'I found some hairs on my pillow before I use it . ',false
+70484,'I ask for changing the cover . ',false
+70485,'The staff come very quickly but still have the same problem . ',false
+70486,'I use my scarf to cover the pillow instead . ',false
+70487,'Please improve about the cleanliness of Pillow and Bedding . ',false
+70643,'good hotel if you are in Andheri East for work . ',false
+70644,'Very good breakfast selection , . ',false
+70645,'views were terrible and we saw an abandoned construction site with filth and pestilence from our room , as well as slum dwellings . ',false
+70646,'There was a high - density housing block right outside our room and anyone can see inside . ',false
+70647,'A large group had checked in and there was a lot of noise in the lobby on both days and nights . ',false
+70648,'The hotel should inform guests that large groups are present at the time of check in , as large groups really ruin the experience for individual guests or couples . ',false
+70649,'Finally the chefs at breakfast were unable to cater to me as I am vegan , even though I had sent a message several days in advance with my dietary restrictions . ',false
+70755,'Exceptional . ',false
+70756,'Clean . ',false
+70757,'Very polite and professional staff . ',false
+70758,'Heartily appreciated . ',false
+70759,'It ? ',false
+70760,'fs awesome . ',false
+70761,'No negatives . ',false
+70847,'Good . ',false
+70848,'Services at Restaurant for Breakfast was horrible . ',false
+70849,'Delivered 3 times wrong order and also too much delay for water and coffee ',false
+70890,'Great and comfortable hotel for a stopover . ',false
+70891,'Very friendly staff Convenient location Great breakfast spread ',false
+71042,'Great Stay . ',false
+71043,'Liked the staffs attitude . ',false
+71044,'They all looked very fresh and were extremely helpful and always smiling . ',false
+71045,'Staff in other hotels also are very accommodating but the smile makes a very big difference . ',false
+71046,'It says we enjoy servicing you and your requests are not a nuisance . ',false
+71047,'In particular Jay Joshi at the front office was very helpful . ',false
+71048,'Asked for late check out which was promptly granted . ',false
+71049,'Checked in at around 10 pm . ',false
+71050,'Jay was there next morning at 10 am again to check me out . ',false
+71051,'Again very helpful , no sign of having been on duty through out the night and again did everything with a smile . ',false
+71052,'When we walked away to charge the card he had the courtesy to inform me and then leave my presence although he had to walk just 2-3 steps away from me . ',false
+71053,'Most people would take the card and just walk away . ',false
+71054,'I made a requested to a staff member I met in the lift and again received a warm smile and immediate acceptance . ',false
+71055,'Same at the breakfast table . ',false
+71056,'In most hotels waiters especially at buffet services avoid eye contact . ',false
+71057,'First time I had waiters who actually wanted to get things for you . ',false
+71058,'I hope you are able to keep the staff and continue to maintain the excellent attitude they showed Keep up the good work . ',false
+71059,'Why the hell do nt you have health faucets or bidets in the toilets . ',false
+71060,'This is India . ',false
+71061,'We use water . ',false
+71062,'Its not a cold country where you may have to use water . ',false
+71063,'Even Japan has a water option . ',false
+71064,'Please put health faucets in the toilets . ',false
+71065,'There a limit to colonial mind sets . ',false
+71066,'They frown on us if we use hands to eat food in their country . ',false
+71067,'Well let s make them use water here . ',false
+71338,'Good stay and value for money . ',true
+71339,'Good location , Friendly Staff , value for money . ',true
+71390,'Excellent staff , superb breakfast , comfortable room , value for money . ',true
+71391,'Breakfast was great . ',false
+71392,'Staff is really warm and helpful ; from Krishna and Ridhima at the reception , to Raju in the restaurant , and the security at the entrance .... ',false
+71393,'they make you feel at home . ',false
+71394,'The approach road outside is a mess due to ongoing work so we could not go for a stroll outside . ',false
+71395,'Beyond the control of the hotel management . ',false
+71466,'Okay . ',false
+71467,'It s expensive not value for money . ',false
+71533,'Exceptional . ',false
+71534,'Professional and friendly staff way above usual standards . ',false
+71535,'Perfect room equipment . ',false
+71536,'Prices of services and meals could be more aligned with city prices . ',false
+71537,'It is not about exact amounts , you just need to know why you are paying 14x more for a car than with ordinary company . ',false
+71538,'Same applies with meals compared to top restaurants . ',false
+71539,'In such cases value doesn ? ',false
+71540,'ft reflect the price . ',false
+71541,'Or maybe it does however hotel is not able to explain / sell it to their guests . ',false
+71647,'Wonderful . ',false
+71648,'WELL I LIKE THE SERVICE I GOT FROM TWO GIRLS SHIFAA AND ANANYA SHIFAA TREAT US VERY WELL AND MAKE OUR TRIP TO FEEL WE ARE SPECIAL AND THEY WAY THEY SUPRISE US WITH BEAUTIFUL CAKE THANK YOU SO MUCH LADIES . ',false
+71649,'NOTHING ALL THING WAS PERFECT ',false
+71700,'A very pleasant stay ! ',false
+71701,'Bed is very nice ; water pressure in shower ( on 8th floor ) is very good ; very attentive staff . ',false
+71702,'Having to re-enter credentials for WiFi every 24 hours period .... ',false
+71703,'just make it activated for entire booked stay ! ',false
+71754,'Confortable stay . ',false
+71755,'All was good but staff at executive lounge was very good ',false
+71791,'Good . ',false
+71792,'poor service , by the time omlette would come on table , it would be cold , ask for well done omlette , get inside wet omplette , seems hotel is ready for service for overseas clients . ',false
+71793,'Need yoru staff to get indian client friendly ',false
+71839,'Remember for ever . ',false
+71840,'Prompt service . ',false
+71841,'Place of fridge should be at senior citizens convenience . ',false
+71897,'Exceptional . ',false
+71898,'Good friendly staff ! ',false
+71899,'Great service . ',false
+71900,'Breakfast was well worth the money . ',true
+71901,'Would surely come back ! ',false
+71977,'Good . ',false
+71978,'Great hotel , good rooms , bathrooms , friendly staff .. ',false
+71979,'all r good except the chef when we told the kheer had split milk he responded with a plain face to us though did brought fresh one.breakfast buffet food could be better .. ',false
+71980,'many things get cold . ',false
+71981,'though wht we ordered in room service it was good ',false
+72047,'Impeccable stay . ',false
+72048,'Everything as i always enjoy my stay here . ',false
+72049,'Not applicable ',false
+72090,'hotel clean and good food . ',false
+72091,'hospitality ',false
+72122,'Exceptional . ',false
+72123,'The food was excellent ',false
+72159,'Good . ',false
+72160,'Great breakfast . ',false
+72161,'Uncomfortable bed ',false
+72207,'Fantasic service ! ',false
+72208,'Service . ',false
+72209,'Food ',false
+72250,'Good . ',false
+72251,'Pool , food ',false
+72287,'It was good . ',false
+72288,'Breakfast was good and so was the view from my room . ',false
+72289,'Could be a little less expensive ',false
+72330,'Exceptional . ',false
+72331,'The Room was amazing was thankful as was upgraded for my daughter birthday ',false
+72362,'Exceptional . ',false
+72363,'Everything is good . ',false
+72399,'Very Good . ',false
+72400,'Convenient . ',false
+72401,'Great location and services ',false
+72477,'Very good hotel . ',false
+72478,'Nice room , rather cosy but very clean , with interesting glass wall between room and shower room . ',false
+72479,'Nice spa area , nice pool . ',false
+72480,'Close to the airport . ',false
+72481,'Interesting lobby bar . ',false
+72482,'Very good breakfast and very nice staff . ',false
+72483,'Fast check - in and check - out . ',false
+72484,'The area around the hotel is not very nice . ',false
+72485,'Prices in the lobby bar could be more attractive . ',false
+72591,'Everything was fantastic nothing to complain . ',false
+72592,'Everything . ',false
+72593,'Nothing ',false
+72654,'Nice business hotel . ',false
+72655,'Nice breakfast ! ',false
+72656,'Bar . ',false
+72657,'Everything we ordered was sold out . ',false
+72658,'Beer way over priced . ',false
+72659,'More than in Europe and poor quality . ',false
+72745,'It was good and relaxing , the staff were very pleasant and helpful . ',false
+72746,'The staff were very pleasant and helpful . ',false
+72747,'Attention to details must be observed when cleaning . ',false
+72748,'The shower was not clean . ',false
+72749,'There were mold in the shower ',false
+72815,'It was great . ',false
+72816,'Breakfast . ',false
+72817,'Liked everything ',false
+72863,'Nice location near Airport not far from exhibition centre . ',false
+72864,'Service . ',false
+72865,'Nothing ',false
+72916,'A very good hotel in a convenient locaion for the airport . ',false
+72917,'It was a peaceful oasis in a busy city . ',false
+72918,'The excellent staff were a major asset to the hotel . ',false
+72919,'In particular Ginni in the restaurant and Krishna who was on the Reception desk . ',false
+72980,'A very clean hotel , best staff espicially mr BHARAT GUPTA at reception . ',false
+72981,'Staff , safety , cleanness , pool . ',false
+72982,'Hotel location is not as expected . ',false
+72983,'Breakfast is not international as it contains alot of local food ',false
+73039,'As it was a business visit nothing more to add . ',false
+73040,'Bed was very comfortable . ',false
+73041,'Nothing special ',false
+73087,'Excellent . ',false
+73088,'SERVICE AND STAFF IN THE HOTEL WAS VERY KIND AND HELPFUL . ',false
+73089,'all fine ',false
+73135,'Overall satisfied . ',false
+73136,'Beds , breakfast , steam room . ',false
+73137,'Furniture too old Room Needed a better detail clean More light room was dark with all lights on Bar was closed to guest at times Not enough seats in lobby due to convention going on everyday ',false
+73188,'Good professional hotel . ',false
+73189,'Stayed just 14 hours . ',false
+73190,'24 hours access to lounge . ',false
+73191,'Too expensive for night ',false
+73252,'Excellent . ',false
+73253,'Liked the hotel location and comfort . ',false
+73254,'The airport pickup from the hotel was so bad that he made me walk around the airport and the driver let me wait 30 mins in hot sun and atlast I took a taxi to the hotel and I just got a usual apologize from the hotel staff that ? ',false
+73255,'fs it ',false
+73311,'Exceptional . ',false
+73312,'Their buffets were exceplenty and the staff were very help . ',false
+73313,'I could nt find any fault . ',false
+73384,'Beautiful hotel , great staff , right price . ',true
+73385,'In the booking I asked as usually for a quiet room , as I required it was far from the elevators but the window was facing a loud noisy building in construction 24 h , before to try it in the night I asked for a new room and I got it immediately but with 2 queen beds instead of a king bed . ',false
+73386,'They were aware of the noise because the complain was the same from other guests , the manager introduced the new room and check it with me , very professional . ',false
+73387,'I agreed the change , the bad was smaller but the window was facing the swimming pool , silent as I wished . ',false
+73388,'All rooms have a perfect bathroom , really nice . ',false
+73389,'It happens quite frequently this hotel rents the garden area near the pool for private celebrations , and sometime their dj set ends at about 23:00 - 23:30 , you receive a early notice in the room with apologies . ',false
+73390,'It s 5 years I spent a week in this hotel so I m used to it , and it is not a significant problem for a night , furthermore the possible solution if you hate Indian music is a room oriented on the opposite side of the building , but at the moment the works you would face prevent such strategy . ',false
+73391,'A Nespresso coffee machine in the room would be a great benefit for a guest . ',false
+73502,'Pleasant stay and definitely will go back again . ',false
+73503,'Some of the reception staff are very helpful and help us get free use of meeting room and executive lounge and room updating . ',false
+73504,'Free pick up from airport . ',false
+73505,'Restaurant staff are very nice and pleasant , too . ',false
+73506,'Only the outside surrounding is not clean and tidy . ',false
+73507,'You got nowhere to go for shopping and dining . ',false
+73578,'Wonderful . ',false
+73579,'Excellent breakfast and rooms . ',false
+73625,'Excellent . ',false
+73626,'Willing to go the extra mile . ',false
+73627,'The guests are 100 % their priority . ',false
+73628,'Customer service . ',false
+73629,'Lack of communication before arrival Chicken Burger ?? ',false
+73690,'Excellent . ',false
+73691,'Breakfast and very friendly staff ',false
+73722,'Ideal for airport access . ',false
+73723,'All the staff were so attentive ',false
+73759,'Worst of the hotels . ',false
+73760,'Food was fine . ',false
+73761,'Its a rip off ( foreigners beware of all charges etc ) ',false
+73837,'Among all 5 stars hotels i have stayed - this is a ripoff . ',false
+73838,'It was cleain and faily organised . ',false
+73839,'The hotel is a ripoff . ',false
+73840,'Hotel shuttle at 4 am to airport , less than 3 km away , 10 minutes , costs rs2000 . ',false
+73841,'You pay wife ( i expect free wifi in a 4-5 star hotel ) ? ',false
+73842,'i refrained from askng extra toilet paper as they could have charged me a fortune . ',false
+73843,'You pay an amount and expect some service , but are squeezed in every opportunity . ',false
+73844,'Do your homework better than me . ',false
+73845,'It was noisy , poor sound proofing ',false
+73951,'Excellent property , reception staff should be more welcoming . ',false
+73952,'Reception on arrival was very poor . ',false
+73953,'There was no one even to pick the baggage . ',false
+73999,'Good location with helpful and friendly staff . ',false
+74000,'The location of the hotel . ',false
+74001,'I do not consider the hotel as value for money ',false
+74052,'Good . ',false
+74053,'concierge were excellent . ',false
+74054,'A concierge person naned Siraj went an above and beyond ! ',false
+74055,'Excellent customer service . ',false
+74111,'Great hotel with comfortable rooms , great restaurant , just check your bill on check - out ! ',false
+74112,'Great hotel , comfortable rooms , excellent restaurant ! ',false
+74113,'Overcharged by 25 % at check out , had to sort this out myself , not very professional and would have got away with it if i had nt double checked ! ',false
+74169,'Great .. ',false
+74170,'would surly come back . ',false
+74171,'Friendly staff , very clean rooms . ',false
+74172,'They went little extra for my partner and got her a cake for Valentine ? ',false
+74173,'fs Day . ',false
+74239,'Good service with a smile . ',false
+74240,'The bed cozy . ',false
+74241,'No magazineno tablecalender in the room ',false
+74292,'Wonderful . ',false
+74293,'Very good service , rooms were well appointed and spacious . ',false
+74294,'Breakfast was very good . ',false
+74295,'Unfortunately we were charged twice for the room so are now trying to get a refund which has marred the experience ',false
+74371,'Enjoyed . ',false
+74372,'Staff , in general , is very cordial and helping . ',false
+74373,'The ambiance is also pleasant . ',false
+74374,'Only short - coming is that the hotel requires to have a few cosey sitting arrangements to allow business discussions so that the guest does not necessarily needed to use Restaurant . ',false
+74375,'Location .. ',false
+74376,'Access to the Hotel is too crowded and not clean . ',false
+74377,'Traffic to the location is an issue . ',false
+74518,'Excellent hotel , well placed for the airport . ',false
+74519,'Excellent hotel 15 minutes from the airport depending on traffic . ',false
+74520,'We were 15 minutes one way , 20 minutes the return . ',false
+74521,'We only stayed for one night as we had an early flight to London . ',false
+74522,'Do not take the hotel car option from / to the airport unless you want to pay 1800 Rp + tax . ',false
+74523,'Easy check in , excellent room . ',false
+74524,'The buffet looked very good but we only wanted a sandwich as were eating late . ',false
+74525,'One between us would have been ample . ',false
+74526,'American size . ',false
+74527,'Breakfast was equally good . ',false
+74528,'Easy , efficient check - out . ',false
+74529,'We walked 30 meters to loads of waiting taxis to get to the airport . ',false
+74530,'The local taxi costs 400Rp . ',false
+74531,'Nothing ',false
+74682,'Very Good . ',false
+74683,'Is very convenient for airport pick up and drop passenger as well very clean and specious rooms and the breakfast is amazing ',false
+74734,'Pleasant , comfortable and hassle free . ',false
+74735,'Security was good without being intrusive . ',false
+74736,'The concierge was very helpful . ',false
+74737,'Every ride we ordered through Ola the driver had difficulty finding the location , the concierge guided them to the hotel every time . ',false
+74738,'Attention to minor things that make the difference such as unclean light switch plate . ',false
+74739,'A discarded tissue paper in front of elevator for hours , not picked by higher rank employees as they passed by . ',false
+74825,'Good . ',false
+74826,'The arrangements for breakfast .... ',false
+74827,'a long queue to get to a table ..... ',false
+74828,'the hotel can ? ',false
+74829,'ft handle the crowd ',false
+74895,'Good . ',false
+74896,'Break fast was good . ',false
+74897,'Facility and cleanness need improvement ',false
+74953,'Was excellent . ',false
+74954,'Near to airport . ',false
+74955,'Easy access to most places . ',false
+74956,'All was gd . ',false
+74957,'Nothing much to dislike ',false
+75028,'Good . ',false
+75029,'The quality of the food was excellent . ',false
+75030,'They should update the fact that they have no pool bar facility right now as it is under construction . ',false
+75031,'The traffic in the area is abysmal . ',false
+75102,'Very relaxing , if a little pricey . ',false
+75103,'The restaurant manager recommended the dinner buffet . ',false
+75104,'I decided to take his advice and it was an excellent experience . ',false
+75105,'He talked me through the options and helped me with the Mumbai street food starters . ',false
+75106,'The food was all great but my favourite was the fish sagwala a dish I have never had before . ',false
+75107,'Try the buffet for a really tasty splurge ! ',false
+75223,'Not happy ... ',false
+75224,'had better options being Taj Epicure & Shangri - La Golden Circle member . ',false
+75225,'Location is good ..... ',false
+75226,'Restaurant is good ..... ',false
+75227,'staff is good ... ',false
+75228,'neatness is okay not up mark as Five Star rating ..... ',false
+75229,'Other than this rest all was good .... ',false
+75230,'nothing compared to same hotel next door Marriott , Mumbai Airport ... ',false
+75231,'Courtyard is old building with old fittings . ',false
+75232,'On entering due to old building / fittings continuous water running problems in bath room shower fitting for hours was noticed until it was repaired ; painful while through out world WATER SAVE  is on ... ',false
+75233,'including Airports adopting flush without water .... ',false
+75359,'Good . ',false
+75360,'clean . ',false
+75361,'value of money ',true
+75402,'Wonderful . ',false
+75403,'Well maintained as always , check in was quick , staff is very courteus ',false
+75454,'Pleasant stay ! ',false
+75455,'A short stay in this hotel . ',false
+75456,'Clean and comfortable . ',false
+75457,'The check - in and check - out service is swift . ',false
+75458,'The breakfast is also very good . ',false
+75459,'Will consider this one next time . ',false
+75530,'All very good over rolling . ',false
+75531,'Would have prefered to have a shopping mall near ',false
+75562,'Normal , good . ',false
+75563,'No restaurants in the hotel . ',false
+75599,'Very Good . ',false
+75600,'staff were attentive great choice for breakfast buffet Arc bar has a great ambience . ',false
+75601,'very poor WiFi ',false
+75647,'Exceptional . ',false
+75648,'The courteousness of the staff as well as the food . ',false
+75649,'The extra credit amount that they took from me and were finding it difficult to map it to my room . ',false
+75740,'Price was much much higher than shown on booking . ',false
+75741,'The location was great . ',false
+75742,'Close to the airport which was convenient for my connecting flight . ',false
+75743,'The pool was nice . ',false
+75744,'The bed comfortable . ',false
+75745,'The breakfast amazing . ',false
+75746,'Friendly staff . ',false
+75747,'Very disappointed in the communication . ',false
+75748,'The misleading price advertising ( extreme taxes ) . ',false
+75749,'But mostly that I had to ask 3 times about the airport shuttle , did nt get the answer on prices and then it turned out the cost was equal to 50 % of my room price !!! ',false
+75750,'I could have taken 5 taxis at this rate ! ',false
+75751,'Or cancelled my booking if I had known . ',false
+75897,'We liked the hotel for a short stay as it s close to the airport . ',false
+75898,'Good breakfast , plenty of choice & helpful staff . ',false
+75899,'Also liked the shower lots of power . ',false
+75900,'Be wary when using the hangers especialy on wet whites or light coloured items . ',false
+75901,'They will get stained ',false
+75977,'Good . ',false
+75978,'I like the staff , very friendly . ',false
+75979,'Food was okay . ',false
+75980,'Rooms are neat and clean with all the essential amenities . ',false
+75981,'Nothing ',false
+76042,'fine business hotel . ',false
+76043,'only one restaurant ',false
+76084,'Excellent . ',false
+76085,'Paid wifi ... ',false
+76086,'no water jets for toliet ... ',false
+76087,'it is not expected in Indian hotel ',false
+76168,'Should have more variety on the food menu . ',false
+76169,'Overall experience was good . ',false
+76170,'Clean , safe and the staff are friendly . ',false
+76171,'The gym room is well equipped and the pool is decent . ',false
+76172,'I stayed there for two weeks and eat two meals daily . ',false
+76173,'The breakfast is mostly Indian foods . ',false
+76174,'The ala carte menu is lacking in simple asian foods such as noodles and fried chicken . ',false
+76175,'There is also no pork dishes on the menu ',false
+76276,'Nice hotel . ',false
+76277,'Breakfast .. ',false
+76278,'awesome . ',false
+76279,'View of building site to rear ',false
+76335,'We had a great stay and it was near airport with excellent staff and comfort . ',false
+76336,'Great location near airport Clean and comfortable rooms Staff are great . ',false
+76337,'The dinner could be a little more vegetarian and a little less expensive but otherwise the staff is great ',false
+76383,'Felt very at home here . ',false
+76384,'Very comfortable beds . ',false
+76385,'I have chosen this hotel a few times in the past for it s overall comfort ',false
+76426,'Had a very nice stay - room very nice - staff very helpful . ',false
+76427,'Friendly staff ',false
+76463,'It was very good and staff was excellent . ',false
+76464,'The room was large with lots of natural light . ',false
+76465,'The bed was comfortable and really had a good night s sleep . ',false
+76506,'Efficient location for business trip . ',false
+76507,'Wonderful breakfast buffet Extremely helpful and polite employees Very efficient checking and checkout procedure Very nice room and comfortable bed ',false
+76543,'fanatasic . ',false
+76544,'The staff were very freindly . ',false
+76545,'Rates ',false
+76591,'The room service was too slow french fries ordered were cold . ',false
+76592,'The food . ',false
+76593,'The service ',false
+76654,'Absolutely wonderful service from Everyone ! ',false
+76655,'I ve never experienced such fantastic service , from absolutely everyone at the hotel . ',false
+76656,'Reception staff to the ridiculously fast response to any requests made by phone to the incredible team running the most delicious breakfast buffet . ',false
+76657,'The paneer paratha and the Masala Chai are killers ! ',false
+76658,'Such a wonderful stay and experience . ',false
+76659,'Will be going back for Sure . ',false
+76735,'Comfortable and enjoyble stay there . ',false
+76736,'The hotel staff is very helpful and friendly . ',false
+76737,'Wifi is chargeble in nowdays in digital india ',false
+76778,'Good . ',false
+76779,'They could nt give us a smoking room even after I made a request prior to my stay ',false
+76840,'Amazing . ',false
+76841,'Staff was very kind and helpful . ',false
+76842,'The ambience was relaxing and serene , you forget the hectic outside and forget that you re in Mumbai . ',false
+76843,'The room was very neat , clean and looked very nice . ',false
+76844,'We had breakfast buffet , this was AMAZING . ',false
+76845,'A lot of choice and I m sure that any person will be satisfied . ',false
+76846,'What I personally loved about the breakfast , was that they had a lot of healthy options to choose . ',false
+76847,'It was definitely the best stay we had in India . ',false
+76938,'Excellent . ',false
+76939,'Too far and isolated ',false
+76970,'Fantastic experience . ',false
+76971,'Cleaner shower glass door n frame ',false
+77007,'Good . ',false
+77008,'Even kettle in room didn ? ',false
+77009,'ft work ',false
+77055,'Excellent . ',false
+77056,'View from the window was a construction . ',false
+77057,'was to change the room , the reception did not revert back ',false
+77103,'Great Location , nice interiors and ambience , comfortable stay !! ',false
+77104,'Breakfast spread was good . ',false
+77105,'Nice air fresheners in lobby :) Delicious welcome pastry :) ',false
+77156,'Excellent location , facilities , staff . ',false
+77157,'Pool area . ',false
+77158,'Daniel on the front desk booked a complimentary car to take us to the airport . ',false
+77159,'Nothing ',false
+77240,'exellent . ',false
+77241,'breakfast was so good . ',false
+77242,'I taken spa in hotel . ',false
+77243,'ambience of spa was very good . ',false
+77244,'at reception good cooperation from staff . ',false
+77245,'I am happy to stay in this hotel . ',false
+77246,'earlier I used to stay at Bawa interntional . ',false
+77247,'it is far better than that hotel ',false
+77343,'Good . ',false
+77344,'Staff were polite and helpful . ',false
+77345,'Breakfast option was same everyday ',false
+77391,'Excellent . ',false
+77392,'Loved the wide range of food at breakfast . ',false
+77393,'It was a treat not only for the stomach but also for the eyes . ',false
+77434,'Good . ',false
+77435,'Check in Flight landed early I have to wait 4 hrs to check in , which is painful staff is helpful but it is not well organized . ',false
+77471,'Will consider to come back . ',false
+77472,'Location is good . ',false
+77473,'Spa experience was a bit disappointing ',false
+77524,'Ok ... ',false
+77525,'nothing great ... ',false
+77526,'other Marriot properties are much better ! ',false
+77527,'Cold food in the buffet .... ',false
+77583,'Goood . ',false
+77584,'Staff were very helpful . ',false
+77585,'Location ',false
+77661,'Overall a good and comfortable stay . ',false
+77662,'Front office staff . ',false
+77663,'1 . ',false
+77664,'Room cleaning staff 2 . ',false
+77665,'same breakfast all the three days . ',false
+77666,'3 . ',false
+77667,'Dirty swimming pool with no hygiene maintained by the pool staff . ',false
+77668,'On all the three days , we saw some Kabaddi Team guys jumping in the pool without taking shower . ',false
+77669,'It was disgusting !!! ',false
+77775,'Good property managed by smart people . ',false
+77776,'The staff , pleasent , smart , quick . ',false
+77777,'Neat , clean , spacious ',false
