@@ -191,6 +191,9 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				
 			   double clsLabel;
 			   
+			   ArrayList<String> predictionValues = new ArrayList<String>();
+			   predictionValues.add("" + newInstance);
+			   
 			   for(AspectClassifier currentClassifier : aspectClassifierList) {
 				   try {
 					clsLabel = currentClassifier.getClassifier().classifyInstance(newInstance);
@@ -199,23 +202,20 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 					   
 					   double[] prediction=currentClassifier.getClassifier().distributionForInstance(newInstance);
 	
-					   ArrayList<String> predictionValues = new ArrayList<String>();
-					   predictionValues.add("" + newInstance);
 				       //output predictions
 					       for(int i=0; i<prediction.length; i=i+1)
 					       {
 					    	   if(prediction[i]>minAcceptanceValue) {
 					    		   predictionValues.add(currentClassifier.sourcePath + "\t" + newInstance.classAttribute().value(i) + "\t" + Double.toString(prediction[i]));
-					    		   myLog.log(Double.toString(prediction[i]) + "@" + newInstance.classAttribute().value(i) + "- Probability of class " + currentClassifier.sourcePath + "@");
+					    		   //myLog.log(Double.toString(prediction[i]) + "@" + newInstance.classAttribute().value(i) + "- Probability of class " + currentClassifier.sourcePath + "@");
 					    	   }
 					       }
-				       
-		    		   //TODO: Delete and create abstract method of this class for general testing purpose
-					   processData(predictionValues);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
 			   }
+			   
+			   processData(predictionValues);
 			}
 		}
 	}

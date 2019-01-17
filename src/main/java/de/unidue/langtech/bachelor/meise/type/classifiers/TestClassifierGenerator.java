@@ -41,7 +41,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[2] = "Lage-positive";
 		types[3] = "OTHER-positive";
 		types[4] = "Komfort-positive";
-		types[5] = "Preis-Leistungs-Verhaeltnis-positive";
+		types[5] = "Preis-Leistungs-Verhltnis-positive";
 		types[6] = "WLAN-positive";
 		types[7] = "Sauberkeit-positive";
 		types[8] = "Ausstattung-negative";
@@ -49,7 +49,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 		types[10] = "Lage-negative";
 		types[11] = "OTHER-negative";
 		types[12] = "Komfort-negative";
-		types[13] = "Preis-Leistungs-Verhaeltnis-negative";
+		types[13] = "Preis-Leistungs-Verhltnis-negative";
 		types[14] = "WLAN-negative";
 		types[15] = "Sauberkeit-negative";
 		
@@ -335,10 +335,10 @@ public class TestClassifierGenerator extends ArffGenerator{
 					if(t1.getAspect()!=null && t2.getAspect()!=null) {
 						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
 	    					//non-negated
-							identifier = t2.getAspect().replace("?", "ae") + "-" + currentValence;
+							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
 	    				} else {
 	    					//negated
-	    					identifier = t1.getAspect().replace("?", "ae") + "-" + currentValence;
+	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
 	    				}
 						
 						//find the value in returnList and replace it with the new one
@@ -420,7 +420,7 @@ public class TestClassifierGenerator extends ArffGenerator{
 	    		
 				
 				for(ArrayList<String> singleLine : sortedLines) {
-					if(singleLine.get(identifierAttributeAt)!=null) {
+					if(singleLine.get(identifierAttributeAt)!=null) {						
 						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
 							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
 						}
