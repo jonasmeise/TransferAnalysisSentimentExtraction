@@ -20,6 +20,7 @@ import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.type.classifiers.*;
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import de.unidue.langtech.bachelor.meise.files.DataParser;
+import de.unidue.langtech.bachelor.meise.files.FileUtils;
 
 public class MainPipeline {
 	
@@ -28,17 +29,20 @@ public class MainPipeline {
 	String modelFilePath = "src/main/resources/data800.model";
 	String arffFilePath = "src/main/resources/data800.arff";
 	String tsvOutput = "src/main/resources/output3.tsv";
+	FileUtils fu;
 	
 	public MainPipeline() {
+		fu = new FileUtils();
 	}
 	
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
-		myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
+		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
 		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
+		myPipeline.foldLearning("src/main/resources/learningtest", "src/main/resources/learningtest/analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -118,8 +122,14 @@ public class MainPipeline {
     			ClassifierHandler.PARAM_IGNORE_FEATURES, "0 2",
     			ClassifierHandler.PARAM_MODEL_FILE, arffFilePath,
     			ClassifierHandler.PARAM_ACCEPTANCE_VALUE, "0",
+    			ClassifierHandler.PARAM_NUM_FOLDS, "5",
     			ClassifierHandler.PARAM_ANALYIS_OUTPUT_PATH, outputPath);
         
         SimplePipeline.runPipeline(reader, classifierHandler);
+	}
+	
+	public void foldLearning(String arffFileFolder, String outputPath) {
+		 ClassifierHandler myClassifier = new ClassifierHandler();
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,outputPath);
 	}
 }

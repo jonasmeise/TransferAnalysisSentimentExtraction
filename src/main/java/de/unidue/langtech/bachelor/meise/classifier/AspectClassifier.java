@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -72,7 +73,8 @@ public class AspectClassifier {
 			List<Integer> stringIndices=new ArrayList<Integer>(); //random length
 			for(int i=0;i<train.numAttributes();i++) {
 				if(train.attribute(i).isString()) {
-					System.out.println(train.attribute(i).name());
+					//System.out.println("String found in '" +train.attribute(i).name() + "'.");
+					//-1 because we remove the 0-index after all
 					stringIndices.add(i-1);
 				}
 			}
@@ -103,21 +105,30 @@ public class AspectClassifier {
 			return newData;
 	}
 	
-	public void learn(Instances data) throws Exception {
-		Random rand = new Random(seed);   // create seeded number generator
-		 Instances randData = new Instances(data);   // create copy of original data
-		 randData.randomize(rand);         // randomize data with number generator
+	public ArrayList<String> learn(Instances data) throws Exception {
+		ArrayList<String> returnList = new ArrayList<String>();
+		Random rand = new Random(seed);
+		 Instances randData = new Instances(data);
+		 randData.randomize(rand);
 		 
 		 for (int n = 0; n < folds; n++) {
 			   Instances train = randData.trainCV(folds, n, rand);
 			   Instances test = randData.testCV(folds, n);
-
-			   buildClassifier(train);
+ 
+			   test.deleteAttributeAt(0);
+			   //build-Classifier loescht automatisch 0
+			   train = buildClassifier(train);
 			   
 			   evaluation = evalModel(classifier, test, folds, new Random());
-				
-			   System.out.println(evaluation.toSummaryString());
+			   returnList.add(data.relationName() + "\tFold#" + (n+1) + "\n" 
+			   + "FP: " +evaluation.numFalsePositives(train.numAttributes()-1) + "\n"
+			   + "FN: " +evaluation.numFalseNegatives(train.numAttributes()-1) + "\n"
+			   + "TN: " +evaluation.numTrueNegatives(train.numAttributes()-1) + "\n"
+			   + "TP: " +evaluation.numTruePositives(train.numAttributes()-1)
+			   + evaluation.toSummaryString()); 
 		 }
+		 
+		   return returnList;
 	}
 	
 	//import Instances -> learn and export model
