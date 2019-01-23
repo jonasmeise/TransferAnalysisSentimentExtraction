@@ -303,7 +303,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
-		//we'll write out own method...
+		//We'll write out own method...
 		//writeOutput();
 		
 		//cycle through all the 
