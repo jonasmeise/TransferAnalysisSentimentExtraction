@@ -18,6 +18,7 @@ import de.tudarmstadt.ukp.dkpro.core.clearnlp.ClearNlpSegmenter;
 import de.tudarmstadt.ukp.dkpro.core.maltparser.MaltParser;
 import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.type.classifiers.*;
+import weka.classifiers.functions.LibSVM;
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import de.unidue.langtech.bachelor.meise.files.DataParser;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
@@ -40,9 +41,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_AKTSKI", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest", "src/main/resources/learningtest/analysis.txt");
+		myPipeline.foldLearning("src/main/resources/learningtest_AKTSKI", "src/main/resources/learningtest_AKTSKI/analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -79,11 +80,6 @@ public class MainPipeline {
 	
 	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
-	        
-		 	if(new File(modelFilePath).exists() && new File(arffFilePath).exists()) {
-		 		//jump directly to learning
-		 		
-		 	}
 		 
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
 	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
@@ -92,11 +88,13 @@ public class MainPipeline {
 	                XmiReader.PARAM_PATTERNS, typeFile,
 	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
 	        
-	        AnalysisEngineDescription report = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class, 
-	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		TestClassifierGenerator.PARAM_RELATION_NAME, "test");
+			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        SimplePipeline.runPipeline(reader, report);
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
+	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		TestClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI");
+	        
+	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
 	
 	public void run_read(String inputFilePath, String arffFilePath, String modelFilePath, String outputPath) throws UIMAException, IOException {
@@ -117,6 +115,8 @@ public class MainPipeline {
         
         //AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
         
+		 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
+		
         AnalysisEngineDescription classifierHandler = AnalysisEngineFactory.createEngineDescription(ClassifierHandler.class,
     			ClassifierHandler.PARAM_ARFF_FILE, arffFilePath,
     			ClassifierHandler.PARAM_IGNORE_FEATURES, "0 2",
@@ -125,11 +125,12 @@ public class MainPipeline {
     			ClassifierHandler.PARAM_NUM_FOLDS, "5",
     			ClassifierHandler.PARAM_ANALYIS_OUTPUT_PATH, outputPath);
         
-        SimplePipeline.runPipeline(reader, classifierHandler);
+        SimplePipeline.runPipeline(reader, lemmatizer, classifierHandler);
 	}
 	
 	public void foldLearning(String arffFileFolder, String outputPath) {
+		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,outputPath);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath);
 	}
 }

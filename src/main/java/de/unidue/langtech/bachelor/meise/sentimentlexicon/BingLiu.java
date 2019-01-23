@@ -12,7 +12,6 @@ public class BingLiu extends SentimentLexicon {
 	
 	public BingLiu() {
 		super(false);
-		loadFromFile();
 	}
 
 	@Override
@@ -62,6 +61,8 @@ public class BingLiu extends SentimentLexicon {
 				negMap.put(negative, (double) 1);
 			}
 		}
+		
+		myLog.log("Finished loading a total of " + (negMap.size()+posMap.size()) + " entries.");
 	}
 
 }

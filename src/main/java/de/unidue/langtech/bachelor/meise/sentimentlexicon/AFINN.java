@@ -6,12 +6,8 @@ import java.util.ArrayList;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
 
 public class AFINN extends SentimentLexicon {
-	private static String filePath = "src/main/resources/sentimentlexicon/lexicon3/AFINN/AFINN-111.txt"; 
-	
 	public AFINN() {
-		super(false, filePath);
-
-		loadFromFile();
+		super(false, "src/main/resources/sentimentlexicon/lexicon3/AFINN/AFINN-111.txt");
 	}
 	
 	@Override
@@ -20,6 +16,12 @@ public class AFINN extends SentimentLexicon {
 		
 		if(neuMap.containsKey(word)) {
 			returnValue = neuMap.get(word);
+			
+			if(options[0].compareTo("negative")==0 && returnValue>=0) {
+				returnValue=0;
+			} else if(options[0].compareTo("positive")==0 && returnValue<0){
+				returnValue=0;
+			}
 		}
 		
 		return returnValue;

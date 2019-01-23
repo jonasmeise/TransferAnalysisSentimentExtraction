@@ -8,28 +8,21 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Random;
-
-import org.apache.uima.fit.factory.JCasFactory;
 
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.LibSVM;
 import weka.classifiers.meta.FilteredClassifier;
-import weka.core.DenseInstance;
-import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SelectedTag;
-import weka.core.stemmers.LovinsStemmer;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
+import libsvm.svm_parameter;
 
 public class AspectClassifier {
 	//a single Aspect Classifier for a set of Instances
@@ -40,6 +33,10 @@ public class AspectClassifier {
 	public Evaluation evaluation;
 	private FileUtils fu;
 	private ConsoleLog myLog;
+	private int kernelType=0;
+	private int svmType=0;
+	
+	//TODO: SETUP the different SVM-Types & parameter
 	
 	int seed;
 	int folds = 10;
@@ -50,6 +47,12 @@ public class AspectClassifier {
 		instances = null;
 		classifier = new FilteredClassifier();
 		myLog = new ConsoleLog();
+	}
+	
+	public AspectClassifier(int kernelType, int svmType) {
+		this();
+		this.kernelType= kernelType;
+		this.svmType = svmType;
 	}
 	
 	public Classifier getClassifier() {
@@ -94,9 +97,9 @@ public class AspectClassifier {
 			//remove the ID-Feature again
 
 			StringToWordVector s2wFilter = createS2WVector(convertIntegers(stringIndices));
-
-			svm.setKernelType(new SelectedTag(0, LibSVM.TAGS_KERNELTYPE));
-			svm.setSVMType(new SelectedTag(0, LibSVM.TAGS_SVMTYPE));
+			
+			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
+			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
 			
 			classifier.setFilter(s2wFilter); 
@@ -105,27 +108,29 @@ public class AspectClassifier {
 			return newData;
 	}
 	
-	public ArrayList<String> learn(Instances data) throws Exception {
-		ArrayList<String> returnList = new ArrayList<String>();
+	public ArrayList<Evaluation> learn(Instances data) throws Exception {
+		ArrayList<Evaluation> returnList = new ArrayList<Evaluation>();
 		Random rand = new Random(seed);
-		 Instances randData = new Instances(data);
-		 randData.randomize(rand);
-		 
+		Instances scrambledData = new Instances(data);
+		scrambledData.randomize(rand);
+		
+	    if (scrambledData.classAttribute().isNominal()) {
+	    	scrambledData.stratify(folds);
+	    }
+
 		 for (int n = 0; n < folds; n++) {
-			   Instances train = randData.trainCV(folds, n, rand);
-			   Instances test = randData.testCV(folds, n);
+			   Instances train = scrambledData.trainCV(folds, n, rand);
+			   Instances test = scrambledData.testCV(folds, n);
  
 			   test.deleteAttributeAt(0);
 			   //build-Classifier loescht automatisch 0
 			   train = buildClassifier(train);
+			   classifier.buildClassifier(train);
 			   
-			   evaluation = evalModel(classifier, test, folds, new Random());
-			   returnList.add(data.relationName() + "\tFold#" + (n+1) + "\n" 
-			   + "FP: " +evaluation.numFalsePositives(train.numAttributes()-1) + "\n"
-			   + "FN: " +evaluation.numFalseNegatives(train.numAttributes()-1) + "\n"
-			   + "TN: " +evaluation.numTrueNegatives(train.numAttributes()-1) + "\n"
-			   + "TP: " +evaluation.numTruePositives(train.numAttributes()-1)
-			   + evaluation.toSummaryString()); 
+			   Evaluation currentEvaluation;
+			   currentEvaluation = evalModel(classifier, test, folds, new Random());
+			   System.out.println("EVAL:" + currentEvaluation.toMatrixString());
+			   returnList.add(currentEvaluation);
 		 }
 		 
 		   return returnList;
@@ -142,10 +147,10 @@ public class AspectClassifier {
 		saveModel(outputPath, classifier);
 	}
 	
-	private StringToWordVector createS2WVector(int[] ignoreAttributeArray) {
+	private StringToWordVector createS2WVector(int[] attributeArray) {
 		StringToWordVector s2wFilter;
 		s2wFilter = new StringToWordVector(); 
-		s2wFilter.setAttributeIndicesArray(ignoreAttributeArray);
+		s2wFilter.setAttributeIndicesArray(attributeArray);
 		s2wFilter.setIDFTransform(true);
 		s2wFilter.setLowerCaseTokens(true);
 		
@@ -204,6 +209,7 @@ public class AspectClassifier {
    
    public Instances getData(String fileName, Integer posClass ) throws IOException, URISyntaxException {
        File file = new File(fileName);
+       sourcePath = file.getName();
        myLog.log("Loading instances from " + fileName + "...");
        BufferedReader inputReader = new BufferedReader(new FileReader(file));
        Instances data = new Instances(inputReader);

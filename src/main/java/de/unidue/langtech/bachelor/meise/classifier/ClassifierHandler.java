@@ -19,6 +19,7 @@ import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.classifiers.TestClassifierGenerator;
+import weka.classifiers.Evaluation;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -54,6 +55,16 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
   		private String arffFileInput;
   	    private ArrayList<String> arffFileInputs;
   	    
+  	  public static final String PARAM_KERNEL_TYPE = "paramKernelType";
+	    @ConfigurationParameter(name = PARAM_KERNEL_TYPE, mandatory = false)
+		private String paramKernelType;
+	    private int kernelType;
+	    
+	    public static final String PARAM_SVM_TYPE = "paramSVMType";
+  	    @ConfigurationParameter(name = PARAM_SVM_TYPE, mandatory = false)
+  		private String paramSVMType;
+  	    private int svmType;
+  	    
   	//Argument of NUM_FOLDS
     //WARNING: DOES NOT ACTUALLY PROCESS ANYTHING. ONLY WORKS BASED ON ALREADY EXISTING ARFFS
   		public static final String PARAM_NUM_FOLDS = "foldNum";
@@ -84,11 +95,23 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    		    	
 	    	minAcceptanceValue = Double.valueOf(featureMinAcceptanceValue);
 	    	
+	    	if(paramKernelType!=null) {
+	    		kernelType = Integer.valueOf(paramKernelType);
+	    	} else {
+	    		kernelType = 0;
+	    	}
+	    	
+	    	if(paramSVMType!=null) {
+	    		svmType = Integer.valueOf(paramSVMType);
+	    	} else {
+	    		svmType = 0;
+	    	}
+	    	
 	    	if(numFold!=null) {
 	    		numFolds = Integer.valueOf(numFold);
 	    		foldAnalysisEnabled=true;
 	    		
-	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, outputAnalysisPath);
+	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, kernelType, svmType, outputAnalysisPath);
 	    	} else {
 		    	if(ignoreFeaturesAt!=null) {
 		    		String[] split=ignoreFeaturesAt.split(" ");
@@ -154,7 +177,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    	}
 	    }
 	
-	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, String outputPath) {
+	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath) {
 		 ArrayList<String> analysisString = new ArrayList<String>();
 		 boolean manuallyOutputData = false;
 		 if(myLog==null && allData==null && fu==null) {
@@ -167,14 +190,38 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 			 myLog.log("This class is called from outside. Manually setting attributes...");
 		 }
 		 
-		 myLog.log("WARNING: This current method will not generate any data, but only will analyse already existing .arff Files with Crossfolds");	
+		 myLog.log("WARNING: This current method will not generate any data, but only will analyse already existing .arff files with crossfold validation");	 
 		 
 		for(String arffFileInput : arffFileInputs) {
 			try {
 				//if learning for folds: continue from her
 				AspectClassifier foldClassifier = new AspectClassifier();
+				Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
+				System.out.println(classAttributeAt);
+				
 				foldClassifier.folds = numFolds;
-				analysisString.addAll(foldClassifier.learn(foldClassifier.getData(arffFileInput, classAttributeAt)));
+				ArrayList<Evaluation> allEvaluations = foldClassifier.learn(data);
+				
+				double precision=0, recall=0, fMeasure=0, accuracy=0;
+						
+				for(Evaluation singleEval : allEvaluations) {
+					precision += singleEval.precision(0);
+					recall += singleEval.recall(0);
+					fMeasure += singleEval.fMeasure(0);
+					accuracy += singleEval.pctCorrect();
+				}
+					
+				System.out.println("Precision\t" + precision/numFolds);
+				System.out.println("Recall\t" + recall/numFolds);
+				System.out.println("fMeasure" + fMeasure/numFolds);
+				System.out.println("Accuracy\t" + accuracy/numFolds);
+				
+				analysisString.add(foldClassifier.sourcePath);
+				analysisString.add("Precision\t" + precision/numFolds);
+				analysisString.add("Recall\t" + recall/numFolds);
+				analysisString.add("fMeasure" + fMeasure/numFolds);
+				analysisString.add("Accuracy\t" + accuracy/numFolds);
+				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -204,7 +251,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 			
 			for(String singleModelFile : modelFileInputFolder) {
 				try {
-					AspectClassifier newAspectClassifier = new AspectClassifier();
+					AspectClassifier newAspectClassifier = new AspectClassifier(kernelType, svmType);
 					newAspectClassifier.loadModels(singleModelFile);
 					aspectClassifierList.add(newAspectClassifier);
 					

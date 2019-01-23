@@ -1,42 +1,39 @@
 Structure
 
-1.	Abstract
-2.	Introduction
-3.	ABSA
-	3.1 Task Explanation
-	3.1	Research Question
-		3.1.1	Hypothesis
-		3.1.2	Task-specific Differences
-	3.2	Results of old ABSA-Task
-		3.2.1	Comparison Models
-4.	Setup
+1.	Introduction
+2.	Foundations
+	2.1 Task Explanation
+		2.1.1	Task-specific Differences
+	2.2	Results of old ABSA-Tasks
+		2.2.1	Comparison Models
+3.	Concept
+		3.1	Workflow Pipeline
+		3.2	External Resources
+		3.3	Pre-Processing Steps
+4.	Implementation
 	4.1	Dataset Creation
-		4.1.1	Data Source
-	4.2 Annotation
+	4.2	Annotation
 		4.2.1	Annotation Guidelines
 		4.2.2	Annotation Example
 	4.3	Dataset Analysis
-		4.3.1	Statistical Setup
+		4.3.1	Statistical Information
 		4.3.2	Aspect Distribution
 		4.3.3	Sentiment Distribution
-	4.4	Pipeline
-		4.4.1	Pipeline Chart
-		4.4.2	External Resources
-		4.4.3	Pre-Processing Steps
+	4.4	Description of Models
 	4.5	Implementation of Own Comparison Model
 		4.5.1	Motivation
 		4.5.2	Pre-Processing
 		4.5.3	Features
-		4.5.4	Ablation Proof
-5.	Results
+		4.5.4	Ablation Test
+5.	Evaluation
 	5.1	Model Performance
-		5.1.1	Statistical Tables (Accuracy / Precision / Recall)
 	5.2	Confusion Matrix
-6.	Analysis
-	6.1	Model-Feature Relation
-		6.1.2	Comparison to past ABSA Tasks
-	6.2	Hypothesis Validation
-7.	Conclusions
+6.	Conclusion
+	6.1	Summary
+	6.2	Outlook
 
-8.	References
-9.	Appendix
+	List of Figures
+	List of Tables
+	Listings
+
+	References

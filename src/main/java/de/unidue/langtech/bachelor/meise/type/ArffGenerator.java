@@ -102,6 +102,11 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	return returnString;
     }
     
+	public String stringToFeatureName(String originalName) {
+		//transforms "not too good" into "_not_too_good"
+		return ("_" + originalName.replace(" ", "_"));
+	}
+	
     public void writeOutput() {
     	String completeOutput;
     	int counter=0;

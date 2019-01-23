@@ -7,12 +7,8 @@ import java.util.HashMap;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
 
 public class EmoLex extends SentimentLexicon {
-	private static String filePath = "src/main/resources/sentimentlexicon/lexicon1/NRC-Emotion-Lexicon-v0.92/NRC-Emotion-Lexicon-Senselevel-v0.92.txt"; 
-	
 	public EmoLex() {
-		super(true, filePath);
-
-		loadFromFile();
+		super(true, "src/main/resources/sentimentlexicon/lexicon1/NRC-Emotion-Lexicon-v0.92/NRC-Emotion-Lexicon-Senselevel-v0.92.txt");
 	}
 	
 	@Override
