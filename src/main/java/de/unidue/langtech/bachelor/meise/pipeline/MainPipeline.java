@@ -41,9 +41,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_GTI", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_XRCE", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest_GTI", "src/main/resources/learningtest_GTI/analysis.txt");
+		myPipeline.foldLearning("src/main/resources/learningtest_XRCE", "src/main/resources/learningtest_XRCE/analysis_entity.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -90,7 +90,7 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator.class, 
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(XRCE_ClassifierGenerator.class, 
 	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
 	        		TestClassifierGenerator.PARAM_RELATION_NAME, "GTU");
 	        

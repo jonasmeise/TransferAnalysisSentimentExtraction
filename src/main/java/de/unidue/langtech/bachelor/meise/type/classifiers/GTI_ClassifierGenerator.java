@@ -23,6 +23,7 @@ import webanno.custom.Valence;
 //Tamara Alvarez-Lopez, Jonathan Juncal-Martnez, Milagros Fernandez-Gavilanes Enrique Costa-Montenegro, Francisco Javier Gonzalez-Casta no
 //Classification type: linear SVM
 //Training file for word lists is generated separately
+//input-output format is normalized to match the current Task; the model itself is not changed
 
 
 public class GTI_ClassifierGenerator extends ArffGenerator{

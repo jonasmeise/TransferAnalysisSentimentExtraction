@@ -11,36 +11,32 @@ import org.apache.uima.jcas.JCas;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
-import de.unidue.langtech.bachelor.meise.sentimentlexicon.*;
+import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
-import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
-//BASED ON THIS MODEL (BASIC FEATURE SET, SECTION 3.2) DESCRIBED IN THIS PAPER:
-//http://aclweb.org/anthology/S/S16/S16-1051.pdf
-//AKTSKI at SemEval-2016 Task 5: Aspect Based Sentiment Analysis for Consumer Reviews
-//Pateria, Choubey
-//Classification type: SVM-RBF
-//Keywords for each Term (TF-IDF transformations) are generated in String2word-function within AspectClassifier.java
+//BASED ON THIS MODEL (BASIC FEATURE SET, SECTION 2.2) DESCRIBED IN THIS PAPER:
+//http://aclweb.org/anthology/S/S16/S16-1044.pdf
+//XRCE at SemEval-2016 Task 5: Feedbacked Ensemble Modelling on
+//Syntactico-Semantic Knowledge for Aspect Based Sentiment Analysis
+//Caroline Brun and Julien Perez and Claude Roux
+//Classification type: Connected Conditional Random Fields 
+//Training file for word lists is generated separately
 //input-output format is normalized to match the current Task; the model itself is not changed
 
-public class AKTSKI_ClassifierGenerator extends ArffGenerator{
+public class XRCE_ClassifierGenerator extends ArffGenerator {
 
+	ClassifierHandler myHandler; //for pre-crossfold learning, pipeline simulation
 	int cutoff = 200; //Maximale Saetze/Datensatz
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
-	String regexIgnore = "[^a-zA-Z\\s!_]";
 	
-	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
-	ArrayList<SentimentLexicon> sentimentLexicons;
-	Collection<String> neutralWords;
+	ArrayList<ArrayList<String>> sortedLinesEntity = new ArrayList<ArrayList<String>>();
+	ArrayList<ArrayList<String>> sortedLinesAttribute = new ArrayList<ArrayList<String>>();
 	
-	//for non-pipelined access
-	public AKTSKI_ClassifierGenerator() {
-		super();
-	}
+	String regexIgnore = "[\'\"]";
 	
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
@@ -50,7 +46,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
 
         	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
-        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
+        	ArrayList<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
 			
         	ArrayList<Token> roots = new ArrayList<Token>();
         	for(Dependency dpElement : dependencies) {
@@ -66,76 +62,81 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	        	
 	        	treeCollection.add(tree);
 	        	subSentences.add(tree.getAllObjects());	
-        	}
-	        	
+        	}   	
         	
         	subSentences = divideIntoSubSentences(sentence, treeCollection);
-        	
+
         	//generate all outputs, then overwrite specific ones
         	for(String singleClass : allClassAttributes) {
-        		for(ArrayList<Token> singleSentence : subSentences) {
-        			String unigrams = "";
-        			String bigrams = "";		
-        			Double[] sentiments = new Double[3];
-        			sentiments[0] = (double) 0;        			
-        			sentiments[1] = (double) 0;
-        			sentiments[2] = (double) 0;
-        			
-        			for(int i=0;i<singleSentence.size();i++) {
-        				Token singleToken = singleSentence.get(i);
-        			
-        				//TODO: Include negation term
-        				for(int n=0;n<sentimentLexicons.size();n++) {
-        					SentimentLexicon currentLexicon = sentimentLexicons.get(n);
-        					
-        					if(currentLexicon.onlyWorksOnLemmas) {
-        						sentiments[n] += currentLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"}) - currentLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
-        					} else {
-        						sentiments[n] += currentLexicon.fetchPolarity(singleToken.getCoveredText(), new String[] {"positive"}) - currentLexicon.fetchPolarity(singleToken.getCoveredText(), new String[] {"negative"});
-        					}
-        				}
-        				
-        				unigrams = unigrams + singleToken.getCoveredText() + " ";
-        				if((i+1)<singleSentence.size()) {
-        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
-        				}
+        		for(ArrayList<Token> singleSentence : subSentences) {	
+        			String sentenceString = "";
+        			for(Token token : singleSentence) {
+        				sentenceString = sentenceString + token.getCoveredText() + " ";
         			}
         			
-        			unigrams = unigrams.toLowerCase();
-    				bigrams = bigrams.toLowerCase();
-        			
-					ArrayList<String> singleLine = new ArrayList<String>();
-					singleLine.add("" + valueId);
-					singleLine.add("" + (sentiments[0]/singleSentence.size()));
-					singleLine.add("" + (sentiments[1]/singleSentence.size()));
-					singleLine.add("" + (sentiments[2]/singleSentence.size()));
-					
-					singleLine.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
-					singleLine.add("'" + bigrams.replaceAll(regexIgnore, "") + "'");
-					
-					for(String neutralWord : neutralWords) {
-						int check = unigrams.contains(neutralWord) ? 1 : 0;
-						singleLine.add("" + check);
-					}
-					
-					int check = unigrams.contains("!") ? 1 : 0;
-					singleLine.add("" + check);
-					
-					 check = unigrams.contains("?") ? 1 : 0;
-					singleLine.add("" + check);
-					
-					singleLine.add(singleClass);
-					
-					if(!learningModeActivated) {
-						singleLine.add("false");
-					} else {
-						singleLine.add("?");
-					}
-					
-					valueId++;
-					
-					returnList.add(singleLine);
-					sortedLines.add(singleLine);
+        			for(int i=0;i<singleSentence.size();i++) {
+            			String unigrams = "";
+            			String bigrams = "";		
+            			String lemma = "";
+            			String pos = "";
+        				Token singleToken = singleSentence.get(i);
+        				
+        				lemma = lemma + singleToken.getLemma().getValue();
+        				pos = pos + singleToken.getPos().getPosValue();
+        				
+            			unigrams = unigrams.toLowerCase();
+        				bigrams = bigrams.toLowerCase();
+        				lemma = lemma.toLowerCase();
+            			
+    					ArrayList<String> singleLine = new ArrayList<String>();
+    					singleLine.add("" + valueId);
+    					singleLine.add("'" + sentenceString.replaceAll(regexIgnore, "") + "'");
+    					
+    					singleLine.add("'" + pos.replaceAll(regexIgnore, "") + "'");
+    					singleLine.add("'" + lemma.replaceAll(regexIgnore, "") + "'");
+    					singleLine.add("'" + singleToken.getCoveredText().replaceAll(regexIgnore, "") + "'");
+    					
+    					int hasUppercase = (singleToken.getCoveredText().toUpperCase().equals(singleToken.getCoveredText().toLowerCase())) ? 0 : 1;
+    					singleLine.add("" + hasUppercase);
+    					
+    					Tree<Token> currentToken = null;
+    					
+    					for(int treeRotate=0;treeRotate<treeCollection.size();treeRotate++) {
+    						if(treeCollection.get(treeRotate).findToken(singleToken, treeCollection)!=null) {
+    							currentToken = treeCollection.get(treeRotate).findToken(singleToken, treeCollection);
+    						}
+    					}
+    					
+    					if(currentToken!=null) {
+    						singleLine.add("'" + currentToken.getParentDependencyType() + "'");
+    					} else {
+    						singleLine.add("");
+    					}
+    					
+    					Collection<Token> searchTokens = new ArrayList<Token>();
+    					searchTokens.add(singleToken);
+    					Collection<Token> contextTokens = getContext(sentence, treeCollection, 3, 10000, searchTokens);
+    					
+    					String context = "";
+    					for(Token token : contextTokens) {
+    						context = context + token.getCoveredText() + " ";
+    					}
+    					singleLine.add("'" + context.replaceAll(regexIgnore, "") + "'");
+    					
+    					singleLine.add(singleClass);
+    					
+    					if(!learningModeActivated) {
+    						singleLine.add("false");
+    					} else {
+    						singleLine.add("?");
+    					}
+    					
+    					valueId++;
+    					
+    					returnList.add(singleLine);
+    					sortedLinesEntity.add(singleLine);	
+
+        			}
         		}
         	}
         	
@@ -164,14 +165,15 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	        		}
 	        		
 	        		String stringSentence = "";
-	        		for(Token token : currentSentence) {
-	        			stringSentence = stringSentence + token.getCoveredText() + " "; //identical to unigram feature
+	        		for(Token singleToken : currentSentence) {
+    					stringSentence = stringSentence + singleToken.getCoveredText() + " "; //identical to unigram feature
 	        		}
 	        		
 	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
 	        		
 					String currentValence=valence.getValenceRating();
 					String identifier;
+					String focusWord;
 					
 					if(valence.getValenceRating()==null) {
 						currentValence="positive";
@@ -180,19 +182,21 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
 	    					//non-negated
 							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+							focusWord = "'" + t2.getCoveredText().replaceAll(regexIgnore, "")  + "'";
 	    				} else {
 	    					//negated
 	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+	    					focusWord = "'" + t1.getCoveredText().replaceAll(regexIgnore, "")  + "'";
 	    				}
 						
 						//find the value in returnList and replace it with the new one
 						
-						for(ArrayList<String> singleLine : sortedLines) {
+						for(ArrayList<String> singleLine : sortedLinesEntity) {
 							//find sentences that match
-							if(singleLine.get(4).compareTo(stringSentence)==0) {
+							if(singleLine.get(1).compareTo(stringSentence)==0) {
 								//find identifier that match
 								if(singleLine.get(identifierAttributeAt)!=null) {
-									if(singleLine.get(identifierAttributeAt).compareTo(identifier)==0) {
+									if(singleLine.get(identifierAttributeAt).compareTo(identifier)==0 && singleLine.get(4).compareTo(focusWord)==0) {
 										//mark this ratio as checked
 										if(!learningModeActivated) {
 											singleLine.set(singleLine.size()-1, "true");
@@ -225,32 +229,6 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
-		sentimentLexicons = new ArrayList<SentimentLexicon>();
-		sentimentLexicons.add(new AFINN());
-		sentimentLexicons.add(new BingLiu());
-		sentimentLexicons.add(new EmoLex());
-		
-		sentimentLexicons.get(0).loadFromFile();
-		sentimentLexicons.get(1).loadFromFile();
-		sentimentLexicons.get(2).loadFromFile();
-		
-		neutralWords = new ArrayList<String>();
-		neutralWords.add("average");
-		neutralWords.add("normal");
-		neutralWords.add("simple");
-		neutralWords.add("okay");
-		neutralWords.add("ok");
-		neutralWords.add("not great");
-		neutralWords.add("nothing great");
-		neutralWords.add("moderate");
-		neutralWords.add("typical");
-		neutralWords.add("alright");
-		neutralWords.add("fair");
-		neutralWords.add("mediocre");
-		neutralWords.add("just");
-		neutralWords.add("fine");
-		neutralWords.add("not too good");
-		neutralWords.add("good enough");
 		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
@@ -274,37 +252,39 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
-			relations.add("AFINN numeric");
-			relations.add("BingLiu numeric");
-			relations.add("EmoLex numeric");
-			relations.add("unigrams string");
-			relations.add("bigrams string");
-			
-			for(String neutralWord : neutralWords) {
-				relations.add("feature_" + stringToFeatureName(neutralWord) + " numeric");
-			}
-			
-			relations.add("punctuation_exclamation numeric");
-			relations.add("punctuation_question numeric");
+			//for nouns, verbs, adjectives
+			relations.add("sentence string");
+			relations.add("pos string");
+			relations.add("lemma string");
+			relations.add("surfaceform string");
+			relations.add("hasUppercase numeric");
+			relations.add("dependency string");
+			relations.add("neighbortokens string");
+			//relations.add("relatedto " + generateTupel(new String[] {"true", "false"})); //TODO: Where does the data come from?
 			
 			relations.add("type string");
+			
 			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
 			
 			allClassAttributes.add(types[i]);
 			
+			ArrayList<String> newList = new ArrayList<String>();
+			newList.add(types[i]);
+			
 			this.relations.add(relations);
 		}
 		
-		identifierAttributeAt=relations.get(0).size()-2; //second-to-last element contains identifier attribute
-		ignoreFeatures = new int[1];
+		ignoreFeatures = new int[2];
+		identifierAttributeAt=relations.get(0).indexOf("type string");
 		ignoreFeatures[0]=identifierAttributeAt;
+		ignoreFeatures[1]=1;
 		
 		return this.relations;
 	}
-
+	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
-		//We'll write out own method...
+		//we'll write out own method...
 		//writeOutput();
 		
 		//cycle through all the 
@@ -320,7 +300,6 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	    		 
 	    		//write all relational attributes
 	    		for(int n=0;n<relations.get(0).size();n++) {
-	    			
 	    			String relation = relations.get(0).get(n);
 	    			
 	    			if(ignoreFeatures.length>0) {
@@ -342,7 +321,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	    		completeOutput = completeOutput + "\n@data\n";
 	    		
 				
-				for(ArrayList<String> singleLine : sortedLines) {
+				for(ArrayList<String> singleLine : sortedLinesEntity) {
 					if(singleLine.get(identifierAttributeAt)!=null) {						
 						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
 							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";

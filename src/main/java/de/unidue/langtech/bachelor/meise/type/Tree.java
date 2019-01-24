@@ -225,56 +225,6 @@ public class Tree<T> {
 		return -1;
 	}
 	
-	/*public int tokenDistanceInTree(AspectRating t1, AspectRating t2) {
-		Tree<AspectRating> tree1;
-		Tree<AspectRating> tree2;
-		int treeDepth1, treeDepth2, distance=0;
-		boolean found = false;
-		
-		Collection<Tree<AspectRating>> treeCollection1 = new ArrayList<Tree<AspectRating>>();
-		Collection<Tree<AspectRating>> treeCollection2 = new ArrayList<Tree<AspectRating>>();
-		treeCollection1.add((Tree<AspectRating>) this);
-		treeCollection2.add((Tree<AspectRating>) this);
-		
-		tree1 = findToken(t1, treeCollection1);
-		tree2 = findToken(t2, treeCollection2);
-		
-		if(tree1!=null && tree2!=null) {
-			if(!t1.equals(t2)) {
-				//System.out.println(tree1 + " " + tree2);
-				while(!found) {	
-					treeDepth1 = tree1.getDepth();
-					treeDepth2 = tree2.getDepth();
-					
-					//System.out.println(treeDepth1 + "  " + treeDepth2);
-
-					if(tree1 == tree2) {
-						found=true;
-					}
-					if(treeDepth1 == treeDepth2 && treeDepth1 == 0) {
-						break;
-					}
-					
-					if(treeDepth1 >= treeDepth2) {
-						tree1 = tree1.getParent();
-					} else if (treeDepth1 < treeDepth2) {
-						tree2 = tree2.getParent();
-					}
-					
-					distance++;
-				}
-				
-				if(found) {
-					return distance;
-				}
-			} else {
-				return 0;
-			}
-		}
-		
-		return -1;
-	}*/
-	
 	public int getDepth() {
 		if(parentDependencyType=="ROOT") {
 			return 0;

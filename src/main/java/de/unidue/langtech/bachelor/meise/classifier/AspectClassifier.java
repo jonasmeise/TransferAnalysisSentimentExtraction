@@ -17,6 +17,7 @@ import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.LibSVM;
 import weka.classifiers.meta.FilteredClassifier;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.SelectedTag;
 import weka.filters.Filter;
@@ -102,8 +103,10 @@ public class AspectClassifier {
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
 			
+			RandomForest rf = new RandomForest();
+			
 			classifier.setFilter(s2wFilter); 
-			classifier.setClassifier(svm);	
+			classifier.setClassifier(rf);	
 			
 			return newData;
 	}
