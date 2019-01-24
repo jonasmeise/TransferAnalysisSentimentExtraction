@@ -68,7 +68,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
   	//Argument of NUM_FOLDS
     //WARNING: DOES NOT ACTUALLY PROCESS ANYTHING. ONLY WORKS BASED ON ALREADY EXISTING ARFFS
   		public static final String PARAM_NUM_FOLDS = "foldNum";
-  	    @ConfigurationParameter(name = PARAM_ARFF_FILE, mandatory = true)
+  	    @ConfigurationParameter(name = PARAM_ARFF_FILE, mandatory = false)
   		private String numFold;
   	    private int numFolds;
   	    private boolean foldAnalysisEnabled=false;

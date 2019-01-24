@@ -41,9 +41,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_AKTSKI", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_GTI", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest_AKTSKI", "src/main/resources/learningtest_AKTSKI/analysis.txt");
+		myPipeline.foldLearning("src/main/resources/learningtest_GTI", "src/main/resources/learningtest_GTI/analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -90,9 +90,9 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator.class, 
 	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		TestClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI");
+	        		TestClassifierGenerator.PARAM_RELATION_NAME, "GTU");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -119,10 +119,9 @@ public class MainPipeline {
 		
         AnalysisEngineDescription classifierHandler = AnalysisEngineFactory.createEngineDescription(ClassifierHandler.class,
     			ClassifierHandler.PARAM_ARFF_FILE, arffFilePath,
-    			ClassifierHandler.PARAM_IGNORE_FEATURES, "0 2",
+    			ClassifierHandler.PARAM_IGNORE_FEATURES, "0",
     			ClassifierHandler.PARAM_MODEL_FILE, arffFilePath,
     			ClassifierHandler.PARAM_ACCEPTANCE_VALUE, "0",
-    			ClassifierHandler.PARAM_NUM_FOLDS, "5",
     			ClassifierHandler.PARAM_ANALYIS_OUTPUT_PATH, outputPath);
         
         SimplePipeline.runPipeline(reader, lemmatizer, classifierHandler);
@@ -131,6 +130,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,0, 0, outputPath);
 	}
 }

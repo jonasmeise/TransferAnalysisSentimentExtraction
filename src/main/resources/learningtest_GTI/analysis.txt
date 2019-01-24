@@ -1,0 +1,97 @@
+Ausstattung-negative.arff
+Precision	0.03333333333333333
+Recall	0.008333333333333333
+fMeasure0.013333333333333332
+Accuracy	97.20333612188504
+
+Ausstattung-positive.arff
+Precision	0.3695887445887446
+Recall	0.11304347826086955
+fMeasure0.16829451218903552
+Accuracy	95.2292105018548
+
+Hotelpersonal-negative.arff
+Precision	0.125
+Recall	0.02
+fMeasure0.032467532467532464
+Accuracy	97.77917205364159
+
+Hotelpersonal-positive.arff
+Precision	0.7918672116940618
+Recall	0.5819069069069068
+fMeasure0.6641072039889815
+Accuracy	95.82553806373109
+
+Komfort-negative.arff
+Precision	0.6809312783178613
+Recall	0.38516657852987835
+fMeasure0.4871074515295284
+Accuracy	89.96510085262082
+
+Komfort-positive.arff
+Precision	0.48871943115364164
+Recall	0.2144385026737968
+fMeasure0.2892934783603708
+Accuracy	93.29657515146906
+
+Lage-negative.arff
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	98.725124851066
+
+Lage-positive.arff
+Precision	0.8230192064322622
+Recall	0.5873239436619718
+fMeasure0.6840869446834726
+Accuracy	92.14541029736101
+
+OTHER-negative.arff
+Precision	0.175
+Recall	0.03476190476190476
+fMeasure0.0570909090909091
+Accuracy	95.64056413246465
+
+OTHER-positive.arff
+Precision	0.49965441507237174
+Recall	0.19547619047619044
+fMeasure0.27711815926810107
+Accuracy	92.8849680161567
+
+Preis-Leistungs-Verhltnis-negative.arff
+Precision	0.2
+Recall	0.05
+fMeasure0.07857142857142857
+Accuracy	98.64282032431703
+
+Preis-Leistungs-Verhltnis-positive.arff
+Precision	0.7855555555555556
+Recall	0.39909090909090905
+fMeasure0.5022745537915816
+Accuracy	98.58121868160654
+
+Sauberkeit-negative.arff
+Precision	0.16
+Recall	0.05
+fMeasure0.07333333333333333
+Accuracy	97.79957918219382
+
+Sauberkeit-positive.arff
+Precision	0.5595238095238095
+Recall	0.33974358974358976
+fMeasure0.4039499110094075
+Accuracy	97.61468975249491
+
+WLAN-negative.arff
+Precision	0.20999999999999996
+Recall	0.2
+fMeasure0.20238095238095238
+Accuracy	99.0951994659501
+
+WLAN-positive.arff
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	99.62992538511588
+
+

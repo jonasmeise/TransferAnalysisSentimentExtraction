@@ -11,35 +11,29 @@ import org.apache.uima.jcas.JCas;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
-import de.unidue.langtech.bachelor.meise.sentimentlexicon.*;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
-//BASED ON THIS MODEL (BASIC FEATURE SET, SECTION 3.2) DESCRIBED IN THIS PAPER:
-//http://aclweb.org/anthology/S/S16/S16-1051.pdf
-//AKTSKI at SemEval-2016 Task 5: Aspect Based Sentiment Analysis for Consumer Reviews
-//Pateria, Choubey
-//Classification type: SVM-RBF
-//Keywords for each Term (TF-IDF transformations) are generated in String2word-function within AspectClassifier.java
+//BASED ON THIS MODEL (BASIC FEATURE SET, SECTION 2.2.1) DESCRIBED IN THIS PAPER:
+//http://aclweb.org/anthology/S/S16/S16-1049.pdf
+//GTI at SemEval-2016 Task 5: SVM and CRF for Aspect Detection and Unsupervised Aspect-Based Sentiment Analysis
+//Tamara Alvarez-Lopez, Jonathan Juncal-Martnez, Milagros Fernandez-Gavilanes Enrique Costa-Montenegro, Francisco Javier Gonzalez-Casta no
+//Classification type: linear SVM
+//Training file for word lists is generated separately
 
-public class AKTSKI_ClassifierGenerator extends ArffGenerator{
+
+public class GTI_ClassifierGenerator extends ArffGenerator{
 
 	int cutoff = 200; //Maximale Saetze/Datensatz
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
-	String regexIgnore = "[^a-zA-Z\\s!_]";
+	
+	String regexIgnore = "[\'\"]";
 	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
-	ArrayList<SentimentLexicon> sentimentLexicons;
-	Collection<String> neutralWords;
-	
-	//for non-pipelined access
-	public AKTSKI_ClassifierGenerator() {
-		super();
-	}
 	
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
@@ -75,53 +69,33 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
         		for(ArrayList<Token> singleSentence : subSentences) {
         			String unigrams = "";
         			String bigrams = "";		
-        			Double[] sentiments = new Double[3];
-        			sentiments[0] = (double) 0;        			
-        			sentiments[1] = (double) 0;
-        			sentiments[2] = (double) 0;
+        			String lemmas = "";
+        			String pos = "";
         			
         			for(int i=0;i<singleSentence.size();i++) {
         				Token singleToken = singleSentence.get(i);
-        			
-        				//TODO: Include negation term
-        				for(int n=0;n<sentimentLexicons.size();n++) {
-        					SentimentLexicon currentLexicon = sentimentLexicons.get(n);
-        					
-        					if(currentLexicon.onlyWorksOnLemmas) {
-        						sentiments[n] += currentLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"}) - currentLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
-        					} else {
-        						sentiments[n] += currentLexicon.fetchPolarity(singleToken.getCoveredText(), new String[] {"positive"}) - currentLexicon.fetchPolarity(singleToken.getCoveredText(), new String[] {"negative"});
-        					}
-        				}
-        				
-        				unigrams = unigrams + singleToken.getCoveredText() + " ";
-        				if((i+1)<singleSentence.size()) {
-        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
+        				if(singleToken.getPos().getPosValue().contains("NN") || singleToken.getPos().getPosValue().contains("JJ") || singleToken.getPos().getPosValue().contains("VB")) {
+	        				unigrams = unigrams + singleToken.getCoveredText() + " ";
+	        				lemmas = lemmas + singleToken.getLemma().getValue() + " ";
+	        				pos = pos + singleToken.getPos().getPosValue() + " ";
+	        				
+	        				if((i+1)<singleSentence.size()) {
+	        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
+	        				}
         				}
         			}
         			
         			unigrams = unigrams.toLowerCase();
     				bigrams = bigrams.toLowerCase();
+    				lemmas = lemmas.toLowerCase();
         			
 					ArrayList<String> singleLine = new ArrayList<String>();
 					singleLine.add("" + valueId);
-					singleLine.add("" + (sentiments[0]/singleSentence.size()));
-					singleLine.add("" + (sentiments[1]/singleSentence.size()));
-					singleLine.add("" + (sentiments[2]/singleSentence.size()));
 					
 					singleLine.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
+					singleLine.add("'" + lemmas.replaceAll(regexIgnore, "") + "'");
+					singleLine.add("'" + pos.replaceAll(regexIgnore, "") + "'");
 					singleLine.add("'" + bigrams.replaceAll(regexIgnore, "") + "'");
-					
-					for(String neutralWord : neutralWords) {
-						int check = unigrams.contains(neutralWord) ? 1 : 0;
-						singleLine.add("" + check);
-					}
-					
-					int check = unigrams.contains("!") ? 1 : 0;
-					singleLine.add("" + check);
-					
-					 check = unigrams.contains("?") ? 1 : 0;
-					singleLine.add("" + check);
 					
 					singleLine.add(singleClass);
 					
@@ -163,8 +137,10 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	        		}
 	        		
 	        		String stringSentence = "";
-	        		for(Token token : currentSentence) {
-	        			stringSentence = stringSentence + token.getCoveredText() + " "; //identical to unigram feature
+	        		for(Token singleToken : currentSentence) {
+	        			if(singleToken.getPos().getPosValue().contains("NN") || singleToken.getPos().getPosValue().contains("JJ") || singleToken.getPos().getPosValue().contains("VB")) {
+	        				stringSentence = stringSentence + singleToken.getCoveredText() + " "; //identical to unigram feature
+	        			}
 	        		}
 	        		
 	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
@@ -188,7 +164,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 						
 						for(ArrayList<String> singleLine : sortedLines) {
 							//find sentences that match
-							if(singleLine.get(4).compareTo(stringSentence)==0) {
+							if(singleLine.get(1).compareTo(stringSentence)==0) {
 								//find identifier that match
 								if(singleLine.get(identifierAttributeAt)!=null) {
 									if(singleLine.get(identifierAttributeAt).compareTo(identifier)==0) {
@@ -224,32 +200,6 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
-		sentimentLexicons = new ArrayList<SentimentLexicon>();
-		sentimentLexicons.add(new AFINN());
-		sentimentLexicons.add(new BingLiu());
-		sentimentLexicons.add(new EmoLex());
-		
-		sentimentLexicons.get(0).loadFromFile();
-		sentimentLexicons.get(1).loadFromFile();
-		sentimentLexicons.get(2).loadFromFile();
-		
-		neutralWords = new ArrayList<String>();
-		neutralWords.add("average");
-		neutralWords.add("normal");
-		neutralWords.add("simple");
-		neutralWords.add("okay");
-		neutralWords.add("ok");
-		neutralWords.add("not great");
-		neutralWords.add("nothing great");
-		neutralWords.add("moderate");
-		neutralWords.add("typical");
-		neutralWords.add("alright");
-		neutralWords.add("fair");
-		neutralWords.add("mediocre");
-		neutralWords.add("just");
-		neutralWords.add("fine");
-		neutralWords.add("not too good");
-		neutralWords.add("good enough");
 		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
@@ -273,29 +223,26 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
-			relations.add("AFINN numeric");
-			relations.add("BingLiu numeric");
-			relations.add("EmoLex numeric");
-			relations.add("unigrams string");
+			//for nouns, verbs, adjectives
+			relations.add("words string");
+			relations.add("lemmas string");
+			relations.add("pos string");
 			relations.add("bigrams string");
 			
-			for(String neutralWord : neutralWords) {
-				relations.add("feature_" + stringToFeatureName(neutralWord) + " numeric");
-			}
-			
-			relations.add("punctuation_exclamation numeric");
-			relations.add("punctuation_question numeric");
-			
 			relations.add("type string");
+			
 			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
 			
 			allClassAttributes.add(types[i]);
 			
+			ArrayList<String> newList = new ArrayList<String>();
+			newList.add(types[i]);
+			
 			this.relations.add(relations);
 		}
 		
-		identifierAttributeAt=relations.get(0).size()-2; //second-to-last element contains identifier attribute
 		ignoreFeatures = new int[1];
+		identifierAttributeAt=5;
 		ignoreFeatures[0]=identifierAttributeAt;
 		
 		return this.relations;
@@ -303,7 +250,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
-		//We'll write out own method...
+		//we'll write out own method...
 		//writeOutput();
 		
 		//cycle through all the 
@@ -364,5 +311,4 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	public void process(JCas arg0) throws AnalysisEngineProcessException {
 		generateData(arg0, cutoff);
 	}
-
 }
