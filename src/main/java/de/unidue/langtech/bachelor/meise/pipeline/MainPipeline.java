@@ -90,9 +90,9 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(XRCE_ClassifierGenerator.class, 
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
 	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		TestClassifierGenerator.PARAM_RELATION_NAME, "GTU");
+	        		TestClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -130,6 +130,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,0, 0, outputPath);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath);
 	}
 }

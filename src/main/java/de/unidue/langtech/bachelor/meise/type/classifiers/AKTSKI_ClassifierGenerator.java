@@ -36,6 +36,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
 	ArrayList<SentimentLexicon> sentimentLexicons;
 	Collection<String> neutralWords;
+	Collection<String> negationWords;
 	
 	//for non-pipelined access
 	public AKTSKI_ClassifierGenerator() {
@@ -104,6 +105,13 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
         			unigrams = unigrams.toLowerCase();
     				bigrams = bigrams.toLowerCase();
         			
+    				int containsNegative=0;
+    				for(String negation : negationWords) {
+    					if(unigrams.contains(negation)) {
+    						containsNegative = 1;
+    					}
+    				}
+    				
 					ArrayList<String> singleLine = new ArrayList<String>();
 					singleLine.add("" + valueId);
 					singleLine.add("" + (sentiments[0]/singleSentence.size()));
@@ -112,6 +120,8 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 					
 					singleLine.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
 					singleLine.add("'" + bigrams.replaceAll(regexIgnore, "") + "'");
+					
+					singleLine.add("" + containsNegative);
 					
 					for(String neutralWord : neutralWords) {
 						int check = unigrams.contains(neutralWord) ? 1 : 0;
@@ -252,6 +262,13 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		neutralWords.add("not too good");
 		neutralWords.add("good enough");
 		
+		negationWords = new ArrayList<String>();
+		negationWords.add("not");
+		negationWords.add("n't");
+		negationWords.add("non");
+		negationWords.add("don't");
+		negationWords.add("didn't");
+		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
 		types[1] = "Hotelpersonal-positive";
@@ -279,6 +296,8 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			relations.add("EmoLex numeric");
 			relations.add("unigrams string");
 			relations.add("bigrams string");
+			
+			relations.add("negation numeric");
 			
 			for(String neutralWord : neutralWords) {
 				relations.add("feature_" + stringToFeatureName(neutralWord) + " numeric");

@@ -104,9 +104,10 @@ public class AspectClassifier {
 			svm.setProbabilityEstimates(true);
 			
 			RandomForest rf = new RandomForest();
+			classifier.setClassifier(rf);	
 			
 			classifier.setFilter(s2wFilter); 
-			classifier.setClassifier(rf);	
+			//classifier.setClassifier(svm);	
 			
 			return newData;
 	}
