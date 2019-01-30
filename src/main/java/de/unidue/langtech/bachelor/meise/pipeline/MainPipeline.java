@@ -41,9 +41,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_XRCE", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_AKTSKI", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest_XRCE", "src/main/resources/learningtest_XRCE/analysis_entity.txt");
+		myPipeline.foldLearning("src/main/resources/learningtest_AKTSKI", "src/main/resources/learningtest_AKTSKI/analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -90,11 +90,14 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
+			 AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
+					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");
+			 
 	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
 	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
 	        		TestClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI");
 	        
-	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
+	        SimplePipeline.runPipeline(reader, lemmatizer, rawDataAnalyser, writer);
 	}
 	
 	public void run_read(String inputFilePath, String arffFilePath, String modelFilePath, String outputPath) throws UIMAException, IOException {

@@ -103,11 +103,11 @@ public class AspectClassifier {
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
 			
-			RandomForest rf = new RandomForest();
-			classifier.setClassifier(rf);	
+			//RandomForest rf = new RandomForest();
+			//classifier.setClassifier(rf);	
 			
 			classifier.setFilter(s2wFilter); 
-			//classifier.setClassifier(svm);	
+			classifier.setClassifier(svm);	
 			
 			return newData;
 	}
