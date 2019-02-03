@@ -13,6 +13,7 @@ import java.util.Random;
 
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
+import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.LibSVM;
@@ -20,6 +21,9 @@ import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.SelectedTag;
+import weka.core.Stopwords;
+import weka.core.stopwords.AbstractStopwords;
+import weka.core.stopwords.StopwordsHandler;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
@@ -36,8 +40,7 @@ public class AspectClassifier {
 	private ConsoleLog myLog;
 	private int kernelType=0;
 	private int svmType=0;
-	
-	//TODO: SETUP the different SVM-Types & parameter
+	public boolean idfTransformEnabled;
 	
 	int seed;
 	int folds = 10;
@@ -121,7 +124,7 @@ public class AspectClassifier {
 	    if (scrambledData.classAttribute().isNominal()) {
 	    	scrambledData.stratify(folds);
 	    }
-
+	    
 		 for (int n = 0; n < folds; n++) {
 			   Instances train = scrambledData.trainCV(folds, n, rand);
 			   Instances test = scrambledData.testCV(folds, n);
@@ -155,7 +158,7 @@ public class AspectClassifier {
 		StringToWordVector s2wFilter;
 		s2wFilter = new StringToWordVector(); 
 		s2wFilter.setAttributeIndicesArray(attributeArray);
-		s2wFilter.setIDFTransform(true);
+		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);
 		
 		return s2wFilter;

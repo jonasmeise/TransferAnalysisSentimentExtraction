@@ -5,8 +5,10 @@ import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.resource.ResourceInitializationException;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
@@ -14,6 +16,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.*;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
+import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
@@ -37,6 +40,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	ArrayList<SentimentLexicon> sentimentLexicons;
 	Collection<String> neutralWords;
 	Collection<String> negationWords;
+	StopwordHandler myStopwordHandler;
 	
 	//for non-pipelined access
 	public AKTSKI_ClassifierGenerator() {
@@ -77,6 +81,12 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
         		for(ArrayList<Token> singleSentence : subSentences) {
         			String unigrams = "";
         			String bigrams = "";		
+        			
+        			String checkSentence = "";
+        			for(Token singleToken : singleSentence) {
+        				checkSentence = checkSentence + singleToken.getCoveredText() + " ";
+        			}
+        			
         			Double[] sentiments = new Double[3];
         			sentiments[0] = (double) 0;        			
         			sentiments[1] = (double) 0;
@@ -96,9 +106,11 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
         					}
         				}
         				
-        				unigrams = unigrams + singleToken.getCoveredText() + " ";
-        				if((i+1)<singleSentence.size()) {
-        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
+        				if(constrained || !myStopwordHandler.isStopword(singleToken.getCoveredText().toLowerCase())) {
+	        				unigrams = unigrams + singleToken.getCoveredText() + " ";
+	        				if((i+1)<singleSentence.size() && (constrained || !myStopwordHandler.isStopword(singleSentence.get(i+1).getCoveredText().toLowerCase()))) {
+	        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
+	        				}
         				}
         			}
         			
@@ -114,9 +126,16 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
     				
 					ArrayList<String> singleLine = new ArrayList<String>();
 					singleLine.add("" + valueId);
-					singleLine.add("" + (sentiments[0]/singleSentence.size()));
-					singleLine.add("" + (sentiments[1]/singleSentence.size()));
-					singleLine.add("" + (sentiments[2]/singleSentence.size()));
+					singleLine.add(checkSentence);
+					if(!constrained) {
+						singleLine.add("" + (sentiments[0]/singleSentence.size()));
+						singleLine.add("" + (sentiments[1]/singleSentence.size()));
+						singleLine.add("" + (sentiments[2]/singleSentence.size()));
+					} else {
+						singleLine.add("" + 0);
+						singleLine.add("" + 0);
+						singleLine.add("" + 0);
+					}
 					
 					singleLine.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
 					singleLine.add("'" + bigrams.replaceAll(regexIgnore, "") + "'");
@@ -175,10 +194,10 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	        		
 	        		String stringSentence = "";
 	        		for(Token token : currentSentence) {
-	        			stringSentence = stringSentence + token.getCoveredText() + " "; //identical to unigram feature
+	        			stringSentence = stringSentence + token.getCoveredText() + " ";
 	        		}
 	        		
-	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
+	        		//stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
 	        		
 					String currentValence=valence.getValenceRating();
 					String identifier;
@@ -199,7 +218,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 						
 						for(ArrayList<String> singleLine : sortedLines) {
 							//find sentences that match
-							if(singleLine.get(4).compareTo(stringSentence)==0) {
+							if(singleLine.get(1).compareTo(stringSentence)==0) {
 								//find identifier that match
 								if(singleLine.get(identifierAttributeAt)!=null) {
 									if(singleLine.get(identifierAttributeAt).compareTo(identifier)==0) {
@@ -233,8 +252,11 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		return returnList;
 	}
 
+	//acts as initialize2.0
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
+		myStopwordHandler = new StopwordHandler(stopwordsFile);
+		
 		sentimentLexicons = new ArrayList<SentimentLexicon>();
 		sentimentLexicons.add(new AFINN());
 		sentimentLexicons.add(new BingLiu());
@@ -268,6 +290,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		negationWords.add("non");
 		negationWords.add("don't");
 		negationWords.add("didn't");
+		negationWords.add("but");
 		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
@@ -291,9 +314,12 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
+			relations.add("sentence string");
+
 			relations.add("AFINN numeric");
 			relations.add("BingLiu numeric");
 			relations.add("EmoLex numeric");
+
 			relations.add("unigrams string");
 			relations.add("bigrams string");
 			
@@ -315,8 +341,9 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		}
 		
 		identifierAttributeAt=relations.get(0).size()-2; //second-to-last element contains identifier attribute
-		ignoreFeatures = new int[1];
+		ignoreFeatures = new int[2];
 		ignoreFeatures[0]=identifierAttributeAt;
+		ignoreFeatures[1]=1;
 		
 		return this.relations;
 	}

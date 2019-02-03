@@ -1,0 +1,2 @@
+f1	constrained	0,561804
+f1	unconstrained	0,566345

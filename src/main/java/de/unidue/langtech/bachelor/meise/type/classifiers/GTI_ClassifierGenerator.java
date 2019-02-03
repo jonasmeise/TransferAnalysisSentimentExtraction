@@ -11,6 +11,9 @@ import org.apache.uima.jcas.JCas;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.unidue.langtech.bachelor.meise.sentimentlexicon.AFINN;
+import de.unidue.langtech.bachelor.meise.sentimentlexicon.BingLiu;
+import de.unidue.langtech.bachelor.meise.sentimentlexicon.EmoLex;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
 import de.unidue.langtech.bachelor.meise.type.Tree;
@@ -22,7 +25,7 @@ import webanno.custom.Valence;
 //GTI at SemEval-2016 Task 5: SVM and CRF for Aspect Detection and Unsupervised Aspect-Based Sentiment Analysis
 //Tamara Alvarez-Lopez, Jonathan Juncal-Martnez, Milagros Fernandez-Gavilanes Enrique Costa-Montenegro, Francisco Javier Gonzalez-Casta no
 //Classification type: linear SVM
-//Training file for word lists is generated separately
+//Training file for word lists is partially included in the form of tag words
 //input-output format is normalized to match the current Task; the model itself is not changed
 
 
@@ -33,6 +36,7 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 	int valueId=0;
 	
 	String regexIgnore = "[\'\"]";
+	ArrayList<String> tagWordsForAspects;
 	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
 	
@@ -64,7 +68,6 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 	        	
         	
         	subSentences = divideIntoSubSentences(sentence, treeCollection);
-        	
         	//generate all outputs, then overwrite specific ones
         	for(String singleClass : allClassAttributes) {
         		for(ArrayList<Token> singleSentence : subSentences) {
@@ -73,12 +76,17 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
         			String lemmas = "";
         			String pos = "";
         			
+        			String completeSentence="";
+        			
         			for(int i=0;i<singleSentence.size();i++) {
         				Token singleToken = singleSentence.get(i);
+        				completeSentence = completeSentence + singleToken.getCoveredText()+" ";
+        				
         				if(singleToken.getPos().getPosValue().contains("NN") || singleToken.getPos().getPosValue().contains("JJ") || singleToken.getPos().getPosValue().contains("VB")) {
 	        				unigrams = unigrams + singleToken.getCoveredText() + " ";
 	        				lemmas = lemmas + singleToken.getLemma().getValue() + " ";
 	        				pos = pos + singleToken.getPos().getPosValue() + " ";
+	        				
 	        				
 	        				if((i+1)<singleSentence.size()) {
 	        					bigrams = bigrams + "_" + singleToken.getCoveredText() + "_" + singleSentence.get(i+1).getCoveredText() + " ";
@@ -97,6 +105,17 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 					singleLine.add("'" + lemmas.replaceAll(regexIgnore, "") + "'");
 					singleLine.add("'" + pos.replaceAll(regexIgnore, "") + "'");
 					singleLine.add("'" + bigrams.replaceAll(regexIgnore, "") + "'");
+					
+					for(String tagWord : tagWordsForAspects) {
+						int currentCounter=0;
+						for(Token singleToken : singleSentence) {
+							if(singleToken.getLemma().getValue().toLowerCase().equals(tagWord) && !constrained) {
+								currentCounter++;
+							}
+						}
+						
+						singleLine.add("" + currentCounter);
+					}
 					
 					singleLine.add(singleClass);
 					
@@ -146,19 +165,15 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 	        		
 	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
 	        		
-					String currentValence=valence.getValenceRating();
 					String identifier;
 					
-					if(valence.getValenceRating()==null) {
-						currentValence="positive";
-					}
 					if(t1.getAspect()!=null && t2.getAspect()!=null) {
 						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
 	    					//non-negated
-							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "");
 	    				} else {
 	    					//negated
-	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "");
 	    				}
 						
 						//find the value in returnList and replace it with the new one
@@ -201,34 +216,44 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
+
+		String[] types = new String[8];
+		types[0] = "Ausstattung";
+		types[1] = "Hotelpersonal";
+		types[2] = "Lage";
+		types[3] = "OTHER";
+		types[4] = "Komfort";
+		types[5] = "Preis-Leistungs-Verhltnis";
+		types[6] = "WLAN";
+		types[7] = "Sauberkeit";
 		
-		String[] types = new String[16];
-		types[0] = "Ausstattung-positive";
-		types[1] = "Hotelpersonal-positive";
-		types[2] = "Lage-positive";
-		types[3] = "OTHER-positive";
-		types[4] = "Komfort-positive";
-		types[5] = "Preis-Leistungs-Verhltnis-positive";
-		types[6] = "WLAN-positive";
-		types[7] = "Sauberkeit-positive";
-		types[8] = "Ausstattung-negative";
-		types[9] = "Hotelpersonal-negative";
-		types[10] = "Lage-negative";
-		types[11] = "OTHER-negative";
-		types[12] = "Komfort-negative";
-		types[13] = "Preis-Leistungs-Verhltnis-negative";
-		types[14] = "WLAN-negative";
-		types[15] = "Sauberkeit-negative";
+		tagWordsForAspects = new ArrayList<String>();
+		tagWordsForAspects.add("positive bar bath pool facility hotel onsen restaurant place spa");
+		tagWordsForAspects.add("service staff staffs concierge he she they lady woman ma receptionist");
+		tagWordsForAspects.add("area station subway restaurant hotel view metro airport location distance access");
+		tagWordsForAspects.add("time check coffee egg water tea experience breakfast stay food everything choice");
+		tagWordsForAspects.add("bathroom furniture space door room pillow bed amenities shower");
+		tagWordsForAspects.add("money price cost charge value");
+		tagWordsForAspects.add("wifi internet");
+		tagWordsForAspects.add("room towel window water smell cleaning shower hotel");
+		
 		
 		for(int i=0;i<types.length;i++) {
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
 			//for nouns, verbs, adjectives
+			
 			relations.add("words string");
 			relations.add("lemmas string");
 			relations.add("pos string");
 			relations.add("bigrams string");
+			
+			int counter=1;
+			for(String tagWord : tagWordsForAspects) {
+				relations.add("tagwordset" + counter + " string");
+				counter++;
+			}
 			
 			relations.add("type string");
 			
@@ -236,15 +261,13 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 			
 			allClassAttributes.add(types[i]);
 			
-			ArrayList<String> newList = new ArrayList<String>();
-			newList.add(types[i]);
-			
 			this.relations.add(relations);
+			
+			
+			ignoreFeatures = new int[1];
+			identifierAttributeAt=relations.size()-2;
+			ignoreFeatures[0]=identifierAttributeAt;
 		}
-		
-		ignoreFeatures = new int[1];
-		identifierAttributeAt=5;
-		ignoreFeatures[0]=identifierAttributeAt;
 		
 		return this.relations;
 	}

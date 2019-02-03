@@ -24,12 +24,19 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public static final String PARAM_OUTPUT_PATH = "outputPath";
     @ConfigurationParameter(name = PARAM_OUTPUT_PATH, mandatory = true)
     public String outputPath;
+	public String stopwordsFile = "src/main/resources/stopwords.txt";
     public FileUtils fu;
     public int cutoff, id=0, numberOfFeatures, identifierAttributeAt;
     public int[] ignoreFeatures;
     public ConsoleLog myLog;
     public boolean learningModeActivated=false;
     public boolean outputIntoFolderActivated=false;
+	
+	//Header for .arff file, 
+	public static final String PARAM_CONSTRAINED = "paramConstrained";
+    @ConfigurationParameter(name = PARAM_CONSTRAINED, mandatory = false)
+	public String paramConstrained;
+	public boolean constrained = true;
 	
 	//Header for .arff file, 
 	public static final String PARAM_RELATION_NAME = "relationName";
@@ -53,6 +60,12 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 		relations = generateRelations();
     	numberOfFeatures = relations.get(0).size();
 		
+    	if(paramConstrained!=null) {
+    		constrained = Boolean.valueOf(paramConstrained);
+    	} else {
+    		constrained = true;
+    	}
+    	
     	try {
 			if(!new File(outputPath).isDirectory()) {
 				fu.createWriter(outputPath);

@@ -74,7 +74,7 @@
 708,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 709,0.0,0.0,0.1,'beds are not real  ','_beds_are _are_not _not_real _real_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 790,0.0,0.0,0.0,'meh  ','_meh_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-791,0.45454545454545453,0.18181818181818182,0.18181818181818182,'it s in a good location and it s clean  ','_it_s _s_in _in_a _a_good _good_location _location_and _and_it _it_s _s_clean _clean_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
+791,0.45454545454545453,0.18181818181818182,0.18181818181818182,'it s in a good location and it s clean  ','_it_s _s_in _in_a _a_good _good_location _location_and _and_it _it_s _s_clean _clean_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 792,0.0,0.0,0.0,'it s very dated  ','_it_s _s_very _very_dated _dated_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 793,0.0,0.16666666666666666,0.0,'the tv did nt work  ','_the_tv _tv_did _did_nt _nt_work _work_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 794,0.125,0.125,0.0,'the staff at reception are nt warm  ','_the_staff _staff_at _at_reception _reception_are _are_nt _nt_warm _warm_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -382,7 +382,7 @@
 5616,0.0,0.0,0.16666666666666666,'bathroom could do with some renovation ','_bathroom_could _could_do _do_with _with_some _some_renovation ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 5662,0.0,0.0,0.0,'okay  ','_okay_ ',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 5663,0.0,0.0,0.0,'next to metro dtation  ','_next_to _to_metro _metro_dtation _dtation_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-5664,0.0,0.0,0.0,'the neighborhood  hotel is very outdated ','_the_neighborhood _neighborhood_ __hotel _hotel_is _is_very _very_outdated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+5664,0.0,0.0,0.0,'the neighborhood  hotel is very outdated ','_the_neighborhood _neighborhood_ __hotel _hotel_is _is_very _very_outdated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 5720,0.0,0.0,0.5,'pleasant  ','_pleasant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 5721,0.3333333333333333,0.1111111111111111,0.0,'comfortable bed and great views over the city  ','_comfortable_bed _bed_and _and_great _great_views _views_over _over_the _the_city _city_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 5722,0.42857142857142855,-0.14285714285714285,-0.14285714285714285,'very outdated room with several damages  ','_very_outdated _outdated_room _room_with _with_several _several_damages _damages_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -417,12 +417,12 @@
 6191,0.0,0.0,0.0,'close to metro and old city  ','_close_to _to_metro _metro_and _and_old _old_city _city_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6192,0.4,0.0,0.0,'area was a little dodgy ','_area_was _was_a _a_little _little_dodgy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 6258,0.75,0.25,0.25,'very good time  ','_very_good _good_time _time_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-6259,0.45454545454545453,0.18181818181818182,0.0,'the bed was super comfortable and location canft be beat ! ','_the_bed _bed_was _was_super _super_comfortable _comfortable_and _and_location _location_canft _canft_be _be_beat _beat_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,false
+6259,0.45454545454545453,0.18181818181818182,0.0,'the bed was super comfortable and location canft be beat ! ','_the_bed _bed_was _was_super _super_comfortable _comfortable_and _and_location _location_canft _canft_be _be_beat _beat_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,true
 6260,0.0,0.0,-0.05,'leaking shower head  mold on ceiling in shower  ','_leaking_shower _shower_head _head_ __mold _mold_on _on_ceiling _ceiling_in _in_shower _shower_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6261,0.0,0.0,0.027777777777777776,'asked four times for coffee and ice bucket finally gave up  ','_asked_four _four_times _times_for _for_coffee _coffee_and _and_ice _ice_bucket _bucket_finally _finally_gave _gave_up _up_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6262,0.0,0.0,0.0,'with that being said only because of location i would stay again  ','_with_that _that_being _being_said _said_only _only_because _because_of _of_location _location_i _i_would _would_stay _stay_again _again_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6338,0.75,0.25,0.25,'very good time  ','_very_good _good_time _time_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-6339,0.45454545454545453,0.18181818181818182,0.0,'the bed was super comfortable and location canft be beat ! ','_the_bed _bed_was _was_super _super_comfortable _comfortable_and _and_location _location_canft _canft_be _be_beat _beat_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,false
+6339,0.45454545454545453,0.18181818181818182,0.0,'the bed was super comfortable and location canft be beat ! ','_the_bed _bed_was _was_super _super_comfortable _comfortable_and _and_location _location_canft _canft_be _be_beat _beat_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,true
 6340,0.0,0.0,-0.05,'leaking shower head  mold on ceiling in shower  ','_leaking_shower _shower_head _head_ __mold _mold_on _on_ceiling _ceiling_in _in_shower _shower_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6341,0.0,0.0,0.027777777777777776,'asked four times for coffee and ice bucket finally gave up  ','_asked_four _four_times _times_for _for_coffee _coffee_and _and_ice _ice_bucket _bucket_finally _finally_gave _gave_up _up_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 6342,0.0,0.0,0.0,'with that being said only because of location i would stay again  ','_with_that _that_being _being_said _said_only _only_because _because_of _of_location _location_i _i_would _would_stay _stay_again _again_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -523,7 +523,7 @@
 7907,0.0,0.0,0.0,'comfy beds  ','_comfy_beds _beds_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 7908,0.0,0.0,0.0,'great reception staff  ','_great_reception _reception_staff _staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 7909,0.625,0.25,0.20833333333333334,'showers small and could use good clean  ','_showers_small _small_and _and_could _could_use _use_good _good_clean _clean_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-7910,0.6666666666666666,-0.3333333333333333,0.0,'parking awkward  ','_parking_awkward _awkward_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
+7910,0.6666666666666666,-0.3333333333333333,0.0,'parking awkward  ','_parking_awkward _awkward_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 7976,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 7977,0.0,0.2,0.2,'location  very convenient  ','_location_ __very _very_convenient _convenient_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 7978,0.45454545454545453,0.18181818181818182,0.09090909090909091,'bed was comfortable and the room had a good view  ','_bed_was _was_comfortable _comfortable_and _and_the _the_room _room_had _had_a _a_good _good_view _view_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -531,7 +531,7 @@
 8040,0.2857142857142857,0.07142857142857142,0.09523809523809523,'clean room  fantastic views of downtown  very close to downtown core  ','_clean_room _room_ __fantastic _fantastic_views _views_of _of_downtown _downtown_ __very _very_close _close_to _to_downtown _downtown_core _core_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 8041,0.4444444444444444,0.0,0.05555555555555555,'clean room  nice view  no noise  ','_clean_room _room_ __nice _nice_view _view_ __no _no_noise _noise_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 8042,0.0,0.0,-0.03333333333333333,'lack of ice  only found on th floor  ','_lack_of _of_ice _ice_ __only _only_found _found_on _on_th _th_floor _floor_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-8043,0.0,0.0,0.0,'no ice bucket provided  ','_no_ice _ice_bucket _bucket_provided _provided_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
+8043,0.0,0.0,0.0,'no ice bucket provided  ','_no_ice _ice_bucket _bucket_provided _provided_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 8094,0.0,0.0,0.3333333333333333,'excellent location  ','_excellent_location _location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 8095,0.0,0.0,0.0,'location  ','_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 8096,0.0,0.0,-0.05555555555555555,'old room  washroom is small ','_old_room _room_ __washroom _washroom_is _is_small ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -663,7 +663,7 @@
 10112,0.08695652173913043,0.0,0.014492753623188404,'staff was not very comfortable in english so little difficulty in communicating with the staff and house keeping was not done regularly  ','_staff_was _was_not _not_very _very_comfortable _comfortable_in _in_english _english_so _so_little _little_difficulty _difficulty_in _in_communicating _communicating_with _with_the _the_staff _staff_and _and_house _house_keeping _keeping_was _was_not _not_done _done_regularly _regularly_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 10158,0.0,0.0,0.5,'pleasant  ','_pleasant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 10159,0.0,0.16666666666666666,0.0,'it was an ideal price  ','_it_was _was_an _an_ideal _ideal_price _price_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-10160,0.0,-0.0625,-0.041666666666666664,'the area was a little rough  it was not expected to see soo many homeless ','_the_area _area_was _was_a _a_little _little_rough _rough_ __it _it_was _was_not _not_expected _expected_to _to_see _see_soo _soo_many _many_homeless ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+10160,0.0,-0.0625,-0.041666666666666664,'the area was a little rough  it was not expected to see soo many homeless ','_the_area _area_was _was_a _a_little _little_rough _rough_ __it _it_was _was_not _not_expected _expected_to _to_see _see_soo _soo_many _many_homeless ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 10206,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 10207,0.0,0.0,0.0,'the area was close to everything  ','_the_area _area_was _was_close _close_to _to_everything _everything_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 10208,0.0,0.0,0.11538461538461539,'our breakfast that was included in the price suddenly wasnft at check in ','_our_breakfast _breakfast_that _that_was _was_included _included_in _in_the _the_price _price_suddenly _suddenly_wasnft _wasnft_at _at_check _check_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,false
@@ -850,7 +850,7 @@
 13124,0.0,0.0,0.5,'pleasant  ','_pleasant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 13125,0.0,0.0,0.0,'the bathroom fans was very loud  bathroom was not as what the picture on the website showed ','_the_bathroom _bathroom_fans _fans_was _was_very _very_loud _loud_ __bathroom _bathroom_was _was_not _not_as _as_what _what_the _the_picture _picture_on _on_the _the_website _website_showed ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 13176,0.0,0.0,0.5,'pleasant  ','_pleasant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-13177,1.0,0.25,0.0,'location us terrific  ','_location_us _us_terrific _terrific_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+13177,1.0,0.25,0.0,'location us terrific  ','_location_us _us_terrific _terrific_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 13178,0.0,0.0,0.0,'hotel is getting a bit dated  but still quite okay  ','_hotel_is _is_getting _getting_a _a_bit _bit_dated _dated_ __but _but_still _still_quite _quite_okay _okay_ ',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 13179,0.25,-0.08333333333333333,-0.08333333333333333,'i was disappointed that there was no fridge in the room  ','_i_was _was_disappointed _disappointed_that _that_there _there_was _was_no _no_fridge _fridge_in _in_the _the_room _room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 13270,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1028,7 +1028,7 @@
 15982,0.0,0.0,0.0,' ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 15983,0.0,0.0,0.0,'llent location  ','_llent_location _location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 15984,0.0,0.0,0.0,'two beds put together  ','_two_beds _beds_put _put_together _together_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-15985,0.043478260869565216,0.0,0.0,'rooms not very big especially because we had the panorama room but we did nt get the view of the fernseh turm  ','_rooms_not _not_very _very_big _big_especially _especially_because _because_we _we_had _had_the _the_panorama _panorama_room _room_but _but_we _we_did _did_nt _nt_get _get_the _the_view _view_of _of_the _the_fernseh _fernseh_turm _turm_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+15985,0.043478260869565216,0.0,0.0,'rooms not very big especially because we had the panorama room but we did nt get the view of the fernseh turm  ','_rooms_not _not_very _very_big _big_especially _especially_because _because_we _we_had _had_the _the_panorama _panorama_room _room_but _but_we _we_did _did_nt _nt_get _get_the _the_view _view_of _of_the _the_fernseh _fernseh_turm _turm_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 15986,0.058823529411764705,0.0,0.0,'no place to open the luggage as the hall was nt very big in the room  ','_no_place _place_to _to_open _open_the _the_luggage _luggage_as _as_the _the_hall _hall_was _was_nt _nt_very _very_big _big_in _in_the _the_room _room_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 16052,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 16053,0.0,0.0,0.16666666666666666,'good transport links  central  ','_good_transport _transport_links _links_ __central _central_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1117,7 +1117,7 @@
 17396,0.0,0.0,0.5,'wonderful  ','_wonderful_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 17397,0.0,0.0,0.5,'brilliant location ','_brilliant_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 17438,0.0,0.0,0.5,'good  ','_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-17439,0.2727272727272727,0.09090909090909091,0.045454545454545456,'location although this area is a bit of a tourist trap room was good plenty hot water free wifi bed comfortable  ','_location_although _although_this _this_area _area_is _is_a _a_bit _bit_of _of_a _a_tourist _tourist_trap _trap_room _room_was _was_good _good_plenty _plenty_hot _hot_water _water_free _free_wifi _wifi_bed _bed_comfortable _comfortable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+17439,0.2727272727272727,0.09090909090909091,0.045454545454545456,'location although this area is a bit of a tourist trap room was good plenty hot water free wifi bed comfortable  ','_location_although _although_this _this_area _area_is _is_a _a_bit _bit_of _of_a _a_tourist _tourist_trap _trap_room _room_was _was_good _good_plenty _plenty_hot _hot_water _water_free _free_wifi _wifi_bed _bed_comfortable _comfortable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 17440,0.0,0.04,0.02,'slow check in with long line no breakfast included they overcharged my bill which i had to e mail a few times to refund annoying ','_slow_check _check_in _in_with _with_long _long_line _line_no _no_breakfast _breakfast_included _included_they _they_overcharged _overcharged_my _my_bill _bill_which _which_i _i_had _had_to _to_e _e_mail _mail_a _a_few _few_times _times_to _to_refund _refund_annoying ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 17476,0.0,0.0,0.5,'excellent  ','_excellent_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 17477,1.5,0.5,0.25,'good breakfest nice stuff ','_good_breakfest _breakfest_nice _nice_stuff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1319,7 +1319,7 @@
 20623,0.0,0.0,0.3333333333333333,'breackfast perfect  ','_breackfast_perfect _perfect_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 20624,0.0,0.0,-0.08333333333333333,'car park small spaces ','_car_park _park_small _small_spaces ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 20670,1.0,0.25,0.0,'berlin was amazing  ','_berlin_was _was_amazing _amazing_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-20671,0.08695652173913043,0.043478260869565216,0.10144927536231885,'would have preferred tea and coffee making facilities in the room and a better view of the city  and more pillows  ','_would_have _have_preferred _preferred_tea _tea_and _and_coffee _coffee_making _making_facilities _facilities_in _in_the _the_room _room_and _and_a _a_better _better_view _view_of _of_the _the_city _city_ __and _and_more _more_pillows _pillows_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+20671,0.08695652173913043,0.043478260869565216,0.10144927536231885,'would have preferred tea and coffee making facilities in the room and a better view of the city  and more pillows  ','_would_have _have_preferred _preferred_tea _tea_and _and_coffee _coffee_making _making_facilities _facilities_in _in_the _the_room _room_and _and_a _a_better _better_view _view_of _of_the _the_city _city_ __and _and_more _more_pillows _pillows_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 20672,0.0,0.0,0.041666666666666664,'yes and coffee making facilities  more pillows ','_yes_and _and_coffee _coffee_making _making_facilities _facilities_ __more _more_pillows ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 20718,0.0,0.0,0.0,'berlin   ','_berlin_ __ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 20719,0.0,0.0,0.0,'location  ','_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1682,7 +1682,7 @@
 26421,0.5,0.16666666666666666,0.25,'breakfast was very good too  ','_breakfast_was _was_very _very_good _good_too _too_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26422,0.0,-0.125,0.0,'wifi connection was a bit slow sometimes  ','_wifi_connection _connection_was _was_a _a_bit _bit_slow _slow_sometimes _sometimes_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26558,0.1,0.1,0.0,'great location  comfy rooms  but no frills  ','_great_location _location_ __comfy _comfy_rooms _rooms_ __but _but_no _no_frills _frills_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-26559,0.0,0.058823529411764705,0.08823529411764706,'excellent location  literally minutes walk from alexanderplatz station  and right beside the tv tower  ','_excellent_location _location_ __literally _literally_minutes _minutes_walk _walk_from _from_alexanderplatz _alexanderplatz_station _station_ __and _and_right _right_beside _beside_the _the_tv _tv_tower _tower_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+26559,0.0,0.0625,0.03125,'location  literally minutes walk from alexanderplatz station  and right beside the tv tower  ','_location_ __literally _literally_minutes _minutes_walk _walk_from _from_alexanderplatz _alexanderplatz_station _station_ __and _and_right _right_beside _beside_the _the_tv _tv_tower _tower_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26560,0.19047619047619047,0.09523809523809523,0.07142857142857142,'really easy to find as it s one of the tallest buildings in the area  so good for orientation  ','_really_easy _easy_to _to_find _find_as _as_it _it_s _s_one _one_of _of_the _the_tallest _tallest_buildings _buildings_in _in_the _the_area _area_ __so _so_good _good_for _for_orientation _orientation_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26561,0.10344827586206896,0.06896551724137931,0.06896551724137931,'the staff at the front desk are very pleasant and efficient  there may be a queue at check in  check out  but it moves quickly  ','_the_staff _staff_at _at_the _the_front _front_desk _desk_are _are_very _very_pleasant _pleasant_and _and_efficient _efficient_ __there _there_may _may_be _be_a _a_queue _queue_at _at_check _check_in _in_ __check _check_out _out_ __but _but_it _it_moves _moves_quickly _quickly_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26562,0.0,0.0,0.041666666666666664,'they offer a luggage storage service for  euro per bag  ','_they_offer _offer_a _a_luggage _luggage_storage _storage_service _service_for _for_ __euro _euro_per _per_bag _bag_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1690,7 +1690,7 @@
 26564,0.0,0.05,0.075,'there is an onsite restaurant  but also plenty of options for food and drink right outside the hotel  ','_there_is _is_an _an_onsite _onsite_restaurant _restaurant_ __but _but_also _also_plenty _plenty_of _of_options _options_for _for_food _food_and _and_drink _drink_right _right_outside _outside_the _the_hotel _hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26565,0.03225806451612903,0.03225806451612903,0.0,'the room was a bit warm at times  and the a  c did nt seem to have any effect  other than making my skin really dry   ','_the_room _room_was _was_a _a_bit _bit_warm _warm_at _at_times _times_ __and _and_the _the_a _a_ __c _c_did _did_nt _nt_seem _seem_to _to_have _have_any _any_effect _effect_ __other _other_than _than_making _making_my _my_skin _skin_really _really_dry _dry_ __ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26566,0.0,-0.1,0.0,'the bathroom was oddly designed  with minimal privacy  ','_the_bathroom _bathroom_was _was_oddly _oddly_designed _designed_ __with _with_minimal _minimal_privacy _privacy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-26567,0.03225806451612903,0.03225806451612903,0.04301075268817204,'there was no tea  coffee or water provided in the room  which i can live with usually  but i could nt find any convenience stores close by  ','_there_was _was_no _no_tea _tea_ __coffee _coffee_or _or_water _water_provided _provided_in _in_the _the_room _room_ __which _which_i _i_can _can_live _live_with _with_usually _usually_ __but _but_i _i_could _could_nt _nt_find _find_any _any_convenience _convenience_stores _stores_close _close_by _by_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
+26567,0.03225806451612903,0.03225806451612903,0.04301075268817204,'there was no tea  coffee or water provided in the room  which i can live with usually  but i could nt find any convenience stores close by  ','_there_was _was_no _no_tea _tea_ __coffee _coffee_or _or_water _water_provided _provided_in _in_the _the_room _room_ __which _which_i _i_can _can_live _live_with _with_usually _usually_ __but _but_i _i_could _could_nt _nt_find _find_any _any_convenience _convenience_stores _stores_close _close_by _by_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
 26568,0.11764705882352941,0.058823529411764705,0.058823529411764705,'there are cafe s right outside  but they are quite expensive for peripherals like that  ','_there_are _are_cafe _cafe_s _s_right _right_outside _outside_ __but _but_they _they_are _are_quite _quite_expensive _expensive_for _for_peripherals _peripherals_like _like_that _that_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26654,0.0,0.0,0.5,'wonderful  ','_wonderful_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26655,0.0,0.0,0.0,'the hotel was very close to everywhere  sbahn  ubahn and the regional train stations  ','_the_hotel _hotel_was _was_very _very_close _close_to _to_everywhere _everywhere_ __sbahn _sbahn_ __ubahn _ubahn_and _and_the _the_regional _regional_train _train_stations _stations_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
@@ -1711,7 +1711,7 @@
 26855,0.0,-0.25,-0.25,'very unpleasant experience  ','_very_unpleasant _unpleasant_experience _experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26856,0.0,0.0,-0.1,'it soured my stay  ','_it_soured _soured_my _my_stay _stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 26857,0.0,0.0,0.08333333333333333,'breakfast could be more varied  ','_breakfast_could _could_be _be_more _more_varied _varied_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
-27008,0.6666666666666666,0.2222222222222222,0.3333333333333333,'unassuming location  good rooms  good view  ','_unassuming_location _location_ __good _good_rooms _rooms_ __good _good_view _view_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,true
+27008,0.6666666666666666,0.2222222222222222,0.3333333333333333,'unassuming location  good rooms  good view  ','_unassuming_location _location_ __good _good_rooms _rooms_ __good _good_view _view_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 27009,0.0,0.2,0.05,'the bed was comfy and the room was quiet  ','_the_bed _bed_was _was_comfy _comfy_and _and_the _the_room _room_was _was_quiet _quiet_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 27010,0.05263157894736842,0.0,0.008771929824561405,'i had a small single and it was certainly that  but i did pay less for it  ','_i_had _had_a _a_small _small_single _single_and _and_it _it_was _was_certainly _certainly_that _that_ __but _but_i _i_did _did_pay _pay_less _less_for _for_it _it_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false
 27011,0.5,0.16666666666666666,0.25,'the breakfast was really good  ','_the_breakfast _breakfast_was _was_really _really_good _good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,false

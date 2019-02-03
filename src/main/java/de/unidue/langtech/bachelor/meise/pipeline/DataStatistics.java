@@ -35,97 +35,92 @@ public class DataStatistics extends JCasAnnotator_ImplBase{
 	String[] types;
 	int[][] aspectMatrix;
 	ArrayList<HashMap<String, Integer>> allMaps;
+	int seen ;
 	
 	@Override
 	public void process(JCas arg0) throws AnalysisEngineProcessException {
-		for(Sentence sentence : JCasUtil.select(arg0, Sentence.class)) {
-			counterReview++;
-			Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
-        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
-			
-        	ArrayList<Token> roots = new ArrayList<Token>();
-        	for(Dependency dpElement : dependencies) {
-				if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
-					roots.add(dpElement.getGovernor());
+		if(seen <= 200000) {
+			for(Sentence sentence : JCasUtil.select(arg0, Sentence.class)) {
+				System.out.println(seen + "\t" + sentence.getCoveredText());
+				seen++;
+				counterReview++;
+				Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
+	        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
+				
+	        	ArrayList<Token> roots = new ArrayList<Token>();
+	        	for(Dependency dpElement : dependencies) {
+					if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
+						roots.add(dpElement.getGovernor());
+					}
 				}
-			}
-        	
-        	for(Token root : roots) {
-	        	Tree<Token> tree = new Tree<Token>(root);
-	        	tree.generateTreeOfDependency(dependencies, root);
-	        	tree.setParentDependencyType("ROOT");
 	        	
-	        	treeCollection.add(tree);
-        	}	
-        	
-        	Collection<ArrayList<Token>> subSentences = divideIntoSubSentences(sentence, treeCollection);
-        	
-        	//for each-subsentence
-        	for(ArrayList<Token> subSentence : subSentences) {
-        		counterSentence++;
-        		counterToken += subSentence.size();
-        		
-        		for(Valence valence : selectCovered(Valence.class, sentence)) {
-            		AspectRating t1 = valence.getDependent();
-            		AspectRating t2 = valence.getGovernor();
-            		
-            		int dependencyDistance = -1;
-    				
-    				for(Tree<Token> tree : treeCollection) {
-        				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
-        				
-        				if(newDistance > dependencyDistance) {
-        					dependencyDistance = newDistance;
-        				}
-        			}
-    				
-    				if(dependencyDistance>=0) {
-    					//actually in the current sentence
-    					String currentValence=valence.getValenceRating();
-    					String identifier;
-    					String aspect;
-    					String rating;
-    					
-    					counterValence++;
-    					
-    					if(valence.getValenceRating()==null) {
-    						currentValence="positive";
-    					}
-    					
-    					if(t1.getAspect()!=null && t2.getAspect()!=null) {
-    						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
-    	    					//non-negated
-    							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
-    							aspect=t2.getCoveredText();
-    							rating=t1.getCoveredText();
-    	    				} else {
-    	    					//negated
-    	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
-    	    					aspect=t1.getCoveredText();
-    							rating=t2.getCoveredText();
-    	    				}
-    						
-    						for(int i=0;i<types.length;i++) {
-    							if(identifier.equals(types[i])) {
-    								aspectMatrix[i][1]++; 
-    								
-    								if(allMaps.get(i).containsKey("aspect-" + aspect.toLowerCase())) {
-    									allMaps.get(i).put("aspect-" + aspect.toLowerCase(), allMaps.get(i).get("aspect-" + aspect.toLowerCase())+1);
-    								} else {
-    									allMaps.get(i).put("aspect-" + aspect.toLowerCase(), 1);
-    								}
-    								
-    								if(allMaps.get(i).containsKey("rating-" + rating.toLowerCase())) {
-    									allMaps.get(i).put("rating-" + rating.toLowerCase(), allMaps.get(i).get("rating-" + rating.toLowerCase())+1);
-    								} else {
-    									allMaps.get(i).put("rating-" + rating.toLowerCase(), 1);
-    								}
-    							}
-    						}
-    					}	
-    				}
-        		}
-        	}
+	        	for(Token root : roots) {
+		        	Tree<Token> tree = new Tree<Token>(root);
+		        	tree.generateTreeOfDependency(dependencies, root);
+		        	tree.setParentDependencyType("ROOT");
+		        	
+		        	treeCollection.add(tree);
+	        	}	
+	        	
+	        	Collection<ArrayList<Token>> subSentences = divideIntoSubSentences(sentence, treeCollection);
+	        	
+	        	//for each-subsentence
+	        	for(ArrayList<Token> subSentence : subSentences) {
+	        		counterSentence++;
+	        		counterToken += subSentence.size();
+	        		
+	        		for(Valence valence : selectCovered(Valence.class, sentence)) {
+	            		AspectRating t1 = valence.getDependent();
+	            		AspectRating t2 = valence.getGovernor();
+
+	    				if(subSentence.contains(selectCovered(Token.class, t1).get(0)) && subSentence.contains(selectCovered(Token.class, t2).get(0))) {
+	    					//actually in the current sentence
+	    					String currentValence=valence.getValenceRating();
+	    					String identifier;
+	    					String aspect;
+	    					String rating;
+	    					
+	    					if(valence.getValenceRating()==null) {
+	    						currentValence="positive";
+	    					}
+	    					
+	    					if(t1.getAspect()!=null && t2.getAspect()!=null) {
+	        					counterValence++;        					
+	    						
+	    						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
+	    	    					//non-negated
+	    							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+	    							aspect=t2.getCoveredText();
+	    							rating=t1.getCoveredText();
+	    	    				} else {
+	    	    					//negated
+	    	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
+	    	    					aspect=t1.getCoveredText();
+	    							rating=t2.getCoveredText();
+	    	    				}
+	    						
+	    						for(int i=0;i<types.length;i++) {
+	    							if(identifier.equals(types[i])) {
+	    								aspectMatrix[i][1]++; 
+	    								
+	    								if(allMaps.get(i).containsKey("aspect-" + aspect.toLowerCase())) {
+	    									allMaps.get(i).put("aspect-" + aspect.toLowerCase(), allMaps.get(i).get("aspect-" + aspect.toLowerCase())+1);
+	    								} else {
+	    									allMaps.get(i).put("aspect-" + aspect.toLowerCase(), 1);
+	    								}
+	    								
+	    								if(allMaps.get(i).containsKey("rating-" + rating.toLowerCase())) {
+	    									allMaps.get(i).put("rating-" + rating.toLowerCase(), allMaps.get(i).get("rating-" + rating.toLowerCase())+1);
+	    								} else {
+	    									allMaps.get(i).put("rating-" + rating.toLowerCase(), 1);
+	    								}
+	    							}
+	    						}
+	    					}	
+	    				}
+	        		}
+	        	}
+			}
 		}
 	}
 
@@ -159,6 +154,7 @@ public class DataStatistics extends JCasAnnotator_ImplBase{
     	counterReview=0;
     	counterToken=0;
     	counterValence=0;
+    	seen=0;
     	
     	types = new String[16];
     	

@@ -111,7 +111,8 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    		numFolds = Integer.valueOf(numFold);
 	    		foldAnalysisEnabled=true;
 	    		
-	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, kernelType, svmType, outputAnalysisPath);
+	    		//TODO: add pipeline-support for parameters
+	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, kernelType, svmType, outputAnalysisPath, true);
 	    	} else {
 		    	if(ignoreFeaturesAt!=null) {
 		    		String[] split=ignoreFeaturesAt.split(" ");
@@ -177,7 +178,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    	}
 	    }
 	
-	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath) {
+	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath, boolean idfTransformEnabled) {
 		 ArrayList<String> analysisString = new ArrayList<String>();
 		 boolean manuallyOutputData = false;
 		 if(myLog==null && allData==null && fu==null) {
@@ -196,6 +197,8 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 			try {
 				//if learning for folds: continue from her
 				AspectClassifier foldClassifier = new AspectClassifier();
+				foldClassifier.idfTransformEnabled=idfTransformEnabled;
+				
 				Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
 				System.out.println(classAttributeAt);
 				

@@ -31,6 +31,7 @@ public class MainPipeline {
 	String arffFilePath = "src/main/resources/data800.arff";
 	String tsvOutput = "src/main/resources/output3.tsv";
 	FileUtils fu;
+	public boolean constrained = true;
 	
 	public MainPipeline() {
 		fu = new FileUtils();
@@ -41,9 +42,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_AKTSKI", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_GTI/subtask3/unconstrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest_AKTSKI", "src/main/resources/learningtest_AKTSKI/analysis.txt");
+		myPipeline.foldLearning("src/main/resources/learningtest_GTI/subtask3/unconstrained", "src/main/resources/learningtest_GTI/subtask3/unconstrained/analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -90,14 +91,15 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-			 AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
-					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");
+			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
+					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
-	        		TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		TestClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator3.class, 
+	        		GTI_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		GTI_ClassifierGenerator3.PARAM_RELATION_NAME, "GTI",
+	        		GTI_ClassifierGenerator3.PARAM_CONSTRAINED, "false");
 	        
-	        SimplePipeline.runPipeline(reader, lemmatizer, rawDataAnalyser, writer);
+	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
 	
 	public void run_read(String inputFilePath, String arffFilePath, String modelFilePath, String outputPath) throws UIMAException, IOException {
@@ -133,6 +135,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,0, 0, outputPath, false);
 	}
 }
