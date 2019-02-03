@@ -58,7 +58,9 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	relations = new ArrayList<ArrayList<String>>();
     	
 		relations = generateRelations();
-    	numberOfFeatures = relations.get(0).size();
+		if(relations.size()>0) {
+			numberOfFeatures = relations.get(0).size();
+		}
 		
     	if(paramConstrained!=null) {
     		constrained = Boolean.valueOf(paramConstrained);
@@ -87,7 +89,9 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	relations = new ArrayList<ArrayList<String>>();
     	
 		relations = generateRelations();
-    	numberOfFeatures = relations.get(0).size();
+		if(relations.size()>0) {
+			numberOfFeatures = relations.get(0).size();
+		}
     }
     
     public void setOutputFile(String fileName) {
@@ -206,8 +210,8 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     	}
     }
     
-    public Collection<Token> getContext(Sentence sentence, Collection<Tree<Token>> sentences, int contextWidth, int maxReturnSize, Collection<Token> searchTokens) {
-    	Collection<Token> returnList = new ArrayList<Token>();
+    public ArrayList<Token> getContext(Sentence sentence, Collection<Tree<Token>> sentences, int contextWidth, int maxReturnSize, Collection<Token> searchTokens) {
+    	ArrayList<Token> returnList = new ArrayList<Token>();
     	Collection<Token> tokens = selectCovered(Token.class, sentence);
     	ArrayList<Token> sentenceOrder = new ArrayList<Token>();
     	
@@ -235,13 +239,12 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	    		if(sentenceOrder.get(pos).equals(toFind)) {
 	    			for(int searchArray=-contextWidth;searchArray<=contextWidth;searchArray++) {	
 		    			if(isInRange(0, sentenceOrder.size()-1, pos+searchArray) //check if it's out of border
-	    					&& !returnList.contains(sentenceOrder.get(pos+searchArray))  //check if it's already contained
-		    				&& !searchTokens.contains(sentenceOrder.get(pos+searchArray))) {//check if it's not a source Token
-		    					for(Tree<Token> singleSentence : sentences) { //check if both tokens are actually part of the same sentence
-		    						if(singleSentence.tokenDistanceInTree(toFind, sentenceOrder.get(pos+searchArray))>=0) {
-		    							returnList.add(sentenceOrder.get(pos+searchArray));
-		    						}
-		    					}
+	    					&& !returnList.contains(sentenceOrder.get(pos+searchArray))) {//check if it's already contained)) {//check if it's not a source Token
+	    					for(Tree<Token> singleSentence : sentences) { //check if both tokens are actually part of the same sentence
+	    						if(singleSentence.tokenDistanceInTree(toFind, sentenceOrder.get(pos+searchArray))>=0) {
+	    							returnList.add(sentenceOrder.get(pos+searchArray));
+	    						}
+	    					}
 		    			}
 	    			}
 	    		}

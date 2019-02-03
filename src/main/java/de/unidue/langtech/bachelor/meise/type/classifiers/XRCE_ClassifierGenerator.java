@@ -2,6 +2,7 @@ package de.unidue.langtech.bachelor.meise.type.classifiers;
 
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -12,6 +13,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
+import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
@@ -23,7 +25,7 @@ import webanno.custom.Valence;
 //Syntactico-Semantic Knowledge for Aspect Based Sentiment Analysis
 //Caroline Brun and Julien Perez and Claude Roux
 //Classification type: Connected Conditional Random Fields 
-//Training file for word lists is generated separately
+//Training file for word is explicitly stated
 //input-output format is normalized to match the current Task; the model itself is not changed
 
 public class XRCE_ClassifierGenerator extends ArffGenerator {
@@ -33,10 +35,10 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
 	
-	ArrayList<ArrayList<String>> sortedLinesEntity = new ArrayList<ArrayList<String>>();
-	ArrayList<ArrayList<String>> sortedLinesAttribute = new ArrayList<ArrayList<String>>();
+	ArrayList<String> tagWordsForAspects;
+	ArrayList<String> sortedLines;
 	
-	String regexIgnore = "[\'\"]";
+	String regexIgnore = "[\': ;\"]";
 	
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
@@ -67,78 +69,62 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
         	subSentences = divideIntoSubSentences(sentence, treeCollection);
 
         	//generate all outputs, then overwrite specific ones
-        	for(String singleClass : allClassAttributes) {
-        		for(ArrayList<Token> singleSentence : subSentences) {	
-        			String sentenceString = "";
-        			for(Token token : singleSentence) {
-        				sentenceString = sentenceString + token.getCoveredText() + " ";
+    		for(ArrayList<Token> singleSentence : subSentences) {	
+    			String sentenceString = "";
+    			
+    			int currentToken=0;
+    			
+    			for(Token token : singleSentence) {
+    				sentenceString = sentenceString + token.getCoveredText() + " ";
+    				currentToken++;
+    				
+        			ArrayList<String> singleLine = new ArrayList<String>();
+        			singleLine.add("-");
+        			
+        			ArrayList<Token> searchToken = new ArrayList<Token>();
+        			searchToken.add(token);
+        			ArrayList<Token> contextTokens = getContext(sentence, treeCollection, 3, 1000, searchToken);
+        			
+        			myLog.log("Found " + contextTokens.size() + " context tokens for token '" + token.getCoveredText() + "' in '" + singleSentence.size() + "'.");
+        			
+        			int counter=-(contextTokens.indexOf(token));
+        			
+        			for(Token contextToken : contextTokens) {
+        				singleLine.add("pos[" + counter + "]=" + contextToken.getPos().getPosValue().replaceAll(regexIgnore, ""));
+        				singleLine.add("lemma[" + counter + "]=" + contextToken.getLemma().getValue().replaceAll(regexIgnore, ""));
+        				singleLine.add("surface[" + counter + "]=" + contextToken.getCoveredText().replaceAll(regexIgnore, ""));
+        				singleLine.add("uppercase[" + counter + "]=" + (contextToken.getCoveredText().toLowerCase()!=contextToken.getCoveredText().toUpperCase()));
+
+        				int hit=0;
+        				
+        				for(String tag : tagWordsForAspects) {
+        					for(String singleTag : tag.split(" ")) {
+        						if(contextToken.getCoveredText().toLowerCase().contains(singleTag)) {
+        							hit = tagWordsForAspects.indexOf(tag)+1;
+        						}
+        					}
+        				}
+        				
+        				singleLine.add("includes[" + counter + "]=" + hit);
+        				
+        				counter++;
         			}
         			
-        			for(int i=0;i<singleSentence.size();i++) {
-            			String unigrams = "";
-            			String bigrams = "";		
-            			String lemma = "";
-            			String pos = "";
-        				Token singleToken = singleSentence.get(i);
-        				
-        				lemma = lemma + singleToken.getLemma().getValue();
-        				pos = pos + singleToken.getPos().getPosValue();
-        				
-            			unigrams = unigrams.toLowerCase();
-        				bigrams = bigrams.toLowerCase();
-        				lemma = lemma.toLowerCase();
-            			
-    					ArrayList<String> singleLine = new ArrayList<String>();
-    					singleLine.add("" + valueId);
-    					singleLine.add("'" + sentenceString.replaceAll(regexIgnore, "") + "'");
-    					
-    					singleLine.add("'" + pos.replaceAll(regexIgnore, "") + "'");
-    					singleLine.add("'" + lemma.replaceAll(regexIgnore, "") + "'");
-    					singleLine.add("'" + singleToken.getCoveredText().replaceAll(regexIgnore, "") + "'");
-    					
-    					int hasUppercase = (singleToken.getCoveredText().toUpperCase().equals(singleToken.getCoveredText().toLowerCase())) ? 0 : 1;
-    					singleLine.add("" + hasUppercase);
-    					
-    					Tree<Token> currentToken = null;
-    					
-    					for(int treeRotate=0;treeRotate<treeCollection.size();treeRotate++) {
-    						if(treeCollection.get(treeRotate).findToken(singleToken, treeCollection)!=null) {
-    							currentToken = treeCollection.get(treeRotate).findToken(singleToken, treeCollection);
-    						}
-    					}
-    					
-    					if(currentToken!=null) {
-    						singleLine.add("'" + currentToken.getParentDependencyType() + "'");
+        			String completeOutput = "";
+        			
+        			for(String singleTag : singleLine) {
+    					if(singleTag.equals("-")) {
+    						completeOutput = completeOutput + singleTag + "\t";
     					} else {
-    						singleLine.add("");
+    						completeOutput = completeOutput + singleTag + " ";
     					}
-    					
-    					Collection<Token> searchTokens = new ArrayList<Token>();
-    					searchTokens.add(singleToken);
-    					Collection<Token> contextTokens = getContext(sentence, treeCollection, 3, 10000, searchTokens);
-    					
-    					String context = "";
-    					for(Token token : contextTokens) {
-    						context = context + token.getCoveredText() + " ";
-    					}
-    					singleLine.add("'" + context.replaceAll(regexIgnore, "") + "'");
-    					
-    					singleLine.add(singleClass);
-    					
-    					if(!learningModeActivated) {
-    						singleLine.add("false");
-    					} else {
-    						singleLine.add("?");
-    					}
-    					
-    					valueId++;
-    					
-    					returnList.add(singleLine);
-    					sortedLinesEntity.add(singleLine);	
-
-        			}
-        		}
-        	}
+    				}
+        			
+        			sortedLines.add(completeOutput);
+        			//sentiment-analysis structure...?
+    			}
+    			sortedLines.add("\n");
+    		}
         	
 			for(Valence valence : selectCovered(Valence.class, sentence)) {
         		AspectRating t1 = valence.getDependent();
@@ -164,13 +150,6 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
 	        			}
 	        		}
 	        		
-	        		String stringSentence = "";
-	        		for(Token singleToken : currentSentence) {
-    					stringSentence = stringSentence + singleToken.getCoveredText() + " "; //identical to unigram feature
-	        		}
-	        		
-	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
-	        		
 					String currentValence=valence.getValenceRating();
 					String identifier;
 					String focusWord;
@@ -181,47 +160,41 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
 					if(t1.getAspect()!=null && t2.getAspect()!=null) {
 						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
 	    					//non-negated
-							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
-							focusWord = "'" + t2.getCoveredText().replaceAll(regexIgnore, "")  + "'";
+							focusWord = t2.getCoveredText().replaceAll(regexIgnore, "");
+							identifier = t2.getAspect();
 	    				} else {
 	    					//negated
-	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "") + "-" + currentValence;
-	    					focusWord = "'" + t1.getCoveredText().replaceAll(regexIgnore, "")  + "'";
+	    					focusWord = t1.getCoveredText().replaceAll(regexIgnore, "");
+	    					identifier = t1.getAspect();
 	    				}
 						
 						//find the value in returnList and replace it with the new one
 						
-						for(ArrayList<String> singleLine : sortedLinesEntity) {
+						//backwards because it's more likely
+						for(int i=sortedLines.size()-1;i>0;i--) {
 							//find sentences that match
-							if(singleLine.get(1).compareTo(stringSentence)==0) {
-								//find identifier that match
-								if(singleLine.get(identifierAttributeAt)!=null) {
-									if(singleLine.get(identifierAttributeAt).compareTo(identifier)==0 && singleLine.get(4).compareTo(focusWord)==0) {
-										//mark this ratio as checked
-										if(!learningModeActivated) {
-											singleLine.set(singleLine.size()-1, "true");
-										} else {
-											//it will be set on "?" or anyway...
-										}
+							String[] singleLine = sortedLines.get(i).split(" ");
+							boolean found=false;
+							
+							for(String singleTag : singleLine) {
+								if(singleTag.startsWith("surface[0]")) {
+									//myLog.log(singleTag);
+									//myLog.log(sortedLines.get(i));
+									if(singleTag.split("=").length>1 && singleTag.split("=")[1].equals(focusWord)) {
+										sortedLines.set(i, identifier +"\t" + sortedLines.get(i).split("\\t")[1]);
+										found=true;
+										break;
 									}
 								}
+							}
+							
+							if(found) {
+								break;
 							}
 						}
 					}
 				}
 			}
-		}       
-		
-		//since we don't need duplicates for every class...
-		if(learningModeActivated) {
-			int onlyTakeFirst = subSentences.size();
-			ArrayList<ArrayList<String>> alternativeReturnList = new ArrayList<ArrayList<String>>();
-			
-			for(int i=0;i<onlyTakeFirst;i++) {
-				alternativeReturnList.add(returnList.get(i));
-			}
-			
-			return alternativeReturnList;
 		}
 		
 		return returnList;
@@ -229,55 +202,19 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
 
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
+		this.relations = new ArrayList<ArrayList<String>>();
 		
-		String[] types = new String[16];
-		types[0] = "Ausstattung-positive";
-		types[1] = "Hotelpersonal-positive";
-		types[2] = "Lage-positive";
-		types[3] = "OTHER-positive";
-		types[4] = "Komfort-positive";
-		types[5] = "Preis-Leistungs-Verhltnis-positive";
-		types[6] = "WLAN-positive";
-		types[7] = "Sauberkeit-positive";
-		types[8] = "Ausstattung-negative";
-		types[9] = "Hotelpersonal-negative";
-		types[10] = "Lage-negative";
-		types[11] = "OTHER-negative";
-		types[12] = "Komfort-negative";
-		types[13] = "Preis-Leistungs-Verhltnis-negative";
-		types[14] = "WLAN-negative";
-		types[15] = "Sauberkeit-negative";
+		sortedLines = new ArrayList<String>();
 		
-		for(int i=0;i<types.length;i++) {
-			ArrayList<String> relations = new ArrayList<String>();
-			
-			relations.add("id numeric");
-			//for nouns, verbs, adjectives
-			relations.add("sentence string");
-			relations.add("pos string");
-			relations.add("lemma string");
-			relations.add("surfaceform string");
-			relations.add("hasUppercase numeric");
-			relations.add("dependency string");
-			relations.add("neighbortokens string");
-			//relations.add("relatedto " + generateTupel(new String[] {"true", "false"})); //TODO: Where does the data come from?
-			
-			relations.add("type string");
-			
-			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
-			
-			allClassAttributes.add(types[i]);
-			
-			ArrayList<String> newList = new ArrayList<String>();
-			newList.add(types[i]);
-			
-			this.relations.add(relations);
-		}
-		
-		ignoreFeatures = new int[2];
-		identifierAttributeAt=relations.get(0).indexOf("type string");
-		ignoreFeatures[0]=identifierAttributeAt;
-		ignoreFeatures[1]=1;
+		tagWordsForAspects = new ArrayList<String>();
+		tagWordsForAspects.add("positive bar bath pool facility hotel onsen restaurant place spa");
+		tagWordsForAspects.add("service staff staffs concierge he she they lady woman ma receptionist");
+		tagWordsForAspects.add("area station subway restaurant hotel view metro airport location distance access");
+		tagWordsForAspects.add("time check coffee egg water tea experience breakfast stay food everything choice");
+		tagWordsForAspects.add("bathroom furniture space door room pillow bed amenities shower");
+		tagWordsForAspects.add("money price cost charge value");
+		tagWordsForAspects.add("wifi internet");
+		tagWordsForAspects.add("room towel window water smell cleaning shower hotel");
 		
 		return this.relations;
 	}
@@ -290,51 +227,30 @@ public class XRCE_ClassifierGenerator extends ArffGenerator {
 		//cycle through all the 
 		myLog.log("Output into Folder activated: " + outputIntoFolderActivated);
 		if(outputIntoFolderActivated) {
-			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
+			FileUtils fu = new FileUtils();
 			
-			for(String singleClass : allClassAttributes) {
-				setOutputFile(outputPath + "/" + singleClass + ".arff");
-
-				String completeOutput;
-				completeOutput = "@relation " + singleClass + "\n\n";
-	    		 
-	    		//write all relational attributes
-	    		for(int n=0;n<relations.get(0).size();n++) {
-	    			String relation = relations.get(0).get(n);
-	    			
-	    			if(ignoreFeatures.length>0) {
-	    				boolean allFine=true;
-	    				for(int i=0;i<ignoreFeatures.length;i++) {
-	    					if(ignoreFeatures[i]==n) {
-	    						allFine=false;
-	    					}
-	    				}
-	    				
-	    				if(allFine) {				
-	    					completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    				}
-	    			} else {
-	    				completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    			}
-	    		}
-	    		
-	    		completeOutput = completeOutput + "\n@data\n";
-	    		
-				
-				for(ArrayList<String> singleLine : sortedLinesEntity) {
-					if(singleLine.get(identifierAttributeAt)!=null) {						
-						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
-							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
-						}
-					}
+			try {
+				fu.createWriter(outputPath + "\\output.txt");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			String completeOutput = "";
+			
+			int counter=0; 
+			
+			for(String singleLine : sortedLines) {
+				if(counter%1000==0) {
+					myLog.log("Generating " + counter + "/" + sortedLines.size());
 				}
 				
-				fu.write(completeOutput.substring(0, completeOutput.length()-1));
-				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
+				counter++;
 				
-				
-				fu.close();
+				fu.write(singleLine.substring(0,singleLine.length()-1));				
 			}
+			
+			fu.close();
+			
 		} else {
 			myLog.log("Output path not a folder, can't generate output files....");
 		}

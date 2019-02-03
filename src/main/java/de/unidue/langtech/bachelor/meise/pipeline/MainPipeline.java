@@ -42,9 +42,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src/main/resources/learningtest_GTI/subtask3/unconstrained", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src/main/resources/learningtest_GTI/subtask3/unconstrained", "src/main/resources/learningtest_GTI/subtask3/unconstrained/analysis.txt");
+		//myPipeline.foldLearning("src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained", "src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -94,10 +94,10 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator3.class, 
-	        		GTI_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-	        		GTI_ClassifierGenerator3.PARAM_RELATION_NAME, "GTI",
-	        		GTI_ClassifierGenerator3.PARAM_CONSTRAINED, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(XRCE_ClassifierGenerator3.class, 
+	        		XRCE_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		XRCE_ClassifierGenerator3.PARAM_RELATION_NAME, "XRCE",
+	        		XRCE_ClassifierGenerator3.PARAM_CONSTRAINED, "true");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
