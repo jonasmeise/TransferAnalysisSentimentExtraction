@@ -207,11 +207,21 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				
 				double precision=0, recall=0, fMeasure=0, accuracy=0;
 						
+				double tp=0;
+				double tn=0;
+				double fp=0;
+				double fn=0;
+				
 				for(Evaluation singleEval : allEvaluations) {
 					precision += singleEval.precision(0);
 					recall += singleEval.recall(0);
 					fMeasure += singleEval.fMeasure(0);
 					accuracy += singleEval.pctCorrect();
+					
+					tp += singleEval.numTruePositives(0);
+					tn += singleEval.numTrueNegatives(0);
+					fp += singleEval.numFalsePositives(0);
+					fn += singleEval.numFalseNegatives(0);
 				}
 					
 				System.out.println("Precision\t" + precision/numFolds);
@@ -224,6 +234,18 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				analysisString.add("Recall\t" + recall/numFolds);
 				analysisString.add("fMeasure" + fMeasure/numFolds);
 				analysisString.add("Accuracy\t" + accuracy/numFolds);
+				
+				tp = tp/numFolds;
+				tn = tn/numFolds;
+				fp = fp/numFolds;
+				fn = fn/numFolds;
+				double balancedAccuracy = (tp / (tp + fn) + tn / (tn + fp))/2;
+				
+				analysisString.add("TP\t" + tp/numFolds);
+				analysisString.add("FP\t" + tn/numFolds);
+				analysisString.add("TN\t" + fp/numFolds);
+				analysisString.add("TP\t" + fn/numFolds);
+				analysisString.add("balanced accuracy\t" + balancedAccuracy);
 				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");
 			} catch (Exception e) {

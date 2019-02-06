@@ -17,6 +17,11 @@ import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.LibSVM;
+import weka.classifiers.functions.Logistic;
+import weka.classifiers.functions.MultilayerPerceptron;
+import weka.classifiers.functions.SGD;
+import weka.classifiers.functions.SGDText;
+import weka.classifiers.meta.CVParameterSelection;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
@@ -25,6 +30,8 @@ import weka.core.Stopwords;
 import weka.core.stopwords.AbstractStopwords;
 import weka.core.stopwords.StopwordsHandler;
 import weka.filters.Filter;
+import weka.filters.MultiFilter;
+import weka.filters.unsupervised.attribute.NominalToBinary;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
 import libsvm.svm_parameter;
@@ -41,6 +48,7 @@ public class AspectClassifier {
 	private int kernelType=0;
 	private int svmType=0;
 	public boolean idfTransformEnabled;
+	private StringToWordVector myFilter;
 	
 	int seed;
 	int folds = 10;
@@ -86,21 +94,9 @@ public class AspectClassifier {
 				}
 			}
 			
-			Remove removeFilter = new Remove();
-			//remove ID-Feature
-			removeFilter.setAttributeIndicesArray(new int[]{0});
-			
-			Instances newData = null;
-			try {
-				removeFilter.setInputFormat(train);
-				newData = Filter.useFilter(train, removeFilter);
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-			
-			//remove the ID-Feature again
-
 			StringToWordVector s2wFilter = createS2WVector(convertIntegers(stringIndices));
+			s2wFilter.setDoNotOperateOnPerClassBasis(true);
+			myLog.log(stringIndices);
 			
 			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
@@ -108,17 +104,50 @@ public class AspectClassifier {
 			
 			//RandomForest rf = new RandomForest();
 			//classifier.setClassifier(rf);	
+			//???
+
+			NominalToBinary ntb = new NominalToBinary();
+			ntb.setAttributeIndices("first-last");
+			ntb.setTransformAllValues(true);
 			
-			classifier.setFilter(s2wFilter); 
-			classifier.setClassifier(svm);	
+			Remove removeFilter = new Remove();
+			//remove ID-Feature
+			removeFilter.setAttributeIndices("1");
 			
-			return newData;
+			MultiFilter mf = new MultiFilter();
+			mf.setInputFormat(train);
+			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
+			
+			SGD sgd = new SGD();
+			sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
+			sgd.setLearningRate(0.41);
+			sgd.setEpsilon(0.40);
+			//sgd.setDoNotCheckCapabilities(true);
+
+			MultilayerPerceptron mp = new MultilayerPerceptron();
+			mp.setHiddenLayers("81");
+			mp.setTrainingTime(25);
+			
+			CVParameterSelection cps = new CVParameterSelection();
+			cps.setClassifier(svm);
+			cps.setNumFolds(5);
+			cps.setDebug(true);
+			
+			//classifier.setClassifier(svm);
+			classifier.setClassifier(svm);
+			classifier.setFilter(mf);
+			classifier.buildClassifier(train);
+			
+			return train;
 	}
 	
 	public ArrayList<Evaluation> learn(Instances data) throws Exception {
 		ArrayList<Evaluation> returnList = new ArrayList<Evaluation>();
 		Random rand = new Random(seed);
 		Instances scrambledData = new Instances(data);
+		
+		//apply nominal2binary filter
+
 		scrambledData.randomize(rand);
 		
 	    if (scrambledData.classAttribute().isNominal()) {
@@ -129,10 +158,9 @@ public class AspectClassifier {
 			   Instances train = scrambledData.trainCV(folds, n, rand);
 			   Instances test = scrambledData.testCV(folds, n);
  
-			   test.deleteAttributeAt(0);
+			   //test.deleteAttributeAt(0);
 			   //build-Classifier loescht automatisch 0
-			   train = buildClassifier(train);
-			   classifier.buildClassifier(train);
+			   buildClassifier(train);
 			   
 			   Evaluation currentEvaluation;
 			   currentEvaluation = evalModel(classifier, test, folds, new Random());
@@ -150,7 +178,6 @@ public class AspectClassifier {
 	
 	public void learnAndExport(Instances data, String outputPath) throws IOException, URISyntaxException, Exception {
 		Instances newData = buildClassifier(data);
-		classifier.buildClassifier(newData);
 		saveModel(outputPath, classifier);
 	}
 	
@@ -160,6 +187,7 @@ public class AspectClassifier {
 		s2wFilter.setAttributeIndicesArray(attributeArray);
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);
+		myLog.log("Found " + attributeArray.length + " string attributes.");
 		
 		return s2wFilter;
 		
@@ -221,6 +249,7 @@ public class AspectClassifier {
        BufferedReader inputReader = new BufferedReader(new FileReader(file));
        Instances data = new Instances(inputReader);
        data.setClassIndex(data.numAttributes() - posClass);
+       myLog.log("Found class attribute at '" + (data.numAttributes() - posClass) + "'.");
 
        return data;
    }

@@ -37,6 +37,7 @@ public abstract class SentimentLexicon {
 	public SentimentLexicon(boolean onlyWorksOnLemmas, String filePath) {
 		this(onlyWorksOnLemmas);
 		setFilePath(filePath);
+		loadFromFile();
 	}
 	
 	public abstract double fetchPolarity(String word, String[] options);

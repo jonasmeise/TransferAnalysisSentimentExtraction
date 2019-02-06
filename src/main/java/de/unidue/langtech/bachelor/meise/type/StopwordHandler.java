@@ -12,7 +12,7 @@ public class StopwordHandler implements StopwordsHandler{
 	
 	public StopwordHandler(String filePath) {
 		fu = new FileUtils();
-		ArrayList<String> allStopwords = fu.readFromFileArrayList(filePath);
+		ArrayList<String> allStopwords = fu.readFromFileArrayList("src\\main\\resources\\stopwords.txt");
 		fu.close();
 		
 		for(String stopword : allStopwords) {

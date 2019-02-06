@@ -26,7 +26,8 @@ import webanno.custom.Valence;
 //AKTSKI at SemEval-2016 Task 5: Aspect Based Sentiment Analysis for Consumer Reviews
 //Pateria, Choubey
 //Classification type: SVM-RBF
-//Keywords for each Term (TF-IDF transformations) are generated in String2word-function within AspectClassifier.java
+//Keywords for each Term (TF-IDF transformations) are generated in String2word-function within AspectClassifier.java^
+//separate task-specific keywords are manually added
 //input-output format is normalized to match the current Task; the model itself is not changed
 
 public class AKTSKI_ClassifierGenerator extends ArffGenerator{
@@ -37,6 +38,7 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 	String regexIgnore = "[^a-zA-Z\\s!_]";
 	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
+	ArrayList<String> tagWordsForAspects;
 	ArrayList<SentimentLexicon> sentimentLexicons;
 	Collection<String> neutralWords;
 	Collection<String> negationWords;
@@ -146,6 +148,18 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 						int check = unigrams.contains(neutralWord) ? 1 : 0;
 						singleLine.add("" + check);
 					}
+					
+					for(String tagWord : tagWordsForAspects) {
+						int hit = 0;
+						for(String singleTag : tagWord.split(" ")) {
+							if(unigrams.contains(singleTag)) {
+								hit++;
+							}
+						}
+						
+						singleLine.add("" + hit);
+					}
+					
 					
 					int check = unigrams.contains("!") ? 1 : 0;
 					singleLine.add("" + check);
@@ -292,6 +306,16 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		negationWords.add("didn't");
 		negationWords.add("but");
 		
+		tagWordsForAspects = new ArrayList<String>();
+		tagWordsForAspects.add("positive bar bath pool facility hotel onsen restaurant place spa");
+		tagWordsForAspects.add("service staff staffs concierge he she they lady woman ma receptionist");
+		tagWordsForAspects.add("area station subway restaurant hotel view metro airport location distance access");
+		tagWordsForAspects.add("time check coffee egg water tea experience breakfast stay food everything choice");
+		tagWordsForAspects.add("bathroom furniture space door room pillow bed amenities shower");
+		tagWordsForAspects.add("money price cost charge value");
+		tagWordsForAspects.add("wifi internet");
+		tagWordsForAspects.add("room towel window water smell cleaning shower hotel");
+		
 		String[] types = new String[16];
 		types[0] = "Ausstattung-positive";
 		types[1] = "Hotelpersonal-positive";
@@ -325,14 +349,21 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			
 			relations.add("negation numeric");
 			
+			int counter=0;
 			for(String neutralWord : neutralWords) {
-				relations.add("feature_" + stringToFeatureName(neutralWord) + " numeric");
+				counter++;
+				relations.add("feature_" + counter + " numeric");
+			}
+			
+			for(String tagWord : tagWordsForAspects) {
+				counter++;
+				relations.add("feature_" + counter + " numeric");
 			}
 			
 			relations.add("punctuation_exclamation numeric");
 			relations.add("punctuation_question numeric");
 			
-			relations.add("type string");
+			relations.add("type " + generateTupel(types));
 			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
 			
 			allClassAttributes.add(types[i]);
@@ -342,8 +373,8 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 		
 		identifierAttributeAt=relations.get(0).size()-2; //second-to-last element contains identifier attribute
 		ignoreFeatures = new int[2];
-		ignoreFeatures[0]=identifierAttributeAt;
-		ignoreFeatures[1]=1;
+		ignoreFeatures[1]=identifierAttributeAt;
+		ignoreFeatures[0]=1;
 		
 		return this.relations;
 	}

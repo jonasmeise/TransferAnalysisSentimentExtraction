@@ -41,7 +41,7 @@ public class AFINN extends SentimentLexicon {
 			String[] split = data.split("\t");
 			
 			if(split.length==2) {
-				neuMap.put(split[0], Double.valueOf(split[1]));
+				neuMap.put(split[0], Double.valueOf(split[1])/5);
 			}
 		}
 		

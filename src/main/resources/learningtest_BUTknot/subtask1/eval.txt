@@ -1,0 +1,2 @@
+f1 avg	constrained	0,65341
+

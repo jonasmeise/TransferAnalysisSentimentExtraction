@@ -42,9 +42,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained", "*.xmi");
+		myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		//myPipeline.foldLearning("src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained", "src\\main\\resources\\learningtest_XRCE\\subtask3\\constrained\\analysis.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained", "src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -94,10 +94,10 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(XRCE_ClassifierGenerator3.class, 
-	        		XRCE_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-	        		XRCE_ClassifierGenerator3.PARAM_RELATION_NAME, "XRCE",
-	        		XRCE_ClassifierGenerator3.PARAM_CONSTRAINED, "true");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator3.class, 
+	        		AUEB_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		AUEB_ClassifierGenerator3.PARAM_RELATION_NAME, "AUEB",
+	        		AUEB_ClassifierGenerator3.PARAM_CONSTRAINED, "true");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -135,6 +135,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,0, 0, outputPath, false);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,0, 0, outputPath, true);
 	}
 }

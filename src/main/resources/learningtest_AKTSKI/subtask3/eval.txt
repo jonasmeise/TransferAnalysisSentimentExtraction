@@ -1,2 +1,2 @@
-f1	constrained	0.45
-f1	unconstrained	0.42
+balanced acc	constrained	0.690
+balanced acc	unconstrained	0.6736
