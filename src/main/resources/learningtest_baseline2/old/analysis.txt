@@ -1,0 +1,97 @@
+Ausstattung-negative.arff
+Precision	0.13333333333333333
+Recall	0.04871794871794872
+fMeasure0.06944444444444445
+Accuracy	97.47069908146794
+
+Ausstattung-positive.arff
+Precision	0.35892857142857143
+Recall	0.1007905138339921
+fMeasure0.15227303162787031
+Accuracy	95.31130377468503
+
+Hotelpersonal-negative.arff
+Precision	0.03333333333333333
+Recall	0.01
+fMeasure0.015384615384615382
+Accuracy	97.73806204105085
+
+Hotelpersonal-positive.arff
+Precision	0.7573812991380126
+Recall	0.5457957957957957
+fMeasure0.6290539005951414
+Accuracy	95.43467606324097
+
+Komfort-negative.arff
+Precision	0.6823910908227624
+Recall	0.3832363828662083
+fMeasure0.4893431499925575
+Accuracy	90.06831951732704
+
+Komfort-positive.arff
+Precision	0.5528816526610644
+Recall	0.17620967741935484
+fMeasure0.2598324656948351
+Accuracy	93.81068268816385
+
+Lage-negative.arff
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	98.88964940299641
+
+Lage-positive.arff
+Precision	0.8155532070610867
+Recall	0.606559356136821
+fMeasure0.6952807298674759
+Accuracy	92.26899383983573
+
+OTHER-negative.arff
+Precision	0.14619047619047618
+Recall	0.04105263157894737
+fMeasure0.0632512077294686
+Accuracy	95.78451255270784
+
+OTHER-positive.arff
+Precision	0.6009002229654403
+Recall	0.25062388591800355
+fMeasure0.34461159197952046
+Accuracy	93.74903879466964
+
+Preis-Leistungs-Verhltnis-negative.arff
+Precision	0.41666666666666663
+Recall	0.13333333333333333
+fMeasure0.198015873015873
+Accuracy	98.80734487624747
+
+Preis-Leistungs-Verhltnis-positive.arff
+Precision	0.6709812409812409
+Recall	0.43272727272727274
+fMeasure0.5128104274466503
+Accuracy	98.53993966588081
+
+Sauberkeit-negative.arff
+Precision	0.25
+Recall	0.07555555555555554
+fMeasure0.11174825174825173
+Accuracy	97.98480661816276
+
+Sauberkeit-positive.arff
+Precision	0.6541053391053391
+Recall	0.47435897435897445
+fMeasure0.5382237242723176
+Accuracy	97.98522912600029
+
+WLAN-negative.arff
+Precision	0.25
+Recall	0.13333333333333333
+fMeasure0.1638095238095238
+Accuracy	99.13643623089206
+
+WLAN-positive.arff
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	99.62992538511588
+
+

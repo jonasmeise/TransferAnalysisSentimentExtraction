@@ -14,6 +14,8 @@ import java.util.Random;
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
+import weka.attributeSelection.ClassifierAttributeEval;
+import weka.attributeSelection.ClassifierSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.LibSVM;
@@ -101,6 +103,7 @@ public class AspectClassifier {
 			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
+			//weights?
 			
 			//RandomForest rf = new RandomForest();
 			//classifier.setClassifier(rf);	
@@ -114,10 +117,27 @@ public class AspectClassifier {
 			//remove ID-Feature
 			removeFilter.setAttributeIndices("1");
 			
+			svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+			
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
+			mf.setDebug(true);
 			
+			CVParameterSelection cps = new CVParameterSelection();
+			cps.setClassifier(svm);
+			cps.setNumFolds(5);
+			cps.setDebug(true);
+			String[] params = new String[1];
+			params[0] = "M 0.1 1 10";
+			cps.setCVParameters(params);
+			
+			ClassifierAttributeEval cae = new ClassifierAttributeEval();
+			cae.setClassifier(cps);
+			cae.setEvaluationMeasure(new SelectedTag(ClassifierSubsetEval.EVAL_FMEASURE, ClassifierSubsetEval.TAGS_EVALUATION));
+			cae.setLeaveOneAttributeOut(true);
+			cae.setFolds(5);
+
 			SGD sgd = new SGD();
 			sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
 			sgd.setLearningRate(0.41);
@@ -125,16 +145,12 @@ public class AspectClassifier {
 			//sgd.setDoNotCheckCapabilities(true);
 
 			MultilayerPerceptron mp = new MultilayerPerceptron();
-			mp.setHiddenLayers("81");
-			mp.setTrainingTime(25);
-			
-			CVParameterSelection cps = new CVParameterSelection();
-			cps.setClassifier(svm);
-			cps.setNumFolds(5);
-			cps.setDebug(true);
+			//mp.setHiddenLayers("81");
+			mp.setAutoBuild(true);
+			mp.setTrainingTime(2);
 			
 			//classifier.setClassifier(svm);
-			classifier.setClassifier(svm);
+			classifier.setClassifier(mp);
 			classifier.setFilter(mf);
 			classifier.buildClassifier(train);
 			
@@ -151,6 +167,7 @@ public class AspectClassifier {
 		scrambledData.randomize(rand);
 		
 	    if (scrambledData.classAttribute().isNominal()) {
+	    	myLog.log("Stratified data set.");
 	    	scrambledData.stratify(folds);
 	    }
 	    
@@ -187,6 +204,9 @@ public class AspectClassifier {
 		s2wFilter.setAttributeIndicesArray(attributeArray);
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);
+		
+		//keep word number instead of booleanic existence
+		s2wFilter.setOutputWordCounts(true);
 		myLog.log("Found " + attributeArray.length + " string attributes.");
 		
 		return s2wFilter;

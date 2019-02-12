@@ -124,35 +124,63 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 		return ("_" + originalName.replace(" ", "_"));
 	}
 	
-    public void writeOutput() {
-    	String completeOutput;
-    	int counter=0;
-    	
-    	if(fu.fileWriter!=null) {	
-    		completeOutput = "@relation " + relationName + "\n\n";
-    		 
-    		//write all relational attributes
-    		for(String relation : relations.get(0)) {
-    			completeOutput = completeOutput + "@attribute " + relation + "\n";
-    		}
-    		
-    		completeOutput = completeOutput + "\n@data\n";
-    		
-    		//write all dataa
-    		for(String dataLine : data) {
-    			myLog.log(counter + "/" + data.size());
-    			completeOutput = completeOutput + dataLine + "\n";
-    			counter++;
+    public void writeOutput(ArrayList<ArrayList<String>> sortedLines) {
+    	myLog.log("Finished! Total of " + data.size() + " entries added.");
+		//we'll write out own method...
+		//writeOutput();
+		
+		//cycle through all the 
+		myLog.log("Output into Folder activated: " + outputIntoFolderActivated);
+		if(outputIntoFolderActivated) {
+			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
+			
+			for(String singleClass : allClassAttributes) {
+				setOutputFile(outputPath + "/" + singleClass + ".arff");
+
+				String completeOutput;
+				completeOutput = "@relation " + singleClass + "\n\n";
+	    		 
+	    		//write all relational attributes
+	    		for(int n=0;n<relations.get(0).size();n++) {
+	    			
+	    			String relation = relations.get(0).get(n);
+	    			
+	    			if(ignoreFeatures.length>0) {
+	    				boolean allFine=true;
+	    				for(int i=0;i<ignoreFeatures.length;i++) {
+	    					if(ignoreFeatures[i]==n) {
+	    						allFine=false;
+	    					}
+	    				}
+	    				
+	    				if(allFine) {				
+	    					completeOutput = completeOutput + "@attribute " + relation + "\n";
+	    				}
+	    			} else {
+	    				completeOutput = completeOutput + "@attribute " + relation + "\n";
+	    			}
+	    		}
+	    		
+	    		completeOutput = completeOutput + "\n@data\n";
+	    		
+				
+				for(ArrayList<String> singleLine : sortedLines) {
+					if(singleLine.get(identifierAttributeAt)!=null) {						
+						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
+							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
+						}
+					}
+				}
+				
+				fu.write(completeOutput.substring(0, completeOutput.length()-1));
+				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
+				
+				
+				fu.close();
 			}
-    			
-    		fu.write(completeOutput);
-  
+		} else {
+			myLog.log("Output path not a folder, can't generate output files....");
 		}
-    	else {
-    		myLog.log("Writer isn't available!");
-    	}
-    	
-    	fu.close();
     }
     
     public String clearString(String string) {
@@ -296,7 +324,6 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
-		writeOutput();
 	}	
 	
     public boolean isLearningModeActivated() {
