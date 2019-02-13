@@ -133,12 +133,7 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1");
-			
-			MultiFilter mf = new MultiFilter();
-			mf.setInputFormat(train);
-			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
-			mf.setDebug(true);
+			removeFilter.setAttributeIndices("1,2");
 			
 			svm.setDegree(2);
 			//for constrained:
@@ -160,9 +155,9 @@ public class AspectClassifier {
 			params[1] = "C 210 250 4";
 			params[2] = "E 0.0001 0.0005 2";
 			cps.setCVParameters(params);
-			
+				
 			ClassifierAttributeEval cae = new ClassifierAttributeEval();
-			cae.setClassifier(svm);
+			cae.setClassifier(classifier);
 			cae.setEvaluationMeasure(new SelectedTag(ClassifierSubsetEval.EVAL_FMEASURE, ClassifierSubsetEval.TAGS_EVALUATION));
 			cae.setLeaveOneAttributeOut(true);
 			cae.setFolds(5);
@@ -177,6 +172,12 @@ public class AspectClassifier {
 			mp.setHiddenLayers("64,16");
 			mp.setAutoBuild(true);
 			mp.setTrainingTime(2);
+			
+			MultiFilter mf = new MultiFilter();
+			mf.setInputFormat(train);
+			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
+			mf.setDebug(true);
+			
 			
 			//classifier.setClassifier(svm);
 			classifier.setClassifier(svm);

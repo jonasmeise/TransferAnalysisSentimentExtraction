@@ -1,0 +1,89 @@
+Ausstattung.arff
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	91.61014045906134
+TP	0.0
+FP	178.2
+TN	0.04
+TN	16.28
+balanced accuracy	0.49988779174147213
+
+Hotelpersonal.arff
+Precision	0.29285714285714287
+Recall	0.014040404040404042
+fMeasure0.026535479970281762
+Accuracy	89.73883327200673
+TP	0.27999999999999997
+FP	174.28
+TN	0.36
+TN	19.6
+balanced accuracy	0.506011561812469
+
+Komfort.arff
+Precision	0.452825244930508
+Recall	0.046700507614213196
+fMeasure0.08449432976961921
+Accuracy	79.58039917272531
+TP	1.8399999999999999
+FP	152.95999999999998
+TN	2.16
+TN	37.56
+balanced accuracy	0.516387902079412
+
+Lage.arff
+Precision	0.41055137844611533
+Recall	0.06195077064642281
+fMeasure0.1062145262145262
+Accuracy	83.44628001302661
+TP	2.0
+FP	160.32
+TN	1.9600000000000002
+TN	30.24
+balanced accuracy	0.5249784246937713
+
+OTHER.arff
+Precision	NaN
+Recall	0.0034188034188034192
+fMeasureNaN
+Accuracy	87.94987290590807
+TP	0.08
+FP	171.0
+TN	0.04
+TN	23.4
+balanced accuracy	0.5015866458008965
+
+Preis-Leistungs-Verhltnis.arff
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	96.27802519888851
+TP	0.0
+FP	187.28
+TN	0.0
+TN	7.24
+balanced accuracy	0.5
+
+Sauberkeit.arff
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	94.92084639166973
+TP	0.0
+FP	184.64000000000001
+TN	0.04
+TN	9.84
+balanced accuracy	0.4998917045700671
+
+WLAN.arff
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	98.95127284415852
+TP	0.0
+FP	192.48
+TN	0.0
+TN	2.04
+balanced accuracy	0.5
+
+
