@@ -26,7 +26,6 @@ import webanno.custom.Valence;
 //Classification type: Connected Conditional Random Fields 
 //Training file for word is included as a fixed list
 //input-output format is normalized to match the current Task; the model itself is not changed
-//Delexication and 
 
 public class XRCE_ClassifierGenerator3 extends ArffGenerator {
 	int cutoff = 200; //Maximale Saetze/Datensatz

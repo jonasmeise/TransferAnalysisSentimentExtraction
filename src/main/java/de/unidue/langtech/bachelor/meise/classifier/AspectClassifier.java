@@ -26,6 +26,7 @@ import weka.classifiers.functions.SGDText;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.RandomForest;
+import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SelectedTag;
 import weka.core.Stopwords;
@@ -51,6 +52,8 @@ public class AspectClassifier {
 	private int svmType=0;
 	public boolean idfTransformEnabled;
 	private StringToWordVector myFilter;
+	
+	public CVParameterSelection cps;
 	
 	int seed;
 	int folds = 10;
@@ -97,14 +100,29 @@ public class AspectClassifier {
 			}
 			
 			StringToWordVector s2wFilter = createS2WVector(convertIntegers(stringIndices));
-			s2wFilter.setDoNotOperateOnPerClassBasis(true);
-			myLog.log(stringIndices);
+			//s2wFilter.setDoNotOperateOnPerClassBasis(true);
+			myLog.log(stringIndices + " Kernel:" + kernelType);
 			
 			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
-			//weights?
+			svm.setNormalize(true);
+			svm.setShrinking(true);
 			
+			//weights?
+			double weightClassA=0;
+			double weightClassB=0;
+			
+			for(Instance singleInstance : train) {
+				if(singleInstance.classValue()==0) {
+					weightClassA++;
+				} else {
+					weightClassB++;
+				}
+			}
+			
+			svm.setWeights((weightClassB / weightClassA) + " 1");
+			myLog.log("Weights set: " + svm.getWeights());
 			//RandomForest rf = new RandomForest();
 			//classifier.setClassifier(rf);	
 			//???
@@ -117,40 +135,51 @@ public class AspectClassifier {
 			//remove ID-Feature
 			removeFilter.setAttributeIndices("1");
 			
-			svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
-			
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
 			mf.setDebug(true);
 			
-			CVParameterSelection cps = new CVParameterSelection();
+			svm.setDegree(2);
+			//for constrained:
+			//svm.setCost(200);
+			//svm.setGamma(0.002);
+			//svm.setEps(0.0005);
+			
+			//for unconstrained:
+			svm.setCost(210);
+			svm.setGamma(0.0015);
+			svm.setEps(0.0001);
+			
+			cps = new CVParameterSelection();
 			cps.setClassifier(svm);
 			cps.setNumFolds(5);
 			cps.setDebug(true);
-			String[] params = new String[1];
-			params[0] = "M 0.1 1 10";
+			String[] params = new String[3];
+			params[0] = "G 0.001 0.002 4";
+			params[1] = "C 210 250 4";
+			params[2] = "E 0.0001 0.0005 2";
 			cps.setCVParameters(params);
 			
 			ClassifierAttributeEval cae = new ClassifierAttributeEval();
-			cae.setClassifier(cps);
+			cae.setClassifier(svm);
 			cae.setEvaluationMeasure(new SelectedTag(ClassifierSubsetEval.EVAL_FMEASURE, ClassifierSubsetEval.TAGS_EVALUATION));
 			cae.setLeaveOneAttributeOut(true);
 			cae.setFolds(5);
-
+			
 			SGD sgd = new SGD();
 			sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
-			sgd.setLearningRate(0.41);
-			sgd.setEpsilon(0.40);
+			//sgd.setLearningRate(0.41);
+			//sgd.setEpsilon(0.40);
 			//sgd.setDoNotCheckCapabilities(true);
 
 			MultilayerPerceptron mp = new MultilayerPerceptron();
-			//mp.setHiddenLayers("81");
+			mp.setHiddenLayers("64,16");
 			mp.setAutoBuild(true);
 			mp.setTrainingTime(2);
 			
 			//classifier.setClassifier(svm);
-			classifier.setClassifier(mp);
+			classifier.setClassifier(svm);
 			classifier.setFilter(mf);
 			classifier.buildClassifier(train);
 			
@@ -183,9 +212,16 @@ public class AspectClassifier {
 			   currentEvaluation = evalModel(classifier, test, folds, new Random());
 			   System.out.println("EVAL:" + currentEvaluation.toMatrixString());
 			   returnList.add(currentEvaluation);
+			   
+			  /* if(cps.getBestClassifierOptions()!=null) {
+				   myLog.log("Best found parameters for this fold: ");
+				   for(String parameter : cps.getBestClassifierOptions()) {
+					   myLog.log(parameter);
+				   }
+			   }*/
 		 }
 		 
-		   return returnList;
+		 return returnList;
 	}
 	
 	//import Instances -> learn and export model
@@ -203,10 +239,10 @@ public class AspectClassifier {
 		s2wFilter = new StringToWordVector(); 
 		s2wFilter.setAttributeIndicesArray(attributeArray);
 		s2wFilter.setIDFTransform(idfTransformEnabled);
-		s2wFilter.setLowerCaseTokens(true);
+		s2wFilter.setLowerCaseTokens(true);	
 		
+		//s2wFilter.setOutputWordCounts(true);
 		//keep word number instead of booleanic existence
-		s2wFilter.setOutputWordCounts(true);
 		myLog.log("Found " + attributeArray.length + " string attributes.");
 		
 		return s2wFilter;

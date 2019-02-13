@@ -14,6 +14,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.*;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
+import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
@@ -27,6 +28,7 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	String regexIgnore = "[\'\"]";
 	ArrayList<String> negationWords;
 	ArrayList<SentimentLexicon> sentimentLexicons;
+	StopwordHandler myStopwordHandler;
 	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
 	
@@ -62,13 +64,12 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
         	for(String singleClass : allClassAttributes) {
         		for(ArrayList<Token> singleSentence : subSentences) {
         			String lemmas = "";
-        			String pos = "";
-        			String nsubj_1 = "";
-        			String nsubj_2 = "";
+        			String dependencyString = "";
         			double lexicons_min=0;
         			double lexicons_max=0;
-        			double lexicons_difference=0;
+        			int sentenceLength;
         			int contains_negation = 0;
+        			
         			
         			String completeSentence="";
         			
@@ -78,35 +79,38 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
         				String current_pos = singleToken.getPos().getPosValue();
         				
         				if(current_pos.contains("NN") || current_pos.contains("JJ") || current_pos.contains("VB") || current_pos.contains("RB")) {
-            				lemmas = lemmas + singleToken.getLemma().getValue() + " ";
-            				pos = pos + singleToken.getPos().getPosValue() + " ";
+        					if(constrained || !myStopwordHandler.isStopword(singleToken.getLemma().getValue().toLowerCase())) {
+        						lemmas = lemmas + singleToken.getLemma().getValue() + " ";
             				
-            				for(SentimentLexicon singleLexicon : sentimentLexicons) {
-            					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
-            					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
-            					
-            					if(newPosValue > lexicons_max) {
-            						lexicons_max = newPosValue;
-            					}
-            					if(newNegValue < lexicons_min) {
-            						lexicons_min = newNegValue;
-            					}
-            				}
-        				}
-        				
-        				for(Dependency singleDependency : dependencies) {
-        					if(singleSentence.contains(singleDependency.getGovernor()) && singleDependency.getDependencyType().equals("nsubj")) {
-        						nsubj_1 = singleDependency.getGovernor().getCoveredText();
-        						nsubj_2 = singleDependency.getDependent().getCoveredText();
+	            				for(SentimentLexicon singleLexicon : sentimentLexicons) {
+	            					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
+	            					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
+	            					
+	            					if(newPosValue > lexicons_max) {
+	            						lexicons_max = newPosValue;
+	            					}
+	            					if(newNegValue < lexicons_min) {
+	            						lexicons_min = newNegValue;
+	            					}
+	            				}
         					}
         				}
         			}
         			
-    				lemmas = lemmas.toLowerCase();
-    				pos = pos.toLowerCase();
-    				nsubj_1 = nsubj_1.toLowerCase();
-    				nsubj_2 = nsubj_2.toLowerCase();
+    				for(Dependency singleDependency : dependencies) {
+    					if(singleSentence.contains(singleDependency.getGovernor())) {
+							dependencyString = dependencyString + singleDependency.getDependencyType() + " ";
+    					}
+    				}
         			
+        			if(valueId%100==0) {
+        				myLog.log(valueId);
+        			}
+        			
+    				lemmas = lemmas.toLowerCase();
+    				dependencyString = dependencyString.toLowerCase();
+        			sentenceLength = completeSentence.length();
+    				
     				boolean containsNegation = false;
     				for(String negationWord : negationWords) {
     					if(completeSentence.toLowerCase().contains(negationWord)) {
@@ -120,13 +124,18 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 					singleLine.add("" + valueId);
 					
 					singleLine.add("'" + lemmas.replaceAll(regexIgnore, "") + "'");
-					singleLine.add("'" + pos.replaceAll(regexIgnore, "") + "'");
-					singleLine.add("'" + nsubj_1.replaceAll(regexIgnore, "") + "'");
-					singleLine.add("'" + nsubj_2.replaceAll(regexIgnore, "") + "'");
-					singleLine.add("" + lexicons_min);
-					singleLine.add("" + lexicons_max);
-					singleLine.add("" + Math.abs(lexicons_max - lexicons_min));
+					singleLine.add("'" + dependencyString.replaceAll(regexIgnore, "") + "'");
+					if(!constrained) {
+						singleLine.add("" + lexicons_min);
+						singleLine.add("" + lexicons_max);
+						singleLine.add("" + Math.abs(lexicons_max - lexicons_min));
+					} else {
+						singleLine.add("0");
+						singleLine.add("0");
+						singleLine.add("0");
+					}
 					singleLine.add("" + contains_negation);
+					singleLine.add("" + sentenceLength);
 					
 					singleLine.add(singleClass);
 					
@@ -172,7 +181,9 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	        			String current_pos = singleToken.getPos().getPosValue();
         				
         				if(current_pos.contains("NN") || current_pos.contains("JJ") || current_pos.contains("VB") || current_pos.contains("RB")) {
-        					stringSentence = stringSentence + singleToken.getLemma().getValue() + " ";
+        					if(constrained || !myStopwordHandler.isStopword(singleToken.getLemma().getValue().toLowerCase())) {
+        						stringSentence = stringSentence + singleToken.getLemma().getValue() + " ";
+        					}
         				}
 	        		}
 	        		
@@ -229,7 +240,8 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
-
+		myStopwordHandler = new StopwordHandler("src\\main\\resources\\stopwords.txt");	
+		
 		String[] types = new String[8];
 		types[0] = "Ausstattung";
 		types[1] = "Hotelpersonal";
@@ -243,6 +255,7 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 		negationWords = new ArrayList<String>();
 		negationWords.add("no");
 		negationWords.add("not");
+		negationWords.add("nt");
 		negationWords.add("n't");
 		negationWords.add("need");
 		negationWords.add("must");
@@ -259,13 +272,12 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 			
 			//of NN+, JJ+, VB+, RB
 			relations.add("lemma string");
-			relations.add("pos string");
-			relations.add("nsubj_1 string");
-			relations.add("nsubj_2 string");
+			relations.add("dependencies string");
 			relations.add("lexicons_min numeric");
 			relations.add("lexicons_max numeric");
 			relations.add("lexicons_extremes_difference numeric");
 			relations.add("contains_negation numeric");
+			relations.add("sentence_length numeric");
 			
 			relations.add("type string");
 			

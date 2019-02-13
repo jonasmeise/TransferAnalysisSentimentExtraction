@@ -196,7 +196,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 		for(String arffFileInput : arffFileInputs) {
 			try {
 				//if learning for folds: continue from her
-				AspectClassifier foldClassifier = new AspectClassifier();
+				AspectClassifier foldClassifier = new AspectClassifier(kernelType, svmType);
 				foldClassifier.idfTransformEnabled=idfTransformEnabled;
 				
 				Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
@@ -244,7 +244,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				analysisString.add("TP\t" + tp/numFolds);
 				analysisString.add("FP\t" + tn/numFolds);
 				analysisString.add("TN\t" + fp/numFolds);
-				analysisString.add("TP\t" + fn/numFolds);
+				analysisString.add("TN\t" + fn/numFolds);
 				analysisString.add("balanced accuracy\t" + balancedAccuracy);
 				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");

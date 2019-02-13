@@ -42,9 +42,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\constrained", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\constrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\constrained\\analysis.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -97,7 +97,7 @@ public class MainPipeline {
 	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator.class, 
 	        		OwnClassifier_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
 	        		OwnClassifier_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier",
-	        		OwnClassifier_ClassifierGenerator.PARAM_CONSTRAINED, "true");
+	        		OwnClassifier_ClassifierGenerator.PARAM_CONSTRAINED, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -135,6 +135,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,0, 0, outputPath, false);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, true);
 	}
 }
