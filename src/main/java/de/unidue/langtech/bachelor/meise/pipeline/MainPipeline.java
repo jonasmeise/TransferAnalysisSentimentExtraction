@@ -42,9 +42,9 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained\\analysis_1.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -94,10 +94,10 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator.class, 
-	        		OwnClassifier_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		OwnClassifier_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier",
-	        		OwnClassifier_ClassifierGenerator.PARAM_CONSTRAINED, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "OwnClassifier",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -135,6 +135,6 @@ public class MainPipeline {
 	public void foldLearning(String arffFileFolder, String outputPath) {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifier = new ClassifierHandler();
-		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, true);
+		 myClassifier.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false);
 	}
 }

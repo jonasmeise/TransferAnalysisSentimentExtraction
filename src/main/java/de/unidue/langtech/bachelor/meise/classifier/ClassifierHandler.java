@@ -242,9 +242,9 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				double balancedAccuracy = (tp / (tp + fn) + tn / (tn + fp))/2;
 				
 				analysisString.add("TP\t" + tp/numFolds);
-				analysisString.add("FP\t" + tn/numFolds);
-				analysisString.add("TN\t" + fp/numFolds);
-				analysisString.add("TN\t" + fn/numFolds);
+				analysisString.add("FP\t" + fp/numFolds);
+				analysisString.add("FN\t" + fn/numFolds);
+				analysisString.add("TN\t" + tn/numFolds);
 				analysisString.add("balanced accuracy\t" + balancedAccuracy);
 				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");

@@ -121,7 +121,7 @@ public class AspectClassifier {
 				}
 			}
 			
-			svm.setWeights((weightClassB / weightClassA) + " 1");
+			//svm.setWeights((weightClassB / weightClassA) + " 1");
 			myLog.log("Weights set: " + svm.getWeights());
 			//RandomForest rf = new RandomForest();
 			//classifier.setClassifier(rf);	
@@ -133,27 +133,39 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1,2");
-			
+			removeFilter.setAttributeIndices("1");
+				
 			svm.setDegree(2);
-			//for constrained:
+			//for constrainedS1:
 			//svm.setCost(200);
 			//svm.setGamma(0.002);
 			//svm.setEps(0.0005);
 			
-			//for unconstrained:
-			svm.setCost(210);
-			svm.setGamma(0.0015);
-			svm.setEps(0.0001);
+			//for unconstrainedS1:
+			//svm.setCost(210);
+			//svm.setGamma(0.0015);
+			//svm.setEps(0.0001);
+			
+			//for constrainedS3:
+			//svm.setCost(500);
+			//svm.setGamma(0.001);
+			//svm.setEps(0.00005);
+			
+			//for unconstrainedS3:
+			svm.setCost(500);
+			svm.setGamma(0.001);
+			svm.setEps(0.00005);
+			
 			
 			cps = new CVParameterSelection();
 			cps.setClassifier(svm);
 			cps.setNumFolds(5);
 			cps.setDebug(true);
-			String[] params = new String[3];
-			params[0] = "G 0.001 0.002 4";
-			params[1] = "C 210 250 4";
-			params[2] = "E 0.0001 0.0005 2";
+			String[] params = new String[4];
+			params[0] = "D 2 2 1";
+			params[1] = "C 500 500 1";
+			params[2] = "G 0.0005 0.0015 3";
+			params[3] = "E 0.00005 0.0002 4";
 			cps.setCVParameters(params);
 				
 			ClassifierAttributeEval cae = new ClassifierAttributeEval();
