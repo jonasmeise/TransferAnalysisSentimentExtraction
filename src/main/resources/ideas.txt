@@ -20,9 +20,32 @@ relation of positive/negative part length
 10-folded cross-validation
 
 REGRESSION OR K-NN?
+RESULTS:
+without squared sentiment avg (kNN with k=6):
 
+learn: absolute mean error: 0.7498731512703172
+learn: AVG. ABSOLUTE MEAN ERROR: 0.7916395337518704
+learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7641000000000001
+
+without squared sentiment avg (SVM, meta-learned):
+learn: absolute mean error: 0.7190074126958318
+learn: AVG. ABSOLUTE MEAN ERROR: 0.7809064730272046
+learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7416999999999998
+
+without squared sentiment avg (SVM, basic parameter):
+learn: absolute mean error: 0.698020174456301
+learn: AVG. ABSOLUTE MEAN ERROR: 0.7833532543589401
+learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7383000000000001
+
+without squared sentiment avg (LinearRegression):
+learn: absolute mean error: 0.7568012017557082
+learn: AVG. ABSOLUTE MEAN ERROR: 0.856966361354915
+learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7516999999999999
 
 score: double 5.8-10.0
+
+
+
 
 //ASPECT-SPECIFIC RATINGS VON EINEM HOTEL
 //=> more general

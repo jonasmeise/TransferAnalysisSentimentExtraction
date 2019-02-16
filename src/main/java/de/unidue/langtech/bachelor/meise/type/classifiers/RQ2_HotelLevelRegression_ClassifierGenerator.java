@@ -2,6 +2,7 @@ package de.unidue.langtech.bachelor.meise.type.classifiers;
 
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,6 +37,7 @@ public class RQ2_HotelLevelRegression_ClassifierGenerator extends ArffGenerator{
 	double currentScore=0;
 	
 	HashMap<String, Integer> myHashMap;
+	HashMap<Double, Integer> scoreMap;
 	
 	String regexIgnore = "[\'\"]";
 	String regexSplitParts = "( .E )";
@@ -53,18 +55,19 @@ public class RQ2_HotelLevelRegression_ClassifierGenerator extends ArffGenerator{
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
         	for(String singleClass : allClassAttributes) {
         		Collection<Valence> valences = selectCovered(Valence.class, sentence);
-        		Collection<Token> fullSentenceToken = selectCovered(Token.class, sentence);
-    			
-        		int positive=0, negative=0;
         		
     			for(Valence valence : valences) {
     				if(valence.getGovernor().getAspect()!=null && valence.getDependent().getAspect()!=null) {
+    					//myLog.log
 	    				if(singleClass.startsWith(valence.getGovernor().getAspect().substring(0,4)) || singleClass.startsWith(valence.getDependent().getAspect().substring(0,4))) {
 	    					if(valence.getValenceRating()!=null) {
+	    						
+	    						myLog.log(singleClass + "-" + valence.getValenceRating());
 	    						if(!myHashMap.containsKey(singleClass + "-" + valence.getValenceRating())) {
 	    							myHashMap.put(singleClass + "-" + valence.getValenceRating(), 1);
 	    						} else {
-	    							myHashMap.put(singleClass + "-" + valence.getValenceRating(),myHashMap.get(singleClass + "-" + valence.getValenceRating()+1));
+	    							myHashMap.put(singleClass + "-" + valence.getValenceRating(),myHashMap.get(singleClass + "-" + valence.getValenceRating())+1);
+	    							myLog.log(myHashMap.get(singleClass + "-" + valence.getValenceRating()));
 	    						}
 	    					}
 	    				}
@@ -120,22 +123,26 @@ public class RQ2_HotelLevelRegression_ClassifierGenerator extends ArffGenerator{
 	}
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
-		for(String type : allClassAttributes) {	
-			try {
-				fu.createWriter(outputPath + "/type.arff");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			fu.write("@relation " + relationName + "\n");
-			fu.write("@attribute id numeric");
-			fu.write("@attribute pos_examples numeric");
-			fu.write("@attribute neg_examples numeric");
-			fu.write("@attribute score numeric\n");
-			
-			fu.write("@data");
-			fu.
+		try {
+			fu.createWriter(outputPath + "/type.arff");
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		
+		
+		for(String type : allClassAttributes) {	
+			//fu.write("@relation " + relationName + "\n");
+			//fu.write("@attribute id numeric");
+			//fu.write("@attribute pos_examples numeric");
+			//fu.write("@attribute neg_examples numeric");
+			//fu.write("@attribute score numeric\n");
+			
+			//fu.write("@data");
+			myLog.log(myHashMap.keySet());
+			fu.write(type + "," + myHashMap.get(type + "-positive") + "," + myHashMap.get(type + "-negative") + ",???");
+		}
+		
+		fu.close();
 		
 	}	
 	

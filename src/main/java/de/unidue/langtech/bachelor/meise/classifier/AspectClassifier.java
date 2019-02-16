@@ -32,6 +32,7 @@ import weka.core.SelectedTag;
 import weka.core.Stopwords;
 import weka.core.stopwords.AbstractStopwords;
 import weka.core.stopwords.StopwordsHandler;
+import weka.core.tokenizers.Tokenizer;
 import weka.filters.Filter;
 import weka.filters.MultiFilter;
 import weka.filters.unsupervised.attribute.NominalToBinary;
@@ -136,7 +137,7 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1,3,4");
+			removeFilter.setAttributeIndices("1");
 				
 			svm.setDegree(2);
 			//for constrainedS1:
@@ -190,15 +191,18 @@ public class AspectClassifier {
 			
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
+			mf.setFilters(new Filter[] {s2wFilter});
+			//TODO: CHANGE
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
 			
 			//classifier.setClassifier(svm);
 			if(outerParameterClassifier!=null) {
+				myLog.log("Found classifier from outside...");
 				classifier.setClassifier(outerParameterClassifier);
 				
-				if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
+				/*if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
 					cps = (CVParameterSelection) outerParameterClassifier;
-				}
+				}*/
 			} else {
 				classifier.setClassifier(svm);
 			}
@@ -213,7 +217,7 @@ public class AspectClassifier {
 		ArrayList<Evaluation> returnList = new ArrayList<Evaluation>();
 		Random rand = new Random(seed);
 		Instances scrambledData = new Instances(data);
-		double avgMeanError=0;
+		double avgMeanError=0, avgMeanErrorMapped=0, avgMeanErrorMappedCumulated=0;
 
 		scrambledData.randomize(rand);
 		
@@ -229,17 +233,36 @@ public class AspectClassifier {
 			   //test.deleteAttributeAt(0);
 			   //build-Classifier loescht automatisch 0
 			   buildClassifier(train);
-			   
-			   for(Instance testInstance : test) {
-				   System.out.println(classifier.classifyInstance(testInstance) + "-" + testInstance.classValue() + "--> " + Math.abs(classifier.classifyInstance(testInstance)-testInstance.classValue()));
-			   }
-			   
-			   //myLog.log(classifier.toString());
-			   
+
 			   Evaluation currentEvaluation;
 			   currentEvaluation = evalModel(classifier, test, folds, new Random());
 			   
 			   if(regression) {
+				   avgMeanErrorMapped=0;
+				   
+				   //theory: map to 0.4-spaced score ratings
+				   for(Instance testInstance : test) {
+					   double initialScore = classifier.classifyInstance(testInstance);
+					   double dblMappedScore = initialScore;
+					   
+					   /*for(int mappedScore = 59;mappedScore<=100;mappedScore=mappedScore+4) {
+						   dblMappedScore = (double)mappedScore/10;
+						   if(Math.abs(dblMappedScore-initialScore) <= 0.2) {
+							   break;
+						   }
+					   }*/
+					   
+					   double difference = Math.abs(testInstance.classValue()-dblMappedScore);
+					   
+					   System.out.println(testInstance.classValue() + "-" + dblMappedScore + " --> " + difference);
+					   avgMeanErrorMapped += difference;
+					   
+				   }
+				   
+				   System.out.println(classifier.toString());
+				   
+				   avgMeanErrorMappedCumulated += (avgMeanErrorMapped/test.size());
+				   
 				   avgMeanError += currentEvaluation.meanAbsoluteError();
 				   myLog.log("absolute mean error: " + currentEvaluation.meanAbsoluteError());
 			   }
@@ -257,7 +280,8 @@ public class AspectClassifier {
 		 }
 		 
 		 if(regression) {
-			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError/folds));
+			 myLog.log("AVG. ABSOLUTE MEAN ERROR: " + (avgMeanError/folds));
+			 myLog.log("AVG. ABSOLUTE MAPPED MEAN ERROR: " + (avgMeanErrorMappedCumulated/(folds)));
 		 }
 		 
 		 return returnList;
@@ -276,11 +300,12 @@ public class AspectClassifier {
 	private StringToWordVector createS2WVector(int[] attributeArray) {
 		StringToWordVector s2wFilter;
 		s2wFilter = new StringToWordVector(); 
-		s2wFilter.setAttributeIndicesArray(attributeArray);
+		s2wFilter.setAttributeIndices("first-last");
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);	
+		s2wFilter.setAttributeNamePrefix("s2w_");
 		
-		s2wFilter.setOutputWordCounts(true);
+		//s2wFilter.setOutputWordCounts(true);
 		//keep word number instead of booleanic existence
 		myLog.log("Found " + attributeArray.length + " string attributes.");
 		

@@ -2,8 +2,10 @@ package de.unidue.langtech.bachelor.meise.type.classifiers;
 
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -13,6 +15,7 @@ import org.apache.uima.jcas.JCas;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.AFINN;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.BingLiu;
@@ -30,10 +33,13 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     public String xmlPath;
 	
     private RawJsonReviewReader myReader;
+    private HashMap<Double, Integer> myHashMap;
+    private FileUtils fu;
     
 	int cutoff = 200; //Maximale Saetze/Datensatz
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
+	int beginOffset=0;
 	double currentScore=0;
 	
 	String regexIgnore = "[\'\"]";
@@ -56,11 +62,21 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			double lexicons_min=0;
     			double lexicons_max=0;
 
+    			//it's definitely in-order...
+    			beginOffset = sentence.getBegin();
+    			
     			String fullSentenceString = myReader.getText(valueId);
     			myLog.log(fullSentenceString);
     			myLog.log(sentence.getCoveredText());
     			
 				currentScore = myReader.getScore(valueId);
+				
+				if(myHashMap.containsKey(currentScore)) {
+					myHashMap.put(currentScore, myHashMap.get(currentScore)+1);
+				} else {
+					myHashMap.put(currentScore, 1);
+				}
+				
 				//process the entire sentence
     			if(valueId%100==0) {
     				myLog.log(valueId);
@@ -70,8 +86,9 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			String positivePart = "";
     			String negativePart = "";
     			String[] splitReview = fullSentenceString.split(regexSplitParts);
-    		
-    			double maxPos=0, maxNeg=0, minPos=0, minNeg=0;
+    			String title = myReader.getTitle(valueId);
+    			
+    			double maxPos=0, maxNeg=0, minPos=0, minNeg=0, avgTitle=0, avgPos=0, avgNeg=0;
     			
     			myLog.log("Split review into " + splitReview.length + " parts.");
     			
@@ -106,12 +123,15 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			
     			ArrayList<Token> posTokens = new ArrayList<Token>();
     			ArrayList<Token> negTokens = new ArrayList<Token>();
+    			ArrayList<Token> titleTokens = new ArrayList<Token>();
     			
     			for(Token singleToken : fullSentenceToken) {
-    				if(positivePart.contains(singleToken.getCoveredText())) {
+    				if(positivePart.contains(singleToken.getCoveredText()) && singleToken.getBegin()-beginOffset>title.length() && singleToken.getBegin()-beginOffset<(title.length()+positivePart.length())) {
     					posTokens.add(singleToken);
-    				} else if (negativePart.contains(singleToken.getCoveredText())){
+    				} else if (negativePart.contains(singleToken.getCoveredText()) && singleToken.getBegin()-beginOffset>(title.length()+positivePart.length())){
     					negTokens.add(singleToken);
+    				} else if (title.contains(singleToken.getCoveredText()) && singleToken.getBegin()-beginOffset<title.length()){
+    					titleTokens.add(singleToken);
     				} else {
     					myLog.log("Unsure what to do about '" + singleToken.getCoveredText() + "' in " + fullSentenceString);
     				}
@@ -122,6 +142,8 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
     					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
     					
+    					avgPos += (newPosValue-newNegValue);
+    					
     					if(newPosValue > maxPos) {
     						maxPos = newPosValue;
     					}
@@ -131,10 +153,14 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     				}
 				}
     			
+    			avgPos = avgPos / (posTokens.size() * sentimentLexicons.size()+1);
+    			
     			for(Token singleToken : negTokens) {
     				for(SentimentLexicon singleLexicon : sentimentLexicons) {	
     					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
     					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
+    					
+    					avgNeg += (newPosValue-newNegValue);
     					
     					if(newPosValue > maxNeg) {
     						maxNeg = newPosValue;
@@ -145,9 +171,22 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     				}
 				}
     			
+    			avgNeg = avgNeg / (posTokens.size() * sentimentLexicons.size()+1);
+    			
+    			for(Token singleToken : titleTokens) {
+    				for(SentimentLexicon singleLexicon : sentimentLexicons) {	
+    					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
+    					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
+    					
+    					avgTitle += (newPosValue-newNegValue);
+    				}
+				}
+    			
+    			avgTitle = avgTitle / (titleTokens.size() * sentimentLexicons.size()+1);
+    			
     			double relationFromPosToNeg = 0;
     			if(negativePart.length()>0) {
-    				relationFromPosToNeg = positivePart.length()/negativePart.length();
+    				relationFromPosToNeg = (double)positivePart.length()/(double)negativePart.length();
     			}
 
     			ArrayList<Valence> posValences = new ArrayList<Valence>();
@@ -169,8 +208,6 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     				}
     			}
     			
-    			String title = myReader.getTitle(valueId);
-    			
     			String positiveLemmas = "";
     			String negativeLemmas = "";
     			String positiveValences = "";
@@ -185,7 +222,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			for(Valence singleValence : posValences) {
     				String prefix = "";
     				
-    				if(singleValence.getValenceRating()=="negative") {
+    				if(singleValence.getValenceRating()!=null && singleValence.getValenceRating().equals("negative")) {
     					prefix = "_";
     				}
     				
@@ -194,7 +231,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			for(Valence singleValence : negValences) {
     				String prefix = "";
     				
-    				if(singleValence.getValenceRating()=="negative") {
+    				if(singleValence.getValenceRating()!=null && singleValence.getValenceRating().equals("negative")) {
     					prefix = "_";
     				}
     				
@@ -208,13 +245,17 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 				singleLine.add("'" + negativeLemmas.replaceAll(regexIgnore, "").toLowerCase() + "'");
 				
 				if(!constrained) {
-					singleLine.add("'" + positiveValences.replaceAll(regexIgnore, "").replaceAll("RatingOfAspect", "").toLowerCase() + "'");
-					singleLine.add("'" + negativeValences.replaceAll(regexIgnore, "").replaceAll("RatingOfAspect", "").toLowerCase() + "'");
+					singleLine.add("'" + positiveValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
+					singleLine.add("'" + negativeValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
 				} else {
 					//TODO: implement bag-of-words for thematic features
 					singleLine.add("0");
 					singleLine.add("0");
 				}
+				
+				singleLine.add("" + avgTitle);
+				singleLine.add("" + avgPos);
+				singleLine.add("" + avgNeg);
 				singleLine.add("" + maxPos);
 				singleLine.add("" + maxNeg);
 				singleLine.add("" + minPos);
@@ -242,6 +283,10 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 	
 	@Override
 	public ArrayList<ArrayList<String>> generateRelations() {
+		fu = new FileUtils();
+
+		myHashMap = new HashMap<Double, Integer>();
+		
 		myReader = new RawJsonReviewReader();
 		myReader.folderPath = xmlPath;
 		myReader.fileExtension = "output.xml";
@@ -251,14 +296,6 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 		
 		String[] types = new String[1];
 		types[0] = "review";
-		
-		negationWords = new ArrayList<String>();
-		negationWords.add("no");
-		negationWords.add("not");
-		negationWords.add("nt");
-		negationWords.add("n't");
-		negationWords.add("need");
-		negationWords.add("must");
 		
 		sentimentLexicons = new ArrayList<SentimentLexicon>();
 		sentimentLexicons.add(new AFINN());
@@ -275,6 +312,9 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 			relations.add("negative_part_lemma string");
 			relations.add("aspects_in_positive string");
 			relations.add("aspects_in_negative string");
+			relations.add("sentiment_avg_in_tit numeric");
+			relations.add("sentiment_avg_in_pos numeric");
+			relations.add("sentiment_avg_in_neg numeric");
 			relations.add("sentiment_max_in_pos numeric");
 			relations.add("sentiment_max_in_neg numeric");
 			relations.add("sentiment_min_in_pos numeric");
@@ -300,6 +340,20 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 	}
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
+		try {
+			fu.createWriter(outputPath + "\\score_data.txt");
+			
+			for(double key=58;key<=100;key++) {
+				double trueKey = (double)key/10;
+				double value = myHashMap.containsKey(trueKey) ?  myHashMap.get(trueKey) : 0;
+				fu.write(trueKey + "\t" + value);
+			}
+			
+			fu.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		writeOutput(sortedLines);
 	}	
 	

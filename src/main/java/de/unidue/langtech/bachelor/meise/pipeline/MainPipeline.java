@@ -57,8 +57,8 @@ public class MainPipeline {
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
-		myPipeline.valenceStatsRegressionTask("src\\main\\resources", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		//myPipeline.foldLearning("src\\main\\resources\\RQ2_learningtest\\", "src\\main\\resources\\RQ2_learningtest\\analysis.txt");
+		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
+		myPipeline.foldLearning("src\\main\\resources\\RQ2_learningtest_hotel-level\\", "src\\main\\resources\\RQ2_learningtest\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -168,18 +168,19 @@ public class MainPipeline {
 		svm.setDegree(3);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		svm.setCost(0.0001);
-		svm.setNu(0.5);
+		//svm.setCost(1);
+		//svm.setGamma(0.01);
+		//svm.setLoss(0.01);
 			
 		 
 		 Classifier myClassifier = null;
 		 LinearRegression lr = new LinearRegression(); 
 		 lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
-		 lr.setRidge(0.0000001);
+		 //lr.setRidge(0.0000001);
 		 //lr.setDebug(true);
 	 
 		 IBk ibk = new IBk();
-		 ibk.setKNN(6);
+		 ibk.setKNN(9);
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 		 ibk.setMeanSquared(true);
@@ -199,10 +200,10 @@ public class MainPipeline {
 		ar.setDebug(true);
 		ar.setClassifier(lr);
 		
-		myClassifier = ibk;
+		myClassifier = lr;
 		 
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
+		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
 	}
 }
