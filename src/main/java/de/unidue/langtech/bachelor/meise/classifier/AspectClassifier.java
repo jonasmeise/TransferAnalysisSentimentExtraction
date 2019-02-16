@@ -43,7 +43,7 @@ public class AspectClassifier {
 	//a single Aspect Classifier for a set of Instances
 	
 	public String sourcePath;
-	private FilteredClassifier classifier;
+	public FilteredClassifier classifier;
 	public Instances instances;
 	public Evaluation evaluation;
 	private FileUtils fu;
@@ -51,7 +51,9 @@ public class AspectClassifier {
 	private int kernelType=0;
 	private int svmType=0;
 	public boolean idfTransformEnabled;
+	public boolean regression=true;
 	private StringToWordVector myFilter;
+	public Classifier outerParameterClassifier; //if called from outside, this thing needs to be set
 	
 	public CVParameterSelection cps;
 	
@@ -66,10 +68,11 @@ public class AspectClassifier {
 		myLog = new ConsoleLog();
 	}
 	
-	public AspectClassifier(int kernelType, int svmType) {
+	public AspectClassifier(int kernelType, int svmType, Classifier outerParameterClassifier) {
 		this();
 		this.kernelType= kernelType;
 		this.svmType = svmType;
+		this.outerParameterClassifier = outerParameterClassifier;
 	}
 	
 	public Classifier getClassifier() {
@@ -133,7 +136,7 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1");
+			removeFilter.setAttributeIndices("1,3,4");
 				
 			svm.setDegree(2);
 			//for constrainedS1:
@@ -188,11 +191,18 @@ public class AspectClassifier {
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
-			mf.setDebug(true);
-			
 			
 			//classifier.setClassifier(svm);
-			classifier.setClassifier(svm);
+			if(outerParameterClassifier!=null) {
+				classifier.setClassifier(outerParameterClassifier);
+				
+				if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
+					cps = (CVParameterSelection) outerParameterClassifier;
+				}
+			} else {
+				classifier.setClassifier(svm);
+			}
+			
 			classifier.setFilter(mf);
 			classifier.buildClassifier(train);
 			
@@ -203,8 +213,7 @@ public class AspectClassifier {
 		ArrayList<Evaluation> returnList = new ArrayList<Evaluation>();
 		Random rand = new Random(seed);
 		Instances scrambledData = new Instances(data);
-		
-		//apply nominal2binary filter
+		double avgMeanError=0;
 
 		scrambledData.randomize(rand);
 		
@@ -221,17 +230,34 @@ public class AspectClassifier {
 			   //build-Classifier loescht automatisch 0
 			   buildClassifier(train);
 			   
+			   for(Instance testInstance : test) {
+				   System.out.println(classifier.classifyInstance(testInstance) + "-" + testInstance.classValue() + "--> " + Math.abs(classifier.classifyInstance(testInstance)-testInstance.classValue()));
+			   }
+			   
+			   //myLog.log(classifier.toString());
+			   
 			   Evaluation currentEvaluation;
 			   currentEvaluation = evalModel(classifier, test, folds, new Random());
-			   System.out.println("EVAL:" + currentEvaluation.toMatrixString());
+			   
+			   if(regression) {
+				   avgMeanError += currentEvaluation.meanAbsoluteError();
+				   myLog.log("absolute mean error: " + currentEvaluation.meanAbsoluteError());
+			   }
+			   
+			   //System.out.println("Correlation: " + currentEvaluation.correlationCoefficient() + "\nRMSE: " + currentEvaluation.rootMeanSquaredError());
+			   //System.out.println(currentEvaluation.toSummaryString());
 			   returnList.add(currentEvaluation);
 			   
-			  /* if(cps.getBestClassifierOptions()!=null) {
+			   /*if(cps!=null && cps.getBestClassifierOptions()!=null) {
 				   myLog.log("Best found parameters for this fold: ");
 				   for(String parameter : cps.getBestClassifierOptions()) {
 					   myLog.log(parameter);
 				   }
 			   }*/
+		 }
+		 
+		 if(regression) {
+			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError/folds));
 		 }
 		 
 		 return returnList;
@@ -254,7 +280,7 @@ public class AspectClassifier {
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);	
 		
-		//s2wFilter.setOutputWordCounts(true);
+		s2wFilter.setOutputWordCounts(true);
 		//keep word number instead of booleanic existence
 		myLog.log("Found " + attributeArray.length + " string attributes.");
 		

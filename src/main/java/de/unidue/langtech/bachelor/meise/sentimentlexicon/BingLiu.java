@@ -12,6 +12,7 @@ public class BingLiu extends SentimentLexicon {
 	
 	public BingLiu() {
 		super(false);
+		loadFromFile();
 	}
 
 	@Override

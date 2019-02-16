@@ -1,0 +1,40 @@
+//GESAMTRATING VON EINER REVIEW
+//==> more specific, fine-grained
+
+title
+positive part in unigrams (lemma?)
+negative part in unigrams (lemma?)
+
+different aspects mentioned in positive (A#R) OR aspect-bag-check (constrained)
+different aspects mentioned in negative (A#R) OR aspect-bag-check (constrained)
+
+//negations, strengthening points? very, etc.
+emotional max in positive
+emotional max in negative
+emotional min in positive
+emotional min in negative
+
+relation of positive/negative part length
+
+1000 instances x feature-space => score (double)
+10-folded cross-validation
+
+REGRESSION OR K-NN?
+
+
+score: double 5.8-10.0
+
+//ASPECT-SPECIFIC RATINGS VON EINEM HOTEL
+//=> more general
+Anzahl insgesamt positiver A#R pairs von jedem Aspekt (Slot1,2,3-features)
+Anzahl insgesamt negativer A#R pairs von jedem Aspekt (Slot1,2,3-features)
+
+// oder constrained:
+use the best-functioning model
+
+==> 2 runs: gold-labels, best-performing model 
+
+for each aspect:
+5 instances (1-per hotel) x feature-space => score
+
+5-folded cross-validation (single-instance removal)

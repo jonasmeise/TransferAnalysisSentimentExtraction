@@ -111,8 +111,12 @@ public class DataParser {
 		return parsedData;
 	}
 	
+	public ArrayList<ReviewData> parseXMLToReviewData(String filePath, int max) { //check ReviewData.java for structure & elements
+		return parseXMLToReviewData_raw(fu.readFromFileArrayList(filePath), max);
+	}
+	
 	public ArrayList<ReviewData> parseXMLToReviewData(String filePath) { //check ReviewData.java for structure & elements
-		return parseXMLToReviewData_raw(fu.readFromFileArrayList(filePath));
+		return parseXMLToReviewData_raw(fu.readFromFileArrayList(filePath), -1);
 	}
 	
 	public String parseXML(String rawLine, String attribute) {
@@ -132,7 +136,7 @@ public class DataParser {
 		return (rawLine.contains(startMarker) && rawLine.contains(endMarker));
 	}
 	
-	public ArrayList<ReviewData> parseXMLToReviewData_raw(ArrayList<String> rawFile) { //check ReviewData.java for structure & elements
+	public ArrayList<ReviewData> parseXMLToReviewData_raw(ArrayList<String> rawFile, int max) { //check ReviewData.java for structure & elements
 		ArrayList<ReviewData> returnList = new ArrayList<ReviewData>();
 		int i=0;
 		
@@ -148,11 +152,14 @@ public class DataParser {
 				
 				if(rawFile.get(++i).contains("<text>")) {
 					while(!rawFile.get(++i).contains("</text>")) { //parse all sentences
-						newReviewData.addText(parseXML(rawFile.get(i), "sentence").substring(4)); //cuts away standard preset characters
+						//newReviewData.addText(parseXML(rawFile.get(i), "sentence").substring(4)); //cuts away standard preset characters
+						newReviewData.addText(parseXML(rawFile.get(i), "sentence"));
 					}
 				}
 				
-				returnList.add(newReviewData);
+				if(returnList.size()<max || max==-1) {
+					returnList.add(newReviewData);
+				}
 			} else {
 				i++;
 			}

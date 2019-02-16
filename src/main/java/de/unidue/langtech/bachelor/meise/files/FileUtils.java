@@ -86,7 +86,7 @@ public class FileUtils {
 	
 	public String readFromFile(String filePath) {
 		Path path = Paths.get(filePath);
-		Charset charset = StandardCharsets.ISO_8859_1;
+		Charset charset = StandardCharsets.UTF_16;
 
 		String content = "";
 		try {

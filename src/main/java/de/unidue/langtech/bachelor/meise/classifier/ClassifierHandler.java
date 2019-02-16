@@ -19,6 +19,7 @@ import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
 import de.unidue.langtech.bachelor.meise.type.classifiers.TestClassifierGenerator;
+import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.DenseInstance;
 import weka.core.Instance;
@@ -112,7 +113,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    		foldAnalysisEnabled=true;
 	    		
 	    		//TODO: add pipeline-support for parameters
-	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, kernelType, svmType, outputAnalysisPath, true);
+	    		generateFoldsAndLearn(fu.getFilesInFolder(arffFileInput,".arff",false), numFolds, classAttributeAt, kernelType, svmType, outputAnalysisPath, true, null);
 	    	} else {
 		    	if(ignoreFeaturesAt!=null) {
 		    		String[] split=ignoreFeaturesAt.split(" ");
@@ -178,7 +179,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    	}
 	    }
 	
-	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath, boolean idfTransformEnabled) {
+	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath, boolean idfTransformEnabled, Classifier outerParameterClassifier) {
 		 ArrayList<String> analysisString = new ArrayList<String>();
 		 boolean manuallyOutputData = false;
 		 if(myLog==null && allData==null && fu==null) {
@@ -196,7 +197,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 		for(String arffFileInput : arffFileInputs) {
 			try {
 				//if learning for folds: continue from her
-				AspectClassifier foldClassifier = new AspectClassifier(kernelType, svmType);
+				AspectClassifier foldClassifier = new AspectClassifier(kernelType, svmType, outerParameterClassifier);
 				foldClassifier.idfTransformEnabled=idfTransformEnabled;
 				
 				Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
@@ -276,7 +277,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 			
 			for(String singleModelFile : modelFileInputFolder) {
 				try {
-					AspectClassifier newAspectClassifier = new AspectClassifier(kernelType, svmType);
+					AspectClassifier newAspectClassifier = new AspectClassifier(kernelType, svmType, null);
 					newAspectClassifier.loadModels(singleModelFile);
 					aspectClassifierList.add(newAspectClassifier);
 					
