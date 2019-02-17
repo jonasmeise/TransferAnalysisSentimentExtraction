@@ -24,6 +24,7 @@ import de.unidue.langtech.bachelor.meise.type.classifiers.*;
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.LibSVM;
 import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SimpleLinearRegression;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.AdditiveRegression;
 import weka.classifiers.meta.CVParameterSelection;
@@ -52,13 +53,13 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "*.xmi");
+		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_GTI\\subtask3\\unconstrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\RQ2_learningtest_hotel-level\\", "src\\main\\resources\\RQ2_learningtest\\analysis.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained", "src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained\\analysis_test1.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -110,7 +111,7 @@ public class MainPipeline {
 			 
 	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
 	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "OwnClassifier",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "GTI",
 	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
@@ -162,16 +163,19 @@ public class MainPipeline {
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		 svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
-		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
+		 svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		//svm.setSVMType(new SelectedTag(LibSVM.SVMT, LibSVM.TAGS_SVMTYPE));
 		//svm.setProbabilityEstimates(true);
-		svm.setDegree(3);
+		//svm.setDegree(3);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		//svm.setCost(1);
-		//svm.setGamma(0.01);
-		//svm.setLoss(0.01);
+		 /*svm.setCost(500);
+		svm.setGamma(0.001);
+		svm.setEps(0.00005);*/
 			
+		SimpleLinearRegression slr = new SimpleLinearRegression();
+		slr.setOutputAdditionalStats(true);
+		
 		 
 		 Classifier myClassifier = null;
 		 LinearRegression lr = new LinearRegression(); 
@@ -180,30 +184,29 @@ public class MainPipeline {
 		 //lr.setDebug(true);
 	 
 		 IBk ibk = new IBk();
-		 ibk.setKNN(9);
+		 ibk.setKNN(1);
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 		 ibk.setMeanSquared(true);
 		 
 		 
 		CVParameterSelection cps = new CVParameterSelection();
-		cps.setClassifier(lr);
+		cps.setClassifier(svm);
 		cps.setNumFolds(5);
 		cps.setDebug(true);
-		String[] params = new String[1];
-		params[0] = "R 0.0000001 0.0000001 1";
-		//params[2] = "P 0.0001 0.01 2";
-		//params[3] = "E 0.00005 0.0002 2";
+		String[] params = new String[3];
+		params[0] = "C 0.001 0.005 4";
+		params[1] = "G 0.0005 0.0015 4";
+		params[2] = "P 0.005 0.51 4";
 		cps.setCVParameters(params);
 		
 		AdditiveRegression ar = new AdditiveRegression();
 		ar.setDebug(true);
-		ar.setClassifier(lr);
+		ar.setClassifier(svm);
 		
-		myClassifier = lr;
-		 
+		myClassifier = svm;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
+		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
 	}
 }

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -52,9 +53,10 @@ public class AspectClassifier {
 	private int kernelType=0;
 	private int svmType=0;
 	public boolean idfTransformEnabled;
-	public boolean regression=true;
-	private StringToWordVector myFilter;
+	public boolean regression=false;
 	public Classifier outerParameterClassifier; //if called from outside, this thing needs to be set
+	public boolean mapToHistogram = true;
+	public double parameterHistogram = 0.8;
 	
 	public CVParameterSelection cps;
 	
@@ -125,8 +127,10 @@ public class AspectClassifier {
 				}
 			}
 			
-			//svm.setWeights((weightClassB / weightClassA) + " 1");
-			myLog.log("Weights set: " + svm.getWeights());
+			if(!regression) {
+				svm.setWeights((weightClassB / weightClassA) + " 1");
+				myLog.log("Weights set: " + svm.getWeights());
+			}
 			//RandomForest rf = new RandomForest();
 			//classifier.setClassifier(rf);	
 			//???
@@ -137,7 +141,7 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1");
+			removeFilter.setAttributeIndices("1,3,8,11");
 				
 			svm.setDegree(2);
 			//for constrainedS1:
@@ -200,9 +204,9 @@ public class AspectClassifier {
 				myLog.log("Found classifier from outside...");
 				classifier.setClassifier(outerParameterClassifier);
 				
-				/*if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
+				if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
 					cps = (CVParameterSelection) outerParameterClassifier;
-				}*/
+				}
 			} else {
 				classifier.setClassifier(svm);
 			}
@@ -240,21 +244,61 @@ public class AspectClassifier {
 			   if(regression) {
 				   avgMeanErrorMapped=0;
 				   
-				   //theory: map to 0.4-spaced score ratings
+				   double minimalAcceptanceValue=0;
+				   HashMap<Double, Integer> histogram = new HashMap<Double, Integer>();
+				   double minimalValue=1000, maximalValue=0, spanValue=0;
+				   if(mapToHistogram) {
+					   //create histogram
+					   for(Instance singleInstance : train) {   
+						   if(singleInstance.classValue()>maximalValue) {
+							   maximalValue = singleInstance.classValue();
+						   }
+						   if(singleInstance.classValue()<minimalValue) {
+							   minimalValue = singleInstance.classValue();
+						   }
+						   
+						   if(!histogram.containsKey(singleInstance.classValue())) {
+							   histogram.put(singleInstance.classValue(),1);
+						   } else {
+							   histogram.put(singleInstance.classValue(), histogram.get(singleInstance.classValue())+1);
+						   }
+					   }
+					   
+					   //TODO: make the *10 dependant on the data set
+					   spanValue = Math.abs(maximalValue - minimalValue)*10;
+					   
+					   myLog.log("span value: " + spanValue);
+					   minimalAcceptanceValue = (train.size()/spanValue) * parameterHistogram;
+					   
+					   for(Double key : histogram.keySet()) {
+						   myLog.log(key + "-" + histogram.get(key) + " ? " + minimalAcceptanceValue);
+						   if(histogram.get(key) < minimalAcceptanceValue) {
+							   histogram.put(key, 0);
+						   }
+					   }
+				   }
+				   
 				   for(Instance testInstance : test) {
 					   double initialScore = classifier.classifyInstance(testInstance);
 					   double dblMappedScore = initialScore;
-					   
-					   /*for(int mappedScore = 59;mappedScore<=100;mappedScore=mappedScore+4) {
-						   dblMappedScore = (double)mappedScore/10;
-						   if(Math.abs(dblMappedScore-initialScore) <= 0.2) {
-							   break;
+
+					   if(mapToHistogram) {		   
+						   double minimalDistance = 1000;
+						   
+						   for(Double key : histogram.keySet()) {
+							   double currentDistance = Math.abs(initialScore - key);
+							   
+							   if(currentDistance < minimalDistance && histogram.get(key)>0) {
+								   minimalDistance = currentDistance;
+								   dblMappedScore = key;
+							   }
 						   }
-					   }*/
+					   }
 					   
 					   double difference = Math.abs(testInstance.classValue()-dblMappedScore);
+					   difference = difference * difference;
 					   
-					   System.out.println(testInstance.classValue() + "-" + dblMappedScore + " --> " + difference);
+					   System.out.println(testInstance.classValue() + "-(" + dblMappedScore + "<" + initialScore + ") --> " + difference);
 					   avgMeanErrorMapped += difference;
 					   
 				   }
@@ -263,12 +307,12 @@ public class AspectClassifier {
 				   
 				   avgMeanErrorMappedCumulated += (avgMeanErrorMapped/test.size());
 				   
-				   avgMeanError += currentEvaluation.meanAbsoluteError();
-				   myLog.log("absolute mean error: " + currentEvaluation.meanAbsoluteError());
+				   avgMeanError += currentEvaluation.rootMeanSquaredError();
+				   myLog.log("absolute squared error: " + currentEvaluation.rootMeanSquaredError());
+			   } else {
+				   System.out.println("Matrix: " + currentEvaluation.toMatrixString());
+				   System.out.println(currentEvaluation.toSummaryString());
 			   }
-			   
-			   //System.out.println("Correlation: " + currentEvaluation.correlationCoefficient() + "\nRMSE: " + currentEvaluation.rootMeanSquaredError());
-			   //System.out.println(currentEvaluation.toSummaryString());
 			   returnList.add(currentEvaluation);
 			   
 			   /*if(cps!=null && cps.getBestClassifierOptions()!=null) {
@@ -280,8 +324,8 @@ public class AspectClassifier {
 		 }
 		 
 		 if(regression) {
-			 myLog.log("AVG. ABSOLUTE MEAN ERROR: " + (avgMeanError/folds));
-			 myLog.log("AVG. ABSOLUTE MAPPED MEAN ERROR: " + (avgMeanErrorMappedCumulated/(folds)));
+			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError/folds));
+			 myLog.log("AVG. SQUARED MAPPED ERROR: " + (avgMeanErrorMappedCumulated/(folds)));
 		 }
 		 
 		 return returnList;

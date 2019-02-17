@@ -24,7 +24,7 @@ import webanno.custom.Valence;
 //http://aclweb.org/anthology/S/S16/S16-1049.pdf
 //GTI at SemEval-2016 Task 5: SVM and CRF for Aspect Detection and Unsupervised Aspect-Based Sentiment Analysis
 //Tamara Alvarez-Lopez, Jonathan Juncal-Martnez, Milagros Fernandez-Gavilanes Enrique Costa-Montenegro, Francisco Javier Gonzalez-Casta no
-//Classification type: linear SVM?
+//Classification type: SVM
 //sub-sentences will be tagged
 //input-output format is normalized to match the current Task; the model itself is not changed
 

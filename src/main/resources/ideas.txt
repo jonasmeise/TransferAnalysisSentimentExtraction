@@ -23,6 +23,8 @@ REGRESSION OR K-NN?
 RESULTS:
 without squared sentiment avg (kNN with k=6):
 
+without squared sentiment avg (kNN with k=6):
+
 learn: absolute mean error: 0.7498731512703172
 learn: AVG. ABSOLUTE MEAN ERROR: 0.7916395337518704
 learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7641000000000001
@@ -42,10 +44,20 @@ learn: absolute mean error: 0.7568012017557082
 learn: AVG. ABSOLUTE MEAN ERROR: 0.856966361354915
 learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7516999999999999
 
+
+RQ2_Task2:
+
+LinearRegression (5-fold):
+score =
+
+      0.0071 * pos_examples +
+     -0.0027 * neg_examples +
+      7.3278
+learn: absolute mean error: 0.43731954274146634
+ AVG. ABSOLUTE MEAN ERROR: 0.5842488917469021
+
+
 score: double 5.8-10.0
-
-
-
 
 //ASPECT-SPECIFIC RATINGS VON EINEM HOTEL
 //=> more general

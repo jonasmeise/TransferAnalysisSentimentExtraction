@@ -26,7 +26,7 @@ import webanno.custom.Valence;
 //Embeddings for Aspect Based Sentiment Analysis
 //Dionysios Xenos, Panagiotis Theodorakakos, John Pavlopoulos,
 //Prodromos Malakasiotis and Ion Androutsopoulos
-//Classification type: linear SVM?
+//Classification type: SVM
 //feature-model-space has been changed, features were compressed into more basic feature representations
 //input-output format is normalized to match the current Task; the model itself is not changed
 
