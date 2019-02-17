@@ -21,29 +21,124 @@ relation of positive/negative part length
 
 REGRESSION OR K-NN?
 RESULTS:
-without squared sentiment avg (kNN with k=6):
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+learn: absolute squared error: 0.9652954006800964
+learn: AVG. SQUARED MEAN ERROR: 0.9776625624540053
+learn: AVG. SQUARED MAPPED ERROR: 0.8768199999999998
 
-without squared sentiment avg (kNN with k=6):
+Classifier Model
+IB1 instance-based classifier
+using 6 similarity-weighted nearest neighbour(s) for classification
 
-learn: absolute mean error: 0.7498731512703172
-learn: AVG. ABSOLUTE MEAN ERROR: 0.7916395337518704
-learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7641000000000001
+learn: absolute squared error: 0.9835801927852539
+learn: AVG. SQUARED MEAN ERROR: 0.9752710665130339
+learn: AVG. SQUARED MAPPED ERROR: 0.9101799999999999
 
-without squared sentiment avg (SVM, meta-learned):
-learn: absolute mean error: 0.7190074126958318
-learn: AVG. ABSOLUTE MEAN ERROR: 0.7809064730272046
-learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7416999999999998
 
-without squared sentiment avg (SVM, basic parameter):
-learn: absolute mean error: 0.698020174456301
-learn: AVG. ABSOLUTE MEAN ERROR: 0.7833532543589401
-learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7383000000000001
+Classifier Model
 
-without squared sentiment avg (LinearRegression):
-learn: absolute mean error: 0.7568012017557082
-learn: AVG. ABSOLUTE MEAN ERROR: 0.856966361354915
-learn: AVG. ABSOLUTE MAPPED MEAN ERROR: 0.7516999999999999
+Linear Regression Model
 
+score =
+
+      0.1383 * sentiment_max_in_pos +
+     -0.2268 * sentiment_max_in_neg +
+      0.3921 * sentiment_min_in_pos +
+      0.0163 * relation_of_type +
+     -0.3971 * s2w__ausstattung +
+     -0.4482 * s2w__hotelpersonal +
+     -0.1834 * s2w__komfort +
+     -0.1991 * s2w__lage +
+     -0.1857 * s2w__other +
+     -0.2432 * s2w__preis-leistungs-verhltnis +
+     -0.3681 * s2w__sauberkeit +
+      0.3129 * s2w_ausstattung +
+      0.327  * s2w_hotelpersonal +
+      0.2999 * s2w_komfort +
+      0.2318 * s2w_other +
+      0.1997 * s2w_preis-leistungs-verhltnis +
+      7.8946
+learn: absolute squared error: 0.9432804670654241
+learn: AVG. SQUARED MEAN ERROR: 0.9790393433884217
+learn: AVG. SQUARED MAPPED ERROR: 0.8724299999999999
+
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM) (+CVParameter)
+learn: absolute squared error: 0.9278969895255444
+learn: AVG. SQUARED MEAN ERROR: 0.9524514085527509
+learn: AVG. SQUARED MAPPED ERROR: 0.84871
+
+
+Regression Analysis (SLR)
+
+Variable              Coefficient     SE of Coef        t-Stat
+s2w_hotelpersonal         0.4495        0.07561        5.94477
+const                     7.8135        0.04193      186.36291
+
+Degrees of freedom = 798
+R^2 value = 0.04241
+Adjusted R^2 = 0.04121
+F-statistic = 35.34032
+
+learn: absolute squared error: 0.9400170762863522
+learn: AVG. SQUARED MEAN ERROR: 0.9942697037982
+learn: AVG. SQUARED MAPPED ERROR: 0.9889299999999996
+learn: AVG. SQUARED MEAN ERROR: 0.9942697037982
+learn: AVG. SQUARED MAPPED ERROR: 0.9889299999999996
+
+
+
+
+-----------------
+-----------RQ2_hotel_level
+-----------------
+Classifier Model
+IB1 instance-based classifier
+using 1 similarity-weighted nearest neighbour(s) for classification
+
+learn: absolute squared error: 0.555492059863531
+learn: AVG. SQUARED MEAN ERROR: 0.8835194557845405
+learn: AVG. SQUARED MAPPED ERROR: 0.9302857142857144
+
+
+---SLR
+0.01 * pos_examples + 6.93
+
+Predicting 0 if attribute value is missing.
+
+Regression Analysis:
+
+Variable         Coefficient     SE of Coef        t-Stat
+pos_examples         0.0087        0.00167        5.18406
+const                6.9266        0.16944       40.87867
+
+Degrees of freedom = 26
+R^2 value = 0.50827
+Adjusted R^2 = 0.48936
+F-statistic = 26.87445
+
+learn: absolute squared error: 0.7331558226717296
+learn: AVG. SQUARED MEAN ERROR: 0.9368365533969477
+learn: AVG. SQUARED MAPPED ERROR: 0.5602857142857145
+
+
+LR
+      0.0073 * pos_examples +
+     -0.5879 * s2w_komfort +
+     -0.9987 * s2w_wlan +
+      7.2384
+learn: absolute squared error: 0.534648675626534
+learn: AVG. SQUARED MEAN ERROR: 0.842264243494161
+learn: AVG. SQUARED MAPPED ERROR: 0.8425714285714289
+
+
+SVM
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+learn: absolute squared error: 1.6825900693161915
+learn: AVG. SQUARED MEAN ERROR: 1.1487536882313125
+learn: AVG. SQUARED MAPPED ERROR: 0.8905714285714288
 
 RQ2_Task2:
 
