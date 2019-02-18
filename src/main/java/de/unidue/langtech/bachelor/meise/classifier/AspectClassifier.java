@@ -141,7 +141,7 @@ public class AspectClassifier {
 			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature
-			removeFilter.setAttributeIndices("1,3,8,11");
+			removeFilter.setAttributeIndices("1");
 				
 			svm.setDegree(2);
 			//for constrainedS1:

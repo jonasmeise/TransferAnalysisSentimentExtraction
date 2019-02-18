@@ -1,2 +1,3 @@
-f1	constrained	0,561804
-f1	unconstrained	0,566345
+f1	constrained	0,58878130904178300000
+f1	unconstrained	0,62167212722755500000
+

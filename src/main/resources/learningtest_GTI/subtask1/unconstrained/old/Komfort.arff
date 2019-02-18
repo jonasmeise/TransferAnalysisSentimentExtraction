@@ -5,14 +5,14 @@
 @attribute lemmas string
 @attribute pos string
 @attribute bigrams string
-@attribute tagwordset1 numeric
-@attribute tagwordset2 numeric
-@attribute tagwordset3 numeric
-@attribute tagwordset4 numeric
-@attribute tagwordset5 numeric
-@attribute tagwordset6 numeric
-@attribute tagwordset7 numeric
-@attribute tagwordset8 numeric
+@attribute tagwordset1 string
+@attribute tagwordset2 string
+@attribute tagwordset3 string
+@attribute tagwordset4 string
+@attribute tagwordset5 string
+@attribute tagwordset6 string
+@attribute tagwordset7 string
+@attribute tagwordset8 string
 @attribute aspecttype {true, false}
 
 @data

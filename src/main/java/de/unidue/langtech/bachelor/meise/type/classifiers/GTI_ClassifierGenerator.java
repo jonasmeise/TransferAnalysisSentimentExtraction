@@ -109,8 +109,10 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 					for(String tagWord : tagWordsForAspects) {
 						int currentCounter=0;
 						for(Token singleToken : singleSentence) {
-							if(singleToken.getLemma().getValue().toLowerCase().equals(tagWord) && !constrained) {
-								currentCounter++;
+							for(String singleTag : tagWord.split(" ")) {
+								if(singleToken.getLemma().getValue().toLowerCase().equals(singleTag) && !constrained) {
+									currentCounter++;
+								}
 							}
 						}
 						
@@ -251,7 +253,7 @@ public class GTI_ClassifierGenerator extends ArffGenerator{
 			
 			int counter=1;
 			for(String tagWord : tagWordsForAspects) {
-				relations.add("tagwordset" + counter + " string");
+				relations.add("tagwordset" + counter + " numeric");
 				counter++;
 			}
 			

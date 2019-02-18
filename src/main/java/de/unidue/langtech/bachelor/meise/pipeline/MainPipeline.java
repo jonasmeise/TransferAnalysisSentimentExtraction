@@ -53,13 +53,13 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src/main/resources/", "src\\main\\resources\\learningtest_GTI\\subtask3\\unconstrained", "*.xmi");
+	myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained", "*.xmi");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained", "src\\main\\resources\\learningtest_AUEB\\subtask3\\constrained\\analysis_test1.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained\\analysis_test1.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -109,10 +109,10 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
-	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "GTI",
-	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator.class, 
+	        		GTI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		GTI_ClassifierGenerator.PARAM_RELATION_NAME, "GTI",
+	        		GTI_ClassifierGenerator.PARAM_CONSTRAINED, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -163,15 +163,15 @@ public class MainPipeline {
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		 svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		 //svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
 		//svm.setSVMType(new SelectedTag(LibSVM.SVMT, LibSVM.TAGS_SVMTYPE));
 		//svm.setProbabilityEstimates(true);
 		//svm.setDegree(3);
-		svm.setNormalize(true);
+		//svm.setNormalize(true);
 		svm.setShrinking(true);
-		 /*svm.setCost(500);
-		svm.setGamma(0.001);
-		svm.setEps(0.00005);*/
+		//svm.setCost(200);
+		//svm.setGamma(0.002);
+		//svm.setEps(0.0005);
 			
 		SimpleLinearRegression slr = new SimpleLinearRegression();
 		slr.setOutputAdditionalStats(true);
