@@ -1,0 +1,1061 @@
+@relation Lage
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+2,-0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+5,-0.0925925925925926,'mall','dep_small dep_inside dep_ dep_bonus ','dep_small_inside dep_inside_to dep__bonus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+6,-0.0925925925925926,'mall','dep_small dep_inside dep_ dep_bonus ','dep_small_inside dep_inside_to dep__bonus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+11,-0.0,'Location','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+23,-0.018518518518518517,'Location','dep_Good dep_Location dep_ dep_parking dep_store dep_ ','dep_Good_Location dep_Location_ dep__parking dep_parking_store dep_store_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+28,0.26666666666666666,'location','dep_great ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+29,0.6,'View','dep_amazing ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+48,0.09999999999999999,'location','dep_Good dep_stay dep_ dep_adequate ','dep_Good_stay dep_stay_ dep__adequate ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+50,0.18095238095238095,'LOCATION','dep_Quiet dep_ dep_comfortable dep_clean dep_GREAT dep_LOCATION dep_ ','dep_Quiet_ dep__comfortable dep_comfortable_clean dep_clean_GREAT dep_GREAT_LOCATION dep_LOCATION_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+55,0.09999999999999999,'location','dep_Good dep_stay dep_ dep_adequate ','dep_Good_stay dep_stay_ dep__adequate ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+57,0.18095238095238095,'LOCATION','dep_Quiet dep_ dep_comfortable dep_clean dep_GREAT dep_LOCATION dep_ ','dep_Quiet_ dep__comfortable dep_comfortable_clean dep_clean_GREAT dep_GREAT_LOCATION dep_LOCATION_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+76,-0.8666666666666667,'location','dep_good dep_excellent ','dep_good_excellent ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+77,-0.43333333333333335,'view','dep_good ','dep_good_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+79,-0.1,'place','dep_Safe dep_place dep_quiet dep_ ','dep_Safe_place dep_place_and dep_quiet_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+90,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+91,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+92,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+98,0.15555555555555556,'location','dep_liked ','dep_liked_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+100,-0.0,'Location','dep_Great dep_Location dep_ ','dep_Great_Location dep_Location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+101,0.0,'shopping','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+108,-0.0,'location','dep_Great dep_location dep_ dep_next dep_court dep_ ','dep_Great_location dep_location_ dep__next dep_next_court dep_court_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+109,-0.0,'location','dep_Great dep_location dep_ dep_next dep_court dep_ ','dep_Great_location dep_location_ dep__next dep_next_court dep_court_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+110,-0.0,'supermarket','dep_court ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+111,-0.09444444444444444,'court','dep_big dep_modern dep_food dep_location dep_ dep_supermarket ','dep_big_modern dep_modern_food dep_food_location dep_location_ dep__supermarket ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+112,-0.0,'station','dep_Metro ','dep_Metro_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+113,-0.0,'city','dep_centre ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+116,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+117,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+121,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+125,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+128,-0.13333333333333333,'access','dep_easy ','dep_easy_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+132,0.13333333333333333,'view','dep_great ','dep_great_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+134,0.17777777777777778,'location','dep_great ','dep_great_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+138,0.3333333333333333,'location','dep_convenient ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+139,0.2222222222222222,'view','dep_outstanding ','dep_outstanding_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+146,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+151,0.0,'city','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+153,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+158,0.0,'location','dep_Ideal dep_location dep_ ','dep_Ideal_location dep_location_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+162,0.0,'places','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+163,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+166,-0.3333333333333333,'hotel','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+180,0.17777777777777778,'view','dep_nice ','dep_nice_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+182,0.0,'LOCATION','dep_GREAT ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+189,0.0,'everything','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+192,-0.17777777777777778,'location','dep_nice dep_practical dep_hotel ','dep_nice_practical dep_practical_hotel ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+193,-0.17777777777777778,'location','dep_nice dep_practical dep_hotel ','dep_nice_practical dep_practical_hotel ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+194,-0.0,'location','dep_Good dep_ ','dep_Good_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+197,-0.0,'metro','dep_system ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+198,-0.03333333333333333,'mall','dep_shopping dep_system ','dep_shopping_to ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+204,-0.3,'location','dep_terrific ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+213,0.26666666666666666,'location','dep_Hotel dep_great ','dep_Hotel_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+214,0.0,'access','dep_Easy dep_subway dep_access dep_ ','dep_Easy_subway dep_subway_access dep_access_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+215,0.0,'restaurants','dep_bars ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+216,0.0,'bars','dep_restaurants ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+222,-0.0,'Metro','dep_IGA ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+227,-0.30666666666666664,'location','dep_convenient dep_good dep_ dep_room ','dep_convenient_good dep_good_ dep__room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+230,-0.43333333333333335,'Location','dep_good ','dep_good_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+231,-0.43333333333333335,'Park','dep_pleasant dep_across ','dep_pleasant_across ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+236,-0.0,'area','dep_feel ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+244,-0.0,'location','dep_look ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+248,-0.0,'place','dep_Good dep_place dep_ ','dep_Good_place dep_place_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+249,-0.17777777777777778,'look','dep_nice ','dep_nice_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+254,0.0,'Location','dep_Great dep_Location dep_!!! ','dep_Great_Location dep_Location_!!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+257,-0.13333333333333333,'Location','dep_great dep_access ','dep_great_and dep_access_to ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+258,-0.0,'access','dep_Location ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+262,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+270,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+273,0.43333333333333335,'location','dep_good dep_staff ','dep_good_staff ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+281,-0.0,'Location','dep_key ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+283,-0.0,'location','dep_Great dep_location dep_ dep_garage dep_walk dep_see dep_ ','dep_Great_location dep_location_ dep__garage dep_garage_and dep_walk_see dep_see_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+284,-0.13333333333333333,'walk','dep_easy dep_location ','dep_easy_location dep_location_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+290,-0.0,'Location','dep_key ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+292,-0.0,'location','dep_Great dep_location dep_ dep_garage dep_walk dep_see dep_ ','dep_Great_location dep_location_ dep__garage dep_garage_and dep_walk_see dep_see_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+293,-0.13333333333333333,'walk','dep_easy dep_location ','dep_easy_location dep_location_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+305,-0.27777777777777773,'neighborhood','dep_sketchy ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+308,-0.0,'Metro','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+326,-0.0,'location','dep_central ','dep_central_in ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+328,-0.0,'view','dep_price ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+329,-0.0,'location','dep_central dep_Liked ','dep_central_Liked ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+330,-0.0,'location','dep_central dep_Liked ','dep_central_Liked ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+340,0.09333333333333332,'located','dep_Well dep_located dep_comfortable dep_ ','dep_Well_located dep_located_and dep_comfortable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+344,0.0,'Metro','dep_Dtation ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+345,0.0,'neighborhood','dep_outdated ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+348,0.17777777777777778,'views','dep_great dep_bed ','dep_great_bed dep_bed_over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+362,-0.0,'distance','dep_Walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+384,0.0,'city','dep_old dep_Metro ','dep_old_Metro ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+385,0.0,'Metro','dep_city ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+386,0.0,'Area','dep_little ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+389,0.0,'location','dep_beat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+395,0.0,'location','dep_beat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+400,-0.26666666666666666,'location','dep_nice dep_hotel ','dep_nice_hotel ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+405,0.0,'distance','dep_Walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+407,0.43333333333333335,'location','dep_good dep_beds ','dep_good_beds ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+421,0.0,'mall','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+424,-0.3,'location','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+425,-0.16666666666666666,'view','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+427,0.0,'everything','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+432,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+433,0.2533333333333333,'access','dep_easy dep_excellent dep_parking ','dep_easy_to dep_excellent_and ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+440,-0.0,'located','dep_conviently dep_located dep_ ','dep_conviently_located dep_located_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+441,-0.16666666666666666,'access','dep_cash ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+442,-0.2888888888888889,'views','dep_lovely ','dep_lovely_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+451,-0.0,'location','dep_GREAT ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+456,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+460,0.0,'location','dep_Noisy dep_location ','dep_Noisy_location dep_location_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+470,-0.0,'location','dep_Greatest dep_location dep_ ','dep_Greatest_location dep_location_ ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+477,-0.0,'located','dep_Well dep_located dep_ ','dep_Well_located dep_located_on ',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+478,-0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+479,-0.0,'hotel','dep_connected ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+480,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+481,-0.08888888888888889,'supermarket','dep_nice dep_IGA ','dep_nice_IGA dep_IGA_is ',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+491,-0.6666666666666666,'Location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+493,-0.2888888888888889,'view','dep_good ','dep_good_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+498,0.2,'views','dep_fantastic dep_close ','dep_fantastic_close dep_close_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+499,0.0,'core','dep_downtown ','dep_downtown_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+501,0.26666666666666666,'view','dep_nice dep_room ','dep_nice_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+505,0.0,'location','dep_Excellent dep_location dep_ ','dep_Excellent_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+522,-0.0,'hotel','dep_central ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+523,-0.0,'IGA','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+524,-0.0,'restaurants','dep_little dep_around ','dep_little_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+525,-0.08333333333333333,'hotel','dep_around dep_entertainment ','dep_around_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+526,0.06666666666666667,'walking','dep_scary dep_get ','dep_scary_through ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+528,-0.041666666666666664,'attractions','dep_main dep_downtown ','dep_main_downtown ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+529,-0.044444444444444446,'downtown','dep_attractions ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+547,0.17777777777777778,'location','dep_great ','dep_great_in ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+548,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+563,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+564,-0.43333333333333335,'location','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+569,0.17777777777777778,'location','dep_great ','dep_great_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+575,-0.26666666666666666,'view','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+587,-0.13333333333333333,'location','dep_convenient dep_location dep_catch dep_ ','dep_convenient_location dep_location_catch dep_catch_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+588,-0.0,'shops','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+597,-0.1111111111111111,'views','dep_incredible ','dep_incredible_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+608,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+610,-0.0,'area','dep_Good dep_area dep_try dep_ ','dep_Good_area dep_area_try dep_try_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+611,-0.6666666666666666,'Location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+613,-0.6666666666666666,'Location','dep_suitable ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+622,-0.13333333333333333,'Location','dep_great dep_view ','dep_great_and dep_view_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+623,-0.0,'view','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+628,0.27777777777777773,'area','dep_rough ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+629,0.0,'area','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+631,-0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+637,-0.0,'location','dep_Great dep_location dep_! ','dep_Great_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+643,-0.2888888888888889,'Location','dep_good dep_hotel ','dep_good_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+645,-0.0,'neighbourhood','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+646,0.3333333333333333,'Area','dep_daunting ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+647,-0.0,'located','dep_ dep_furnishings ','dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+652,-0.0,'location','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+653,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+663,-0.0,'Location','dep_Great dep_Location dep_! ','dep_Great_Location dep_Location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+665,-0.06666666666666667,'location','dep_good dep_location dep_ dep_shame dep_!! ','dep_good_location dep_location_ dep__shame dep_shame_!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+667,-0.2888888888888889,'location','dep_good ','dep_good_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+669,-0.21666666666666667,'view','dep_good dep_gave ','dep_good_gave dep_gave_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+673,0.0,'location','dep_Great dep_location dep_! ','dep_Great_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+678,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+679,-0.43333333333333335,'location','dep_good dep_outdated ','dep_good_outdated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+680,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+681,0.037037037037037035,'mall','dep_small ','dep_small_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+689,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+693,-0.0,'location','dep_Good dep_location dep_! ','dep_Good_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,positive
+697,-0.0,'Location','dep_Great dep_Location dep_ ','dep_Great_Location dep_Location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+701,-0.0,'location','dep_Great dep_staff ','dep_Great_staff ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+709,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_on ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+710,0.15555555555555556,'square','dep_lively ','dep_lively_on ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+718,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+719,-0.0,'location','dep_Good dep_location dep_ dep_walking dep_ ','dep_Good_location dep_location_ dep__walking dep_walking_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+720,-0.0,'distance','dep_walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+721,-0.0,'station','dep_Subway dep_close ','dep_Subway_close ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+738,-0.43333333333333335,'city','dep_beautiful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+745,0.0,'location','dep_Perfect dep_location dep_ ','dep_Perfect_location dep_location_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+749,-0.2888888888888889,'location','dep_good ','dep_good_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+760,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+764,-0.0,'Location','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+771,0.0,'city','dep_Great dep_city dep_makes dep_ ','dep_Great_city dep_city_and dep_makes_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+772,0.0,'location','dep_makes ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+773,0.8666666666666667,'Location','dep_excellent ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+776,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+788,0.0,'station','dep_Metro dep_Montreal ','dep_Metro_Montreal ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+789,0.0,'center','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+791,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+793,-0.0,'location','dep_Great dep_location dep_value dep_! ','dep_Great_location dep_location_and dep_value_! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+795,-0.3,'view','dep_amazing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+800,-0.26666666666666666,'location','dep_great ','dep_great_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+806,-0.0,'location','dep_hotel dep_beat ','dep_hotel_beat dep_beat_itself ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+808,-0.0,'Metro','dep_Berri dep_ dep_Uqam ','dep_Berri_ dep__Uqam dep_Uqam_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+809,-0.0,'distance','dep_walking ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+814,-0.0,'view','dep_City ','dep_City_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+818,-0.6,'Location','dep_terrific ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+821,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+839,-0.0,'Location','dep_Location dep_ dep_ ','dep_Location_ dep__ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+840,-0.0,'Station','dep_Metro dep_district ','dep_Metro_to ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+859,-0.0,'location','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+871,-0.17777777777777778,'location','dep_great ','dep_great_in ',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,positive
+876,-0.13333333333333333,'view','dep_nice ','dep_nice_with ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+887,-0.16666666666666666,'view','dep_incredible ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+901,-0.43333333333333335,'location','dep_perfect dep_hotel ','dep_perfect_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+902,-0.0,'station','dep_Metro dep_hotel ','dep_Metro_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+903,-0.08750000000000001,'shopping','dep_hotel dep_ dep_super dep_close dep_grocery dep_shopping dep_ ','dep_hotel_just dep__super dep_super_close dep_close_grocery dep_grocery_shopping dep_shopping_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+910,-0.08333333333333333,'located','dep_well dep_cause ','dep_well_cause ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+923,-0.13333333333333333,'Location','dep_great dep_view ','dep_great_and dep_view_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+924,-0.0,'view','dep_Location ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+931,-0.17777777777777778,'location','dep_great dep_central dep_staff ','dep_great_central dep_central_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+932,-0.17777777777777778,'location','dep_great dep_central dep_staff ','dep_great_central dep_central_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+951,-0.2777777777777778,'location','dep_good dep_look dep_ dep_employee dep_clean ','dep_good_look dep_look_ dep__employee dep_employee_but ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+964,0.0,'spot','dep_Great dep_spot dep_ ','dep_Great_spot dep_spot_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+965,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+966,0.0,'spot','dep_Great dep_spot dep_ ','dep_Great_spot dep_spot_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+970,-0.0,'location','dep_Perfect dep_location dep_ ','dep_Perfect_location dep_location_from ',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+971,-0.26666666666666666,'view','dep_great dep_across ','dep_great_across ',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+981,-0.030555555555555558,'Location','dep_Location dep_excellent dep_ dep_close dep_spot dep_room dep_noise dep_ ','dep_Location_excellent dep_excellent_ dep__close dep_close_and dep_spot_in dep_room_so dep_noise_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+982,-0.030555555555555558,'Location','dep_Location dep_excellent dep_ dep_close dep_spot dep_room dep_noise dep_ ','dep_Location_excellent dep_excellent_ dep__close dep_close_and dep_spot_in dep_room_so dep_noise_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+983,-0.0,'station','dep_central dep_train ','dep_central_train dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+984,-0.2333333333333333,'spot','dep_lively dep_Location ','dep_lively_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+994,-0.43333333333333335,'location','dep_excellent ','dep_excellent_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+996,-0.0,'location','dep_Great dep_location dep_rooms dep_ ','dep_Great_location dep_location_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+999,-0.26666666666666666,'view','dep_nice dep_bed ','dep_nice_bed ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1009,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1010,-0.2,'view','dep_amazing ','dep_amazing_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1016,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1017,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1019,-0.0,'view','dep_Nice dep_view dep_ ','dep_Nice_view dep_view_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1021,-0.0,'view','dep_get ','dep_get_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1024,0.0,'links','dep_Good dep_transport dep_links dep_ dep_central dep_ ','dep_Good_transport dep_transport_links dep_links_ dep__central dep_central_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1025,0.3,'view','dep_amazing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1027,0.0,'hotel','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1029,-0.0,'location','dep_one ','dep_one_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1051,-0.0,'location','dep_Perfect dep_location dep_close dep_ ','dep_Perfect_location dep_location_in dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1052,-0.0,'location','dep_Perfect dep_location dep_close dep_ ','dep_Perfect_location dep_location_in dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1053,-0.0,'trains','dep_ dep_Bahn ','dep__Bahn dep_Bahn_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1065,0.43333333333333335,'area','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1068,0.0,'location','dep_Amazing dep_location dep_ dep_near dep_next dep_ ','dep_Amazing_location dep_location_ dep__near dep_near_and dep_next_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1069,0.0,'everything','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1070,0.0,'links','dep_transport ','dep_transport_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1071,0.17777777777777778,'view','dep_nice ','dep_nice_Has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1077,0.26666666666666666,'location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1078,0.0,'everything','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1080,-0.0,'location','dep_Great dep_location dep_ dep_let dep_ ','dep_Great_location dep_location_ dep__let dep_let_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1081,-0.43333333333333335,'location','dep_perfect ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1082,-0.0,'underground','dep_seconds dep_away ','dep_seconds_away ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1086,-0.0,'view','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1097,-0.0,'view','dep_location ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1098,-0.0,'location','dep_view ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1101,-0.2888888888888889,'location','dep_good ','dep_good_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1106,-0.047619047619047616,'located','dep_hotel dep_well dep_located dep_away dep_ ','dep_hotel_was dep_well_located dep_located_and dep_away_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1126,0.0,'location','dep_Brilliant dep_location ','dep_Brilliant_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1127,0.0,'area','dep_bit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1137,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1146,0.0,'location','dep_Great dep_location dep_close dep_ ','dep_Great_location dep_location_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1147,0.0,'location','dep_Great dep_location dep_close dep_ ','dep_Great_location dep_location_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1148,0.0,'everything','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1150,0.10666666666666667,'location','dep_great dep_location dep_rooms dep_ ','dep_great_location dep_location_and dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1153,0.2,'view','dep_amazing ','dep_amazing_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1154,0.0,'location','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1176,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1179,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1183,0.48888888888888893,'views','dep_magnificent dep_friendly ','dep_magnificent_friendly dep_friendly_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1186,0.075,'location','dep_location dep_amazing dep_ ','dep_location_for dep_amazing_all ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1187,0.0,'distance','dep_walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1190,0.6,'Location','dep_terrific ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1195,0.0,'location','dep_Great dep_busy ','dep_Great_busy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1198,-0.6,'Location','dep_fabulous ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+1201,0.0,'location','dep_staff ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1208,0.2333333333333333,'location','dep_Good dep_lost ','dep_Good_lost ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1212,-0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1214,-0.0,'market','dep_Christmas dep_outside ','dep_Christmas_outside ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1215,-0.0,'Bars','dep_restaurants ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1216,-0.0,'restaurants','dep_Bars ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1222,0.2888888888888889,'location','dep_Really dep_good dep_location ','dep_Really_good dep_good_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1223,-0.08333333333333333,'location','dep_appropriate dep_location dep_ ','dep_appropriate_location dep_location_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1224,-0.08333333333333333,'location','dep_appropriate dep_location dep_ ','dep_appropriate_location dep_location_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1227,-0.0,'Location','dep_class ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1228,-0.08333333333333333,'market','dep_underground dep_Christmas dep_right ','dep_underground_Christmas dep_Christmas_right ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1229,-0.0,'underground','dep_market dep_also ','dep_market_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1237,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1238,0.0,'underground','dep_station ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1239,0.0,'station','dep_Train dep_underground ','dep_Train_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1240,0.08333333333333333,'markets','dep_shopping ','dep_shopping_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1241,0.0,'shopping','dep_markets dep_Christmas ','dep_markets_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1242,0.0,'proximity','dep_Close dep_proximity dep_! ','dep_Close_proximity dep_proximity_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1248,-0.0,'location','dep_Perfect dep_location dep_ dep_room dep_ ','dep_Perfect_location dep_location_ dep__but dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1252,-0.0,'center','dep_business ','dep_business_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1257,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1263,0.0,'Location','dep_Perfect dep_Location dep_ ','dep_Perfect_Location dep_Location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1264,0.0,'location','dep_Love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1265,0.0,'access','dep_Easy dep_access dep_ ','dep_Easy_access dep_access_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1267,0.0,'market','dep_christmas ','dep_christmas_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1268,-0.0,'markets','dep_Christmas ','dep_Christmas_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1269,-0.0,'location','dep_Good dep_location dep_get dep_ ','dep_Good_location dep_location_for dep_get_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1270,-0.2,'view','dep_amazing ','dep_amazing_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1275,0.16666666666666666,'Location','dep_ideal ','dep_ideal_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1278,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1283,-0.4666666666666666,'Location','dep_wonderful ','dep_wonderful_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1284,-0.0,'Supermarket','dep_Starbucks ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1285,-0.0,'Starbucks','dep_Supermarket ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1286,-0.0,'view','dep_Fab dep_view dep_location dep_ ','dep_Fab_view dep_view_and dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1287,-0.26666666666666666,'location','dep_great dep_view ','dep_great_view ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1294,-0.2,'location','dep_hotels dep_amazing ','dep_hotels_amazing ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1295,-0.15555555555555556,'location','dep_better ','dep_better_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1296,-0.013333333333333334,'walk','dep_short dep_overlooked ','dep_short_overlooked dep_overlooked_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1297,-0.0,'stops','dep_tram ','dep_tram_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1314,0.9333333333333332,'Location','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1318,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1322,0.1111111111111111,'location','dep_Moscow dep_ideal ','dep_Moscow_ideal dep_ideal_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1325,0.26666666666666666,'location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1328,-0.0,'location','dep_Great dep_location dep_walked dep_ ','dep_Great_location dep_location_and dep_walked_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1329,-0.17777777777777778,'location','dep_loved ','dep_loved_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1335,0.6,'Berlin','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1337,0.11666666666666665,'view','dep_better dep_facilities ','dep_better_facilities dep_facilities_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1340,-0.2888888888888889,'location','dep_good ','dep_good_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1344,0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1347,0.0,'view','dep_th dep_floor ','dep_th_floor dep_floor_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1349,0.2,'views','dep_fantastic dep_gave ','dep_fantastic_gave dep_gave_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1350,0.0,'location','dep_Great dep_central dep_location dep_near dep_ ','dep_Great_central dep_central_location dep_location_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1351,0.0,'location','dep_Great dep_central dep_location dep_near dep_ ','dep_Great_central dep_central_location dep_location_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1352,0.0,'location','dep_Great dep_central dep_location dep_near dep_ ','dep_Great_central dep_central_location dep_location_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1353,0.0,'transport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1356,-0.0,'location','dep_Good dep_location dep_value dep_ ','dep_Good_location dep_location_and dep_value_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1357,-0.0,'location','dep_Great dep_location dep_ dep_next dep_ ','dep_Great_location dep_location_in dep__next dep_next_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1358,-0.0,'station','dep_underground ','dep_underground_to ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1359,-0.027777777777777776,'underground','dep_station dep_main ','dep_station_and ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1360,-0.0,'restaurants','','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1361,-0.05833333333333333,'mall','dep_big dep_shopping ','dep_big_shopping dep_shopping_to ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1362,-0.0,'market','dep_third dep_Xmas dep_markets ','dep_third_Xmas dep_Xmas_markets ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1363,-0.0,'markets','dep_two dep_Christmas dep_market ','dep_two_Christmas dep_Christmas_to ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1365,-0.17222222222222222,'views','dep_quiet dep_ dep_great dep_views dep_ ','dep_quiet_ dep__great dep_great_views dep_views_of ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1369,-0.13333333333333333,'location','dep_highlight ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1370,-0.0,'places','','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1379,0.21666666666666667,'location','dep_perfect ','dep_perfect_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1388,0.08888888888888889,'located','dep_hotel dep_centrally dep_located dep_great dep_ ','dep_hotel_was dep_centrally_located dep_located_great dep_great_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1389,0.0,'shopping','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1390,0.0,'transport','dep_links ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1395,0.0,'location','dep_Great dep_location dep_hotel dep_ ','dep_Great_location dep_location_and dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1397,0.0,'location','dep_Perfect dep_location dep_hotel dep_ ','dep_Perfect_location dep_location_and dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1401,-0.0,'view','dep_Nice dep_bed ','dep_Nice_bed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1414,0.0,'hotel','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1417,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1418,-0.08888888888888889,'location','dep_Probably dep_best dep_location dep_stay dep_ ','dep_Probably_the dep_best_location dep_location_stay dep_stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1431,-0.0,'location','dep_Great dep_location dep_! ','dep_Great_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1432,-0.3333333333333333,'location','dep_superb ','dep_superb_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1433,-0.13333333333333333,'view','dep_great ','dep_great_Had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1439,-0.26666666666666666,'view','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1441,0.26666666666666666,'Location','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1442,0.17777777777777778,'view','dep_nice ','dep_nice_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1453,0.0,'location','dep_Clean dep_location dep_ ','dep_Clean_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1455,0.26666666666666666,'location','dep_great ','dep_great_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1465,0.21333333333333335,'location','dep_room dep_nice dep_great dep_check ','dep_room_was dep_nice_great dep_great_check ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1467,-0.13333333333333333,'view','dep_best ','dep_best_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1468,-0.0,'Location','dep_one dep_view ','dep_one_and ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1469,-0.0,'view','dep_Room dep_Location ','dep_Room_Location ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1471,-0.3,'view','dep_amazing ','dep_amazing_had ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1479,-0.0,'location','dep_Good dep_location dep_! ','dep_Good_location dep_location_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1480,-0.0,'nearby','dep_everything ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1481,-0.0,'location','dep_Good dep_location dep_ dep_distance dep_ ','dep_Good_location dep_location_for dep__distance dep_distance_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1482,-0.21666666666666667,'distance','dep_good dep_walking dep_location ','dep_good_walking dep_walking_location dep_location_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1483,-0.21666666666666667,'distance','dep_good dep_walking dep_location ','dep_good_walking dep_walking_location dep_location_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1484,-0.0,'restaurant','dep_verity ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1485,-0.0,'restaurant','dep_verity ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1489,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1495,-0.0,'localization','dep_practical ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1496,-0.0,'transports','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1506,0.0,'location','dep_central ','dep_central_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1507,0.15555555555555556,'location','dep_liked ','dep_liked_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1508,0.2888888888888889,'accessible','dep_easily dep_perfect ','dep_easily_perfect dep_perfect_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1509,0.26666666666666666,'view','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1515,-0.0,'view','dep_Value ','',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1516,-0.26666666666666666,'location','dep_great dep_Value ','dep_great_Value ',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1519,-0.0,'view','dep_location ','dep_location_from ',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1520,-0.0,'location','dep_Excellent dep_view ','dep_Excellent_was ',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1532,0.0,'Location','dep_Excellent dep_Location dep_ ','dep_Excellent_Location dep_Location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1533,0.0,'view','dep_Amazing dep_machine ','dep_Amazing_machine dep_machine_over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1534,0.027777777777777776,'transport','dep_public ','dep_public_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1544,-0.0,'location','dep_Great dep_location dep_ dep_ ','dep_Great_location dep_location_ dep__on ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1545,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1554,-0.3,'location','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1558,0.0,'Location','dep_Great dep_Location dep_ dep_view dep_receptionist dep_ ','dep_Great_Location dep_Location_ dep__view dep_view_receptionist dep_receptionist_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1559,0.26666666666666666,'view','dep_super dep_Location ','dep_super_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1566,-0.3,'view','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1567,-0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1568,-0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1577,-0.0,'Location','dep_Location dep_near dep_ ','dep_Location_near dep_near_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1587,-0.12000000000000001,'location','dep_Also dep_amazing dep_location dep_ ','dep_Also_amazing dep_amazing_location dep_location_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1598,-0.0,'location','dep_Staff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1607,-0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1608,-0.7333333333333334,'views','dep_fantastic dep_excellent ','dep_fantastic_excellent ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1614,0.1111111111111111,'view','dep_spectacular ','dep_spectacular_from ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1617,0.13333333333333333,'Getting','dep_easy ','dep_easy_from ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1618,0.03333333333333333,'location','dep_Excellent dep_breakfast dep_ dep_view ','dep_Excellent_breakfast dep_breakfast_in dep__view ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1619,0.0,'transport','dep_hub ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1620,0.2888888888888889,'view','dep_marvelous dep_location ','dep_marvelous_location dep_location_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1628,-0.17777777777777778,'view','dep_nice ','dep_nice_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1631,-0.17777777777777778,'view','dep_panorama dep_nice ','dep_panorama_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1633,-0.2888888888888889,'location','dep_perfect ','dep_perfect_has ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1634,-0.0,'station','dep_metro ','dep_metro_to ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1635,-0.04285714285714286,'malls','dep_shopping dep_ dep_attractions dep_around dep_ ','dep_shopping_ dep__and dep_attractions_around dep_around_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1636,-0.0,'distance','dep_walking dep_within ','dep_walking_within ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1637,-0.2888888888888889,'view','dep_excellent ','dep_excellent_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1650,0.26666666666666666,'location','dep_great ','dep_great_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1652,0.0,'location','dep_Great dep_location dep_staff dep_ ','dep_Great_location dep_location_and dep_staff_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1654,0.0,'distance','dep_Easy dep_walking dep_distance dep_ ','dep_Easy_walking dep_walking_distance dep_distance_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1655,0.0,'restaurants','dep_walk dep_within ','dep_walk_within ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1656,0.43333333333333335,'bars','dep_good ','dep_good_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1657,0.0,'transport','dep_links ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1659,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1660,-0.0,'location','dep_Excellent dep_location dep_ dep_staff dep_room dep_ ','dep_Excellent_location dep_location_ dep__staff dep_staff_and dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1667,0.2888888888888889,'Location','dep_Location dep_good dep_ ','dep_Location_good dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1670,-0.43333333333333335,'view','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1672,-0.0,'location','dep_facilities ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1679,0.0,'location','dep_Excellent dep_location dep_ ','dep_Excellent_location dep_location_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1682,0.2222222222222222,'routs','dep_convenient dep_around ','dep_convenient_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1685,0.43333333333333335,'view','dep_good ','dep_good_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1692,0.43333333333333335,'location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1701,0.0,'view','dep_Nice dep_view dep_ ','dep_Nice_view dep_view_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1707,0.19999999999999998,'location','dep_Great dep_location dep_helpful dep_ ','dep_Great_location dep_location_helpful dep_helpful_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1708,0.35000000000000003,'views','dep_stunning dep_helpful dep_staff ','dep_stunning_helpful dep_helpful_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1713,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1715,-0.2888888888888889,'Location','dep_Location dep_good dep_ ','dep_Location_good dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1716,-0.0,'center','dep_Berlin ','dep_Berlin_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1725,-0.041666666666666664,'location','dep_first dep_breakfast ','dep_first_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1737,0.047619047619047616,'located','dep_ dep_s dep_well dep_located dep_ ','dep__it dep_s_well dep_well_located dep_located_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1738,0.0,'Station','dep_Metro dep_Near ','dep_Metro_Near ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1739,0.17777777777777778,'location','dep_great ','dep_great_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1742,-0.0,'location','dep_Great dep_rooms ','dep_Great_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1745,-0.0,'location','dep_location dep_ dep_walk dep_ ','dep_location_ dep__walk dep_walk_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1746,-0.13333333333333333,'find','dep_easy dep_one ','dep_easy_one ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1747,-0.0,'orientation','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1759,-0.2222222222222222,'stores','dep_convenience dep_close ','dep_convenience_close ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1761,0.0,'hotel','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1762,0.0,'stations','dep_regional dep_train dep_ubahn ','dep_regional_train dep_train_ubahn ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1763,0.0,'everywhere','dep_close dep_ ','dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1764,0.0,'located','dep_located dep_ ','dep_located_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1779,-0.43333333333333335,'view','dep_good dep_rooms ','dep_good_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1783,-0.26666666666666666,'view','dep_impressive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1784,-0.0,'location','dep_location dep_bit dep_ dep_arrived dep_ ','dep_location_bit dep_bit_ dep__arrived dep_arrived_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1789,-0.19999999999999998,'location','dep_Excellent dep_improved dep_amenities ','dep_Excellent_improved dep_improved_but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1791,-0.43333333333333335,'Location','dep_excellent ','dep_excellent_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1798,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1799,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1806,-0.047619047619047616,'location','dep_Excellenet dep_location dep_ dep_enjoyable dep_ ','dep_Excellenet_location dep_location_ dep__with dep_enjoyable_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1818,0.0,'facilities','dep_nearby dep_location ','dep_nearby_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1819,0.0,'location','dep_Excellent dep_location dep_facilities dep_ ','dep_Excellent_location dep_location_and dep_facilities_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1824,0.0,'location','dep_Amazing dep_location dep_! ','dep_Amazing_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1827,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,positive
+1834,-0.0,'location','dep_Nice dep_location dep_close dep_ ','dep_Nice_location dep_location_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1835,-0.0,'transportation','dep_shops ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1836,-0.0,'shops','dep_transportation ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1849,-0.0,'location','dep_Convenient dep_location dep_ ','dep_Convenient_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1853,0.0,'LOCATION','dep_BEST dep_LOCATION dep_! ','dep_BEST_LOCATION dep_LOCATION_TO ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1856,0.15555555555555556,'location','dep_Great dep_recommended dep_ ','dep_Great_recommended dep_recommended_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1861,-0.17777777777777778,'Location','dep_great dep_view ','dep_great_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1862,-0.0,'view','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1879,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+1880,-0.0,'location','dep_Great dep_see ','dep_Great_see ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+1896,-0.3,'view','dep_stunning ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1902,-0.26666666666666666,'location','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1903,-0.0,'heart','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1905,-0.0,'location','dep_Best dep_location dep_ ','dep_Best_location dep_location_in ',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1909,0.3,'location','dep_unbelievable ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1910,-0.17777777777777778,'view','dep_great ','dep_great_from ',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1917,-0.13333333333333333,'Location','dep_Hotel dep_great dep_view ','dep_Hotel_great dep_great_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1919,-0.0,'view','dep_rooms dep_Location ','dep_rooms_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1924,-0.2,'room','dep_amazing ','dep_amazing_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1926,-0.0,'hotel','dep_Central ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1927,-0.0,'hotel','dep_Central ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1935,-0.2888888888888889,'location','dep_good ','dep_good_in ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1936,-0.0,'bars','dep_shops ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1937,-0.0,'restaurants','dep_shops ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1938,-0.0,'shops','dep_ dep_restaurants dep_bars dep_activities ','dep__restaurants dep_restaurants_bars dep_bars_and dep_activities_for ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1945,0.19999999999999998,'location','dep_Great dep_helpful dep_staff ','dep_Great_helpful dep_helpful_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1948,-0.10666666666666667,'Location','dep_Location dep_excellent dep_ dep_irons dep_ ','dep_Location_excellent dep_excellent_ dep__irons dep_irons_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1950,-0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1951,-0.0962962962962963,'central','dep_excellent dep_ dep_could dep_central dep_ ','dep_excellent_ dep__you dep_could_not dep_central_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1961,0.6,'location','dep_amazing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1967,0.08750000000000001,'location','dep_Overall dep_ dep_great dep_location dep_breakfast dep_bar dep_ ','dep_Overall_ dep__great dep_great_location dep_location_breakfast dep_breakfast_and dep_bar_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1975,0.17333333333333334,'location','dep_excellent ','dep_excellent_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1978,0.0,'view','dep_Best dep_view dep_! ','dep_Best_view dep_view_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1980,0.6,'view','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1983,-0.0,'Location','dep_Good dep_Location dep_service dep_ ','dep_Good_Location dep_Location_but dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1987,-0.0,'location','dep_Great dep_view ','dep_Great_view ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1988,-0.13333333333333333,'view','dep_location dep_ dep_nice dep_view ','dep_location_ dep__nice dep_nice_view ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1989,0.0,'base','dep_Great dep_base dep_exploring dep_ ','dep_Great_base dep_base_exploring dep_exploring_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1990,0.6,'Location','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1996,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2003,0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2008,0.13333333333333333,'location','dep_convenient dep_location dep_ ','dep_convenient_location dep_location_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2009,0.0,'located','dep_hotel ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2012,-0.0,'view','dep_Stunning ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2015,-0.8666666666666667,'Position','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2018,0.0,'location','dep_Great dep_selection ','dep_Great_selection ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2028,-0.0,'location','dep_ dep_Good dep_location dep_! ','dep__Good dep_Good_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2031,-0.0,'location','dep_Perfect dep_location dep_! ','dep_Perfect_location dep_location_! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2032,-0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2040,-0.0,'places','dep_around ','dep_around_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2043,0.0,'views','dep_Great dep_views dep_ dep_beds dep_ ','dep_Great_views dep_views_ dep__beds dep_beds_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2049,-0.0,'located','dep_centrally dep_located dep_get dep_ ','dep_centrally_located dep_located_get dep_get_ ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2050,-0.2888888888888889,'cities','dep_beautiful ','dep_beautiful_of ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2055,-0.43333333333333335,'view','dep_excellent dep_provides ','dep_excellent_provides ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2057,-0.0,'location','dep_Good dep_location dep_explore dep_ ','dep_Good_location dep_location_explore dep_explore_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2058,-0.4444444444444444,'view','dep_Roof dep_top dep_nice ','dep_Roof_top dep_top_nice ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2065,-0.0,'place','dep_Nice dep_place dep_stay dep_ ','dep_Nice_place dep_place_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2068,-0.0,'place','dep_Perfect dep_place dep_stay dep_ ','dep_Perfect_place dep_place_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2070,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2071,-0.14761904761904762,'view','dep_excellent dep_city dep_breakfast dep_rooms dep_facilities ','dep_excellent_city dep_city_with dep_breakfast_rooms dep_rooms_facilities ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2078,-0.0,'location','dep_Great dep_location dep_ dep_views dep_ ','dep_Great_location dep_location_ dep__views dep_views_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2079,-0.26666666666666666,'views','dep_nice dep_location ','dep_nice_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2084,0.3,'location','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2091,0.3333333333333333,'location','dep_clean dep_ dep_good dep_location dep_ ','dep_clean_ dep__good dep_good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2095,0.0,'location','dep_staff ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2097,0.39166666666666666,'location','dep_great dep_excellent dep_ dep_breakfast ','dep_great_excellent dep_excellent_ dep__breakfast ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2099,0.4666666666666667,'view','dep_nice dep_excellent ','dep_nice_excellent dep_excellent_if ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2100,-0.5333333333333333,'Location','dep_best ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2101,-0.0,'location','dep_Great dep_view ','dep_Great_view ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2102,-0.2222222222222222,'view','dep_location dep_ dep_clean dep_great dep_view dep_ ','dep_location_ dep__clean dep_clean_great dep_great_view dep_view_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2107,0.0,'everything','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2114,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2118,0.05555555555555555,'located','dep_conveniently dep_located dep_near dep_ ','dep_conveniently_located dep_located_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2123,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2124,-0.25,'location','dep_superb dep_facilities ','dep_superb_and ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2131,0.39999999999999997,'environment','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2134,-0.0,'location','dep_Great dep_location dep_ dep_bit dep_see dep_ ','dep_Great_location dep_location_ dep__bit dep_bit_see dep_see_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2135,-0.14583333333333334,'shop','dep_coffee dep_handy dep_attached ','dep_coffee_handy dep_handy_attached ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2136,-0.125,'neighbourhood','dep_Nice dep_quiet dep_neighbourhood dep_ ','dep_Nice_quiet dep_quiet_neighbourhood dep_neighbourhood_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2137,-0.125,'neighbourhood','dep_Nice dep_quiet dep_neighbourhood dep_ ','dep_Nice_quiet dep_quiet_neighbourhood dep_neighbourhood_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2138,-0.0,'Location','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2141,0.0,'attractions','dep_tourist ','dep_tourist_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2155,0.6666666666666666,'Location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2160,-0.6,'Location','dep_fantastic ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2166,-0.17777777777777778,'location','dep_nice dep_location dep_ ','dep_nice_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2171,-0.13333333333333333,'area','dep_popular ','dep_popular_in ',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2189,-0.0,'transportation','dep_ dep_stores dep_etc ','dep__stores dep_stores_etc ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2194,-0.21666666666666667,'location','dep_good dep_location dep_ ','dep_good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2195,-0.21666666666666667,'location','dep_good dep_location dep_ ','dep_good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2199,-0.0,'station','dep_metro dep_close dep_made ','dep_metro_close dep_close_made ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2202,-0.0,'location','dep_Convenient dep_location dep_ ','dep_Convenient_location dep_location_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2203,-0.0,'proximity','dep_Close dep_proximity dep_ ','dep_Close_proximity dep_proximity_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2204,-0.0,'restaurants','dep_Good dep_restaurants dep_sites dep_ ','dep_Good_restaurants dep_restaurants_and dep_sites_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2211,0.8333333333333334,'location','dep_good dep_clean ','dep_good_clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2215,-0.0,'location','dep_Great dep_location dep_Value dep_ ','dep_Great_location dep_location_and dep_Value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+2216,-0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+2224,-0.0,'location','dep_location dep_ ','dep_location_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2225,-0.08333333333333333,'area','dep_quiet dep_ft dep_compared ','dep_quiet_ft dep_ft_compared ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2231,-0.0,'location','dep_Great dep_location dep_! ','dep_Great_location dep_location_! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2237,1.0,'Location','dep_superb ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2238,0.06666666666666667,'located','dep_stores dep_conveniently dep_ dep_meters ','dep_stores_are dep_conveniently_ dep__meters ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2259,0.0,'metro','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2268,-0.0,'station','dep_subway ','dep_subway_above ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2269,-0.17777777777777778,'neighborhood','dep_nice ','dep_nice_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2274,0.0,'station','dep_Lots ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2280,-0.17777777777777778,'bakery','dep_great dep_run ','dep_great_run ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2285,-0.2888888888888889,'position','dep_good ','dep_good_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2294,-0.0,'station','dep_Metro dep_station dep_around dep_ ','dep_Metro_station dep_station_around dep_around_ ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2301,0.0,'position','dep_Good dep_position dep_ ','dep_Good_position dep_position_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2306,0.16666666666666666,'bed','dep_soft ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2308,-0.2222222222222222,'location','dep_convenient ','dep_convenient_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2309,-0.0,'sights','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2317,-0.0,'access','dep_Easy ','dep_Easy_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2318,-0.13333333333333333,'location','dep_great dep_Metro ','dep_great_Metro dep_Metro_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2326,-0.2333333333333333,'environment','dep_chic dep_rooms ','dep_chic_rooms ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2334,-0.0,'station','dep_Metro ','dep_Metro_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2337,0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2338,-0.0,'Location','dep_Perfect dep_Hotel dep_Location dep_ ','dep_Perfect_Hotel dep_Hotel_Location dep_Location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2339,-0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2340,-0.43333333333333335,'place','dep_perfect dep_Sensoji ','dep_perfect_Sensoji ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2355,-0.0,'station','dep_elevators ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2358,-0.0,'Location','dep_key ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2361,-0.0,'Location','dep_spot ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2364,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2368,0.0,'station','dep_Near dep_Tawaramachi dep_station dep_ ','dep_Near_Tawaramachi dep_Tawaramachi_station dep_station_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2371,0.0,'Metro','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2373,0.0,'Locality','dep_Cleanliness ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2379,-0.0,'location','dep_Good dep_location dep_ dep_access dep_ ','dep_Good_location dep_location_ dep__access dep_access_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2380,-0.19999999999999998,'access','dep_easy dep_location ','dep_easy_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2381,-0.13333333333333333,'neighbourhood','dep_nice dep_Asakusa ','dep_nice_Asakusa dep_Asakusa_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2384,-0.0,'location','dep_Great dep_location dep_room dep_ ','dep_Great_location dep_location_and dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2387,-0.19999999999999998,'location','dep_Loved dep_ dep_clean ','dep_Loved_ dep__clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2405,-0.0,'location','dep_Superb dep_location dep_ dep_room dep_come dep_ ','dep_Superb_location dep_location_ dep__room dep_room_but dep_come_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2412,-1.0,'location','dep_superb ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2416,-0.43333333333333335,'location','dep_good dep_rooms ','dep_good_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2419,-0.0,'station','dep_metro ','dep_metro_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2423,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2433,0.0,'location','dep_Great dep_location dep_close ','dep_Great_location dep_location_close ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2434,0.0,'metro','dep_line ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2436,-0.0,'visiting','dep_districts ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,positive
+2447,-0.0,'location','dep_price ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2450,0.25333333333333335,'location','dep_good dep_location dep_ dep_easy dep_ ','dep_good_location dep_location_ dep__easy dep_easy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2453,0.0,'neighbourhood','dep_access ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2454,0.17333333333333334,'access','dep_Great dep_neighbourhood dep_excellent dep_access dep_ ','dep_Great_neighbourhood dep_neighbourhood_excellent dep_excellent_access dep_access_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2456,0.027777777777777776,'location','dep_Great dep_location dep_ dep_facilities dep_bath dep_ ','dep_Great_location dep_location_ dep__facilities dep_facilities_bath dep_bath_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2459,-0.43333333333333335,'location','dep_good ','dep_good_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2460,-0.11428571428571428,'location','dep_clean dep_Good dep_location dep_ dep_walk dep_ ','dep_clean_Good dep_Good_location dep_location_ dep__walk dep_walk_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2478,0.0761904761904762,'place','dep_nice dep_place dep_ ','dep_nice_place dep_place_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2479,0.6666666666666666,'transportation','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2482,0.0,'location','dep_Good dep_location dep_ dep_near dep_ ','dep_Good_location dep_location_ dep__near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2483,0.0,'subway','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2489,-0.0,'metro','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2494,-0.0,'location','dep_ dep_Great dep_location dep_ ','dep__Great dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2499,-0.0,'station','dep_train ','dep_train_to ',0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2514,-0.3,'location','dep_fantastic ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2519,0.0,'station','dep_Near dep_subway dep_station dep_! ','dep_Near_subway dep_subway_station dep_station_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2524,-0.11428571428571428,'location','dep_ dep_friendly dep_Onsen dep_Convenient dep_location dep_explore dep_ ','dep__friendly dep_friendly_Onsen dep_Onsen_Convenient dep_Convenient_location dep_location_explore dep_explore_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2535,-0.0,'Metro','','',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,positive
+2538,-0.0,'location','dep_Nice dep_location dep_ ','dep_Nice_location dep_location_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2539,-0.3,'suroundings','dep_fantastic ','dep_fantastic_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2540,-0.26666666666666666,'location','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2541,-0.26666666666666666,'location','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2543,-0.0,'station','dep_metro ','dep_metro_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2546,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2549,-0.43333333333333335,'location','dep_good dep_room ','dep_good_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2550,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2562,-0.0,'station','dep_Tawarimachi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2569,0.43333333333333335,'localization','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2570,0.2,'infrastructure','dep_awesome ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2576,0.0,'statio','dep_subway dep_near ','dep_subway_near ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2580,-0.09999999999999999,'locate','dep_easy dep_walk ','dep_easy_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2581,-0.3333333333333333,'location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2591,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2594,0.12380952380952381,'location','dep_good dep_location dep_near dep_close dep_ ','dep_good_location dep_location_near dep_near_and dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2609,0.0761904761904762,'neighborhood','dep_nice dep_ dep_quite dep_hotel ','dep_nice_ dep__quite dep_quite_its ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2610,0.0761904761904762,'neighborhood','dep_nice dep_ dep_quite dep_hotel ','dep_nice_ dep__quite dep_quite_its ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2611,0.0,'location','dep_hotel ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2612,0.0,'location','dep_Excellent dep_location dep_ dep_ ','dep_Excellent_location dep_location_ dep__ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2613,0.0,'stations','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2618,-0.8666666666666667,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2623,-0.3333333333333333,'location','dep_Great dep_convenient ','dep_Great_convenient ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2624,-0.3333333333333333,'stores','dep_convenient ','dep_convenient_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2627,-0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2630,-0.037037037037037035,'place','dep_room dep_store ','dep_room_store ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2633,0.8666666666666667,'Location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2636,0.0,'station','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2640,-0.0,'subway','dep_near dep_area ','dep_near_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2641,-0.2333333333333333,'hotel','dep_comfortable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2644,-0.0,'location','dep_Great dep_location dep_ dep_rooms dep_ ','dep_Great_location dep_location_ dep__rooms dep_rooms_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2652,-0.0,'location','dep_neighborhood ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2653,-0.0,'neighborhood','dep_Nice dep_neighborhood dep_location dep_ ','dep_Nice_neighborhood dep_neighborhood_and dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2663,0.17333333333333334,'location','dep_perfect dep_location dep_ ','dep_perfect_location dep_location_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2672,0.06666666666666667,'location','dep_Great dep_location dep_inflexible dep_ ','dep_Great_location dep_location_but dep_inflexible_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2674,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2677,-0.26666666666666666,'location','dep_great ','',0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2682,-0.19999999999999998,'find','dep_easy ','',0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2696,-0.0,'station','dep_metro dep_temples ','dep_metro_to ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2719,-0.13333333333333333,'cafe','dep_next dep_door dep_nice ','dep_next_door dep_door_nice ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2726,-0.0,'station','dep_subway ','dep_subway_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2727,-0.16,'neighbourhood','dep_ dep_ dep_calm ','dep__ dep__a dep_calm_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2730,0.0,'location','dep_Good dep_location dep_ dep_close dep_ ','dep_Good_location dep_location_ dep__close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2731,0.0,'sights','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2732,0.0,'access','dep_close dep_areas ','dep_close_areas dep_areas_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2733,0.0,'restaurants','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2739,0.0,'location','dep_Excellent dep_location dep_ ','dep_Excellent_location dep_location_on ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2740,0.0,'station','dep_Tawaramachi dep_subway dep_ ','dep_Tawaramachi_subway dep_subway_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2741,0.10476190476190476,'connection','dep_easy dep_meaning dep_well dep_walk dep_temple ','dep_easy_meaning dep_meaning_to dep_well_walk dep_walk_and ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2744,-0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2747,-0.2222222222222222,'cafe','dep_convenient ','dep_convenient_down ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2773,-0.0,'Station','dep_Train ','dep_Train_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2784,-0.5666666666666667,'located','dep_well dep_clean ','dep_well_clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2787,-0.0,'location','dep_eateries ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2788,-0.0,'shopping','dep_eateries ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2789,-0.14761904761904762,'eateries','dep_location dep_good dep_ dep_close dep_ dep_shopping ','dep_location_good dep_good_ dep__close dep_close_ dep__and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2790,-0.0,'station','dep_train ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2794,0.0,'location','dep_Convenient dep_location dep_ ','dep_Convenient_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2796,0.43333333333333335,'location','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2797,0.0,'station','dep_train dep_near ','dep_train_near ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2802,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2805,-0.2888888888888889,'location','dep_perfect ','dep_perfect_in ',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2806,-0.0,'restaurants','','',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2820,-0.8666666666666667,'location','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2821,-0.0,'subway','dep_near ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2822,-0.13333333333333333,'neighbourhood','dep_great dep_ ','dep_great_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2831,-0.0,'location','dep_Quiet dep_location dep_ ','dep_Quiet_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2836,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_on ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2837,0.0,'station','dep_Tawaramachi dep_subway dep_ ','dep_Tawaramachi_subway dep_subway_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2849,-0.027777777777777776,'bakery','dep_Great dep_bakery dep_next dep_ dep_choice dep_ ','dep_Great_bakery dep_bakery_next dep_next_ dep__choice dep_choice_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2851,-0.0,'trips','dep_day ','dep_day_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+2852,-0.0,'station','dep_tokyo ','dep_tokyo_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+2858,0.43333333333333335,'location','dep_good dep_lot ','dep_good_lot ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2859,0.13333333333333333,'view','dep_nice dep_asked ','dep_nice_asked dep_asked_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2863,-0.0,'location','dep_rooms ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2870,0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2877,-0.0,'subway','dep_line ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2882,-0.2888888888888889,'location','dep_perfect ','dep_perfect_at ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2884,-0.26666666666666666,'view','dep_nice ','',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2894,0.21666666666666667,'location','dep_good dep_ ','dep_good_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2895,0.0,'station','dep_subway ','dep_subway_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2897,0.0,'location','dep_Excellent dep_Onsen ','dep_Excellent_Onsen ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2900,0.0,'metro','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2901,0.0,'restaurants','dep_ramen dep_tempura dep_close ','dep_ramen_tempura dep_tempura_close dep_close_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2902,0.0,'restaurants','dep_ramen dep_tempura dep_close ','dep_ramen_tempura dep_tempura_close dep_close_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2908,-0.020833333333333332,'station','dep_Tokyo dep_main dep_little ','dep_Tokyo_main dep_main_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2917,-0.0,'station','dep_Ginza dep_line dep_underground ','dep_Ginza_line dep_line_underground dep_underground_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2918,-0.0,'sights','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2926,0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2927,-0.0,'location','dep_Good dep_location dep_ dep_ ','dep_Good_location dep_location_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2928,-0.0,'station','dep_subway dep_near ','dep_subway_near ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2932,-0.0,'location','dep_Perfect dep_location dep_ dep_ ','dep_Perfect_location dep_location_in dep__with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2933,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2940,0.041666666666666664,'located','dep_deserves dep_ dep_well dep_located dep_m dep_ ','dep_deserves_ dep__it dep_well_located dep_located_m dep_m_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2949,-0.3333333333333333,'location','dep_convenient ','dep_convenient_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2957,-0.0,'subway','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2960,-0.0,'station','dep_tawaramachi ','dep_tawaramachi_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2961,-0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2962,-0.0,'station','dep_train ','dep_train_from ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2972,-0.19999999999999998,'location','dep_Convenience dep_friendly dep_Staff ','dep_Convenience_friendly dep_friendly_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2974,-0.0,'Subway','dep_Ginza ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2980,0.0,'Location','dep_Good dep_Bed ','dep_Good_Bed ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2986,0.0,'subway','dep_Tokyo dep_Metro dep_Ginza dep_Line ','dep_Tokyo_Metro dep_Metro_Ginza dep_Ginza_Line dep_Line_from ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2987,0.047619047619047616,'bakery','dep_Great dep_little dep_bakery dep_around dep_well dep_options dep_ ','dep_Great_little dep_little_bakery dep_bakery_around dep_around_well dep_well_options dep_options_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2989,0.43333333333333335,'location','dep_good dep_staff ','dep_good_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2992,0.2222222222222222,'location','dep_convenient ','dep_convenient_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2999,-0.008333333333333331,'location','dep_cheap dep_ dep_great dep_staff ','dep_cheap_ dep__great dep_great_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3003,-0.5333333333333333,'location','dep_super ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3005,-0.0,'subway','dep_entrance ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3012,0.0,'location','dep_Convenient dep_location dep_ ','dep_Convenient_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3016,-0.14444444444444446,'location','dep_good dep_location dep_space dep_ ','dep_good_location dep_location_but dep_space_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3020,-0.0,'location','dep_Fi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3023,-0.0,'location','dep_claustrophobic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3024,-0.26666666666666666,'area','dep_loved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3025,0.0,'Location','dep_Good dep_Location dep_ ','dep_Good_Location dep_Location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3026,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3027,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3031,-0.0,'bakery','dep_Local dep_bakery dep_outside dep_ ','dep_Local_bakery dep_bakery_outside dep_outside_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3034,-0.0,'Metro','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3044,0.06666666666666667,'location','dep_room dep_comfortable dep_Convenient dep_relaxing dep_ dep_near ','dep_room_is dep_comfortable_Convenient dep_Convenient_relaxing dep_relaxing_ dep__near ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3045,0.0,'station','dep_metro dep_eateries ','dep_metro_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3052,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3053,-0.0,'Location','dep_close ','dep_close_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3078,0.2222222222222222,'Termini','dep_Roma dep_convenient ','dep_Roma_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3080,0.0,'metro','dep_Near dep_metro ','dep_Near_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3095,-0.26666666666666666,'area','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3096,-0.26666666666666666,'area','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3097,-0.43333333333333335,'location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3098,-0.43333333333333335,'location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3099,0.18666666666666668,'location','dep_Really dep_good dep_location dep_reach dep_ ','dep_Really_good dep_good_location dep_location_reach dep_reach_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3100,0.0,'station','dep_Termini ','dep_Termini_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3104,0.0,'location','dep_Good dep_location dep_! ','dep_Good_location dep_location_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3105,0.0,'location','dep_supa ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3120,-0.3333333333333333,'Location','dep_ideal ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3126,-0.0,'location','dep_Good dep_location dep_near dep_walk dep_ ','dep_Good_location dep_location_near dep_near_and dep_walk_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+3127,-0.0,'station','dep_termini dep_near ','dep_termini_near ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+3132,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3138,0.0,'Location','dep_Location dep_ ','dep_Location_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3143,-0.2222222222222222,'location','dep_convenient ','dep_convenient_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3144,-0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3146,-0.0,'restaurants','dep_Good dep_restaurants dep_ ','dep_Good_restaurants dep_restaurants_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3164,0.0,'station','dep_train ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3167,0.0,'station','dep_Near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3170,0.0,'location','dep_central dep_location dep_ ','dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3176,0.1,'street','dep_noisy dep_barking dep_dog dep_across ','dep_noisy_barking dep_barking_dog dep_dog_across ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3180,-0.2916666666666667,'transport','dep_handy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3181,-0.2916666666666667,'transport','dep_handy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3191,-0.14444444444444446,'location','dep_location dep_good dep_ ','dep_location_for dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3192,-0.0,'station','dep_bus dep_ dep_train ','dep_bus_ dep__train dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3193,-0.2888888888888889,'restaurants','dep_lovely ','dep_lovely_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3202,-0.0,'antiquities','dep_Roman ','dep_Roman_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3203,-0.17500000000000002,'restaurants','dep_many dep_nice dep_offer ','dep_many_nice dep_nice_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3210,0.0,'surrounding','dep_Noisy dep_surrounding ','dep_Noisy_surrounding ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3211,-0.08888888888888889,'Location','dep_Perfect dep_nice dep_ dep_close dep_staff ','dep_Perfect_nice dep_nice_ dep__close dep_close_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3212,-0.0,'station','dep_walk ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3213,-0.15555555555555556,'attractions','dep_like ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3220,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3221,0.0,'city','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3222,0.0,'station','dep_Termini ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3227,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3229,-0.020833333333333332,'Station','dep_main dep_Subway ','dep_main_Subway dep_Subway_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3230,-0.0,'neighborhood','dep_bit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3231,-0.21666666666666667,'restaurants','dep_good ','dep_good_are ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3234,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_for ',1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3236,-0.14761904761904762,'view','dep_Beautiful dep_interior dep_ dep_beautiful dep_view dep_ ','dep_Beautiful_interior dep_interior_ dep__beautiful dep_beautiful_view dep_view_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3237,-0.0,'station','dep_sights ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3238,-0.0,'sights','dep_near dep_station ','dep_near_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3245,0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3246,0.0,'station','dep_train ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3249,-0.020833333333333332,'station','dep_main dep_made ','dep_main_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3250,-0.020833333333333332,'station','dep_main dep_made ','dep_main_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3257,0.26666666666666666,'termini','dep_important ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3260,-0.0,'location','dep_Convenient dep_location dep_stay dep_! ','dep_Convenient_location dep_location_but dep_stay_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3266,0.10666666666666667,'location','dep_Great dep_location dep_great dep_ ','dep_Great_location dep_location_and dep_great_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3267,0.0,'termini','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3268,0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3269,0.26666666666666666,'restaurant','dep_great dep_nearby ','dep_great_nearby ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3271,-0.0,'restaurants','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3277,0.6666666666666666,'Location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3278,0.0,'station','dep_Termini ','dep_Termini_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3286,0.8666666666666667,'Restaurants','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3288,-0.0,'station','dep_Termini ','dep_Termini_from ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3292,0.17333333333333334,'location','dep_good dep_walk dep_ dep_min ','dep_good_walk dep_walk_ dep__min ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3299,-0.8666666666666667,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3308,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3309,-0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3315,0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3316,0.0,'Location','dep_cos ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+3317,-0.037037037037037035,'location','dep_ideal dep_ dep_shops dep_restaurants dep_activities ','dep_ideal_in dep__shops dep_shops_restaurants dep_restaurants_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3326,-0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3330,-0.5333333333333333,'Area','dep_greatest ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3331,-0.05833333333333333,'place','dep_Good dep_place dep_ dep_location dep_comfortable dep_ ','dep_Good_place dep_place_for dep__location dep_location_but dep_comfortable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3332,-0.2222222222222222,'location','dep_convenient dep_place ','dep_convenient_place dep_place_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3334,-0.43333333333333335,'Located','dep_good dep_walk ','dep_good_walk ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3335,-0.020833333333333332,'terminal','dep_main dep_catch ','dep_main_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3340,-0.3333333333333333,'location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3341,-0.3333333333333333,'location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3342,0.17777777777777778,'location','dep_great ','dep_great_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3346,0.0,'location','dep_Good dep_location ','dep_Good_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3347,-0.39999999999999997,'Location','dep_easy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3349,-0.0,'Termini','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3350,-0.12222222222222223,'access','dep_easy dep_ dep_well dep_options ','dep_easy_has dep__well dep_well_options ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3357,-0.3,'localization','dep_amazing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3358,-0.0,'Station','dep_Termini dep_near ','dep_Termini_near ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3368,0.125,'location','dep_Super dep_get dep_ dep_cheap ','dep_Super_get dep_get_ dep__cheap ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3370,-0.2,'location','dep_fantastic ','dep_fantastic_to ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3371,-0.05555555555555555,'location','dep_fs dep_feature ','dep_fs_feature ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3373,0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3377,-0.0,'location','dep_Great dep_location dep_ dep_beside dep_ ','dep_Great_location dep_location_ dep__beside dep_beside_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3378,-0.020833333333333332,'station','dep_main dep_train dep_beside ','dep_main_train dep_train_beside ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3381,-0.13333333333333333,'location','dep_convenient dep_location dep_need dep_ ','dep_convenient_location dep_location_need dep_need_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3385,-0.16666666666666666,'location','dep_building ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3393,0.0,'Location','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3394,0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3395,0.044444444444444446,'Termini','dep_Rome dep_attractions ','dep_Rome_attractions ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3396,0.03333333333333333,'attractions','dep_major dep_Termini ','dep_major_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3400,-0.43333333333333335,'location','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3403,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3405,-0.0,'Location','dep_Central ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3406,-0.0,'joints','dep_eating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3417,0.2888888888888889,'location','dep_excellent dep_value ','dep_excellent_value dep_value_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3428,-0.0,'location','dep_Excellent dep_location dep_ ','dep_Excellent_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3437,-0.1111111111111111,'walk','dep_nothing dep_fancy dep_walk dep_go dep_ ','dep_nothing_fancy dep_fancy_walk dep_walk_from dep_go_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3439,0.0,'location','dep_Brilliant dep_doors dep_ dep_lots dep_nearby dep_bed dep_room ','dep_Brilliant_doors dep_doors_to dep__lots dep_lots_nearby dep_nearby_bed dep_bed_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3440,0.0,'eateries','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3444,0.19999999999999998,'access','dep_easy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3445,0.0,'distance','dep_walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3447,-0.13333333333333333,'access','dep_easy dep_station ','dep_easy_station dep_station_to ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,positive
+3451,-0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3457,0.26666666666666666,'location','dep_great dep_staff ','dep_great_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3461,-0.0,'location','dep_value dep_ dep_location dep_close dep_!! ','dep_value_ dep__location dep_location_close dep_close_!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3464,-0.0,'station','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3469,-0.0,'location','dep_Great dep_ok ','dep_Great_ok ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3470,-0.26666666666666666,'location','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3471,-0.0,'hotel','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3472,-0.03333333333333333,'trainstation','dep_near dep_attractions ','dep_near_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3473,-0.0,'attractions','dep_tourist dep_trainstation ','dep_tourist_trainstation ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3483,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3484,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3485,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3486,0.0,'location','dep_Great dep_central dep_location dep_ ','dep_Great_central dep_central_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3490,0.0,'station','dep_Termini dep_central dep_railway ','dep_Termini_central dep_central_railway dep_railway_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3491,0.19999999999999998,'travel','dep_easy ','dep_easy_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3492,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3494,0.0,'cafes','dep_local dep_restaurants ','dep_local_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3499,-0.0,'location','dep_Perfect dep_location dep_ ','dep_Perfect_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3503,-0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3511,0.0,'location','dep_Good dep_location dep_ dep_staff dep_ ','dep_Good_location dep_location_ dep__staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3521,0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3522,0.0,'restaurant','dep_Close dep_ dep_restaurant dep_ ','dep_Close_ dep__and dep_restaurant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3523,0.0,'shopping','dep_station ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3524,0.041666666666666664,'station','dep_Train dep_ dep_shopping ','dep_Train_to dep__shopping ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3527,0.17222222222222222,'location','dep_good dep_location dep_ dep_breakfast dep_ ','dep_good_location dep_location_ dep__breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3529,0.43333333333333335,'location','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3536,-0.0,'location','dep_Great dep_location dep_ dep_hotel dep_ ','dep_Great_location dep_location_ dep__hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3543,-0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3544,-0.0,'bars','dep_coffee dep_restaurants ','dep_coffee_restaurants ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3545,-0.17333333333333334,'restaurants','dep_lovely dep_bars dep_around ','dep_lovely_of dep_bars_around ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3556,-0.21666666666666667,'location','dep_good dep_location dep_ ','dep_good_location dep_location_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3558,-0.16,'Hotel','dep_friendly dep_Hotel dep_close dep_ ','dep_friendly_Hotel dep_Hotel_in dep_close_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3559,-0.43333333333333335,'location','dep_good ','dep_good_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3563,0.43333333333333335,'location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3566,-0.0,'location','dep_location dep_close dep_ ','dep_location_close dep_close_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3567,-0.0,'station','dep_train ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3571,0.26666666666666666,'located','dep_Centrally dep_clean ','dep_Centrally_clean dep_clean_for ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3576,0.0,'station','dep_Termini dep_ dep_made ','dep_Termini_to dep__made ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3577,0.0,'transfer','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3584,0.16666666666666666,'located','dep_well dep_hotel ','dep_well_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3595,0.17333333333333334,'location','dep_Comfortable dep_good dep_location dep_close dep_ ','dep_Comfortable_good dep_good_location dep_location_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3596,0.0,'amenities','dep_links ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3600,0.0,'location','dep_Excellent dep_walked dep_ ','dep_Excellent_walked dep_walked_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3606,0.2888888888888889,'location','dep_perfect ','dep_perfect_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+3610,-0.2333333333333333,'location','dep_liked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3611,-0.0,'Termini','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3614,0.0,'Location','dep_central ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3615,0.0,'restaurants','dep_around ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3617,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3620,-0.0,'city','dep_Amazing dep_city dep_ ','dep_Amazing_city dep_city_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3621,-0.0,'location','dep_Great dep_location dep_ ','dep_Great_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3624,0.0,'metro','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3633,0.0,'station','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3636,0.0,'location','dep_Great dep_location dep_ dep_close dep_ ','dep_Great_location dep_location_ dep__close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3637,0.0,'station','dep_Termini ','dep_Termini_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3642,0.8666666666666667,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3643,0.0,'attractions','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3651,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3654,-0.3333333333333333,'Location','dep_convenient ','dep_convenient_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3655,-0.0,'attractions','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3660,-0.0,'station','dep_train ','dep_train_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3661,-0.43333333333333335,'location','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3662,-0.0,'underground','dep_station ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3663,-0.0,'station','dep_train dep_underground ','dep_train_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3675,0.12380952380952381,'location','dep_hotel dep_ dep_good dep_location dep_staff dep_ ','dep_hotel_ dep__good dep_good_location dep_location_and dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3679,0.2888888888888889,'location','dep_excellent ','dep_excellent_of ',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3685,-0.26666666666666666,'location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3691,-0.5555555555555556,'location','dep_friendly dep_ dep_good ','dep_friendly_ dep__good ',0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,positive
+3692,-0.2888888888888889,'restaurants','dep_excellent ','dep_excellent_had ',0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,positive
+3703,0.0,'station','dep_central dep_tranports ','dep_central_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3707,-0.0,'location','dep_Great dep_round ','dep_Great_round ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3708,-0.0,'station','dep_central dep_train ','dep_central_train dep_train_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3710,-0.041666666666666664,'places','dep_eat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3724,-0.14444444444444446,'location','dep_good dep_location dep_ ','dep_good_location dep_location_of ',0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+3725,-0.0,'station','dep_train dep_near ','dep_train_near ',0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+3735,-0.43333333333333335,'location','dep_love ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3739,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3750,-0.1111111111111111,'Location','dep_feature ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3751,-0.0,'Station','dep_Termini dep_sites ','dep_Termini_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3766,-0.0,'distance','dep_walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3768,-0.0,'station','dep_nearby dep_railroad dep_Termini dep_located dep_ dep_detected ','dep_nearby_railroad dep_railroad_Termini dep_Termini_located dep_located_ dep__detected ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3769,-0.0,'detected','dep_easily dep_station ','dep_easily_station ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3777,0.7999999999999999,'Location','dep_benefit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3780,0.13333333333333333,'Rome','dep_Loved dep_Rome dep_convenient dep_ ','dep_Loved_Rome dep_Rome_and dep_convenient_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3793,-0.0,'station','dep_train ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3795,-0.0,'station','dep_train dep_met ','dep_train_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3797,-0.17777777777777778,'area','dep_great dep_raises dep_near ','dep_great_raises dep_raises_near ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3799,0.0,'Location','dep_Location dep_ ','dep_Location_which ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3803,0.0,'location','dep_Great dep_room ','dep_Great_room ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3812,-0.0,'location','dep_Good dep_location dep_ dep_hop dep_ ','dep_Good_location dep_location_ dep__hop dep_hop_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3813,-0.10666666666666667,'city','dep_must dep_ dep_great dep_hotel ','dep_must_ dep__great dep_great_a ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3814,-0.8666666666666667,'Rome','dep_lovely ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3815,-0.8666666666666667,'location','dep_good ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3816,-0.8666666666666667,'restaurants','dep_lovely ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3821,-0.0,'station','dep_price ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3823,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3824,0.0,'Station','dep_Main ','dep_Main_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3825,-0.2888888888888889,'position','dep_good ','dep_good_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3826,-0.13333333333333333,'access','dep_easy ','dep_easy_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3838,0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3839,0.0,'distance','dep_Walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3843,-0.05714285714285714,'transport','dep_stay dep_near dep_adequate dep_also ','dep_stay_near dep_near_to dep_adequate_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3844,-0.08333333333333333,'sights','dep_major ','dep_major_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3859,0.0,'Location','dep_mins ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3862,-0.0,'accessible','dep_easily dep_area ','dep_easily_area ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3863,-0.0,'place','dep_specific dep_go ','dep_specific_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3871,-0.5333333333333333,'Location','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3881,0.2888888888888889,'location','dep_good ','dep_good_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+3883,0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+3891,0.26666666666666666,'location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3909,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3914,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3915,0.0,'station','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3916,0.2888888888888889,'distance','dep_walking dep_good ','dep_walking_good dep_good_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3924,-0.0,'location','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3926,-0.2888888888888889,'location','dep_excellent ','dep_excellent_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3927,-0.06666666666666667,'area','dep_dodgy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3928,-0.06666666666666667,'area','dep_dodgy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3930,-0.027777777777777776,'station','dep_main ','dep_main_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3932,-0.06666666666666667,'accessible','dep_easily dep_staying dep_easy ','dep_easily_staying dep_staying_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3933,-0.19999999999999998,'find','dep_easy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3940,-0.0,'Termini','dep_near ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3941,-0.0,'Termini','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3945,0.0,'station','dep_train dep_restaurants ','dep_train_restaurants ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3946,0.0,'restaurants','dep_station ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3956,-0.0,'terminal','dep_T ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3993,-0.17777777777777778,'road','dep_nice dep_outside ','dep_nice_outside ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3996,0.0,'airport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4000,0.0,'airport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4013,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4042,-0.0,'Center','dep_Mumbai dep_Exhibition dep_Airport ','dep_Mumbai_Exhibition dep_Exhibition_Airport ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4043,-0.0,'Airport','dep_Center ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4044,-0.0,'Airport','dep_Center ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4045,-0.0,'Center','dep_Mumbai dep_Exhaust dep_Airport ','dep_Mumbai_Exhaust dep_Exhaust_to ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4046,-0.0,'hotel','dep_s dep_hotel dep_close dep_came dep_ ','dep_s_not dep_hotel_close dep_close_but dep_came_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+4052,0.0,'airport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4055,0.0,'airport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4057,0.3333333333333333,'location','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4058,0.0,'travel','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4075,0.0,'airport','dep_international ','dep_international_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4079,0.0,'terminal','dep_ dep_international dep_ dep_Sahar ','dep__international dep_international_ dep__Sahar ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4119,0.8666666666666667,'Location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4126,-0.13333333333333333,'area','dep_decent dep_walking dep_area dep_ ','dep_decent_walking dep_walking_area dep_area_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4128,0.0,'situated','dep_hotel dep_situated dep_close dep_ ','dep_hotel_is dep_situated_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4140,0.2222222222222222,'location','dep_outstanding ','dep_outstanding_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4141,0.0,'transportation','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4152,0.0,'Airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4159,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4190,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4212,-0.5333333333333333,'Location','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4241,-0.0,'view','dep_Back dep_view dep_room dep_ ','dep_Back_view dep_view_room dep_room_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4261,-0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4274,-0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4281,-0.26666666666666666,'construction','dep_much dep_impressive ','dep_much_impressive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4290,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4296,0.0,'location','dep_Good dep_staffs ','dep_Good_staffs ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4313,-0.2888888888888889,'Location','dep_Location dep_good dep_ ','dep_Location_good dep_good_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4323,-0.0,'around','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4324,-0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4330,-0.3333333333333333,'location','dep_convenience ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4331,-0.0,'pizza','dep_domino dep_pizza dep_near dep_ ','dep_domino_pizza dep_pizza_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4339,-0.4666666666666666,'views','dep_terrible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4340,0.016666666666666666,'site','dep_abandoned dep_construction dep_saw dep_ dep_well dep_dwellings ','dep_abandoned_construction dep_construction_saw dep_saw_with dep__well dep_well_dwellings ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4341,0.016666666666666666,'site','dep_abandoned dep_construction dep_saw dep_ dep_well dep_dwellings ','dep_abandoned_construction dep_construction_saw dep_saw_with dep__well dep_well_dwellings ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4342,0.016666666666666666,'site','dep_abandoned dep_construction dep_saw dep_ dep_well dep_dwellings ','dep_abandoned_construction dep_construction_saw dep_saw_with dep__well dep_well_dwellings ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4343,0.0,'slum','dep_dwellings ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4357,0.0,'location','dep_spread ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4374,0.0,'location','dep_Good dep_location dep_ dep_ ','dep_Good_location dep_location_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4385,-0.0,'road','dep_approach dep_road dep_ ','dep_approach_road dep_road_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4386,-0.0,'stroll','dep_outside ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4432,0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4437,0.0,'location','dep_Great dep_location dep_services ','dep_Great_location dep_location_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4444,-0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4450,-0.17777777777777778,'area','dep_nice dep_around ','dep_nice_around ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4466,-0.0,'location','dep_Nice dep_location dep_near dep_far dep_ ','dep_Nice_location dep_location_near dep_near_far dep_far_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4467,-0.0,'Airport','dep_near ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4468,-0.0,'centre','dep_exhibition ','dep_exhibition_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4470,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4472,0.0,'city','dep_busy ','dep_busy_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4476,-0.0,'location','dep_Hotel ','dep_Hotel_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4494,0.16,'location','dep_hotel dep_Liked dep_comfort ','dep_hotel_Liked dep_Liked_and ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4518,-0.0,'go','dep_got ','dep_got_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4524,0.0,'access','dep_airport ','dep_airport_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4536,-0.0,'location','dep_Good dep_location dep_ ','dep_Good_location dep_location_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4570,0.16666666666666666,'Traffic','dep_issue ','dep_issue_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4572,-0.1111111111111111,'placed','dep_well dep_hotel ','dep_well_hotel dep_hotel_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4580,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4592,-0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4593,-0.0,'access','dep_Easy dep_access dep_ ','dep_Easy_access dep_access_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4597,-0.2222222222222222,'traffic','dep_abysmal ','dep_abysmal_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4602,-0.8666666666666667,'Location','dep_good ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4603,-0.8666666666666667,'Restaurant','dep_good ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4617,0.0,'shopping','dep_mall ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4626,-0.26666666666666666,'location','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4627,-0.2222222222222222,'airport','dep_convenient ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4636,0.0,'airport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4657,-0.0,'airport','dep_near ','dep_near_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4660,-0.17777777777777778,'location','dep_Great dep_great dep_near ','dep_Great_great dep_great_near ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4661,-0.0,'airport','dep_Clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4679,0.0,'location','dep_Efficient dep_location dep_ ','dep_Efficient_location dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4714,-0.0,'View','dep_construction ','dep_construction_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4716,0.0,'Location','dep_Great dep_Location dep_ dep_interiors dep_ambience dep_!! ','dep_Great_Location dep_Location_ dep__interiors dep_interiors_and dep_ambience_!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4725,-0.0,'location','dep_Excellent dep_staff ','dep_Excellent_staff ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4740,0.8666666666666667,'Location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

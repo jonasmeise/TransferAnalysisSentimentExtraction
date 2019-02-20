@@ -1,0 +1,511 @@
+@relation Ausstattung
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+9,0.0,'Gym','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+17,-0.0,'ceilings','dep_low dep_ ','dep_low_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+20,-0.0,'bar','dep_closed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+21,-0.0,'restaurant','dep_closed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+22,-0.0,'parking','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+24,0.07142857142857142,'hotel','dep_Old dep_hotel dep_smell dep_ dep_sockets dep_ ','dep_Old_hotel dep_hotel_and dep_smell_ dep__sockets dep_sockets_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+31,0.0,'hotel','dep_outdated ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+32,0.0,'Carpet','dep_old ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+34,0.0,'updating','dep_need dep_aesthetically ','dep_need_aesthetically ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+54,0.0,'Pool','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+61,0.0,'Pool','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+64,0.0,'renovate','dep_Time ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+68,0.15555555555555556,'building','dep_Beautiful dep_older dep_appreciate ','dep_Beautiful_older dep_older_appreciate ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+69,0.15555555555555556,'building','dep_Beautiful dep_older dep_appreciate ','dep_Beautiful_older dep_older_appreciate ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+70,-0.09523809523809523,'hotel','dep_old dep_hotel dep_ dep_fell ','dep_old_hotel dep_hotel_ dep__and ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,negative
+73,-0.0,'diner','dep_bar ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+74,-0.0,'bar','dep_without dep_diner ','dep_without_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+84,-0.0,'bar','dep_service dep_except ','dep_service_except ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+96,-0.1111111111111111,'makers','dep_ice dep_drain ','dep_ice_drain dep_drain_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+99,-0.16666666666666666,'pool','dep_swimming dep_cold ','dep_swimming_cold ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+119,0.0,'restaurant','dep_closed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+120,0.0,'Pool','dep_opened ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+127,-0.43333333333333335,'entrance','dep_front dep_beautiful ','dep_front_beautiful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+133,0.2888888888888889,'restaurant','dep_good ','dep_good_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+140,0.0,'updated','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+141,0.0,'reformation','dep_needs ','dep_needs_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+143,-0.041666666666666664,'machine','dep_working dep_ice ','dep_working_ice dep_ice_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+149,-0.16296296296296298,'hours','dep_pool dep_limited ','dep_pool_limited ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+150,-0.16296296296296298,'hours','dep_pool dep_limited ','dep_pool_limited ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+154,-0.16666666666666666,'elevators','dep_worked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+155,-0.16666666666666666,'elevators','dep_worked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+156,-0.05555555555555555,'building','dep_Old dep_building dep_ ','dep_Old_building dep_building_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+165,0.0,'lift','dep_change dep_need ','dep_change_need ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+172,-0.0,'hotel','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+173,-0.0,'hotel','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+177,0.2916666666666667,'hotel','dep_nice dep_recommend dep_ ','dep_nice_recommend dep_recommend_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+181,-0.09333333333333332,'signage','dep_bad dep_signage dep_ ','dep_bad_signage dep_signage_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+183,0.0,'HOTEL','dep_OLD dep_HOTEL dep_ ','dep_OLD_HOTEL dep_HOTEL_WITH ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+184,0.0,'EQUIPMENTS','dep_OLD dep_ dep_BATHROOM ','dep_OLD_WITH dep__BATHROOM ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+186,0.0,'CARPETS','dep_OLD dep_BATHROOM ','dep_OLD_BATHROOM ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+187,0.0,'REMODELING','dep_NEEDS dep_URGENT dep_REMODELING ','dep_NEEDS_URGENT dep_URGENT_REMODELING ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+191,-0.14444444444444446,'hotel','dep_Fairly dep_good dep_hotel dep_ dep_location dep_ ','dep_Fairly_good dep_good_hotel dep_hotel_ dep__location dep_location_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+201,0.19047619047619047,'hotel','dep_nice dep_clean dep_hotel dep_ ','dep_nice_clean dep_clean_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+206,-0.0,'hotel','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+245,-0.0761904761904762,'look','dep_Good dep_location dep_nice dep_look dep_old dep_ ','dep_Good_location dep_location_nice dep_nice_look dep_look_but dep_old_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+246,-0.0,'interior','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+247,-0.0,'renovation','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+250,-0.0,'style','dep_everything dep_old dep_furniture dep_bathroom dep_style dep_ ','dep_everything_is dep_old_furniture dep_furniture_bathroom dep_bathroom_style dep_style_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+275,0.041666666666666664,'renovation','dep_major dep_needs dep_dated ','dep_major_needs dep_needs_dated ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+277,-0.0,'pool','dep_open ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+278,-0.0,'pool','dep_open ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+282,-0.0,'garage','dep_parking dep_location ','dep_parking_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+291,-0.0,'garage','dep_parking dep_location ','dep_parking_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+301,-0.0,'hotel','dep_dated ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+307,-0.0,'hotel','dep_way ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+309,-0.0,'age','dep_showing ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+310,-0.0,'upgraded','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+331,-0.0,'pool','dep_lot dep_open ','dep_lot_open ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+346,0.0,'hotel','dep_outdated ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+352,-0.05185185185185185,'hotel','dep_fine dep_hotel dep_seems dep_ ','dep_fine_hotel dep_hotel_but dep_seems_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+353,-0.0,'refurbishment','dep_seems ','dep_seems_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+399,-0.10833333333333334,'hotel','dep_good dep_hotel dep_ dep_location dep_equiped dep_ ','dep_good_hotel dep_hotel_ dep__location dep_location_but dep_equiped_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+404,0.0,'hotel','dep_Older dep_hotel dep_ ','dep_Older_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+410,0.0,'hotel','dep_Older dep_ dep_info dep_hours ','dep_Older_Had dep__info dep_info_hours ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+414,0.0,'ceilings','dep_low dep_driving ','dep_low_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+415,0.0,'driving','dep_narrow dep_ceilings ','dep_narrow_ceilings ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+422,0.0,'hotel','dep_outdated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+423,-0.0,'hotel','dep_older ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+447,-0.0,'furniture','dep_design ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+448,-0.0,'design','dep_furniture ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+455,0.03333333333333333,'hotel','dep_Staff dep_big ','dep_Staff_big ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+468,-0.0,'hotel','dep_really dep_stay dep_seen ','dep_really_was dep_stay_seen ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+469,-0.0,'hotel','dep_really dep_stay dep_seen ','dep_really_was dep_stay_seen ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+476,-0.0,'hotel','dep_old ','',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,negative
+482,-0.0,'hallways','dep_dated ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,negative
+483,-0.0,'hallways','dep_dated ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,negative
+490,-0.19999999999999998,'Parking','dep_awkward ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+494,-0.0,'finishes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+495,-0.0,'finishes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+496,-0.0,'finishes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+503,0.0,'ice','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+504,0.0,'bucket','dep_Ice dep_bucket dep_provided dep_ ','dep_Ice_bucket dep_bucket_provided dep_provided_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+519,-0.0,'hotel','dep_bit ','dep_bit_itself ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+520,-0.0,'makeover','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+527,-0.0,'Renovation','dep_Needs dep_Renovation dep_ ','dep_Needs_Renovation dep_Renovation_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+536,-0.0,'carpet','dep_old ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+542,-0.0,'hotel','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+544,0.16666666666666666,'ceiling','dep_low dep_expensive ','dep_low_expensive ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+572,0.0,'hotel','dep_old ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+584,-0.0,'money','dep_invest ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+596,0.0,'trunk','dep_open ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+605,0.0,'property','dep_furniture ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+606,0.0,'stuff','dep_furniture ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+617,0.0,'hotel','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+618,0.0,'everything','dep_old ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+621,-0.041666666666666664,'facilities','dep_food dep_facilities dep_!! ','dep_food_facilities dep_facilities_!! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+634,0.0,'runned','dep_Little dep_runned ','dep_Little_runned dep_runned_down ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+644,-0.0,'hotel','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+651,0.2333333333333333,'floors','dep_worse ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+664,-0.08,'lot','dep_Parking dep_lot dep_big dep_enough ','dep_Parking_lot dep_lot_not dep_big_enough ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+666,-0.0,'pool','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+670,-0.0,'pool','dep_swimming dep_open ','dep_swimming_open dep_open_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+682,-0.0,'Hotel','dep_bit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+694,-0.0,'Pool','dep_open ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,negative
+704,-0.0,'Pool','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+705,-0.0,'opening','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+711,0.0,'hotel','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+712,0.0,'hotel','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+713,0.1111111111111111,'renovation','dep_Needs dep_renovation dep_ ','dep_Needs_renovation dep_renovation_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+714,-0.19999999999999998,'Facilities','dep_poor ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+725,-0.0,'hotel','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+729,-0.0,'doors','dep_lift ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+741,0.0,'fixtures','dep_furniture ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+747,-0.08333333333333333,'hotel','dep_enough dep_Nice dep_service ','dep_enough_Nice dep_Nice_but ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+763,0.0,'renewal','dep_total dep_need ','dep_total_need ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+777,0.0,'carpet','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+781,-0.26666666666666666,'lobby','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+792,0.0,'hotel','dep_old dep_hotel dep_ dep_reflect dep_ ','dep_old_hotel dep_hotel_ dep__and dep_reflect_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+801,-0.0,'updates','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+819,-0.0,'Hotel','dep_getting ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+822,-0.03333333333333333,'vehicle','dep_fit ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+823,-0.0,'parking','dep_lot ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+848,0.24444444444444446,'looking','dep_old dep_worn ','dep_old_worn ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+849,0.24444444444444446,'looking','dep_old dep_worn ','dep_old_worn ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+857,0.18333333333333335,'hotel','dep_whole dep_tired ','dep_whole_tired ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+858,0.18333333333333335,'hotel','dep_whole dep_tired ','dep_whole_tired ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+870,-0.0,'hotel','dep_utilization dep_Pleasant ','dep_utilization_Pleasant dep_Pleasant_in ',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,positive
+872,-0.0,'lounge','dep_ dep_bar dep_except ','dep__bar dep_bar_except ',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+873,0.05555555555555555,'bar','dep_lounge ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+874,0.6,'hours','dep_limited ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+883,-0.0,'equipment','dep_gym dep_minimal ','dep_gym_minimal ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+885,0.04666666666666666,'place','dep_bad dep_place dep_overall dep_ dep_expected dep_ ','dep_bad_place dep_place_overall dep_overall_ dep__expected dep_expected_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+891,-0.0,'pool','dep_hours ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+892,-0.0,'pool','dep_open ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+894,-0.16666666666666666,'flooring','dep_appropriate dep_itfs ','dep_appropriate_itfs ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+900,-0.03333333333333333,'hotel','dep_Nice dep_shopping dep_ dep_location dep_station ','dep_Nice_shopping dep_shopping_ dep__location dep_location_station ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+907,-0.09523809523809523,'hotel','dep_fancy dep_hi dep_class dep_hotel dep_letting dep_ ','dep_fancy_hi dep_hi_class dep_class_hotel dep_hotel_letting dep_letting_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+908,-0.0,'letting','dep_hotel dep_go ','dep_hotel_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+913,-0.0,'hotel','dep_Fancy dep_hotel dep_letting dep_ ','dep_Fancy_hotel dep_hotel_letting dep_letting_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+914,-0.0,'letting','dep_hotel dep_go ','dep_hotel_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+921,-0.2333333333333333,'hotel','dep_like ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+934,0.16666666666666666,'pool','dep_cold dep_breakfast ','dep_cold_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+957,-0.16666666666666666,'carpet','dep_old dep_work ','dep_old_work ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+963,-0.16,'carpet','dep_ dep_old dep_clean dep_furniture ','dep__old dep_old_clean dep_clean_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+967,0.0,'show','dep_Starting dep_age ','dep_Starting_age ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+968,0.0,'freshing','dep_little ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+972,-0.0,'sauna','dep_room ','',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+973,-0.0,'pool','dep_room ','',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+974,-0.1111111111111111,'gym','dep_simple dep_room dep_available ','dep_simple_room dep_room_available ',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+976,-0.0,'everything','dep_functional ','',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+978,0.0,'bar','dep_closed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+979,0.0,'pool','dep_closed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+986,-0.0,'facilities','dep_facilities dep_ dep_ ','dep_facilities_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1014,-0.07777777777777778,'door','dep_front dep_door dep_comfortable dep_ ','dep_front_door dep_door_of dep_comfortable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1026,0.3888888888888889,'looks','dep_hootel dep_amazing dep_pretty ','dep_hootel_amazing dep_amazing_pretty ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1028,-0.0,'Hotel','dep_Great dep_Hotel dep_!!!! ','dep_Great_Hotel dep_Hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1049,-0.0,'hotel','dep_Good dep_hotel dep_overall dep_ dep_needs dep_ ','dep_Good_hotel dep_hotel_overall dep_overall_ dep__needs dep_needs_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1083,-0.03333333333333333,'hotel','dep_huge ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1084,-0.0,'hotel','dep_Perfect dep_hotel dep_ ','dep_Perfect_hotel dep_hotel_for ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1100,-0.0,'hotel','dep_large dep_hotel dep_ dep_value dep_ ','dep_large_hotel dep_hotel_in dep__value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1105,-0.21666666666666667,'atmosphere','dep_good ','dep_good_had ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1155,0.0,'restaurant','dep_bar ','dep_bar_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1156,0.10666666666666667,'bar','dep_nice dep_bar dep_restaurant dep_ ','dep_nice_bar dep_bar_and dep_restaurant_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1161,-0.08333333333333333,'seating','dep_enough dep_ ','dep_enough_ dep__at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1165,0.0,'facility','dep_make ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1169,-0.037037037037037035,'gym','dep_outdated dep_small dep_rooms ','dep_outdated_small dep_small_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1170,-0.037037037037037035,'gym','dep_outdated dep_small dep_rooms ','dep_outdated_small dep_small_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1182,0.0,'looking','dep_old ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1197,0.19999999999999998,'hotel','dep_top ','dep_top_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1220,-0.008333333333333333,'hotel','dep_s dep_big dep_hotel dep_areas dep_ ','dep_s_a dep_big_hotel dep_hotel_and dep_areas_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1250,-0.041666666666666664,'facilities','dep_Good dep_facilities dep_ dep_close dep_food dep_breakfast dep_ ','dep_Good_facilities dep_facilities_ dep__close dep_close_food dep_food_and dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1251,-0.041666666666666664,'facilities','dep_Good dep_facilities dep_ dep_close dep_food dep_breakfast dep_ ','dep_Good_facilities dep_facilities_ dep__close dep_close_food dep_food_and dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1293,-0.0,'hotel','dep_Best dep_hotel dep_! ','dep_Best_hotel dep_hotel_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1301,-0.0,'hotel','dep_massive ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+1316,-0.09999999999999999,'Elevators','dep_Elevators dep_weak ','dep_Elevators_weak ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1334,0.0,'SPACES','dep_CAR dep_PARK dep_SMALL dep_SPACES ','dep_CAR_PARK dep_PARK_SMALL dep_SMALL_SPACES ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1348,0.0,'hotel','dep_Tallest dep_gave ','dep_Tallest_gave dep_gave_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1391,0.14444444444444446,'hotel','dep_excellent dep_hotel dep_ ','dep_excellent_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1396,0.43333333333333335,'hotel','dep_lovely dep_location ','dep_lovely_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1398,0.26666666666666666,'hotel','dep_great dep_location ','dep_great_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1412,0.0,'place','dep_Great dep_place dep_ ','dep_Great_place dep_place_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1413,0.0,'toilets','dep_stair dep_toilets dep_ ','dep_stair_toilets dep_toilets_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1421,-0.0,'Air','dep_conditioning ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1422,-0.0,'Air','dep_conditioning ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1443,0.3333333333333333,'elevators','dep_fast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1497,-0.0,'lift','dep_quick ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1525,-0.0,'Building','dep_humongous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1526,-0.0,'lobby','dep_section ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1540,-0.3333333333333333,'Lifts','dep_worked ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1541,-0.3333333333333333,'Lifts','dep_worked ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1590,-0.0,'bar','dep_Nice dep_bar dep_ ','dep_Nice_bar dep_bar_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1593,-0.0,'hotel','dep_Big dep_hotel dep_ dep_bit dep_ ','dep_Big_hotel dep_hotel_ dep__bit dep_bit_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1594,-0.0,'interior','dep_looks dep_equipment ','dep_looks_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1595,-0.16666666666666666,'equipment','dep_interior ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1599,-0.5333333333333333,'hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1613,0.19999999999999998,'hotel','dep_adequate ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1624,0.0,'lounge','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1638,-0.3333333333333333,'restaurant','dep_good dep_lobby ','dep_good_lobby ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1671,-0.21666666666666667,'facilities','dep_perfect dep_location ','dep_perfect_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1680,0.0,'shops','dep_many dep_restaurants dep_around ','dep_many_at dep_restaurants_around ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1681,0.0,'restaurants','dep_shops ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1687,0.03333333333333333,'hotel','dep_old dep_interior ','dep_old_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1688,0.16666666666666666,'furniture','dep_general ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1689,0.0,'interior','dep_hotel ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1721,-0.0,'feels','dep_dated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1723,-0.0,'model','dep_old dep_fashioned dep_business ','dep_old_fashioned dep_fashioned_business dep_business_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1729,-0.20952380952380953,'kept','dep_Everywhere dep_seemed dep_wonderfully dep_kept dep_clean dep_ ','dep_Everywhere_seemed dep_seemed_wonderfully dep_wonderfully_kept dep_kept_and dep_clean_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1750,-0.0,'lifts','dep_quick ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1766,-0.0,'hotel','dep_run ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1768,-0.06666666666666667,'laid','dep_well dep_Rooms dep_ dep_service ','dep_well_Rooms dep_Rooms_out dep__service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1786,-0.0,'hotel','dep_doesnft ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1810,-0.09333333333333332,'seating','dep_surrounding dep_leather dep_liked ','dep_surrounding_leather dep_leather_liked dep_liked_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1820,0.0,'hotel','dep_large dep_busy ','dep_large_busy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1837,-0.2888888888888889,'restaurant','dep_good ','dep_good_on ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1855,0.0,'facility','dep_staff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1872,0.03333333333333333,'hotel','dep_big ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1892,-0.0,'elevator','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1914,0.05555555555555555,'gym','dep_small ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,negative
+1915,-0.0,'means','dep_buy ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,negative
+1916,-0.0,'Hotel','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1923,-0.0,'hotel','dep_Good dep_hotel dep_get dep_ ','dep_Good_hotel dep_hotel_get dep_get_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1934,-0.17333333333333334,'place','dep_good dep_place dep_stay dep_ ','dep_good_place dep_place_stay dep_stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1939,-0.0,'facilities','dep_Hotel dep_old ','dep_Hotel_old ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1944,-0.0,'facilities','dep_hotel ','dep_hotel_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1954,-0.0,'Lobby','dep_little ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1955,-0.0,'Lobby','dep_little ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1965,0.0,'bar','dep_location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1968,0.0,'bar','dep_Fabulous dep_bar dep_ ','dep_Fabulous_bar dep_bar_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2001,-0.2888888888888889,'hotel','dep_perfect ','dep_perfect_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2010,0.16666666666666666,'place','dep_modern dep_Location ','dep_modern_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2036,-0.2333333333333333,'hall','dep_Hotel dep_dedicated ','dep_Hotel_dedicated ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2038,-0.0,'restaurant','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2041,0.0,'hotel','dep_Great dep_hotel dep_let dep_ ','dep_Great_hotel dep_hotel_let dep_let_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2053,-0.05925925925925926,'place','dep_restaurant dep_nice dep_place dep_locatd dep_ ','dep_restaurant_is dep_nice_place dep_place_for dep_locatd_ ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2054,-0.0,'bar','dep_panorama dep_provides ','dep_panorama_provides ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2056,-0.13333333333333333,'hotel','dep_efficient dep_ dep_budget ','dep_efficient_ dep__budget dep_budget_for ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2059,-0.0,'space','dep_park ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2066,-0.0,'Equipement','dep_old ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2067,-0.0,'Equipement','dep_old ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2073,-0.0,'facilities','dep_view ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2083,-0.2888888888888889,'Hotel','dep_Overall dep_good dep_Hotel ','dep_Overall_good dep_good_Hotel ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2117,0.34444444444444444,'restaurant','dep_extensive dep_good ','dep_extensive_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2125,-0.0,'facilities','dep_location ','dep_location_of ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2130,0.26666666666666666,'bath','dep_Public dep_great ','dep_Public_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2156,0.4,'facility','dep_hot dep_spring dep_good ','dep_hot_spring dep_spring_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2158,-0.3,'onsen','dep_fantastic dep_room ','dep_fantastic_room ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2161,-0.2833333333333334,'onsen','dep_best dep_fantastic dep_located ','dep_best_is dep_fantastic_located ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2162,-0.2833333333333334,'onsen','dep_best dep_fantastic dep_located ','dep_best_is dep_fantastic_located ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2165,-0.5333333333333333,'Hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2168,-0.5333333333333333,'Hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2185,-0.2333333333333333,'hotspring','dep_like ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2198,0.26666666666666666,'bath','dep_hot dep_liked ','dep_hot_liked ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2223,-0.10277777777777779,'bath','dep_nice dep_public dep_ ','dep_nice_public dep_public_had dep__was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2229,0.2791666666666667,'bath','dep_excellent dep_public dep_bath dep_per ','dep_excellent_public dep_public_bath dep_bath_per ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2236,-0.0,'room','dep_smoking dep_room dep_ ','dep_smoking_room dep_room_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2251,-0.1388888888888889,'bath','dep_public dep_enjoyed ','dep_public_enjoyed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2261,-0.06666666666666667,'hotel','dep_great dep_hotel dep_ dep_packed dep_ ','dep_great_hotel dep_hotel_ dep__packed dep_packed_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2263,0.0,'facilities','dep_Good dep_facilities dep_ dep_room dep_ ','dep_Good_facilities dep_facilities_ dep__room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2266,-0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2284,0.11666666666666665,'property','dep_like dep_room ','dep_like_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2296,0.3333333333333333,'Lift','dep_slow ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2307,-0.0,'hotel','dep_Nice dep_hotel dep_ dep_close dep_ ','dep_Nice_hotel dep_hotel_in dep__close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2310,-0.3333333333333333,'spa','dep_Complimentary dep_bonus ','dep_Complimentary_bonus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2313,-0.12380952380952381,'Span','dep_thing dep_Span dep_ dep_good dep_ ','dep_thing_was dep_Span_ dep__good dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2329,-0.0,'Hotel','dep_room ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2330,-0.0,'Hotel','dep_room ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2341,-0.16666666666666666,'style','dep_modern ','dep_modern_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2356,-0.0,'elevators','dep_station dep_Slow dep_Unable ','dep_station_Slow dep_Slow_Unable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2357,-0.0,'use','dep_Unable dep_onsen ','dep_Unable_onsen dep_onsen_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2359,-0.21666666666666667,'hotel','dep_good dep_hotel dep_ ','dep_good_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2391,-0.0,'facility','dep_Great dep_facility dep_ dep_ ','dep_Great_facility dep_facility_ dep__for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2400,0.26666666666666666,'onzen','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2401,0.2888888888888889,'machine','dep_ice dep_love ','dep_ice_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2407,-0.39999999999999997,'entrance','dep_Lovely dep_helpful ','dep_Lovely_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2411,-0.0,'hallway','dep_narrow dep_bedroom ','dep_narrow_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+2413,0.18333333333333335,'spa','dep_free dep_included ','dep_free_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2417,-0.0,'Reception','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2418,-0.2888888888888889,'spa','dep_good ','dep_good_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2444,-0.0,'Spa','dep_Great dep_Unbeatable ','dep_Great_Unbeatable ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2445,-0.0,'onsens','dep_open ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2455,0.3111111111111111,'bath','dep_osen dep_wonderful ','dep_osen_wonderful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2458,-0.10666666666666667,'hotel','dep_nice dep_hotel dep_ ','dep_nice_hotel dep_hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2462,-0.0,'facilities','dep_necessary dep_leaving dep_provided ','dep_necessary_leaving dep_leaving_provided ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2466,0.25,'hallways','dep_cold ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2467,0.0,'Spa','dep_relaxing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2468,0.0,'Spa','dep_relaxing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2470,-0.0,'place','dep_Nice dep_place dep_sleep dep_ dep_ ','dep_Nice_place dep_place_sleep dep_sleep_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2471,-0.041666666666666664,'Spa','dep_Nice dep_Spa dep_bath dep_ ','dep_Nice_Spa dep_Spa_bath dep_bath_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2473,-0.125,'spa','dep_Great dep_hot dep_spa dep_ ','dep_Great_hot dep_hot_spa dep_spa_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2480,0.0,'onsen','dep_place ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2495,-0.0,'onsen','dep_Great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2500,-0.08888888888888889,'onsen','dep_Clean dep_ dep_great dep_indoor dep_onsen dep_ ','dep_Clean_ dep__great dep_great_indoor dep_indoor_onsen dep_onsen_ ',0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2516,-0.2888888888888889,'spa','dep_grand dep_enjoyed ','dep_grand_enjoyed ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2517,-0.2888888888888889,'spa','dep_grand dep_enjoyed ','dep_grand_enjoyed ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2520,-0.0,'hotel','dep_Convenient dep_hotel dep_ ','dep_Convenient_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2523,-0.0,'Onsen','dep_Nice dep_location ','dep_Nice_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2542,-0.2888888888888889,'hotel','dep_overall dep_good ','dep_overall_good ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2545,-0.10666666666666667,'hotel','dep_nice dep_hotel dep_close dep_ ','dep_nice_hotel dep_hotel_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2547,-0.0,'facilities','dep_much dep_facilities dep_inside dep_ ','dep_much_facilities dep_facilities_inside dep_inside_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2551,-0.2333333333333333,'onsen','dep_fine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2552,-0.26666666666666666,'hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2553,-0.26666666666666666,'hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2557,-0.0,'facilities','dep_almost dep_ ','dep_almost_no dep__for ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2561,0.06666666666666667,'equipped','dep_staff dep_ dep_room dep_well dep_equipped ','dep_staff_ dep__room dep_room_well dep_well_equipped ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2568,0.0,'hotel','dep_Great dep_hotel dep_ ','dep_Great_hotel dep_hotel_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2585,-0.0,'hotel','dep_Pleasant dep_hotel dep_stay dep_ ','dep_Pleasant_hotel dep_hotel_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2592,0.125,'bath','dep_Great dep_hot dep_bath dep_ ','dep_Great_hot dep_hot_bath dep_bath_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2597,0.047619047619047616,'onsen','dep_thing dep_modern dep_onsen dep_ dep_ ','dep_thing_is dep_modern_onsen dep_onsen_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2601,0.0,'bar','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2606,0.15416666666666667,'bath','dep_public dep_nice ','dep_public_nice dep_nice_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2638,0.43333333333333335,'facilities','dep_good ','dep_good_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2670,-0.5333333333333333,'spa','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2673,-0.0,'facility','dep_storage ','dep_storage_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2675,0.0,'spa','dep_open ','dep_open_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2680,-0.0,'baths','dep_onsite dep_laundry ','dep_onsite_laundry ',0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2681,-0.16,'laundry','dep_coin dep_enjoy dep_baths ','dep_coin_enjoy dep_enjoy_and ',0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2683,-0.3166666666666667,'place','dep_good dep_easy dep_stay ','dep_good_easy dep_easy_stay ',0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2704,-0.2888888888888889,'entrance','dep_ dep_beautiful ','dep__beautiful dep_beautiful_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2710,-0.43333333333333335,'hotel','dep_beautiful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2720,-0.26666666666666666,'bath','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2723,-0.16,'hotel','dep_ dep_star dep_like ','dep__star dep_star_like dep_like_but ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2738,0.0,'situated','dep_Well dep_situated dep_hotel dep_ ','dep_Well_situated dep_situated_hotel dep_hotel_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2755,-0.07777777777777778,'site','dep_bath dep_big ','dep_bath_big ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2774,-0.25,'Hotel','dep_quiet ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2775,-0.25,'Hotel','dep_quiet ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2779,-0.16527777777777777,'bath','dep_public dep_worth ','dep_public_worth dep_worth_on ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2804,-0.19999999999999998,'hotel','dep_Great dep_stay dep_ dep_clean ','dep_Great_stay dep_stay_ dep__clean ',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2819,-0.5333333333333333,'spa','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2828,-0.0,'hotel','dep_Awesome dep_return dep_ ','dep_Awesome_return dep_return_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2832,-0.8666666666666667,'Onsen','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2841,0.1111111111111111,'hotel','dep_modern ','dep_modern_itself ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2842,0.2,'baths','dep_amazing ','dep_amazing_on ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2846,-0.25,'onsen','dep_free dep_amazing ','dep_free_amazing dep_amazing_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2854,0.17777777777777778,'hotel','dep_nice dep_big dep_comfortable dep_ dep_bed ','dep_nice_big dep_big_comfortable dep_comfortable_ dep__bed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2855,0.17777777777777778,'hotel','dep_nice dep_big dep_comfortable dep_ dep_bed ','dep_nice_big dep_big_comfortable dep_comfortable_ dep__bed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2857,0.0,'facilities','dep_inside ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2862,0.0,'hotel','dep_Nice dep_hotel ','dep_Nice_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2865,0.17777777777777778,'lounge','dep_uncomfortable dep_relax ','dep_uncomfortable_relax ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2874,0.9333333333333332,'Spa','dep_wonderful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2880,-0.1111111111111111,'springs','dep_hot dep_used ','dep_hot_used ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2893,0.26666666666666666,'hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2896,0.08095238095238096,'onsen','dep_also dep_artifical dep_visit dep_located dep_ dep_free ','dep_also_an dep_artifical_visit dep_visit_located dep_located_ dep__free ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2898,0.12000000000000001,'Onsen','dep_location dep_ dep_fabulous dep_Onsen dep_ ','dep_location_ dep__fabulous dep_fabulous_Onsen dep_Onsen_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2899,0.3,'onsen','dep_Tbe dep_fabulous ','dep_Tbe_fabulous ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+2904,-0.23809523809523808,'hotel','dep_Lovely dep_ dep_clean dep_hotel dep_perfect dep_ ','dep_Lovely_ dep__clean dep_clean_hotel dep_hotel_in dep_perfect_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2906,-0.23809523809523808,'hotel','dep_Lovely dep_ dep_clean dep_hotel dep_perfect dep_ ','dep_Lovely_ dep__clean dep_clean_hotel dep_hotel_in dep_perfect_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2907,-0.23809523809523808,'hotel','dep_Lovely dep_ dep_clean dep_hotel dep_perfect dep_ ','dep_Lovely_ dep__clean dep_clean_hotel dep_hotel_in dep_perfect_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2913,-0.16666666666666666,'onsen','dep_breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2941,0.43333333333333335,'services','dep_great dep_included ','dep_great_included ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2951,-0.37777777777777777,'spring','dep_top dep_hot dep_touch ','dep_top_hot dep_hot_touch ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2954,-0.027777777777777776,'area','dep_rest dep_area dep_except dep_ ','dep_rest_area dep_area_except dep_except_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2991,0.0,'hotel','dep_Modern dep_hotel dep_ ','dep_Modern_hotel dep_hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2995,0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3028,0.0,'elevator','dep_way dep_lift ','dep_way_lift ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3039,0.0,'bath','dep_Public dep_relaxing ','dep_Public_relaxing dep_relaxing_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3076,-0.0,'lift','dep_tiny dep_one dep_ ','dep_tiny_for dep_one_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3079,0.022222222222222223,'iron','dep_flat dep_iron ','dep_flat_iron ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3118,-0.3333333333333333,'hotel','dep_good dep_caring dep_like ','dep_good_caring dep_caring_like ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3119,-0.3333333333333333,'hotel','dep_good dep_caring dep_like ','dep_good_caring dep_caring_like ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3141,-0.02222222222222222,'accommodation','dep_Adequate dep_accommodation dep_ ','dep_Adequate_accommodation dep_accommodation_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3154,-0.0,'Bar','dep_open ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3157,0.0,'facilities','dep_facilities dep_ ','dep_facilities_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3178,0.3,'machine','dep_broken ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3194,-0.13333333333333333,'hotel','dep_Pretty dep_nice dep_hotel dep_ ','dep_Pretty_nice dep_nice_hotel dep_hotel_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3223,0.43333333333333335,'facility','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3235,-0.0,'interior','dep_view ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3297,0.0,'Iron','dep_Iron ','dep_Iron_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3329,-0.0,'stairs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3345,0.0,'hotel','dep_Good dep_hotel dep_ ','dep_Good_hotel dep_hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3353,-0.0,'building','dep_needs ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3359,0.0,'facilities','dep_coffee dep_facilities dep_ dep_basic ','dep_coffee_facilities dep_facilities_ dep__basic ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3388,-0.020833333333333332,'building','dep_Good dep_location dep_Great dep_staff dep_Nice dep_room dep_building dep_ ','dep_Good_location dep_location_Great dep_Great_staff dep_staff_Nice dep_Nice_room dep_room_building dep_building_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3413,-0.041666666666666664,'area','dep_Spacious dep_breakfast dep_area dep_ ','dep_Spacious_breakfast dep_breakfast_area dep_area_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3442,0.0,'lift','dep_doors ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3443,0.26666666666666666,'courtyard','dep_great dep_doors ','dep_great_doors ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3458,0.0761904761904762,'place','dep_staff dep_overall dep_nice dep_place dep_stay dep_ ','dep_staff_overall dep_overall_a dep_nice_place dep_place_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3476,0.14074074074074072,'corner','dep_weird ','dep_weird_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3477,-0.0,'hotel','dep_old ','dep_old_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3489,0.0,'hotel','dep_Handy dep_hotel dep_ dep_close dep_ ','dep_Handy_hotel dep_hotel_ dep__close dep_close_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3537,-0.43333333333333335,'hotel','dep_good dep_location ','dep_good_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3586,0.0,'couch','dep_matress ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3589,0.0,'lift','dep_staff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3591,0.26666666666666666,'decoration','dep_nice dep_staff ','dep_nice_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3618,-0.0,'place','dep_Nice dep_place dep_staff dep_ ','dep_Nice_place dep_place_and dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3623,0.17777777777777778,'lift','dep_ dep_disappointing dep_holding ','dep__disappointing dep_disappointing_holding ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3641,0.43333333333333335,'Hotel','dep_good ','dep_good_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3674,0.0,'hotel','dep_Comfortable dep_location ','dep_Comfortable_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3683,0.05555555555555555,'surroundings','dep_people dep_breakfast ','dep_people_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3705,0.0,'renovate','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3706,-0.14444444444444446,'hotel','dep_Overall dep_good dep_hotel dep_ ','dep_Overall_a dep_good_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3714,-0.08333333333333333,'building','dep_modern dep_lift ','dep_modern_lift ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3715,0.018518518518518517,'lift','dep_Also dep_ dep_building dep_ dep_old dep_rickety dep_lift dep_ dep_ ','dep_Also_ dep__building dep_building_ dep__old dep_old_rickety dep_rickety_lift dep_lift_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3717,-0.0,'hotel','dep_Poor dep_hotel dep_ ','dep_Poor_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3758,-0.11666666666666665,'amenities','dep_Simple dep_amenities dep_like dep_ ','dep_Simple_amenities dep_amenities_like dep_like_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3764,-0.0,'charm','dep_detail ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3765,-0.30833333333333335,'detail','dep_nice dep_charm ','dep_nice_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3774,-0.0,'repairing','dep_needs dep_cosmetic ','dep_needs_cosmetic ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3781,0.3333333333333333,'hotel','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3782,0.0,'reception','dep_hotel dep_open ','dep_hotel_open ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3794,-0.6666666666666666,'Hotel','dep_convenient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3809,0.13333333333333333,'place','dep_great dep_place dep_saty dep_ ','dep_great_place dep_place_saty dep_saty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3841,-0.19999999999999998,'Hotel','dep_adequate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3889,0.0,'place','dep_beds ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3898,-0.023809523809523808,'hotel','dep_Nothing dep_real dep_old dep_downtown dep_hotel dep_ ','dep_Nothing_A dep_real_old dep_old_downtown dep_downtown_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3923,-0.14761904761904762,'choice','dep_Contilia dep_good dep_choice dep_ ','dep_Contilia_is dep_good_choice dep_choice_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3948,0.0,'place','dep_Great dep_place dep_stay dep_ ','dep_Great_place dep_place_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3981,0.26666666666666666,'facilities','dep_improve dep_training ','dep_improve_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3994,0.047619047619047616,'hotel','dep_Nice dep_comfy dep_hotel dep_near dep_ dep_value dep_ ','dep_Nice_comfy dep_comfy_hotel dep_hotel_near dep_near_ dep__value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3998,0.047619047619047616,'hotel','dep_Nice dep_comfy dep_hotel dep_near dep_ dep_value dep_ ','dep_Nice_comfy dep_comfy_hotel dep_hotel_near dep_near_ dep__value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4024,0.0,'place','dep_Lovely dep_stay ','dep_Lovely_stay ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4029,0.25833333333333336,'gym','dep_great dep_breakfast dep_dinner ','dep_great_and dep_breakfast_dinner ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4050,-0.0,'Pool','dep_open ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4051,0.0,'facility','dep_Newer dep_facility dep_near dep_ ','dep_Newer_facility dep_facility_near dep_near_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4061,0.0,'facilities','dep_Staff ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4115,0.0,'place','dep_Nice dep_place dep_ dep_staff dep_room dep_ ','dep_Nice_place dep_place_ dep__staff dep_staff_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4124,-0.0,'lounge','dep_executive ','dep_executive_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4132,0.0,'lobby','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4133,0.0,'lobby','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4142,0.26666666666666666,'hotel','dep_clean ','dep_clean_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4144,0.26666666666666666,'dining','dep_inroom dep_improved ','dep_inroom_improved ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4158,0.13333333333333333,'bar','dep_Staff dep_helpful dep_Nice dep_bar dep_ ','dep_Staff_was dep_helpful_Nice dep_Nice_bar dep_bar_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4180,-0.0,'hotel','dep_inside ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4181,-0.0,'sauna','dep_told dep_jacuzzi ','dep_told_or ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4183,-0.0,'hotel','dep_happens ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4201,-0.0,'property','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4216,0.0,'property','dep_Excellent dep_property ','dep_Excellent_property ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4225,-0.2888888888888889,'size','dep_good ','dep_good_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4235,0.06666666666666667,'place','dep_Convenient dep_place dep_expensive dep_ ','dep_Convenient_place dep_place_but dep_expensive_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4262,-0.0,'room','dep_Meeting ','dep_Meeting_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4275,-0.14444444444444446,'place','dep_Close dep_ dep_good dep_place dep_ ','dep_Close_ dep__good dep_good_place dep_place_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4276,-0.018518518518518517,'room','dep_Loved dep_pool dep_steam dep_room dep_ ','dep_Loved_pool dep_pool_the dep_steam_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4277,-0.0,'pool','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4280,-0.17777777777777778,'approach','dep_impressive ','dep_impressive_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4284,0.02222222222222222,'pool','dep_Excellent dep_pool dep_gym dep_ ','dep_Excellent_pool dep_pool_and dep_gym_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4285,0.32222222222222224,'gym','dep_nice dep_pool ','dep_nice_pool ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4289,0.10666666666666667,'hotel','dep_Upmarket dep_hotel dep_ dep_great dep_ ','dep_Upmarket_hotel dep_hotel_ dep__great dep_great_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4297,-0.0,'hotel','dep_Beautiful dep_hotel dep_ dep_staff dep_ ','dep_Beautiful_hotel dep_hotel_ dep__staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4304,-0.1111111111111111,'maintained','dep_well dep_caring dep_property ','dep_well_caring dep_caring_property ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4305,-0.0,'property','dep_new dep_maintained ','dep_new_maintained ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4314,-0.13333333333333333,'place','dep_overall dep_wholesome dep_place dep_ ','dep_overall_a dep_wholesome_place dep_place_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4316,-0.3333333333333333,'restaurant','dep_right ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4337,0.21666666666666667,'hotel','dep_good dep_hotel dep_ ','dep_good_hotel dep_hotel_are ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4354,0.0,'hotel','dep_Great dep_hotel dep_ ','dep_Great_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4417,0.0,'hotel','dep_Great dep_hotel dep_ dep_rooms dep_staff dep_ ','dep_Great_hotel dep_hotel_ dep__rooms dep_rooms_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4438,-0.21666666666666667,'hotel','dep_good dep_hotel dep_ ','dep_good_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4442,-0.0,'spa','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4443,-0.26666666666666666,'pool','dep_nice dep_area ','dep_nice_area ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4445,-0.03333333333333333,'bar','dep_Interesting dep_lobby dep_bar dep_ ','dep_Interesting_lobby dep_lobby_bar dep_bar_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4454,0.0,'hotel','dep_Nice dep_business dep_hotel dep_ ','dep_Nice_business dep_business_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4469,0.17333333333333334,'hotel','dep_good dep_hotel dep_ ','dep_good_hotel dep_hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4487,-0.0,'Bar','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4488,-0.08333333333333333,'seats','dep_enough dep_closed dep_due ','dep_enough_closed dep_closed_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4489,0.08333333333333333,'hotel','dep_Good dep_professional dep_hotel dep_ ','dep_Good_professional dep_professional_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4490,0.08333333333333333,'hotel','dep_Good dep_professional dep_hotel dep_ ','dep_Good_professional dep_professional_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4491,0.0,'lounge','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4498,-0.0,'hotel','dep_Beautiful dep_hotel dep_ dep_staff dep_price dep_ ','dep_Beautiful_hotel dep_hotel_ dep__staff dep_staff_price dep_price_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4526,0.0,'hotels','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+4532,0.0,'property','dep_Excellent dep_welcoming ','dep_Excellent_welcoming ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4544,-0.0,'hotel','dep_Great dep_check ','dep_Great_check dep_check_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4546,-0.26666666666666666,'restaurant','dep_great dep_rooms ','dep_great_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4547,-0.0,'hotel','dep_Great dep_hotel dep_ dep_rooms dep_restaurant dep_! ','dep_Great_hotel dep_hotel_ dep__rooms dep_rooms_restaurant dep_restaurant_! ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4549,-0.43333333333333335,'restaurant','dep_excellent dep_hotel ','dep_excellent_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4567,-0.43333333333333335,'ambiance','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4571,-0.0,'hotel','dep_Excellent dep_hotel dep_ dep_placed dep_ ','dep_Excellent_hotel dep_hotel_ dep__placed dep_placed_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4573,-0.0,'hotel','dep_Excellent dep_hotel dep_minutes dep_ ','dep_Excellent_hotel dep_hotel_minutes dep_minutes_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4590,0.0,'Facility','dep_need dep_cleanness ','dep_need_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4596,0.0,'bar','dep_facility ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4606,-0.027777777777777776,'building','dep_Courtyard dep_old dep_building dep_ ','dep_Courtyard_is dep_old_building dep_building_with ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4607,-0.0,'fittings','dep_old ','dep_old_with ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4610,0.0,'maintained','dep_Well dep_courteus dep_check ','dep_Well_courteus dep_courteus_check ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4618,0.0,'restaurants','dep_restaurants dep_ ','dep_restaurants_in ',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4621,0.17777777777777778,'ambience','dep_great ','dep_great_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4628,-0.26666666666666666,'pool','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4645,0.0,'restaurant','dep_one dep_restaurant ','dep_one_restaurant ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+4651,0.14285714285714285,'equipped','dep_room dep_well dep_equipped dep_decent dep_ ','dep_room_is dep_well_equipped dep_equipped_and dep_decent_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4652,0.3333333333333333,'pool','dep_decent ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4655,0.0,'hotel','dep_Nice dep_hotel dep_ ','dep_Nice_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4718,0.26666666666666666,'interiors','dep_nice dep_Location ','dep_nice_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4721,0.0,'fresheners','dep_Nice dep_air dep_fresheners dep_ ','dep_Nice_air dep_air_fresheners dep_fresheners_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4724,-0.0,'facilities','dep_staff ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4728,0.0,'spa','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4741,0.0,'Spa','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4750,0.0,'property','dep_Good dep_property dep_managed dep_ ','dep_Good_property dep_property_managed dep_managed_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

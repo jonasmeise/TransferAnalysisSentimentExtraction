@@ -1,0 +1,520 @@
+@relation service#general
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+1,0.0,'staff','dep_acted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+5,-0.19999999999999998,'they','dep_complained ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+16,0.041666666666666664,'cart attendant','dep_attendant dep_cart dep_asked ','dep_attendant_cart dep_cart_asked ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+17,0.0,'she','dep_came ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+24,-0.0,'Service','dep_devine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+30,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+36,0.17777777777777778,'service','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+40,0,'Service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+44,0.0,'service','dep_however dep_ dep_s dep_service dep_leaves dep_ ','dep_however_ dep__it dep_s_the dep_service_leaves dep_leaves_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+45,0.26666666666666666,'waiter','dep_intimidate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+46,-0.2888888888888889,'experience','dep_pleasant dep_seeking ','dep_pleasant_seeking ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+53,-0.0,'Service','dep_notch ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+65,0.0,'service','dep_impecable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+80,-0.0,'service','dep_varys ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+81,-0.08333333333333333,'kitchen','dep_slow dep_however dep_ ','dep_slow_however dep_however_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+105,-0.3333333333333333,'staff','dep_young ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+110,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+116,0.16666666666666666,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+117,-0.0,'wait','dep_short ','dep_short_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+119,0.26666666666666666,'service','dep_great dep_got ','dep_great_got ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+120,0.08333333333333333,'people','dep_people dep_work dep_ ','dep_people_work dep_work_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+131,0.3333333333333333,'Service','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+135,0.3,'service','dep_fantastic dep_pizza ','dep_fantastic_pizza ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+136,0.037037037037037035,'wait','dep_small ','dep_small_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+163,0.26666666666666666,'service','dep_nice dep_provides ','dep_nice_provides ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+167,0.0,'they','dep_overcharged ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+173,0.0,'maitre d','dep_d ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+174,0.0,'he','dep_said ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+175,0.06666666666666667,'he','dep_reached ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+181,-0.3333333333333333,'Service','dep_star ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+187,0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+194,-0.0,'waitress','dep_moved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+195,-0.0,'she','dep_dropped ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+196,-0.13333333333333333,'disappointment','dep_disappointment dep_ ','dep_disappointment_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+197,0.0,'service','dep_Rude dep_foodthere ','dep_Rude_foodthere ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+204,0.39999999999999997,'server','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+211,0.3333333333333333,'Service','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+213,0.03333333333333333,'service','dep_Great dep_service dep_ dep_food dep_ ','dep_Great_service dep_service_ dep__food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+231,-0.08888888888888889,'service','dep_huge dep_wan ','dep_huge_wan ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+243,0.0,'Service','dep_varies ','',1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+244,0.3333333333333333,'Seating','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+247,-0.0,'time','dep_lunch ','dep_lunch_during ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+273,0.05555555555555555,'service','dep_food ','dep_food_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+279,0.4666666666666666,'service','dep_wonderful dep_ambience ','dep_wonderful_ambience ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+280,0.1111111111111111,'staff','dep_professional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+287,0.0,'service','dep_thing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+299,-0.09999999999999999,'service','dep_poor ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+330,0.0,'service','dep_price ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+332,0.0,'waiters','dep_walking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+333,0.14444444444444446,'food','dep_prepared ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+338,0.26666666666666666,'takeout','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+340,0.0,'they','dep_served ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+346,0.0,'staff','dep_accomodating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+349,0.0,'Manager','dep_wanted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+354,0.08333333333333333,'service','dep_ok dep_food ','dep_ok_food ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+356,0.1416666666666667,'service','dep_bad dep_food dep_good dep_get ','dep_bad_food dep_food_good dep_good_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+357,0.1416666666666667,'service','dep_bad dep_food dep_good dep_get ','dep_bad_food dep_food_good dep_good_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+374,0.3333333333333333,'Service','dep_slow ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+375,-0.39999999999999997,'people','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+379,0.6666666666666666,'service','dep_impeccable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+383,0.4666666666666666,'Service','dep_horrible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+388,0.16666666666666666,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+413,-0.0,'Service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+414,0.0,'list','dep_wine dep_handed ','dep_wine_handed ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+415,-0.25,'service','dep_proper dep_constitute ','dep_proper_constitute ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+419,-0.09166666666666667,'wait staff','dep_nice dep_staff dep_wait dep_place ','dep_nice_staff dep_staff_wait dep_wait_place ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+426,-0.016666666666666663,'service','dep_bad dep_fresh ','dep_bad_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+431,0.16666666666666666,'service','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+436,-0.26666666666666666,'service','dep_great ','dep_great_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+440,0.3333333333333333,'service','dep_impeccable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+441,0.0,'staff','dep_knows ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+446,-0.3333333333333333,'service','dep_breathtaking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+449,0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+451,0.0,'staff','dep_offers ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+462,0.027777777777777776,'service','dep_ dep_st dep_class dep_food ','dep__st dep_st_class dep_class_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+465,0.16666666666666666,'servers','dep_surprise ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+476,-0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+488,0.0,'staff','dep_friendliest ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+497,-0.0,'sigh','dep_reservation ','dep_reservation_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+498,0.3333333333333333,'Service','dep_slow ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+503,0.0,'Service','dep_quick ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+505,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+509,0.26666666666666666,'service','dep_great dep_fish ','dep_great_fish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+510,0.0,'Delivery','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+511,0.26666666666666666,'service','dep_Great dep_friendly dep_Delivery ','dep_Great_friendly dep_friendly_Delivery ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+512,0.0,'seating','dep_Fast dep_Delivery ','dep_Fast_Delivery ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+513,0.0,'Delivery','dep_service dep_ dep_seating dep_Fast dep_Delivery dep_sushi dep_ ','dep_service_ dep__seating dep_seating_Fast dep_Fast_Delivery dep_Delivery_sushi dep_sushi_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+528,-0.5333333333333333,'service','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+545,0.05555555555555555,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+558,0.0,'service','dep_overcompensate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+573,0.16666666666666666,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+577,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+580,0.0,'staff','dep_Great dep_staff dep_ ','dep_Great_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+581,0.13333333333333333,'service','dep_Always dep_great dep_service dep_! ','dep_Always_great dep_great_service dep_service_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+585,0.2333333333333333,'staff','dep_horrible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+586,-0.08333333333333333,'hostess','dep_rude dep_waitress ','dep_rude_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+587,0.0,'waitress','dep_hostess ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+588,-0.0,'waitress','dep_dessert ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+591,-0.0,'service','dep_makes ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+599,-0.3333333333333333,'service','dep_spotty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+609,0.26666666666666666,'waitstaffs','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+617,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+629,0.26666666666666666,'staff','dep_great ','dep_great_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+637,0.7999999999999999,'Waitstaff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+645,0.43333333333333335,'service','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+657,-0.39999999999999997,'service','dep_top ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+658,-0.0,'waiter','dep_seen ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+659,0.2222222222222222,'waiter','dep_attentive ','dep_attentive_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+668,0.26666666666666666,'waiters','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+688,-0.041666666666666664,'wait staff','dep_staff dep_wait dep_freindly ','dep_staff_wait dep_wait_freindly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+689,-0.04444444444444443,'people','dep_evil dep_work ','dep_evil_work ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+691,-0.2333333333333333,'service','dep_terrible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+692,0.0,'waitress','dep_seems dep_ ','dep_seems_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+693,0.0,'manager','dep_grabbed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+694,0.05555555555555555,'waitress','dep_ dep_model dep_wanted ','dep__model dep_model_wanted ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+695,0.2888888888888889,'staff','dep_good dep_get ','dep_good_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+702,0.0,'Service','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+709,0.16666666666666666,'staff','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+715,-0.0,'hostess','dep_times ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+717,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+718,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+722,0.1111111111111111,'waitstaff','dep_hospitable ','dep_hospitable_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+723,-0.0,'waitstaff','dep_rush ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+725,0.3,'service','dep_fantastic dep_caviar ','dep_fantastic_caviar ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+730,0.0,'staff','dep_Friendly dep_staff dep_let dep_ ','dep_Friendly_staff dep_staff_let dep_let_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+739,0.8666666666666667,'Service','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+775,0.35000000000000003,'service','dep_great dep_food ','dep_great_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+783,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+793,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+794,0.0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+797,0.0,'food','dep_arrived ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+798,0.2888888888888889,'service','dep_excellent dep_service ','dep_excellent_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+799,0.26666666666666666,'Service','dep_great ','dep_great_here ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+813,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+819,0.18888888888888888,'service','dep_horrible dep_mediocre dep_made ','dep_horrible_mediocre dep_mediocre_made ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+820,0.0,'waiter','dep_took ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+821,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+823,0.35000000000000003,'service','dep_great dep_food ','dep_great_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+827,0.26666666666666666,'service','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+833,-0.3333333333333333,'service','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+835,-0.43333333333333335,'people','dep_beautiful dep_serving ','dep_beautiful_serving ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+858,0.08333333333333333,'wait staff','dep_Kind dep_ dep_attentive dep_staff dep_wait dep_ ','dep_Kind_ dep__attentive dep_attentive_staff dep_staff_wait dep_wait_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+872,-0.11666666666666665,'counter service','dep_service dep_counter dep_bad ','dep_service_counter dep_counter_bad ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+873,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+874,-0.0,'times','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+883,0.16666666666666666,'clerks','dep_unhelpful ','dep_unhelpful_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+886,0.0,'service','dep_impecible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+904,0.0,'AVAILABLE','dep_TOASTING dep_COMPLAINT ','dep_TOASTING_COMPLAINT ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+905,-0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+912,-0.0,'they','dep_move ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+917,-0.1111111111111111,'requests','dep_special dep_make ','dep_special_make ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+918,0.0,'manager','dep_sandwich ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+930,0.06666666666666667,'service','dep_Good dep_ dep_fast dep_service dep_ ','dep_Good_ dep__fast dep_fast_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+942,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+946,0.0,'staff','dep_Winnie ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+947,0.0,'Winnie','dep_crew dep_staff ','dep_crew_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+953,0.3333333333333333,'service','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+961,-0.17500000000000002,'wait staff','dep_staff dep_wait dep_pleasant ','dep_staff_wait dep_wait_pleasant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+986,-0.0,'staff','dep_chef ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1001,-0.0,'wait','dep_long ','',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,negative
+1010,0.39999999999999997,'service','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1024,0.3333333333333333,'Service','dep_fast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1025,-0.08333333333333333,'they','dep_toast dep_make ','dep_toast_make ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1026,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1034,0.35000000000000003,'service','dep_great dep_food ','dep_great_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1040,0.0,'service','dep_frendly dep_perfectthey ','dep_frendly_perfectthey ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1041,0.3333333333333333,'waiter','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1045,0.0,'waiter','dep_gave ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1051,-0.39999999999999997,'service','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1084,0.5333333333333333,'they','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1090,0.08333333333333333,'service','dep_ dep_exceptional ','dep__is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1091,-0.0,'waiters','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1094,-0.3333333333333333,'Service','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1095,-0.3333333333333333,'Service','dep_prompt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1119,0.39999999999999997,'service','dep_friendly dep_Quick ','dep_friendly_Quick ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1124,0.16666666666666666,'service','dep_professional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1139,0.7999999999999999,'service','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1145,0.0,'Service','dep_excellentand ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1151,0.7999999999999999,'People','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1175,0.43333333333333335,'service','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1184,0.26666666666666666,'owner','dep_super ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1185,0.7999999999999999,'service','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1190,0.0,'Usha','dep_ dep_bartender ','dep__bartender ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1203,-0.43333333333333335,'service','dep_good dep_decor ','dep_good_decor ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1207,0.43333333333333335,'service','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1212,0.10666666666666667,'service','dep_best dep_atmosphere ','dep_best_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1229,0.0,'staff','dep_staff dep_ ','dep_staff_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1232,0.16666666666666666,'service','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1233,0.0,'owner','dep_caters ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1234,0.0,'he','dep_gave ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1235,0.0,'choices','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1240,-0.0,'Service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1244,0.0,'service','dep_prices ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1254,0.3333333333333333,'staff','dep_unfriendly dep_fish ','dep_unfriendly_fish ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1265,0.09047619047619047,'staff','dep_cheaply dep_ dep_priced dep_ dep_generally dep_friendly dep_food ','dep_cheaply_ dep__priced dep_priced_ dep__generally dep_generally_friendly dep_friendly_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1269,0.0,'waiter','dep_spilled ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1270,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1271,0.1111111111111111,'waiter','dep_snobby dep_take ','dep_snobby_take ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1274,0,'waitstaff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1275,0.16666666666666666,'service','dep_clumsy dep_food ','dep_clumsy_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1276,-0.06666666666666667,'management','dep_need dep_care ','dep_need_care ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1277,0.0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1285,-0.26666666666666666,'manager','dep_incompetent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1286,0.0,'service','dep_subpar dep_offers ','dep_subpar_offers ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1287,0.0,'he','dep_going ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1292,0.5333333333333333,'service','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1298,0.43333333333333335,'service','dep_good ','',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,positive
+1309,0.09333333333333332,'service','dep_ dep_wines dep_selection dep_fine dep_decor ','dep__wines dep_wines_selection dep_selection_fine dep_fine_decor ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1312,-0.0,'service','dep_staff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1313,-0.13333333333333333,'staff','dep_great dep_service ','dep_great_service dep_service_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1314,-0.0,'Vittorio','dep_host ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1315,-0.0,'crew','dep_ dep_treated ','dep__and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1370,0.15833333333333333,'wait staff','dep_staff dep_wait dep_courteous ','dep_staff_wait dep_wait_courteous ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1384,0.16666666666666666,'staff','dep_rude ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1389,0.0,'service','dep_quick ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1390,0.7999999999999999,'Everyone','dep_smiling ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1402,0.16666666666666666,'bartender','dep_immature dep_know dep_ ','dep_immature_know dep_know_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1403,-0.0,'service','dep_slo ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1405,-0.0,'waitresses','dep_busy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1411,-0.3333333333333333,'service','dep_mediocre ','dep_mediocre_with ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,neutral
+1415,-0.3333333333333333,'waitress','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1426,0.43333333333333335,'staff','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1436,0.0,'survice','dep_Great dep_survice ','dep_Great_survice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1442,0.0,'Raymond','dep_rocks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1445,0.0,'Raymond','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1455,0.39999999999999997,'people','dep_friendly ','dep_friendly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1465,0.3833333333333333,'service','dep_amazing dep_food ','dep_amazing_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1491,0.9333333333333332,'Service','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1492,0.6666666666666666,'everyone','dep_cooperative ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1493,0.3333333333333333,'Paul','dep_professional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1506,-0.0,'staff','dep_seem ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1513,0.3333333333333333,'staff','dep_unable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1514,-0.0,'waitress','dep_listed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1515,-0.13333333333333333,'price','dep_prestige ','dep_prestige_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1520,-0.0,'staff','dep_pays ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1523,-0.1111111111111111,'service','dep_fast dep_button ','dep_fast_button ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1524,-0.047619047619047616,'service button','dep_fast dep_button dep_service ','dep_fast_the dep_button_service dep_service_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1525,-0.0,'waiter','dep_took ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1536,0.16666666666666666,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1537,0.0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1539,0.7999999999999999,'Greg','dep_favorite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1540,-0.0,'server','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1541,0.0,'runner','dep_remembers ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1542,0,'runner','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1545,-0.5,'servers','dep_patient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1554,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1558,0,'food','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1563,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1609,0.23333333333333334,'service','dep_great dep_food ','dep_great_food dep_food_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1622,0.0,'service','dep_Helpful dep_service dep_price dep_ dep_ ','dep_Helpful_service dep_service_and dep_price_ dep__ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1628,0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1638,0.0,'SERVICE','dep_AMAZING ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1639,0.0,'waiters','dep_different ','dep_different_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1642,-0.0,'they','dep_make ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1643,0.17333333333333334,'thing','dep_s dep_good dep_times ','dep_s_a dep_good_times ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1672,-0.0,'wait','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1673,0.11666666666666665,'minutes','dep_ dep_told dep_ dep_like ','dep__told dep_told_ dep__like ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1676,0.43333333333333335,'hostess','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1679,0.0,'price','dep_fixed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1680,-0.1111111111111111,'hooka','dep_one dep_beverage dep_received ','dep_one_beverage dep_beverage_NOR ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1681,0.0,'food','dep_drinks dep_hooka ','dep_drinks_hooka ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1682,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1683,-0.26666666666666666,'glasses','dep_dirty ','dep_dirty_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1684,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1686,-0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1697,-0.16666666666666666,'sons','dep_birthday ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1700,0.0,'money','dep_much dep_treated ','dep_much_treated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1704,0.0,'food','dep_arrived ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1710,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1713,-0.0,'Service','dep_Service dep_friendliest dep_! ','dep_Service_friendliest dep_friendliest_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1716,0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1721,0.0,'waiters','dep_try ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1722,-0.0,'price','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1732,0.08333333333333333,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1733,0.0,'they','dep_delivered ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1734,-0.0,'None','dep_made ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1737,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1742,0.16666666666666666,'service','dep_spectacular ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1743,0.0,'waiter','dep_knew ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1746,0.0,'minutes','dep_ dep_came dep_apart ','dep__came dep_came_apart ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1755,0.0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1756,0.0,'food','dep_ dep_made ','dep__made ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1758,0.18333333333333335,'price','dep_full dep_charged ','dep_full_charged ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1780,0.0,'waiter','dep_opens ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1790,0.0,'service','dep_leaves ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1817,-0.0,'waitress','dep_mean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1821,-0.0,'Brooklyn','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1822,0.0,'servers','dep_appear ','dep_appear_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1823,0.0,'acknowledgement','dep_Polite ','dep_Polite_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1824,0.0,'scorn','dep_supercilious ','dep_supercilious_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1825,0.0,'rent','dep_make ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1826,0.1111111111111111,'server','dep_different dep_enhanced ','dep_different_enhanced ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1829,-0.0,'food','dep_quality ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1833,0.0,'food','dep_menu ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1836,-0.24166666666666667,'torture','dep_passive dep_ dep_aggressive ','dep_passive_ dep__aggressive dep_aggressive_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1845,-0.0,'waitress','dep_comes dep_WALKED ','dep_comes_WALKED ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1848,-0.0,'manager','dep_said ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1849,-0.0,'drink','dep_make ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1871,-0.0,'front of house staff','dep_front dep_staff dep_house ','dep_front_staff dep_staff_house ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1872,0.0,'dining','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1873,0,'MaitreD','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1890,0.027777777777777776,'service','dep_Poor dep_service dep_management ','dep_Poor_service dep_service_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1891,0.0,'management','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1894,0.0,'hour','dep_nearly dep_took ','dep_nearly_an ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1895,-0.0,'order','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1896,0.0,'explanation','dep_got ','dep_got_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1897,-0.16666666666666666,'manager','dep_rude ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1898,-0.029629629629629624,'order','dep_half dep_missing ','dep_half_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1899,0.0,'issues','dep_similar ','dep_similar_about ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1901,-0.0,'clients','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1904,0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1906,0.0,'wait','dep_attitude ','dep_attitude_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1907,0.0,'they','dep_skipped ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1908,-0.0,'staff','dep_Al dep_Di dep_La ','dep_Al_Di dep_Di_La dep_La_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1909,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1911,0.03333333333333333,'bartender','dep_disappeared ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1912,0.0,'waitress','dep_menu ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1913,0.0,'waitress','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1914,-0.2333333333333333,'staff','dep_bad dep_staff ','dep_bad_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1918,-0.0,'service','dep_HORRID ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1919,0.0,'waitress','dep_waiter ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1920,0.0,'waiter','dep_waitress ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1921,0.0,'waiter','dep_delivered ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1922,-0.0,'food','dep_delivering ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1923,0.0,'waitress','dep_came ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1924,-0.06666666666666667,'she','dep_reach ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1925,0,'she','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1927,0.0,'staff','dep_retrain ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1936,0.2333333333333333,'service','dep_better ','dep_better_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1937,0.0,'staff','dep_entire dep_accomodating ','dep_entire_accomodating ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1939,-0.0,'Attitude','dep_Snotty dep_Attitude ','dep_Snotty_Attitude ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1940,0.0,'breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1941,-0.3333333333333333,'owner','dep_belligerent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1944,-0.08333333333333333,'minutes','dep_ dep_wait ','dep__wait ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1945,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1956,0.0,'Service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1957,0.053968253968253964,'service','dep_worst dep_agreed dep_received ','dep_worst_agreed dep_agreed_received ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1958,-0.0,'waiter','dep_nonexistent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1959,-0.0,'manager','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1968,0.0,'service','dep_meal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1973,0.1111111111111111,'staff','dep_incredible ','dep_incredible_all ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1987,0.5166666666666667,'service','dep_good dep_food ','dep_good_food ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2003,0.0,'service','dep_value ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2007,0.0,'service','dep_ranges ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+2008,-0.16666666666666666,'waiter','dep_dismissive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2009,0.0,'staff members','dep_three dep_members dep_staff ','dep_three_members dep_members_staff dep_staff_than ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2010,0.0,'price','dep_half ','dep_half_that ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2020,-0.39999999999999997,'service','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2024,0.16666666666666666,'waiters','dep_rude ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2027,0.26666666666666666,'service','dep_great dep_service ','dep_great_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2031,0.3333333333333333,'service','dep_stellar ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2032,-0.027777777777777776,'bus boy','dep_boy dep_bus dep_spotted ','dep_boy_bus dep_bus_spotted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2036,0,'Service','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2040,-0.0,'waitress','dep_busy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2041,0.0,'she','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2050,0.16666666666666666,'table','dep_ready ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2054,0.0,'weather','dep_Seattle dep_evening ','dep_Seattle_evening dep_evening_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2057,0.35000000000000003,'staff','dep_great dep_music ','dep_great_music ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2061,0.0,'bartender','dep_buys ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2069,0.0,'bartenders','dep_go ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2070,0.0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2071,0.4666666666666666,'owners','dep_fun ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2086,0.39999999999999997,'service','dep_courteous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2093,0.6666666666666666,'Service','dep_decent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2122,0.10000000000000002,'service','dep_great dep_crowded ','dep_great_crowded ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2129,0.2333333333333333,'delivery','dep_appreciate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2139,-0.0,'they','dep_didnt ','',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2144,-0.0,'they','dep_packaged ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2160,0.21666666666666667,'customer service','dep_great dep_service dep_customer dep_restaurant ','dep_great_service dep_service_customer dep_customer_restaurant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2161,0.39999999999999997,'manager','dep_friendly dep_restaurant ','dep_friendly_restaurant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2166,-0.0,'service','dep_quick ','dep_quick_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2167,-0.0,'service','dep_quick ','dep_quick_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2174,0.0,'office','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2183,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2197,-0.1111111111111111,'service','dep_slow dep_seating ','dep_slow_seating ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2198,-0.0,'dishes','dep_side dep_gotten ','dep_side_gotten ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2202,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2207,0.3333333333333333,'service','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2215,0.0,'waiter','dep_time ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2219,0.3,'sommelier','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2224,0,'bartender','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2227,0.06666666666666667,'service','dep_worst ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2229,0.0,'owners','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2243,0.13333333333333333,'servers behind the counter','dep_friendly dep_behind dep_servers dep_counter ','dep_friendly_behind dep_behind_servers dep_servers_counter dep_counter_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2250,0.48333333333333334,'service','dep_friendly dep_food ','dep_friendly_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2259,0.3333333333333333,'Service','dep_slow ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2260,-0.0,'waitress','dep_took ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2265,0.0,'PEOPLE','dep_WOW ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2278,-0.0,'waitstaff','dep_accomodating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2279,0.0,'waiter','dep_suggested ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2300,0.0,'hours','dep_couple ','dep_couple_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2301,0.0,'they','dep_take dep_call ','dep_take_call ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2325,-0.3333333333333333,'service','dep_efficient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2329,-0.041666666666666664,'wait staff','dep_staff dep_wait dep_quick ','dep_staff_wait dep_wait_quick ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2335,0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2336,0.0,'employees','dep_walked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2337,0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2338,0,'bartender','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2339,0.0,'meal','dep_get ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2348,0.16666666666666666,'service','dep_fast dep_spots ','dep_fast_spots ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2350,-0.0,'service','dep_quick ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2361,0.08333333333333333,'service','dep_phenominal dep_food ','dep_phenominal_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2363,0.5,'service','dep_superb ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2366,0.06666666666666667,'waiters','dep_nicest dep_waiters dep_ ','dep_nicest_waiters dep_waiters_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2370,0.0,'food','dep_average dep_brunch dep_get ','dep_average_brunch dep_brunch_get ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2372,-0.19259259259259257,'attitude','dep_snotty dep_worth ','dep_snotty_worth ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2418,0.08333333333333333,'customer service','dep_Poor dep_service dep_customer dep_pizza ','dep_Poor_service dep_service_customer dep_customer_pizza ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2420,-0.2333333333333333,'service','dep_Mioposto dep_bad ','dep_Mioposto_bad ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2429,0.21666666666666667,'waiting staff','dep_staff dep_waiting dep_perfect ','dep_staff_waiting dep_waiting_perfect ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2430,0.07777777777777778,'wait','dep_problem dep_would dep_wait dep_ dep_ ','dep_problem_would dep_would_be dep_wait_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+2442,0.09999999999999999,'service','dep_poor ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2443,-0.0,'items','dep_couple ','dep_couple_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2444,0.08333333333333333,'waitress','dep_getting dep_ dep_attention ','dep_getting_ dep__attention ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2445,0.0,'owner','dep_seated ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2446,-0.0,'food','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2447,-0.13333333333333333,'he','dep_care ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2451,-0.2333333333333333,'service','dep_horrible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2452,0.0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2453,0.0,'minutes','dep_ dep_left ','dep__over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2456,0.0,'bar keep','dep_keep dep_bar dep_made ','dep_keep_bar dep_bar_made ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2457,0.0,'service','dep_getting ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2467,0.0,'Service','dep_Poor dep_Pizza ','dep_Poor_Pizza ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2471,-0.11666666666666665,'servers','dep_like dep_ dep_woman ','dep_like_ dep__woman ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2472,-0.06666666666666667,'young woman','dep_one dep_woman dep_young dep_servers ','dep_one_woman dep_woman_young dep_young_servers dep_servers_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2473,0,'she','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2474,-0.7999999999999999,'she','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2475,-0.0,'waitstaff','dep_train ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2476,-0.0,'Management','dep_take ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2478,0.09999999999999999,'service','dep_poor dep_pizza ','dep_poor_pizza ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2480,0.16666666666666666,'service','dep_impersonal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2495,0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2496,0.0,'food','dep_came ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2497,0.0,'things','dep_coming ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2532,0.05555555555555555,'service','dep_Terrible dep_service dep_food ','dep_Terrible_service dep_service_food ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2535,0.0,'wait','dep_d dep_minute dep_told ','dep_d_be dep_minute_told ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2536,0.0,'minutes','dep_ dep_ago ','dep__ago ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2537,-0.0,'None','dep_None dep_think dep_ ','dep_None_think dep_think_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2538,-0.0,'food','dep_arrive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2539,0.0,'appetizers','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2540,-0.0,'service','dep_bread ','dep_bread_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2541,-0.0,'priority','dep_water dep_ dep_nt dep_guess dep_bring ','dep_water_ dep__it dep_nt_a dep_guess_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2542,-0.0,'service','dep_scale ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2552,0.0,'play','dep_Broadway dep_seated ','dep_Broadway_before ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2563,0.02666666666666667,'customer service','dep_poor dep_service dep_customer dep_ ','dep_poor_service dep_service_customer dep_customer_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2566,-0.02666666666666667,'customer service','dep_poor dep_service dep_customer ','dep_poor_service dep_service_customer dep_customer_for ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2568,0.041666666666666664,'restaurant staff','dep_staff dep_restaurant dep_food ','dep_staff_restaurant dep_restaurant_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2569,0.0,'food','dep_dropped ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2570,-0.0,'table','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2571,-0.0,'food','dep_dropped dep_ ','dep_dropped_ dep__who ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2572,-0.0,'waitress','dep_sent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2573,0.0,'manager','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2574,-0.09999999999999999,'manager','dep_interrupted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2575,0,'manager','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2576,0.19999999999999998,'she','dep_bothered ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2577,-0.0,'establishment','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2582,0.17777777777777778,'service','dep_great dep_service dep_ ','dep_great_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2592,0.0,'service','dep_spendid ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2599,0.3,'service','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2612,0.0,'Service','dep_Great dep_Food ','dep_Great_Food ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2636,-0.16666666666666666,'tip','dep_tax ','',1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,positive
+2637,-0.3333333333333333,'servers','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2644,0.0,'Server','dep_made ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2649,0.016666666666666666,'crowd','dep_big ','dep_big_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2650,-0.3333333333333333,'waiter','dep_unfriendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2664,-0.01388888888888889,'wait staff','dep_staff dep_wait dep_found ','dep_staff_wait dep_wait_found ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2665,0.39999999999999997,'cooks','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2666,-0.0,'they','dep_busy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2670,0,'service','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2671,0,'seating','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2672,0,'Delivery','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2689,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2708,0.3333333333333333,'service','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2709,0.0,'hour','dep_seated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2710,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2714,0.0,'minutes','dep_ dep_waiting ','dep__waiting ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2725,0.16666666666666666,'server','dep_professional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2732,0.16666666666666666,'waiters','dep_experienced ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2753,0.39999999999999997,'service','dep_improved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2755,-0.0,'server','dep_came ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2756,-0.0,'times','dep_couple ','dep_couple_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2757,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2759,0.0,'table','dep_private ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2761,0.16666666666666666,'service','dep_exceptional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2762,0.39999999999999997,'waiters','dep_friendly ','dep_friendly_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2772,0.3,'service','dep_awesome ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2783,0.0,'Service','dep_Mediocre dep_Quality ','dep_Mediocre_Quality ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,neutral
+2799,-0.03333333333333333,'manager','dep_stopped ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2800,-0.0,'they','dep_removed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2812,0.0,'Brooke','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2827,-0.0,'server','dep_continued ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2831,0.22,'server','dep_wonderful dep_made dep_food ','dep_wonderful_made dep_made_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

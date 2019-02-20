@@ -1,0 +1,312 @@
+@relation Sauberkeit
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+0,-0.0,'windows','dep_need ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1,-0.0,'windows','dep_need ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+15,-0.0,'grout','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+16,-0.0,'carpet','dep_stained ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+25,-0.1111111111111111,'smell','dep_relevant dep_hotel ','dep_relevant_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+33,-0.16666666666666666,'vent','dep_dusty ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+38,-0.16666666666666666,'faucet','dep_mildew ','dep_mildew_were ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+67,-0.13888888888888887,'smells','dep_walk dep_stale ','dep_walk_stale ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+94,0.0,'drain','dep_Bathtub dep_scuffed dep_clogged dep_ dep_work dep_makers ','dep_Bathtub_scuffed dep_scuffed_clogged dep_clogged_ dep__work dep_work_makers ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+106,0.0,'carpet','dep_stained ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+130,0.39999999999999997,'lobby','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+131,0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+135,0.0,'bathrooms','dep_outdated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+148,0.0,'ducts','dep_air dep_need ','dep_air_need ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+169,0.06666666666666667,'smell','dep_strange ','dep_strange_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+202,0.19047619047619047,'hotel','dep_nice dep_clean dep_hotel dep_ ','dep_nice_clean dep_clean_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+207,-0.01904761904761905,'smelled','dep_room dep_smelled dep_like dep_ dep_moved dep_ ','dep_room_smelled dep_smelled_like dep_like_ dep__and dep_moved_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+271,0.7999999999999999,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+276,-0.39999999999999997,'room','dep_clean dep_Location ','dep_clean_Location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+288,-0.0,'room','dep_washcloths dep_cleaned ','dep_washcloths_cleaned ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+297,-0.0,'room','dep_washcloths dep_cleaned ','dep_washcloths_cleaned ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+311,-0.0,'clean','dep_keep ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+317,0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+318,0.0,'cleaning','dep_servicrd ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+319,0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+372,0.08333333333333333,'sink','dep_leaky dep_work dep_ dep_outlet ','dep_leaky_work dep_work_ dep__outlet ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+379,-0.0,'windows','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+380,0.26666666666666666,'window','dep_dirty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+381,-0.0,'vents','dep_filled ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+382,0.16666666666666666,'dustballs','dep_dust dep_ ','dep_dust_ dep__with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+383,-0.0,'cleaning','dep_Deep dep_done ','dep_Deep_done ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+390,0.0,'shower','dep_head ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+396,0.0,'shower','dep_head ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+412,0.0,'curtain','dep_Shower dep_stinky ','dep_Shower_stinky ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+419,-0.39999999999999997,'rooms','dep_clean dep_beds ','dep_clean_beds ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+435,0.39999999999999997,'beds','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+444,-0.0,'vents','dep_condition dep_air dep_cleansed ','dep_condition_air dep_air_cleansed ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+459,-0.5333333333333333,'Windows','dep_dirty ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+464,-0.7999999999999999,'room','dep_clean ','',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+466,-0.7999999999999999,'Bathroom','dep_clean ','',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+489,0.43333333333333335,'clean','dep_good dep_use ','dep_good_use ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+497,0.0,'room','dep_Clean dep_room dep_close dep_ ','dep_Clean_room dep_room_close dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+500,-0.08333333333333333,'room','dep_Clean dep_room dep_ dep_view dep_noise dep_ ','dep_Clean_room dep_room_ dep__view dep_view_noise dep_noise_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+532,-0.7999999999999999,'chairs','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+549,-0.06666666666666667,'smelt','dep_room dep_smelt dep_ ','dep_room_smelt dep_smelt_of ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+579,-0.0,'ceiling','dep_bathroom dep_needed ','dep_bathroom_over ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+580,-0.16666666666666666,'paint','dep_job ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+581,-0.0,'carpet','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+598,-0.0,'room','dep_appointed ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+640,0.3333333333333333,'windows','dep_filthy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+658,0.08333333333333333,'drain','dep_bathroom dep_shower dep_clogged ','dep_bathroom_shower dep_shower_clogged ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+715,-0.5333333333333333,'carpets','dep_dirty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+723,-0.26666666666666666,'towels','dep_clean dep_bedding ','dep_clean_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+724,-0.0,'bedding','dep_towels ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+726,-0.0,'furniture','dep_lift ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+728,-0.0,'doors','dep_lift ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+730,-0.0,'bathtub','dep_lift ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+774,0.7999999999999999,'Hotel','dep_clean ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+780,-0.26666666666666666,'lobby','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+784,0.26666666666666666,'drapes','dep_dirty ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+785,0.26666666666666666,'drapes','dep_dirty ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+811,-0.2888888888888889,'scrubbing','dep_good ','dep_good_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+812,-0.0,'smell','dep_guests ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+831,-0.0,'areas','dep_melted ','dep_melted_on ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+832,-0.0,'areas','dep_melted ','dep_melted_on ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+852,-0.0,'bed','dep_furnishing ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+853,-0.3333333333333333,'sheets','dep_immaculate ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+854,-0.3333333333333333,'sheets','dep_immaculate ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+855,-0.3333333333333333,'sheets','dep_immaculate ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+880,-0.0,'room','dep_appear ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+895,0.05555555555555555,'scent','dep_slight dep_dog dep_acted dep_allergies ','dep_slight_dog dep_dog_acted dep_acted_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+896,-0.0,'cleaning','dep_done ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+897,0.17777777777777778,'walls','dep_bathroom dep_gross ','dep_bathroom_gross ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+898,-0.0,'sink','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+938,0.06666666666666667,'bed','dep_Clean dep_bed dep_housekeeping dep_ ','dep_Clean_bed dep_bed_and dep_housekeeping_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+944,0.21666666666666667,'cleaning','dep_good dep_spring ','dep_good_spring dep_spring_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+953,-0.7999999999999999,'room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+961,-0.39999999999999997,'room','dep_fix dep_clean ','dep_fix_clean ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+997,-0.19999999999999998,'rooms','dep_ dep_clean dep_location dep_WiFi ','dep__clean dep_clean_location dep_location_WiFi ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1008,-0.0,'water','dep_therefor ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1059,-0.0,'drainage','dep_shower dep_temperature dep_overflowed dep_within ','dep_shower_temperature dep_temperature_overflowed dep_overflowed_within ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1060,-0.0,'drainage','dep_shower dep_temperature dep_overflowed dep_within ','dep_shower_temperature dep_temperature_overflowed dep_overflowed_within ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1075,0.13333333333333333,'shower','dep_works dep_leaked ','dep_works_leaked ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1113,-0.14666666666666667,'water','dep_powerful dep_leaked dep_ dep_shower ','dep_powerful_leaked dep_leaked_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1122,0.5333333333333333,'Room','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1124,0.0,'control','dep_remote dep_looked ','dep_remote_looked dep_looked_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1125,-0.2333333333333333,'dirt','dep_disgusting ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1157,0.0,'carpet','dep_stained ','dep_stained_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1158,0.0,'grout','dep_places ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1171,-0.0,'shower','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1180,0.0,'floor','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1192,0.3333333333333333,'shower','dep_powerful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1311,0.0,'shower','dep_door ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1315,0.7999999999999999,'rooms','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1319,0.10666666666666667,'room','dep_Clean dep_nice dep_simple dep_room dep_ ','dep_Clean_nice dep_nice_simple dep_simple_room dep_room_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1330,-0.0,'room','dep_cleaned ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1376,0.2333333333333333,'room','dep_comfortable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1381,-0.03888888888888888,'mould','dep_black dep_growing ','dep_black_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1382,0.11666666666666665,'smell','dep_strong dep_damp dep_gave ','dep_strong_damp dep_damp_gave ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1383,0.11666666666666665,'smell','dep_strong dep_damp dep_gave ','dep_strong_damp dep_damp_gave ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1404,-0.43333333333333335,'cleaning','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1408,0.0,'Bottles','dep_removed dep_glasses ','dep_removed_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1409,0.0,'glasses','dep_Bottles ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1416,0.0,'water','dep_water ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1440,-0.0,'clean','dep_needed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1461,0.022222222222222223,'shower','dep_leaked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1490,-0.0,'room','dep_Clean dep_room dep_ ','dep_Clean_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1512,-0.06666666666666667,'leaks','dep_tiny dep_leaks dep_ ','dep_tiny_leaks dep_leaks_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1535,0.0,'Room','dep_machine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1547,-0.0,'shower','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1570,-0.32,'room','dep_Nice dep_clean dep_friendly dep_ dep_personal ','dep_Nice_clean dep_clean_friendly dep_friendly_ dep__personal ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1584,-0.0,'windows','dep_Dirty dep_windows dep_opened ','dep_Dirty_windows dep_windows_opened ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1585,-0.0,'windows','dep_Dirty dep_windows dep_opened ','dep_Dirty_windows dep_windows_opened ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1592,-0.2333333333333333,'cleaning','dep_better ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1647,-0.0,'cleanliness','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1648,-0.0,'socks','dep_old ','dep_old_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1662,-0.48888888888888893,'room','dep_clean dep_spacious dep_location ','dep_clean_spacious dep_spacious_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1678,-0.5,'water','dep_leakage ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1690,-0.5333333333333333,'windows','dep_dirty ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1698,-0.13333333333333333,'room','dep_Comfortable dep_clean dep_room dep_staff dep_ ','dep_Comfortable_clean dep_clean_room dep_room_and dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1702,0.0,'rooms','dep_Clean dep_rooms dep_ ','dep_Clean_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1767,-0.16,'Rooms','dep_Rooms dep_clean dep_ dep_laid dep_ ','dep_Rooms_clean dep_clean_ dep__laid dep_laid_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1788,-0.39999999999999997,'rooms','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1817,-0.0,'bathroom','dep_ok ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1825,0.02777777777777778,'smell','dep_weird dep_nice ','dep_weird_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1826,0.02777777777777778,'smell','dep_weird dep_nice ','dep_weird_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1858,0.36000000000000004,'rooms','dep_nice dep_staff dep_clean dep_recommended dep_beds ','dep_nice_staff dep_staff_clean dep_clean_recommended dep_recommended_beds ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1870,-0.0,'water','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1882,-0.0,'leak','dep_coming ','',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,negative
+1898,-0.2222222222222222,'room','dep_stunning dep_big ','dep_stunning_big ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1912,-0.03333333333333333,'shower','dep_leaked ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,negative
+1925,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1956,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1962,0.39999999999999997,'Rooms','dep_ dep_clean ','dep__clean ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2011,0.0,'cleaning','dep_done ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2021,0.26666666666666666,'hotel','dep_clean dep_selection ','dep_clean_selection ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2026,0.0,'floor','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2030,0.3333333333333333,'water','dep_leaks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2046,-0.26666666666666666,'rooms','dep_hotel dep_clean ','dep_hotel_clean ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2047,-0.26666666666666666,'rooms','dep_hotel dep_clean ','dep_hotel_clean ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2081,-0.0,'bed','dep_Clean dep_bed dep_ ','dep_Clean_bed dep_bed_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2085,0.19999999999999998,'rooms','dep_clean dep_rooms dep_ ','dep_clean_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2090,-0.2222222222222222,'smell','dep_drain dep_causing dep_invade ','dep_drain_causing dep_causing_invade ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2110,0.0,'cleaned','dep_room dep_never dep_staff ','dep_room_never dep_never_staff dep_staff_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2148,-0.0,'room','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2167,-0.5333333333333333,'Hotel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2182,-0.5333333333333333,'Rooms','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2183,-0.5333333333333333,'Rooms','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2208,-0.0,'cleaned','dep_needed ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2209,-0.0,'cover','dep_looked ','dep_looked_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2218,-0.7999999999999999,'Rooms','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+2234,-0.0,'Hotel','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2248,0.7999999999999999,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2267,-0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2304,0.39999999999999997,'room','dep_clean ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2316,-0.0,'hotel','dep_Clean dep_hotel dep_offers dep_ dep_stay dep_ ','dep_Clean_hotel dep_hotel_offers dep_offers_ dep__but dep_stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2324,-0.0,'rooms','dep_Clean dep_rooms dep_ dep_pillows dep_environment dep_ ','dep_Clean_rooms dep_rooms_ dep__pillows dep_pillows_environment dep_environment_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2374,0.15555555555555556,'Cleanliness','dep_liked dep_Locality ','dep_liked_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2388,-0.43333333333333335,'room','dep_good dep_Loved ','dep_good_Loved ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2392,-0.4666666666666666,'Room','dep_cleaner ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2394,0.0,'room','dep_Clean dep_room dep_ ','dep_Clean_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2396,0.13333333333333333,'hotel','dep_clean dep_hotel dep_ dep_bathroom dep_ ','dep_clean_hotel dep_hotel_ dep__bathroom dep_bathroom_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2399,0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2485,0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2491,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2534,-0.018518518518518517,'towels','dep_Clean dep_towels dep_supplies dep_everyday dep_ ','dep_Clean_towels dep_towels_and dep_supplies_everyday dep_everyday_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,positive
+2548,-0.16,'room','dep_clean dep_ dep_location dep_close ','dep_clean_Very dep__location dep_location_close ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2607,0.39999999999999997,'hotel','dep_clean dep_hygenic ','dep_clean_hygenic ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2608,0.39999999999999997,'hotel','dep_clean dep_hygenic ','dep_clean_hygenic ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2619,0.1111111111111111,'room','dep_small ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2620,0.1111111111111111,'room','dep_small ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2625,-0.3444444444444444,'rooms','dep_small dep_clean ','dep_small_clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2637,0.13333333333333333,'rooms','dep_proximity dep_ dep_clean dep_rooms dep_ ','dep_proximity_ dep__clean dep_clean_rooms dep_rooms_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2667,-0.2333333333333333,'room','dep_Clean dep_comfortable ','dep_Clean_comfortable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2746,-0.4444444444444444,'rooms','dep_nice dep_clean dep_close ','dep_nice_clean dep_clean_close ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2751,-0.0,'robes','dep_towels ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2752,-0.0,'room','dep_cleaned ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2781,-0.0,'windows','dep_tinted ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2782,-0.0,'windows','dep_tinted ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2798,0.39999999999999997,'room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2812,-0.0,'rooms','dep_size ','',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2830,-0.0,'washroom','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2875,0.0,'smoking','dep_floor ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2886,-0.31666666666666665,'rooms','dep_bed dep_comfortable dep_clean ','dep_bed_was dep_comfortable_clean ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2905,-0.23809523809523808,'hotel','dep_Lovely dep_ dep_clean dep_hotel dep_perfect dep_ ','dep_Lovely_ dep__clean dep_clean_hotel dep_hotel_in dep_perfect_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2935,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2947,-0.13333333333333333,'room','dep_Small dep_efficient dep_room dep_ ','dep_Small_efficient dep_efficient_room dep_room_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2952,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2996,0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3013,0.0,'rooms','dep_Clean dep_rooms dep_ ','dep_Clean_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3030,-0.0,'cleaning','dep_options ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3035,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3038,0.0,'hotel','dep_Clean dep_location dep_hotel dep_ ','dep_Clean_location dep_location_hotel dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3040,0.0,'bathroom','dep_Bed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3041,0.0,'room','dep_Clean dep_hotel dep_location dep_Bed ','dep_Clean_hotel dep_hotel_location dep_location_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3042,0.0,'hotel','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3050,-0.19999999999999998,'accommodation','dep_ dep_clean dep_value ','dep__clean dep_clean_value dep_value_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3082,-0.26666666666666666,'room','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3109,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3117,-0.08333333333333333,'room','dep_bit dep_smelly dep_channel ','dep_bit_smelly dep_smelly_channel ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3174,-0.6666666666666666,'Room','dep_spacious ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3183,-0.0,'sofa','dep_especially dep_leather dep_ dep_ ','dep_especially_the dep_leather_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3185,-0.2916666666666667,'rooms','dep_spotless ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3186,-0.2916666666666667,'rooms','dep_spotless ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3199,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3216,-0.0,'Towels','dep_quality ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3224,0.8666666666666667,'Towels','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3295,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3298,-0.39999999999999997,'property','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3310,-0.0,'Hotel','dep_basic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3319,0.1111111111111111,'floor','dep_dusty ','dep_dusty_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3338,-0.03333333333333333,'smelt','dep_ran dep_oddly dep_like ','dep_ran_oddly dep_oddly_like ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3379,-0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3398,-0.0,'smell','dep_smoking dep_coming ','dep_smoking_coming ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3409,-0.3333333333333333,'Bathrooms','dep_neat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3541,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3546,-0.0,'Rooms','dep_cleaned ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3572,0.7999999999999999,'linen','dep_clean ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3580,-0.041666666666666664,'smelled','dep_entered dep_ dep_smelled dep_chlorum dep_ dep_changed dep_ ','dep_entered_ dep__we dep_smelled_chlorum dep_chlorum_ dep__changed dep_changed_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3581,0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3582,0.2833333333333333,'sheets','dep_clean dep_well dep_towels ','dep_clean_well dep_well_towels ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3583,0.0,'towels','dep_sheets ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3598,0.7999999999999999,'Rooms','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3626,-0.3333333333333333,'fumes','dep_unpleasant dep_created ','dep_unpleasant_created ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3630,-0.3333333333333333,'room','dep_lovely dep_clean dep_day ','dep_lovely_clean dep_clean_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3652,0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3677,0.39999999999999997,'room','dep_clean ','',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3684,-0.1611111111111111,'smell','dep_continuous dep_bad dep_smell dep_always dep_! ','dep_continuous_bad dep_bad_smell dep_smell_always dep_always_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3696,0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3722,0.08333333333333333,'sheets','dep_bed dep_smells dep_towels ','dep_bed_smells dep_smells_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3723,-0.0,'towels','dep_sheets ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3726,-0.0,'room','dep_Clean dep_room dep_mattress dep_ ','dep_Clean_room dep_room_and dep_mattress_ ',0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+3733,-0.0,'cleaness','dep_staff ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3740,-0.39999999999999997,'rooms','dep_clean ','dep_clean_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3743,-0.0,'rooms','dep_basic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3749,-0.0,'room','dep_taken ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3802,-0.16666666666666666,'room','dep_smelly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3804,0.16,'room','dep_location dep_ dep_clean dep_room dep_ ','dep_location_ dep__clean dep_clean_room dep_room_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3805,0.7999999999999999,'Room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3847,-0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3869,0.10555555555555556,'spots','dep_weird dep_brownish ','dep_weird_brownish dep_brownish_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3870,0.10555555555555556,'spots','dep_weird dep_brownish ','dep_weird_brownish dep_brownish_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3902,-0.11666666666666665,'cleaner','dep_Could dep_cleaner dep_ ','dep_Could_be dep_cleaner_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3907,-0.0,'shower','dep_abit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3910,-0.0,'room','dep_Clean dep_room dep_ ','dep_Clean_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3984,0.39999999999999997,'room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4018,0.7999999999999999,'Room','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4019,0.6,'smelled','dep_clean dep_fresh ','dep_clean_fresh ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4066,0.39999999999999997,'room','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4069,0.0,'smoking','dep_floor ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4143,0.26666666666666666,'hotel','dep_clean ','dep_clean_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4175,0.0,'room','dep_Clean dep_room dep_ dep_ ','dep_Clean_room dep_room_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4176,0.0,'room','dep_Clean dep_room dep_ dep_ ','dep_Clean_room dep_room_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4187,-0.25,'smelled','dep_corridors dep_smelled dep_musty dep_ ','dep_corridors_smelled dep_smelled_musty dep_musty_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4189,-0.11666666666666665,'odour','dep_bad ','dep_bad_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4197,-0.0,'room','dep_hotel ','dep_hotel_do ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4215,0.39999999999999997,'rooms','dep_clean dep_amenities ','dep_clean_amenities ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4222,-0.39999999999999997,'hotel','dep_clean ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4236,-0.0,'room','dep_Clean dep_room dep_ ','dep_Clean_room dep_room_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4242,-0.0,'Water','dep_logging ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4243,-0.1111111111111111,'growth','dep_green dep_layered ','dep_green_layered dep_layered_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4255,-0.3333333333333333,'Pillows','dep_smelled ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4283,0.39999999999999997,'room','dep_clean dep_Nice ','dep_clean_Nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4288,0.4666666666666666,'Rooms','dep_cleaner ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4333,-0.0,'pillow','dep_cover ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4334,-0.0,'pillow','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4336,-0.0,'cleanliness','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4426,0.16666666666666666,'hotel','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4440,-0.05555555555555555,'room','dep_Nice dep_room dep_ dep_cosy dep_ ','dep_Nice_room dep_room_ dep__cosy dep_cosy_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4463,-0.39999999999999997,'shower','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4464,-0.0,'shower','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4474,-0.26666666666666666,'hotel','dep_clean dep_mr ','dep_clean_mr ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4485,-0.0,'Room','dep_Needed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4516,-0.0,'outside','dep_surrounding ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4517,-0.0,'outside','dep_surrounding ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4553,0.16,'rooms','dep_staff dep_ dep_clean dep_rooms dep_ ','dep_staff_ dep__clean dep_clean_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4569,0.16666666666666666,'clean','dep_crowded ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4586,0.16666666666666666,'plate','dep_unclean dep_light dep_switch ','dep_unclean_light dep_light_switch dep_switch_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4587,-0.0,'tissue','dep_paper ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4642,-0.3333333333333333,'Rooms','dep_neat ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4705,0.16666666666666666,'room','dep_neat ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4713,0.0,'door','dep_Cleaner dep_shower dep_glass dep_door dep_n dep_frame ','dep_Cleaner_shower dep_shower_glass dep_glass_door dep_door_n dep_n_frame ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4748,0.02222222222222222,'pool','dep_Dirty dep_swimming dep_pool dep_ ','dep_Dirty_swimming dep_swimming_pool dep_pool_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4749,0.0,'hygiene','dep_maintained ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative

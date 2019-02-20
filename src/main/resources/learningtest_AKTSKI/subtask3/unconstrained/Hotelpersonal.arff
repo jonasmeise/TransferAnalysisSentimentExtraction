@@ -1,0 +1,673 @@
+@relation Hotelpersonal
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+19,-0.0,'told','dep_travel ','dep_travel_about ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+35,0.39999999999999997,'housekeeper','dep_sweet ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+36,0.17777777777777778,'job','dep_great ','dep_great_did ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+41,0.37777777777777777,'staff','dep_housekeeping dep_friendly ','dep_housekeeping_friendly ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+42,0.17777777777777778,'job','dep_great ','dep_great_did ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+44,-0.13333333333333333,'staff','dep_warm ','dep_warm_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+45,-0.0,'staff','dep_Rude dep_staff dep_ ','dep_Rude_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+46,0.16666666666666666,'vibe','dep_unpleasant dep_gave dep_started ','dep_unpleasant_gave dep_gave_started ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+47,-0.027777777777777776,'receptionist','dep_one dep_female ','dep_one_female dep_female_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+78,-0.4,'service','dep_Room dep_cleaning dep_good ','dep_Room_cleaning dep_cleaning_good ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+83,-0.0,'service','dep_room dep_service dep_ dep_bar ','dep_room_service dep_service_ dep__bar ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+85,0.08333333333333333,'service','dep_Excellent dep_customer dep_service dep_ ','dep_Excellent_customer dep_customer_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+86,0.0,'staff','dep_accommodating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+87,0.0,'staff','dep_accommodating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+88,0.0,'desk','dep_front ','dep_front_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+89,0.08333333333333333,'service','dep_Excellent dep_customer dep_service dep_ ','dep_Excellent_customer dep_customer_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+93,-0.3333333333333333,'Maintenance','dep_spotty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+118,0.047619047619047616,'service','dep_room dep_closed dep_ dep_essential ','dep_room_is dep_closed_ dep__essential ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+126,-0.39999999999999997,'staff','dep_front dep_friendly ','dep_front_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+147,0.39999999999999997,'staff','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+159,0.0,'staff','dep_Friendly dep_staff dep_ ','dep_Friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+160,0.0,'staff','dep_Friendly dep_staff dep_ ','dep_Friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+161,0.1111111111111111,'housekeeping','dep_Trustworthy dep_housekeeping dep_ ','dep_Trustworthy_housekeeping dep_housekeeping_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+174,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+175,-0.26666666666666666,'effort','dep_made dep_friendly ','dep_made_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+176,-0.26666666666666666,'effort','dep_made dep_friendly ','dep_made_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+179,0.26666666666666666,'Staff','dep_Staff dep_helpful dep_! ','dep_Staff_helpful dep_helpful_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+205,-0.0,'staff','dep_accommodating ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+210,-0.16666666666666666,'staff','dep_helped ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+211,-0.16666666666666666,'staff','dep_helped ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+218,0.3333333333333333,'Staff','dep_bilingual ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+219,0.3333333333333333,'Staff','dep_bilingual ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+233,-0.0,'Staff','dep_Desk dep_felt ','dep_Desk_felt dep_felt_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+234,-0.0,'Concierge','dep_felt ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+238,-0.0,'receptionists','dep_daytime ','dep_daytime_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+241,-0.19999999999999998,'staff','dep_friendly dep_night ','dep_friendly_night dep_night_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+242,-0.16,'receptionist','dep_friendly dep_night dep_receptionist dep_ ','dep_friendly_night dep_night_receptionist dep_receptionist_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+256,-0.3333333333333333,'Management','dep_willing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+266,0.0,'woman','dep_lady dep_attending ','dep_lady_attending ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+267,0.12380952380952381,'lady','dep_woman dep_lovely dep_lady dep_ ','dep_woman_was dep_lovely_lady dep_lady_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+268,0.21666666666666667,'lady','dep_front dep_desk dep_pleasant ','dep_front_desk dep_desk_pleasant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+274,0.16,'staff','dep_location dep_ dep_friendly dep_staff dep_ ','dep_location_ dep__friendly dep_friendly_staff dep_staff_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+279,0.0,'service','dep_quick dep_Loved ','dep_quick_Loved ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+280,0.0,'service','dep_quick dep_Loved ','dep_quick_Loved ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+303,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+337,-0.0,'man','dep_man dep_ushered ','dep_man_ushered ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+338,-0.0,'man','dep_man dep_ushered ','dep_man_ushered ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+339,-0.0,'man','dep_man dep_ushered ','dep_man_ushered ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+354,-0.26666666666666666,'staff','dep_Front dep_desk dep_friendly ','dep_Front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+355,-0.26666666666666666,'staff','dep_Front dep_desk dep_friendly ','dep_Front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+359,0.0,'order','dep_done ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+374,-0.3333333333333333,'staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+375,-0.3333333333333333,'staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+376,-0.3333333333333333,'staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+428,0.0,'staff','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+436,0.2888888888888889,'staff','dep_pleasant ','dep_pleasant_at ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+439,-0.5666666666666667,'staff','dep_neat dep_friendly ','dep_neat_friendly ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+452,-0.0,'staff','dep_members ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+453,-0.0,'staff','dep_members ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+454,0.06666666666666667,'Staff','dep_Staff dep_fast dep_ dep_hotel dep_ ','dep_Staff_fast dep_fast_ dep__hotel dep_hotel_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+471,-0.2888888888888889,'staff','dep_desk dep_lovely ','dep_desk_lovely ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+472,0.1111111111111111,'concierge','dep_older dep_rude ','dep_older_rude ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,negative
+473,0.1111111111111111,'concierge','dep_older dep_rude ','dep_older_rude ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,negative
+487,0.0,'staff','dep_Great dep_reception dep_staff dep_ ','dep_Great_reception dep_reception_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+511,-0.0,'staff','dep_Friendly dep_staff dep_ ','dep_Friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+512,-0.0,'staff','dep_Checking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+513,-0.0,'staff','dep_Checking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+514,-0.0,'staff','dep_Checking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+515,-0.0,'staff','dep_Checking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+537,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+555,-0.0,'Front','dep_disc ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+604,-0.0,'staff','dep_hotel ','dep_hotel_from ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+624,-0.4666666666666666,'Staff','dep_comfortable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+625,-0.0,'communicating','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+626,-0.0,'keeping','dep_house dep_staff ','dep_house_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+654,0.8666666666666667,'Staff','dep_good ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+661,-0.1111111111111111,'service','dep_Poor dep_customer dep_charging ','dep_Poor_customer dep_customer_charging ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+672,-0.0,'desk','dep_front dep_seemd ','dep_front_seemd ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+683,-0.0,'staff','dep_counter dep_bit ','dep_counter_bit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+684,-0.0,'staff','dep_counter dep_bit ','dep_counter_bit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+685,-0.0,'staff','dep_counter dep_bit ','dep_counter_bit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+687,0.0,'desk','dep_front dep_provided ','dep_front_provided ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+695,0.3333333333333333,'Staffing','dep_issues ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,negative
+699,-0.1111111111111111,'staff','dep_cleaning dep_look ','dep_cleaning_look ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+702,-0.13333333333333333,'staff','dep_location dep_ dep_friendly dep_staff dep_bed dep_ ','dep_location_ dep__friendly dep_friendly_staff dep_staff_bed dep_bed_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+739,-0.0,'request','dep_able dep_check dep_without ','dep_able_check dep_check_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+748,-0.044444444444444446,'service','dep_poor dep_customer dep_hotel ','dep_poor_customer dep_customer_hotel ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+753,-0.04444444444444443,'service','dep_customer dep_poor ','dep_customer_poor ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+756,-0.0,'desk','dep_front ','dep_front_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+758,-0.0,'answers','dep_pricing dep_inquiring ','dep_pricing_inquiring ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+775,0.7999999999999999,'staff','dep_clean ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+782,-0.7999999999999999,'staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+786,-0.0,'staff','dep_informed ','dep_informed_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+798,0.06666666666666667,'fixed','dep_times dep_complained ','dep_times_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+803,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+804,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+813,-0.0,'frontdesk','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+838,0.0,'staff','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+847,-0.0,'staff','dep_member ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+861,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+862,-0.0,'desk','dep_Front dep_welcoming ','dep_Front_welcoming ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+863,-0.7999999999999999,'staff','dep_courteous ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+864,-0.17777777777777778,'woman','dep_nice dep_arrival ','dep_nice_arrival ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+865,-0.0,'service','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+875,-0.5333333333333333,'concierge','dep_great ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+877,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+878,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+879,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+899,-0.0,'service','dep_omer dep_wasnft ','dep_omer_wasnft ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+920,-0.39999999999999997,'Staff','dep_friendly ','dep_friendly_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+930,-0.0,'staff','dep_Friendly dep_staff dep_ dep_location dep_ ','dep_Friendly_staff dep_staff_ dep__location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+940,0.43333333333333335,'housekeeping','dep_good dep_bed ','dep_good_bed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+945,-0.0,'contacted','dep_one dep_requested dep_us dep_let ','dep_one_requested dep_requested_us dep_us_let ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+950,0.17777777777777778,'desk','dep_front dep_call dep_complain ','dep_front_call dep_call_complain ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+952,-0.16666666666666666,'employee','dep_professional dep_location ','dep_professional_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+991,-0.0,'staff','dep_little ','dep_little_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+992,-0.0,'staff','dep_little ','dep_little_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1001,-0.26666666666666666,'staff','dep_nice dep_WiFi ','dep_nice_WiFi ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1054,-0.2,'staff','dep_helpful dep_staff dep_ dep_easy dep_ ','dep_helpful_staff dep_staff_ dep__easy dep_easy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1062,-0.0,'staff','dep_invasive dep_cleaning dep_staff dep_banging dep_ ','dep_invasive_cleaning dep_cleaning_staff dep_staff_banging dep_banging_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1063,-0.2333333333333333,'staff','dep_terrible ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1064,-0.2333333333333333,'service','dep_bad dep_went ','dep_bad_went ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1085,0.10666666666666667,'response','dep_quite dep_hostile dep_got dep_saying ','dep_quite_a dep_hostile_got dep_got_saying ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1094,-0.1111111111111111,'team','dep_housekeeping ','dep_housekeeping_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1119,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1120,-0.0,'girl','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1121,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1141,-0.0,'competence','dep_stuff dep_leaves ','dep_stuff_leaves ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1143,-0.0,'mistakes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1159,-0.16666666666666666,'girl','dep_blunt ','dep_blunt_on ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1160,-0.16666666666666666,'girl','dep_blunt ','dep_blunt_on ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1173,-0.1111111111111111,'dealt','dep_promptly ','dep_promptly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1177,0.0,'staff','dep_Friendly dep_staff dep_speaks dep_ ','dep_Friendly_staff dep_staff_and dep_speaks_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1178,0.0,'staff','dep_Friendly dep_staff dep_speaks dep_ ','dep_Friendly_staff dep_staff_and dep_speaks_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1203,0.2,'staff','dep_good dep_location dep_Good dep_WiFi dep_nice dep_staff dep_ ','dep_good_location dep_location_Good dep_Good_WiFi dep_WiFi_nice dep_nice_staff dep_staff_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1205,-0.26666666666666666,'staff','dep_Front dep_desk dep_friendly ','dep_Front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1206,-0.26666666666666666,'staff','dep_Front dep_desk dep_friendly ','dep_Front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1207,0.4666666666666666,'reservation','dep_lost ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1210,-0.0,'Reservation','dep_room ','dep_room_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1235,-0.0,'housekeeping','dep_asked ','dep_asked_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1236,-0.0,'service','dep_Great dep_service dep_ ','dep_Great_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1244,0.39999999999999997,'staff','dep_Reception dep_friendly ','dep_Reception_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1262,-0.35000000000000003,'people','dep_nice dep_working ','dep_nice_working ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1289,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1290,-0.19047619047619047,'work','dep_work dep_really dep_well dep_polite dep_ ','dep_work_really dep_really_well dep_well_and dep_polite_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1304,-0.0,'they','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1308,0.7999999999999999,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1321,-0.09999999999999999,'etiquette','dep_Staff dep_poor ','dep_Staff_poor ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1343,-0.0,'reception','dep_reception dep_bit ','dep_reception_bit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1374,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1375,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1419,-0.25833333333333336,'staff','dep_Friendly dep_good dep_breakfast ','dep_Friendly_good dep_good_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1429,-0.0,'Staff','dep_personel ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1444,0.0,'Staff','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1449,-0.4666666666666666,'staff','dep_kind ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1462,0.0,'Staff','dep_check ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1470,-0.047619047619047616,'responded','dep_hotel dep_kindly dep_responded dep_provided dep_ ','dep_hotel_kindly dep_kindly_responded dep_responded_to dep_provided_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1494,-0.0,'employes','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1502,-0.0761904761904762,'employe','dep_One dep_employe dep_nice dep_one dep_ ','dep_One_employe dep_employe_not dep_nice_but dep_one_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1503,-0.2333333333333333,'most','dep_kind ','dep_kind_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1504,-0.2333333333333333,'most','dep_kind ','dep_kind_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1511,0.044444444444444446,'gentlemen','dep_lobby ','dep_lobby_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1521,-0.17777777777777778,'lady','dep_nice ','dep_nice_at ',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1527,0.06666666666666667,'friendly','dep_confusing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1543,-0.10666666666666667,'staff','dep_reception dep_nice ','dep_reception_nice ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1553,-0.16666666666666666,'cleaners','dep_knock ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1555,-0.4666666666666666,'Staff','dep_competent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1557,-0.0,'problem','dep_fixed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1560,0.2333333333333333,'receptionist','dep_Location dep_kind ','dep_Location_kind ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1571,-0.0,'personal','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1572,-0.0,'personal','dep_room ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1597,-0.2888888888888889,'Staff','dep_excellent dep_location ','dep_excellent_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1653,0.39999999999999997,'staff','dep_friendly dep_location ','dep_friendly_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1661,-0.26666666666666666,'staff','dep_nice dep_location ','dep_nice_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1691,0.03333333333333333,'receptionists','dep_blocked ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1699,-0.39999999999999997,'staff','dep_helpful dep_room ','dep_helpful_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1703,-0.3333333333333333,'Staff','dep_rude ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1705,0.06666666666666667,'receptionist','dep_ignored ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1706,0.0,'smile','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1709,0.4444444444444444,'staff','dep_super dep_friendly dep_views ','dep_super_friendly dep_friendly_views ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1710,0.4444444444444444,'staff','dep_super dep_friendly dep_views ','dep_super_friendly dep_friendly_views ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1727,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1728,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1748,-0.2888888888888889,'staff','dep_pleasant ','dep_pleasant_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1749,-0.2888888888888889,'staff','dep_pleasant ','dep_pleasant_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1765,-0.0,'experience','dep_Poor dep_experience dep_ ','dep_Poor_experience dep_experience_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1769,-0.2888888888888889,'service','dep_daily dep_laid dep_good ','dep_daily_laid dep_laid_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1772,-0.0,'experience','dep_Unpleasant dep_experience dep_ ','dep_Unpleasant_experience dep_experience_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1773,-0.01904761904761905,'treated','dep_Thier dep_treated dep_aggressively dep_admonished dep_ ','dep_Thier_treated dep_treated_me dep_aggressively_and dep_admonished_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1807,-0.0,'staff','dep_Liked ','dep_Liked_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1812,-0.16666666666666666,'staff','dep_enough dep_music ','dep_enough_music dep_music_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1839,-0.08333333333333333,'lady','dep_young dep_waited ','dep_young_was ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1841,-0.0,'staff','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+1848,-0.3333333333333333,'staff','dep_efficient ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1854,0.15,'staff','dep_amazing dep_facility ','dep_amazing_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1857,0.0,'staff','dep_rooms ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1867,-0.05555555555555555,'service','dep_service dep_fast dep_ ','dep_service_at dep_fast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1868,-0.05555555555555555,'service','dep_service dep_fast dep_ ','dep_service_at dep_fast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1875,-0.2222222222222222,'staff','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1876,-0.2222222222222222,'staff','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1877,-0.0,'asked','dep_asked dep_delivered dep_ ','dep_asked_for dep_delivered_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1883,-0.26666666666666666,'woman','dep_helpful ','dep_helpful_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,negative
+1885,-0.0,'personnel','dep_maintenance dep_sort ','dep_maintenance_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,negative
+1886,-0.08333333333333333,'receptionist','dep_apologetic ','',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,positive
+1887,-0.0,'reaction','dep_initial dep_left ','dep_initial_left dep_left_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,negative
+1901,-0.0,'requesting','dep_nothing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1906,-0.26666666666666666,'staff','dep_super ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1907,-0.26666666666666666,'staff','dep_super ','',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1933,-0.0,'requested','dep_given dep_flat ','dep_given_but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1940,-0.0,'staffs','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1941,-0.0,'staffs','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1946,0.0,'staff','dep_location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1952,-0.6666666666666666,'Staff','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1953,-0.6666666666666666,'Staff','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1969,0.39999999999999997,'staff','dep_friendly ','dep_friendly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1970,0.39999999999999997,'staff','dep_friendly ','dep_friendly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1984,0.2333333333333333,'service','dep_bad dep_Location ','dep_bad_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1991,0.0,'staff','dep_Helpful dep_staff dep_ ','dep_Helpful_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1997,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1998,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2002,-0.5,'Staff','dep_patient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2019,0.7999999999999999,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2039,0.16666666666666666,'waitress','dep_rude dep_got ','dep_rude_got ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2061,0.2222222222222222,'staff','dep_reception dep_grumpy ','dep_reception_grumpy ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2062,0.2222222222222222,'staff','dep_reception dep_grumpy ','dep_reception_grumpy ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2063,-0.0761904761904762,'lady','dep_Exemption dep_nice dep_lady dep_explaining dep_ ','dep_Exemption_was dep_nice_lady dep_lady_explaining dep_explaining_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2064,-0.0,'time','dep_took ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2075,-0.11666666666666665,'staff','dep_woman dep_receptionist dep_like ','dep_woman_receptionist dep_receptionist_like ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2076,-0.11666666666666665,'staff','dep_woman dep_receptionist dep_like ','dep_woman_receptionist dep_receptionist_like ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2077,-0.09333333333333332,'information','dep_ dep_welcome dep_ dep_actually ','dep__welcome dep_welcome_about dep__actually ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2096,0.16,'staff','dep_Excellent dep_location dep_friendly dep_staff dep_ ','dep_Excellent_location dep_location_friendly dep_friendly_staff dep_staff_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2105,0.26666666666666666,'staff','dep_Reception dep_nice ','dep_Reception_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2106,0.26666666666666666,'staff','dep_Reception dep_nice ','dep_Reception_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2109,0.1111111111111111,'staff','dep_cleaning dep_kettle dep_cleaned ','dep_cleaning_kettle dep_kettle_cleaned ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2115,0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2119,0.3333333333333333,'staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2126,-0.0,'staff','dep_ dep_check ','dep__in ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2127,-0.17777777777777778,'staffs','dep_nice ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2128,-0.17777777777777778,'staffs','dep_nice ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2139,0.08333333333333333,'hospitality','dep_Good dep_hospitality dep_ dep_ ','dep_Good_hospitality dep_hospitality_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2145,-0.5333333333333333,'Staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2146,-0.5333333333333333,'Staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2147,-0.5333333333333333,'Housekeeper','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2151,-0.0,'staff','dep_manager ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2152,-0.0,'staff','dep_manager ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2172,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2173,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2197,-0.5333333333333333,'Staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2200,-0.21666666666666667,'staff','dep_room dep_service dep_excellent ','dep_room_service dep_service_excellent ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2205,-0.17777777777777778,'staff','dep_nice ','dep_nice_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2217,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+2226,-0.26666666666666666,'staffs','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2227,-0.26666666666666666,'staffs','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2232,-0.5333333333333333,'Staff','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2233,-0.5333333333333333,'Staff','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2242,0.0,'staff','dep_amenities ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2245,0.4666666666666666,'staff','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2255,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2256,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2303,0.5333333333333333,'People','dep_nice ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2336,0.21666666666666667,'Staffs','dep_Staffs dep_good dep_ ','dep_Staffs_and dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2342,-0.7999999999999999,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2345,-0.7999999999999999,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2346,-0.7999999999999999,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2352,-0.0,'staff','dep_bed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2353,-0.0,'staff','dep_bed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2362,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2403,0.26666666666666666,'service','dep_Concierge dep_nice ','dep_Concierge_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2408,-0.7999999999999999,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2425,-0.5333333333333333,'Staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2437,-0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,positive
+2438,-0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,positive
+2439,-0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,positive
+2501,-0.7999999999999999,'Staff','dep_helpful ','',0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2502,-0.14444444444444446,'hospitality','dep_excellent dep_took dep_touch dep_offers ','dep_excellent_took dep_took_and dep_touch_offers ',0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2511,-0.39999999999999997,'staff','dep_clean ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2521,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2522,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2528,0.16666666666666666,'staff','dep_exceptional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2529,0.39999999999999997,'cleaner','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2536,-0.0,'lady','dep_since dep_felt ','dep_since_felt ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,negative
+2537,-0.0,'lady','dep_since dep_felt ','dep_since_felt ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,negative
+2544,-0.0,'staff','dep_speaking ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2559,0.0,'staff','dep_Helpful dep_equipped ','dep_Helpful_equipped ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2566,-0.06666666666666667,'staff','dep_help ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2572,0.26666666666666666,'staff','dep_nice ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2574,0.7999999999999999,'Reception','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2575,0.7999999999999999,'Reception','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2578,-0.19999999999999998,'staff','dep_front dep_desk dep_friendly ','dep_front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2579,-0.19999999999999998,'staff','dep_front dep_desk dep_friendly ','dep_front_desk dep_desk_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2596,0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2603,0.43333333333333335,'staff','dep_lovely ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2604,0.43333333333333335,'staff','dep_lovely ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2605,0.43333333333333335,'staff','dep_lovely ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2614,0.16,'staff','dep_Clean dep_ dep_friendly dep_staff dep_ ','dep_Clean_ dep__friendly dep_friendly_staff dep_staff_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2646,-0.26666666666666666,'staff','dep_nice dep_central ','dep_nice_central ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2651,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2665,-0.2222222222222222,'Receptionist','dep_communicate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2671,-0.0,'Staff','dep_Check ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2715,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+2716,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2717,-0.6666666666666666,'they','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2718,-0.6666666666666666,'they','dep_polite ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2724,-0.17333333333333334,'staff','dep_great dep_star ','dep_great_star ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2748,-0.4666666666666667,'staff','dep_love dep_ dep_convenient dep_friendly dep_rooms ','dep_love_ dep__convenient dep_convenient_friendly dep_friendly_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2756,-0.16666666666666666,'staff','dep_works ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2762,0.08333333333333333,'English','dep_minimum dep_knows ','dep_minimum_knows ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2770,0.08333333333333333,'English','dep_minimum dep_knows ','dep_minimum_knows ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2777,-0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2778,-0.06666666666666667,'staff','dep_help ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2785,-0.0,'staff','dep_Hotel dep_welcoming ','dep_Hotel_welcoming ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2786,-0.0,'staff','dep_Hotel dep_welcoming ','dep_Hotel_welcoming ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2807,-0.26666666666666666,'staff','dep_hotel dep_friendly ','dep_hotel_friendly ',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2808,-0.26666666666666666,'staff','dep_hotel dep_friendly ','dep_hotel_friendly ',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2823,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2833,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2860,0.5333333333333333,'they','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2867,0.05555555555555555,'bathroom','dep_Rooms dep_small ','dep_Rooms_small ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2873,0.0,'Staff','dep_accommodating ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2876,-0.3,'staff','dep_fantastic ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2887,-0.0,'desk','dep_front ','dep_front_with ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2888,-0.8333333333333334,'staff','dep_friendly dep_perfect ','dep_friendly_perfect ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2889,-0.8333333333333334,'staff','dep_friendly dep_perfect ','dep_friendly_perfect ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2916,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2945,0.0,'staff','dep_bit ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2973,-0.0,'Staff','dep_location ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2988,0.0,'staff','dep_Friendly dep_staff dep_location dep_ ','dep_Friendly_staff dep_staff_and dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2993,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2994,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3000,-0.2,'staff','dep_Small dep_ dep_location dep_friendly dep_yummy ','dep_Small_ dep__location dep_location_friendly dep_friendly_yummy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3055,0.2222222222222222,'warmth','dep_little dep_lacking ','dep_little_lacking ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3084,-0.2333333333333333,'receptionists','dep_kind ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3085,-0.2333333333333333,'receptionists','dep_kind ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3101,0.19999999999999998,'staff','dep_friendly dep_staff dep_ ','dep_friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3107,0.2111111111111111,'waiters','dep_recommend ','dep_recommend_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3110,-0.8333333333333334,'staff','dep_lovely dep_clean ','dep_lovely_clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3113,0.0,'staffs','dep_Good dep_staffs dep_ ','dep_Good_staffs dep_staffs_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3142,-0.43333333333333335,'staff','dep_pleasant ','dep_pleasant_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3145,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3155,-0.0,'service','dep_room dep_ ','dep_room_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3160,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3161,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3179,-0.0,'receptionist','dep_told dep_looked ','dep_told_looked ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3187,-0.39999999999999997,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3200,-0.19999999999999998,'staff','dep_front dep_desk dep_helpful ','dep_front_desk dep_desk_helpful ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3201,-0.19999999999999998,'staff','dep_front dep_desk dep_helpful ','dep_front_desk dep_desk_helpful ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3214,-0.0,'staff','dep_Location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3219,-0.5333333333333333,'Staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3228,-0.39999999999999997,'People','dep_helpful ','dep_helpful_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3239,-0.0,'staff','dep_Attentive dep_staff dep_ ','dep_Attentive_staff dep_staff_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3241,-0.0,'staff','dep_paid ','dep_paid_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3251,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3252,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3258,0.0,'staff','dep_Helpful dep_staff dep_ ','dep_Helpful_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3262,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3263,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3270,-0.0,'staff','dep_Excellent dep_staff dep_ dep_plenty dep_nearby dep_ ','dep_Excellent_staff dep_staff_ dep__plenty dep_plenty_nearby dep_nearby_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3273,0.2333333333333333,'staff','dep_kind dep_Nice ','dep_kind_Nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3274,0.2333333333333333,'staff','dep_kind dep_Nice ','dep_kind_Nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3283,0.7999999999999999,'staff','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3284,0.7999999999999999,'staff','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3311,-0.0,'Staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3312,-0.0,'Staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3318,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3324,-0.39999999999999997,'staff','dep_friendly dep_Nice ','dep_friendly_Nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3356,-0.0,'staff','dep_people ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3366,-0.0,'they','dep_repair ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3386,-0.16666666666666666,'staff','dep_building ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3397,-0.4666666666666666,'Staff','dep_kind ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3401,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3414,-0.26666666666666666,'staff','dep_helpful dep_Courteous ','dep_helpful_Courteous dep_Courteous_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3415,-0.26666666666666666,'staff','dep_helpful dep_Courteous ','dep_helpful_Courteous dep_Courteous_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3418,0.26666666666666666,'personnel','dep_Front dep_desk dep_helpful ','dep_Front_desk dep_desk_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3419,0.26666666666666666,'personnel','dep_Front dep_desk dep_helpful ','dep_Front_desk dep_desk_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3420,0.08333333333333333,'staff','dep_breakfast dep_Morning ','dep_breakfast_Morning ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3423,-0.041666666666666664,'staff','dep_Lovely dep_breakfast ','dep_Lovely_was ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+3432,0.0,'service','dep_Friendly dep_service dep_ ','dep_Friendly_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3433,0.0,'service','dep_Friendly dep_service dep_ ','dep_Friendly_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3434,0.0,'Staff','dep_able ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3453,-0.0,'staff','dep_mention ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3454,-0.1111111111111111,'lady','dep_cleaning ','dep_cleaning_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3456,0.16,'staff','dep_Friendly dep_place dep_ dep_location dep_clean ','dep_Friendly_place dep_place_ dep__location dep_location_clean ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3495,0.0,'staff','dep_Helpful dep_staff dep_ dep_really dep_ ','dep_Helpful_staff dep_staff_ dep__really dep_really_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3504,0.0,'Receptionists','dep_Fabiola ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3505,0.26666666666666666,'guys','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3512,0.39999999999999997,'staff','dep_friendly dep_location ','dep_friendly_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3513,0.39999999999999997,'staff','dep_friendly dep_location ','dep_friendly_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3515,0.020833333333333332,'staff','dep_Excellent dep_staff dep_ dep_breakfast dep_coffee dep_bedrooms dep_ ','dep_Excellent_staff dep_staff_ dep__breakfast dep_breakfast_coffee dep_coffee_and dep_bedrooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3540,-0.17777777777777778,'staff','dep_quick dep_ dep_nice ','dep_quick_ dep__nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3548,-0.0,'staff','dep_members ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3549,-0.21666666666666667,'service','dep_good dep_service dep_ ','dep_good_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3557,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3564,0.43333333333333335,'staff','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3575,0.0,'receptionists','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3588,0.07407407407407407,'staff','dep_Bidet dep_ dep_matress dep_polite dep_staff dep_windows dep_lift dep_decoration dep_ ','dep_Bidet_ dep__matress dep_matress_polite dep_polite_staff dep_staff_windows dep_windows_lift dep_lift_decoration dep_decoration_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3607,0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+3608,0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+3619,-0.43333333333333335,'staff','dep_good dep_place ','dep_good_place ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3622,0.4666666666666666,'Reception','dep_lost ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3628,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3638,0.0,'staff','dep_Helpful dep_staff dep_ ','dep_Helpful_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3639,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3644,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3664,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3665,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3666,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3673,-0.0,'english','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3676,0.39999999999999997,'staff','dep_helpful dep_location ','dep_helpful_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3690,-0.37777777777777777,'staff','dep_enjoyable dep_ dep_friendly ','dep_enjoyable_ dep__friendly ',0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,positive
+3698,0.26666666666666666,'personnel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3699,0.26666666666666666,'personnel','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3704,0.3333333333333333,'staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3709,-0.0,'staff','dep_Friendly dep_staff dep_lots dep_ ','dep_Friendly_staff dep_staff_and dep_lots_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3718,-0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3731,-0.06666666666666667,'Waiter','dep_greet ','',0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+3734,-0.0,'staff','dep_ dep_cleaness ','dep__and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3744,-0.39999999999999997,'staff','dep_courteous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3745,-0.39999999999999997,'staff','dep_courteous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3747,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3748,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3762,-0.26666666666666666,'desk','dep_front dep_helpful ','dep_front_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3770,-0.6666666666666666,'Personal','dep_skilled ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3771,-0.6666666666666666,'Personal','dep_skilled ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3775,-0.26666666666666666,'Staff','dep_Staff dep_friendly dep_ ','dep_Staff_friendly dep_friendly_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3779,0.0,'apologies','dep_offering ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3790,0.0,'Reception','dep_smiley ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3791,0.0,'Reception','dep_smiley ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3817,-0.0,'staff','dep_Hotel dep_welcoming ','dep_Hotel_welcoming ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3833,0.2333333333333333,'personnel','dep_kind dep_Location ','dep_kind_Location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3836,0.2533333333333333,'staff','dep_Clean dep_comfortable dep_helpful dep_staff dep_ ','dep_Clean_comfortable dep_comfortable_helpful dep_helpful_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3848,-0.6,'staff','dep_cleaning dep_pleasant ','dep_cleaning_pleasant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3864,-0.16,'staff','dep_Friendly dep_staff dep_helpful dep_ ','dep_Friendly_staff dep_staff_and dep_helpful_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3865,-0.16,'staff','dep_Friendly dep_staff dep_helpful dep_ ','dep_Friendly_staff dep_staff_and dep_helpful_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3873,-0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3882,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+3884,0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+3897,-0.0,'staff','dep_accommodating ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3899,-0.3,'staff','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3904,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3905,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3906,-0.26666666666666666,'staff','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3937,0.7999999999999999,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3943,-0.05185185185185185,'feel','dep_nt dep_feel dep_welcome dep_ dep_expected dep_ ','dep_nt_feel dep_feel_welcome dep_welcome_ dep__but dep_expected_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3950,0.39999999999999997,'faces','dep_friendly ','dep_friendly_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3951,0.39999999999999997,'faces','dep_friendly ','dep_friendly_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3953,-0.0,'staff','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3955,-0.0,'staff','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3961,-0.26666666666666666,'staff','dep_every dep_single dep_helpful ','dep_every_single dep_single_helpful ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3983,0.4666666666666666,'management','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3987,0.19999999999999998,'staffs','dep_front dep_desk dep_helpful ','dep_front_desk dep_desk_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3991,-0.0,'staff','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4006,-0.02666666666666667,'help','dep_help dep_ ','dep_help_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4014,0.7999999999999999,'Staff','dep_courteous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4015,0.7999999999999999,'Staff','dep_courteous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4026,0.5333333333333333,'Staff','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4034,0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4037,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4038,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4047,-0.39999999999999997,'staff','dep_friendly ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4056,0.0,'staff','dep_Helpful dep_staff dep_ ','dep_Helpful_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4060,0.2,'Staff','dep_amazing dep_facilities ','dep_amazing_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4063,0.43333333333333335,'staff','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4064,0.21666666666666667,'skills','dep_great dep_customer dep_services ','dep_great_customer dep_customer_services dep_services_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4067,0.0,'service','dep_Room dep_service dep_class dep_!! ','dep_Room_service dep_service_and dep_class_!! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4072,-0.0,'staff','dep_ ','dep__at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4082,0.7999999999999999,'staff','dep_helpful dep_cheerful ','dep_helpful_cheerful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4083,0.7999999999999999,'staff','dep_helpful dep_cheerful ','dep_helpful_cheerful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4087,0.0,'staff','dep_Friendly dep_staff ','dep_Friendly_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4090,0.16666666666666666,'staff','dep_breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4094,-0.02666666666666667,'staff','dep_asset dep_staff dep_ ','dep_asset_is dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4095,-0.26666666666666666,'staff','dep_restaurant dep_responsive ','dep_restaurant_responsive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4096,-0.0,'Concierge','dep_went ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4105,-0.0,'service','dep_Prompt dep_service dep_stay dep_ ','dep_Prompt_service dep_service_and dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4106,-0.0,'service','dep_Prompt dep_service dep_stay dep_ ','dep_Prompt_service dep_service_and dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4110,-0.0,'staff','dep_Breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4111,-0.1111111111111111,'lady','dep_Breakfast dep_smiley dep_helped ','dep_Breakfast_smiley dep_smiley_helped ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4112,-0.1111111111111111,'lady','dep_Breakfast dep_smiley dep_helped ','dep_Breakfast_smiley dep_smiley_helped ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4113,-0.0,'ask','dep_find ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4114,-0.0,'tell','dep_nt dep_tell dep_find dep_ ','dep_nt_tell dep_tell_me dep_find_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4116,0.26666666666666666,'staff','dep_nice dep_place ','dep_nice_place ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4122,-0.39999999999999997,'staff','dep_friendly ','dep_friendly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4123,-0.39999999999999997,'staff','dep_friendly ','dep_friendly_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4127,0.0,'staff','dep_Breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4131,0.3190476190476191,'staff','dep_food dep_good dep_bright dep_helpful dep_ dep_area ','dep_food_was dep_good_bright dep_bright_helpful dep_helpful_ dep__area ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4135,0.19999999999999998,'staff','dep_Clean dep_friendly dep_staff dep_ ','dep_Clean_friendly dep_friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4147,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4157,0.0,'Staff','dep_bar ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4164,0.39999999999999997,'Mukhtar','dep_helpful ','dep_helpful_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4165,0.17777777777777778,'guy','dep_great dep_guy dep_ ','dep_great_guy dep_guy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4169,0.0,'management','dep_back ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4170,0.39999999999999997,'Staff','dep_helpful ','dep_helpful_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4171,0.39999999999999997,'Staff','dep_helpful ','dep_helpful_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4172,0.32,'staff','dep_clean dep_Liked dep_helpful ','dep_clean_Liked dep_Liked_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4173,0.32,'staff','dep_clean dep_Liked dep_helpful ','dep_clean_Liked dep_Liked_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4195,-0.26666666666666666,'staff','dep_hotel dep_friendly ','dep_hotel_friendly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4200,-0.6666666666666666,'staff','dep_excellent dep_recommended ','dep_excellent_recommended ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4203,-0.43333333333333335,'staff','dep_excellence ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4204,-0.2888888888888889,'communicate','dep_pleasant ','dep_pleasant_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4205,-0.0,'guest','dep_priority ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4206,-0.39999999999999997,'staff','dep_friendly dep_encountered ','dep_friendly_encountered ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4207,-0.0,'team','dep_entire ','dep_entire_before ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4209,-0.0,'feel','dep_make ','dep_make_at ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4213,0.0,'service','dep_Great dep_amenities ','dep_Great_amenities ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4218,0.43333333333333335,'Service','dep_good ','dep_good_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4219,-0.0,'request','dep_Room dep_change dep_attended ','dep_Room_change dep_change_attended ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4228,-0.0,'request','dep_adhered ','dep_adhered_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4245,-0.16666666666666666,'managed','dep_reasonably dep_Looked ','dep_reasonably_Looked ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4248,-0.43333333333333335,'service','dep_rooms dep_good ','dep_rooms_good ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,positive
+4253,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4254,0.7999999999999999,'Staff','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4258,-0.26666666666666666,'Service','dep_Room dep_improve dep_ ','dep_Room_improve dep_improve_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4264,0.7999999999999999,'Staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4269,-0.1111111111111111,'staff','dep_sunny dep_choices ','dep_sunny_choices dep_choices_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4270,-0.1111111111111111,'staff','dep_sunny dep_choices ','dep_sunny_choices dep_choices_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4271,-0.0,'desk','dep_staff ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4286,0.0,'request','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4287,0.0,'staff','dep_Hospitable dep_staff dep_ ','dep_Hospitable_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4293,0.0,'service','dep_room ','dep_room_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4295,0.041666666666666664,'staffs','dep_breakfast dep_Kind dep_staffs dep_location ','dep_breakfast_Kind dep_Kind_staffs dep_staffs_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4298,-0.43333333333333335,'staff','dep_excellent dep_hotel ','dep_excellent_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4300,-0.19999999999999998,'staff','dep_Extremely dep_friendly dep_staff dep_ ','dep_Extremely_friendly dep_friendly_staff dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4302,-0.013333333333333334,'accepted','dep_accepted dep_morning dep_ ','dep_accepted_morning dep_morning_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4303,-0.0,'staff','dep_caring ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4306,-0.0,'staff','dep_caring dep_staff ','dep_caring_staff ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4307,-0.0,'staff','dep_caring dep_staff ','dep_caring_staff ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4308,-0.17777777777777778,'staff','dep_staff dep_ dep_efficient dep_front dep_desk dep_warm ','dep_staff_ dep__efficient dep_efficient_front dep_front_desk dep_desk_warm ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4309,-0.26666666666666666,'staff','dep_helpful dep_restaurant dep_ ','dep_helpful_restaurant dep_restaurant_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4311,-0.0,'staff','dep_couriered ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4312,-0.0,'staff','dep_couriered ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4318,0.26666666666666666,'staff','dep_courteous dep_Cleanliness ','dep_courteous_Cleanliness ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4320,0.43333333333333335,'staff','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4322,-0.0,'Staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4327,-0.26666666666666666,'staffs','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4328,-0.26666666666666666,'response','dep_quick dep_nice ','dep_quick_nice ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4335,-0.0,'staff','dep_come ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4346,-0.2222222222222222,'chefs','dep_unable ','dep_unable_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4347,0.5,'staff','dep_professional dep_polite ','dep_professional_polite ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4348,0.5,'staff','dep_professional dep_polite ','dep_professional_polite ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4351,-0.2333333333333333,'Services','dep_horrible ','dep_horrible_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4353,0.0,'delay','dep_much dep_order ','dep_much_order dep_order_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4356,0.0,'staff','dep_spread ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4360,-0.0,'attitude','dep_staffs dep_Liked ','dep_staffs_Liked ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4361,-0.0,'They','dep_looked ','dep_looked_all ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4362,-0.0,'Staff','dep_accommodating ','dep_accommodating_in ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4363,-0.0,'Jay','dep_Joshi ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4364,-0.05833333333333333,'check','dep_late dep_granted ','dep_late_for ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4367,-0.21666666666666667,'attitude','dep_excellent dep_maintain dep_showed ','dep_excellent_maintain dep_maintain_showed ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4368,-0.2888888888888889,'work','dep_good dep_Keep ','dep_good_Keep ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4375,0.0,'Staff','dep_Friendly dep_ dep_value ','dep_Friendly_ dep__value ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4377,-0.03333333333333333,'staff','dep_Excellent dep_value dep_ dep_breakfast dep_room ','dep_Excellent_value dep_value_ dep__breakfast dep_breakfast_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4382,-0.39999999999999997,'Staff','dep_warm ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4383,-0.39999999999999997,'Staff','dep_warm ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4388,-0.0,'staff','dep_way ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4389,-0.0,'staff','dep_way ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4390,-0.041666666666666664,'standards','dep_usual ','dep_usual_above ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4394,-0.0,'SERVICE','dep_LIKE dep_GOT ','dep_LIKE_GOT ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4395,-0.0,'TREAT','dep_US ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4396,-0.0,'FEEL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4402,0.6,'staff','dep_attentive dep_nice ','dep_attentive_nice ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4405,-0.43333333333333335,'staff','dep_good ','dep_good_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4406,-0.09999999999999999,'service','dep_poor dep_come ','dep_poor_come ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4408,0.0,'staff','dep_Need dep_yoru dep_staff dep_get ','dep_Need_yoru dep_yoru_staff dep_staff_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4410,0.0,'service','dep_Prompt dep_service dep_ ','dep_Prompt_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4412,0.19999999999999998,'staff','dep_Good dep_friendly dep_staff dep_! ','dep_Good_friendly dep_friendly_staff dep_staff_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4413,0.19999999999999998,'staff','dep_Good dep_friendly dep_staff dep_! ','dep_Good_friendly dep_friendly_staff dep_staff_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4414,0.0,'service','dep_Great dep_service dep_ ','dep_Great_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4420,0.39999999999999997,'staff','dep_friendly dep_hotel ','dep_friendly_hotel ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4436,0.0,'services','dep_location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4447,-0.35000000000000003,'staff','dep_nice dep_breakfast ','dep_nice_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4459,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4460,-0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4461,-0.43333333333333335,'staff','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4462,-0.43333333333333335,'staff','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4473,0.3333333333333333,'staff','dep_excellent dep_asset ','dep_excellent_asset ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4475,-0.26666666666666666,'staff','dep_best dep_mr ','dep_best_mr ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4479,0.0,'SERVICE','dep_STAFF ','dep_STAFF_IN ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+4480,0.0,'SERVICE','dep_STAFF ','dep_STAFF_IN ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+4481,0.0,'STAFF','dep_SERVICE ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+4482,0.0,'STAFF','dep_SERVICE ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+4496,-0.06666666666666667,'staff','dep_help ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4499,-0.26666666666666666,'staff','dep_great dep_hotel ','dep_great_hotel ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4505,-0.0,'manager','dep_introduced ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4511,-0.0,'staff','dep_reception ','dep_reception_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4512,-0.0,'staff','dep_reception ','dep_reception_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4514,-0.26666666666666666,'staff','dep_Restaurant dep_nice ','dep_Restaurant_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4515,-0.26666666666666666,'staff','dep_Restaurant dep_nice ','dep_Restaurant_nice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4522,0.0,'communication','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4523,0.0,'staff','dep_Breakfast dep_staff ','dep_Breakfast_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4525,0.2222222222222222,'staff','dep_attentive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4533,0.0,'staff','dep_reception dep_welcoming ','dep_reception_welcoming ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4534,-0.09999999999999999,'Reception','dep_poor ','dep_poor_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4535,0.0,'one','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4537,-0.39999999999999997,'staff','dep_helpful ','dep_helpful_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4538,-0.39999999999999997,'staff','dep_helpful ','dep_helpful_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4540,0.8666666666666667,'concierge','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4541,0.0,'concierge','dep_person ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4542,0.0,'concierge','dep_person ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4543,0.08333333333333333,'service','dep_Excellent dep_customer dep_service dep_ ','dep_Excellent_customer dep_customer_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4550,-0.0,'professional','dep_sort ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+4552,0.0,'staff','dep_Friendly dep_rooms ','dep_Friendly_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4554,0.027777777777777776,'went','dep_went dep_extra dep_got dep_ ','dep_went_extra dep_extra_and dep_got_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4555,0.0,'service','dep_Good dep_service dep_ ','dep_Good_service dep_service_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4556,0.0,'service','dep_Good dep_service dep_ ','dep_Good_service dep_service_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4559,0.2888888888888889,'service','dep_good dep_appointed ','dep_good_appointed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4565,-0.0,'Staff','dep_cordial ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4566,-0.0,'Staff','dep_cordial ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4583,-0.8666666666666667,'Security','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4584,-0.39999999999999997,'concierge','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4585,-0.0,'concierge','dep_guided ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4604,-0.8666666666666667,'staff','dep_good ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4612,0.0,'staff','dep_courteus ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4619,0.16666666666666666,'staff','dep_choice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4623,0.0,'staff','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4631,-0.0,'staff','dep_Friendly dep_staff dep_ ','dep_Friendly_staff dep_staff_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4632,-0.0,'communication','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4635,-0.0,'answer','dep_get ','dep_get_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4638,0.08333333333333333,'staff','dep_choice ','dep_choice_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4640,-0.26666666666666666,'staff','dep_friendly dep_ ','dep_friendly_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4641,-0.26666666666666666,'staff','dep_friendly dep_ ','dep_friendly_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4650,0.325,'staff','dep_safe ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4659,-0.4166666666666667,'staff','dep_excellent dep_comfort ','dep_excellent_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4663,-0.0,'Staff','dep_rooms ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4666,-0.17777777777777778,'staff','dep_otherwise dep_great ','dep_otherwise_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4672,0.7999999999999999,'staff','dep_helpful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4673,0.0,'staff','dep_Friendly dep_staff ','dep_Friendly_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4674,0.8666666666666667,'staff','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4681,0.48888888888888893,'employees','dep_polite dep_helpful dep_checking ','dep_polite_helpful dep_helpful_checking ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4682,0.48888888888888893,'employees','dep_polite dep_helpful dep_checking ','dep_polite_helpful dep_helpful_checking ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4687,-0.1111111111111111,'service','dep_room dep_slow ','dep_room_slow ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4689,0.18666666666666665,'service','dep_Absolutely dep_wonderful dep_service dep_! ','dep_Absolutely_wonderful dep_wonderful_service dep_service_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4690,0.2333333333333333,'service','dep_fantastic dep_experienced dep_ ','dep_fantastic_experienced dep_experienced_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4691,0.1111111111111111,'response','dep_fast ','dep_fast_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4692,0.08333333333333333,'team','dep_incredible dep_running ','dep_incredible_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4697,0.26666666666666666,'staff','dep_hotel dep_helpful ','dep_hotel_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4698,0.26666666666666666,'staff','dep_hotel dep_helpful ','dep_hotel_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4700,0.4666666666666666,'Staff','dep_kind ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4701,0.4666666666666666,'Staff','dep_kind ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4715,0.16666666666666666,'reception','dep_revert ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4729,0.16666666666666666,'good','dep_cooperation ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4731,0.6666666666666666,'Staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4732,0.6666666666666666,'Staff','dep_polite ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4738,-0.033333333333333326,'staff','dep_painful dep_helpful ','dep_painful_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4739,-0.22666666666666666,'organized','dep_well dep_helpful ','dep_well_helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4751,0.19999999999999998,'people','dep_smart ','dep_smart_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4752,0.09999999999999999,'staff','dep_smart dep_ dep_pleasent ','dep_smart_ dep__pleasent ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

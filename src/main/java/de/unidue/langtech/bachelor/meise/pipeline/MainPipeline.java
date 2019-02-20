@@ -53,30 +53,27 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-	myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained", "*.xmi");
+		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained", "*.xmi");
+		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\old\\unconstrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_GTI\\subtask1\\unconstrained\\analysis_test1.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
 		File file = new File(inputFile);
 		
-		if(file.isDirectory()) {
-			//convert files into .xml format first
-			DataParser dp = new DataParser(inputFile, inputFile + "/output.xml");
-			
-			//feed the output and treat it as new input
-			inputFile = inputFile + "/output.xml";
-			dp.run(".txt");
-		}	
-		
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFile,
-                RawJsonReviewReader.PARAM_LANGUAGE, "en");
+                RawJsonReviewReader.PARAM_LANGUAGE, "en",
+                RawJsonReviewReader.PARAM_PATTERNS, "*.xml",
+                RawJsonReviewReader.PARAM_FOLDER_PATH, inputFile,
+                RawJsonReviewReader.PARAM_FILE_EXTENSION, ".xml",
+                RawJsonReviewReader.PARAM_USE_OLD_DATA, "true",
+                RawJsonReviewReader.PARAM_SEARCH_SUBFOLDERS, "false");
 		
         AnalysisEngineDescription tokenizer = AnalysisEngineFactory.createEngineDescription(ClearNlpSegmenter.class, ClearNlpSegmenter.PARAM_LANGUAGE, "en");
 		
@@ -86,12 +83,13 @@ public class MainPipeline {
         
         AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
         
-        AnalysisEngineDescription arffGenerator = AnalysisEngineFactory.createEngineDescription(TestClassifierGenerator.class, TestClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, TestClassifierGenerator.PARAM_RELATION_NAME, "test");
+        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
+        		AKTSKI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+        		AKTSKI_ClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI",
+        		AKTSKI_ClassifierGenerator.PARAM_CONSTRAINED, "false",
+        		AKTSKI_ClassifierGenerator.PARAM_USE_OLD_DATA, "true");
         
-        AnalysisEngineDescription exporter = AnalysisEngineFactory.createEngineDescription(TSVExporter.class, TSVExporter.PARAM_OUTPUT_PATH, outputFile);
-        
-        //SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator, exporter);
-        SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, exporter);
+        SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, writer);
 	}
 	
 	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
@@ -109,10 +107,11 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(GTI_ClassifierGenerator.class, 
-	        		GTI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		GTI_ClassifierGenerator.PARAM_RELATION_NAME, "GTI",
-	        		GTI_ClassifierGenerator.PARAM_CONSTRAINED, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
+	        		AKTSKI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		AKTSKI_ClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI",
+	        		AKTSKI_ClassifierGenerator.PARAM_CONSTRAINED, "false",
+	        		AKTSKI_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -138,36 +137,16 @@ public class MainPipeline {
         SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
 	
-	public void valenceStatsRegressionTask(String xmiPath, String outputPath) throws UIMAException, IOException {
-		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
-                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
-                XmiReader.PARAM_SOURCE_LOCATION,
-                xmiPath,
-                XmiReader.PARAM_PATTERNS, "*.xmi",
-                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
-        
-		AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
-		
-        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(
-        		RQ2_HotelLevelRegression_ClassifierGenerator.class, RQ2_HotelLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputPath,
-        		RQ2_HotelLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, "true",
-        		RQ2_HotelLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RQ2"
-        		);
-        
-        //SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator, exporter);
-        SimplePipeline.runPipeline(reader, lemmatizer, writer);
-	}
-	
 	public void foldLearning(String arffFileFolder, String outputPath) throws Exception {
 		//TODO: Cycle through all models
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		 //svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
+		 svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
 		//svm.setSVMType(new SelectedTag(LibSVM.SVMT, LibSVM.TAGS_SVMTYPE));
 		//svm.setProbabilityEstimates(true);
 		//svm.setDegree(3);
-		//svm.setNormalize(true);
+		svm.setNormalize(true);
 		svm.setShrinking(true);
 		//svm.setCost(200);
 		//svm.setGamma(0.002);
@@ -204,9 +183,10 @@ public class MainPipeline {
 		ar.setDebug(true);
 		ar.setClassifier(svm);
 		
-		myClassifier = svm;
+		myClassifier = null;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
-		 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
+		 myClassifierHandler.useCFV = true;
+		 //myClassifierHandler.testDataPath = 
+		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, true, myClassifier);
 	}
 }

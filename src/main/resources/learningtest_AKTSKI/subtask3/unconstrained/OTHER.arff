@@ -1,0 +1,726 @@
+@relation OTHER
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+7,-0.0,'homeless','dep_ ','dep__have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+8,-0.0,'homeless','dep_ ','dep__have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+10,0.0,'stay','dep_Enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+18,-0.03333333333333333,'vehicles','dep_larger dep_fit ','dep_larger_fit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+39,0.0,'TLC','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+40,0.10666666666666667,'experience','dep_Otherwise dep_nice dep_experience dep_ ','dep_Otherwise_a dep_nice_experience dep_experience_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+49,0.047619047619047616,'stay','dep_location dep_Would dep_stay dep_right dep_ ','dep_location_Would dep_Would_stay dep_stay_there dep_right_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+56,0.047619047619047616,'stay','dep_location dep_Would dep_stay dep_right dep_ ','dep_location_Would dep_Would_stay dep_stay_there dep_right_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+75,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+123,0.1111111111111111,'buffet','dep_Great dep_buffet dep_ ','dep_Great_buffet dep_buffet_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+142,-0.0,'stay','dep_Probably dep_would dep_stay dep_ ','dep_Probably_would dep_would_not dep_stay_there ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+144,0.0,'recommend','dep_would dep_go ','dep_would_go dep_go_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+164,0.0,'design','dep_old ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+178,0.15833333333333333,'recommend','dep_hotel dep_would dep_recommend dep_ ','dep_hotel_would dep_would_recommend dep_recommend_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+188,0.0,'Breakfast','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+195,-0.0,'check','dep_ ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+196,-0.43333333333333335,'stay','dep_pleasant ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+199,0.16666666666666666,'practice','dep_offensive dep_ dep_ ','dep_offensive_ dep__ dep__of ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,negative
+200,0.16666666666666666,'practice','dep_offensive dep_ dep_ ','dep_offensive_ dep__ dep__of ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,negative
+226,-0.8666666666666667,'Stay','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+235,0.6666666666666666,'people','dep_disrespectful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+253,0.0,'come','dep_come dep_ ','dep_come_again ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+264,0.0,'lines','dep_Big dep_lines dep_ ','dep_Big_lines dep_lines_at ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+269,-0.17777777777777778,'feel','dep_us dep_make dep_stupid ','dep_us_make dep_make_stupid ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+289,-0.06666666666666667,'Parking','dep_validated ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+298,-0.06666666666666667,'Parking','dep_validated ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+299,-0.0,'experience','dep_Blah dep_hotel dep_experience dep_ ','dep_Blah_hotel dep_hotel_experience dep_experience_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+335,-0.0,'website','dep_updated ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+363,-0.0,'return','dep_Would dep_return dep_ ','dep_Would_return dep_return_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+377,-0.0,'stay','dep_would dep_stay dep_needs dep_ ','dep_would_stay dep_stay_there dep_needs_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+387,0.21666666666666667,'time','dep_good dep_time dep_ ','dep_good_time dep_time_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+391,0.02222222222222222,'gave','dep_coffee dep_finally dep_Asked ','dep_coffee_finally dep_finally_Asked dep_Asked_up ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+392,0.0,'stay','dep_would dep_location ','dep_would_location dep_location_again ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+393,0.21666666666666667,'time','dep_good dep_time dep_ ','dep_good_time dep_time_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+397,0.02222222222222222,'gave','dep_coffee dep_finally dep_Asked ','dep_coffee_finally dep_finally_Asked dep_Asked_up ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+398,0.0,'stay','dep_would dep_location ','dep_would_location dep_location_again ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+403,0.0,'experience','dep_Pleasant dep_experience dep_ ','dep_Pleasant_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+411,0.0,'info','dep_hotel ','dep_hotel_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+416,0.8666666666666667,'overall','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+417,-0.1111111111111111,'complaints','dep_complaints dep_ ','dep_complaints_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+420,-0.3333333333333333,'Breakfast','dep_included ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+467,-0.0,'stay','dep_largeI dep_would dep_stay dep_hotel dep_ ','dep_largeI_would dep_would_stay dep_stay_here dep_hotel_ ',0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,positive
+521,-0.0,'stay','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+533,-0.14444444444444446,'pleasant','dep_stay dep_pleasant dep_ ','dep_stay_was dep_pleasant_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+546,-0.0,'staying','dep_wonft dep_staying dep_time dep_know dep_ ','dep_wonft_be dep_staying_here dep_time_know dep_know_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+554,-0.0,'stay','dep_Unfortunately dep_ dep_would dep_stay dep_ ','dep_Unfortunately_ dep__I dep_would_not dep_stay_here ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+561,-0.03333333333333333,'parking','dep_price dep_breakfast ','dep_price_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+562,-0.0,'breakfast','dep_parking ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+567,0.0,'stay','dep_Great ','dep_Great_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+568,0.25,'time','dep_great dep_like ','dep_great_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+570,0.37777777777777777,'customer','dep_satisfied dep_customer dep_ ','dep_satisfied_customer dep_customer_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+577,-0.2888888888888889,'coffee','dep_good ','dep_good_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+585,-0.0,'stay','dep_Ifd dep_taking ','dep_Ifd_again ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+590,-0.022222222222222223,'ticket','dep_validated ','dep_validated_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+591,-0.0,'breakfast','dep_restaurant dep_seems ','dep_restaurant_seems ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+593,0.027777777777777776,'breakfast','dep_Good dep_breakfast dep_ dep_bed dep_rooms dep_ ','dep_Good_breakfast dep_breakfast_ dep__bed dep_bed_rooms dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+603,0.1111111111111111,'problem','dep_unfortunately dep_done ','dep_unfortunately_the ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+612,-0.16666666666666666,'choice','dep_entertainment dep_restaurant ','dep_entertainment_restaurant ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+620,-0.041666666666666664,'swipe','dep_credit dep_card dep_give ','dep_credit_card dep_card_give ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+630,0.16666666666666666,'breakfast','dep_breakfast dep_included ','dep_breakfast_included ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+635,0.8666666666666667,'trip','dep_love ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+636,0.8666666666666667,'trip','dep_love ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+656,-0.26666666666666666,'stay','dep_loved ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+660,0.11666666666666665,'days','dep_last dep_three dep_bad ','dep_last_three dep_three_bad ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+671,-0.16666666666666666,'option','dep_available ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+677,0.0,'stay','dep_Good dep_stay dep_ ','dep_Good_stay dep_stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+696,-0.21666666666666667,'experience','dep_good dep_times dep_ ','dep_good_times dep_times_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+716,0.0,'Waiting','dep_long dep_time ','dep_long_time dep_time_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+735,-0.16666666666666666,'parking','dep_breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+736,-0.08333333333333333,'breakfast','dep_include dep_parking dep_ ','dep_include_or dep_parking_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+737,-0.5333333333333333,'Stay','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+744,0.2888888888888889,'experience','dep_pleasant dep_room ','dep_pleasant_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+757,-0.0,'waits','dep_understaffed dep_long dep_fridge ','dep_understaffed_long dep_long_fridge ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+768,-0.13333333333333333,'breakfast','dep_free dep_cloths ','dep_free_cloths ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+779,-0.007407407407407408,'stay','dep_would dep_stay dep_ dep_ensure dep_ ','dep_would_stay dep_stay_here dep__but dep_ensure_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+802,-0.0,'stay','dep_Would dep_stay dep_ ','dep_Would_stay dep_stay_again ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+805,-0.4,'check','dep_easy dep_friendly ','dep_easy_friendly dep_friendly_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+829,-0.0,'better','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+830,-0.16666666666666666,'ticket','dep_Parking dep_work ','dep_Parking_work ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+841,-0.0,'Check','dep_Check dep_check dep_ ','dep_Check_in dep_check_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+842,-0.0,'Check','dep_Check dep_check dep_ ','dep_Check_in dep_check_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+843,-0.0,'Check','dep_Check dep_check dep_ ','dep_Check_in dep_check_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+844,0.1111111111111111,'check','dep_Check dep_slow ','dep_Check_out ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+845,0.1111111111111111,'check','dep_Check dep_slow ','dep_Check_out ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+846,0.1111111111111111,'check','dep_Check dep_slow ','dep_Check_out ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+860,-0.16666666666666666,'time','dep_enjoyable ','dep_enjoyable_had ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+886,-0.0,'expected','dep_place dep_little ','dep_place_little ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+893,-0.0,'pet','dep_hotels ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+918,-0.6666666666666666,'breakfast','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+922,-0.15555555555555556,'stay','dep_like ','dep_like_again ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+980,-0.21666666666666667,'stay','dep_good dep_stay dep_ ','dep_good_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+993,-0.0,'stay','dep_Good dep_stay dep_ dep_value dep_ ','dep_Good_stay dep_stay_with dep__value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1033,-0.0,'snacks','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1046,-0.43333333333333335,'breakfast','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1055,-0.13333333333333333,'check','dep_easy ','dep_easy_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1066,0.6,'food','dep_convenient dep_great ','dep_convenient_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1103,-0.3333333333333333,'Breakfast','dep_reasonable ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1107,0.2222222222222222,'egg','dep_scrambled dep_tasteless ','dep_scrambled_tasteless ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1108,-0.022222222222222223,'queue','dep_big ','dep_big_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1109,-0.0,'buffet','dep_another dep_added dep_reduce ','dep_another_added dep_added_reduce ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1132,0.08333333333333333,'check','dep_Slow dep_included ','dep_Slow_included dep_included_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1133,0.0,'line','dep_long ','dep_long_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1134,0.16666666666666666,'breakfast','dep_included ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1135,0.8666666666666667,'breakfest','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1136,0.43333333333333335,'stuff','dep_good dep_stuff ','dep_good_stuff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1140,-0.5333333333333333,'Everything','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1162,0.0,'Breakfast','dep_Breakfast dep_! ','dep_Breakfast_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1163,-0.1111111111111111,'Eggs','dep_guests dep_abysmal dep_bacon dep_swimming ','dep_guests_abysmal dep_abysmal_for dep_bacon_swimming ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1164,0.0,'bacon','dep_Eggs ','dep_Eggs_over ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1166,0.43333333333333335,'selection','dep_Continental dep_good ','dep_Continental_good ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1168,-0.16666666666666666,'lobby','dep_crowded dep_rooms ','dep_crowded_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1174,-0.0,'coffee','dep_tea ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1175,-0.0,'tea','dep_coffee ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1184,0.0,'come','dep_would dep_come dep_back dep_ ','dep_would_come dep_come_back dep_back_again ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1196,0.0,'hotel','dep_busy dep_checking ','dep_busy_checking ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1221,-0.0,'areas','dep_reception dep_hotel dep_get ','dep_reception_hotel dep_hotel_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1234,-0.0,'ideal','dep_quilts dep_used ','dep_quilts_or ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1253,-0.0,'breakfast','dep_facilities ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1254,-0.26666666666666666,'food','dep_great dep_facilities ','dep_great_facilities ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1256,0.16666666666666666,'lobby','dep_crowded ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1261,-0.0,'line','dep_long dep_waiting ','dep_long_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1266,0.0,'complaint','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1273,0.0,'check','dep_long dep_process ','dep_long_process ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1274,0.0,'check','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1277,0.0,'Queues','dep_Queues ','dep_Queues_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1300,-0.0,'hotel','dep_massive ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1306,0.17777777777777778,'time','dep_great ','dep_great_Had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1307,0.0,'stay','dep_would ','dep_would_Had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1317,-0.06666666666666667,'breakfast','dep_old dep_ dep_weak ','dep_old_ dep__weak ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1324,0.3,'breakfast','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1333,0.0,'BREACKFAST','dep_PERFECT ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1384,-0.022222222222222227,'negative','dep_negative dep_ dep_worked dep_ ','dep_negative_during dep__worked dep_worked_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1385,0.0,'worked','dep_everything dep_else dep_negative dep_perfectly ','dep_everything_else dep_else_negative dep_negative_perfectly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1393,0.06666666666666667,'recommended','dep_Overall dep_ dep_highly dep_recommended dep_ ','dep_Overall_ dep__highly dep_highly_recommended dep_recommended_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1394,0.2888888888888889,'stay','dep_pleasant ','dep_pleasant_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1407,0.0,'prosecco','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1410,0.1,'breakfast','dep_Excellent dep_breakfast dep_ dep_entertainment dep_ ','dep_Excellent_breakfast dep_breakfast_ dep__entertainment dep_entertainment_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1411,0.18888888888888888,'entertainment','dep_god dep_breakfast ','dep_god_breakfast dep_breakfast_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1420,-0.0,'breakfast','dep_staff ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1448,-0.8666666666666667,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1456,0.24000000000000002,'food','dep_Downstairs dep_restaurant dep_good dep_entertainment ','dep_Downstairs_restaurant dep_restaurant_good dep_good_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1463,0.07777777777777778,'check','dep_Staff dep_fine dep_check dep_location dep_ ','dep_Staff_were dep_fine_check dep_check_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1487,-0.16,'bread','dep_Fresh dep_sweet dep_bread dep_!!! ','dep_Fresh_sweet dep_sweet_bread dep_bread_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1488,-0.16,'bread','dep_Fresh dep_sweet dep_bread dep_!!! ','dep_Fresh_sweet dep_sweet_bread dep_bread_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1493,-0.12916666666666668,'choice','dep_rience dep_ dep_Inn dep_good dep_choice dep_ ','dep_rience_ dep__Inn dep_Inn_was dep_good_choice dep_choice_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1500,-0.016666666666666666,'queue','dep_h dep_ dep_big ','dep_h_ dep__big dep_big_at ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1528,-0.0,'stay','dep_Good dep_stay dep_ ','dep_Good_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1529,-0.0,'check','dep_check ','dep_check_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1537,0.34444444444444444,'breakfast','dep_excellent dep_breakfast dep_ ','dep_excellent_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1542,-0.5333333333333333,'Breakfast','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1561,0.0,'croissant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1576,0.13333333333333333,'feeling','dep_strange ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1580,0.1111111111111111,'process','dep_slow dep_queues dep_card ','dep_slow_queues dep_queues_card ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1581,-0.0,'application','dep_mobile ','dep_mobile_has ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1582,-0.0,'queue','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1583,-0.1111111111111111,'cake','dep_view dep_ dep_delicious dep_cake dep_ ','dep_view_ dep__delicious dep_delicious_cake dep_cake_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1586,-0.06666666666666667,'breakfast','dep_Excellent dep_highlight ','dep_Excellent_highlight ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1591,-0.0,'stay','dep_Would ','dep_Would_here ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1603,-0.0,'recommend','dep_go ','dep_go_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1609,0.15555555555555556,'breakfast','dep_awful ','dep_awful_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1615,0.0,'Checking','dep_quick ','dep_quick_in ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1616,0.0,'Checking','dep_quick ','dep_quick_in ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1621,0.20666666666666667,'breakfast','dep_location dep_ dep_good dep_breakfast dep_room ','dep_location_ dep__good dep_good_breakfast dep_breakfast_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1625,0.0,'appetizers','dep_wine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1626,0.13333333333333333,'wine','dep_great dep_ dep_appetizers ','dep_great_ dep__and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1627,0.0,'process','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1629,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1632,-0.0,'expecting','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1649,0.0,'stay','dep_Enjoyable dep_book ','dep_Enjoyable_book dep_book_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1651,0.0,'book','dep_stay dep_ dep_would dep_book dep_hotel dep_ ','dep_stay_ dep__I dep_would_book dep_book_hotel dep_hotel_again ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1676,0.0,'coffee','dep_tea ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1677,0.0,'tea','dep_size dep_coffee ','dep_size_or ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1683,0.43333333333333335,'breakfast','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1696,-0.0,'stay','dep_Excellent dep_stay dep_ ','dep_Excellent_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1700,-0.05555555555555555,'breakfast','dep_Excellent dep_breakfast dep_ ','dep_Excellent_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1704,0.0,'wait','dep_made dep_long dep_check ','dep_made_long dep_long_check ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1714,-0.0,'process','dep_ dep_ dep_dated ','dep__out dep__dated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1718,-0.0,'queues','dep_Long dep_queues dep_Check dep_ ','dep_Long_queues dep_queues_at dep_Check_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1719,-0.0,'form','dep_ dep_address dep_ID dep_name ','dep__address dep_address_ID dep_ID_name ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1726,-0.0,'breakfast','dep_location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1736,0.2333333333333333,'stay','dep_wonderful ','dep_wonderful_Had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1740,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1751,-0.0,'options','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1756,-0.0,'water','dep_coffee ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1757,-0.0,'coffee','dep_ dep_water dep_provided ','dep__or dep_water_provided ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1758,-0.0,'tea','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1770,-0.0,'choice','dep_Good dep_ dep_practical dep_go ','dep_Good_ dep__practical dep_practical_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1771,-0.0,'choice','dep_Good dep_ dep_practical dep_go ','dep_Good_ dep__practical dep_practical_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1774,0.09999999999999999,'felt','dep_treated dep_belittled ','dep_treated_belittled ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1775,0.16666666666666666,'experience','dep_unpleasant dep_experience dep_ ','dep_unpleasant_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1776,-0.0,'stay','dep_soured ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1777,-0.0,'Breakfast','dep_varied ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1782,-0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1785,0.16666666666666666,'lobby','dep_hectic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1805,0.08333333333333333,'water','dep_offer ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1808,-0.43333333333333335,'burger','dep_love ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1828,-0.05555555555555555,'breakfast','dep_Amazing dep_breakfast dep_! ','dep_Amazing_breakfast dep_breakfast_! ',0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,positive
+1829,-0.2222222222222222,'dinner','dep_delicious ','dep_delicious_at ',0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,positive
+1830,-0.0,'heater','dep_didnft ','',0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,1,negative
+1838,-0.11666666666666665,'selection','dep_better ','dep_better_had ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,positive
+1840,0.3333333333333333,'Breakfast','dep_mediocre ','dep_mediocre_on ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+1843,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1847,-0.425,'quality','dep_breakfast dep_good dep_efficient ','dep_breakfast_was dep_good_efficient ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1852,-0.0,'water','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1865,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1866,-0.7000000000000001,'selection','dep_nice dep_good ','dep_nice_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1873,-0.3333333333333333,'reception','dep_crowded ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1888,-0.0,'stay','dep_Probably dep_would dep_stay dep_ ','dep_Probably_would dep_would_NOT dep_stay_there ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+1894,-0.2777777777777778,'weekend','dep_happy dep_positive dep_birthday dep_weekend dep_ ','dep_happy_positive dep_positive_birthday dep_birthday_weekend dep_weekend_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1895,-0.2777777777777778,'weekend','dep_happy dep_positive dep_birthday dep_weekend dep_ ','dep_happy_positive dep_positive_birthday dep_birthday_weekend dep_weekend_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1908,-0.1111111111111111,'feel','dep_Make dep_special ','dep_Make_special ',0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,positive
+1929,-0.0,'water','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1943,-0.0,'water','dep_mineral ','dep_mineral_of ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1947,0.0,'check','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1959,0.1111111111111111,'mess','dep_crumpled dep_going ','dep_crumpled_going ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1964,0.0,'points','dep_check ','dep_check_before ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1966,0.0,'breakfast','dep_location ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1971,0.03333333333333333,'breakfast','dep_Amazing dep_breakfast dep_value dep_ ','dep_Amazing_breakfast dep_breakfast_and dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1977,0.0,'coffee','dep_coffee dep_ ','dep_coffee_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+2007,0.15555555555555556,'compliment','dep_like ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2020,0.16666666666666666,'selection','dep_location dep_ dep_friendly dep_great dep_breakfast dep_selection dep_hotel dep_ ','dep_location_ dep__friendly dep_friendly_great dep_great_breakfast dep_breakfast_selection dep_selection_and dep_hotel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2042,0.0,'check','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2045,0.0,'queue','dep_check ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2072,-0.4666666666666666,'breakfast','dep_wonderful dep_view ','dep_wonderful_view ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2087,-0.05833333333333333,'fine','dep_fine dep_ dep_except dep_ dep_ dep_ ','dep_fine_ dep__except dep_except_ dep__ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2088,0.018518518518518517,'wait','dep_ dep_could dep_wait dep_ ','dep__you dep_could_wait dep_wait_it ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2093,-0.19999999999999998,'satisfied','dep_satisfied dep_ ','dep_satisfied_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2098,0.0,'breakfast','dep_location ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2103,-0.0,'details','dep_False dep_details dep_ dep_ ','dep_False_details dep_details_ dep__is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2112,0.0,'stay','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2116,0.0,'breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2120,0.15555555555555556,'breakfast','dep_daily dep_liked ','dep_daily_liked ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2121,0.13333333333333333,'feel','dep_secured ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2122,-0.0,'Value','dep_Value dep_! ','dep_Value_for ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2163,-0.3333333333333333,'Breakfast','dep_variety ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+2164,-0.3333333333333333,'Breakfast','dep_variety ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+2176,-0.6,'breakfasts','dep_good dep_provide ','dep_good_provide ',0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2212,-0.09999999999999999,'breakfast','dep_poor dep_everyday ','dep_poor_everyday ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2230,-0.05555555555555555,'choice','dep_Excellent dep_choice dep_ ','dep_Excellent_choice dep_choice_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2250,-0.15555555555555556,'recommended','dep_Highly dep_recommended dep_ ','dep_Highly_recommended dep_recommended_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2260,0.13333333333333333,'check','dep_easy dep_location ','dep_easy_location dep_location_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2286,-0.0,'services','dep_many dep_offers ','dep_many_offers ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2291,-0.0,'stay','dep_suggest ','dep_suggest_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2292,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2297,-0.43333333333333335,'Check','dep_good ','dep_good_in ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2302,0.0,'check','dep_Fast dep_check dep_ ','dep_Fast_check dep_check_in ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2312,-0.3333333333333333,'Breakfast','dep_included ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2323,-0.0,'check','dep_Easy dep_check dep_ dep_shop dep_ ','dep_Easy_check dep_check_in dep__and dep_shop_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2333,-0.0,'security','dep_Good dep_security dep_location dep_ dep_close dep_ ','dep_Good_security dep_security_and dep_location_ dep__close dep_close_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2335,0.8666666666666667,'Overall','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2347,-0.6666666666666666,'Check','dep_efficient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2348,-0.6666666666666666,'Check','dep_efficient ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2360,-0.5333333333333333,'Breakfast','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2372,0.05555555555555555,'breakfast','dep_Poor dep_breakfast ','dep_Poor_breakfast dep_breakfast_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2386,-0.7999999999999999,'Breakfast','dep_improved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2393,-0.0,'breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2422,0.06666666666666667,'breakfast','dep_poor ','dep_poor_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2451,0.13333333333333333,'check','dep_easy dep_inout ','dep_easy_inout ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2475,0.037037037037037035,'meal','dep_small ','dep_small_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2487,-0.2888888888888889,'stay','dep_pleasant ','dep_pleasant_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2503,-0.16666666666666666,'touch','dep_personal dep_hospitality ','dep_personal_hospitality ',0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2508,-0.0,'breakfast','dep_simple ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2509,-0.0,'breakfast','dep_simple ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2512,-0.16666666666666666,'stay','dep_enjoyed ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2513,-0.0,'expectations','dep_met ','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2515,-0.11666666666666665,'check','dep_electronic dep_liked dep_process ','dep_electronic_liked dep_liked_process ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2525,-0.0,'Waiting','dep_times ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2527,0.26666666666666666,'stay','dep_loved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2530,-0.0,'stay','dep_Pleasant dep_stay dep_ ','dep_Pleasant_stay dep_stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,positive
+2531,-0.0,'traveling','dep_round ','dep_round_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,1,negative
+2556,0.2,'choice','dep_limited ','dep_limited_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2567,-0.0,'bad','dep_Nothing dep_say ','dep_Nothing_say ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2571,0.21666666666666667,'time','dep_good ','dep_good_had ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2573,0.0,'payment','dep_simple ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2577,-0.17777777777777778,'stay','dep_great ','dep_great_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2602,0.0,'Entrance','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2666,-0.13333333333333333,'choice','dep_nice dep_fs dep_stay ','dep_nice_fs dep_fs_stay ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2703,-0.0,'check','dep_Quick dep_check dep_ ','dep_Quick_check dep_check_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2709,-0.17777777777777778,'stay','dep_nice dep_stay dep_! ','dep_nice_stay dep_stay_! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2722,-0.0,'stay','dep_go ','dep_go_at ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2725,-0.17777777777777778,'time','dep_great ','dep_great_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2760,-0.06666666666666667,'check','dep_fast dep_check ','dep_fast_in ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2761,-0.0,'check','dep_check dep_process ','dep_check_out ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2763,0.2333333333333333,'breakfast','dep_bad ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2764,0.037037037037037035,'portion','dep_small dep_breads ','dep_small_breads dep_breads_of ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2768,-0.06666666666666667,'check','dep_fast dep_check ','dep_fast_in ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2769,-0.0,'check','dep_check dep_process ','dep_check_out ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2771,0.2333333333333333,'breakfast','dep_bad ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2772,0.037037037037037035,'portion','dep_small dep_breads ','dep_small_breads dep_breads_of ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2792,-0.3333333333333333,'everything','dep_work ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2809,-0.16666666666666666,'checkin','dep_smooth ','',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2810,-0.16666666666666666,'checkin','dep_smooth ','',1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2829,-0.2,'check','dep_awesome ','dep_awesome_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2834,-0.13333333333333333,'Check','dep_easy dep_process ','dep_easy_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2835,-0.13333333333333333,'Check','dep_easy dep_process ','dep_easy_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2840,0.2,'stay','dep_amazing ','dep_amazing_Had ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2847,0.047619047619047616,'crowded','dep_fs dep_ dep_never dep_crowded dep_ ','dep_fs_ dep__it dep_never_was dep_crowded_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2881,-0.13333333333333333,'stay','dep_nice dep_stay dep_ ','dep_nice_stay dep_stay_at ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2883,-0.17777777777777778,'time','dep_second dep_great ','dep_second_great ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2892,-0.08666666666666667,'service','dep_provide dep_ dep_nice dep_service dep_ ','dep_provide_ dep__it dep_nice_service dep_service_but ',0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,positive
+2914,-0.06666666666666667,'breakfast','dep_nice dep_onsen dep_ dep_poor dep_room ','dep_nice_onsen dep_onsen_ dep__poor dep_poor_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2915,-0.19999999999999998,'Checking','dep_easy ','dep_easy_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2923,0.09999999999999999,'breakfast','dep_poor ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2924,-0.16666666666666666,'tea','dep_green dep_tea ','dep_green_tea ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2925,-0.0,'tea','dep_herb dep_tea ','dep_herb_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2931,-0.0,'Breakfast','dep_saladtell ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2937,-0.14444444444444443,'breakfast','dep_prepaid dep_worth ','dep_prepaid_worth dep_worth_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2956,-0.0,'Elevator','dep_packed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2963,-0.08333333333333333,'Check','dep_fast dep_check ','dep_fast_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2964,-0.08333333333333333,'Check','dep_fast dep_check ','dep_fast_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2965,-0.0,'check','dep_Check dep_process ','dep_Check_out ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2985,0.10666666666666667,'Check','dep_Check dep_ dep_super dep_ ','dep_Check_ dep__in dep_super_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+3001,-0.0,'coffee','dep_shop ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3015,0.0,'system','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3029,0.4666666666666666,'breakfast','dep_better ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3032,-0.43333333333333335,'bread','dep_good dep_selling ','dep_good_selling ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3051,-0.17333333333333334,'breakfast','dep_good dep_continental dep_self dep_service ','dep_good_continental dep_continental_self dep_self_service dep_service_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3054,-0.0,'check','dep_ption ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3063,-0.1111111111111111,'surprised','dep_pleasantly dep_slept ','dep_pleasantly_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3064,-0.08333333333333333,'slept','dep_surprised dep_well ','dep_surprised_well ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3066,-0.0,'ham','dep_cheese ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3067,-0.0,'cheese','dep_ham ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3068,-0.13333333333333333,'breads','dep_fresh dep_cereal ','dep_fresh_cereal dep_cereal_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3069,-0.0,'yogurt','dep_cereal ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3070,-0.0,'muesli','dep_cereal ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3071,-0.06666666666666667,'cereal','dep_liked dep_ dep_muesli dep_yogurt dep_breads ','dep_liked_ dep__muesli dep_muesli_yogurt dep_yogurt_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3072,-0.13333333333333333,'breads','dep_fresh dep_cereal ','dep_fresh_cereal dep_cereal_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3073,-0.26666666666666666,'Nutella','dep_loved ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3081,-0.5,'Breakfast','dep_cold ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3086,-0.5833333333333334,'Breakfast','dep_modest ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3087,0.08888888888888889,'tasting','dep_strangely dep_ham ','dep_strangely_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3088,-0.0,'Milk','dep_watered ','dep_watered_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3089,0.16666666666666666,'tasted','dep_molk dep_coffee dep_poorly ','dep_molk_coffee dep_coffee_poorly ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3090,0.11851851851851852,'juice','dep_orange dep_fake ','dep_orange_fake ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3103,0.03888888888888889,'choice','dep_big dep_choice dep_ ','dep_big_choice dep_choice_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3106,0.6666666666666666,'Breakfast','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3111,-0.4444444444444444,'breakfast','dep_nice dep_clean dep_start ','dep_nice_clean dep_clean_start ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3125,0.09333333333333332,'experience','dep_bad dep_experience dep_ ','dep_bad_experience dep_experience_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3128,-0.0,'eggs','dep_compartment dep_shower ','dep_compartment_and ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,negative
+3133,-0.05555555555555555,'breakfast','dep_Great dep_breakfast dep_ ','dep_Great_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3148,-0.3333333333333333,'Breakfast','dep_included ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3153,-0.041666666666666664,'breakfast','dep_Limited dep_savoury dep_breakfast dep_ ','dep_Limited_savoury dep_savoury_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3163,0.31666666666666665,'stayI','dep_recommend ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3166,-0.0,'breakfast','dep_plain ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3168,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3177,0.09999999999999999,'ppl','dep_screaming ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3188,-0.0,'cutlery','dep_milk ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3189,-0.0,'coffee','dep_milk ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3190,-0.0,'milk','dep_ dep_coffee dep_cutlery ','dep__coffee dep_coffee_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3206,-0.0,'breakfast','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3207,-0.08333333333333333,'choices','dep_food ','dep_food_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3208,-0.06666666666666667,'processed','dep_overly dep_lot dep_fresh ','dep_overly_lot dep_lot_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3209,-0.0,'fresh','dep_processed ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3215,-0.8666666666666667,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3232,0.13333333333333333,'time','dep_great ','dep_great_had ',1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3233,0.0,'stay','dep_speaking ','',1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3240,0.13333333333333333,'visit','dep_second dep_disappointing ','dep_second_disappointing dep_disappointing_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3243,0.1,'attitude','dep_incomprehensible ','dep_incomprehensible_about ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3244,0.15,'visit','dep_awesome ','dep_awesome_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3247,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3255,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3256,0.4666666666666667,'coffee','dep_nice dep_good ','dep_nice_good dep_good_too ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3275,0.03333333333333333,'breakfast','dep_Good dep_breakfast dep_ dep_plenty dep_ ','dep_Good_breakfast dep_breakfast_ dep__plenty dep_plenty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3276,0.0,'variety','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3281,-0.0,'passport','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3282,-0.0,'information','dep_personal ','dep_personal_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3285,0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3287,0.3111111111111111,'information','dep_misleading dep_avoid ','dep_misleading_avoid ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3302,0.06666666666666665,'breakfast','dep_ dep_small dep_missing ','dep__small dep_small_missing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3303,-0.39999999999999997,'bread','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3306,-0.15555555555555559,'Breakfast','dep_fresh dep_missing ','dep_fresh_missing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3307,-0.39999999999999997,'bread','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3322,-0.16666666666666666,'Breakfast','dep_choice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3323,-0.006944444444444445,'choice','dep_Breakfast dep_also dep_small dep_choice dep_compared dep_ ','dep_Breakfast_was dep_also_a dep_small_choice dep_choice_compared dep_compared_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3327,-0.05555555555555555,'breakfast','dep_Good dep_breakfast dep_ ','dep_Good_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3336,-0.8666666666666667,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+3343,0.08750000000000001,'breakfast','dep_Also dep_good dep_buffet dep_continental dep_style dep_breakfast dep_ ','dep_Also_a dep_good_buffet dep_buffet_continental dep_continental_style dep_style_breakfast dep_breakfast_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+3355,-0.4666666666666666,'breakfast','dep_liked ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3361,-0.17777777777777778,'Breakfast','dep_nice dep_staff ','dep_nice_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3372,-0.39999999999999997,'Breakfast','dep_adequate ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3391,0.2222222222222222,'days','dep_two dep_refreshing ','dep_two_refreshing dep_refreshing_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3411,-0.03333333333333333,'breakfast','dep_Breakfast dep_Good dep_breakfast dep_ ','dep_Breakfast_Good dep_Good_breakfast dep_breakfast_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3412,-0.3333333333333333,'variety','dep_decent ','dep_decent_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3424,-0.0,'choice','','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+3429,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3430,-0.08333333333333333,'tasty','dep_tasty dep_ ','dep_tasty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3431,-0.0,'eggs','dep_eggs dep_ ','dep_eggs_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3436,0.3333333333333333,'eggs','dep_include ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3438,0.1111111111111111,'stay','dep_would dep_happily dep_stay dep_! ','dep_would_happily dep_happily_stay dep_stay_there ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3449,-0.0,'wait','dep_ll dep_seated dep_time ','dep_ll_seated dep_seated_time ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,negative
+3450,-0.0,'stay','dep_Good ','dep_Good_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3452,-0.0,'stay','dep_stationThe dep_termini ','dep_stationThe_termini ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3459,-0.16666666666666666,'complaints','dep_complaints ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3463,-0.0,'bad','dep_close ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3474,-0.0,'breakfast','dep_organised ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3475,-0.0,'eat','dep_nothing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3479,-0.0,'better','dep_little dep_products ','dep_little_products dep_products_more ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3496,0.0,'problems','dep_really dep_considering ','dep_really_considering ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3498,0.0,'enjoyed','dep_stayed dep_thoroughly ','dep_stayed_ourselves ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3501,-0.020833333333333332,'choice','dep_Bad dep_wi dep_fi dep_Poor dep_choice dep_standart ','dep_Bad_wi dep_wi_fi dep_fi_Poor dep_Poor_choice dep_choice_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3502,-0.0,'stay','dep_Good dep_stay dep_ ','dep_Good_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3509,0.0,'Pleasant','dep_stay ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3510,0.17777777777777778,'time','dep_great dep_stay ','dep_great_stay dep_stay_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3514,0.05555555555555555,'choice','dep_Breakfast dep_choice dep_could ','dep_Breakfast_choice dep_choice_could ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3516,0.43333333333333335,'breakfast','dep_good dep_staff ','dep_good_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3517,-0.09999999999999999,'coffee','dep_weak dep_staff ','dep_weak_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3528,-0.2333333333333333,'breakfast','dep_bad dep_location ','dep_bad_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3530,-0.2333333333333333,'photos','dep_misleading ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3534,-0.075,'breakfast','dep_bad dep_breakfast dep_ ','dep_bad_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3535,-0.03333333333333333,'breakfasts','dep_worst ','dep_worst_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3538,-0.0,'Check','dep_quick ','dep_quick_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3539,-0.0,'Check','dep_quick ','dep_quick_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3550,-0.26666666666666666,'breakfast','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3551,-0.26666666666666666,'breakfast','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3552,-0.0,'salami','dep_maybe dep_cheeses ','dep_maybe_some ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3553,-0.0,'cheeses','dep_diffrents dep_ dep_salami dep_ ','dep_diffrents_ dep__and dep_salami_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3554,-0.0,'fruits','dep_see ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3555,-0.0,'stay','dep_would dep_ok ','dep_would_not dep_ok_here ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3565,-0.16666666666666666,'area','dep_breakfast dep_cramped ','dep_breakfast_cramped ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+3568,-0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+3593,0.0,'egg','dep_material ','dep_material_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3601,0.0,'guests','dep_Lent dep_guests dep_umbrellas dep_ ','dep_Lent_guests dep_guests_umbrellas dep_umbrellas_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3602,0.13,'box','dep_Free dep_safe dep_deposit dep_box dep_ ','dep_Free_safe dep_safe_deposit dep_deposit_box dep_box_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3604,-0.16666666666666666,'menu','dep_breakfast dep_enough ','dep_breakfast_enough ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3605,-0.13333333333333333,'egg','dep_simple dep_boiled dep_great ','dep_simple_boiled dep_boiled_great ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3609,0.2111111111111111,'recommend','dep_Definitely dep_recommend dep_! ','dep_Definitely_recommend dep_recommend_! ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+3612,0.6,'People','dep_noisy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3627,-0.0,'stay','dep_Enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3631,-0.0,'Breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3632,-0.0,'Bananas','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3645,0.8666666666666667,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3656,-0.0,'pictures','dep_represent dep_shown ','dep_represent_shown ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3659,-0.10666666666666667,'stay','dep_nice dep_stay dep_close dep_ ','dep_nice_stay dep_stay_close dep_close_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3671,-0.14444444444444446,'stay','dep_good dep_rome ','dep_good_Over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3672,-0.2888888888888889,'stay','dep_excellent ','dep_excellent_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3681,0.18333333333333335,'breakfast','dep_really dep_awesome dep_good dep_ dep_items dep_surroundings ','dep_really_awesome dep_awesome_good dep_good_ dep__items dep_items_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3682,0.11666666666666665,'items','dep_huge dep_breakfast ','dep_huge_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3689,-0.3333333333333333,'Breakfast','dep_enjoyable ','',0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,positive
+3700,0.0,'breakfast','dep_offee ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3702,0.0,'breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3711,-0.0,'chocolate','dep_Hot dep_ran dep_coffee ','dep_Hot_ran dep_ran_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3712,-0.3333333333333333,'coffee','dep_chocolate ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3713,-0.0,'milk','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+3716,-0.0,'bad','dep_overall dep_ ','dep_overall_not dep__for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3719,-0.023809523809523808,'breakfast','dep_Poor dep_breakfast dep_ dep_bread dep_gave dep_ ','dep_Poor_breakfast dep_breakfast_ dep__bread dep_bread_and dep_gave_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3720,-0.08333333333333333,'bread','dep_dry dep_breakfast ','dep_dry_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3721,-0.0,'water','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3732,-0.26666666666666666,'stay','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3736,-0.05555555555555555,'area','dep_breakfast dep_packed ','dep_breakfast_packed ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3746,-0.0,'gangs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3757,-0.05555555555555555,'breakfast','dep_Decent dep_breakfast dep_ ','dep_Decent_breakfast dep_breakfast_ ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3759,-0.08,'vacation','dep_dream dep_vacation dep_ ','dep_dream_vacation dep_vacation_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3763,-0.3333333333333333,'breakfast','dep_tasty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3772,-0.0,'breakfast','dep_bur ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3773,-0.0,'breakfast','dep_bur ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3776,-0.17777777777777778,'selection','dep_great dep_one ','dep_great_one ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3778,0.0,'Breakfasts','dep_need ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3788,-0.3,'breakfast','dep_limited ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3789,0.1111111111111111,'choice','dep_sweets ','dep_sweets_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3796,0.19999999999999998,'security','dep_problems ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3806,-0.0,'stay','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3807,-0.0,'breakfast','dep_European ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3810,0.39999999999999997,'Breakfast','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3811,0.39999999999999997,'Breakfast','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3818,-0.0,'tea','dep_facilities ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3819,-0.0,'coffee','dep_facilities ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3827,-0.0,'choice','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3842,-0.17777777777777778,'stay','dep_nice dep_transport ','dep_nice_transport ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3851,-0.0,'choices','dep_Good dep_cake ','dep_Good_cake dep_cake_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3854,-0.05555555555555555,'choice','dep_much dep_savoury dep_reasonable dep_ dep_ie ','dep_much_savoury dep_savoury_reasonable dep_reasonable_ dep__ie ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3855,0.43333333333333335,'stay','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3856,0.43333333333333335,'stay','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3858,0.0,'choices','dep_choices ','dep_choices_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3872,-0.8666666666666667,'coffee','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3874,-0.0,'tea','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3877,0.6,'Breakfast','dep_limited ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3878,-0.0,'eggs','dep_made ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3879,-0.0,'bacons','dep_sasusages ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3880,-0.0,'eggs','dep_sasusages ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3885,0.15833333333333333,'recommend','dep_definitely dep_recommend dep_ ','dep_definitely_recommend dep_recommend_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+3900,-0.26666666666666666,'breakfast','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3903,-0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3917,0.4666666666666666,'Breakfast','dep_better ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3918,0.4666666666666666,'Breakfast','dep_better ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3920,0.0,'breakfast','dep_needed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3934,-0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3935,0.0,'stay','dep_Comfortable dep_stay dep_ ','dep_Comfortable_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3942,-0.0,'check','dep_ ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3944,-0.0,'breakfast','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3947,0.0,'breakfast','dep_options ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3949,0.15833333333333333,'stay','dep_Excellent dep_recommend dep_ ','dep_Excellent_recommend dep_recommend_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3957,-0.19166666666666665,'breakfast','dep_e dep_amazing dep_breakfast dep_ ','dep_e_amazing dep_amazing_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3959,-0.6,'everything','dep_fabulous ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3966,-0.8666666666666667,'breakfast','dep_excellent ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3967,-0.8666666666666667,'breakfast','dep_excellent ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3968,-0.4,'buffet','dep_dinner dep_good ','dep_dinner_good ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3969,-0.4,'buffet','dep_dinner dep_good ','dep_dinner_good ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3970,-0.4,'buffet','dep_dinner dep_good ','dep_dinner_good ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3971,-0.05555555555555555,'food','dep_sea ','dep_sea_was ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3972,-0.0,'fish','dep_simple ','dep_simple_of ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3973,-0.43333333333333335,'dinner','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3974,-0.43333333333333335,'dinner','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3975,-0.0,'better','dep_could dep_wrote ','dep_could_be ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3976,-0.05555555555555555,'food','dep_sea ','dep_sea_was ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3977,-0.0,'fish','dep_simple ','dep_simple_of ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3978,-0.43333333333333335,'dinner','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3979,-0.43333333333333335,'dinner','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3980,0.43333333333333335,'experience','dep_overall dep_good ','dep_overall_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3986,0.37777777777777777,'breakfast','dep_complimentary dep_improved ','dep_complimentary_improved ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3988,0.1111111111111111,'lunch','dep_complimentary dep_performance ','dep_complimentary_performance ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3989,0.39999999999999997,'breakfast','dep_improved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4002,0.0,'bacon','dep_cooked ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4003,-0.6666666666666666,'Breakfast','dep_delicious ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4008,0.044444444444444446,'feeling','dep_leaves dep_cheated ','dep_leaves_cheated ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4010,-0.0,'advantage','dep_taken ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4012,0.6,'Breakfast','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4016,0.0,'Check','dep_quick dep_ dep_check ','dep_quick_in dep__check dep_check_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4017,0.0,'check','dep_Check ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4020,0.0,'stay','dep_Enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4021,0.0,'menu','dep_offering ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4022,-0.0,'STay','dep_STay dep_ ','dep_STay_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4025,0.0,'stay','dep_place dep_would dep_stay dep_ ','dep_place_would dep_would_stay dep_stay_here ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4027,0.0,'dinner','dep_gym ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4028,0.0,'breakfast','dep_gym ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4030,0.0,'dinner','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4032,0.21666666666666667,'experience','dep_good dep_experience dep_ ','dep_good_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4033,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4036,0.21666666666666667,'experience','dep_good dep_experience dep_ ','dep_good_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4040,-0.0,'omelette','dep_order ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4041,-0.26666666666666666,'checkin','dep_denied ','dep_denied_Was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4048,-0.26666666666666666,'breakfast','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4054,0.1,'breakfast','dep_rooms dep_ dep_good dep_buffet dep_breakfast dep_located dep_ ','dep_rooms_ dep__good dep_good_buffet dep_buffet_breakfast dep_breakfast_located dep_located_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4059,0.0,'stay','dep_Fabulous dep_stay dep_! ','dep_Fabulous_stay dep_stay_! ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4062,1.0,'Breakfast','dep_superb ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4068,0.0,'breakfast','dep_class ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4070,-0.16666666666666666,'Checking','dep_slow ','dep_slow_out ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4071,-0.1111111111111111,'system','dep_queuing dep_slow ','dep_queuing_slow ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4084,0.8666666666666667,'Everything','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4086,0.06666666666666667,'variety','dep_wide dep_variety dep_ ','dep_wide_variety dep_variety_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4091,0.20666666666666667,'breakfast','dep_Great dep_staff dep_good dep_breakfast dep_ ','dep_Great_staff dep_staff_good dep_good_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4093,-0.08333333333333333,'stay','dep_enjoyable dep_stay dep_! ','dep_enjoyable_stay dep_stay_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4103,-0.2333333333333333,'stay','dep_comfortable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4104,0.17333333333333334,'stay','dep_good dep_stay dep_ ','dep_good_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4121,-0.0,'stay','dep_Comfortable ','dep_Comfortable_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4125,-0.2222222222222222,'snack','dep_decent dep_Got ','dep_decent_Got ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4130,0.0,'food','dep_staff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4134,0.39999999999999997,'overall','dep_bright ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4138,0.0,'stay','dep_Comfortable dep_stay dep_ ','dep_Comfortable_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4139,0.0,'stay','dep_Comfortable dep_stay dep_ ','dep_Comfortable_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4148,0.5,'breakfast','dep_superb ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4149,0.0,'buffet','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4150,0.1523809523809524,'experience','dep_Overall dep_amazing dep_experience dep_ dep_like dep_ ','dep_Overall_an dep_amazing_experience dep_experience_ dep__like dep_like_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4153,0.0,'Stay','dep_Nice dep_Stay dep_ ','dep_Nice_Stay dep_Stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4163,-0.0,'process','dep_checkout ','dep_checkout_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4166,0.21666666666666667,'choice','dep_good dep_abd ','dep_good_abd dep_abd_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4174,0.0,'stay','dep_Pleasant dep_stay dep_ ','dep_Pleasant_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4177,0.21666666666666667,'food','dep_Nice dep_sleep dep_ dep_good ','dep_Nice_sleep dep_sleep_ dep__good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4184,-0.16666666666666666,'things','dep_visit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4185,-0.05833333333333333,'stay','dep_comfortable dep_stay dep_unwind dep_ ','dep_comfortable_stay dep_stay_and dep_unwind_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4191,0.14761904761904762,'breakfast','dep_Close dep_ dep_good dep_Indian dep_breakfast dep_bathrooms dep_ ','dep_Close_ dep__good dep_good_Indian dep_Indian_breakfast dep_breakfast_bathrooms dep_bathrooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4196,-0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4199,-0.4666666666666666,'stay','dep_recommended ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4202,-0.2888888888888889,'ratings','dep_good ','dep_good_has ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4217,0.0,'Breakfast','dep_spread ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4226,-0.8666666666666667,'Food','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4227,-0.0,'breakfast','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4230,-0.0,'rewards','dep_Marriott ','dep_Marriott_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4231,-0.0,'stop','dep_something ','dep_something_me ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4232,0.4666666666666666,'Everything','dep_fine ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+4234,0.03333333333333333,'everything','dep_want ','',0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,positive
+4240,-0.16666666666666666,'Outside','dep_crowded ','dep_crowded_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4246,0.0,'Relations','dep_Public ','dep_Public_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4250,0.3333333333333333,'breakfast','dep_buffet ','',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,positive
+4252,0.0,'stay','dep_overall ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4256,-0.0,'Food','dep_Breakfast ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4257,-0.0,'Breakfast','dep_Food dep_Good dep_Specially dep_Breakfast dep_ ','dep_Food_is dep_Good_Specially dep_Specially_Breakfast dep_Breakfast_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4259,-0.0,'Good','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4260,-0.0,'Good','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4263,0.17222222222222222,'spread','dep_breakfast dep_good dep_spread dep_ ','dep_breakfast_was dep_good_spread dep_spread_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4267,-0.5333333333333333,'Breakfast','dep_great ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4268,-0.0,'choices','dep_Many dep_choices dep_staff dep_ ','dep_Many_choices dep_choices_and dep_staff_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4273,-0.049999999999999996,'allowed','dep_charged dep_meet ','dep_charged_meet ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4278,-0.0,'food','dep_Loved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4279,-0.1111111111111111,'spread','dep_wide dep_available ','dep_wide_available ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4291,0.05555555555555555,'choice','dep_Excellent dep_breakfast dep_upmarket ','dep_Excellent_breakfast dep_breakfast_upmarket ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4294,0.0,'breakfast','dep_Super dep_staffs ','dep_Super_staffs ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4299,-0.05555555555555555,'food','dep_Great dep_food dep_ ','dep_Great_food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4315,-0.17500000000000002,'spreads','dep_best dep_breakfast ','dep_best_breakfast dep_breakfast_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4319,0.0,'stay','dep_coworkers ','dep_coworkers_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4329,-0.3,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4332,-0.0,'stay','dep_stay dep_go dep_ ','dep_stay_here dep_go_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4338,0.17222222222222222,'selection','dep_good dep_breakfast dep_selection dep_ dep_ ','dep_good_breakfast dep_breakfast_selection dep_selection_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4345,-0.17777777777777778,'experience','dep_ruin ','dep_ruin_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4349,0.15555555555555556,'appreciated','dep_Heartily dep_appreciated dep_ ','dep_Heartily_appreciated dep_appreciated_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4350,-0.1111111111111111,'negatives','dep_negatives dep_ ','dep_negatives_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4352,-0.1888888888888889,'order','dep_times dep_wrong dep_Delivered dep_also dep_delay ','dep_times_wrong dep_wrong_Delivered dep_Delivered_and dep_also_delay ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4358,0.12083333333333333,'spread','dep_friendly dep_staff dep_Convenient dep_location dep_Great dep_breakfast dep_spread ','dep_friendly_staff dep_staff_Convenient dep_Convenient_location dep_location_Great dep_Great_breakfast dep_breakfast_spread ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4359,-0.0,'Stay','dep_Great dep_Stay dep_ ','dep_Great_Stay dep_Stay_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4372,0.0,'stay','dep_Good dep_stay dep_value dep_ ','dep_Good_stay dep_stay_and dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4378,-0.5,'breakfast','dep_superb dep_staff ','dep_superb_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4381,-0.5333333333333333,'Breakfast','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4393,-0.0,'hotel','dep_maybe dep_however dep_able ','dep_maybe_it dep_however_able ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+4397,-0.0,'CAKE','dep_THANK ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4398,-0.0,'ALL','dep_THING ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4399,0.21666666666666667,'stay','dep_pleasant dep_stay dep_! ','dep_pleasant_stay dep_stay_! ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+4404,-0.8666666666666667,'All','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4407,0.0,'omlette','dep_time ','dep_time_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4409,0.0,'Remember','dep_Remember dep_ ','dep_Remember_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4415,0.5777777777777777,'Breakfast','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4421,0.0,'all','dep_r ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4422,0.13333333333333333,'food','dep_fresh dep_onebreakfast dep_buffet dep_better ','dep_fresh_onebreakfast dep_onebreakfast_buffet dep_buffet_better ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4423,0.0,'things','dep_many dep_get ','dep_many_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4424,-0.0,'stay','dep_Impeccable dep_stay dep_ ','dep_Impeccable_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4425,-0.39999999999999997,'stay','dep_enjoy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4427,0.24166666666666667,'food','dep_hotel dep_clean dep_food dep_ ','dep_hotel_clean dep_clean_food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4428,0.43333333333333335,'food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4429,0.05555555555555555,'breakfast','dep_Great dep_breakfast dep_ ','dep_Great_breakfast dep_breakfast_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4431,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4435,0.8666666666666667,'Everything','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4446,-0.17222222222222222,'breakfast','dep_good dep_breakfast dep_staff dep_ ','dep_good_breakfast dep_breakfast_and dep_staff_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4448,-0.0,'check','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4449,-0.0,'check','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4452,-0.0,'Everything','dep_nothing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4453,-0.0,'complain','dep_nothing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4455,0.05555555555555555,'breakfast','dep_Nice dep_breakfast dep_! ','dep_Nice_breakfast dep_breakfast_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4456,0.0,'Everything','dep_sold dep_ordered ','dep_sold_ordered ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4458,-0.09999999999999999,'quality','dep_poor dep_Europe ','dep_poor_Europe ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4465,0.0,'everything','dep_Liked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4477,-0.0,'Breakfast','dep_international ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4495,-0.11666666666666665,'pickup','dep_airport dep_bad ','dep_airport_bad dep_bad_from ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+4497,-0.0,'fault','dep_find ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4509,-0.0,'stay','dep_Pleasant dep_stay dep_go dep_ ','dep_Pleasant_stay dep_stay_and dep_go_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4510,-0.0,'go','dep_definitely dep_stay dep_back ','dep_definitely_will dep_stay_back dep_back_again ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4520,0.03333333333333333,'breakfast','dep_Excellent dep_breakfast dep_rooms dep_ ','dep_Excellent_breakfast dep_breakfast_and dep_rooms_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4527,0.4666666666666666,'Food','dep_fine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+4551,-0.06666666666666667,'come','dep_would dep_surly dep_come dep_back dep_ ','dep_would_surly dep_surly_come dep_come_back dep_back_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+4562,0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4564,0.0,'experience','dep_marred ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4568,0.16666666666666666,'Access','dep_crowded ','dep_crowded_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4574,-0.0,'check','dep_Easy dep_check dep_ dep_room dep_ ','dep_Easy_check dep_check_in dep__room dep_room_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4576,-0.0,'buffet','dep_looked ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4577,-0.8666666666666667,'Breakfast','dep_good ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4578,-0.1111111111111111,'check','dep_Easy dep_ dep_efficient dep_check dep_ dep_ ','dep_Easy_ dep__efficient dep_efficient_check dep_check_ dep__ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4579,-0.1111111111111111,'check','dep_Easy dep_ dep_efficient dep_check dep_ dep_ ','dep_Easy_ dep__efficient dep_efficient_check dep_check_ dep__ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4581,0.0,'breakfast','dep_rooms ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4588,0.0,'queue','dep_long dep_queue dep_get dep_ ','dep_long_queue dep_queue_get dep_get_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4589,0.2888888888888889,'Break','dep_Break dep_good dep_ ','dep_Break_good dep_good_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4594,0.5333333333333333,'Nothing','dep_dislike ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4595,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4598,-0.17333333333333334,'experience','dep_excellent dep_decided ','dep_excellent_decided ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4599,-0.0,'food','dep_fish ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4600,-0.1111111111111111,'splurge','dep_tasty ','dep_tasty_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4601,-0.2888888888888889,'happy','dep_happy dep_ ','dep_happy_ ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4605,-0.0,'rest','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4611,0.0,'check','dep_always dep_ dep_maintained ','dep_always_ dep__maintained dep_maintained_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4613,0.0,'stay','dep_Pleasant dep_stay dep_! ','dep_Pleasant_stay dep_stay_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4614,0.0,'check','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4615,0.0,'check','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4616,0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4620,0.2,'choice','dep_staff dep_attentive dep_great ','dep_staff_were dep_attentive_great dep_great_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4630,-0.3,'breakfast','dep_amazing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4637,0.26666666666666666,'choice','dep_staff dep_ dep_helpful ','dep_staff_ dep__helpful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4648,0.0,'variety','','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4649,0.8666666666666667,'experience','dep_good ','',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4653,-0.16666666666666666,'menu','dep_ala dep_carte dep_lacking ','dep_ala_carte dep_carte_lacking ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4654,0.0,'dishes','dep_pork ','dep_pork_is ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4656,-0.17777777777777778,'stay','dep_great ','dep_great_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4664,-0.0,'vegetarian','dep_dinner dep_could dep_vegetarian dep_expensive ','dep_dinner_could dep_could_be dep_vegetarian_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4670,0.13333333333333333,'stay','dep_nice dep_ ','dep_nice_Had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4680,-0.3333333333333333,'breakfast','dep_buffet ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4683,0.0,'procedure','dep_checkout dep_checking ','dep_checkout_checking ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4684,0.15555555555555556,'checking','dep_efficient dep_employees dep_procedure dep_room ','dep_efficient_employees dep_employees_and dep_procedure_room ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4688,-0.16666666666666666,'fries','dep_french dep_cold dep_ordered ','dep_french_cold dep_cold_ordered ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4693,0.20833333333333334,'buffet','dep_delicious dep_breakfast dep_running ','dep_delicious_breakfast dep_breakfast_running ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4694,0.0,'experience','dep_stay ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4695,0.13333333333333333,'stay','dep_wonderful dep_stay dep_experience dep_ ','dep_wonderful_stay dep_stay_and dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4696,0.0,'stay','dep_Comfortable dep_stay dep_ ','dep_Comfortable_stay dep_stay_there ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4707,0.08333333333333333,'buffet','dep_breakfast ','dep_breakfast_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4708,0.0,'choice','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4709,0.0,'breakfast','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4710,0.39999999999999997,'options','dep_healthy ','dep_healthy_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4711,0.06666666666666667,'stay','dep_definitely dep_best dep_stay dep_ ','dep_definitely_the dep_best_stay dep_stay_had ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4712,0.0,'experience','dep_Fantastic dep_experience dep_ ','dep_Fantastic_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4719,0.2333333333333333,'stay','dep_comfortable dep_ambience ','dep_comfortable_ambience ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4720,0.0,'Breakfast','dep_spread ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4722,0.12000000000000001,'pastry','dep_lobby dep_ dep_Delicious dep_welcome ','dep_lobby_ dep__Delicious dep_Delicious_welcome dep_welcome_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4726,0.8666666666666667,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4730,0.2888888888888889,'stay','dep_happy ','dep_happy_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4733,0.3333333333333333,'Breakfast','dep_option ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4734,-0.0,'range','dep_wide dep_Loved ','dep_wide_Loved dep_Loved_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4735,-0.0,'range','dep_wide dep_Loved ','dep_wide_Loved dep_Loved_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4736,0.041666666666666664,'check','dep_hrs dep_wait ','dep_hrs_to dep_wait_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4737,0.041666666666666664,'check','dep_hrs dep_wait ','dep_hrs_to dep_wait_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4742,0.0,'experience','dep_Spa dep_bit ','dep_Spa_bit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4743,-0.0,'great','dep_nothing ','',0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,negative
+4744,-0.041666666666666664,'food','dep_Cold dep_food dep_ ','dep_Cold_food dep_food_in ',0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,negative
+4745,0.17333333333333334,'stay','dep_Overall dep_good dep_stay dep_ ','dep_Overall_a dep_good_stay dep_stay_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4747,0.041666666666666664,'breakfast','dep_breakfast dep_days dep_ ','dep_breakfast_days dep_days_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative

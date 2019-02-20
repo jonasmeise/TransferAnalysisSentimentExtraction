@@ -1,0 +1,122 @@
+ambience#general.arff
+Precision	0.7942857142857143
+Recall	1.0
+fMeasure0.8853333333333333
+Accuracy	79.42857142857142
+TP	8.8
+FP	2.2800000000000002
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+drinks#quality.arff
+Precision	0.9303030303030303
+Recall	1.0
+fMeasure0.9635610766045548
+Accuracy	93.03030303030303
+TP	2.12
+FP	0.16
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+drinks#style_options.arff
+Precision	0.95
+Recall	1.0
+fMeasure0.9733333333333334
+Accuracy	95.0
+TP	1.48
+FP	0.08
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+food#prices.arff
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	53.68421052631578
+TP	0.0
+FP	0.0
+FN	1.6
+TN	2.2
+balanced accuracy	0.5
+
+food#quality.arff
+Precision	0.7672796021962084
+Recall	1.0
+fMeasure0.8683162741395872
+Accuracy	76.72796021962084
+TP	30.2
+FP	9.16
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+food#style_options.arff
+Precision	0.5987096774193549
+Recall	1.0
+fMeasure0.7489387755102042
+Accuracy	59.87096774193549
+TP	3.6399999999999997
+FP	2.44
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+location#general.arff
+Precision	0.8142857142857143
+Recall	1.0
+fMeasure0.8967032967032967
+Accuracy	81.42857142857143
+TP	1.2
+FP	0.27999999999999997
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#general.arff
+Precision	0.7401417525773196
+Recall	1.0
+fMeasure0.8506558311947533
+Accuracy	74.01417525773195
+TP	14.24
+FP	5.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#miscellaneous.arff
+Precision	0.5573122529644269
+Recall	1.0
+fMeasure0.7156862745098038
+Accuracy	55.73122529644269
+TP	2.52
+FP	2.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#prices.arff
+Precision	NaN
+Recall	0.05714285714285714
+fMeasureNaN
+Accuracy	48.82352941176471
+TP	0.08
+FP	0.2
+FN	1.28
+TN	1.8800000000000001
+balanced accuracy	0.4813348416289593
+
+service#general.arff
+Precision	0.49593898165326744
+Recall	1.0
+fMeasure0.6630383808466
+Accuracy	49.593898165326735
+TP	9.76
+FP	9.92
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+

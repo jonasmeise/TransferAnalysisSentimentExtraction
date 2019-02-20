@@ -39,10 +39,11 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	private int[] ignoreFeatures;
 	
 	//Value of minAcceptanceValue
-		public static final String PARAM_ACCEPTANCE_VALUE = "featureMinAcceptanceValue";
-	    @ConfigurationParameter(name = PARAM_ACCEPTANCE_VALUE, mandatory = false)
-	    private String featureMinAcceptanceValue = "0";
-		private double minAcceptanceValue;
+		public static final String PARAM_USE_CFV = "paramUseCFV";
+	    @ConfigurationParameter(name = PARAM_USE_CFV, mandatory = false)
+	    private String paramUseCFV = "0";
+		public boolean useCFV;
+		public String testDataPath;
 	
 	//Path of the .model-Path
 		public static final String PARAM_MODEL_FILE = "modelFileInput";
@@ -94,7 +95,11 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	    	allData = "";
 	    	arffFileInputs = fu.getFilesInFolder(arffFileInput, ".arff", false);
 	    		    	
-	    	minAcceptanceValue = Double.valueOf(featureMinAcceptanceValue);
+	    	if(paramUseCFV!=null && paramUseCFV.length()>0) {
+	    		useCFV = Boolean.valueOf(paramUseCFV);
+	    	} else {
+	    		useCFV = false;
+	    	}
 	    	
 	    	if(paramKernelType!=null) {
 	    		kernelType = Integer.valueOf(paramKernelType);
@@ -337,10 +342,8 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 					       //output predictions
 						       for(int i=0; i<prediction.length; i=i+1)
 						       {
-						    	   if(prediction[i]>minAcceptanceValue) {
-						    		   predictionValues.add(currentClassifier.sourcePath + "\t" + newInstance.classAttribute().value(i) + "\t" + Double.toString(prediction[i]));
-						    		   //myLog.log(Double.toString(prediction[i]) + "@" + newInstance.classAttribute().value(i) + "- Probability of class " + currentClassifier.sourcePath + "@");
-						    	   }
+					    		   predictionValues.add(currentClassifier.sourcePath + "\t" + newInstance.classAttribute().value(i) + "\t" + Double.toString(prediction[i]));
+					    		   //myLog.log(Double.toString(prediction[i]) + "@" + newInstance.classAttribute().value(i) + "- Probability of class " + currentClassifier.sourcePath + "@");
 						       }
 						} catch (Exception e) {
 							e.printStackTrace();

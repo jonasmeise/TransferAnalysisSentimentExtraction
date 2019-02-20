@@ -18,6 +18,7 @@ import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
+import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 
 public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
@@ -31,6 +32,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     public ConsoleLog myLog;
     public boolean learningModeActivated=false;
     public boolean outputIntoFolderActivated=false;
+    public RawJsonReviewReader myReader;
 	
 	//Header for .arff file, 
 	public static final String PARAM_CONSTRAINED = "paramConstrained";
@@ -38,10 +40,14 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public String paramConstrained;
 	public boolean constrained = true;
 	
-	//Header for .arff file, 
 	public static final String PARAM_RELATION_NAME = "relationName";
     @ConfigurationParameter(name = PARAM_RELATION_NAME, mandatory = true)
 	public String relationName;
+    
+	public static final String PARAM_USE_OLD_DATA = "paramUseOldData";
+    @ConfigurationParameter(name = PARAM_USE_OLD_DATA, mandatory = false)
+	public String paramUseOldData;
+	public boolean useOldData = false;
 	
 	//every data-entry refers to a single line
 	public ArrayList<ArrayList<String>> relations;
@@ -50,12 +56,19 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	
     public void initialize(UimaContext aContext) throws ResourceInitializationException {
     	super.initialize(aContext);
+    	
     	ignoreFeatures = new int[0];
     	fu = new FileUtils();
     	myLog = new ConsoleLog();
     	data = new ArrayList<String>();
     	allClassAttributes = new ArrayList<String>();
     	relations = new ArrayList<ArrayList<String>>();
+    	    	
+    	if(paramUseOldData!=null) {
+    		useOldData = Boolean.valueOf(paramUseOldData);
+    	} else {
+    		useOldData = false;
+    	}
     	
 		relations = generateRelations();
 		if(relations.size()>0) {
@@ -122,6 +135,25 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public String stringToFeatureName(String originalName) {
 		//transforms "not too good" into "_not_too_good"
 		return ("_" + originalName.replace(" ", "_"));
+	}
+	
+	public String[] getAspectLabelsOldData() {
+		String[] returnArray = new String[12];
+		
+		returnArray[0] = "restaurant#general";
+		returnArray[1] = "restaurant#prices";
+		returnArray[2] = "restaurant#miscellaneous";
+		returnArray[3] = "food#prices";
+		returnArray[4] = "food#quality";
+		returnArray[5] = "food#style_options";
+		returnArray[6] = "drinks#prices";
+		returnArray[7] = "drinks#quality";
+		returnArray[8] = "drinks#style_options";
+		returnArray[9] = "ambience#general";
+		returnArray[10] = "service#general";
+		returnArray[11] = "location#general";
+		
+		return returnArray;
 	}
 	
     public void writeOutput(ArrayList<ArrayList<String>> sortedLines) {

@@ -1,0 +1,218 @@
+@relation Preis-Leistungs-Verhltnis
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, negative}
+
+@data
+107,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+115,0.3333333333333333,'cost','dep_effectiveness ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+137,0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+190,-0.1111111111111111,'Breakfast','dep_Breakfast dep_expensive dep_ ','dep_Breakfast_expensive dep_expensive_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+314,-0.0,'price','dep_less ','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+315,-0.17333333333333334,'value','dep_good dep_less ','dep_good_less dep_less_for ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+320,0.022222222222222223,'charged','dep_However dep_ dep_check dep_charged dep_ dep_started dep_ ','dep_However_ dep__check dep_check_it dep_charged_me dep__started dep_started_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+325,-0.0,'hotel','dep_Affordable dep_average dep_hotel dep_ ','dep_Affordable_average dep_average_hotel dep_hotel_in ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+327,-0.0,'price','dep_Liked dep_ dep_view dep_price dep_ ','dep_Liked_ dep__view dep_view_the dep_price_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+409,0.11666666666666665,'prices','dep_better ','dep_better_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+426,-0.041666666666666664,'worth','dep_completely dep_got ','dep_completely_got ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+449,0.05555555555555555,'buffet','dep_breakfast dep_expensive ','dep_breakfast_expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+543,0.16666666666666666,'parking','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+545,0.16666666666666666,'hotel','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+556,-0.28888888888888886,'price','dep_worth ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+560,-0.11555555555555555,'emplacement','dep_worth dep_thing ','dep_worth_was dep_thing_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+565,-0.0,'rates','dep_basic dep_room ','dep_basic_room dep_room_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+566,-0.03333333333333333,'price','dep_increased ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+589,-0.0,'pay','dep_day ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+592,-0.0,'buffet','dep_morning ','dep_morning_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,negative
+627,-0.05555555555555555,'price','dep_ideal dep_price dep_ ','dep_ideal_price dep_price_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+633,-0.0,'fee','dep_Room dep_match ','dep_Room_match ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+662,-0.0,'charging','dep_service dep_ dep_charging dep_services dep_rules dep_ ','dep_service_ dep__they dep_charging_in dep_services_rules dep_rules_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+686,-0.0,'price','dep_high ','dep_high_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+759,-0.0,'pricing','dep_Inconsistent dep_pricing dep_answers ','dep_Inconsistent_pricing dep_pricing_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+769,-0.0,'priced','dep_weekend ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+770,-0.0,'priced','dep_get ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+790,-0.3333333333333333,'Breakfast','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+794,-0.26666666666666666,'value','dep_great dep_location ','dep_great_location ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+799,-0.0,'priced','dep_hotel ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+807,-0.0,'price','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+884,-0.022222222222222223,'charged','dep_Parking dep_charged dep_without dep_happen dep_ dep_ ','dep_Parking_was dep_charged_to dep_without_happen dep_happen_ dep__and ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+890,-0.0,'price','dep_matched ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+906,-0.3,'deal','dep_good dep_deal dep_ ','dep_good_deal dep_deal_ONLY ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+909,-0.0,'money','dep_cause ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+915,-0.16666666666666666,'parking','dep_Expensive dep_included ','dep_Expensive_included ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+916,-0.16666666666666666,'parking','dep_Expensive dep_included ','dep_Expensive_included ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+933,0.11111111111111112,'breakfast','dep_overpriced dep_ dep_pool dep_towels ','dep_overpriced_ dep__pool dep_pool_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+937,-0.125,'charged','dep_included dep_extra ','dep_included_extra ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+946,-0.0,'charged','dep_still dep_us ','dep_still_do dep_us_for ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+975,-0.0,'charge','','',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+977,-0.3333333333333333,'value','dep_clean dep_great dep_functional ','dep_clean_great dep_great_functional dep_functional_for ',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+995,-0.14444444444444446,'value','dep_however dep_excellent dep_stay ','dep_however_not dep_excellent_stay dep_stay_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1087,-0.0,'view','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1099,-0.0,'cost','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1102,-0.2888888888888889,'value','dep_good dep_hotel ','dep_good_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+1118,-0.06666666666666667,'fee','dep_charged ','dep_charged_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+1142,-0.0,'charge','dep_wanted dep_wife ','dep_wanted_wife dep_wife_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1144,-0.0,'charge','dep_double dep_donft dep_ dep_ ','dep_double_donft dep_donft_you dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1145,-0.0,'charge','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1213,-0.0,'cost','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1288,-0.027777777777777776,'charge','dep_bit dep_guests dep_store ','dep_bit_guests dep_guests_store ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1323,0.0,'staying','dep_Worth ','dep_Worth_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1355,-0.0,'value','dep_location ','dep_location_for ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1368,-0.0,'price','dep_Good dep_price dep_nights dep_ ','dep_Good_price dep_price_nights dep_nights_ ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,positive
+1380,0.17777777777777778,'value','dep_good dep_break ','dep_good_break dep_break_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1427,-0.09166666666666667,'charged','dep_charged dep_extra dep_ ','dep_charged_extra dep_extra_ ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,negative
+1505,0.0,'value','dep_Great dep_value dep_ dep_located dep_ ','dep_Great_value dep_value_for dep__located dep_located_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1514,-0.0,'money','','',0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1562,0.0,'prices','dep_high ','dep_high_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1563,0.0,'price','dep_overall dep_goes ','dep_overall_goes dep_goes_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1564,-0.1111111111111111,'costs','dep_hidden ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1596,-0.0,'price','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+1612,0.19999999999999998,'hotel','dep_adequate ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1639,-0.08333333333333333,'price','dep_reasonable dep_compared ','dep_reasonable_has ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1669,-0.2888888888888889,'value','dep_good dep_Special ','dep_good_Special dep_Special_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1686,0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1724,0.16666666666666666,'breakfasts','dep_expensive dep_access ','dep_expensive_access ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1760,-0.1111111111111111,'cafe','dep_s dep_right ','dep_s_right ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1844,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1860,0.4666666666666666,'money','dep_recommended ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1864,-0.0,'cost','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1963,0.0,'price','dep_policy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1972,0.35000000000000003,'value','dep_great dep_breakfast ','dep_great_breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2034,0.027777777777777776,'price','dep_small dep_keep ','dep_small_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2140,0.0,'value','dep_Good dep_value dep_ dep_close dep_ ','dep_Good_value dep_value_for dep__and dep_close_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2181,-0.5333333333333333,'Price','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2207,-0.21666666666666667,'priced','dep_reasonably dep_nice ','dep_reasonably_nice ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2214,-0.0,'Value','dep_location ','dep_location_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,positive
+2271,-0.08888888888888889,'value','dep_sento dep_great dep_value dep_ ','dep_sento_is dep_great_value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2287,-0.0,'beautiful','dep_area ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2288,-0.10833333333333334,'nice','dep_staff dep_nice dep_ dep_speak dep_helped dep_ ','dep_staff_is dep_nice_ dep__speak dep_speak_and dep_helped_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2289,0.02222222222222222,'small','dep_room dep_small dep_ ','dep_room_was dep_small_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2298,-0.0,'money','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2299,-0.0,'Perfect','dep_Perfect dep_ ','dep_Perfect_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2300,0.16666666666666666,'credit','dep_tarnished ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2328,-0.0,'money','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2350,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2370,0.0,'value','dep_Good dep_get ','dep_Good_get dep_get_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2390,-0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2442,-0.0,'Price','dep_Price dep_Unbeatable dep_ ','dep_Price_Unbeatable dep_Unbeatable_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2443,-0.0,'Value','dep_Unbeatable ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2446,-0.08333333333333333,'price','dep_unbeatable dep_location ','dep_unbeatable_and ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2474,-0.0,'Breakfast','dep_ok ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2493,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2518,-0.0,'money','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2555,-0.0,'Breakfast','dep_possible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+2565,-0.17777777777777778,'price','dep_great ','dep_great_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2622,-0.17142857142857143,'deal','dep_good dep_deal dep_ ','dep_good_deal dep_deal_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2699,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+2729,-0.07777777777777778,'price','dep_pay ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,positive
+2742,0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2758,0.16666666666666666,'price','dep_cheap ','dep_cheap_for ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2766,0.16666666666666666,'price','dep_cheap ','dep_cheap_for ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+2800,0.28888888888888886,'money','dep_worth ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2825,-0.08333333333333333,'price','dep_reasonable dep_ ','dep_reasonable_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2853,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2872,0.0,'Price','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2938,-0.28888888888888886,'money','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2939,0.0,'price','dep_deserves ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2979,0.0,'Price','dep_Good dep_Bed ','dep_Good_Bed ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2990,0.0,'price','dep_low ','dep_low_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3006,-0.0,'expensive','dep_ dep_nt dep_located dep_either ','dep__it dep_nt_too dep_located_either ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3010,-0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3049,-0.027777777777777776,'value','dep_Good dep_value dep_accommodation dep_ ','dep_Good_value dep_value_accommodation dep_accommodation_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3065,-0.6,'value','dep_good dep_included ','dep_good_included ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3074,-0.43333333333333335,'value','dep_good dep_represents ','dep_good_represents ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3091,-0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+3137,0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3139,0.24000000000000002,'value','dep_included dep_good dep_value dep_ ','dep_included_was dep_good_value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3147,-0.16666666666666666,'prices','dep_reasonable ','dep_reasonable_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3162,-0.0,'price','dep_thought ','dep_thought_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+3165,-0.0,'money','dep_paid ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3226,0.0,'Price','dep_little ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3344,0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3369,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3380,-0.43333333333333335,'breakfast','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3404,-0.0,'money','dep_stay ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+3416,0.0,'value','dep_Good dep_value dep_location dep_ ','dep_Good_value dep_value_and dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3448,0.13333333333333333,'costs','dep_unclear ','dep_unclear_about ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,negative
+3460,-0.0,'value','dep_Good dep_location ','dep_Good_location ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3478,-0.044444444444444446,'discount','dep_charges ','dep_charges_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3497,0.08333333333333333,'priced','dep_reasonably dep_considering ','dep_reasonably_considering ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+3585,0.26666666666666666,'money','dep_great ','dep_great_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3635,0.17333333333333334,'value','dep_Overall dep_good dep_value dep_ ','dep_Overall_good dep_good_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3653,0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3669,-0.0,'value','dep_Good dep_price dep_value dep_given dep_ ','dep_Good_price dep_price_value dep_value_given dep_given_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3798,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3822,-0.17333333333333334,'price','dep_railway dep_station dep_good ','dep_railway_station dep_station_good dep_good_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3868,-0.0,'value','dep_Besides ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+3921,-0.0,'quality','dep_price dep_ ','dep_price_ dep__by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3922,-0.0,'price','dep_quality ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3929,-0.0,'value','dep_hotel ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3931,-0.0,'value','dep_Great dep_value dep_ ','dep_Great_value dep_value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3992,-0.08571428571428572,'discounts','dep_service dep_ dep_amazing dep_Marriot dep_Member dep_discounts dep_ ','dep_service_ dep__amazing dep_amazing_Marriot dep_Marriot_Member dep_Member_discounts dep_discounts_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+3997,0.17777777777777778,'value','dep_great dep_hotel ','dep_great_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4001,0.17777777777777778,'value','dep_great dep_hotel ','dep_great_hotel dep_hotel_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4005,-0.0,'priced','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4007,-0.0,'priced','dep_service ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4009,-0.28888888888888886,'price','dep_worth ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4031,-0.3333333333333333,'Drinks','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4035,-0.16666666666666666,'food','dep_Restaurant dep_expensive ','dep_Restaurant_expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4049,-0.0,'Menu','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,positive
+4085,0.0,'Value','dep_Excellent dep_Value dep_ ','dep_Excellent_Value dep_Value_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4092,-0.3333333333333333,'Food','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4107,-0.0,'value','dep_Good dep_value dep_ ','dep_Good_value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+4118,0.0,'room','dep_old dep_place ','dep_old_place ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4154,0.0,'Money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4168,0.0,'money','dep_paid ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4182,0.0,'priced','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4198,-0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4221,-0.0,'money','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4239,0.1111111111111111,'service','dep_Airport dep_transfer dep_expensive ','dep_Airport_transfer dep_transfer_expensive ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4251,-0.0,'Courtyard','dep_essentially ','dep_essentially_a ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,negative
+4265,0.05555555555555555,'expensive','dep_May dep_expensive dep_cost dep_ ','dep_May_be dep_expensive_cost dep_cost_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4266,0.05555555555555555,'cost','dep_booking dep_expensive ','dep_booking_will dep_expensive_you ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4317,0.0,'location','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4326,0.08,'charged','dep_free dep_much ','dep_free_much ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4373,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4376,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4380,-0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4387,-0.0,'money','','',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4392,-0.0,'Prices','dep_aligned ','dep_aligned_of ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,negative
+4416,0.28888888888888886,'money','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+4433,-0.08333333333333333,'expensive','dep_Could dep_less dep_expensive ','dep_Could_be dep_less_expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4451,-0.16666666666666666,'Prices','dep_attractive ','dep_attractive_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4457,0.0,'priced','dep_Beer dep_priced dep_ ','dep_Beer_over dep_priced_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4492,-0.1111111111111111,'expensive','dep_expensive ','dep_expensive_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+4500,-0.16666666666666666,'price','dep_right dep_hotel ','dep_right_hotel ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4528,-0.05555555555555555,'rip','dep_rip dep_ dep_ ','dep_rip_off dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,negative
+4529,-0.0,'hotels','dep_ dep_stars dep_Among dep_stayed ','dep__stars dep_stars_Among dep_Among_stayed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4530,0.16666666666666666,'hotel','dep_ripoff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+4539,-0.0,'value','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4563,0.024999999999999998,'charged','dep_Unfortunately dep_charged dep_twice dep_trying ','dep_Unfortunately_we dep_charged_twice dep_twice_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4609,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+4624,0.0,'credit','dep_amount ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+4625,-0.0,'Price','dep_higher ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4633,-0.0,'price','dep_advertising ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4634,-0.0,'taxes','dep_ dep_extreme dep_advertising dep_ ','dep__extreme dep_extreme_advertising dep_advertising_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+4665,-0.10666666666666667,'expensive','dep_little dep_less dep_vegetarian dep_great ','dep_little_less dep_less_vegetarian dep_vegetarian_but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

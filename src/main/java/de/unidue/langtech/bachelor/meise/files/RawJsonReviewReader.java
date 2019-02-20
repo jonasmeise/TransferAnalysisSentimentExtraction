@@ -27,7 +27,12 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
     public static final String PARAM_SEARCH_SUBFOLDERS = "paramIncludeSubfolders";
     @ConfigurationParameter(name = PARAM_SEARCH_SUBFOLDERS, mandatory = false)
     private String paramIncludeSubfolders;
-    private boolean includeSubfolders;
+    public boolean includeSubfolders;
+    
+    public static final String PARAM_USE_OLD_DATA = "paramUseOldData";
+    @ConfigurationParameter(name = PARAM_USE_OLD_DATA, mandatory = false)
+    private String paramUseOldData;
+    public boolean useOldData;
     
     public static final String PARAM_MAX_DATA_SIZE = "paramMaxDataSize";
     @ConfigurationParameter(name = PARAM_MAX_DATA_SIZE, mandatory = false)
@@ -41,14 +46,21 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 	private FileUtils fu;
 	int i; //i=reviewCounter
 	
+	/*public RawJsonReviewReader(String folderPath) {
+		this.folderPath = folderPath;
+	}*/
+	
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
 		jCas.setDocumentLanguage(PARAM_LANGUAGE);
-		jCas.setDocumentText(reviewList.get(i).getContent());
-		i++;
-		if(!hasNext()) {
-			jCas.setDocumentText(jCas.getDocumentText() + "0.0...");
+		
+		if(!useOldData) {
+			jCas.setDocumentText(reviewList.get(i).getContent());
+		} else {
+			jCas.setDocumentText(reviewList.get(i).getTextContent());
+			//myLog.log(jCas.getDocumentText());
 		}
+		i++;
 	}
 	
 	@Override
@@ -72,7 +84,7 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 		myLog.log("Found " + sourceFiles.size() + " source files.");
 		
 		for(String singleSourceFile : sourceFiles) {
-			reviewList.addAll(dp.parseXMLToReviewData(singleSourceFile, maxDataSize));
+			reviewList.addAll(dp.parseXMLToReviewData(singleSourceFile, maxDataSize, useOldData));
 		}
 		
 		myLog.log("Added a total of " + reviewList.size() + " sentences.");
@@ -84,6 +96,12 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
         } else {
         	includeSubfolders = Boolean.valueOf(paramIncludeSubfolders);
         }
+		
+		if(paramUseOldData==null || paramUseOldData.length()==0) {
+        	useOldData = true;
+        } else {
+        	useOldData = Boolean.valueOf(paramUseOldData);
+        }
                 
         myLog = new ConsoleLog();
         dp = new DataParser();
@@ -91,6 +109,16 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
         reviewList = new ArrayList<ReviewData>();
         
         initFiles(maxDataSize);
+	}
+	
+	public int getReviewId(String textContent) {
+		for(ReviewData singleReview : reviewList) {
+			if(singleReview.getTextContent().contains(textContent)) {
+				return singleReview.getId();
+			}
+		}
+		
+		return -1;
 	}
 	
 	public double getScore(int id) {
@@ -109,6 +137,10 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 		}
 		
 		return returnValue;
+	}
+	
+	public ReviewData getReview(int id) {
+		return reviewList.get(id);
 	}
 	
 	public String getTitle(int id) {

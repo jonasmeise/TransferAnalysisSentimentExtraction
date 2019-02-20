@@ -1,2 +1,2 @@
-balanced acc	constrained	0.690
-balanced acc	unconstrained	0.6736
+balanced acc	unconstrained	0.5731791992
+accuracy	unconstrained	0.74640837738

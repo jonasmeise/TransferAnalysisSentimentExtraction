@@ -8,7 +8,35 @@ public class ReviewData{
 	String date;
 	String title;
 	ArrayList<String> text;
+	int id;
+	private ArrayList<String> opinionTargets;
+	private ArrayList<String> opinionCategory;
+	private ArrayList<String> opinionPolarity;
 	
+	public ArrayList<String> getOpinionTargets() {
+		return opinionTargets;
+	}
+
+	public void setOpinionTargets(ArrayList<String> opinionTargets) {
+		this.opinionTargets = opinionTargets;
+	}
+
+	public ArrayList<String> getOpinionCategory() {
+		return opinionCategory;
+	}
+
+	public void setOpinionCategory(ArrayList<String> opinionCategory) {
+		this.opinionCategory = opinionCategory;
+	}
+
+	public ArrayList<String> getOpinionPolarity() {
+		return opinionPolarity;
+	}
+
+	public void setOpinionPolarity(ArrayList<String> opinionPolarity) {
+		this.opinionPolarity = opinionPolarity;
+	}
+
 	public ArrayList<String> getContentAsArrayList() {
 		ArrayList<String> returnList = new ArrayList<String>();
 		returnList.add(getTitle());
@@ -27,11 +55,28 @@ public class ReviewData{
 		date = "";
 		title = "";
 		text = new ArrayList<String>();
+		opinionTargets = new ArrayList<String>();
+		opinionCategory = new ArrayList<String>();
+		opinionPolarity = new ArrayList<String>();
 	}
 
 	public String getContent() {
 		String text = getTitle();
 		for(String line : getText()) {
+			if(text.endsWith(".") || text.endsWith("!") || text.endsWith("?")) {
+				text += " " + line;
+			} else {
+				text += ". " + line;
+			}
+		}
+		
+		return text;
+	}
+	
+	public String getTextContent() {
+		String text = getText().get(0);
+		for(int i=1;i<getText().size();i++) {
+			String line = getText().get(i);
 			if(text.endsWith(".") || text.endsWith("!") || text.endsWith("?")) {
 				text += " " + line;
 			} else {
@@ -53,6 +98,12 @@ public class ReviewData{
 	}
 	public void setScore(double score) {
 		this.score = score;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getDate() {
 		return date;
