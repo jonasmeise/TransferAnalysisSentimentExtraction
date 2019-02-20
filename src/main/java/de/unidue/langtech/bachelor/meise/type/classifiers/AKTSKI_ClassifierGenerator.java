@@ -28,7 +28,7 @@ import webanno.custom.Valence;
 //http://aclweb.org/anthology/S/S16/S16-1051.pdf
 //AKTSKI at SemEval-2016 Task 5: Aspect Based Sentiment Analysis for Consumer Reviews
 //Pateria, Choubey
-//Classification type: SVM-RBF
+//Classification type: SVM-RBF, C=100, gamma=0.001
 //tar-values for Hotels are added
 //Sentiment lexicons are averaged prior to the evaluation -> as a feature: we assume it's averaged over the SubSent (not clear)
 //Keywords for each Term (TF-IDF transformations) are generated in String2word-function within AspectClassifier.java

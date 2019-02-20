@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -61,9 +62,9 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
         	
         	subSentences = divideIntoSubSentences(sentence, treeCollection);
         	//generate all outputs, then overwrite specific ones
-			for(Valence valence : selectCovered(Valence.class, sentence)) {
-        		AspectRating t1 = valence.getDependent();
-        		AspectRating t2 = valence.getGovernor();
+			for(Valence singleValence : selectCovered(Valence.class, sentence)) {
+        		AspectRating t1 = singleValence.getDependent();
+        		AspectRating t2 = singleValence.getGovernor();
         		
 				int dependencyDistance = -1;
 				
@@ -76,6 +77,19 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
     			}
 				
 				if(dependencyDistance>=0) {
+					Token token;
+					AspectRating ar;
+					
+					if(singleValence.getDependent()!=null && singleValence.getDependent().getAspect()!=null && singleValence.getGovernor()!=null && singleValence.getGovernor().getAspect()!=null && singleValence.getValenceRating()!="null" && singleValence.getValenceRating()!=null) {
+						if(singleValence.getDependent().getAspect().toLowerCase().equals("ratingofaspect")) {
+							token = JCasUtil.selectCovered(Token.class, singleValence.getGovernor()).get(0);
+	        				ar = singleValence.getGovernor();
+		        		} else {
+		        			token = JCasUtil.selectCovered(Token.class, singleValence.getDependent()).get(0);
+		        			ar = singleValence.getDependent();
+		        		}
+						
+						
 					String wordA = selectCovered(Token.class, t1).get(0).getLemma().getValue();
 					String wordB = selectCovered(Token.class, t2).get(0).getLemma().getValue();
 					double lexicons_min=0, lexicons_avg=0, lexicons_max=0;
@@ -158,8 +172,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 						returnInstance.add("" + valueId);
 						valueId++;
 						
-						returnInstance.add(wordA);
-						returnInstance.add(wordB);
+						returnInstance.add(token.getLemma().getValue());
 						returnInstance.add(identifier);
 						returnInstance.add("" + word_distance);
 						
@@ -175,7 +188,11 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 						returnInstance.add("" + context_negation);
 						
 						if(!constrained) {
-							returnInstance.add("" + context_lexicon_avg);
+							if(contextTokens.size()>0) {
+								returnInstance.add("" + context_lexicon_avg);
+							} else {
+								returnInstance.add("0");
+							}
 						} else {
 							returnInstance.add("0");
 						}
@@ -184,29 +201,14 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 						
 						returnInstance.add("valence");
 						
-						String currentValence=valence.getValenceRating();
-						if(valence.getValenceRating()==null || (!valence.getValenceRating().equals("positive") && !valence.getValenceRating().equals("negative"))) {
-							currentValence="negative";
-						}
+						returnInstance.add(singleValence.getValenceRating().replaceAll("rate-me", "negative").replaceAll("UNSURE", "negative"));
 						
-						returnInstance.add(currentValence);
 						sortedLines.add(returnInstance);
+						}
 					}
 				}
 			}
 		}       
-		
-		//since we don't need duplicates for every class...
-		if(learningModeActivated) {
-			int onlyTakeFirst = subSentences.size();
-			ArrayList<ArrayList<String>> alternativeReturnList = new ArrayList<ArrayList<String>>();
-			
-			for(int i=0;i<onlyTakeFirst;i++) {
-				alternativeReturnList.add(returnList.get(i));
-			}
-			
-			return alternativeReturnList;
-		}
 		
 		return returnList;
 	}
@@ -215,18 +217,8 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	public ArrayList<ArrayList<String>> generateRelations() {
 		myStopwordHandler = new StopwordHandler("src\\main\\resources\\stopwords.txt");	
 		
-		String[] types = new String[8];
-		types[0] = "Ausstattung";
-		types[1] = "Hotelpersonal";
-		types[2] = "Lage";
-		types[3] = "OTHER";
-		types[4] = "Komfort";
-		types[5] = "Preis-Leistungs-Verhltnis";
-		types[6] = "WLAN";
-		types[7] = "Sauberkeit";
-		
-		String[] types2 = new String[1];
-		types2[0] = "valence";
+		String[] types = new String[1];
+		types[0] = "valence";
 		
 		negationWords = new ArrayList<String>();
 		negationWords.add("no");
@@ -241,14 +233,13 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 		sentimentLexicons.add(new BingLiu());
 		sentimentLexicons.add(new EmoLex());
 		
-		for(int i=0;i<types2.length;i++) {
+		for(int i=0;i<types.length;i++) {
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
 			
 			//of NN+, JJ+, VB+, RB
 			relations.add("wordA string");
-			relations.add("wordB string");
 			relations.add("dependency_type string");
 			relations.add("word_distance numeric");
 			relations.add("lexicons_min numeric");
@@ -262,7 +253,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 			
 			relations.add("aspecttype " + generateTupel(new String[] {"positive", "negative"}));	
 			
-			allClassAttributes.add(types2[i]);
+			allClassAttributes.add(types[i]);
 			
 			this.relations.add(relations);
 			

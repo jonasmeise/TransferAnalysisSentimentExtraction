@@ -1,0 +1,65 @@
+@relation location#general
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+137,0.2222222222222222,'block','dep_magnificent ','dep_magnificent_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+159,-0.17777777777777778,'neighborhood','dep_great ','dep_great_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+209,0.18666666666666665,'outdoor atmosphere','dep_atmosphere dep_outdoor dep_wonderful ','dep_atmosphere_outdoor dep_outdoor_wonderful dep_wonderful_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+445,-0.3333333333333333,'view','dep_breathtaking ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+448,0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+761,0.0,'ave','dep_Bedford ','dep_Bedford_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+844,0.16666666666666666,'view','dep_spectacular ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+891,0.0,'restaurant','dep_looks ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+892,0.0,'noise','dep_traffic ','dep_traffic_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+896,0.14,'place','dep_great dep_place dep_take dep_ dep_perfect dep_ ','dep_great_place dep_place_take dep_take_ dep__and dep_perfect_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+934,0.43333333333333335,'location','dep_perfect ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+981,0.43333333333333335,'location','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1247,-0.19259259259259257,'trip','dep_worth ','dep_worth_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1267,0.0,'Rice Avenue','dep_Avenue dep_Rice dep_Manhattanite dep_Roosevelt ','dep_Avenue_Rice dep_Rice_Manhattanite dep_Manhattanite_Roosevelt dep_Roosevelt_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1296,0.060000000000000005,'view of the new york city skiline','dep_view dep_terrific dep_skiline dep_new dep_york dep_city dep_went ','dep_view_terrific dep_terrific_of dep_skiline_new dep_new_york dep_york_city dep_city_that ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1297,0.0,'window','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1302,0.3333333333333333,'location','dep_itvery dep_wise ','dep_itvery_wise ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1361,0.05555555555555555,'place','dep_hidden ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1433,0.0,'view of river and NYC','dep_Nice dep_view dep_river dep_NYC dep_ ','dep_Nice_view dep_view_of dep_river_and dep_NYC_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1489,-0.16666666666666666,'views','dep_incomparable dep_rooms ','dep_incomparable_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1495,-0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1610,0.17777777777777778,'neighborhood','dep_great ','dep_great_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1774,0.037037037037037035,'spot','dep_hidden ','dep_hidden_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1801,0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2030,0.0,'downtown','dep_Mexican ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2118,-0.0761904761904762,'location','dep_greatest dep_located dep_ dep_keeps ','dep_greatest_located dep_located_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2121,0.0,'Center','dep_Beverly ','dep_Beverly_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2249,0.25,'location','dep_spectacular dep_food ','dep_spectacular_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2377,0.048484848484848485,'SOHO location','dep_killer dep_location dep_SOHO dep_love dep_ dep_ dep_Fish dep_varity ','dep_killer_location dep_location_SOHO dep_SOHO_love dep_love_ dep__and dep__Fish dep_Fish_varity ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2424,0.08888888888888889,'location','dep_thing dep_nice dep_location dep_ ','dep_thing_is dep_nice_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2546,0.06666666666666667,'location','dep_include dep_park ','dep_include_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2547,0.08333333333333333,'day','dep_spent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2564,-0.08666666666666667,'location along the marina in Long Beach','dep_Later dep_charming dep_Schooner dep_along dep_location dep_marina dep_Beach dep_Long ','dep_Later_charming dep_charming_Schooner dep_Schooner_along dep_along_location dep_location_marina dep_marina_the dep_Beach_Long ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2806,0.13333333333333333,'view','dep_great ','dep_great_than ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2809,-0.13333333333333333,'Sound views','dep_gorgeous dep_views dep_Sound dep_given ','dep_gorgeous_views dep_views_Sound dep_Sound_given ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2810,0.0,'views','dep_thing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2834,0.43333333333333335,'view','dep_yeahthe dep_good ','dep_yeahthe_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

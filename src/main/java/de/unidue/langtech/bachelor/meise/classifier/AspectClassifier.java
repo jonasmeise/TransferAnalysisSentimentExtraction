@@ -131,7 +131,7 @@ public class AspectClassifier {
 			}
 			
 			if(!regression) {
-				svm.setWeights((weightClassB/weightClassC) + " " + (weightClassA/weightClassC));
+				//svm.setWeights((weightClassB/weightClassC) + " " + (weightClassA/weightClassC));
 				myLog.log("Weights set: " + svm.getWeights());
 			}
 
@@ -160,9 +160,9 @@ public class AspectClassifier {
 			//svm.setEps(0.00005);
 			
 			//for unconstrainedS3:
-			svm.setCost(500);
-			svm.setGamma(0.001);
-			svm.setEps(0.00005);
+			//svm.setCost(500);
+			//svm.setGamma(0.001);
+			//svm.setEps(0.00005);
 			
 			
 			cps = new CVParameterSelection();

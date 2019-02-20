@@ -9,5 +9,6 @@ food#prices		113
 food#quality		1162
 food#style_options	192
 service#general		604
+location		41
 
-total			3225 
+total			3261

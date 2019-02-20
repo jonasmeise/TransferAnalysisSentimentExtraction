@@ -53,14 +53,14 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained", "*.xmi");
-		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\old\\unconstrained");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained", "*.xmi");
+		myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_AKTSKI\\subtask3\\unconstrained\\analysis.txt");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -107,11 +107,11 @@ public class MainPipeline {
 			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
 					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
 			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
-	        		AKTSKI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		AKTSKI_ClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI",
-	        		AKTSKI_ClassifierGenerator.PARAM_CONSTRAINED, "false",
-	        		AKTSKI_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator.class, 
+	        		AUEB_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		AUEB_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier3",
+	        		AUEB_ClassifierGenerator.PARAM_CONSTRAINED, "false",
+	        		AUEB_ClassifierGenerator.PARAM_USE_OLD_DATA, "true");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -171,22 +171,22 @@ public class MainPipeline {
 		 
 		CVParameterSelection cps = new CVParameterSelection();
 		cps.setClassifier(svm);
-		cps.setNumFolds(5);
+		cps.setNumFolds(3);
 		cps.setDebug(true);
 		String[] params = new String[3];
-		params[0] = "C 0.001 0.005 4";
-		params[1] = "G 0.0005 0.0015 4";
-		params[2] = "P 0.005 0.51 4";
+		params[0] = "K 0 3 4";
+		params[1] = "C 0.001 100 3";
+		params[2] = "G 0.001 0.1 2";
 		cps.setCVParameters(params);
 		
 		AdditiveRegression ar = new AdditiveRegression();
 		ar.setDebug(true);
 		ar.setClassifier(svm);
 		
-		myClassifier = null;
+		myClassifier = cps;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 myClassifierHandler.useCFV = true;
 		 //myClassifierHandler.testDataPath = 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, true, myClassifier);
+		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
 	}
 }
