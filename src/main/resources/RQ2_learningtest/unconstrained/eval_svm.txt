@@ -1,0 +1,5 @@
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+learn: absolute squared error: 0.9456611115956464
+learn: AVG. SQUARED MEAN ERROR: 0.9456611115956464
+learn: AVG. SQUARED MAPPED ERROR: 0.8117500000000003

@@ -52,6 +52,8 @@ public class AspectClassifier {
 	public boolean mapToHistogram = true;
 	public double parameterHistogram = 0.8;
 	
+	public int[] removeArray;
+	
 	public CVParameterSelection cps;
 	
 	int seed;
@@ -135,9 +137,14 @@ public class AspectClassifier {
 			ntb.setTransformAllValues(true);
 			
 			Remove removeFilter = new Remove();
-			//remove ID-Feature
-			removeFilter.setAttributeIndices("1");
-				
+			//remove ID-Feature#
+			
+			if(removeArray!=null) {
+				removeFilter.setAttributeIndicesArray(removeArray);
+			} else {
+				removeFilter.setAttributeIndices("1");
+			}
+			
 			ClassBalancer cb = new ClassBalancer();
 			
 			svm.setDegree(2);
@@ -180,11 +187,8 @@ public class AspectClassifier {
 			
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
-			mf.setFilters(new Filter[] {s2wFilter});
-			//TODO: CHANGE
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
 			
-			//classifier.setClassifier(svm);
 			if(outerParameterClassifier!=null) {
 				myLog.log("Found classifier from outside...");
 				classifier.setClassifier(outerParameterClassifier);
@@ -195,19 +199,6 @@ public class AspectClassifier {
 			} else {
 				classifier.setClassifier(svm);
 			}
-
-			//classifier.setFilter(mf);
-			//classifier.buildClassifier(train);
-			
-			
-			/*
-			ThresholdSelector ts = new ThresholdSelector();
-			ts.setClassifier(sgd);
-			ts.setEvaluationMode(new SelectedTag(ThresholdSelector.EVAL_CROSS_VALIDATION, ThresholdSelector.TAGS_EVAL));
-			ts.setMeasure(new SelectedTag(ThresholdSelector.FMEASURE, ThresholdSelector.TAGS_MEASURE));
-			ts.setNumXValFolds(3);	
-			classifier.setClassifier(ts);
-			*/
 
 			classifier.setFilter(mf);
 			classifier.buildClassifier(train);
@@ -316,8 +307,8 @@ public class AspectClassifier {
 		   }*/
 		 
 		 if(regression) {
-			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError/folds));
-			 myLog.log("AVG. SQUARED MAPPED ERROR: " + (avgMeanErrorMappedCumulated/(folds)));
+			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError));
+			 myLog.log("AVG. SQUARED MAPPED ERROR: " + (avgMeanErrorMappedCumulated));
 		 }
 		 
 		 return returnList;
@@ -367,7 +358,7 @@ public class AspectClassifier {
 		s2wFilter.setLowerCaseTokens(true);	
 		s2wFilter.setAttributeNamePrefix("s2w");
 		
-		s2wFilter.setMinTermFreq(6);
+		//s2wFilter.setMinTermFreq(8);
 		
 		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		//s2wFilter.setOutputWordCounts(true);
@@ -435,6 +426,14 @@ public class AspectClassifier {
        Instances data = new Instances(inputReader);
        data.setClassIndex(data.numAttributes() - posClass);
        myLog.log("Found class attribute at '" + (data.numAttributes() - posClass) + "'. " + data.size() + " Instances loaded!");
+       
+       if(data.classAttribute().isNumeric()) {
+    	   regression = true;
+       } else {
+    	   regression = false;
+       }
+       
+       myLog.log("REGRESSION=" + regression);
 
        return data;
    }

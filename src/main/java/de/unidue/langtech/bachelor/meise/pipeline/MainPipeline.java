@@ -44,6 +44,7 @@ public class MainPipeline {
 	String tsvOutput = "src/main/resources/output3.tsv";
 	FileUtils fu;
 	public boolean constrained = true;
+	public int[] removeArray;
 	
 	public MainPipeline() {
 		fu = new FileUtils();
@@ -54,14 +55,15 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\RQ2_learningtest\\constrained", "*.xmi");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "*.xmi");
 		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
-		myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
+		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\RQ2_learningtest\\unconstrained", "src\\main\\resources\\RQ2_learningtest\\unconstrained\\analysis.txt");
+		
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_BUTknot\\old\\constrained", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained\\analysis");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -125,11 +127,11 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(RQ2_ReviewLevelRegression_ClassifierGenerator.class, 
-	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RQ2",
-	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, "true",
-	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "OwnClassifier",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -157,19 +159,18 @@ public class MainPipeline {
 	}
 	
 	public void foldLearning(String arffFileFolder, String outputPath) throws Exception {
-		//TODO: Cycle through all models
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
-		//svm.setSVMType(new SelectedTag(LibSVM.SVMT, LibSVM.TAGS_SVMTYPE));
+		//svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
 		svm.setProbabilityEstimates(true);
 		//svm.setDegree(2);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		svm.setCost(500);
-		svm.setGamma(0.001);
-		svm.setEps(0.00005);
+		//svm.setCost(500);
+		//svm.setGamma(0.001);
+		//svm.setEps(0.00005);
 			
 		SimpleLinearRegression slr = new SimpleLinearRegression();
 		slr.setOutputAdditionalStats(true);
@@ -182,7 +183,7 @@ public class MainPipeline {
 		 //lr.setDebug(true);
 	 
 		 IBk ibk = new IBk();	
-		 ibk.setKNN(1);
+		 ibk.setKNN(3);
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 		 ibk.setMeanSquared(true);
@@ -209,10 +210,41 @@ public class MainPipeline {
 		ar.setDebug(true);
 		ar.setClassifier(svm);
 		
-		myClassifier = lr;
+		
+		myClassifier = sgd;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 myClassifierHandler.useCFV = true;
-		 //myClassifierHandler.testDataPath = 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath, false, myClassifier);
+		
+		//remove this part if you do not want to enable ablation test
+
+		 
+		 
+		//this last part will be cycled over: in this case, all attributes 1-9 are removed (if they are nott already removed)
+		if(removeArray!=null) {
+			int maxIteration = removeArray[removeArray.length-1];
+			
+			for(int i=1;i<maxIteration;i++) {
+				//check if it isn't already included
+				String alreadyIncluded="";
+				boolean allGood=true;
+				
+				for(int check=0;check<removeArray.length-1;check++) {
+					alreadyIncluded += removeArray[check];
+					if(removeArray[check]==i) {
+						allGood=false;
+					}
+				}
+				
+				if(allGood) {
+					removeArray[removeArray.length-1] = i;
+					System.out.println("Ablation test: Remove features '" + alreadyIncluded + "' + '" + i + "'.");
+					myClassifierHandler.removeArray = removeArray;
+						 
+					myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + "_" + alreadyIncluded + "_" + i + ".txt", false, myClassifier);
+				}
+			}
+		} else {
+			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", false, myClassifier);
+		}
 	}
 }

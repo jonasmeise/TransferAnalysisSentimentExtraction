@@ -1,0 +1,18 @@
+0.45 * s2w+hotelpersonal + 7.81
+
+Predicting 0 if attribute value is missing.
+
+Regression Analysis:
+
+Variable              Coefficient     SE of Coef        t-Stat
+s2w+hotelpersonal         0.4495        0.07561        5.94477
+const                     7.8135        0.04193      186.36291
+
+Degrees of freedom = 798
+R^2 value = 0.04241
+Adjusted R^2 = 0.04121
+F-statistic = 35.34032
+
+learn: absolute squared error: 0.9265812554000059
+learn: AVG. SQUARED MEAN ERROR: 0.9265812554000059
+learn: AVG. SQUARED MAPPED ERROR: 0.9438500000000009

@@ -1,0 +1,79 @@
+all features (with ID removed):	88.68801508513116
+-1	88.41410903444068
+-2	85.52807941877876
+
+-3	88.18255227108867
+-4	88.54069103211137
+-5	88.05616992956575
+-6	86.96083411901725
+
+-7	82.34684709666685
+-8	88.32998724419058
+
+
+=> all features improve classifier
+now removing worst feature with each iteration to show the core features
+once we see a big change in performance when removing feature X, it implies that feature X carries a big information gain for the model
+removing the worst features until we condensed the model to a subset of features, where further removing drastically worsens the performance
+=> remove feature 4 (avg. rating of target word over all lexicons)
+
+	88.54069103211137
+-1	88.45614774554932
+-2	85.94939825855471
+-3	88.24577671787476
+-5	88.45645832177915
+
+-6	86.87680106483279
+
+-7	82.34658088846986
+-8	88.49831956075647
+
+
+=> remove feature 8 (sentence length)
+	88.49831956075647
+
+-1	88.24551050967777
+
+-2	85.80189673340358
+-3	88.24562142975988
+-5	88.05610337751651
+-6	86.87657922466863
+
+-7	82.30432033719705
+
+
+=> remove feature 1 (target word)
+	88.24551050967777
+
+-2	84.01104764017525
+-3	88.35095113970385
+-5	88.05605900948368
+-6	86.62377017358993
+		
+-7	81.12504020852975
+
+=> remove feature 3 (min. rating of target word over all lexicons)
+	88.35095113970385
+-2	83.82164050801399
+-5	87.99290111474684
+
+-6	87.04488935721812
+-7	74.65753424657535
+
+=> remove feature 5 (max. rating of target word over all lexicons)
+	87.99290111474684
+
+-2	83.31622206200431
+-6	86.43416338528091
+-7	71.35047418335088
+
+=> remove feature 6 (appearance of negation word in context with distance d=3)
+	86.43416338528091
+-2	82.34693583273251
+-7	71.28722755254839
+
+=> remove feature 2 (aspect label)
+	82.34693583273251
+-7	60.50135877100549
+
+most important features: average context rating > aspect label > negation word > max. rating of target word > min. rating of target word > target word > sentence length > avg. rating of target word

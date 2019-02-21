@@ -1,0 +1,22 @@
+score =
+
+     -0.231  * sentiment_max_in_neg +
+      0.0158 * relation_of_type +
+      0.2521 * s2w+ +
+      0.3025 * s2w+ausstattung +
+      0.2964 * s2w+hotelpersonal +
+      0.2855 * s2w+komfort +
+     -0.1141 * s2w+lage +
+      0.2062 * s2w+other +
+      0.1822 * s2w+preis-leistungs-verhltnis +
+     -0.3839 * s2w-ausstattung +
+     -0.4543 * s2w-hotelpersonal +
+     -0.1726 * s2w-komfort +
+     -0.2031 * s2w-lage +
+     -0.1776 * s2w-other +
+     -0.2442 * s2w-preis-leistungs-verhltnis +
+     -0.3738 * s2w-sauberkeit +
+      7.8739
+learn: absolute squared error: 0.9574698787835487
+learn: AVG. SQUARED MEAN ERROR: 0.9574698787835487
+learn: AVG. SQUARED MAPPED ERROR: 0.8254000000000002

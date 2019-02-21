@@ -82,6 +82,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
   	    
   	    public int classAttributeAt=1;
   	    private String allData;
+  	    public int[] removeArray;
   	
 	public void loadModels(String inputFile) throws Exception {
 		aspectClassifier.loadModels(inputFile);
@@ -186,16 +187,11 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 	
 	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, int kernelType, int svmType, String outputPath, boolean idfTransformEnabled, Classifier outerParameterClassifier) {
 		 ArrayList<String> analysisString = new ArrayList<String>();
-		 boolean manuallyOutputData = false;
-		 if(myLog==null && allData==null && fu==null) {
-			 //this class is called from outside....
-			 myLog = new ConsoleLog(); 
-			 fu = new FileUtils();
-			 allData="";
-			 manuallyOutputData=true;
-			 
-			 myLog.log("This class is called from outside. Manually setting attributes...");
-		 }
+		 myLog = new ConsoleLog(); 
+		 fu = new FileUtils();
+		 allData="";
+		 
+		 myLog.log("This class is called from outside. Manually setting attributes...");
 		 
 		 myLog.log("WARNING: This current method will not generate any data, but only will analyse already existing .arff files with crossfold validation");	 
 		 
@@ -205,10 +201,13 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				ArrayList<Evaluation> allEvaluations;
 				AspectClassifier foldClassifier;
 				
-				myLog.log(useCFV);
+				myLog.log("Use CFV=" + useCFV);
 				
 				if(useCFV) {
 					foldClassifier = new AspectClassifier(kernelType, svmType, outerParameterClassifier);
+					if(removeArray!=null) {
+						foldClassifier.removeArray = removeArray;
+					}
 					foldClassifier.idfTransformEnabled=idfTransformEnabled;
 					
 					Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
@@ -283,16 +282,14 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 			allData = allData + line + "\n";
 		}
 		
-		if(manuallyOutputData) {
-			try {
-				fu.createWriter(outputPath);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			fu.write(allData);
-			fu.close();
+		try {
+			fu.createWriter(outputPath);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		
+		fu.write(allData);
+		fu.close();
 	 }
 	 
 	@Override

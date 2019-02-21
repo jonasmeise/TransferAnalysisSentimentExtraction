@@ -1,0 +1,12 @@
+valence.arff
+Precision	0.605013587710055
+Recall	1.0
+fMeasure0.7539046101848165
+Accuracy	60.50135877100549
+TP	574.4
+FP	375.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+

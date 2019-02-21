@@ -92,8 +92,8 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 						
 					String wordA = selectCovered(Token.class, t1).get(0).getLemma().getValue();
 					String wordB = selectCovered(Token.class, t2).get(0).getLemma().getValue();
-					double lexicons_min=0, lexicons_avg=0, lexicons_max=0;
-					int word_distance=0, context_negation=0, context_lexicon_avg=0, sentence_length=0;
+					double lexicons_min=0, lexicons_avg=0, lexicons_max=0, context_lexicon_avg=0;
+					int word_distance=0, context_negation=0, sentence_length=0;
 					
 					ArrayList<Token> currentSentence = new ArrayList<Token>();
 	        		for(ArrayList<Token> subSentence : subSentences) {
@@ -110,8 +110,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	        		}
 	        		
 	        		ArrayList<Token> searchTokens = new ArrayList<Token>();
-	        		searchTokens.add(selectCovered(Token.class, t1).get(0));
-	        		searchTokens.add(selectCovered(Token.class, t2).get(0));
+	        		searchTokens.add(token);
 	        		
 	        		ArrayList<Token> contextTokens = getContext(sentence, treeCollection, 3, 1000, searchTokens);
 	        		

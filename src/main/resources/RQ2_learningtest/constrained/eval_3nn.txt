@@ -1,0 +1,7 @@
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+
+learn: absolute squared error: 0.990731846209834
+learn: AVG. SQUARED MEAN ERROR: 0.990731846209834
+learn: AVG. SQUARED MAPPED ERROR: 0.8077999999999999

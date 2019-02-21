@@ -1,0 +1,21 @@
+Classifier Model
+Linear regression on s2wexceptional
+
+1.67 * s2wexceptional + 7.89
+
+Predicting 0 if attribute value is missing.
+
+Regression Analysis:
+
+Variable           Coefficient     SE of Coef        t-Stat
+s2wexceptional         1.6677        0.17505        9.52707
+const                  7.8871        0.03446      228.88701
+
+Degrees of freedom = 798
+R^2 value = 0.10212
+Adjusted R^2 = 0.101
+F-statistic = 90.76508
+
+learn: absolute squared error: 0.9255269196069211
+learn: AVG. SQUARED MEAN ERROR: 0.9255269196069211
+learn: AVG. SQUARED MAPPED ERROR: 0.8134499999999997
