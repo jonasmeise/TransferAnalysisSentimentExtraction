@@ -1,0 +1,85 @@
+@relation drinks#quality
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+115,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_wine','We have been to this place many times, and always have great food, wine, and service ','PRP VBP VBN IN DT NN JJ NNS , CC RB VBP JJ NN , NN , CC NN . ',16,0,3,0,0,0,0,0,0,0,positive
+118,0.049999999999999996,0.6,0.0,0.08333333333333333,1.0,0.0,0.0,0.0,0.0,'target_glass of wine','As always we had a great glass of wine while we waited ','IN RB PRP VBD DT JJ NN IN NN IN PRP VBD . ',12,0,1,0,0,0,0,0,0,0,positive
+150,0.0625,0.6,0.0,0.125,1.0,0.0,0.020833333333333332,0.3333333333333333,0.0,'target_Gigondas','Great wine selection, Gigondas is worth the price, and the house champagne is a great value ','JJ NN NN , NNP VBZ JJ DT NN , CC DT NN NN VBZ DT JJ NN . ',16,0,3,0,0,0,0,0,0,0,positive
+178,0.0,0.0,0.0,0.08333333333333333,1.0,0.0,0.08333333333333333,1.0,0.0,'target_drinks','The drinks are always welll made and wine selection is fairly priced ','DT NNS VBP RB JJ VBN CC NN NN VBZ RB VBN . ',12,0,2,0,0,0,0,0,0,0,positive
+369,0.06666666666666667,0.6,0.0,0.25,1.0,0.0,0.20833333333333334,1.0,0.0,'target_sangria','The sangria was pretty tasty and good on a hot muggy day ','DT NN VBD RB JJ CC JJ IN DT JJ JJ NN . ',12,0,1,0,0,0,0,0,0,0,positive
+411,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_wines','Slightly above average wines start at $70+ with only one selection listed at $30+ ','RB IN JJ NNS VBP IN $ CD IN RB CD NN VBN IN $ CD . ',14,0,2,1,0,0,0,0,0,0,negative
+423,0.04,0.4,0.0,0.1,1.0,0.0,0.0,0.0,0.0,'target_expresso','One of us actually liked the expresso - thats it ','CD IN PRP RB VBD DT NN : DT VBZ PRP . ',10,0,1,1,0,0,0,0,0,0,positive
+506,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_iced tea','Have the iced tea ','VBP DT JJ NN . ',4,0,1,0,0,0,0,0,0,0,positive
+562,0.0,0.0,0.0,0.0,0.0,0.0,-0.00641025641025641,0.5,0.0,'target_wine','I have known about this secret for the last 13 years, Emilio(the Godfather) has continued to serve food and wine for the gods at mortal prices ','PRP VBP VBN IN DT NN IN DT JJ CD NNS , NNP -LRB- DT NNP -RRB- VBZ VBN TO VB NN CC NN IN DT NNS IN JJ NNS . ',26,0,4,1,0,0,0,0,0,0,positive
+708,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_drinks','Everything was wonderful; food, drinks, staff, mileau ','NN VBD JJ : NN , NNS , NN , NN . ',7,0,5,0,0,0,0,0,0,0,positive
+731,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Change Mojito','I also ordered the Change Mojito, which was out of this world ','PRP RB VBD DT NNP NNP , WDT VBD IN IN DT NN . ',12,0,1,1,0,0,0,0,0,0,positive
+791,0.006060606060606061,0.2,0.0,0.0,0.0,0.0,0.015151515151515152,0.5,0.0,'target_sake','We are very particular about sushi and were both please with every choice which included: ceviche mix (special), crab dumplings, assorted sashimi, sushi and rolls, two types of sake, and the banana tempura ','PRP VBP RB JJ IN NNS CC VBD DT UH IN DT NN WDT VBD : NN NN -LRB- JJ -RRB- , NN NNS , JJ NNS , NNS CC NNS , CD NNS IN NN , CC DT NN NN . ',33,0,8,0,0,0,0,0,0,0,positive
+826,0.07058823529411765,0.6,0.0,0.11764705882352941,1.0,0.0,0.058823529411764705,1.0,0.0,'target_premium sake','The blond wood decor is very soothing, the premium sake is excellent and the service is great ','DT JJ NN NN VBZ RB JJ , DT NN NN VBZ JJ CC DT NN VBZ JJ . ',17,0,3,0,0,0,0,0,0,0,positive
+846,0.0,0.0,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_strawberry daiquiries','Wonderful strawberry daiquiries as well ','JJ NN NNS RB RB . ',5,1,1,0,0,0,0,0,0,0,positive
+895,0.0,0.0,0.0,0.07142857142857142,1.0,0.0,0.10714285714285714,1.0,0.0,'target_drinks','The food is good, especially their more basic dishes, and the drinks are delicious ','DT NN VBZ JJ , RB PRP$ RBR JJ NNS , CC DT NNS VBP JJ . ',14,0,3,0,0,0,0,0,0,0,positive
+911,0.04615384615384615,0.6,0.0,0.07692307692307693,1.0,0.0,0.10769230769230768,1.0,0.0,'target_coffee','The cream cheeses are out of this world and I love that coffee ','DT NN NNS VBP IN IN DT NN CC PRP VBP DT NN . ',13,1,2,1,0,0,0,0,0,0,positive
+966,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','PRP MD VB DT RB JJ NNS IN DT NN -LRB- DT VBZ RB CD CD NNS -RRB- IN $ CD -LRB- PRP VBP DT NNP NNP , UH . -RRB- ',33,0,6,1,0,0,0,0,0,0,positive
+969,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_Vanilla Shanty','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','PRP MD VB DT RB JJ NNS IN DT NN -LRB- DT VBZ RB CD CD NNS -RRB- IN $ CD -LRB- PRP VBP DT NNP NNP , UH . -RRB- ',33,0,6,1,0,0,0,0,0,0,positive
+972,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','IN DT JJ NN VBG IN JJ NN . ',33,0,6,1,0,0,0,0,0,0,positive
+975,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_Vanilla Shanty','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','IN DT JJ NN VBG IN JJ NN . ',33,0,6,1,0,0,0,0,0,0,positive
+1069,0.0,0.0,0.0,0.0,0.0,0.0,0.0625,0.5,0.0,'target_SEASONAL beer','(Always ask the bartender for the SEASONAL beer ','-LRB- RB VB DT NN IN DT NNP NN . ',8,1,1,1,0,0,0,0,0,0,positive
+1070,0.0,0.0,0.0,0.0,0.0,0.0,0.14285714285714285,1.0,0.0,'target_NULL','Guaranteed to be a tasty experience ) ','VBN TO VB DT JJ NN . ',7,1,1,1,0,0,0,0,0,0,positive
+1082,0.12727272727272726,0.6,0.0,0.2727272727272727,1.0,0.0,0.18181818181818182,1.0,0.0,'target_beer','A cool bar with great food, and tons of excellent beer ','DT JJ NN IN JJ NN , CC NNS IN JJ NN . ',11,0,4,1,0,0,0,0,0,0,positive
+1160,0.08571428571428572,0.6,0.0,0.0,1.0,0.0,0.07142857142857142,1.0,0.0,'target_bottles of wine','bottles of wine are cheap and good ','NNS IN NN VBP JJ CC JJ . ',7,0,2,0,0,0,0,0,0,0,positive
+1187,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_drinks','go here for the drinks ','VB RB IN DT NNS . ',5,1,1,0,0,0,0,0,0,0,positive
+1188,0.08888888888888889,0.8,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_drinks','the drinks are amazing and half off till 8pm ','DT NNS VBP JJ CC NN RB IN CD NN . ',9,0,2,0,0,0,0,0,0,0,positive
+1191,0.0,0.0,0.0,0.16666666666666666,1.0,0.0,0.0,0.0,0.0,'target_sassy lassi','My fav was the sassy lassi ','PRP$ NN VBD DT JJ NN . ',6,0,1,0,0,0,0,0,0,0,positive
+1246,0.075,0.6,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_wine by the glass','even the wine by the glass was good ','RB DT NN IN DT NN VBD JJ . ',8,0,1,0,0,0,0,0,0,0,positive
+1308,0.175,0.8,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_wines','Interesting selection, good wines, service fine, fun decor ','JJ NN , JJ NNS , NN JJ , JJ NN . ',8,0,4,0,0,0,0,0,0,0,positive
+1347,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_sake','Great sake ','JJ NN . ',2,1,1,0,0,0,0,0,0,0,positive
+1444,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_drinks','The drinks are great, especially when made by Raymond ','DT NNS VBP JJ , RB WRB VBN IN NNP . ',9,0,2,0,0,0,0,0,0,0,positive
+1498,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_bar drinks','The bar drinks were Eh, ok to say the least ','DT NN VBZ VBD UH , UH TO VB DT JJS . ',10,0,1,0,0,0,0,0,0,0,negative
+1556,0.05714285714285714,0.6,-0.6,-0.047619047619047616,1.0,0.0,-0.09523809523809523,0.0,0.0,'target_cocktail with Citrus Vodka and lemon and lime juice and mint leaves','The have a great cocktail with Citrus Vodka and lemon and lime juice and mint leaves that is to die for ','DT VBP DT JJ NN IN NNP NNP CC NN CC NN NN CC NN VBZ DT VBZ TO VB IN . ',21,1,1,0,0,0,0,0,0,0,positive
+1627,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_wine','We have been to this place many times, and always have great food, wine, and service ','JJ NN ',16,0,3,0,0,0,0,0,0,0,positive
+1677,0.08571428571428572,0.0,-0.6,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_drinks','However, our $14 drinks were were horrible ','RB , PRP$ $ CD NNS VBD VBD JJ . ',7,1,2,1,0,0,0,0,0,0,negative
+2039,0.04666666666666666,0.6,0.0,0.06666666666666667,1.0,0.0,0.05,1.0,0.0,'target_margaritas','the food was great, the margaritas too but the waitress was too busy being nice to her other larger party than to take better care of my friend and me ','DT NN VBD JJ , DT NNS RB CC DT NN VBD RB JJ VBG JJ IN PRP$ JJ JJR NN IN TO VB JJR NN IN PRP$ NN CC PRP . ',30,0,3,0,0,0,0,0,0,1,positive
+2094,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_Drinks','Drinks were good ','NNPS VBD JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+2095,0.04000000000000001,0.4,-0.2,0.06666666666666667,1.0,0.0,0.03333333333333333,0.5,0.0,'target_drinks','Unless you are just stopping in for a few drinks I wouldnt recommend going here ','IN PRP VBP RB VBG RP IN DT JJ NNS PRP MD RB VB VBG RB . ',15,0,2,1,0,1,0,0,0,0,positive
+2173,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_margaritas','Also have great margaritas ','RB VB JJ NNS . ',4,1,1,0,0,0,0,0,0,0,positive
+2200,0.3,0.6,0.0,0.5,1.0,0.0,0.25,0.5,0.0,'target_beer','great beer ','JJ NN ',2,0,1,0,0,0,0,0,0,0,positive
+2203,0.016666666666666666,0.2,0.0,0.0,1.0,0.0,-0.041666666666666664,0.5,0.0,'target_beer','I swore never to return for a warm beer and mediocre meal ','PRP VBD RB TO VB IN DT JJ NN CC JJ NN . ',12,0,2,1,0,0,0,0,0,0,negative
+2213,0.024999999999999998,0.6,0.0,0.041666666666666664,1.0,0.0,-0.013888888888888888,0.5,0.0,'target_beer','We have since returned and also had a great experience, sampling more small plates and a variety of the beer ( cold and good) ','PRP VBP IN VBN CC RB VBD DT JJ NN , VBG JJR JJ NNS CC DT NN IN DT NN -LRB- JJ CC JJ -RRB- . ',24,0,2,1,0,0,0,0,0,0,positive
+2220,0.044444444444444446,0.0,-0.4,0.0,0.0,0.0,0.0,0.0,0.0,'target_wine','I would go back for the wine experience alone ','PRP MD VB RB IN DT NN NN RB . ',9,0,1,1,0,0,0,0,0,0,positive
+2237,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Coffee','Open &amp; Cool Place with the Best Pizza and Coffee ','VB CC VB : NNP NNP IN DT NNP NNP CC NNP ',10,0,3,0,0,0,0,0,0,0,positive
+2240,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_coffe','The coffe is very good, too ','DT NN VBZ RB JJ , RB . ',6,0,1,0,0,0,0,0,0,0,positive
+2280,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_sake','and the waiter suggested a perfect sake ','CC DT NN VBD DT JJ NN . ',7,1,2,0,0,0,0,0,0,0,positive
+2345,0.1,0.4,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_Margaritas','Great food, better Margaritas ','JJ NN , JJR NNP . ',4,1,2,0,0,0,0,0,0,0,positive
+2349,0.08750000000000001,0.8,0.0,0.1875,1.0,0.0,0.0625,1.0,0.0,'target_margaritas',' This is one of my top lunch spots, huge portions, fast service and amazing margaritas ','DT VBZ CD IN PRP$ JJ NN NNS , JJ NNS , JJ NN CC JJ NNS . ',16,1,4,1,0,0,0,0,0,0,positive
+2376,0.027450980392156862,0.6,-0.2,0.0392156862745098,1.0,0.0,0.0196078431372549,1.0,0.0,'target_sake','Your a sushi fan, you love expertly cut fish, great sake, a killer SOHO location, and of course: Salmon, Tuna, Fluke, Yellow Tail, Cod, Mackeral, Jellyfish, Sea Urchin, Shrimp, Lobster, Sea Bream, Trout, Milk Fish, Blue Fin Tuna, Eel, Crab, Sardine, Monk Fish, Roe, Scallop, Oysters, and a varity of Toro ','PRP$ DT JJ NN , PRP VBP RB JJ NN , JJ NN , DT NN NNP NN , CC IN NN : NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP NNP , NNP , NN NN , NNP NNP NNP , NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP , CC DT NN IN NNP . ',51,0,26,1,0,0,0,0,0,0,positive
+2438,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_bottle of wine','Great bottle of wine ','JJ NN IN NN . ',4,0,1,0,0,0,0,0,0,0,positive
+2485,0.10909090909090909,0.6,-0.6,0.0,1.0,0.0,-0.045454545454545456,0.5,0.0,'target_bloody mary','The food is great and they make a mean bloody mary ','DT NN VBZ JJ CC PRP VBP DT JJ JJ NN . ',11,0,2,0,0,0,0,0,0,0,positive
+2594,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_drinks',' Great drinks , corn beef hash, coffee, B Fast burritos, Gluten Free menu ','JJ NNS , NN NN NN , NN , NNP NNP NNS , NNP NNP NN . ',14,0,5,1,0,0,0,0,0,0,positive
+2596,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_coffee',' Great drinks , corn beef hash, coffee, B Fast burritos, Gluten Free menu ','JJ NNS , NN NN NN , NN , NNP NNP NNS , NNP NNP NN . ',14,0,5,1,0,0,0,0,0,0,positive
+2641,0.08,0.6,0.0,0.13333333333333333,1.0,0.0,0.2,1.0,0.0,'target_sake','good sake, good food  i honestly dont know much about japanese food at all ','JJ NN , JJ NN PRP RB VBP RB VB JJ IN JJ NN RB RB . ',15,0,2,1,0,1,0,1,0,0,positive
+2643,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.1111111111111111,1.0,0.0,'target_sake','Server made several sake suggestions which were very good ','NN VBD JJ NN NNS WDT VBD RB JJ . ',9,0,2,0,0,0,0,0,0,0,positive
+2711,0.09411764705882353,1.0,0.0,0.11764705882352941,1.0,0.0,0.08823529411764706,1.0,0.0,'target_coffee','The service was excellent, the coffee was good even by starbucks standards and the food was outstanding ','DT NN VBD JJ , DT NN VBD JJ RB IN NNS NNS CC DT NN VBD JJ . ',17,0,3,0,0,0,0,0,0,0,positive
+2780,0.02,0.4,0.0,0.05,1.0,0.0,0.0,0.0,0.0,'target_Drinks','Drinks are suberb, and I feel like I am in a Third World country when I walk in the door ','NNPS VBP JJ , CC PRP VBP IN PRP VBP IN DT NNP NNP NN WRB PRP VBP IN DT NN . ',20,0,2,1,0,0,0,0,0,0,positive

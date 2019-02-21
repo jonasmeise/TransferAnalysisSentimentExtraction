@@ -1,0 +1,123 @@
+@relation food#prices
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+61,0.023529411764705882,0.4,0.0,0.11764705882352941,1.0,0.0,0.0784313725490196,1.0,0.0,'target_half price sushi deal','We took advanatage of the half price sushi deal on saturday so it was well worth it ','PRP VBD NN IN DT NN NN JJ NN IN NN IN PRP VBD RB JJ PRP . ',17,0,2,0,0,0,0,0,0,0,positive
+69,0.021052631578947368,0.4,0.0,0.10526315789473684,1.0,0.0,0.017543859649122806,0.3333333333333333,0.0,'target_Prix Fixe menu','The Prix Fixe menu is worth every penny and you get more than enough (both in quantity AND quality) ','DT NNP NNP NN VBZ JJ DT NN CC PRP VBP JJR IN JJ -LRB- CC IN NN CC NN -RRB- . ',19,0,3,1,0,0,0,0,0,0,positive
+73,0.014285714285714287,0.2,0.0,0.07142857142857142,1.0,0.0,0.07142857142857142,1.0,0.0,'target_food','$6 and there is much tasty food, all of it fresh and continually refilled ','$ CD CC EX VBZ JJ JJ NN , DT IN PRP JJ CC RB VBN . ',14,0,3,1,0,0,0,0,0,0,positive
+125,0.0,0.0,0.0,-0.14285714285714285,0.0,0.0,0.0,0.0,0.0,'target_pizza','But the pizza is way to expensive ','CC DT NN VBZ NN IN JJ . ',7,0,1,0,0,0,0,0,0,1,negative
+126,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','A large is $20, and toppings are about $3 each ','DT JJ VBZ $ CD , CC NNS VBP RB $ CD DT . ',10,0,2,1,0,0,0,0,0,0,negative
+127,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_toppings','A large is $20, and toppings are about $3 each ','DT JJ VBZ $ CD , CC NNS VBP RB $ CD DT . ',10,0,2,1,0,0,0,0,0,0,negative
+177,0.0,0.0,0.0,-0.08333333333333333,0.0,0.0,-0.08333333333333333,0.0,0.0,'target_dessert','Tiny dessert was $8 00 just plain overpriced for what it is ','JJ NN VBD $ CD JJ VBN IN WP PRP VBZ . ',12,0,2,1,0,0,0,0,0,0,negative
+186,0.0,0.0,0.0,0.16666666666666666,1.0,0.0,0.0,0.0,0.0,'target_NULL','It is also extremely well priced ','PRP VBZ RB RB RB VBN . ',6,0,1,0,0,0,0,0,0,0,positive
+324,0.0,0.0,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_sushi','This is some really good, inexpensive sushi ','DT VBZ DT RB JJ , JJ NN . ',7,0,2,0,0,0,0,0,0,0,positive
+334,0.01,0.0,-0.2,0.05,1.0,0.0,0.0,0.0,0.0,'target_NULL','And it all comes at a very reasonable price (congee, noodles, and rice dishes are no more than $3-6 each) ','CC PRP DT VBZ IN DT RB JJ NN -LRB- NN , NNS , CC NN NNS VBP RB JJR IN $ CD DT -RRB- . ',20,0,4,1,0,0,0,0,0,0,positive
+335,0.01,0.0,-0.2,0.05,1.0,0.0,0.0,0.0,0.0,'target_congee','And it all comes at a very reasonable price (congee, noodles, and rice dishes are no more than $3-6 each) ','CC PRP DT VBZ IN DT RB JJ NN -LRB- NN , NNS , CC NN NNS VBP RB JJR IN $ CD DT -RRB- . ',20,0,4,1,0,0,0,0,0,0,positive
+336,0.01,0.0,-0.2,0.05,1.0,0.0,0.0,0.0,0.0,'target_noodles','And it all comes at a very reasonable price (congee, noodles, and rice dishes are no more than $3-6 each) ','CC PRP DT VBZ IN DT RB JJ NN -LRB- NN , NNS , CC NN NNS VBP RB JJR IN $ CD DT -RRB- . ',20,0,4,1,0,0,0,0,0,0,positive
+337,0.01,0.0,-0.2,0.05,1.0,0.0,0.0,0.0,0.0,'target_rice dishes','And it all comes at a very reasonable price (congee, noodles, and rice dishes are no more than $3-6 each) ','CC PRP DT VBZ IN DT RB JJ NN -LRB- NN , NNS , CC NN NNS VBP RB JJR IN $ CD DT -RRB- . ',20,0,4,1,0,0,0,0,0,0,positive
+394,0.0,0.0,0.0,0.0,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','And amazingly cheap ','CC RB JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+515,0.03636363636363637,0.4,0.0,0.0,1.0,0.0,-0.12121212121212123,0.3333333333333333,0.0,'target_NULL','A little overpriced but worth it once you take a bite ','DT JJ JJ CC JJ PRP IN PRP VBP DT NN . ',11,0,2,1,0,0,0,0,0,1,negative
+563,0.0,0.0,0.0,0.0,0.0,0.0,-0.00641025641025641,0.5,0.0,'target_food','I have known about this secret for the last 13 years, Emilio(the Godfather) has continued to serve food and wine for the gods at mortal prices ','PRP VBP VBN IN DT NN IN DT JJ CD NNS , NNP -LRB- DT NNP -RRB- VBZ VBN TO VB NN CC NN IN DT NNS IN JJ NNS . ',26,0,4,1,0,0,0,0,0,0,positive
+594,0.0375,0.6,0.0,0.0,1.0,0.0,0.020833333333333332,0.3333333333333333,0.0,'target_dishes','I ate here a week ago and found most dishes average at best and too expensive ','PRP VBD RB DT NN RB CC VBD JJS NNS JJ IN JJS CC RB JJ . ',16,0,2,1,0,0,0,0,0,0,negative
+619,0.028571428571428574,0.4,0.0,0.07142857142857142,1.0,0.0,0.0,0.0,0.0,'target_sandwiches','Also, the sandwiches (nearing $7) didnt come with anything like chips or a side ','RB , DT NNS -LRB- VBG $ CD -RRB- VBD RB VB IN NN IN NNS CC DT NN . ',14,0,2,1,0,1,0,0,1,0,negative
+649,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_seafood','Even though its good seafood, the prices are too high ','RB IN PRP$ JJ NN , DT NNS VBP RB JJ . ',10,0,2,0,0,0,0,0,0,0,negative
+652,0.031578947368421054,0.6,0.0,0.10526315789473684,1.0,0.0,0.05263157894736842,1.0,0.0,'target_lobster sandwich','The lobster sandwich is $24 and although it was good it was not nearly enough to warrant that price ','DT NN NN VBZ $ CD CC IN PRP VBD JJ PRP VBD RB RB JJ TO VB DT NN . ',19,0,3,1,1,0,0,0,0,0,negative
+667,0.06,0.6,0.0,0.0,1.0,0.0,0.0,0.5,0.0,'target_food','The food is so cheap and the waiters are nice ','DT NN VBZ RB JJ CC DT NNS VBP JJ . ',10,0,2,0,0,0,0,0,0,0,positive
+674,0.14545454545454548,0.6,0.0,0.2727272727272727,1.0,0.0,0.12727272727272726,1.0,0.0,'target_Cheese plate','Cheese plate is a varied delight and great bargain at $10 ','JJ NN VBZ DT JJ NN CC JJ NN IN $ CD . ',11,0,3,1,0,0,0,0,0,0,positive
+686,0.08,0.6,0.0,0.13333333333333333,1.0,0.0,0.03333333333333333,0.5,0.0,'target_food','The food was very good, a great deal, and the place its self was great ','DT NN VBD RB JJ , DT JJ NN , CC DT NN PRP$ NN VBD JJ . ',15,0,3,0,0,0,0,0,0,0,positive
+714,0.08571428571428572,0.6,0.0,0.2857142857142857,1.0,0.0,0.07142857142857142,0.5,0.0,'target_food','The food is great and reasonably priced ','DT NN VBZ JJ CC RB VBN . ',7,0,2,0,0,0,0,0,0,0,positive
+748,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Also they were $15 each ','RB PRP VBD $ CD DT . ',5,1,1,1,0,0,0,0,0,0,negative
+750,0.047619047619047616,0.4,-0.6,0.0,1.0,0.0,-0.09523809523809523,0.0,0.0,'target_NULL','It was $14 not really bad for a pound of Pastrami-but it didnt have much taste-Ive had better for less elsewhere ','PRP VBD $ CD RB RB JJ IN DT NN IN NNP : CC PRP VBD RB VB JJ NN : PRP VBP VBN RBR IN RBR RB . ',21,1,2,1,1,1,0,0,1,1,neutral
+842,0.0,0.0,0.0,-0.09090909090909091,0.0,0.0,0.0,0.0,0.0,'target_menu','I expected quite a bit more from such an expensive menu ','PRP VBD PDT DT NN RBR IN PDT DT JJ NN . ',11,0,2,1,0,0,0,0,0,0,negative
+850,0.0,0.0,0.0,-0.08333333333333333,1.0,0.0,0.0,0.5,0.0,'target_Taiwanese food','Authentic Taiwanese food thats cheap  what more could you ask for ','JJ JJ NN WDT VBZ JJ . ',12,0,2,1,0,0,0,0,0,0,positive
+852,0.0,0.0,0.0,-0.08333333333333333,1.0,0.0,0.0,0.5,0.0,'target_Taiwanese food','Authentic Taiwanese food thats cheap  what more could you ask for ','WP JJR MD PRP VB IN . ',12,1,2,1,0,0,0,0,0,0,positive
+880,0.0,0.0,0.0,-0.125,0.0,0.0,-0.25,0.0,0.0,'target_sandwiches','The sandwiches are dry, tasteless and way overpriced ','DT NNS VBP JJ , JJ CC NN VBN . ',8,0,2,0,0,0,0,0,0,0,negative
+933,0.12,0.6,0.0,0.4,1.0,0.0,0.2,1.0,0.0,'target_Food','Food is great and inexpensive ','NN VBZ JJ CC JJ . ',5,0,2,0,0,0,0,0,0,0,positive
+997,0.021052631578947368,0.4,0.0,0.0,1.0,0.0,0.0,0.3333333333333333,0.0,'target_NULL','They were such a rip-off ($8 95 for four small meat patties in steamed buns) and not worth trying ','PRP VBD PDT DT NN HYPH NN -LRB- $ CD IN CD JJ NN NNS IN VBN NNS -RRB- CC RB JJ VBG . ',19,0,3,1,1,0,0,0,0,0,negative
+998,0.028571428571428574,0.4,0.0,-0.07142857142857142,1.0,0.0,0.05952380952380952,0.5,0.0,'target_dim sum','The rest of the dim sum, though pricey by Chinatown standards, is worth it ','DT NN IN DT JJ NN , IN JJ IN NNP NNS , VBZ JJ PRP . ',14,0,2,0,0,0,0,0,0,0,negative
+1007,0.03333333333333333,0.4,0.0,0.0,1.0,0.0,-0.08333333333333333,0.0,0.0,'target_NULL','These are overpriced and you can get better just around the corner: ','DT VBP JJ CC PRP MD VB RBR RB IN DT NN : ',12,0,2,0,0,0,0,0,0,0,negative
+1022,0.06,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Spreads','Spreads and toppings are great - though a bit pricey ','NNS CC NNS VBP JJ : IN DT NN JJ . ',10,0,4,1,0,0,0,0,0,0,negative
+1023,0.06,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_toppings','Spreads and toppings are great - though a bit pricey ','NNS CC NNS VBP JJ : IN DT NN JJ . ',10,0,4,1,0,0,0,0,0,0,negative
+1036,0.04,0.6,0.0,0.0,1.0,0.0,0.03333333333333333,1.0,0.0,'target_eats','If you are looking for a good quality, cheap eats - this is the place ','IN PRP VBP VBG IN DT JJ NN , JJ NNS : DT VBZ DT NN . ',15,0,2,1,0,0,0,0,0,0,positive
+1060,0.0,0.0,0.0,0.06666666666666667,1.0,0.0,0.03333333333333333,0.5,0.0,'target_meal','The wine list is extensive and can easily hike up an otherwise reasonably priced meal ','DT NN NN VBZ JJ CC MD RB VB RP DT RB RB VBN NN . ',15,0,2,0,0,0,0,0,0,0,positive
+1073,0.021052631578947368,0.4,0.0,0.10526315789473684,1.0,0.0,0.017543859649122806,0.3333333333333333,0.0,'target_Prix Fixe menu','The Prix Fixe menu is worth every penny and you get more than enough (both in quantity AND quality) ','-RRB- ',19,0,3,1,0,0,0,0,0,0,positive
+1118,0.06999999999999999,0.6,0.0,0.1,1.0,0.0,0.025,0.5,0.0,'target_food','However, if you want great food at a great price and dont mind the decor, you cant beat this place ','RB , IN PRP VBP JJ NN IN DT JJ NN CC VBP RB VB DT NN , PRP MD RB VB DT NN . ',20,0,3,0,0,1,0,1,0,0,positive
+1148,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Food','Food was just average if they lowered the prices just a bit, it would be a bigger draw ','NN VBD RB IN PRP VBD DT NNS RB DT NN , PRP MD VB DT JJR NN . ',18,0,2,0,0,0,0,0,0,0,negative
+1154,0.13333333333333333,0.6,0.0,0.16666666666666666,1.0,0.0,0.25,1.0,0.0,'target_food','Just straight up cheap, good food ','RB RB RB JJ , JJ NN . ',6,0,2,0,0,0,0,0,0,0,positive
+1221,0.0,0.0,0.0,0.0,0.0,0.0,-0.05555555555555555,0.0,0.0,'target_NULL','But $1 for each small piece ','CC $ CD IN DT JJ NN . ',6,1,1,1,0,0,0,0,0,1,negative
+1222,0.13333333333333333,0.4,0.0,0.3333333333333333,1.0,0.0,0.1111111111111111,0.3333333333333333,0.0,'target_NULL','Not worth it ','RB JJ PRP . ',3,0,1,0,1,0,0,0,0,0,negative
+1239,0.06666666666666667,0.6,0.0,0.2222222222222222,1.0,0.0,0.16666666666666666,1.0,0.0,'target_Chinese food','Simply some good tasting Chinese food at incredible prices ','RB DT JJ VBG JJ NN IN JJ NNS . ',9,0,2,0,0,0,0,0,0,0,positive
+1256,0.028571428571428574,0.0,-0.4,0.0,0.0,0.0,0.03571428571428571,0.5,0.0,'target_fish','Price and quality of fish alone will keep us from making a return visit ','NN CC NN IN NN RB MD VB PRP IN VBG DT NN NN . ',14,0,3,0,0,0,0,0,0,0,negative
+1264,0.02456140350877193,0.6,0.0,0.03508771929824561,1.0,0.0,0.05263157894736842,1.0,0.0,'target_food','Fabulous decor - makes you feel like youre in a trendy Manhattan restaurant, very very good food, cheaply-priced, generally friendly staff, and if youre a Manhattanite, or spend most of your time in Manhattan, Rice Avenue will make you feel at home very Soho/Village/Upper West Side minus the expensive prices and pretentious clientele all on Roosevelt Avenue ','JJ NN : VBZ PRP VB IN PRP VBP IN DT JJ NNP NN , RB RB JJ NN , RB HYPH VBN , RB JJ NN , CC IN PRP VBP DT NNP , CC VB JJS IN PRP$ NN IN NNP , NNP NNP MD VB PRP VB IN NNP NNP SYM NNP SYM NNP NNP NNP VBP DT JJ NNS CC JJ NN IN NNP NNP . ',57,1,7,1,0,0,0,0,0,0,positive
+1273,0.04375,0.6,-0.4,-0.0625,1.0,0.0,-0.036458333333333336,1.0,0.0,'target_food','With so many good restaurants on the UWS, I dont need overpriced food, absurdly arrogant wait-staff who dont recognize they work at a glorified diner, clumsy service, and management that doesnt care ','IN RB JJ JJ NNS IN DT NNP , PRP VBP RB VB JJ NN , RB JJ NN HYPH NN WP VBP RB VB PRP VBP IN DT JJ NN , JJ NN , CC NN WDT VBZ RB VB . ',32,0,4,1,0,1,0,1,0,0,negative
+1278,0.0125,0.0,-0.4,-0.0625,0.0,0.0,-0.015625,0.5,0.0,'target_food','I am relatively new to the area and tried Pick a bgel on 2nd and was disappointed with the service and I thought the food was overated and on the pricey side ','PRP VBP RB JJ IN DT NN CC VBD VB DT NN IN NN CC VBD VBN IN DT NN CC PRP VBD DT NN VBD VBN CC IN DT JJ NN . ',32,0,3,1,0,0,0,0,0,0,negative
+1289,0.04,0.0,-0.4,0.0,0.0,0.0,0.025,0.25,0.0,'target_all you can eat sushi','$20 for all you can eat sushi cannot be beaten ','$ CD IN DT PRP MD VB NNS MD RB VB VBN . ',10,0,1,1,1,0,0,0,0,0,positive
+1330,0.0,0.0,0.0,0.0,0.0,0.0,0.25,1.0,0.0,'target_NULL','Overpriced and not tasty ','JJ CC RB JJ ',4,0,2,0,1,0,0,0,0,0,negative
+1333,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','It was totally overpriced- fish and chips was about $15 ','PRP VBD RB JJ HYPH NN CC NNS VBD IN $ CD . ',10,0,2,1,0,0,0,0,0,0,negative
+1334,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_fish and chips','It was totally overpriced- fish and chips was about $15 ','PRP VBD RB JJ HYPH NN CC NNS VBD IN $ CD . ',10,0,2,1,0,0,0,0,0,0,negative
+1346,0.05454545454545454,0.6,0.0,0.09090909090909091,1.0,0.0,0.09090909090909091,1.0,0.0,'target_meal','I paid just about $60 for a good meal, though :) ','PRP VBD RB RB $ CD IN DT JJ NN , IN . ',11,0,2,1,0,0,0,0,0,0,positive
+1357,0.12,0.6,0.0,-0.2,0.0,0.0,-0.1,0.0,0.0,'target_NULL','Not cheap but very yummy ','RB JJ CC RB JJ . ',5,0,2,0,1,0,0,0,0,1,negative
+1368,0.12,0.6,0.0,0.2,1.0,0.0,0.1,0.5,0.0,'target_food','Excellent food for great prices ','JJ NN IN JJ NNS ',5,0,2,0,0,0,0,0,0,0,positive
+1410,0.0,0.0,0.0,-0.3333333333333333,0.0,0.0,-0.25,0.5,0.0,'target_japanese food','overpriced japanese food with mediocre service ','JJ JJ NN IN JJ NN ',6,0,2,0,0,0,0,0,0,0,negative
+1422,0.0,0.0,0.0,-0.125,0.0,0.0,-0.1,0.0,0.0,'target_guacamole','And $11 for a plate of bland guacamole ','CC $ CD IN DT NN IN JJ NN . ',8,1,2,1,0,0,0,0,0,0,negative
+1454,0.1,0.6,0.0,0.3,1.0,0.0,0.35,1.0,0.0,'target_food','Overall, decent food at a good price, with friendly people ','RB , JJ NN IN DT JJ NN , IN JJ NNS . ',10,0,3,0,0,0,0,0,0,0,positive
+1543,0.03636363636363637,0.4,0.0,0.09090909090909091,1.0,0.0,0.09090909090909091,0.5,0.0,'target_food','Prices are fair across the board for both food and bev ','NNS VBP JJ IN DT NN IN DT NN CC NN . ',11,0,2,0,0,0,0,0,0,0,positive
+1569,0.0,0.0,0.0,0.25,1.0,0.0,0.1875,1.0,0.0,'target_food','The food is flavorful, plentiful and reasonably priced ','DT NN VBZ JJ , JJ CC RB VBN . ',8,0,3,0,0,0,0,0,0,0,positive
+1623,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_dish','Helpful service and average price per dish $10 ','JJ NN CC JJ NN IN NN $ CD . ',8,0,2,1,0,0,0,0,0,0,positive
+1631,0.08888888888888889,0.8,0.0,0.2222222222222222,1.0,0.0,0.0,0.0,0.0,'target_NULL','The flavors are amazing and the value is phenomenal ','DT NNS VBP JJ CC DT NN VBZ JJ . ',9,0,2,0,0,0,0,0,0,0,positive
+1653,0.0,0.0,0.0,0.0,0.0,0.0,0.18181818181818182,1.0,0.0,'target_dinner for two','But $500 for a dinner for two that didnt include Wine ','CC $ CD IN DT NN IN CD WDT VBD RB VB NNP . ',11,1,1,1,0,1,0,0,1,1,negative
+1712,0.05,0.6,0.0,0.0625,1.0,0.0,0.09375,1.0,0.0,'target_food','All in all the food was good - a little on the expensive side, but fresh ','DT IN PDT DT NN VBD JJ : DT JJ IN DT JJ NN , CC JJ . ',16,0,2,1,0,0,0,0,0,1,negative
+1719,0.004878048780487805,0.0,-0.2,0.04878048780487805,1.0,0.0,0.024390243902439025,1.0,0.0,'target_chicken tikka masala','I have it a 4 instead of 5 because of the price (just chicken tikka masala - no bread of rice - is $25), which I would expect at a upscale Indian restaurant but this place doesnt have an upscale feel ','PRP VBP PRP DT CD RB IN CD IN IN DT NN -LRB- RB NN NN NN : DT NN IN NN HYPH VBZ $ CD -RRB- , WDT PRP MD VB IN DT JJ JJ NN CC DT NN VBZ RB VB DT JJ NN . ',41,0,4,1,0,1,0,0,0,1,negative
+1749,0.049999999999999996,0.0,-0.6,-0.08333333333333333,0.0,0.0,-0.08333333333333333,0.5,0.0,'target_stone bowl','Too bad I had paid an extra $2 for the stone bowl ','RB JJ PRP VBD VBN DT JJ $ CD IN DT NN NN . ',12,0,1,1,0,0,0,0,0,0,negative
+1781,0.03333333333333333,0.8,0.0,0.041666666666666664,1.0,0.0,0.08333333333333333,1.0,0.0,'target_BBE $29 fixe prix menu','My party had the BBE $29 fixe prix menu, which was such a wonderful deal since it also came with a flight of sake ','PRP$ NN VBD DT NNP $ CD NN NN NN , WDT VBD PDT DT JJ NN IN PRP RB VBD IN DT NN IN NN . ',24,1,2,1,0,0,0,0,0,0,positive
+1803,0.0,0.0,0.0,0.0,0.0,0.0,0.03571428571428571,0.5,0.0,'target_food','Price is high but the food is good, so I would come back again ','NN VBZ JJ CC DT NN VBZ JJ , CC PRP MD VB RB RB . ',14,0,3,1,0,0,0,0,0,1,negative
+1867,0.008695652173913044,0.0,-0.2,0.0,1.0,0.0,-0.021739130434782608,0.5,0.0,'target_menu','Only complaint is the pricing--I believe it would be more reasonable to pay a dollar less on each item listed on the menu ','RB NN VBZ DT NN : PRP VBP PRP MD VB RBR JJ TO VB DT NN JJR IN DT NN VBN IN DT NN . ',23,0,1,0,0,0,0,0,0,0,negative
+1980,0.0,0.0,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_food','Its *very* reasonably priced, esp for the quality of the food ','PRP VBZ VBN RB VBN , RB IN DT NN IN DT NN . ',11,0,2,0,0,0,0,0,0,0,positive
+1995,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.05952380952380952,0.5,0.0,'target_food','I liked the atmosphere very much but the food was not worth the price ','PRP VBD DT NN RB RB CC DT NN VBD RB JJ DT NN . ',14,0,3,1,1,0,0,0,0,1,negative
+2090,0.013333333333333334,0.2,0.0,-0.06666666666666667,0.0,0.0,0.03333333333333333,1.0,0.0,'target_food','My g/f and I both agreed the food was very mediocre especially considering the price ','PRP$ NN SYM NN CC PRP DT VBD DT NN VBD RB JJ RB VBG DT NN . ',15,0,2,1,0,0,0,0,0,0,negative
+2190,0.028571428571428574,0.4,0.0,0.07142857142857142,1.0,0.0,0.0642857142857143,0.5,0.0,'target_open sesame combo plate','The open sesame combo plate is a bargain for the heap of food given ','DT JJ NN NN NN VBZ DT NN IN DT NN IN NN VBN . ',14,0,2,0,0,0,0,0,0,0,positive
+2228,0.02,0.0,-0.6,-0.03333333333333333,0.0,0.0,0.05,1.0,0.0,'target_food','The food is not what it once was (potions have seriously seen downsizing) prices have gone up, and the service is the worst I have experienced anywhere (including mainland Europe) ','DT NN VBZ RB WP PRP RB VBD -LRB- NNS VBP RB VBN VBG -RRB- NNS VBP VBN RP , CC DT NN VBZ DT JJS PRP VBP VBN RB -LRB- VBG NN NNP -RRB- . ',30,0,4,1,1,0,0,0,0,0,negative
+2254,0.12,0.6,0.0,0.0,1.0,0.0,0.1,1.0,0.0,'target_Food','Food was good and cheap ','NN VBD JJ CC JJ . ',5,0,2,0,0,0,0,0,0,0,positive
+2297,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Sushi','Good Sushi, High Price ','JJ NNP , NNP NNP ',4,0,2,0,0,0,0,0,0,0,negative
+2355,0.1142857142857143,0.8,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_lunch menu','The lunch menu is an awesome deal ','DT NN NN VBZ DT JJ NN . ',7,1,1,0,0,0,0,0,0,0,positive
+2411,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_sushi','Great value sushi with high quality &amp; nice setting ','JJ NN FW IN JJ NN CC NN , JJ NN . ',9,0,3,0,0,0,0,0,0,0,positive
+2421,0.0375,0.0,-0.6,-0.125,1.0,0.0,-0.09375,0.5,0.0,'target_food',' As with most restaurants in Seattle, Miopostos service was bad and the food was overpriced ','IN IN JJS NNS IN NNP , NNP POS NN VBD JJ CC DT NN VBD VBN . ',16,0,2,1,0,0,0,0,0,0,negative
+2507,0.12,0.6,0.0,-0.2,0.0,0.0,-0.1,0.0,0.0,'target_NULL','Not cheap but very yummy ','NN . ',5,0,2,0,0,0,0,0,0,0,negative
+2528,0.022222222222222223,0.6,-0.2,0.0,1.0,0.0,-0.027777777777777776,0.0,0.0,'target_sushi',' The sushi here is perfectly good, but for $5 a piece, either the slices of fish should be larger, or there should be no pretense that this is a moderately priced restaurant (even for NYC) ','DT NNS RB VBZ RB JJ , CC IN $ CD DT NN , CC DT NNS IN NN MD VB JJR , CC EX MD VB DT NN IN DT VBZ DT RB VBN NN -LRB- RB IN NNP -RRB- . ',36,0,4,1,0,0,0,0,0,1,negative
+2561,0.03333333333333333,0.4,0.0,0.16666666666666666,1.0,0.0,0.027777777777777776,0.3333333333333333,0.0,'target_sushi','It isnt the cheapest sushi but has been worth it every time ','PRP VBZ RB DT JJS NNS CC VBZ VBN JJ PRP DT NN . ',12,0,2,0,0,1,0,0,0,1,neutral
+2587,0.075,0.6,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_NULL','And they give good quantity for the price ','CC PRP VBP JJ NN IN DT NN . ',8,0,2,0,0,0,0,0,0,0,neutral
+2614,0.0,0.0,0.0,0.0,1.0,0.0,0.08928571428571429,1.0,0.0,'target_price fixed pre-show dinner',' I decided to eat at Stack because of their price fixed pre-show dinner ','PRP VBD TO VB IN NNP IN IN PRP$ NN VBN JJ NN . ',14,0,1,1,0,0,0,0,0,0,neutral
+2647,0.0,0.0,0.0,0.0,0.0,0.0,0.25,1.0,0.0,'target_NULL','Overpriced and not tasty ','VBN ',4,0,2,0,0,0,0,0,0,0,negative
+2655,0.06666666666666667,0.6,0.0,0.0,1.0,0.0,0.05555555555555555,1.0,0.0,'target_food','At best, the food was good and definately overpriced ','IN RBS , DT NN VBD JJ CC RB JJ . ',9,0,2,0,0,0,0,0,0,0,negative
+2657,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,'target_food','For the amount of food we got the prices should have been lower ','IN DT NN IN NN PRP VBD DT NNS MD VB VBN JJR . ',13,0,2,0,0,0,0,0,0,0,negative
+2700,0.0,0.0,0.0,0.0,0.0,0.0,0.15789473684210525,1.0,0.0,'target_chef special dinner','I have been here, spent tons of money on a chef special dinner and it was a major dissappointment ','PRP VBP VBN RB , VBN NNS IN NN IN DT NN JJ NN CC PRP VBD DT JJ NN . ',19,0,2,1,0,0,0,0,0,0,negative
+2701,0.0,0.0,0.0,0.0,0.0,0.0,0.03333333333333333,0.5,0.0,'target_plate','Fancy pieces of exotic fish on a $100 dollar plate and NOT ONE was eatable ','JJ NNS IN JJ NN IN DT $ CD NN NN CC RB CD VBD JJ . ',15,0,3,1,1,0,0,0,0,0,negative
+2719,0.0,0.0,0.0,0.2,1.0,0.0,0.15,1.0,0.0,'target_food','The food is fantastic, authentic, delicious and very, very affordable ','DT NN VBZ JJ , JJ , JJ CC RB , RB JJ . ',10,0,2,0,0,0,0,0,0,0,positive
+2792,0.0125,0.4,0.0,0.0625,1.0,0.0,0.03125,1.0,0.0,'target_pancakes','The pancakes were certainly inventive but $8 50 for 3 - 6&quot; pancakes (one of them was more like 5&quot;) in the pancake flight (sample of 3 different pancakes) is well over-priced ','DT NNS VBD RB JJ CC $ CD IN CD SYM CD CC NN : NNS -LRB- CD IN PRP VBD JJR IN CD CC NN : -RRB- IN DT NN NN -LRB- NN IN CD JJ NNS -RRB- VBZ RB JJ . ',32,0,3,1,0,0,0,0,0,1,negative
+2795,0.0,0.0,0.0,0.0,0.0,0.0,0.058823529411764705,1.0,0.0,'target_pancakes','The pancakes should be larger (at least 8&quot;) to justify the expense even with the unique offerings ','DT NNS MD VB JJR -LRB- IN JJS CD CC NN : -RRB- TO VB DT NN RB IN DT JJ NNS . ',17,0,2,0,0,0,0,0,0,0,negative
+2802,0.0,0.0,0.0,0.0,0.0,0.0,0.006666666666666667,0.5,0.0,'target_pancakes','In the end our check came to $27 for 4 small pancakes, a breakfast burrito, an orange juice and an iced tea (I had water) ','IN DT NN PRP$ NN VBD IN $ CD IN CD JJ NNS , DT NN NN , DT NN NN CC DT JJ NN -LRB- PRP VBD NN -RRB- . ',25,0,5,1,0,0,0,0,0,0,negative
+2803,0.0,0.0,0.0,0.0,0.0,0.0,0.006666666666666667,0.5,0.0,'target_breakfast burrito','In the end our check came to $27 for 4 small pancakes, a breakfast burrito, an orange juice and an iced tea (I had water) ','IN DT NN PRP$ NN VBD IN $ CD IN CD JJ NNS , DT NN NN , DT NN NN CC DT JJ NN -LRB- PRP VBD NN -RRB- . ',25,0,5,1,0,0,0,0,0,0,negative

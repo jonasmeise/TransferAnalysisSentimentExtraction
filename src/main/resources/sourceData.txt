@@ -292,6 +292,3 @@ Komfort-negative	912
 Preis-Leistungs-Verhltnis-negative	76
 WLAN-negative	46
 Sauberkeit-negative	142
-
-Majority-Baseline:
-

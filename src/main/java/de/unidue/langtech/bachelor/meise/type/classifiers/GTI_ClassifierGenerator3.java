@@ -4,18 +4,24 @@ import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.AFINN;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.BingLiu;
+import de.unidue.langtech.bachelor.meise.sentimentlexicon.CustomLexicon;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.EmoLex;
 import de.unidue.langtech.bachelor.meise.type.ArffGenerator;
+import de.unidue.langtech.bachelor.meise.type.ReviewData;
 import de.unidue.langtech.bachelor.meise.type.SentimentLexicon;
+import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
 import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
@@ -24,34 +30,91 @@ import webanno.custom.Valence;
 //http://aclweb.org/anthology/S/S16/S16-1049.pdf
 //GTI at SemEval-2016 Task 5: SVM and CRF for Aspect Detection and Unsupervised Aspect-Based Sentiment Analysis
 //Tamara Alvarez-Lopez, Jonathan Juncal-Martnez, Milagros Fernandez-Gavilanes Enrique Costa-Montenegro, Francisco Javier Gonzalez-Casta no
-//Classification type: SVM
-//sub-sentences will be tagged
+//Classification type: NONE, Syntactic-rules only (no learning necessary)
+//Lexica used: AFINN, BingLiu, EmoLex
 //input-output format is normalized to match the current Task; the model itself is not changed
 
 
 public class GTI_ClassifierGenerator3 extends ArffGenerator{
-
 	int cutoff = 200; //Maximale Saetze/Datensatz
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
 	
+	public int hit=0, noHit=0;
+	
 	String regexIgnore = "[\'\"]";
 	String regexSplit = "[\\.\\?,\\-\\!;]";
+	
+	RawJsonReviewReader trainingReader;
 	
 	Collection<String> negationWords;
 	ArrayList<SentimentLexicon> sentimentLexicons;
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
+	
+	public void splitAndGuess(String splitRegex, String text, Collection<Token> sentenceTokens, ArrayList<String> tarValues, ArrayList<String> polarities) {
+		String[] split = text.split(splitRegex);
+		for(int i=0;i<split.length;i++) {
+			String guess;
+			double currentSentiment=0;
+			
+			for(int x=0;x<split[i].split(" ").length;x++) {
+				String singleString = split[i].split(" ")[x];			
+				boolean negated=false;
+				
+				if(x>0) {
+					for(String negationWord : negationWords) {
+						if(split[i].split(" ")[x-1].toLowerCase().contains(negationWord)) {
+							for(Token singleToken : sentenceTokens) {
+								if(singleToken.getPos().getPosValue().contains("JJ") && singleToken.getCoveredText().equals(split[i].split(" ")[x-1])) {
+        							negated=true;
+								}
+							}
+						}
+					}
+				}
+				
+				for(SentimentLexicon singleLexi : sentimentLexicons) {
+					double change = singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"positive"}) - singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"negative"});
+					if(change>=0) {
+						currentSentiment += (negated ? -1 : 1) * change;
+					} else {
+						currentSentiment += (negated ? 0.5 : 1) * change;
+					}
+        		}
+				negated=false;
+				
+				currentSentiment = currentSentiment/(split[i].split(" ").length * sentimentLexicons.size());
+			}
+			
+			for(String singleTarget : tarValues) {
+				if(split[i].contains(singleTarget)) {
+					if(currentSentiment==0) {
+        				guess = "neutral";
+	        		} else if(currentSentiment > 0) {
+	        			guess = "positive";
+	        		} else {
+	        			guess = "negative";
+	        		}
+					
+					myLog.log("Guess:" + guess + "  - " + polarities.get(tarValues.indexOf(singleTarget)).toLowerCase());
+	        				
+					if(guess.equals(polarities.get(tarValues.indexOf(singleTarget)).toLowerCase())) {
+						hit++;
+					} else {
+						noHit++;
+					}
+				}
+			}
+		}
+	}
 	
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
 		ArrayList<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
 		
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
-			for(String singleClass : allClassAttributes) {	
-				Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
-				
-	        	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
-	        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
+			if(useOldData) {
+				Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
 				
 	        	ArrayList<Token> roots = new ArrayList<Token>();
 	        	for(Dependency dpElement : dependencies) {
@@ -60,132 +123,120 @@ public class GTI_ClassifierGenerator3 extends ArffGenerator{
 					}
 				}
 	        	
-	        	for(Token root : roots) {
-		        	Tree<Token> tree = new Tree<Token>(root);
-		        	tree.generateTreeOfDependency(dependencies, root);
-		        	tree.setParentDependencyType("ROOT");
-		        	
-		        	treeCollection.add(tree);
-		        	subSentences.add(tree.getAllObjects());	
-	        	}
-	
-	        	for(ArrayList<Token> subSentence : subSentences) {
-	        		ArrayList<ArrayList<Token>> newSplits = splitListByRegex(subSentence, regexSplit);
-	
-	        		for(ArrayList<Token> splitSubSentence : newSplits) {
-						for(Valence valence : selectCovered(Valence.class, sentence)) {
-							AspectRating t1 = valence.getDependent();
-			        		AspectRating t2 = valence.getGovernor();
-			        		
-							int dependencyDistance = -1;
-							
-							for(Tree<Token> tree : treeCollection) {
-			    				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
-			    				
-			    				if(newDistance > dependencyDistance) {
-			    					dependencyDistance = newDistance;
-			    				}
-			    			}
-	
-							if(dependencyDistance>=0) {
-								int found = 0;
-								for(Token singleToken : splitSubSentence) {
-									if(singleToken.equals(selectCovered(Token.class, t1).get(0)) || singleToken.equals(selectCovered(Token.class, t2).get(0))) {
-										found++;
-									}
-								}
-								
-								if(found>=2) {
-					        		String stringSentence = "";
-				
-					        		double[] lexica = new double[3];
-					        		lexica[0] = 0;
-					        		lexica[1] = 0;
-					        		lexica[2] = 0;
-					        		for(int i=0;i<sentimentLexicons.size();i++) {
-					        			for(Token singleToken : splitSubSentence) {
-					        				if(sentimentLexicons.get(i).onlyWorksOnLemmas) {
-					        					lexica[i] = lexica[i] + sentimentLexicons.get(i).fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"}) - sentimentLexicons.get(i).fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"}) ;
-					        				} else {
-					        					lexica[i] = lexica[i] + sentimentLexicons.get(i).fetchPolarity(singleToken.getCoveredText(), new String[] {"positive"}) - sentimentLexicons.get(i).fetchPolarity(singleToken.getCoveredText(), new String[] {"negative"}) ;
-					        				}
-					        			}
-					        		}
-									String currentValence=valence.getValenceRating();
-									String identifier;
-	
-									for(Token token : splitSubSentence) {
-										stringSentence = stringSentence + token.getCoveredText() + " ";
-									}
-									
-									stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "")+  "'";
-									
-									ArrayList<String> fullList = new ArrayList<String>();
-									
-									if(valence.getValenceRating()==null) {
-										currentValence="true";
-									} else {
-										currentValence = currentValence.replaceAll("UNSURE", "UNSURE").replace("rate-me", "UNSURE");
-										
-										if(currentValence.equals(singleClass)) {
-											currentValence = "true";
-										} else {
-											currentValence = "false";
-										}
-									}
-									if(t1.getAspect()!=null && t2.getAspect()!=null) {
-										if(t1.getAspect().compareTo("RatingOfAspect")==0) {
-					    					//non-negated
-				    						identifier = t2.getAspect().replaceAll("RatingOfAspect", "Komfort").replaceAll("[^\\x00-\\x7F]", "");
-					    				} else {
-					    					//negated
-				    						identifier = t1.getAspect().replaceAll("RatingOfAspect", "Komfort").replaceAll("[^\\x00-\\x7F]", "");
-					    				}
-										
-										fullList.add("" + id);
-										
-										if(!constrained) {
-											fullList.add("" + (lexica[0]/(double)splitSubSentence.size()));
-											fullList.add("" + (lexica[1]/(double)splitSubSentence.size()));
-											fullList.add("" + (lexica[2]/(double)splitSubSentence.size()));
-										} else {
-											fullList.add("" + 0);
-											fullList.add("" + 0);
-											fullList.add("" + 0);
-										}
-										
-										fullList.add(identifier);
-										fullList.add(stringSentence);
-										
-										for(String negationWord : negationWords) {
-											if(stringSentence.toLowerCase().contains(negationWord)) {
-												fullList.add("" + 1);
-											} else {
-												fullList.add("" + 0);
-											}
-										}
-										
-										fullList.add(singleClass);
-										
-										fullList.add(currentValence);
-										sortedLines.add(fullList);
-									}
-								}
-							}
-						}       
+	        	int currentDataId = myReader.getReviewId(sentence.getCoveredText());
+	        	ReviewData currentData = myReader.getReview(currentDataId);
+	        	
+	        	myLog.log(sentence.getCoveredText() + " -> (" + currentDataId + "): " + currentData.getTextContent());
+	        	
+	        	ArrayList<String> tarValues = currentData.getOpinionTargets();
+	        	ArrayList<String> categories = currentData.getOpinionCategory();
+	        	ArrayList<String> polarities = currentData.getOpinionPolarity();
+	        	
+	        	double avgPolarity = 0;
+	        	
+	        	Collection<Token> sentenceTokens = selectCovered(Token.class, sentence);
+	        	
+	        	for(String singleString : currentData.getTextContent().split(" ")) {
+	        		for(SentimentLexicon singleLexi : sentimentLexicons) {
+	        			avgPolarity += singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"positive"}) - singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"negative"});
 	        		}
-	    		}
-				//since we don't need duplicates for every class...
-				if(learningModeActivated) {
-					int onlyTakeFirst = subSentences.size();
-					ArrayList<ArrayList<String>> alternativeReturnList = new ArrayList<ArrayList<String>>();
-					
-					for(int i=0;i<onlyTakeFirst;i++) {
-						alternativeReturnList.add(returnList.get(i));
-					}
-					
-					return alternativeReturnList;
+	        	}
+	        	
+	        	avgPolarity = avgPolarity / (sentimentLexicons.size() * sentenceTokens.size());
+	        	String guess="";
+        	
+	        	if(tarValues.size()==1 || tarValues.size()==0) {
+        			if(categories.size() > 0) {
+		        		if(avgPolarity==0) {
+	        				guess = "neutral";
+		        		} else if(avgPolarity > 0) {
+		        			guess = "positive";
+		        		} else {
+		        			guess = "negative";
+		        		}
+		        		
+		        		myLog.log("Guess:" + guess + "  - " + polarities.get(0).toLowerCase());
+		        		
+		        		if(guess.equals(polarities.get(0).toLowerCase())) {
+    						hit++;
+    					} else {
+    						noHit++;
+    					}
+        			}
+	        	} else if(tarValues.size()>1 && !categories.get(0).equals(categories.get(1))) {
+	        		if(currentData.getTextContent().toLowerCase().contains("but")) {
+	        			splitAndGuess("but", currentData.getTextContent(), sentenceTokens, tarValues, polarities);
+	        		} else {
+	        			splitAndGuess("[;,\\.\\?!-]", currentData.getTextContent(), sentenceTokens, tarValues, polarities);
+	        		}
+	        	}
+        	} else {
+        		ArrayList<String> tarValues = new ArrayList<String>();
+	        	ArrayList<String> categories = new ArrayList<String>();
+	        	ArrayList<String> polarities = new ArrayList<String>();
+	        	
+        		
+				for(Valence singleValence : selectCovered(Valence.class, sentence)) {
+					ArrayList<String> singleLine = new ArrayList<String>();
+	        		Token t1 = null;
+	        		AspectRating ar = null;
+	        		
+	        		if(singleValence.getDependent()!=null && singleValence.getDependent().getAspect()!=null && singleValence.getGovernor()!=null && singleValence.getGovernor().getAspect()!=null && singleValence.getValenceRating()!="null" && singleValence.getValenceRating()!=null) {
+		        		if(singleValence.getDependent().getAspect().toLowerCase().equals("ratingofaspect")) {
+	        				t1 = JCasUtil.selectCovered(Token.class, singleValence.getGovernor()).get(0);
+	        				ar = singleValence.getGovernor();
+		        		} else {
+		        			t1 = JCasUtil.selectCovered(Token.class, singleValence.getDependent()).get(0);
+		        			ar = singleValence.getDependent();
+		        		}
+		        		
+		        		tarValues.add(t1.getCoveredText());
+		        		categories.add(ar.getAspect().replaceAll("[^\\x00-\\x7F]", ""));
+		        		polarities.add(singleValence.getValenceRating().replaceAll("rate-me", "negative").replaceAll("UNSURE", "negative"));
+	        		}	
 				}
+        		
+        		Collection<Token> split = selectCovered(Token.class, sentence);
+
+	        	double avgPolarity = 0;
+	        	
+	        	Collection<Token> sentenceTokens = selectCovered(Token.class, sentence);
+	        	
+	        	for(Token singleToken : split) {
+	        		String singleString = singleToken.getCoveredText();
+	        		for(SentimentLexicon singleLexi : sentimentLexicons) {
+	        			avgPolarity += singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"positive"}) - singleLexi.fetchPolarity(singleString.toLowerCase(), new String[] {"negative"});
+	        		}
+	        	}
+	        	
+	        	avgPolarity = avgPolarity / (sentimentLexicons.size() * sentenceTokens.size());
+	        	String guess="";
+        	
+	        	if(tarValues.size()==1 || tarValues.size()==0) {
+        			if(categories.size() > 0) {
+		        		if(avgPolarity==0) {
+	        				guess = "neutral";
+		        		} else if(avgPolarity > 0) {
+		        			guess = "positive";
+		        		} else {
+		        			guess = "negative";
+		        		}
+		        		
+		        		myLog.log("Guess:" + guess + "  - " + polarities.get(0).toLowerCase());
+		        		
+		        		if(guess.equals(polarities.get(0).toLowerCase())) {
+    						hit++;
+    					} else {
+    						noHit++;
+    					}
+        			}
+	        	} else if(tarValues.size()>1) {
+	        		if(sentence.getCoveredText().contains("but")) {
+	        			splitAndGuess("but", sentence.getCoveredText(), sentenceTokens, tarValues, polarities);
+	        		} else {
+	        			splitAndGuess("[;,\\.\\?!-]", sentence.getCoveredText(), sentenceTokens, tarValues, polarities);
+	        		}
+	        	}
 			}
 		}
 		
@@ -241,123 +292,116 @@ public class GTI_ClassifierGenerator3 extends ArffGenerator{
 		sentimentLexicons.add(new BingLiu());
 		sentimentLexicons.add(new EmoLex());
 		
+		ArrayList<ArrayList<String>> a = new ArrayList<ArrayList<String>>();
+		
 		negationWords = new ArrayList<String>();
 		negationWords.add("not");
 		negationWords.add("n't");
 		negationWords.add("non");
 		negationWords.add("don't");
 		negationWords.add("didn't");
-		negationWords.add("but");
+		negationWords.add("no");
 		
-		String[] types = new String[2];
-		types[0] = "positive";
-		types[1] = "negative";
+		String[] types = new String[8];
 		
-		String[] types2 = new String[8];
-		types2[0] = "Ausstattung";
-		types2[1] = "Hotelpersonal";
-		types2[2] = "Lage";
-		types2[3] = "OTHER";
-		types2[4] = "Komfort";
-		types2[5] = "Preis-Leistungs-Verhltnis";
-		types2[6] = "WLAN";
-		types2[7] = "Sauberkeit";
-		
-		for(int i=0;i<types.length;i++) {
-			ArrayList<String> relations = new ArrayList<String>();
+		if(!useOldData) {
+			types[0] = "Ausstattung";
+			types[1] = "Hotelpersonal";
+			types[2] = "Lage";
+			types[3] = "OTHER";
+			types[4] = "Komfort";
+			types[5] = "Preis-Leistungs-Verhltnis";
+			types[6] = "WLAN";
+			types[7] = "Sauberkeit";
+		} else {
+			//load data separately for cross-checking
+			types = getAspectLabelsOldData();
 			
-			relations.add("id numeric");
-			//for nouns, verbs, adjectives
-			relations.add("AFINN numeric");
-			relations.add("BingLiu numeric");
-			relations.add("EmoLex numeric");
+			myReader = new RawJsonReviewReader();
+			myReader.folderPath = "src\\main\\resources\\SEABSA16_data";
+			myReader.useOldData = true;
 			
-			relations.add("currentcategory " + generateTupel(types2));
+			StopwordHandler myHandler = new StopwordHandler();
 			
-			relations.add("currentsentence string");
-			
-			int counter=1;
-			for(String negationWord : negationWords) {
-				relations.add("negation_type_" + counter + " numeric");
-				counter++;
+			 trainingReader = new RawJsonReviewReader();
+			 trainingReader.folderPath = myReader.folderPath;
+			 trainingReader.useOldData = true;
+			 trainingReader.fileExtension = ".xml"; //training data
+			 
+			 trainingReader.external_Initialize(-1);
+			 
+			 myLog.log("Initializing Test Reader.");
+			 
+			 CustomLexicon newLexi = new CustomLexicon();
+			 
+			 HashMap<String, Integer> neuContext = new HashMap<String, Integer>();
+			 HashMap<String, Integer> posContext = new HashMap<String, Integer>();
+			 HashMap<String, Integer> negContext = new HashMap<String, Integer>();
+			 
+			for(int i=0;i<trainingReader.getReviewList().size();i++) {
+				String currentString = trainingReader.getReview(i).getTextContent();
+				
+				for(String word : currentString.split(" ")) {
+					if(word.length() >= 3 && !myHandler.isStopword(word)) {
+						for(String polarity : trainingReader.getReview(i).getOpinionPolarity()) {
+							if(polarity.equals("positive")) {
+								if(!posContext.containsKey(word)) {
+									posContext.put(word, 1);
+								} else {
+									posContext.put(word, posContext.get(word) + 1);
+								}
+							} else if(polarity.equals("negative")) {
+								if(!negContext.containsKey(word)) {
+									negContext.put(word, 1);
+								} else {
+									negContext.put(word, negContext.get(word) + 1);
+								}
+							}
+							
+							if(!neuContext.containsKey(word)) {
+								neuContext.put(word, 1);
+							} else {
+								neuContext.put(word, neuContext.get(word) + 1);
+							}
+						}
+					}
+				}
 			}
 			
-			relations.add("type string");
+			for(String key : neuContext.keySet()) {
+				if(posContext.containsKey(key) && negContext.containsKey(key)) {
+					newLexi.feedData(key, (posContext.get(key) - negContext.get(key))/neuContext.get(key));
+				} else if(posContext.containsKey(key)) {
+					newLexi.feedData(key, 1);
+				} else if(negContext.containsKey(key)) {
+					newLexi.feedData(key, -1);
+				} else {
+					newLexi.feedData(key, 0);
+				}
+			}
 			
-			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
+			sentimentLexicons.add(newLexi);
 			
-			allClassAttributes.add(types[i]);
+			if(!isTestData ) {
+				myReader.fileExtension = ".xml";
+			} else {
+				myReader.fileExtension = ".gold";
+			}
 			
-			ArrayList<String> newList = new ArrayList<String>();
-			newList.add(types[i]);
+			myReader.external_Initialize(-1);
 			
-			this.relations.add(relations);
-			identifierAttributeAt = relations.size()-2;
 		}
-		
-		ignoreFeatures = new int[1];
-		ignoreFeatures[0] = identifierAttributeAt;
-		
-		return this.relations;
+
+		return a;
 	}
 
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
 		//we'll write out own method...
 		//writeOutput();
+		//writeOutput(sortedLines);
 		
-		//cycle through all the 
-		myLog.log("Output into Folder activated: " + outputIntoFolderActivated);
-		if(outputIntoFolderActivated) {
-			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
-			
-			for(String singleClass : allClassAttributes) {
-				setOutputFile(outputPath + "/" + singleClass + ".arff");
-
-				String completeOutput;
-				completeOutput = "@relation " + singleClass + "\n\n";
-	    		 
-	    		//write all relational attributes
-	    		for(int n=0;n<relations.get(0).size();n++) {
-	    			
-	    			String relation = relations.get(0).get(n);
-	    			
-	    			if(ignoreFeatures.length>0) {
-	    				boolean allFine=true;
-	    				for(int i=0;i<ignoreFeatures.length;i++) {
-	    					if(ignoreFeatures[i]==n) {
-	    						allFine=false;
-	    					}
-	    				}
-	    				
-	    				if(allFine) {				
-	    					completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    				}
-	    			} else {
-	    				completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    			}
-	    		}
-	    		
-	    		completeOutput = completeOutput + "\n@data\n";
-	    		
-				
-	    		for(ArrayList<String> singleLine : sortedLines) {
-					if(singleLine.get(identifierAttributeAt)!=null) {						
-						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
-							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
-						}
-					}
-				}
-				
-				fu.write(completeOutput.substring(0, completeOutput.length()-1));
-				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
-				
-				
-				fu.close();
-			}
-		} else {
-			myLog.log("Output path not a folder, can't generate output files....");
-		}
+		myLog.log(hit + "-" + noHit);
 	}	
 	
 	@Override

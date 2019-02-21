@@ -137,6 +137,8 @@ public class DataParser {
 		ArrayList<ReviewData> returnList = new ArrayList<ReviewData>();
 		int i=0;
 		
+		myLog.log("Parsing from file with " + rawFile.size() + " lines up to " + max + " data sets. OldData=" + oldData);
+		
 		while(i < rawFile.size()) {
 			if(!oldData) {
 				if(rawFile.get(i).contains("<data>")) {

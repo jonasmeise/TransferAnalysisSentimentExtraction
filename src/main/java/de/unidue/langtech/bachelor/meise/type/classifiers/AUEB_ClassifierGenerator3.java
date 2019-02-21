@@ -6,11 +6,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.fit.util.JCasUtil;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.unidue.langtech.bachelor.meise.files.RawJsonReviewReader;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.AFINN;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.BingLiu;
 import de.unidue.langtech.bachelor.meise.sentimentlexicon.EmoLex;
@@ -78,81 +80,65 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 	        		
 	        		singleLine.add("" + valueId);
 	        		
-	        		if(singleTargetValue.equals("NULL")) {
-	        			for(String singleWordInSentence : sentence.getCoveredText().replaceAll("[\\.,]", "").split(" ")) {
-	        				for(String tagWord : tagWordsForAspects.get(0).split(" ")) {
-	        					if(tagWord.equals(singleWordInSentence.toLowerCase())) {
-	        						singleTargetValue = tagWord;
-	        					}
+	        		int unigramCount=0;
+	        		double[] lexi_avg = new double[3];
+	        		double[] lexi_high = new double[3];
+	        		double[] lexi_low = new double[3];
+	        		boolean containsCaps = false;
+	        		String unigrams = "";
+	        		String pos = "";
+	        		String[] split = currentData.getTextContent().split("[ \\.?!]");
+	        		
+	        		for(String singleWord : split) {
+	        			unigramCount++;
+	        			
+	        			if(singleWord.toUpperCase().equals(singleWord)) {
+	        				containsCaps = true;
+	        			}
+	        			
+	        			for(int i=0;i<sentimentLexicons.size();i++) {
+	        				double posValue = sentimentLexicons.get(i).fetchPolarity(singleWord, new String[] {"positive"});
+	        				double negValue = sentimentLexicons.get(i).fetchPolarity(singleWord, new String[] {"negative"});
+	        				
+	        				lexi_avg[i] = lexi_avg[i] + (posValue - negValue);
+	        				
+	        				if(lexi_high[i] < posValue) {
+	        					lexi_high[i] = posValue;
+	        				}
+	        				if(lexi_low[i] > negValue) {
+	        					lexi_low[i] = negValue;
 	        				}
 	        			}
+	        			
+	        			unigrams = unigrams + singleWord + " ";
 	        		}
 	        		
-	        		if(singleTargetValue.equals("NULL")) {
-	        			for(Token singleToken : selectCovered(Token.class, sentence)) {
-        					if(singleToken.getPos().getPosValue().contains("NN")) {
-        						singleTargetValue = singleToken.getCoveredText();
-	        				}
+	        		for(Token singleToken : selectCovered(Token.class, sentence)) {
+	        			pos = pos + singleToken.getPos().getPosValue() + " ";
+	        		}
+	        		
+	        		for(int i=0;i<sentimentLexicons.size();i++) {
+	        			if(split.length>0) {
+	        				singleLine.add("" + (lexi_avg[i]/split.length));
+	        			} else {
+	        				singleLine.add("0");
 	        			}
+	        			singleLine.add("" + lexi_high[i]);
+	        			singleLine.add("" + lexi_low[i]);
 	        		}
 	        		
-	        		for(Dependency dpElement : dependencies) {
-	        			for(String singleValue : singleTargetValue.split(" ")) {
-		        			if(dpElement.getDependent().getCoveredText().equals(singleValue)) {
-		        				if(!dependencyWords.contains(dpElement.getGovernor().getCoveredText())) {
-		        					dependencyWords.add(dpElement.getGovernor().getCoveredText());
-		        				}
-		        			} else if(dpElement.getGovernor().getCoveredText().equals(singleValue)) {
-		        				if(!dependencyWords.contains(dpElement.getDependent().getCoveredText())) {
-		        					dependencyWords.add(dpElement.getDependent().getCoveredText());
-		        				}
-		        			}
-	        			}
-	        		}
+	        		singleLine.add("'target_" + singleTargetValue.replaceAll(regexIgnore, "") + "'");
+	        		singleLine.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
+	        		singleLine.add("'" + pos.replaceAll(regexIgnore, "") +"'");
+	        		singleLine.add("" + unigramCount);
+	        		singleLine.add("" + ((sentence.getCoveredText().endsWith("!") || sentence.getCoveredText().endsWith("?")) ? 1 : 0));
 	        		
-	        		String dependencyOutputUni = "";
-	        		String dependencyOutputBi = "";
-	        		double dependencyOutputSentimentAvg = 0;
-	        		boolean sentenceContainsNegation = false;
+	        		singleLine.add("" + categories.size());
+	        		singleLine.add("" + (containsCaps ? 1 : 0));
 	        		
 	        		for(String negationWord : negationWords) {
-	        			if(sentence.getCoveredText().toLowerCase().contains(negationWord)) {
-	        				sentenceContainsNegation = true;
-	        			}
-	        		}
-	        		
-	        		for(String singleWord : dependencyWords) {
-	        			if(!myStopwordHandler.isStopword(singleWord.toLowerCase())) {
-		        			dependencyOutputUni = dependencyOutputUni + "dep_" + singleWord + " ";
-		        			
-		        			if(dependencyWords.indexOf(singleWord)+1 < dependencyWords.size()) {
-		        				dependencyOutputBi = dependencyOutputBi + "dep_" + singleWord + "_" + dependencyWords.get(dependencyWords.indexOf(singleWord)+1) + " ";
-		        			}
-		        			
-		        			for(SentimentLexicon singleLexi : sentimentLexicons) {
-		        				dependencyOutputSentimentAvg = dependencyOutputSentimentAvg + singleLexi.fetchPolarity(singleWord, new String[] {"positive"}) -singleLexi.fetchPolarity(singleWord, new String[] {"negative"}); 
-		        			}
-	        			}
-	        		}
-	        		
-	        		dependencyOutputSentimentAvg = ((sentenceContainsNegation ? -1 : 1 ) * dependencyOutputSentimentAvg) / (dependencyWords.size() * sentimentLexicons.size());
-	        		
-	        		if(dependencyWords.size() > 0) {
-	        			singleLine.add("" + dependencyOutputSentimentAvg);
-	        		} else {
-	        			singleLine.add("0");
-	        		}
-	        		
-	        		singleLine.add("'" + singleTargetValue.replaceAll(regexIgnore, "") + "'");
-	        		singleLine.add("'" + dependencyOutputUni.replaceAll(regexIgnore, "") +"'");
-	        		singleLine.add("'" + dependencyOutputBi.replaceAll(regexIgnore, "") +"'");
-	        		
-	        		for(String neutralWord : neutralWords) {
-	        			singleLine.add("" + (sentence.getCoveredText().toLowerCase().contains(neutralWord) ? 1 : 0));
+	        			singleLine.add("" + (sentence.getCoveredText().toLowerCase().contains(negationWord) ? 1 : 0));
 	    			}
-	        		
-	        		singleLine.add("" + (sentence.getCoveredText().toLowerCase().contains("!") ? 1 : 0));
-	        		singleLine.add("" + (sentence.getCoveredText().toLowerCase().contains("?") ? 1 : 0));
 	        		
 	        		singleLine.add(categories.get(counter).toLowerCase());
 	        		singleLine.add(polarities.get(counter));
@@ -163,191 +149,107 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 	        		counter++;
 	        		valueId++;
 	        	}
-			} else {
-				for(String singleClass : allClassAttributes) {	
-					Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
-					
-		        	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
-		        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
-					
-		        	ArrayList<Token> roots = new ArrayList<Token>();
-		        	for(Dependency dpElement : dependencies) {
-						if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
-							roots.add(dpElement.getGovernor());
-						}
-					}
-		        	
-		        	for(Token root : roots) {
-			        	Tree<Token> tree = new Tree<Token>(root);
-			        	tree.generateTreeOfDependency(dependencies, root);
-			        	tree.setParentDependencyType("ROOT");
-			        	
-			        	treeCollection.add(tree);
-			        	subSentences.add(tree.getAllObjects());	
-		        	}
-		
-		        	for(ArrayList<Token> splitSubSentence : subSentences) {
-						for(Valence valence : selectCovered(Valence.class, sentence)) {
-							AspectRating t1 = valence.getDependent();
-			        		AspectRating t2 = valence.getGovernor();
-			        		
-							int dependencyDistance = -1;
-							
-							for(Tree<Token> tree : treeCollection) {
-			    				int newDistance = tree.tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
-			    				
-			    				if(newDistance > dependencyDistance) {
-			    					dependencyDistance = newDistance;
-			    				}
-			    			}
-	
-							if(dependencyDistance>=0) {
-								int found = 0;
-								for(Token singleToken : splitSubSentence) {
-									if(singleToken.equals(selectCovered(Token.class, t1).get(0)) || singleToken.equals(selectCovered(Token.class, t2).get(0))) {
-										found++;
-									}
-								}
-								
-								if(found>=2) {
-					        		String stringSentence = "";
-					        		String lemmaSentence = "";
-					        		String posSentence = "";
+			} else {				
+	        	Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
+	        	Collection<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
 				
-					        		double[] lexica = new double[3];
-					        		lexica[0] = 0;
-					        		lexica[1] = 0;
-					        		lexica[2] = 0;
-					        		
-					        		double[] lexica_low = new double[3];
-					        		lexica_low[0] = 0;
-					        		lexica_low[1] = 0;
-					        		lexica_low[2] = 0;
-					        		
-					        		double[] lexica_high = new double[3];
-					        		lexica_high[0] = 0;
-					        		lexica_high[1] = 0;
-					        		lexica_high[2] = 0;
-					        		
-					        		
-					        		int ratingCounter=0;
-					        		double change=0;
-					        		int containsCaps=0;
-					        		
-					        		for(int i=0;i<sentimentLexicons.size();i++) {
-					        			for(Token singleToken : splitSubSentence) {
-					        				if(sentimentLexicons.get(i).onlyWorksOnLemmas) {
-					        					change = sentimentLexicons.get(i).fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"}) - sentimentLexicons.get(i).fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
-					        				} else {
-					        					change =sentimentLexicons.get(i).fetchPolarity(singleToken.getCoveredText(), new String[] {"positive"}) - sentimentLexicons.get(i).fetchPolarity(singleToken.getCoveredText(), new String[] {"negative"});
-					        				}
-					        				
-				        					if(change > lexica_high[i]) {
-				        						lexica_high[i] = change;
-				        					}
-				        					if(change < lexica_low[i]) {
-				        						lexica_low[i] = change;
-				        					}
-				        					
-				        					if(change!=0) {
-				        						ratingCounter++;
-				        					}
-				        					
-				        					if(singleToken.getCoveredText().toUpperCase().equals(singleToken.getCoveredText())) {
-				        						containsCaps=1;
-				        					}
-				        					
-				        					stringSentence = stringSentence + singleToken.getCoveredText() + " ";
-				        					lemmaSentence = lemmaSentence + singleToken.getLemma().getValue() + " ";
-				        					posSentence = posSentence + singleToken.getPos().getPosValue() + " ";
-				        					
-				        					lexica[i] = lexica[i] + change ;
-					        			}
-					        		}
-									String currentValence=valence.getValenceRating();
-									String identifier;
-									
-									stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "")+  "'";
-									lemmaSentence = "'" + lemmaSentence.toLowerCase().replaceAll(regexIgnore, "")+  "'";
-									posSentence = "'" + posSentence.toLowerCase().replaceAll(regexIgnore, "")+  "'";
-									
-									int containsSpecial = (stringSentence.contains("!")||stringSentence.contains("?")) ? 1 : 0;
-									int numberOfDifferentAspects = Math.round(selectCovered(Valence.class, sentence).size() / subSentences.size());  
-									
-									ArrayList<String> fullList = new ArrayList<String>();
-									
-									if(valence.getValenceRating()==null) {
-										currentValence="true";
-									} else {
-										currentValence = currentValence.replaceAll("UNSURE", "false").replace("rate-me", "false");
-										
-										if(currentValence.equals(singleClass)) {
-											currentValence = "true";
-										} else {
-											currentValence = "false";
-										}
-									}
-									if(t1.getAspect()!=null && t2.getAspect()!=null) {
-										if(t1.getAspect().compareTo("RatingOfAspect")==0) {
-					    					//non-negated
-				    						identifier = t2.getAspect().replaceAll("RatingOfAspect", "Komfort").replaceAll("[^\\x00-\\x7F]", "");
-					    				} else {
-					    					//negated
-				    						identifier = t1.getAspect().replaceAll("RatingOfAspect", "Komfort").replaceAll("[^\\x00-\\x7F]", "");
-					    				}
-										
-										fullList.add("" + id);
-										
-										fullList.add("" + (lexica[0]/(double)splitSubSentence.size()));
-										fullList.add("" + (lexica[1]/(double)splitSubSentence.size()));
-										fullList.add("" + (lexica[2]/(double)splitSubSentence.size()));
-									
-										fullList.add("" + lexica_high[0]);
-										fullList.add("" + lexica_low[0]);
-										fullList.add("" + lexica_high[1]);
-										fullList.add("" + lexica_low[1]);
-										fullList.add("" + lexica_high[2]);
-										fullList.add("" + lexica_low[2]);
-										fullList.add("" + ratingCounter);
-										
-										fullList.add(stringSentence);
-										fullList.add(lemmaSentence);
-										fullList.add(posSentence);
-										
-										fullList.add("" + containsSpecial);
-										fullList.add("" + numberOfDifferentAspects);
-										fullList.add("" + containsCaps);
-										
-										fullList.add(identifier);
-										
-										for(String negationWord : negationWords) {
-											if(stringSentence.toLowerCase().contains(negationWord)) {
-												fullList.add("" + 1);
-											} else {
-												fullList.add("" + 0);
-											}
-										}
-										
-										fullList.add(singleClass);
-	
-										fullList.add(currentValence);
-										sortedLines.add(fullList);
-									}
-								}
-							}
-		        		}
-		    		}
-					//since we don't need duplicates for every class...
-					if(learningModeActivated) {
-						int onlyTakeFirst = subSentences.size();
-						ArrayList<ArrayList<String>> alternativeReturnList = new ArrayList<ArrayList<String>>();
-						
-						for(int i=0;i<onlyTakeFirst;i++) {
-							alternativeReturnList.add(returnList.get(i));
-						}
-						
-						return alternativeReturnList;
+	        	ArrayList<Token> roots = new ArrayList<Token>();
+	        	for(Dependency dpElement : dependencies) {
+					if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
+						roots.add(dpElement.getGovernor());
 					}
+				}
+	        	
+	        	for(Token root : roots) {
+		        	Tree<Token> tree = new Tree<Token>(root);
+		        	tree.generateTreeOfDependency(dependencies, root);
+		        	tree.setParentDependencyType("ROOT");
+		        	
+		        	treeCollection.add(tree);
+	        	}
+	
+				for(Valence singleValence : selectCovered(Valence.class, sentence)) {
+					ArrayList<String> singleLine = new ArrayList<String>();
+	        		Token t1 = null;
+	        		AspectRating ar = null;
+	        		
+	        		if(singleValence.getDependent()!=null && singleValence.getDependent().getAspect()!=null && singleValence.getGovernor()!=null && singleValence.getGovernor().getAspect()!=null && singleValence.getValenceRating()!="null" && singleValence.getValenceRating()!=null) {
+		        		if(singleValence.getDependent().getAspect().toLowerCase().equals("ratingofaspect")) {
+	        				t1 = JCasUtil.selectCovered(Token.class, singleValence.getGovernor()).get(0);
+	        				ar = singleValence.getGovernor();
+		        		} else {
+		        			t1 = JCasUtil.selectCovered(Token.class, singleValence.getDependent()).get(0);
+		        			ar = singleValence.getDependent();
+		        		}
+	        		
+		        		singleLine.add("" + valueId);
+		        		
+		        		int unigramCount=0;
+		        		double[] lexi_avg = new double[3];
+		        		double[] lexi_high = new double[3];
+		        		double[] lexi_low = new double[3];
+		        		boolean containsCaps = false;
+		        		String pos = "";
+		        		Collection<Token> split = selectCovered(Token.class, sentence);
+		        		
+		        		for(Token singleToken : split) {
+		        			unigramCount++;
+		        			String singleWord = singleToken.getCoveredText();
+		        			
+		        			if(singleWord.toUpperCase().equals(singleWord)) {
+		        				containsCaps = true;
+		        			}
+		        			
+		        			for(int i=0;i<sentimentLexicons.size();i++) {
+		        				double posValue = sentimentLexicons.get(i).fetchPolarity(singleWord, new String[] {"positive"});
+		        				double negValue = sentimentLexicons.get(i).fetchPolarity(singleWord, new String[] {"negative"});
+		        				
+		        				lexi_avg[i] = lexi_avg[i] + (posValue - negValue);
+		        				
+		        				if(lexi_high[i] < posValue) {
+		        					lexi_high[i] = posValue;
+		        				}
+		        				if(lexi_low[i] > negValue) {
+		        					lexi_low[i] = negValue;
+		        				}
+		        			}
+		        		}
+		        		
+		        		for(Token singleToken : selectCovered(Token.class, sentence)) {
+		        			pos = pos + singleToken.getPos().getPosValue() + " ";
+		        		}
+		        		
+		        		for(int i=0;i<sentimentLexicons.size();i++) {
+		        			if(split.size()>0) {
+		        				singleLine.add("" + (lexi_avg[i]/split.size()));
+		        			} else {
+		        				singleLine.add("0");
+		        			}
+		        			singleLine.add("" + lexi_high[i]);
+		        			singleLine.add("" + lexi_low[i]);
+		        		}
+		        		
+		        		singleLine.add("'target_" + t1.getCoveredText().replaceAll(regexIgnore, "") + "'");
+		        		singleLine.add("'" + sentence.getCoveredText().replaceAll(regexIgnore, "") + "'");
+		        		singleLine.add("'" + pos.replaceAll(regexIgnore, "") +"'");
+		        		singleLine.add("" + unigramCount);
+		        		singleLine.add("" + ((sentence.getCoveredText().endsWith("!") || sentence.getCoveredText().endsWith("?")) ? 1 : 0));
+		        		
+		        		singleLine.add("" + selectCovered(Valence.class, sentence).size());
+		        		singleLine.add("" + (containsCaps ? 1 : 0));
+		        		
+		        		for(String negationWord : negationWords) {
+		        			singleLine.add("" + (sentence.getCoveredText().toLowerCase().contains(negationWord) ? 1 : 0));
+		    			}
+		        		
+		        		singleLine.add(ar.getAspect().replaceAll("[^\\x00-\\x7F]", ""));
+		        		singleLine.add(singleValence.getValenceRating().replaceAll("rate-me", "negative").replaceAll("UNSURE", "negative"));
+		        		
+		        		sortedLines.add(singleLine);
+		        		returnList.add(singleLine);
+		        		
+		        		valueId++;
+	        		}
 				}
 			}
 		}
@@ -412,47 +314,51 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 		negationWords.add("didn't");
 		negationWords.add("but");
 		
-		String[] types = new String[2];
-		types[0] = "positive";
-		types[1] = "negative";
+		String[] types = new String[8];
 		
-		String[] types2 = new String[8];
-		types2[0] = "Ausstattung";
-		types2[1] = "Hotelpersonal";
-		types2[2] = "Lage";
-		types2[3] = "OTHER";
-		types2[4] = "Komfort";
-		types2[5] = "Preis-Leistungs-Verhltnis";
-		types2[6] = "WLAN";
-		types2[7] = "Sauberkeit";
+		if(!useOldData) {
+			types[0] = "Ausstattung";
+			types[1] = "Hotelpersonal";
+			types[2] = "Lage";
+			types[3] = "OTHER";
+			types[4] = "Komfort";
+			types[5] = "Preis-Leistungs-Verhltnis";
+			types[6] = "WLAN";
+			types[7] = "Sauberkeit";
+		} else {
+			//load data separately for cross-checking
+			myReader = new RawJsonReviewReader();
+			myReader.folderPath = "src\\main\\resources\\SEABSA16_data";
+			myReader.useOldData = true;
+			myReader.fileExtension = ".xml";
+			myReader.external_Initialize(-1);
+			
+			types = getAspectLabelsOldData();
+		}
 		
 		for(int i=0;i<types.length;i++) {
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
 			//for nouns, verbs, adjectives
-			relations.add("AFINN numeric");
-			relations.add("BingLiu numeric");
-			relations.add("EmoLex numeric");
-			
+			relations.add("lexi1_avg numeric");
 			relations.add("lexi1_high numeric");
 			relations.add("lexi1_low numeric");
+			relations.add("lexi2_avg numeric");
 			relations.add("lexi2_high numeric");
 			relations.add("lexi2_low numeric");
+			relations.add("lexi3_avg numeric");
 			relations.add("lexi3_high numeric");
 			relations.add("lexi3_low numeric");
-			relations.add("lexi_num_of_values numeric");
 			
+			relations.add("target string");
 			relations.add("unigrams string");
-			relations.add("lemmas string");
 			relations.add("POS string");
+			relations.add("unigrams_count numeric");
 			relations.add("ends_on_special numeric");
 			
 			relations.add("different_aspects numeric");
-			relations.add("percentage_caps numeric");
-			
-			
-			relations.add("currentcategory " + generateTupel(types2));
+			relations.add("includes_capslock numeric");
 			
 			int counter=1;
 			for(String negationWord : negationWords) {
@@ -462,7 +368,11 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 			
 			relations.add("type string");
 			
-			relations.add("aspecttype " + generateTupel(new String[] {"true", "false"}));	
+			if(!useOldData) {
+				relations.add("aspecttype " + generateTupel(new String[] {"positive", "negative"}));
+			} else {
+				relations.add("aspecttype " + generateTupel(new String[] {"positive", "neutral", "negative"}));
+			}
 			
 			allClassAttributes.add(types[i]);
 			
@@ -483,60 +393,7 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 		myLog.log("Finished! Total of " + data.size() + " entries added.");
 		//we'll write out own method...
 		//writeOutput();
-		
-		//cycle through all the 
-		myLog.log("Output into Folder activated: " + outputIntoFolderActivated);
-		if(outputIntoFolderActivated) {
-			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
-			
-			for(String singleClass : allClassAttributes) {
-				setOutputFile(outputPath + "/" + singleClass + ".arff");
-
-				String completeOutput;
-				completeOutput = "@relation " + singleClass + "\n\n";
-	    		 
-	    		//write all relational attributes
-	    		for(int n=0;n<relations.get(0).size();n++) {
-	    			
-	    			String relation = relations.get(0).get(n);
-	    			
-	    			if(ignoreFeatures.length>0) {
-	    				boolean allFine=true;
-	    				for(int i=0;i<ignoreFeatures.length;i++) {
-	    					if(ignoreFeatures[i]==n) {
-	    						allFine=false;
-	    					}
-	    				}
-	    				
-	    				if(allFine) {				
-	    					completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    				}
-	    			} else {
-	    				completeOutput = completeOutput + "@attribute " + relation + "\n";
-	    			}
-	    		}
-	    		
-	    		completeOutput = completeOutput + "\n@data\n";
-	    		
-				
-	    		for(ArrayList<String> singleLine : sortedLines) {
-					if(singleLine.get(identifierAttributeAt)!=null) {
-						//????
-						if(singleLine.get(identifierAttributeAt).compareTo(singleClass)==0) {
-							completeOutput = completeOutput + generateArffLine(singleLine) + "\n";
-						}
-					}
-				}
-				
-				fu.write(completeOutput.substring(0, completeOutput.length()-1));
-				myLog.log("Wrote to '" + outputPath + "/" + singleClass + ".arff" + "'");
-				
-				
-				fu.close();
-			}
-		} else {
-			myLog.log("Output path not a folder, can't generate output files....");
-		}
+		writeOutput(sortedLines);
 	}	
 	
 	@Override

@@ -44,12 +44,7 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 	private DataParser dp;
 	private ConsoleLog myLog;
 	private FileUtils fu;
-	int i; //i=reviewCounter
-	
-	/*public RawJsonReviewReader(String folderPath) {
-		this.folderPath = folderPath;
-	}*/
-	
+	int i; 
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
 		jCas.setDocumentLanguage(PARAM_LANGUAGE);
@@ -68,17 +63,23 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
     {
         super.initialize(context);
         
+		if(paramUseOldData==null || paramUseOldData.length()==0) {
+        	useOldData = true;
+        } else {
+        	useOldData = Boolean.valueOf(paramUseOldData);
+        }
+           
         if(paramMaxDataSize==null) {
         	maxDataSize = -1;
         } else {
         	maxDataSize = Integer.valueOf(paramMaxDataSize);
         }
         
-        external_Initialize(maxDataSize);
+        external_Initialize(maxDataSize, useOldData);
         
     }
 
-	private void initFiles(int maxDataSize) {
+	private void initFiles(int maxDataSize, boolean useOldData) {
 		sourceFiles = fu.getFilesInFolder(folderPath, fileExtension, includeSubfolders);
 		
 		myLog.log("Found " + sourceFiles.size() + " source files.");
@@ -90,25 +91,23 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 		myLog.log("Added a total of " + reviewList.size() + " sentences.");
 	}
 	
-	public void external_Initialize(int maxDataSize) {
+	public void external_Initialize(int maxDataSize, boolean useOldData) {
 		if(paramIncludeSubfolders==null || paramIncludeSubfolders.length()==0) {
         	includeSubfolders = true;
         } else {
         	includeSubfolders = Boolean.valueOf(paramIncludeSubfolders);
         }
-		
-		if(paramUseOldData==null || paramUseOldData.length()==0) {
-        	useOldData = true;
-        } else {
-        	useOldData = Boolean.valueOf(paramUseOldData);
-        }
-                
+		     
         myLog = new ConsoleLog();
         dp = new DataParser();
         fu = new FileUtils();
         reviewList = new ArrayList<ReviewData>();
         
-        initFiles(maxDataSize);
+        initFiles(maxDataSize, useOldData);
+	}
+	
+	public void external_Initialize(int maxDataSize) {
+		external_Initialize(maxDataSize, useOldData);
 	}
 	
 	public int getReviewId(String textContent) {
@@ -127,6 +126,10 @@ public class RawJsonReviewReader extends JCasResourceCollectionReader_ImplBase{
 		returnValue = reviewList.get(id).getScore();
 		
 		return returnValue;
+	}
+	
+	public ArrayList<ReviewData> getReviewList() {
+		return reviewList;
 	}
 	
 	public String getText(int id) {

@@ -202,14 +202,34 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 		for(String arffFileInput : arffFileInputs) {
 			try {
 				//if learning for folds: continue from her
-				AspectClassifier foldClassifier = new AspectClassifier(kernelType, svmType, outerParameterClassifier);
-				foldClassifier.idfTransformEnabled=idfTransformEnabled;
+				ArrayList<Evaluation> allEvaluations;
+				AspectClassifier foldClassifier;
 				
-				Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
-				System.out.println(classAttributeAt);
+				myLog.log(useCFV);
 				
-				foldClassifier.folds = numFolds;
-				ArrayList<Evaluation> allEvaluations = foldClassifier.learn(data);
+				if(useCFV) {
+					foldClassifier = new AspectClassifier(kernelType, svmType, outerParameterClassifier);
+					foldClassifier.idfTransformEnabled=idfTransformEnabled;
+					
+					Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
+					System.out.println(classAttributeAt);
+					
+					foldClassifier.folds = numFolds;
+					allEvaluations = foldClassifier.learn(data);
+				} else {
+					foldClassifier = new AspectClassifier(kernelType, svmType, outerParameterClassifier);
+					foldClassifier.idfTransformEnabled=idfTransformEnabled;
+					foldClassifier.folds = 0;
+					
+					Instances train = foldClassifier.getData(arffFileInput, classAttributeAt);
+					myLog.log(arffFileInput + ".gold");
+					Instances test = foldClassifier.getData(arffFileInput + ".gold", classAttributeAt);
+					
+					myLog.log("Found training data (" + train.size() + ") and test data (" + test.size() + ").");
+					
+					allEvaluations = foldClassifier.learn(train, test);
+					numFolds = 1;
+				}
 				
 				double precision=0, recall=0, fMeasure=0, accuracy=0;
 						
@@ -247,10 +267,10 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				fn = fn/numFolds;
 				double balancedAccuracy = (tp / (tp + fn) + tn / (tn + fp))/2;
 				
-				analysisString.add("TP\t" + tp/numFolds);
-				analysisString.add("FP\t" + fp/numFolds);
-				analysisString.add("FN\t" + fn/numFolds);
-				analysisString.add("TN\t" + tn/numFolds);
+				analysisString.add("TP\t" + tp);
+				analysisString.add("FP\t" + fp);
+				analysisString.add("FN\t" + fn);
+				analysisString.add("TN\t" + tn);
 				analysisString.add("balanced accuracy\t" + balancedAccuracy);
 				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");

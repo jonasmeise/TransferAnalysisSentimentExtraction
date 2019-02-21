@@ -49,6 +49,11 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	public String paramUseOldData;
 	public boolean useOldData = false;
 	
+	public static final String PARAM_IS_TEST_DATA = "paramIsTestData";
+    @ConfigurationParameter(name = PARAM_IS_TEST_DATA, mandatory = false)
+	public String paramIsTestData;
+	public boolean isTestData = false;
+	
 	//every data-entry refers to a single line
 	public ArrayList<ArrayList<String>> relations;
 	public ArrayList<String> data; //matrix of Sentence/relation
@@ -68,6 +73,12 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
     		useOldData = Boolean.valueOf(paramUseOldData);
     	} else {
     		useOldData = false;
+    	}
+    	
+    	if(paramIsTestData!=null) {
+    		isTestData = Boolean.valueOf(paramIsTestData);
+    	} else {
+    		isTestData = false;
     	}
     	
 		relations = generateRelations();
@@ -157,7 +168,7 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 	}
 	
     public void writeOutput(ArrayList<ArrayList<String>> sortedLines) {
-    	myLog.log("Finished! Total of " + data.size() + " entries added.");
+    	myLog.log("Finished! Total of " + sortedLines.size() + " entries added.");
 		//we'll write out own method...
 		//writeOutput();
 		
@@ -167,7 +178,11 @@ public abstract class ArffGenerator extends JCasAnnotator_ImplBase{
 			myLog.log("Found that many different identifier models: " + allClassAttributes.size());
 			
 			for(String singleClass : allClassAttributes) {
-				setOutputFile(outputPath + "/" + singleClass + ".arff");
+				if(!isTestData) {
+					setOutputFile(outputPath + "/" + singleClass + ".arff");
+				} else {
+					setOutputFile(outputPath + "/" + singleClass + ".arff.gold");
+				}
 
 				String completeOutput;
 				completeOutput = "@relation " + singleClass + "\n\n";

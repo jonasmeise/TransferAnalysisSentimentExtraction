@@ -2,3 +2,7 @@ constrained	accuracy 0.7688241008667962
 constrained	balanced accuracy	0.6847770659238626
 
 
+
+
+constrained	accuracy	0.859069065067732
+unconstrained	balanced accuracy	0.8543704735376045

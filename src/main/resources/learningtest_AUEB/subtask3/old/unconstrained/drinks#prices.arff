@@ -1,0 +1,50 @@
+@relation drinks#prices
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+12,0.1,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_wine list','The wine list is interesting and has many good values ','DT NN NN VBZ JJ CC VBZ JJ JJ NNS . ',10,0,2,0,0,0,0,0,0,0,positive
+151,0.0625,0.6,0.0,0.125,1.0,0.0,0.020833333333333332,0.3333333333333333,0.0,'target_house champagne','Great wine selection, Gigondas is worth the price, and the house champagne is a great value ','JJ NN NN , NNP VBZ JJ DT NN , CC DT NN NN VBZ DT JJ NN . ',16,0,3,0,0,0,0,0,0,0,positive
+179,0.0,0.0,0.0,0.08333333333333333,1.0,0.0,0.08333333333333333,1.0,0.0,'target_wine selection','The drinks are always welll made and wine selection is fairly priced ','DT NNS VBP RB JJ VBN CC NN NN VBZ RB VBN . ',12,0,2,0,0,0,0,0,0,0,positive
+190,0.03076923076923077,0.4,0.0,0.23076923076923078,1.0,0.0,0.07692307692307693,1.0,0.0,'target_wines','The bar is very well stocked with interesting beers and well priced wines ','DT NN VBZ RB RB JJ IN JJ NNS CC RB VBN NNS . ',13,0,3,0,0,0,0,0,0,0,positive
+410,0.0,0.0,0.0,-0.045454545454545456,0.0,0.0,-0.045454545454545456,0.0,0.0,'target_wine list','The tables are crammed way too close, the menu is typical of any Italian restaurant, and the wine list is simply overpriced ','DT NNS VBP JJ NN RB JJ , DT NN VBZ JJ IN DT JJ NN , CC DT NN NN VBZ RB JJ . ',22,0,3,0,0,0,0,0,0,0,negative
+412,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_wines','Slightly above average wines start at $70+ with only one selection listed at $30+ ','RB IN JJ NNS VBP IN $ CD IN RB CD NN VBN IN $ CD . ',14,0,2,1,0,0,0,0,0,0,negative
+499,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Drinks','Drinks way over priced ','NNPS RB RB VBN . ',4,0,1,0,0,0,0,0,0,0,negative
+564,0.0,0.0,0.0,0.0,0.0,0.0,-0.00641025641025641,0.5,0.0,'target_wine','I have known about this secret for the last 13 years, Emilio(the Godfather) has continued to serve food and wine for the gods at mortal prices ','PRP VBP VBN IN DT NN IN DT JJ CD NNS , NNP -LRB- DT NNP -RRB- VBZ VBN TO VB NN CC NN IN DT NNS IN JJ NNS . ',26,0,4,1,0,0,0,0,0,0,positive
+680,0.0,0.0,0.0,-0.14285714285714285,0.0,0.0,0.07142857142857142,0.5,0.0,'target_Wine list','Wine list is extensive without being over-priced ','NN NN VBZ JJ IN VBG VBN . ',7,0,2,0,0,0,0,0,0,0,positive
+937,0.06896551724137931,0.6,-0.2,0.06896551724137931,1.0,0.0,0.06896551724137931,1.0,0.0,'target_bottle minimun','If you like your music blasted and the system isnt that great and if you want to pay at least 100 dollar bottle minimun then youll love it here ','IN PRP VBP PRP$ NN VBN CC DT NN VBZ RB RB JJ CC IN PRP VBP TO VB RB RBS CD NN NN NN RB PRP MD VB PRP RB . ',29,0,2,1,0,0,0,0,0,0,negative
+968,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','PRP MD VB DT RB JJ NNS IN DT NN -LRB- DT VBZ RB CD CD NNS -RRB- IN $ CD -LRB- PRP VBP DT NNP NNP , UH . -RRB- ',33,0,6,1,0,0,0,0,0,0,positive
+974,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','IN DT JJ NN VBG IN JJ NN . ',33,0,6,1,0,0,0,0,0,0,positive
+1130,0.08,0.6,0.0,0.2,1.0,0.0,0.1,1.0,0.0,'target_selecion of wines','The food is great and they have a good selecion of wines at reasonable prices ','DT NN VBZ JJ CC PRP VBP DT JJ NN IN NNS IN JJ NNS . ',15,0,3,0,0,0,0,0,0,0,positive
+1159,0.08571428571428572,0.6,0.0,0.0,1.0,0.0,0.07142857142857142,1.0,0.0,'target_bottles of wine','bottles of wine are cheap and good ','NNS IN NN VBP JJ CC JJ . ',7,0,2,0,0,0,0,0,0,0,positive
+1189,0.08888888888888889,0.8,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_drinks','the drinks are amazing and half off till 8pm ','DT NNS VBP JJ CC NN RB IN CD NN . ',9,0,2,0,0,0,0,0,0,0,positive
+1431,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Voss bottles of water','We were offered water for the table but were not told the Voss bottles of water were $8 a piece ','PRP VBD VBN NN IN DT NN CC VBD RB VBN DT NNP NNS IN NN VBD $ CD DT NN . ',20,0,1,1,1,0,0,0,0,1,negative
+1544,0.03636363636363637,0.4,0.0,0.09090909090909091,1.0,0.0,0.09090909090909091,0.5,0.0,'target_bev','Prices are fair across the board for both food and bev ','NNS VBP JJ IN DT NN IN DT NN CC NN . ',11,0,2,0,0,0,0,0,0,0,positive
+1678,0.08571428571428572,0.0,-0.6,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_drinks','However, our $14 drinks were were horrible ','RB , PRP$ $ CD NNS VBD VBD JJ . ',7,1,2,1,0,0,0,0,0,0,negative
+2787,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_orange juice','To start off, approximately 8-10 oz of orange juice will cost you $3 ','TO VB RP , RB CD NN IN NN NN MD VB PRP $ CD . ',13,0,1,1,0,0,0,0,0,0,negative
+2789,0.0064516129032258064,0.0,-0.2,-0.03225806451612903,0.0,0.0,-0.026881720430107524,0.0,0.0,'target_juice','They serve it in a tall, skinny hour-glass shaped glass to disguise the fact that you a getting a small juice at the price of a half gallon in a supermarket ','PRP VBP PRP IN DT JJ , JJ NN HYPH NN VBN NN TO VB DT NN IN PRP DT VBG DT JJ NN IN DT NN IN DT NN NN IN DT NN . ',31,0,2,0,0,0,0,0,0,0,negative
+2804,0.0,0.0,0.0,0.0,0.0,0.0,0.006666666666666667,0.5,0.0,'target_orange juice','In the end our check came to $27 for 4 small pancakes, a breakfast burrito, an orange juice and an iced tea (I had water) ','IN DT NN PRP$ NN VBD IN $ CD IN CD JJ NNS , DT NN NN , DT NN NN CC DT JJ NN -LRB- PRP VBD NN -RRB- . ',25,0,5,1,0,0,0,0,0,0,negative
+2805,0.0,0.0,0.0,0.0,0.0,0.0,0.006666666666666667,0.5,0.0,'target_iced tea','In the end our check came to $27 for 4 small pancakes, a breakfast burrito, an orange juice and an iced tea (I had water) ','IN DT NN PRP$ NN VBD IN $ CD IN CD JJ NNS , DT NN NN , DT NN NN CC DT JJ NN -LRB- PRP VBD NN -RRB- . ',25,0,5,1,0,0,0,0,0,0,negative

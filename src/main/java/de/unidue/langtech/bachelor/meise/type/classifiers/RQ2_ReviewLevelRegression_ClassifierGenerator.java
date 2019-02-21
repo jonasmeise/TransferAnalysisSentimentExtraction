@@ -223,7 +223,9 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     				String prefix = "";
     				
     				if(singleValence.getValenceRating()!=null && singleValence.getValenceRating().equals("negative")) {
-    					prefix = "_";
+    					prefix = "-";
+    				} else {
+    					prefix = "+";
     				}
     				
     				positiveValences += prefix + singleValence.getGovernor().getAspect() + " " + prefix + singleValence.getDependent().getAspect() + " ";
@@ -232,7 +234,9 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     				String prefix = "";
     				
     				if(singleValence.getValenceRating()!=null && singleValence.getValenceRating().equals("negative")) {
-    					prefix = "_";
+    					prefix = "-";
+    				} else {
+    					prefix = "+";
     				}
     				
     				negativeValences += prefix + singleValence.getGovernor().getAspect() + " " + prefix + singleValence.getDependent().getAspect() + " ";
@@ -248,18 +252,26 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 					singleLine.add("'" + positiveValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
 					singleLine.add("'" + negativeValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
 				} else {
-					//TODO: implement bag-of-words for thematic features
-					singleLine.add("0");
-					singleLine.add("0");
+					singleLine.add("''");
+					singleLine.add("''");
 				}
 				
 				singleLine.add("" + avgTitle);
-				singleLine.add("" + avgPos);
-				singleLine.add("" + avgNeg);
-				singleLine.add("" + maxPos);
-				singleLine.add("" + maxNeg);
-				singleLine.add("" + minPos);
-				singleLine.add("" + minNeg);
+				if(!constrained) {
+					singleLine.add("" + avgPos);
+					singleLine.add("" + avgNeg);
+					singleLine.add("" + maxPos);
+					singleLine.add("" + maxNeg);
+					singleLine.add("" + minPos);
+					singleLine.add("" + minNeg);
+				} else {
+					singleLine.add("0");
+					singleLine.add("0");
+					singleLine.add("0");
+					singleLine.add("0");
+					singleLine.add("0");
+					singleLine.add("0");
+				}
 				
 				singleLine.add("" + relationFromPosToNeg);
 				
@@ -290,7 +302,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 		myReader = new RawJsonReviewReader();
 		myReader.folderPath = xmlPath;
 		myReader.fileExtension = "output.xml";
-		myReader.external_Initialize(200);
+		myReader.external_Initialize(200, useOldData);
 		
 		myStopwordHandler = new StopwordHandler("src\\main\\resources\\stopwords.txt");	
 		

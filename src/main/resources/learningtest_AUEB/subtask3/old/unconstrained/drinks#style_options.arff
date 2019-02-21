@@ -1,0 +1,67 @@
+@relation drinks#style_options
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+11,0.1,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_wine list','The wine list is interesting and has many good values ','DT NN NN VBZ JJ CC VBZ JJ JJ NNS . ',10,0,2,0,0,0,0,0,0,0,positive
+94,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,1.0,0.0,'target_wine list','The seafood is amazing, theres a good wine list, and the ever-changing menu always offers some great surprises ','DT NN VBZ JJ , EX VBZ DT JJ NN NN , CC DT RB HYPH VBG NN RB VBZ DT JJ NNS . ',18,0,3,0,0,0,0,0,0,0,positive
+149,0.0625,0.6,0.0,0.125,1.0,0.0,0.020833333333333332,0.3333333333333333,0.0,'target_wine selection','Great wine selection, Gigondas is worth the price, and the house champagne is a great value ','JJ NN NN , NNP VBZ JJ DT NN , CC DT NN NN VBZ DT JJ NN . ',16,0,3,0,0,0,0,0,0,0,positive
+188,0.03076923076923077,0.4,0.0,0.23076923076923078,1.0,0.0,0.07692307692307693,1.0,0.0,'target_bar','The bar is very well stocked with interesting beers and well priced wines ','DT NN VBZ RB RB JJ IN JJ NNS CC RB VBN NNS . ',13,0,3,0,0,0,0,0,0,0,positive
+189,0.03076923076923077,0.4,0.0,0.23076923076923078,1.0,0.0,0.07692307692307693,1.0,0.0,'target_beers','The bar is very well stocked with interesting beers and well priced wines ','DT NN VBZ RB RB JJ IN JJ NNS CC RB VBN NNS . ',13,0,3,0,0,0,0,0,0,0,positive
+234,0.028571428571428574,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,'target_sake menu','The sake menu should not be overlooked ','DT NN NN MD RB VB VBN . ',7,1,1,0,1,0,0,0,0,0,positive
+238,0.07692307692307693,0.6,0.0,0.23076923076923078,1.0,0.0,0.15384615384615385,1.0,0.0,'target_Wine list selection','Wine list selection is good and wine-by-the-glass was generously filled to the top ','NN NN NN VBZ JJ CC NN HYPH IN HYPH DT HYPH NN VBD RB VBN IN DT NN . ',13,0,2,0,0,0,0,0,0,0,positive
+239,0.07692307692307693,0.6,0.0,0.23076923076923078,1.0,0.0,0.15384615384615385,1.0,0.0,'target_wine-by-the-glass','Wine list selection is good and wine-by-the-glass was generously filled to the top ','NN NN NN VBZ JJ CC NN HYPH IN HYPH DT HYPH NN VBD RB VBN IN DT NN . ',13,0,2,0,0,0,0,0,0,0,positive
+262,0.029411764705882353,0.6,0.0,0.058823529411764705,1.0,0.0,0.07352941176470588,1.0,0.0,'target_beers','The have over 100 different beers to offer thier guest so that made my husband very happy and the food was delicious, if I must recommend a dish it must be the pumkin tortelini ','DT VBP IN CD JJ NNS TO VB PRP$ NN IN IN VBD PRP$ NN RB JJ CC DT NN VBD JJ , IN PRP MD VB DT NN PRP MD VB DT NN NN . ',34,0,3,1,0,0,0,0,0,0,positive
+466,0.12,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_wine list','The wine list is excellent ','DT NN NN VBZ JJ . ',5,0,1,0,0,0,0,0,0,0,positive
+468,0.028571428571428574,0.8,0.0,0.03571428571428571,1.0,0.0,0.03571428571428571,0.5,0.0,'target_selection of wines','The food is amazing  especially if you get the Chefs tasting menu and your favourite bottle (or two ) of wine from an extensive selection of wines ','DT NN VBZ JJ . ',28,0,3,1,0,0,0,0,0,0,positive
+471,0.028571428571428574,0.8,0.0,0.03571428571428571,1.0,0.0,0.03571428571428571,0.5,0.0,'target_selection of wines','The food is amazing  especially if you get the Chefs tasting menu and your favourite bottle (or two ) of wine from an extensive selection of wines ','RB IN PRP VBP DT NNP POS VBG NN CC PRP$ JJ NN -LRB- CC CD . -RRB- ',28,0,3,1,0,0,0,0,0,0,positive
+474,0.028571428571428574,0.8,0.0,0.03571428571428571,1.0,0.0,0.03571428571428571,0.5,0.0,'target_selection of wines','The food is amazing  especially if you get the Chefs tasting menu and your favourite bottle (or two ) of wine from an extensive selection of wines ','IN NN IN DT JJ NN IN NNS . ',28,0,3,1,0,0,0,0,0,0,positive
+579,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_wine choices','Very good wine choices ','RB JJ NN NNS . ',4,0,1,0,0,0,0,0,0,0,positive
+679,0.0,0.0,0.0,-0.14285714285714285,0.0,0.0,0.07142857142857142,0.5,0.0,'target_Wine list','Wine list is extensive without being over-priced ','NN NN VBZ JJ IN VBG VBN . ',7,0,2,0,0,0,0,0,0,0,positive
+902,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.2222222222222222,1.0,0.0,'target_beverage selections','Good spreads, great beverage selections and bagels really tasty ','JJ NNS , JJ NN NNS CC NNS RB JJ . ',9,0,3,0,0,0,0,0,0,0,positive
+967,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','PRP MD VB DT RB JJ NNS IN DT NN -LRB- DT VBZ RB CD CD NNS -RRB- IN $ CD -LRB- PRP VBP DT NNP NNP , UH . -RRB- ',33,0,6,1,0,0,0,0,0,0,positive
+973,0.048484848484848485,0.6,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_martini','You can get a completely delish martini in a glass (thats about 2 1/2 drinks) for $8 50 (I recommend the Vanilla Shanty, mmmm ) in a great homey setting with great music ','IN DT JJ NN VBG IN JJ NN . ',33,0,6,1,0,0,0,0,0,0,positive
+1059,0.0,0.0,0.0,0.06666666666666667,1.0,0.0,0.03333333333333333,0.5,0.0,'target_wine list','The wine list is extensive and can easily hike up an otherwise reasonably priced meal ','DT NN NN VBZ JJ CC MD RB VB RP DT RB RB VBN NN . ',15,0,2,0,0,0,0,0,0,0,positive
+1062,0.0,0.0,0.0,-0.05,0.0,0.0,0.0,0.0,0.0,'target_measures of liquers','Still, any quibbles about the bill were off-set by the pour-your-own measures of liquers which were courtesey of the house ','RB , DT NNS IN DT NN VBD RB HYPH VBN IN DT VB HYPH PRP$ HYPH JJ NNS IN NNS WDT VBD RB IN DT NN . ',20,0,2,0,0,0,0,0,0,0,positive
+1083,0.12727272727272726,0.6,0.0,0.2727272727272727,1.0,0.0,0.18181818181818182,1.0,0.0,'target_beer','A cool bar with great food, and tons of excellent beer ','DT JJ NN IN JJ NN , CC NNS IN JJ NN . ',11,0,4,1,0,0,0,0,0,0,positive
+1129,0.08,0.6,0.0,0.2,1.0,0.0,0.1,1.0,0.0,'target_selecion of wines','The food is great and they have a good selecion of wines at reasonable prices ','DT NN VBZ JJ CC PRP VBP DT JJ NN IN NNS IN JJ NNS . ',15,0,3,0,0,0,0,0,0,0,positive
+1144,0.0,0.0,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_wines by the glass','Not enough wines by the glass either ','RB JJ NNS IN DT NN RB . ',7,0,1,0,1,0,0,0,0,0,negative
+1427,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_drink menu','Love their drink menu ','VB PRP$ NN NN . ',4,0,1,0,0,0,0,0,0,0,positive
+1505,0.0,0.0,0.0,0.0625,1.0,0.0,0.03125,0.5,0.0,'target_wine list','The wine list was extensive - though the staff did not seem knowledgeable about wine pairings ','DT NN NN VBD JJ : IN DT NN VBD RB VB JJ IN NN NNS . ',16,0,2,1,1,0,0,0,0,0,positive
+1608,0.21818181818181817,0.6,0.0,0.36363636363636365,1.0,0.0,0.0,0.0,0.0,'target_wine list','great food, great wine list, great service in a great neighborhood ','JJ NN , JJ NN NN , JJ NN IN DT JJ NN . ',11,0,4,0,0,0,0,0,0,0,positive
+1832,0.01818181818181818,0.6,0.0,0.09090909090909091,1.0,0.0,0.015151515151515152,0.5,0.0,'target_wine list','The place has a nice fit-out, some attractive furnishings and, from what I could tell, a reasonable wine list (I was given the food menu when I asked for the carte des vins) ','DT NN VBZ DT JJ NN HYPH NN , DT JJ NNS CC , IN WP PRP MD VB , DT JJ NN NN -LRB- PRP VBD VBN DT NN NN WRB PRP VBD IN DT NN NNS VBZ -RRB- ',33,0,4,1,0,0,0,0,0,0,positive
+1964,0.05,0.8,0.0,0.0625,1.0,0.0,0.09375,1.0,0.0,'target_wine list','The wine list is wonderful and the food reminds me of my recent trip to Italy ','DT NN NN VBZ JJ CC DT NN VBZ PRP IN PRP$ JJ NN IN NNP . ',16,0,2,0,0,0,0,0,0,0,positive
+1971,0.022222222222222223,0.6,0.0,0.1111111111111111,1.0,0.0,0.07407407407407407,1.0,0.0,'target_wine list','The wine list is incredible and extensive and diverse, the food is all incredible and the staff was all very nice, good at their jobs and cultured ','DT NN NN VBZ JJ CC JJ CC JJ , DT NN VBZ DT JJ CC DT NN VBD DT RB JJ , JJ IN PRP$ NNS CC JJ . ',27,0,3,0,0,0,0,0,0,0,positive
+2064,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_draft and bottle selection','Great draft and bottle selection and the pizza rocks ','JJ NN CC NN NN CC DT NN NNS . ',9,0,2,0,0,0,0,0,0,0,positive
+2072,0.13846153846153844,0.8,0.0,0.23076923076923078,1.0,0.0,0.14102564102564102,1.0,0.0,'target_beer selection','The owners are great fun and the beer selection is worth staying for ','DT NNS VBP JJ NN CC DT NN NN VBZ JJ VBG IN . ',13,0,2,0,0,0,0,0,0,0,positive
+2217,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Winelist','Seattles BEST Winelist ','NNP POS NNP NNP ',3,0,1,1,0,0,0,0,0,0,positive
+2218,0.0,0.0,0.0,0.0,1.0,0.0,0.041666666666666664,1.0,0.0,'target_wine list',' Rays (suprisingly) has the citys BEST &amp; most diverse wine list ','NNP POS -LRB- RB -RRB- VBZ DT NN POS NNP CC NN : JJS JJ NN NN . ',12,0,1,1,0,0,0,0,0,0,positive
+2315,0.015384615384615385,0.0,-0.2,0.0,0.0,0.0,-0.012820512820512818,0.5,0.0,'target_wine list','The restaurant offers an extensive wine list and an ambiance you wont forget ','DT NN VBZ DT JJ NN NN CC DT NN PRP MD RB VB . ',13,1,2,0,0,1,0,0,0,0,positive
+2489,0.0,0.0,0.0,0.0,0.0,0.0,-0.045454545454545456,0.0,0.0,'target_NULL','All their menu items are a hit, and they serve mimosas ','DT PRP$ NN NNS VBP DT NN , CC PRP VBP NNS . ',11,0,2,0,0,0,0,0,0,0,positive
+2559,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_selection of sakes','Great selection of sakes ','JJ NN IN NNS . ',4,0,1,0,0,0,0,0,0,0,positive
+2583,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_sake selection','good sake selection ','JJ NN NN . ',3,0,1,0,0,0,0,0,0,0,positive
+2607,0.048,0.4,-0.2,0.08,1.0,0.0,0.1,1.0,0.0,'target_bar tenders','The music is great, no night better or worse, the bar tenders are generous with the pouring, and the lighthearted atmosphere will lifts you spirits ','DT NN VBZ JJ , DT NN RBR CC RBR , DT NN NNS VBP JJ IN DT NN , CC DT JJ NN MD VBZ PRP NNS . ',25,0,3,0,0,0,0,0,0,0,positive
+2788,0.0064516129032258064,0.0,-0.2,-0.03225806451612903,0.0,0.0,-0.026881720430107524,0.0,0.0,'target_juice','They serve it in a tall, skinny hour-glass shaped glass to disguise the fact that you a getting a small juice at the price of a half gallon in a supermarket ','PRP VBP PRP IN DT JJ , JJ NN HYPH NN VBN NN TO VB DT NN IN PRP DT VBG DT JJ NN IN DT NN IN DT NN NN IN DT NN . ',31,0,2,0,0,0,0,0,0,0,negative

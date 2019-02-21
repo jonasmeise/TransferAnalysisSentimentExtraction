@@ -1,0 +1,621 @@
+@relation drinks#style_options
+
+@attribute id numeric
+@attribute lemmas string
+@attribute bigrams string
+@attribute aspecttype {true, false}
+
+@data
+8,'','',false
+20,'serve really good ','serve_really really_good good_ ',false
+32,'not the big portion but ','not_the the_big big_portion portion_but but_ ',false
+44,'green tea creme brulee ','green_tea tea_creme creme_brulee brulee_ _ _ ',false
+56,'leave the restaurant without ','_leave leave_the the_restaurant restaurant_without without_ ',false
+68,'comparison ','_comparison ',false
+80,'say enough about this ','_ _ _say say_enough enough_about about_this this_ ',false
+92,'have great sushi and even good ','_have have_great great_sushi sushi_and and_even even_good good_ ',false
+104,'the entire staff be extremely accomodating and tend every ','the_entire entire_staff staff_be be_extremely extremely_accomodating accomodating_and and_tend tend_ _ _every every_ ',false
+116,'be this restaurant over dozen time with complaint ','_be be_ _this this_restaurant restaurant_over over_ _dozen dozen_time time_with with_ _complaint complaint_ _ ',false
+128,'snotty attitude ','snotty_attitude ',false
+140,'be treat very rudely here #crd# time for ','_ _be be_treat treat_very very_rudely rudely_here here_#crd# #crd#_time time_for for_ ',false
+152,'the owner belligerent guest that have ','the_owner owner_ _belligerent belligerent_ _guest guest_that that_have have_ _ ',false
+164,'good ','good_ ',false
+176,'this great place get delicious ','this_ _ _great great_place place_ _get get_ _delicious delicious_ ',false
+188,'never have wait more than ','_never never_have have_ _wait wait_more more_than than_ _ ',false
+200,'the staff pretty ','the_staff staff_ _pretty pretty_ ',false
+212,'the onion ring be ','the_onion onion_ring ring_be be_ ',false
+224,'they be not greasy ','they_be be_not not_greasy greasy_ _ ',false
+236,'overrate ','',false
+248,'be highly disappointed the food ','_ _be be_highly highly_disappointed disappointed_ _the the_food food_ _ ',false
+260,'the lemon chicken taste like sticky sweet donut and the the honey walnut the the few they actually give you.were not ','the_lemon lemon_chicken chicken_taste taste_like like_sticky sticky_sweet sweet_donut donut_and and_the the_honey honey_walnut walnut_ _the the_few few_they they_actually actually_give give_you.were you.were_not not_ ',false
+272,'nice but highly overrated ','nice_ _but but_highly highly_overrated overrated_ ',false
+284,'will not ','_will will_not not_ _ ',false
+296,'bad service ever have ','bad_service service_ _ever ever_have ',false
+308,'everyone that that sit the the back outside agree that that be the the bad service have ever ','everyone_that that_sit sit_ _the the_back back_outside outside_agree agree_that that_ _be be_the the_bad bad_service service_ _have have_ever ever_ ',false
+320,'our waiter be non-existent and after after our food finally arrive over hour after after be not give any water ','our_waiter waiter_be be_non-existent non-existent_and and_after after_our our_food food_finally finally_arrive arrive_over over_ _hour hour_after after_ _ _ _be be_not not_give give_any any_water water_ _ ',false
+332,'complain the but be not even ','_complain complain_ _the the_ _but but_ _be be_not not_even even_ ',false
+344,'will never return ','_will will_never never_return return_ ',false
+356,'fabulous italian ','fabulous_italian italian_ ',false
+368,'highly recommend ','_ _highly highly_recommend recommend_ ',false
+380,'happy have wonderful italian restaurant ','_ _ _happy happy_ _have have_ _wonderful wonderful_italian italian_restaurant restaurant_ _ _ ',false
+392,'the wine list wonderful and the food remind recent trip ','the_wine wine_list list_ _wonderful wonderful_and and_the the_food food_remind remind_ _ _ _recent recent_trip trip_ _ ',true
+404,'love this restaurant ','_love love_this this_restaurant ',false
+416,'will never forget the amazing and ambiance experience this ','_ _will will_never never_forget forget_the the_amazing amazing_ _ _and and_ambiance ambiance_ _experience experience_ _this this_ ',false
+428,'be absolutely ','_be be_absolutely absolutely_ ',false
+440,'the wine list incredible incredible and and and and extensive and and and and the the food all all incredible incredible and and and and the the staff be all all very good their job and and and and ','the_wine wine_list list_ _incredible incredible_and and_extensive extensive_and and_ _the the_food food_ _all all_incredible incredible_and and_the the_staff staff_be be_all all_very very_ _good good_ _their their_job job_and and_ ',true
+452,'have not bad thing say about this ','_have have_not not_ _bad bad_thing thing_ _say say_about about_this this_ ',false
+464,'','',false
+476,'wait back again this come ','_ _wait wait_ _ _back back_again again_this this_come come_ ',false
+488,'','_ ',false
+500,'','_ ',false
+512,'the food be ','the_food food_be be_ ',false
+524,'*very* reasonably esp for the the quality the the ','_*very* *very*_reasonably reasonably_ _esp esp_for for_the the_quality quality_ _the the_ ',false
+536,'have the kafta plate and be ','_have have_the the_kafta kafta_plate plate_and and_ _be be_ ',false
+548,'go ','_go go_ _ ',false
+560,'','_ _ _ ',false
+572,'finally meal that you will remember for long ','finally_ _meal meal_that that_you you_will will_remember remember_for for_ _long long_ ',false
+584,'age incremental cost cutting its nice see place that that buck that that and and just plain deliver high quality food and and good ','_ _ _age age_ _incremental incremental_cost cost_cutting cutting_ _ _its its_nice nice_ _see see_ _place place_that that_buck buck_that that_ _and and_just just_plain plain_deliver deliver_high high_quality quality_food food_and and_good good_ _ ',false
+596,'this the the the place relax and enjoy the the the fine quality food the the the industry can ','this_ _the the_place place_ _relax relax_and and_enjoy enjoy_the the_fine fine_quality quality_food food_the the_industry industry_can can_ ',false
+608,'caution its real food for people who love the ','caution_ _its its_real real_food food_for for_people people_who who_love love_the the_ ',false
+620,'very disappointing ','very_disappointing ',false
+632,'take parent here for their very very ','_ _take take_ _parent parent_here here_for for_their their_ _very very_ ',false
+644,'like the the the atmosphere very much but the the the food be not worth the the the ','_like like_the the_atmosphere atmosphere_very very_much much_but but_the the_food food_be be_not not_worth worth_the the_ ',false
+656,'may not not sushi guru but can tell you that that the food here just okay and that that there not not much else ','_may may_not not_ _ _sushi sushi_guru guru_but but_ _can can_tell tell_you you_that that_the the_food food_here here_ _just just_okay okay_and and_that that_there there_ _not not_much much_else else_ _ ',false
+668,'rice too tuna fresh ','rice_ _too too_ _tuna tuna_ _ _fresh fresh_ ',false
+680,'nothing really come across ','nothing_really really_come come_across across_ _ ',false
+692,'very ','very_ ',false
+704,'have have eat here #crd# time and and have have find the the quality and and variety the the fish ','_have have_eat eat_here here_#crd# #crd#_time time_and and_have have_find find_the the_quality quality_and and_variety variety_ _the the_fish fish_ _ _ ',false
+716,'the value and service be both severely ','_the the_value value_and and_service service_be be_both both_severely severely_ ',false
+728,'while the fish unquestionably roll tend inexplicably ','_while while_the the_fish fish_ _unquestionably unquestionably_ _roll roll_tend tend_ _ _inexplicably inexplicably_ ',false
+740,'the service range from mediocre ','the_service service_range range_from from_mediocre mediocre_ _ ',false
+752,'recent our waiter be extremely while less than #crd# staff member wait pair japanese girl seat ','_ _recent recent_ _our our_waiter waiter_be be_extremely extremely_ _while while_ _less less_than than_#crd# #crd#_staff staff_member member_wait wait_ _ _ _pair pair_ _japanese japanese_girl girl_seat seat_ ',false
+764,'be then charge for their most expensive sake sake per when fact drink sake sake less than half that ','_be be_then then_charge charge_for for_their their_most most_expensive expensive_sake sake_ _per per_ _when when_ _ _fact fact_drink drink_ _sake sake_ _less less_than than_half half_that that_ ',false
+776,'fresh sushi love this ','fresh_sushi sushi_ _ _ _love love_this this_ ',false
+788,'they pay such detail everything from miso soup complex ','they_pay pay_such such_detail detail_ _everything everything_from from_miso miso_soup soup_ _complex complex_ ',false
+800,'the sashimi be the fresh and most tender have ever ','the_sashimi sashimi_be be_the the_fresh fresh_and and_most most_tender tender_ _have have_ever ever_ ',false
+812,'their app be all ','their_app app_be be_all all_ ',false
+824,'the only drawback that this place really expensive and the the portion be the the small ','the_only only_drawback drawback_ _that that_this this_place place_ _really really_expensive expensive_and and_the the_portion portion_be be_ _the the_small small_ ',false
+836,'but the the space small and and and and the the service ','but_the the_space space_ _small small_and and_ _and and_the the_service service_ _ ',false
+848,'you be bind have very charming ','you_be be_bind bind_ _have have_ _very very_charming charming_ ',false
+860,'not ','not_ ',false
+872,'the food be not great the waiter be ','_the the_food food_be be_not not_great great_ _the the_waiter waiter_be be_ ',false
+884,'not worth go all and spend your money ','_ _not not_worth worth_go go_ _all all_and and_spend spend_your your_money money_ ',false
+896,'great service ','great_service ',false
+908,'pretty cheap for sit down mexican and ','_pretty pretty_cheap cheap_for for_sit sit_down down_mexican mexican_and and_ ',false
+920,'service be ','_service service_be be_ ',false
+932,'the bus boy even spot that table be shake stabilize for ','the_bus bus_boy boy_even even_spot spot_that that_ _table table_be be_shake shake_ _stabilize stabilize_ _for for_ ',false
+944,'food be with some ','food_be be_ _with with_ _some some_ _ ',false
+956,'the area you you ','_ _ _the the_area area_you you_ _ _ ',false
+968,'','_ _ _ _ _ _ _ _ _ ',false
+980,'maybe go bad ','_ _maybe maybe_ _go go_ _ _ _bad bad_ ',false
+992,'the the the food be be the the the margarita too too but the the the waitress be be too too busy be nice her other large party than take good care friend and ','the_food food_be be_ _the the_margarita margarita_too too_but but_the the_waitress waitress_be be_too too_busy busy_be be_nice nice_ _her her_other other_large large_party party_than than_ _take take_good good_care care_ _ _friend friend_and and_ ',false
+1004,'take forever get get our our order water refill be too much ask for for and the only time she be be fast be be when when ask for for our our bill when when could get get her ','take_forever forever_ _get get_our our_order order_ _water water_refill refill_be be_too too_much much_ _ask ask_for for_and and_the the_only only_time time_she she_be be_fast fast_be be_when when_ _ask ask_for for_our our_bill bill_when when_ _could could_get get_her her_ ',false
+1016,'know ','_ _know know_ _ _ _ ',false
+1028,'mama mia live live the neighborhood and feel lucky live live such great pizza ','mama_mia mia_ _ _live live_ _the the_neighborhood neighborhood_and and_feel feel_lucky lucky_ _live live_ _such such_ _great great_pizza pizza_ ',false
+1040,'the the only problem you you really have warm the the pizza before even when you you order ','the_only only_problem problem_ _you you_really really_have have_ _warm warm_ _the the_pizza pizza_before before_ _ _even even_when when_you you_order order_ ',false
+1052,'but once not not not too too too much much much not not not too too too much much much not not not too too too much much much ','but_once once_ _ _not not_too too_much much_ _not not_too too_much much_ _not not_too too_much much_ ',false
+1064,'good sushi ','good_sushi sushi_ _ ',false
+1076,'everything you want and very ','everything_you you_want want_and and_ _very very_ ',false
+1088,'its worth the the especially since give you call when the the table ','its_worth worth_the the_ _especially especially_since since_ _give give_you you_ _call call_when when_the the_table table_ _ ',false
+1100,'the good calamari ','the_good good_calamari calamari_ _ ',false
+1112,'','_ _ _ ',false
+1124,'the the good summertime deck will even bring you you blanket you you get cold the the seattle evening ','_ _the the_good good_summertime summertime_deck deck_ _will will_even even_bring bring_you you_ _blanket blanket_ _you you_get get_cold cold_ _the the_seattle seattle_evening evening_ ',false
+1136,'perfect place take out town guest any time the ','_perfect perfect_place place_ _take take_out out_ _town town_guest guest_any any_time time_ _the the_ ',false
+1148,'endless awesome great ','endless_ _awesome awesome_ _great great_ ',false
+1160,'far the the good bar the the east ','_ _far far_the the_good good_bar bar_ _the the_east east_ ',false
+1172,'go there with some friend #crd# night play bingo and and watch the sox game and and be ','_go go_there there_with with_some some_friend friend_#crd# #crd#_night night_ _play play_bingo bingo_and and_watch watch_the the_sox sox_game game_and and_ _be be_ _ ',false
+1184,'every time call the bartender buy everyone ','every_time time_ _ _call call_the the_bartender bartender_buy buy_everyone everyone_ ',false
+1196,'be there lot since and its always good ','be_there there_lot lot_since since_and and_its its_always always_ _good good_ ',false
+1208,'great draft and and bottle selection and and the pizza ','great_draft draft_and and_bottle bottle_selection selection_and and_the the_pizza pizza_ ',true
+1220,'definitely have #crd# the good see long long long long ','definitely_have have_#crd# #crd#_ _the the_good good_ _ _see see_ _ _long long_long long_ ',false
+1232,'find new home second ','_find find_ _new new_home home_ _second second_ ',false
+1244,'just there and see for ','just_ _there there_and and_see see_for for_ ',false
+1256,'the food the bartender that extra ','the_food food_ _ _the the_bartender bartender_ _that that_extra extra_ ',false
+1268,'you need watch your they will have for ','you_need need_ _watch watch_your your_ _they they_will will_have have_ _ _for for_ ',false
+1280,'the owner be great fun and the beer selection worth stay ','the_owner owner_be be_great great_fun fun_and and_the the_beer beer_selection selection_ _worth worth_stay stay_ ',true
+1292,'and the upstairs great place hang ','and_the the_upstairs upstairs_ _ _great great_place place_ _hang hang_ ',false
+1304,'not alot smoking smoking place leave new but have find favorite smoking smoking balconey the ','not_alot alot_ _smoking smoking_place place_leave leave_ _new new_ _but but_ _have have_find find_ _favorite favorite_smoking smoking_balconey balconey_ _the the_ ',false
+1316,'kudos these ','kudos_ _these these_ ',false
+1328,'find new home and just move with long ','_find find_ _new new_home home_and and_just just_move move_with with_ _long long_ ',false
+1340,'the sushi here ','the_sushi sushi_here here_ _ ',false
+1352,'they have wide variety fish and they they even list which ocean they they come atlantic ','they_have have_ _wide wide_variety variety_ _fish fish_and and_they they_even even_list list_which which_ocean ocean_they they_come come_ _atlantic atlantic_ _ ',false
+1364,'have the the horse blue fin tuna and and the the sake ikura roll among and and they be all ','_have have_the the_ _horse horse_ _blue blue_fin fin_tuna tuna_and and_the the_sake sake_ikura ikura_roll roll_among among_ _and and_they they_be be_all all_ ',false
+1376,'only negative comment that wish the piece be little ','_only only_negative negative_comment comment_ _that that_ _wish wish_the the_piece piece_be be_ _little little_ ',false
+1388,'the decor traditional ','the_decor decor_ _ _traditional traditional_ ',false
+1400,'the crowd mixed young and ','the_crowd crowd_ _mixed mixed_ _young young_and and_ ',false
+1412,'the service be courteous and ','the_service service_be be_courteous courteous_and and_ ',false
+1424,'mediocre food ','mediocre_food ',false
+1436,'the outside patio area have abbreviate ','the_outside outside_patio patio_area area_have have_ _abbreviate abbreviate_ ',false
+1448,'and both agree the the food be very mediocre especially consider the the ','_ _and and_ _both both_agree agree_the the_food food_be be_very very_mediocre mediocre_especially especially_consider consider_the the_ ',false
+1460,'be be and get the the feeling the the only way this place survive with such average food because most customer be be probably customer ','_be be_ _and and_get get_the the_feeling feeling_the the_only only_way way_this this_place place_survive survive_with with_such such_average average_food food_ _because because_most most_customer customer_be be_probably probably_ _customer customer_ ',false
+1472,'service be ','service_be be_ ',false
+1484,'drink be ','drink_be be_ ',false
+1496,'unless you be just stop for few drink recommend go ','unless_you you_be be_just just_stop stop_ _for for_ _few few_drink drink_ _ _recommend recommend_go go_ ',false
+1508,'you be likely ','you_be be_likely likely_ _ _ ',false
+1520,'excellent nice fairly expensive ','excellent_ _nice nice_ _fairly fairly_expensive ',false
+1532,'love love the the pumpkin ravioli and and and the the goat cheese gnocchi big #crd# plate instead little and and and sister love love her filet mignon top spinach and and and mashed ','_ _love love_the the_pumpkin pumpkin_ravioli ravioli_and and_the the_goat goat_cheese cheese_gnocchi gnocchi_ _big big_#crd# #crd#_ _ _plate plate_instead instead_ _ _ _ _little little_ _and and_ _sister sister_love love_her her_filet filet_mignon mignon_ _top top_ _spinach spinach_and and_mashed mashed_ ',false
+1544,'the ambiance be peaceful and relax break amongst all the kid run around downtown ','the_ambiance ambiance_be be_ _peaceful peaceful_and and_relax relax_break break_amongst amongst_all all_the the_kid kid_run run_around around_ _downtown downtown_ ',false
+1556,'be romantic and and and even even nice even even with remind and and and have artwork and and and music that keep the feeling be mediterrean ','_be be_romantic romantic_ _and and_even even_nice nice_even even_with with_ _ _remind remind_ _ _ _and and_have have_artwork artwork_and and_music music_that that_keep keep_ _the the_feeling feeling_ _be be_ _ _mediterrean mediterrean_ ',false
+1568,'recommend for night when you want ','_recommend recommend_ _for for_ _night night_when when_you you_want want_ _ _ _ _ _ _ ',false
+1580,'be bit ','_ _ _ _ _ _ _ _ _ _ _ _be be_ _bit bit_ ',false
+1592,'good indian food l.a. ','good_indian indian_food food_ _l.a. ',false
+1604,'the good thing the price be also quite ','the_good good_thing thing_ _the the_price price_be be_also also_quite quite_ ',false
+1616,'the chicken chicken curry and chicken chicken tikka masala be favorite meat ','the_chicken chicken_curry curry_and and_chicken chicken_tikka tikka_masala masala_be be_ _favorite favorite_meat meat_ ',false
+1628,'the chana masala be also ','the_chana chana_masala masala_ _ _be be_also also_ ',false
+1640,'locate strip mall near the the the beverly not the the the great but the the the food keep come back for ','_locate locate_ _ _strip strip_mall mall_near near_the the_beverly beverly_ _not not_the the_great great_ _but but_the the_food food_keep keep_ _come come_back back_for for_ ',false
+1652,'hide little jem ','hide_little little_jem ',false
+1664,'tuck away over the beverly ','_tuck tuck_away away_over over_ _the the_beverly beverly_ ',false
+1676,'never too crowded and always great ','never_too too_crowded crowded_and and_always always_great great_ ',false
+1688,'think have probably try each item their menu least once all ','_think think_ _have have_probably probably_try try_each each_item item_ _their their_menu menu_ _least least_once once_ _ _all all_ ',false
+1700,'can highly recommend their various saag and and paneer and and ','_can can_highly highly_recommend recommend_their their_various various_saag saag_and and_paneer paneer_and and_ ',false
+1712,'you routinely see indian family and friend dining which always good ','you_routinely routinely_see see_indian indian_family family_and and_friend friend_dining dining_ _which which_ _always always_ _good good_ ',false
+1724,'appreciate their delivery ','_appreciate appreciate_their their_delivery delivery_ ',false
+1736,'nice food but ','nice_food food_but but_ _ ',false
+1748,'really enjoy meal ','_ _really really_enjoy enjoy_ _meal meal_ ',false
+1760,'have yummy lamb saag etc. ','_have have_yummy yummy_lamb lamb_ _saag saag_ _ _ _etc. ',false
+1772,'the food be be all good but be be way too ','the_food food_be be_all all_good good_but but_ _be be_way way_too too_ ',false
+1784,'place ask how hot you want but they ','_place place_ask ask_how how_hot hot_you you_want want_ _but but_they they_ ',false
+1796,'should have think bring but never expect the food that ','_should should_have have_think think_ _bring bring_ _ _but but_never never_expect expect_the the_food food_ _ _that that_ ',false
+1808,'the naan be some the the good have and really enjoy the the not too ','the_naan naan_be be_some some_ _the the_good good_ _have have_and and_ _really really_enjoy enjoy_the the_ _not not_too too_ ',false
+1820,'even the which normally find too be ','even_the the_ _which which_ _normally normally_find find_too too_ _be be_ ',false
+1832,'and they package everything nicely ','and_they they_package package_everything everything_nicely nicely_ _ _ _ ',false
+1844,'awesome find ','awesome_find ',false
+1856,'understand how be stranger this place for ','_ _ _understand understand_how how_ _be be_ _stranger stranger_ _this this_place place_for for_ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+1868,'the the the fajita the the the the the the fajitas everything ','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _the the_fajita fajita_ _the the_ _the the_fajitas fajitas_ _everything everything_ _ ',false
+1880,'love the warm cosy ','_love love_the the_warm warm_ _cosy cosy_ ',false
+1892,'just find out that you can have the place yourself night and weekend for private party wait celebrate next birthday ','_just just_find find_out out_that that_you you_can can_have have_the the_place place_ _yourself yourself_ _night night_and and_weekend weekend_for for_ _private private_party party_ _ _wait wait_ _celebrate celebrate_ _next next_birthday birthday_ ',false
+1904,'good restaurant the great great great great customer friendly manager ','good_restaurant restaurant_ _the the_ _great great_ _great great_customer customer_ _friendly friendly_manager ',false
+1916,'never disappoint with there ','_ _never never_disappoint disappoint_with with_there there_ ',false
+1928,'the atmosphere ','the_atmosphere atmosphere_ _ ',false
+1940,'great lunch spot ','great_lunch lunch_spot ',false
+1952,'great financial district mexican ','_great great_financial financial_district district_mexican mexican_ ',false
+1964,'always but they be good seat you promptly and have quick ','always_ _but but_they they_be be_good good_ _seat seat_you you_promptly promptly_and and_have have_quick quick_ ',false
+1976,'everything have here taco enchiladas love this ','everything_ _have have_here here_ _ _taco taco_ _ _enchiladas enchiladas_ _love love_this this_ ',false
+1988,'also have great ','also_have have_great great_ ',false
+2000,'you can order you have get back the office ','you_can can_order order_ _ _ _you you_have have_ _get get_back back_ _the the_office office_ ',false
+2012,'lebanese ','lebanese_ ',false
+2024,'','',false
+2036,'be open sesame only but still reel from the ','_ _be be_ _open open_sesame sesame_only only_ _but but_ _still still_reel reel_from from_the the_ ',false
+2048,'the food simply ','the_food food_ _simply simply_ ',false
+2060,'the presentation the food be add look just great ','the_presentation presentation_ _the the_food food_be be_ _add add_ _ _look look_just just_ _great great_ _ _ ',false
+2072,'good good friend have the the chicken shawarma and she still rave about be the the good good ','_good good_friend friend_have have_the the_chicken chicken_shawarma shawarma_and and_she she_still still_rave rave_about about_ _be be_the the_good good_ ',false
+2084,'what flaky ','what_ _ _flaky flaky_ ',false
+2096,'the staff be friendly and and the decor be ethic and and ','the_staff staff_be be_friendly friendly_and and_the the_decor decor_be be_ethic ethic_and and_ ',false
+2108,'open ','_ _open open_ ',false
+2120,'holy ','holy_ ',false
+2132,'the food here though the quality inconsistent during ','_the the_food food_ _here here_ _ _though though_the the_quality quality_ _inconsistent inconsistent_during during_ ',false
+2144,'dinner have always be term food ','dinner_have have_always always_be be_ _ _term term_ _food food_ ',false
+2156,'the open sesame combo plate bargain for the heap food ','the_open open_sesame sesame_combo combo_plate plate_ _ _bargain bargain_for for_the the_heap heap_ _food food_ ',false
+2168,'the side potato die the labne ','the_side side_ _potato potato_ _ _die die_ _ _ _the the_labne labne_ _ ',false
+2180,'they serve the good hummus with drizzle fragrant olive oil believe the traditional ','_they they_serve serve_the the_good good_hummus hummus_ _ _with with_ _drizzle drizzle_ _fragrant fragrant_olive olive_oil oil_ _ _believe believe_ _the the_traditional traditional_ ',false
+2192,'the only drawback the the crowded seating and the the slow ','the_only only_drawback drawback_ _the the_crowded crowded_seating seating_and and_the the_slow slow_ ',false
+2204,'there have be several occasion when just not get some side dish ','there_have have_be be_several several_occasion occasion_when when_ _just just_not not_get get_some some_side side_dish dish_ _ ',false
+2216,'this place and stop go ','_this this_place place_ _ _ _and and_ _ _stop stop_go go_ ',false
+2228,'great beer ','great_beer ',false
+2240,'#ord# time dine this restaurant be be with son and be be absolutely ','_ _#ord# #ord#_time time_ _dine dine_ _this this_restaurant restaurant_be be_with with_ _son son_and and_ _be be_absolutely absolutely_ ',false
+2252,'wait over over minute for for our our drink and over over 0 hour for for our our ','_wait wait_over over_ _minute minute_for for_our our_drink drink_and and_over over_ _0 0_hour hour_for for_our our_ ',false
+2264,'swear never return for warm beer and mediocre ','_swear swear_never never_ _return return_for for_ _warm warm_beer beer_and and_mediocre mediocre_ ',false
+2276,'#crd# sunday afternoon husband and and do with loud and and be pleasantly ','_#crd# #crd#_sunday sunday_afternoon afternoon_ _husband husband_and and_ _do do_ _ _with with_ _loud loud_ _and and_be be_pleasantly pleasantly_ ',false
+2288,'the band be be very good and the service be be ','the_band band_be be_very very_good good_and and_the the_service service_be be_ ',false
+2300,'order selection the the small and and the the shoe string goat cheese grill asparagus and and fry brie with fruit be all very ','_order order_ _selection selection_ _the the_small small_ _and and_the the_shoe shoe_string string_ _goat goat_cheese cheese_ _grill grill_asparagus asparagus_and and_fry fry_brie brie_with with_fruit fruit_be be_all all_very very_ ',false
+2312,'be like dining completely different ','_be be_like like_dining dining_ _ _completely completely_different different_ ',false
+2324,'have since return and and and also have great sample more small plate and and and variety the beer cold and and and ','_have have_since since_return return_and and_also also_have have_ _great great_ _sample sample_more more_small small_plate plate_and and_ _variety variety_ _the the_beer beer_ _cold cold_and and_ ',false
+2336,'do have the the the same waiter the the the #ord# maybe the the the service spotty and our luck ','_do do_have have_the the_same same_waiter waiter_the the_#ord# #ord#_ _ _maybe maybe_the the_service service_ _spotty spotty_and and_our our_luck luck_ _ ',false
+2348,'sunday afternoon there band play and lot ','sunday_afternoon afternoon_there there_ _ _band band_play play_and and_ _ _lot lot_ _ ',false
+2360,'best winelist ','_best best_winelist ',true
+2372,'have the best most diverse wine ','_ _ _have have_the the_ _best best_ _most most_diverse diverse_wine wine_ ',true
+2384,'the sommelier extremely ','the_sommelier sommelier_ _ _ _ _extremely extremely_ ',false
+2396,'would back for the wine experience ','_would would_ _back back_for for_the the_wine wine_experience experience_ ',false
+2408,'nice ','nice_ ',false
+2420,'not the place once be ','not_the the_place place_ _once once_be ',false
+2432,'sad see place place place that that be once place place place meet and eat for bfast now the place place place that that big ','_ _ _sad sad_ _see see_ _place place_that that_be be_once once_ _place place_ _meet meet_and and_eat eat_for for_bfast bfast_ _ _now now_ _the the_place place_that that_ _ _big big_ _ ',false
+2444,'','_ _ _ _ _ _ _ _ _ ',false
+2456,'the food not what once be have have have seriously see price have have have go and the the service the the bad have have have experience anywhere mainland ','the_food food_ _not not_what what_ _once once_be be_ _have have_seriously seriously_see see_ _price price_have have_go go_ _and and_the the_service service_ _the the_bad bad_ _have have_experience experience_anywhere anywhere_ _mainland mainland_ ',false
+2468,'what may interesting most the the bad come from the the owner this ','what_may may_ _interesting interesting_ _most most_ _the the_bad bad_ _come come_from from_the the_owner owner_ _this this_ ',false
+2480,'this establishment really make mark decline after and this recur story the airing food television and host guy which schooner later be subject ','this_establishment establishment_really really_make make_ _mark mark_decline decline_after after_ _and and_this this_ _recur recur_story story_ _the the_airing airing_ _food food_television television_ _ _and and_ _host host_ _guy guy_ _ _which which_schooner schooner_ _later later_be be_subject subject_ ',false
+2492,'perhaps scooner later fall into the ','perhaps_ _scooner scooner_ _later later_fall fall_into into_the the_ _ ',false
+2504,'this sad for what once be #crd# the good place you could ever ','this_ _sad sad_for for_what what_once once_be be_#crd# #crd#_ _the the_good good_place place_you you_could could_ever ever_ ',false
+2516,'hope #crd# day scooner later return what once ','_hope hope_#crd# #crd#_day day_scooner scooner_ _later later_return return_ _what what_ _once once_ ',false
+2528,'untill this advice stay ','untill_this this_ _ _advice advice_ _ _stay stay_ ',false
+2540,'open cool place with the best pizza and coffee ','open_ _cool cool_place place_with with_the the_best best_pizza pizza_and and_coffee ',false
+2552,'mioposto have very creative delicious pizza ','_mioposto mioposto_have have_ _very very_creative creative_ _delicious delicious_pizza pizza_ ',false
+2564,'the coffe very ','the_coffe coffe_ _very very_ _ ',false
+2576,'great open and friendly ','great_open open_and and_friendly friendly_ ',false
+2588,'this place charming and ','this_place place_ _charming charming_and and_ ',false
+2600,'the server behind the counter be always friendly and ','the_server server_behind behind_the the_counter counter_be be_always always_friendly friendly_and and_ ',false
+2612,'great place enjoy food and meet ','_ _great great_place place_ _enjoy enjoy_food food_and and_meet meet_ ',false
+2624,'old reliable ','old_reliable ',false
+2636,'after year seattle rate the place always back ','_after after_ _year year_ _seattle seattle_ _rate rate_ _the the_place place_ _always always_ _back back_ ',false
+2648,'great spectacular and friendly service keep come back year year after ','great_ _spectacular spectacular_ _and and_friendly friendly_service service_keep keep_ _come come_back back_year year_after after_ ',false
+2660,'enjoy the food ','enjoy_the the_food ',false
+2672,'like ','_like like_ ',false
+2684,'food be good and ','food_be be_good good_and and_ ',false
+2696,'have the kafta plate and enjoy ','_have have_the the_kafta kafta_plate plate_and and_ _enjoy enjoy_ ',false
+2708,'be be much though that could barely finish but since be be ','_be be_ _much much_though though_that that_ _could could_barely barely_finish finish_but but_ _ _since since_ _be be_ ',false
+2720,'atmosphere be ','atmosphere_be be_ ',false
+2732,'service be be kind our our waitress take forever give our our check even though that ','service_be be_kind kind_ _ _our our_waitress waitress_take take_forever forever_ _give give_ _our our_check check_even even_though though_ _ _that that_ ',false
+2744,'still would recommend this ','still_ _would would_recommend recommend_this this_ ',false
+2756,'','',false
+2768,'get any ','_ _ _get get_any any_ ',false
+2780,'what else can you say nice people amazing food wow ','what_else else_can can_you you_say say_nice nice_people people_amazing amazing_food food_wow ',false
+2792,'great food with awesome ','great_food food_with with_ _awesome awesome_ ',false
+2804,'fresh fruit and yogurt everything they serve ','_ _ _ _fresh fresh_fruit fruit_and and_yogurt yogurt_ _everything everything_they they_serve serve_ _ ',false
+2816,'the good place for leisure sunday breakfast amidst then take stroll through the nearby ','the_good good_place place_for for_ _leisure leisure_sunday sunday_breakfast breakfast_amidst amidst_ _then then_take take_ _stroll stroll_through through_the the_nearby nearby_ _ ',false
+2828,'great meal the the the fish fish the the the omikase platter be be be absolutely decadent there be be be none the the the stringiness that sometimes accompany fair sushi this fish fish be be be ','great_meal meal_ _the the_fish fish_ _the the_omikase omikase_platter platter_be be_absolutely absolutely_decadent decadent_ _there there_be be_none none_ _the the_stringiness stringiness_that that_sometimes sometimes_accompany accompany_fair fair_sushi sushi_ _this this_fish fish_be be_ ',false
+2840,'allergic and the waitstaff be unbelievably accomodate even bat ','_ _ _allergic allergic_ _ _and and_the the_waitstaff waitstaff_be be_unbelievably unbelievably_accomodate accomodate_ _ _even even_bat bat_ _ ',false
+2852,'and the waiter suggest perfect ','and_the the_waiter waiter_suggest suggest_ _perfect perfect_ ',false
+2864,'absolutely ','absolutely_ ',false
+2876,'unbeatable ','unbeatable_ ',false
+2888,'#crd# thumb ','#crd#_thumb thumb_ ',false
+2900,'this right there with place tokyo far the freshness ','this_ _right right_ _there there_with with_place place_ _tokyo tokyo_ _far far_ _the the_freshness freshness_ _ ',false
+2912,'melt your mouth nigiri and and and and very tasty roll ','melt_ _your your_mouth mouth_nigiri nigiri_and and_ _and and_very very_tasty tasty_roll roll_ ',false
+2924,'sure try the oyster ','_sure sure_ _try try_the the_oyster oyster_ ',false
+2936,'splendid ','',false
+2948,'how describe the the good sushi all the the ','_how how_ _describe describe_the the_good good_sushi sushi_ _ _ _ _ _ _ _ _ _all all_ _the the_ ',false
+2960,'saybenough good thing about this and wait for next several ','_ _saybenough saybenough_good good_thing thing_about about_this this_ _and and_ _ _wait wait_for for_ _next next_several several_ ',false
+2972,'the good chuwam mushi have ever ','the_good good_chuwam chuwam_mushi mushi_ _have have_ever ever_ ',false
+2984,'perfect cold ','perfect_ _ _cold cold_ ',false
+2996,'with ','_with with_ ',false
+3008,'','',false
+3020,'good high price ','good_ _high high_price ',false
+3032,'#crd# the good sushi place ','#crd#_ _the the_good good_sushi sushi_place place_ _ ',false
+3044,'the house special roll really ','the_house house_special special_roll roll_ _really really_ ',false
+3056,'you might have wait for couple ','_ _you you_might might_have have_ _wait wait_for for_couple couple_ ',false
+3068,'they they take your your cellphone cellphone number that you you can hang out somewhere else till they they call you you your your ','_they they_ _take take_your your_cellphone cellphone_number number_ _that that_you you_can can_ _hang hang_out out_somewhere somewhere_else else_till till_they they_call call_you you_ _ _your your_ ',false
+3080,'cozy spot for ','_cozy cozy_spot spot_for for_ ',false
+3092,'believe have be around for over ','_ _ _believe believe_ _have have_be be_around around_for for_over over_ _ _ ',false
+3104,'huge especially the fickled restaurant ','_ _huge huge_ _especially especially_ _the the_fickled fickled_restaurant restaurant_ _ _ ',false
+3116,'','_ _ _ _ _ _ _ _ _ _ _ ',false
+3128,'brunch die ','brunch_ _ _ _ _die die_ _ _ _ _ _ _ _ _ _ _ _ ',false
+3140,'egg white the food always freshly ','_ _ _ _ _ _ _ _ _egg egg_white white_ _the the_food food_ _always always_freshly freshly_ ',false
+3152,'the perfect spot for for romantic date for for secret ','_the the_perfect perfect_spot spot_for for_ _romantic romantic_date date_for for_ _ _ _secret secret_ ',false
+3164,'save room for scrumptious ','save_room room_for for_ _scrumptious scrumptious_ ',false
+3176,'the restaurant offer extensive wine list and ambiance you ','the_restaurant restaurant_offer offer_ _extensive extensive_wine wine_list list_and and_ _ambiance ambiance_you you_ _ ',true
+3188,'guarantee you also valet ','_guarantee guarantee_you you_ _ _ _ _also also_valet valet_ ',false
+3200,'','',false
+3212,'good mexican place for lunch the financial ','_good good_mexican mexican_place place_for for_lunch lunch_ _the the_financial financial_ ',false
+3224,'love the enchilada and and chicken soup and and sure check out their ','love_the the_enchilada enchilada_and and_chicken chicken_soup soup_ _and and_ _sure sure_ _check check_out out_their their_ ',false
+3236,'the cook have be the restaurant for year and cook family ','the_cook cook_have have_be be_ _the the_restaurant restaurant_for for_year year_and and_cook cook_family family_ ',false
+3248,'can get busy friday for table but once the service efficient you can and out there ','can_get get_busy busy_ _friday friday_for for_ _table table_but but_once once_ _the the_service service_ _ _efficient efficient_you you_can can_ _ _and and_out out_ _there there_ ',false
+3260,'go there with friend from out ','_go go_there there_with with_ _friend friend_from from_out out_ _ _ _ _ _ _ _ ',false
+3272,'and be both very ','_ _ _ _ _ _ _ _ _ _and and_ _be be_both both_very very_ ',false
+3284,'the sushi be be excellent and the wait staff be be ','the_sushi sushi_be be_excellent excellent_and and_the the_wait wait_staff staff_be be_ ',false
+3296,'the price be right ','the_price price_be be_right right_ ',false
+3308,'the atmosphere be just ','the_atmosphere atmosphere_be be_just just_ ',false
+3320,'space be but the food make for ','space_be be_ _but but_the the_food food_make make_ _for for_ ',false
+3332,'back there ','_ _back back_there there_ _ _ ',false
+3344,'well guess hard seat when #crd# invisible the ','well_ _guess guess_ _hard hard_ _ _seat seat_when when_#crd# #crd#_ _invisible invisible_ _the the_ ',false
+3356,'stand there for minute while employee walk back and forth ignore ','_stand stand_there there_for for_ _minute minute_while while_employee employee_walk walk_back back_and and_forth forth_ignore ignore_ ',false
+3368,'wife stand face face face face front #crd# the staff and she you wait for ','_ _wife wife_stand stand_face face_ _face face_ _front front_ _#crd# #crd#_ _the the_staff staff_and and_she she_ _ _you you_wait wait_for for_ _ ',false
+3380,'','_ _ _ _ _ _ _ _ _ ',false
+3392,'once seat take about minute finally get the ','once_seat seat_ _take take_about about_ _minute minute_ _finally finally_get get_the the_ ',false
+3404,'the prior review say kid ','the_prior prior_review review_say say_kid kid_ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+3416,'give break with #crd# young child that light ','_ _ _ _ _ _give give_ _ _break break_with with_#crd# #crd#_young young_child child_that that_ _light light_ ',false
+3428,'the caesar salad order have much lemon eat ','the_caesar caesar_salad salad_ _order order_have have_ _much much_lemon lemon_ _ _eat eat_ ',false
+3440,'be decent but nothing ','_be be_decent decent_but but_nothing nothing_ ',false
+3452,'great good ','great_ _good good_ ',false
+3464,'this #crd# top lunch huge fast service and amazing ','_this this_ _#crd# #crd#_ _ _top top_lunch lunch_ _huge huge_ _fast fast_service service_and and_amazing amazing_ ',false
+3476,'get really get there the the early side you you can grab you you have its not bad because the the service ','_get get_really really_ _ _get get_there there_ _the the_early early_side side_ _you you_can can_grab grab_ _ _ _you you_ _have have_ _ _its its_not not_bad bad_because because_the the_service service_ _ ',false
+3488,'check out the the art the the very ','check_out out_the the_art art_ _the the_ _very very_ ',false
+3500,'love this ','_love love_this this_ ',false
+3512,'have have be eat this place for over year now and have have never have #crd# bad ','_ _have have_be be_eat eat_ _this this_place place_for for_over over_ _year year_now now_and and_ _have have_never never_have have_#crd# #crd#_bad bad_ ',false
+3524,'highly recommend this place all that want try indain food for the #ord# ','_highly highly_recommend recommend_this this_place place_ _all all_that that_want want_ _try try_indain indain_food food_for for_the the_#ord# #ord#_ ',false
+3536,'the lunch menu awesome ','the_lunch lunch_menu menu_ _ _awesome awesome_ ',false
+3548,'plenty ','plenty_ _ _ _ ',false
+3560,'fresh ingrediants and super ','fresh_ingrediants ingrediants_and and_super super_ ',false
+3572,'the place the next good thing moms ','the_place place_ _the the_next next_good good_thing thing_ _ _moms moms_ ',false
+3584,'good phenominal service ','good_ _phenominal phenominal_service ',false
+3596,'for the the the the the finicky sushi eater and and those who have sample the the the the the good nyc have the the the the the fish the the the the the fresh and and the the the the the service ','for_the the_finicky finicky_sushi sushi_eater eater_and and_those those_who who_have have_sample sample_the the_good good_nyc nyc_have have_ _ _the the_fish fish_ _the the_fresh fresh_and and_the the_service service_ _ ',false
+3608,'not only can the selection but nice balance traditional sushi ','not_only only_can can_the the_selection selection_ _ _but but_ _ _nice nice_balance balance_ _traditional traditional_sushi sushi_ _ ',false
+3620,'the nice waiter ','the_nice nice_waiter waiter_ _ ',false
+3632,'way ','way_ ',false
+3644,'this place unbelievably ','_this this_place place_ _unbelievably unbelievably_ ',false
+3656,'want stand line sunday for hour get average brunch then would put the the top the the ','_ _want want_ _stand stand_ _line line_ _sunday sunday_for for_ _hour hour_ _get get_average average_brunch brunch_ _then then_ _would would_put put_ _ _the the_top top_ _the the_ ',false
+3668,'the regular menu here slightly above average that that not worth the snotty attitude that that you ','the_regular regular_menu menu_here here_ _slightly slightly_above above_average average_that that_ _not not_worth worth_the the_snotty snotty_attitude attitude_that that_you you_ ',false
+3680,'','',false
+3692,'your sushi you love expertly cut great killer soho and and yellow sea sea sea sea milk blue fin monk and and varity ','your_ _sushi sushi_ _you you_love love_expertly expertly_cut cut_ _great great_ _ _killer killer_soho soho_ _and and_ _ _ _ _ _yellow yellow_ _ _ _ _sea sea_ _ _ _sea sea_ _ _milk milk_ _blue blue_fin fin_ _ _ _ _monk monk_ _ _ _ _and and_ _varity varity_ _ ',false
+3704,'there only #crd# place the east coast that have plus lot ','there_ _only only_#crd# #crd#_place place_ _the the_east east_coast coast_that that_have have_ _ _plus plus_ _lot lot_ ',false
+3716,'bring your cell phone cause you may have wait get into the the good sushi restaurant the the blue ribbon ','bring_your your_cell cell_phone phone_cause cause_you you_may may_have have_ _wait wait_ _get get_into into_the the_good good_sushi sushi_restaurant restaurant_ _the the_ _blue blue_ribbon ribbon_ ',false
+3728,'cut the chase this ','cut_ _the the_chase chase_ _this this_ _ ',false
+3740,'unpretentious and ','_unpretentious unpretentious_and and_ ',false
+3752,'and ','_ _ _ _and and_ ',false
+3764,'hand the good tuna have ever ','hand_ _the the_good good_tuna tuna_ _have have_ever ever_ ',false
+3776,'blue ribbon live fantastic ','blue_ribbon ribbon_live live_ _ _ _fantastic fantastic_ ',false
+3788,'go here recommendation and and will surely return time time and and time time ','_go go_here here_ _ _recommendation recommendation_and and_will will_surely surely_return return_time time_and and_time time_ ',false
+3800,'what ','what_ _ ',false
+3812,'well worth ','well_worth worth_ ',false
+3824,'great value sushi with high quality nice ','great_value value_sushi sushi_with with_high high_quality quality_ _nice nice_ ',false
+3836,'good for late night dining minute without ','good_for for_late late_night night_dining dining_ _minute minute_ _without without_ ',false
+3848,'try the the the choice for sushi the the the smoke yellowtail be incredible and the the the roll be also ','try_the the_ _choice choice_for for_sushi sushi_ _the the_smoke smoke_yellowtail yellowtail_be be_incredible incredible_and and_the the_roll roll_be be_also also_ ',false
+3860,'poor customer ','poor_customer customer_ _ ',false
+3872,'with most restaurant service be be bad and the food be be ','_ _with with_most most_restaurant restaurant_ _ _ _service service_be be_bad bad_and and_the the_food food_be be_ ',false
+3884,'know many people have their favorite type pizza pizza pizza and and pizza pizza pizza but pizza pizza pizza lack quality and and good ','_know know_many many_people people_have have_their their_favorite favorite_type type_ _pizza pizza_and and_pizza pizza_ _but but_ _pizza pizza_lack lack_quality quality_and and_good good_ ',false
+3896,'have well frozen ','_ _ _ _have have_well well_frozen frozen_ ',false
+3908,'the only positive thing about mioposto the nice ','the_only only_positive positive_thing thing_about about_mioposto mioposto_ _the the_nice nice_ ',false
+3920,'love every time ','love_ _every every_time ',false
+3932,'be frankly shock when read the bad review this place have not let down any and eat here more than ','_be be_frankly frankly_shock shock_when when_ _read read_the the_bad bad_review review_ _this this_place place_ _ _ _have have_not not_let let_ _down down_ _any any_ _and and_ _eat eat_here here_more more_than than_ _ ',false
+3944,'the food and the wait staff have be be perfect every single time be be ','the_food food_ _ _and and_the the_wait wait_staff staff_have have_be be_perfect perfect_every every_single single_time time_ _be be_ ',false
+3956,'the only problem would the the but usually just have drink the the front while ','the_only only_problem problem_would would_ _the the_ _but but_ _usually usually_just just_have have_ _drink drink_ _the the_front front_while while_ ',false
+3968,'never have #crd# single problem ','never_have have_#crd# #crd#_single single_problem problem_ ',false
+3980,'seafood plus ','seafood_plus ',false
+3992,'this be great dining ','_this this_be be_ _great great_dining dining_ ',false
+4004,'go see danny gans just stay the miss this ','_ _go go_ _see see_danny danny_gans gans_ _just just_stay stay_ _the the_ _ _miss miss_this this_ ',false
+4016,'the appetizer crab make perfect entre for ','the_appetizer appetizer_ _ _ _crab crab_ _ _make make_ _perfect perfect_entre entre_for for_ _ ',false
+4028,'seabass lobster risotto be the ','seabass_ _lobster lobster_risotto risotto_be be_the the_ ',false
+4040,'caesar salad be ','caesar_salad salad_be be_ ',false
+4052,'great bottle ','great_bottle bottle_ _ ',false
+4064,'leave room for ','leave_room room_for for_ ',false
+4076,'completely over ','completely_over over_ ',false
+4088,'the food food be be be be but the the the service be be be be poor that the the the food food be be be be cold buy the the the time everyone party be be be be ','the_food food_be be_ _but but_the the_service service_be be_ _poor poor_that that_the the_food food_be be_cold cold_buy buy_the the_time time_everyone everyone_ _ _party party_be be_ ',false
+4100,'even the order be not correct and be still wait for couple ','even_ _the the_order order_be be_not not_correct correct_and and_ _be be_still still_wait wait_for for_ _couple couple_ ',false
+4112,'have have very hard time get the attention and and finally have have get and and inside speak ','_have have_ _very very_hard hard_time time_get get_the the_ _attention attention_and and_finally finally_have have_ _get get_ _and and_ _inside inside_ _speak speak_ _ _ ',false
+4124,'turn out the owner be be seat right next and and when come over check our our problem be be very dismissive and and offer token discount our our ','_ _turn turn_out out_the the_owner owner_be be_seat seat_right right_next next_ _ _and and_when when_ _come come_over over_ _check check_ _our our_problem problem_be be_very very_dismissive dismissive_and and_offer offer_ _token token_ _discount discount_ _our our_ ',false
+4136,'when the the the the bill only take the the the the discount off the the the the food and not the the the the ','when_the the_bill bill_ _ _only only_take take_the the_discount discount_off off_the the_food food_and and_not not_the the_ ',false
+4148,'be clear really ','_be be_clear clear_ _ _really really_ ',false
+4160,'avoid the place ','avoid_the the_place ',false
+4172,'save yourself the waste time not ','_save save_yourself yourself_the the_waste waste_ _time time_ _ _not not_ ',false
+4184,'when get there sit stair where the the atmosphere be be cozy the the service be be ','when_ _get get_there there_ _sit sit_ _stair stair_where where_the the_atmosphere atmosphere_be be_cozy cozy_ _the the_service service_be be_ ',false
+4196,'wait for for 0 minute for for service order beer be never serve ','_wait wait_for for_0 0_minute minute_for for_service service_order order_ _beer beer_ _be be_never never_serve serve_ ',false
+4208,'after sit there with empty glass for over minute ','after_sit sit_there there_with with_ _empty empty_glass glass_for for_over over_ _minute minute_ _ ',false
+4220,'go home look them online again where discover there link link for give away that work email the the restaurant about the the non existent service deceptive ','_go go_home home_ _look look_them them_ _online online_again again_where where_ _discover discover_there there_ _ _link link_for for_ _give give_away away_that that_ _work work_ _email email_the the_restaurant restaurant_about about_the the_non non_existent existent_service service_ _deceptive deceptive_ ',false
+4232,'never hear back from anyone more than month ','_never never_hear hear_back back_from from_anyone anyone_more more_than than_ _month month_ ',false
+4244,'after sit the the bar bar for over minute the the bar bar keep have make only drink keep tell right with ','after_sit sit_ _the the_bar bar_for for_over over_ _minute minute_the the_bar bar_keep keep_have have_make make_only only_ _drink drink_ _keep keep_tell tell_ _ _ _right right_with with_ ',false
+4256,'leave without ever get ','_leave leave_without without_ever ever_get get_ ',false
+4268,'write this just try their give away link again still ','_ _write write_this this_ _just just_try try_their their_give give_away away_ _link link_again again_ _ _still still_ _ ',false
+4280,'good crab cakes town ','good_crab crab_cakes cakes_ _town ',false
+4292,'big statement consider be pull crab trap and make the cake myself since be about about #crd# but something about about these little devil get good every ','_ _ _big big_statement statement_consider consider_ _be be_pull pull_crab crab_trap trap_and and_make make_the the_cake cake_myself myself_since since_ _be be_about about_#crd# #crd#_ _but but_something something_about about_these these_little little_devil devil_get get_good good_every every_ ',false
+4304,'you come this place boat and make whole ','_you you_ _come come_ _this this_place place_ _boat boat_and and_make make_ _ _whole whole_ ',false
+4316,'great seasonal fish and with classy waterfront ','great_seasonal seasonal_fish fish_and and_ _with with_ _classy classy_waterfront waterfront_ ',false
+4328,'always ','always_ _ ',false
+4340,'great poor service ','great_ _poor poor_service ',false
+4352,'love their especially the mushroom ','_love love_their their_ _especially especially_the the_mushroom mushroom_ ',false
+4364,'also love their caeser ','also_love love_their their_caeser caeser_ ',false
+4376,'prefer order and pick though because like the #crd# young woman ','prefer_ _order order_ _and and_pick pick_ _ _though though_because because_ _ _like like_the the_ _#crd# #crd#_young young_woman woman_ _ ',false
+4388,'she make you you feel welcome and treat you you like ','she_ _make make_you you_feel feel_welcome welcome_and and_treat treat_you you_like like_ _ ',false
+4400,'but she very friendly with certain make even more ','but_she she_ _very very_friendly friendly_with with_certain certain_ _make make_ _even even_more more_ ',false
+4412,'management should really take notice and and train their waitstaff and and teach them some proper ','management_should should_really really_take take_notice notice_and and_train train_their their_waitstaff waitstaff_and and_teach teach_them them_some some_proper proper_ ',false
+4424,'many people talk about the the great pizza and poor just the the ranting few dissatisfied ','many_people people_talk talk_about about_the the_great great_pizza pizza_and and_poor poor_ _ _ _ _just just_ _the the_ranting ranting_ _ _few few_dissatisfied dissatisfied_ ',false
+4436,'great little place with ton potential neighborhood joint the service impersonal and ','_ _great great_little little_place place_with with_ton ton_ _potential potential_ _ _ _neighborhood neighborhood_joint joint_ _the the_service service_ _ _impersonal impersonal_and and_ ',false
+4448,'great breakfast ','great_breakfast ',false
+4460,'this place famous for their ','_this this_place place_ _famous famous_for for_their their_ ',false
+4472,'they have be feature the food network and they deserve ','they_have have_be be_feature feature_ _the the_food food_network network_and and_they they_deserve deserve_ ',false
+4484,'the food great and they make mean bloody ','the_food food_ _great great_and and_they they_make make_ _mean mean_bloody bloody_ ',false
+4496,'love breakfast ','_love love_breakfast breakfast_ ',false
+4508,'their crab egg benedict ','their_crab crab_egg egg_benedict benedict_ _ ',false
+4520,'all their menu item be and they serve ','all_their their_menu menu_item item_be be_ _ _and and_they they_serve serve_ ',true
+4532,'get any good than ','_get get_any any_good good_than than_ ',false
+4544,'good chinese food have taste long time ','good_chinese chinese_food food_ _have have_taste taste_ _ _long long_time ',false
+4556,'you can easily hear him though be pleasant sound and not ','you_can can_easily easily_hear hear_him him_though though_ _ _be be_ _pleasant pleasant_sound sound_and and_not not_ ',false
+4568,'the the ambiance the the restaurant be nice and good for fine ','the_ambiance ambiance_ _the the_restaurant restaurant_be be_nice nice_and and_good good_for for_fine fine_ ',false
+4580,'not too fine think that you feel uncomfortable and have dress ','not_too too_fine fine_think think_that that_you you_feel feel_uncomfortable uncomfortable_and and_have have_ _dress dress_ ',false
+4592,'the staff be very nice and and courteous and and obviously ','the_staff staff_be be_very very_nice nice_and and_courteous courteous_and and_obviously obviously_ ',false
+4604,'#ord# the food come fast and all together like the the ','#ord#_ _the the_food food_come come_fast fast_and and_all all_together together_ _ _like like_ _ _ _the the_ _ _ _ _ _ _ _the the_ ',false
+4616,'the the hate the the pretentiousness thing come #crd# after the the ','_ _the the_ _ _ _ _ _ _ _ _ _ _ _hate hate_the the_pretentiousness pretentiousness_ _thing thing_come come_ _#crd# #crd#_after after_the the_ ',false
+4628,'about about the the they be fresh and have slight crispiness about about the the the the be and and ','_about about_the the_ _they they_be be_fresh fresh_and and_have have_ _slight slight_crispiness crispiness_about about_the the_ _ _ _the the_ _be be_ _ _ _ _and and_ _ _and and_ ',false
+4640,'soooo ','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _soooo soooo_ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+4652,'the be and and the the walnut be cut small piece and and very crunchy and and ','_ _the the_ _ _be be_ _and and_ _ _ _ _ _the the_ _ _ _the the_walnut walnut_be be_cut cut_ _small small_piece piece_and and_very very_crunchy crunchy_and and_ ',false
+4664,'','',false
+4676,'good honey walnyt prawn that have every ','good_honey honey_walnyt walnyt_prawn prawn_that that_ _have have_every every_ ',false
+4688,'the brocollis be fresh and ','the_brocollis brocollis_be be_ _fresh fresh_and and_ ',false
+4700,'would normally not finish the the the brocolli when order these kind food but for the the the #ord# #ord# every piece be eventful the the the #ord# #ord# the the the be ','_would would_normally normally_not not_finish finish_the the_brocolli brocolli_when when_ _order order_these these_kind kind_ _food food_but but_for for_the the_#ord# #ord#_ _every every_piece piece_be be_ _eventful eventful_ _the the_#ord# #ord#_ _the the_ _ _ _be be_ _ _ _ _ ',false
+4712,'the the be the the scallop and and prawn be fresh and and nicely ','_ _ _ _ _the the_ _ _ _ _ _ _ _ _ _ _the the_ _ _ _ _be be_ _ _ _the the_ _ _the the_scallop scallop_and and_prawn prawn_be be_ _fresh fresh_and and_nicely nicely_ ',false
+4724,'not chewy ','not_chewy chewy_ _ ',false
+4736,'for desert have the mango ginger creme ','for_desert desert_ _have have_the the_mango mango_ginger ginger_creme creme_ _ _ _ _ ',false
+4748,'','_ _ _ _ _ _ _ _ _ _ _ _ ',false
+4760,'melt your ','melt_ _your your_ ',false
+4772,'be for sure come back this ','_be be_for for_sure sure_come come_back back_ _this this_ ',false
+4784,'sad there not many people who frequent eat place like these that look pricey because they be the they be ','_ _sad sad_there there_ _not not_many many_people people_who who_frequent frequent_eat eat_ _place place_like like_these these_that that_look look_pricey pricey_because because_they they_be be_ _the the_ _ _they they_be be_ _ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+4796,'they be but they be definitely #crd# you want esp your downtown san ','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _they they_be be_ _ _ _but but_they they_be be_definitely definitely_#crd# #crd#_you you_ _want want_ _ _esp esp_ _your your_ _downtown downtown_san san_ ',false
+4808,'chintzy portion ','chintzy_portion ',false
+4820,'the sushi here perfectly but for for either the slice fish should should there should should pretense that this moderately price restaurant for for ','_the the_sushi sushi_here here_ _perfectly perfectly_ _but but_for for_ _ _ _either either_the the_slice slice_ _fish fish_should should_ _ _ _there there_should should_ _ _pretense pretense_that that_this this_ _ _moderately moderately_price price_restaurant restaurant_ _for for_ ',false
+4832,'easily spend more than per person include and be still ','_easily easily_spend spend_more more_than than_ _per per_person person_ _include include_ _and and_be be_still still_ ',false
+4844,'astonished that this restaurant categorize rather than ','_astonished astonished_that that_this this_restaurant restaurant_ _categorize categorize_ _ _rather rather_than than_ ',false
+4856,'terrible food pricey ','terrible_ _food food_ _pricey ',false
+4868,'put out name down and although there be be open table be be tell that minute ','_put put_out out_name name_down down_and and_although although_there there_be be_open open_table table_ _be be_tell tell_that that_ _ _ _ _minute minute_ ',false
+4880,'go back the the restaurant and and low and and be seat #crd# the the table that be available minute ','_go go_back back_ _the the_restaurant restaurant_and and_low low_and and_ _ _be be_seat seat_ _#crd# #crd#_ _the the_table table_that that_be be_available available_ _minute minute_ ',false
+4892,'none that can think ','none_that that_ _can can_think think_ ',false
+4904,'put our order and although order the food arrive until minute later.with our main ','_put put_ _our our_order order_and and_although although_ _order order_ _ _the the_food food_ _arrive arrive_until until_ _minute minute_later.with later.with_our our_main main_ ',false
+4916,'now what be appetizer ','_ _now now_what what_be be_appetizer appetizer_ ',false
+4928,'forget mention that they have bread ','_ _forget forget_ _mention mention_that that_they they_ _have have_bread bread_ ',false
+4940,'wife also order teapot hot water water have sore and guess that since be be only priority for them actually bring ','_wife wife_also also_order order_ _teapot teapot_ _hot hot_water water_ _have have_ _sore sore_ _and and_ _guess guess_that that_since since_ _be be_only only_ _ _ _ _priority priority_for for_them them_ _actually actually_bring bring_ ',false
+4952,'other they make off you you then you you rate high their ','_other other_ _ _they they_ _make make_ _off off_ _you you_then then_you you_ _rate rate_high high_ _their their_ _ ',false
+4964,'food its but bit pricey for what you get consider the restaurant fancy ','food_ _its its_ _but but_ _bit bit_pricey pricey_for for_what what_you you_get get_consider consider_the the_restaurant restaurant_ _ _fancy fancy_ ',false
+4976,'need name some they would include the the location the the beach golden gate ','_ _need need_ _name name_some some_they they_would would_include include_the the_location location_ _the the_beach beach_ _golden golden_gate gate_ ',false
+4988,'its great you spend the day there and want drive ','its_great great_ _you you_spend spend_the the_day day_there there_and and_ _want want_ _drive drive_ _ ',false
+5000,'parking reasonably they have their own lot and you can park park the park park ','parking_ _reasonably reasonably_ _they they_have have_their their_own own_lot lot_and and_you you_can can_park park_ _the the_park park_ ',false
+5012,'another plus the the open feel the the restaurant with glass wall all ','another_plus plus_ _the the_open open_feel feel_ _the the_restaurant restaurant_with with_glass glass_wall wall_ _all all_ ',false
+5024,'always ','always_ ',false
+5036,'sat before broadway play and and be quickly seat and and ','_ _ _sat sat_before before_ _broadway broadway_play play_and and_ _be be_quickly quickly_seat seat_and and_ ',false
+5048,'amazing spanish mackeral special appetizer and perfect box sushi eel with avodcao ','amazing_spanish spanish_mackeral mackeral_special special_appetizer appetizer_and and_perfect perfect_box box_sushi sushi_ _eel eel_with with_avodcao avodcao_ _ _ _ ',false
+5060,'usual the omikase disappoint although score low creativity and ','_usual usual_the the_omikase omikase_ _disappoint disappoint_ _ _although although_ _score score_low low_ _creativity creativity_and and_ ',false
+5072,'their specialty roll be though remember what ','their_specialty specialty_roll roll_be be_ _though though_ _ _remember remember_what what_ _ ',false
+5084,'great selection ','great_selection selection_ _ ',true
+5096,'green tea creme brulee get good each time have ','green_tea tea_creme creme_brulee brulee_get get_good good_each each_time time_ _have have_ ',false
+5108,'the cheap sushi but have be worth every ','_ _the the_cheap cheap_sushi sushi_but but_have have_be be_worth worth_ _every every_ ',false
+5120,'very poor customer ','very_poor poor_customer customer_ ',false
+5132,'schooner charming location along the marina long beach and average food do compensate for its very poor customer ','_schooner schooner_ _ _charming charming_location location_along along_the the_marina marina_ _long long_beach beach_and and_average average_food food_do do_ _ _compensate compensate_for for_its its_very very_poor poor_customer customer_ ',false
+5144,'while this this diner have reasonably good the the restaurant staff seem completely indifferent our and this this attitude be reflect the the lack ','while_this this_diner diner_have have_reasonably reasonably_good good_ _the the_restaurant restaurant_staff staff_seem seem_completely completely_indifferent indifferent_ _our our_ _and and_this this_attitude attitude_be be_reflect reflect_ _the the_lack lack_ _ ',false
+5156,'part small party our food be drop off without ','_part part_ _ _small small_party party_ _ _our our_food food_be be_drop drop_off off_without without_ ',false
+5168,'any far need may have have have could not have have be meet since #crd# stop the ','any_far far_need need_ _may may_have have_have have_could could_not not_have have_be be_meet meet_since since_ _#crd# #crd#_stop stop_ _the the_ ',false
+5180,'when finally be able flag someone someone be be someone someone entirely different from the the the person person who who who have have drop off the the the who who who be be also not the the the same person person who who who have have take our ','when_ _finally finally_be be_able able_ _flag flag_someone someone_ _ _be be_someone someone_entirely entirely_different different_from from_the the_person person_who who_have have_drop drop_off off_the the_ _who who_be be_also also_not not_the the_same same_person person_who who_have have_take take_our our_ ',false
+5192,'after #crd# member our party have be bump bump repeatedly polite request that not bump bump send the waitress waitress into abusive ','after_#crd# #crd#_member member_ _our our_party party_have have_be be_bump bump_repeatedly repeatedly_ _ _ _ _polite polite_request request_that that_ _not not_ _bump bump_send send_the the_waitress waitress_into into_ _abusive abusive_ ',false
+5204,'brief conversation with the the the the manager the the the the end the the the the meal be the the the the great say have be would ','_brief brief_conversation conversation_with with_the the_manager manager_ _the the_end end_ _the the_meal meal_be be_the the_great great_ _say say_ _have have_be be_ _ _would would_ _ _ ',false
+5216,'the manager continually interrupt with there anything else can for ','the_manager manager_continually continually_interrupt interrupt_with with_ _there there_anything anything_else else_ _can can_ _for for_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+5228,'strange comment because she have hardly let alone respond our our expression disappointment our our ','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _strange strange_comment comment_because because_she she_have have_hardly hardly_ _let let_alone alone_respond respond_ _our our_expression expression_ _disappointment disappointment_ _our our_ ',false
+5240,'she promise speak the the waitress who have have fly off but could hardly take her promise see she bother get the the waitress ','she_promise promise_ _speak speak_ _the the_waitress waitress_who who_have have_fly fly_off off_ _ _ _but but_ _could could_hardly hardly_take take_her her_promise promise_ _see see_ _she she_ _bother bother_ _get get_the the_waitress waitress_ ',false
+5252,'schooner later have care less about our be their ','_ _schooner schooner_ _later later_ _have have_care care_less less_about about_our our_be be_ _their their_ ',false
+5264,'you be with hot date and have urge for sushi.then this might the ','you_be be_with with_ _hot hot_date date_and and_ _have have_ _urge urge_for for_sushi.then sushi.then_this this_might might_ _the the_ ',false
+5276,'the fish be be though be be cut very ','the_fish fish_be be_ _though though_ _be be_cut cut_very very_ ',false
+5288,'great ','_ _ _ _ _great great_ ',false
+5300,'good sake ','good_sake sake_ ',true
+5312,'dungeness crab ','dungeness_crab crab_ ',false
+5324,'the place for high quality seafood ','_ _ _the the_place place_ _ _for for_high high_quality quality_seafood seafood_ ',false
+5336,'and they give good quantity for the ','and_they they_give give_good good_quantity quantity_for for_the the_ ',false
+5348,'be only seattle for for #crd# night and glad pick ray for for ','_be be_only only_ _seattle seattle_for for_#crd# #crd#_night night_and and_ _ _glad glad_ _pick pick_ray ray_for for_ ',false
+5360,'love dungeness crab and you can get them serve about different ','_love love_dungeness dungeness_crab crab_and and_ _ _you you_can can_get get_them them_serve serve_ _about about_ _different different_ ',false
+5372,'share the the family platter and especially enjoy the the black cod sake ','_share share_the the_family family_platter platter_and and_ _especially especially_enjoy enjoy_the the_black black_cod cod_ _sake sake_ ',false
+5384,'ended the the meal with the the unusual dessert port and chocolate ','_ended ended_the the_meal meal_with with_the the_unusual unusual_dessert dessert_ _ _port port_and and_chocolate chocolate_ ',false
+5396,'and the service be simply spendid quite ','and_the the_service service_be be_simply simply_spendid spendid_ _quite quite_ _ ',false
+5408,'great breakfast ','great_breakfast ',false
+5420,'great drink corn beef fast gluten free ','_great great_drink drink_ _corn corn_beef beef_ _ _ _fast fast_ _gluten gluten_free free_ ',false
+5432,'the service fantastic this fun ','the_service service_ _fantastic fantastic_ _this this_fun fun_ ',false
+5444,'there line very day the the week for the the entire time place you know ','_there there_ _ _line line_very very_day day_ _the the_week week_for for_the the_entire entire_time time_ _place place_ _ _you you_know know_ _ _ ',false
+5456,'this the case this ','this_ _the the_case case_ _this this_ ',false
+5468,'good neighborhood ','good_neighborhood neighborhood_ ',false
+5480,'you wrong ','you_ _ _wrong wrong_ ',false
+5492,'village this neighbor and favorite ','_ _ _village village_this this_ _ _neighbor neighbor_and and_ _favorite favorite_ ',false
+5504,'the music night well the the the bar tender be generous with the the the and the the the lighthearted atmosphere will lift you ','the_music music_ _ _ _night night_well well_ _ _the the_bar bar_tender tender_be be_generous generous_with with_the the_ _and and_the the_lighthearted lighthearted_atmosphere atmosphere_will will_lift lift_you you_ ',true
+5516,'you you unpretentious local fun you you ','_you you_ _ _ _ _ _ _unpretentious unpretentious_local local_fun fun_you you_ ',false
+5528,'and the cheese fry be ','_and and_the the_cheese cheese_fry fry_be be_ ',false
+5540,'good great average price the ','good_ _great great_ _average average_price price_ _the the_ ',false
+5552,'decide eat stack because their price fix pre-show ','_ _decide decide_ _eat eat_ _stack stack_because because_ _their their_price price_fix fix_pre-show pre-show_ ',false
+5564,'when walk be take aback their incredible wood ','when_ _walk walk_ _ _be be_take take_aback aback_ _their their_incredible incredible_wood wood_ ',false
+5576,'the music music play be be very 0 something pop but the the subwoofer the the sound system be be locate under which become annoying midway through ','the_music music_play play_be be_very very_ _0 0_something something_pop pop_ _but but_the the_subwoofer subwoofer_ _the the_sound sound_system system_be be_locate locate_under under_ _ _which which_become become_annoying annoying_midway midway_through through_ ',false
+5588,'get the shellfish and and shrimp appetizer and and be ','_get get_the the_shellfish shellfish_and and_shrimp shrimp_appetizer appetizer_and and_ _be be_ ',false
+5600,'the the fresh seafood but the the taste and presentation be be ','_ _the the_fresh fresh_seafood seafood_ _but but_the the_taste taste_and and_presentation presentation_be be_ ',false
+5612,'pick the which turn out incredible and perfectly ','_pick pick_the the_ _which which_turn turn_out out_ _ _incredible incredible_and and_perfectly perfectly_ ',false
+5624,'the steak come next and taste least ','the_ _ _steak steak_come come_next next_and and_ _taste taste_ _ _least least_ ',false
+5636,'the steak be be do exact like and and be be nice and and ','the_steak steak_be be_do do_ _ _exact exact_like like_ _ _and and_be be_nice nice_and and_ ',false
+5648,'','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+5660,'serve with either peppercorn sauce red wine though both be indistinguishable ','_serve serve_with with_either either_ _peppercorn peppercorn_sauce sauce_ _red red_wine wine_ _though though_both both_be be_indistinguishable indistinguishable_ _ ',false
+5672,'#crd# thing realize later be that the the restaurant either use msg meat tenderizer the the ','_#crd# #crd#_thing thing_ _realize realize_later later_ _be be_that that_the the_restaurant restaurant_either either_use use_msg msg_ _ _meat meat_tenderizer tenderizer_ _the the_ ',false
+5684,'mouth feel very dry afterwards and have that signature ','_mouth mouth_feel feel_very very_dry dry_afterwards afterwards_and and_ _have have_that that_signature signature_ _ _ _ _ _ _ _ _ _ _ ',false
+5696,'','_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ',false
+5708,'taste linger throat after leave the ','_ _ _ _ _ _ _ _ _ _ _ _taste taste_linger linger_ _ _throat throat_after after_ _leave leave_the the_ ',false
+5720,'they come their own nifty take out box and and with some homemade very light and and ','they_come come_ _their their_own own_nifty nifty_take take_out out_box box_and and_with with_some some_homemade homemade_ _very very_light light_and and_ ',false
+5732,'the desert be the perfect perfect ending almost perfect perfect ','the_desert desert_be be_the the_perfect perfect_ending ending_ _ _almost almost_perfect perfect_ ',false
+5744,'the dinner only take about about hour and and the the price be alright for the the almost after tax and and tip ','the_dinner dinner_only only_take take_ _about about_ _hour hour_and and_the the_price price_be be_alright alright_for for_the the_ _almost almost_ _after after_tax tax_and and_tip tip_ _ ',false
+5756,'but the server be extremely attentive and very ','but_the the_server server_be be_extremely extremely_attentive attentive_and and_very very_ ',false
+5768,'would back and eat the restaurant ','_ _would would_ _back back_and and_eat eat_ _the the_restaurant restaurant_ ',false
+5780,'just remember dress little you ','just_remember remember_ _dress dress_ _little little_ _ _you you_ _ _ _ _ _ _ ',false
+5792,'look too far out ','_ _ _ _ _ _ _ _ _ _look look_too too_far far_out out_ _ ',false
+5804,'good good good good food food honestly know much about japanese food food ','good_ _good good_food food_ _ _honestly honestly_ _know know_much much_about about_japanese japanese_food food_ _ ',false
+5816,'server make several sake suggestion which be very ','server_make make_several several_sake sake_suggestion suggestion_which which_be be_very very_ ',false
+5828,'have many dish but the the best be the the lobster ','have_many many_dish dish_but but_the the_best best_be be_the the_lobster lobster_ _ ',false
+5840,'very ','very_ ',false
+5852,'overprice ','',false
+5864,'wait minute for for for table for for for which be for for for such big ','wait_ _minute minute_for for_ _table table_for for_ _which which_be be_ _for for_such such_ _big big_ ',false
+5876,'the waiter be be bit unfriendly and the the feel the the restaurant be be ','the_waiter waiter_be be_ _bit bit_unfriendly unfriendly_and and_the the_feel feel_ _the the_restaurant restaurant_be be_ ',false
+5888,'there be only #crd# bathroom probably need more for such big ','_there there_be be_only only_#crd# #crd#_bathroom bathroom_ _probably probably_need need_more more_for for_such such_big big_ ',false
+5900,'most be excited about the the food after see the the very creative ','most_ _ _be be_ _excited excited_about about_the the_food food_after after_see see_the the_very very_creative creative_ ',false
+5912,'the food be good and definately ','_ _the the_food food_be be_good good_and and_definately definately_ ',false
+5924,'for the the amount food get the the price should have be ','for_the the_amount amount_ _food food_ _get get_the the_price price_should should_have have_be be_ ',false
+5936,'not sure would ','not_sure sure_ _ _would would_ _ ',false
+5948,'favortie pizza joint seattle ','_favortie favortie_pizza pizza_joint joint_ _seattle ',false
+5960,'this bring out town guest restaurant and and they always enjoy and and rave about ','_this this_ _ _ _bring bring_out out_ _town town_guest guest_ _restaurant restaurant_and and_they they_always always_enjoy enjoy_and and_rave rave_about about_ ',false
+5972,'many want return #ord# time during their ','_ _many many_want want_ _return return_ _#ord# #ord#_time time_during during_their their_ ',false
+5984,'the pizza delicious and the salad be ','the_pizza pizza_ _delicious delicious_and and_the the_salad salad_be be_ ',false
+5996,'always find the the the wait staff you sit the the the the the the cook very ','_always always_find find_the the_wait wait_staff staff_ _ _you you_sit sit_ _the the_ _the the_cook cook_very very_ ',false
+6008,'they the the most but everytime be be there they have be be very which probably account for the the lack ','they_ _the the_most most_ _but but_everytime everytime_ _be be_there there_they they_have have_be be_very very_ _which which_probably probably_account account_for for_the the_lack lack_ _ ',false
+6020,'also really enjoy the the simplicity the the decor and intimate feeling small ','_also also_really really_enjoy enjoy_the the_simplicity simplicity_ _the the_decor decor_and and_intimate intimate_feeling feeling_ _ _small small_ ',false
+6032,'just the the right size for the the ','_just just_the the_right right_size size_for for_the the_ ',false
+6044,'excellent ','excellent_ _ _ _ _ ',false
+6056,'husband and love eat mioposto ','_ _husband husband_and and_ _love love_eat eat_ _mioposto mioposto_ ',false
+6068,'say enough about their delicious gourmet ','_ _say say_enough enough_about about_their their_delicious delicious_gourmet gourmet_ ',false
+6080,'you disappoint their ','you_ _ _disappoint disappoint_ _their their_ ',false
+6092,'the be thin crust and and the menu offer very creative combination and and ','the_ _be be_thin thin_crust crust_and and_the the_menu menu_offer offer_very very_creative creative_combination combination_and and_ ',false
+6104,'you never feel icky and stuff after you eat ','you_never never_feel feel_icky icky_and and_stuff stuff_after after_you you_eat eat_ ',false
+6116,'the be light and ','the_ _be be_light light_and and_ ',false
+6128,'try the pizza ','try_the the_pizza pizza_ ',false
+6140,'absolutely ','absolutely_ ',false
+6152,'the be not huge and the crust thin.keep that mind when ','the_ _be be_not not_huge huge_and and_the the_crust crust_ _thin.keep thin.keep_that that_ _mind mind_when when_ _ ',false
+6164,'worth the wait ','worth_the the_wait ',false
+6176,'have wait #crd# minute get the door tuesday but be worth ','_have have_ _wait wait_#crd# #crd#_minute minute_ _get get_ _the the_door door_ _ _tuesday tuesday_ _but but_ _be be_ _worth worth_ ',false
+6188,'the food ','the_food food_ _ ',false
+6200,'the staff be really ','the_staff staff_be be_really really_ ',false
+6212,'the atmosphere be ','the_atmosphere atmosphere_be be_ ',false
+6224,'the specialty here decadent but be be back now #crd# and be be wow every ','the_specialty specialty_here here_ _decadent decadent_ _but but_ _be be_back back_now now_#crd# #crd#_ _and and_ _be be_wow wow_every every_ ',false
+6236,'nothing the menu less than ','nothing_ _the the_menu menu_ _less less_than than_ ',false
+6248,'with with some wait the half hour with with cup and enjoy more than your average ','_with with_some some_ _wait wait_the the_half half_hour hour_ _ _with with_ _cup cup_ _ _and and_enjoy enjoy_more more_than than_your your_average average_ ',false
+6260,'good ','good_ ',false
+6272,'know why anyone would want write great review about this ','_ _know know_why why_anyone anyone_would would_want want_ _write write_ _great great_review review_about about_this this_ ',false
+6284,'have be this folk and ','_have have_be be_ _this this_ _folk folk_and and_ _ _ ',false
+6296,'maybe good for that that #crd# night once blue moon when the chef decide use fish ','maybe_ _ _good good_for for_that that_#crd# #crd#_night night_once once_ _ _blue blue_moon moon_when when_the the_chef chef_decide decide_ _use use_fish fish_ _ _ ',false
+6308,'have be spend ton money chef special dinner and be major ','_have have_be be_ _spend spend_ton ton_ _money money_ _ _chef chef_special special_dinner dinner_and and_ _be be_ _major major_ ',false
+6320,'fancy piece exotic fish dollar plate and not #crd# be ','fancy_piece piece_ _exotic exotic_fish fish_ _ _ _dollar dollar_plate plate_and and_not not_#crd# #crd#_be be_ ',false
+6332,'donot ','donot_ ',false
+6344,'delicious ','',false
+6356,'the atmosphere great for any special occasion you might want ','_the the_atmosphere atmosphere_ _great great_for for_any any_special special_occasion occasion_you you_might might_want want_ _ ',false
+6368,'the good dish be the honwy walnut just ','the_good good_dish dish_be be_the the_honwy honwy_walnut walnut_ _just just_ ',false
+6380,'the service really attentive and ','the_service service_ _really really_attentive attentive_and and_ ',false
+6392,'wait for hour ','_wait wait_for for_ _hour hour_ _ _ ',false
+6404,'the service be be be the the coffee be be be good even starbucks standard and the the food be be be ','the_service service_be be_ _the the_coffee coffee_be be_good good_even even_ _starbucks starbucks_standard standard_and and_the the_food food_be be_ ',false
+6416,'be worth the ','_be be_worth worth_the the_ ',false
+6428,'plan wait 0 ','plan_ _wait wait_0 0_ ',false
+6440,'will definitely ','will_definitely definitely_ _ ',false
+6452,'','',false
+6464,'recently have have the pleasure dining this delightful restaurant #ord# street and wow what great evening ','_ _recently recently_have have_the the_pleasure pleasure_ _dining dining_ _this this_delightful delightful_restaurant restaurant_ _#ord# #ord#_street street_and and_wow wow_what what_ _great great_evening evening_ _ ',false
+6476,'the food delicious and very very ','the_food food_ _ _ _delicious delicious_and and_ _very very_ ',false
+6488,'the decor be beautiful and ','the_decor decor_be be_beautiful beautiful_and and_ ',false
+6500,'there be really nice vibe about the place.good atmosphere and happy look ','there_be be_ _really really_nice nice_vibe vibe_about about_the the_place.good place.good_ _atmosphere atmosphere_and and_happy happy_look look_ ',false
+6512,'our server be very professional and ','our_server server_be be_very very_professional professional_and and_ ',false
+6524,'the owner open sesame.bravo.i wait come back dine your ','_the the_owner owner_ _open open_sesame.bravo.i sesame.bravo.i_ _wait wait_ _come come_back back_ _dine dine_ _your your_ ',false
+6536,'delectable ','',false
+6548,'tiny place you get there before weekend you get ','_ _tiny tiny_place place_ _ _you you_get get_there there_before before_ _ _ _weekend weekend_ _you you_ _ _ _ _ _get get_ _ _ _ _ _ _ _ _ ',false
+6560,'you get you will find easy get table seat the sushi ','_ _ _ _ _ _you you_get get_ _ _ _ _ _ _ _you you_will will_find find_ _easy easy_ _get get_ _table table_ _ _seat seat_ _the the_sushi sushi_ ',false
+6572,'once the real experience ','once_ _ _the the_real real_experience experience_ ',false
+6584,'and mean everything the menu ','_and and_ _mean mean_everything everything_ _the the_menu menu_ _ ',false
+6596,'the waiter be very experienced and helpful with pair your your drink choice your your food taste vice ','the_waiter waiter_be be_very very_experienced experienced_and and_helpful helpful_with with_pair pair_your your_drink drink_choice choice_ _your your_food food_taste taste_ _vice vice_ ',false
+6608,'the sushi fresh ','the_sushi sushi_ _ _fresh fresh_ _ _ _ _ _ _ _ _ _ _ ',false
+6620,'think ocean be their ','_ _ _ _ _ _ _ _think think_ocean ocean_be be_ _their their_ _ _ ',false
+6632,'interested good tasting the fish taste large portion and creative sushi dish this your ','_ _interested interested_ _good good_tasting tasting_ _the the_fish fish_taste taste_ _ _large large_portion portion_and and_creative creative_sushi sushi_dish dish_this this_ _your your_ ',false
+6644,'big thick pepperoni ','big_thick thick_pepperoni ',false
+6656,'the cut real ','_the the_ _cut cut_real real_ ',false
+6668,'the pizza itself not exactly the good have but still pretty ','the_pizza pizza_itself itself_ _not not_exactly exactly_the the_good good_ _have have_ _but but_still still_pretty pretty_ ',false
+6680,'probably back though know worth ','_probably probably_ _ _back back_though though_ _ _ _know know_ _ _worth worth_ ',false
+6692,'maybe back once more many year from now when forget go there ','maybe_ _ _back back_once once_more more_many many_year year_from from_now now_when when_ _forget forget_ _go go_there there_ ',false
+6704,'sit the balcony ','sit_ _the the_balcony ',false
+6716,'not ','_not not_ ',false
+6728,'food be good and ','food_be be_good good_and and_ ',false
+6740,'portion be just enough for for but may not for for big ','portion_be be_just just_enough enough_for for_ _but but_may may_not not_ _for for_ _big big_ ',false
+6752,'fair menu ','fair_menu menu_ ',false
+6764,'the appetizer be be but the creme brulee be be very savory and ','the_appetizer appetizer_be be_ _but but_the the_creme creme_brulee brulee_be be_very very_savory savory_and and_ ',false
+6776,'indoor ambience be ','indoor_ambience ambience_be be_ ',false
+6788,'nice request for table the ','_ _nice nice_ _request request_for for_ _table table_ _the the_ ',false
+6800,'great place people ','_ _great great_place place_ _people people_ ',false
+6812,'although the the service could improve consider the the money you put ','although_the the_service service_could could_ _improve improve_consider consider_the the_money money_you you_put put_ ',false
+6824,'our drink keep come but our server come couple ','our_drink drink_keep keep_come come_but but_our our_server server_come come_ _ _couple couple_ ',false
+6836,'should more you ','should_ _ _ _more more_ _ _you you_ ',false
+6848,'late night din with exeptional ','late_night night_din din_with with_exeptional exeptional_ ',false
+6860,'be seat right the table be private and ','_be be_seat seat_right right_ _the the_table table_be be_private private_and and_ ',false
+6872,'the service be be exceptional sometime there be be feeling that be serve the army friendly ','the_service service_be be_exceptional exceptional_ _sometime sometime_there there_be be_ _feeling feeling_that that_ _be be_serve serve_ _the the_army army_ _friendly friendly_ ',false
+6884,'the food be be very filet mignon be be probably the good ever ','the_food food_be be_very very_ _filet filet_mignon mignon_be be_probably probably_the the_good good_ _ever ever_ ',false
+6896,'the portion be big not order too ','the_portion portion_be be_big big_ _ _ _not not_order order_too too_ ',false
+6908,'groovy music make the dinner ','groovy_music music_make make_the the_dinner dinner_ ',false
+6920,'the most most pleasant surprise be the the check that do not exceed expectation always happen most most the the ','the_most most_pleasant pleasant_surprise surprise_be be_the the_check check_that that_do do_not not_exceed exceed_ _expectation expectation_ _ _always always_happen happen_ _most most_ _the the_ ',false
+6932,'have but here there be be bathroom attendant the restroom which be be ','_have have_ _but but_here here_ _there there_be be_ _bathroom bathroom_attendant attendant_ _the the_restroom restroom_which which_be be_ ',false
+6944,'the bathroom itself very small with #crd# toilet and only #crd# the the the girl be stay totally the the the way hang out paper towel from the the the ','the_bathroom bathroom_itself itself_ _very very_small small_with with_#crd# #crd#_toilet toilet_and and_only only_#crd# #crd#_ _the the_girl girl_be be_stay stay_totally totally_ _the the_way way_hang hang_out out_paper paper_towel towel_from from_the the_ ',false
+6956,'feel ackward and next time go the casino ','_feel feel_ackward ackward_and and_next next_time time_go go_ _the the_casino casino_ ',false
+6968,'this place ','this_place place_ ',false
+6980,'mercedes restaurant the service undeniably ','_mercedes mercedes_restaurant restaurant_ _ _ _the the_service service_ _undeniably undeniably_ ',false
+6992,'the chip and and salsa be be and and the price be be ','the_chip chip_ _and and_salsa salsa_be be_ _ _and and_the the_price price_be be_ ',false
+7004,'the atmosphere and and the decor festive and and ','the_atmosphere atmosphere_ _ _and and_ _the the_decor decor_ _festive festive_and and_ ',false
+7016,'the catering out this and raouls chicken vegetable soup rock ','the_catering catering_ _out out_ _this this_ _and and_raouls raouls_chicken chicken_vegetable vegetable_soup soup_rock rock_ _ ',false
+7028,'drink be and feel like third world country when walk the ','drink_be be_ _and and_ _feel feel_like like_ _ _ _ _third third_world world_country country_when when_ _walk walk_ _the the_ ',false
+7040,'insultingly overprice ','insultingly_overprice ',false
+7052,'mediocre ','_mediocre mediocre_ ',false
+7064,'the presentation snooze excellent and and #crd# those place that you you feel more sophisticated just for be but peel back the layer and and you you have overprice ihop with high brow ','the_presentation presentation_ _snooze snooze_ _excellent excellent_and and_ _ _#crd# #crd#_ _those those_place place_that that_you you_feel feel_more more_sophisticated sophisticated_just just_for for_be be_ _but but_peel peel_back back_the the_layer layer_and and_you you_have have_ _overprice overprice_ihop ihop_with with_ _high high_brow brow_ ',false
+7076,'start approximately 0 orange juice will cost you ','_start start_ _approximately approximately_0 0_ _ _orange orange_juice juice_will will_cost cost_you you_ ',false
+7088,'they serve skinny shape glass glass disguise the the fact that you get small juice the the price half gallon ','they_serve serve_ _ _ _ _skinny skinny_ _shape shape_glass glass_ _disguise disguise_the the_fact fact_that that_you you_ _get get_ _small small_juice juice_ _the the_price price_ _ _half half_gallon gallon_ _ _ ',true
+7100,'should have just ask for the check when see but their menu be unique that that ','_should should_have have_just just_ask ask_for for_the the_check check_when when_ _see see_ _but but_their their_menu menu_be be_ _unique unique_that that_ _ ',false
+7112,'the pancake pancake pancake be certainly inventive but for pancake pancake pancake them be more like the pancake flight different well ','the_pancake pancake_be be_certainly certainly_inventive inventive_but but_ _for for_ _ _ _pancake pancake_ _ _them them_be be_more more_like like_ _ _the the_pancake pancake_flight flight_ _ _ _different different_ _ _well well_ ',false
+7124,'the pancake should large least justify the the expense even with the the unique ','the_pancake pancake_should should_ _large large_ _least least_ _ _justify justify_the the_expense expense_even even_with with_the the_unique unique_ ',false
+7136,'meal meal have have have send send back back egg for simple request break the the yoke before and would have have have have send send them back back again reject the the meal meal all ','_ _meal meal_ _have have_ _send send_back back_ _egg egg_for for_ _simple simple_request request_ _break break_the the_yoke yoke_before before_ _and and_would would_have have_have have_ _send send_them them_back back_again again_ _ _ _reject reject_the the_meal meal_all all_ ',false
+7148,'reject because the the the process attempt fix the the the egg they break something else the the the dish and be too frustrated ','_reject reject_ _because because_ _the the_process process_ _attempt attempt_ _fix fix_the the_egg egg_they they_break break_something something_else else_ _the the_dish dish_and and_ _be be_too too_frustrated frustrated_ _ ',false
+7160,'their credit they remove the the the dish from the the the but manager stop ask what the the the problem ','_their their_credit credit_they they_remove remove_the the_dish dish_from from_the the_ _but but_ _manager manager_stop stop_ _ _ask ask_what what_the the_problem problem_ ',false
+7172,'the end our check come for small breakfast orange juice and iced tea have ','_the the_end end_our our_check check_come come_ _ _for for_ _small small_ _ _breakfast breakfast_ _ _orange orange_juice juice_and and_ _iced iced_tea tea_ _have have_ ',false
+7184,'much more than just great ','much_more more_than than_just just_ _great great_ ',false
+7196,'exceedingly pleased report that dinner boathouse last friday completely exceed ','_ _ _exceedingly exceedingly_pleased pleased_ _report report_that that_ _dinner dinner_ _ _boathouse boathouse_last last_friday friday_completely completely_exceed exceed_ _ ',false
+7208,'something seattle but give its gorgeous sound have suspect that the the the accolade be more due the the the scenery than the the the food and ','_ _something something_ _ _seattle seattle_ _but but_give give_its its_gorgeous gorgeous_sound sound_ _ _have have_suspect suspect_that that_the the_accolade accolade_be be_more more_due due_ _the the_scenery scenery_than than_ _the the_food food_and and_ ',false
+7220,'imagine happy surprise upon find that the the view be only the the thing about ','imagine_ _happy happy_surprise surprise_upon upon_find find_that that_the the_view view_be be_only only_the the_ _thing thing_about about_ ',false
+7232,'start thing our lovely server brooke be quickly hand take drink ','_start start_thing thing_ _our our_lovely lovely_server server_brooke brooke_be be_quickly quickly_ _hand hand_ _take take_ _drink drink_ ',false
+7244,'party #crd# be feel particularly and and splurge the shilshole sampler.a beautiful assortment enormous white gulf smoke albacore fantastic manila clam seasoned with scallop tasty soy and and tiny pile dungeness crab atop sublime butter ','_party party_ _#crd# #crd#_be be_feel feel_particularly particularly_ _and and_ _splurge splurge_ _the the_shilshole shilshole_sampler.a sampler.a_beautiful beautiful_assortment assortment_ _enormous enormous_white white_gulf gulf_ _smoke smoke_albacore albacore_ _ _fantastic fantastic_manila manila_clam clam_seasoned seasoned_with with_ _scallop scallop_ _ _tasty tasty_soy soy_ _and and_ _tiny tiny_pile pile_ _dungeness dungeness_crab crab_atop atop_ _sublime sublime_butter butter_ ',false
+7256,'for completely enjoy the seared alaskan sea scallop complement artichoke and pecorino ','for_ _ _ _completely completely_enjoy enjoy_the the_seared seared_alaskan alaskan_sea sea_scallop scallop_complement complement_ _ _artichoke artichoke_ _ _and and_pecorino pecorino_ ',false
+7268,'the scallop be apparently cook black olive butter which really make them unique mention ','the_scallop scallop_be be_apparently apparently_cook cook_ _ _black black_olive olive_butter butter_which which_really really_make make_them them_unique unique_ _ _mention mention_ ',false
+7280,'friend enjoy the grill alaskan king salmon with delectable cream washington russet potato and crisp green ','_friend friend_enjoy enjoy_the the_grill grill_alaskan alaskan_king king_salmon salmon_with with_delectable delectable_cream cream_washington washington_russet russet_potato potato_and and_crisp crisp_green green_ ',false
+7292,'have taste all #crd# item her and they be ','_have have_ _taste taste_ _all all_#crd# #crd#_item item_ _her her_ _and and_they they_be be_ ',false
+7304,'our server continue attentive throughout the but do remain puzzle #crd# who think that appropriate place take young child for ','our_server server_continue continue_ _ _attentive attentive_throughout throughout_the the_ _but but_ _do do_remain remain_puzzle puzzle_ _#crd# #crd#_ _ _who who_think think_that that_ _ _ _appropriate appropriate_place place_ _take take_young young_child child_for for_ ',false
+7316,'#crd# rascally kid be be seat near for the #ord# part our dinner.they be be replace delightful preteen who pretend gag every time seafood be mention her ','#crd#_rascally rascally_kid kid_be be_seat seat_near near_ _for for_the the_#ord# #ord#_part part_ _our our_dinner.they dinner.they_be be_replace replace_ _ _delightful delightful_preteen preteen_who who_pretend pretend_ _gag gag_every every_time time_seafood seafood_be be_mention mention_ _her her_ ',false
+7328,'all have say that boathouse deserving its title seattle ','all_ _ _have have_ _say say_that that_ _boathouse boathouse_ _deserving deserving_ _its its_title title_ _ _seattle seattle_ ',false
+7340,'while could have do without the the the youth who share the the the evening with our wonderful server and food make the the the experience very positive ','while_ _could could_have have_do do_without without_the the_youth youth_who who_share share_the the_evening evening_with with_ _our our_wonderful wonderful_server server_and and_food food_make make_the the_experience experience_ _very very_positive positive_ ',false
+7352,'yeah.the view be ','_yeah.the yeah.the_view view_be be_ _ ',false

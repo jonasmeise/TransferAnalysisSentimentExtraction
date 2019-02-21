@@ -1,0 +1,65 @@
+@relation location#general
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+137,0.025,0.0,-0.2,0.125,1.0,0.0,0.125,1.0,0.0,'target_block','Located at the end of a magnificent block ','VBN IN DT NN IN DT JJ NN . ',8,0,1,0,0,0,0,0,0,0,positive
+159,0.06315789473684211,0.6,0.0,0.10526315789473684,1.0,0.0,0.02631578947368421,0.5,0.0,'target_neighborhood','Not sure where the previous reviewer, lonk, dined, but Saul is in a great neighborhood and has great food ','RB JJ WRB DT JJ NN , NN , VBD , CC NNP VBZ IN DT JJ NN CC VBZ JJ NN . ',19,1,2,0,1,0,0,0,0,1,positive
+209,0.04,0.8,0.0,0.08,1.0,0.0,0.06,1.0,0.0,'target_outdoor atmosphere','The outdoor atmosphere of sitting on the sidewalk watching the world go by 50 feet away on 6th avenue on a cool evening was wonderful ','DT JJ NN IN VBG IN DT NN VBG DT NN VB IN CD NNS RB IN JJ NN IN DT JJ NN VBD JJ . ',25,0,1,1,0,0,0,0,0,0,positive
+445,0.09999999999999999,1.0,0.0,0.14285714285714285,1.0,0.0,0.07142857142857142,1.0,0.0,'target_view','The view is breathtaking the service is top notch  the ambiance is wonderfull ','DT NN VBZ VBG DT NN VBZ JJ NN . ',14,0,3,1,1,0,0,0,0,0,positive
+448,0.09999999999999999,1.0,0.0,0.14285714285714285,1.0,0.0,0.07142857142857142,1.0,0.0,'target_view','The view is breathtaking the service is top notch  the ambiance is wonderfull ','DT NN VBZ JJ . ',14,0,3,1,0,0,0,0,0,0,positive
+761,0.0,0.0,0.0,0.125,1.0,0.0,0.0,0.0,0.0,'target_NULL','Conveniently located too, being right on Bedford ave ','RB VBN RB , VBG RB IN NNP NN . ',8,0,1,0,0,0,0,0,0,0,positive
+844,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,0.5,0.0,'target_view','The view is spectacular, and the food is great ','DT NN VBZ JJ , CC DT NN VBZ JJ . ',9,0,2,0,0,0,0,0,0,0,positive
+891,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.11764705882352941,1.0,0.0,'target_restaurant','The restaurant looks out over beautiful green lawns to the Hudson River and the Statue of Liberty ','DT NN VBZ RP IN JJ JJ NNS IN DT NNP NNP CC DT NNP IN NNP . ',17,0,1,0,0,0,0,0,0,0,positive
+892,0.0125,0.0,-0.2,-0.0625,0.0,0.0,-0.05208333333333333,0.0,0.0,'target_NULL','It is set far from the small street its on, and there is no traffic noise ','PRP VBZ VBN RB IN DT JJ NN PRP VBZ IN , CC EX VBZ DT NN NN . ',16,0,1,0,0,0,0,0,0,0,positive
+896,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_place','This is a great place to take out-of-towners, and perfect for watching the sunset ','DT VBZ DT JJ NN TO VB RB HYPH IN HYPH NNS , CC JJ IN VBG DT NN . ',14,0,1,0,0,0,0,0,0,0,positive
+934,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_location','The location is perfect ','DT NN VBZ JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+981,0.022222222222222223,0.6,0.0,0.037037037037037035,1.0,0.0,0.037037037037037035,1.0,0.0,'target_location','Its location is good and the fact that Hutner College is near and their prices are very reasonable, makes students go back to Suan again and again ','PRP$ NN VBZ JJ CC DT NN IN NNP NNP VBZ JJ CC PRP$ NNS VBP RB JJ , VBZ NNS VB RB IN NNP RB CC RB . ',27,0,2,0,0,0,0,0,0,0,positive
+1247,0.017391304347826087,0.4,0.0,0.043478260869565216,1.0,0.0,0.014492753623188404,0.3333333333333333,0.0,'target_NULL','its a little out of the way if you dont live in the neighborhood, but definitely worth the trip from wherever you are ','PRP$ DT JJ IN IN DT NN IN PRP VBP RB VB IN DT NN , CC RB JJ DT NN IN WRB PRP VBP . ',23,0,2,0,0,1,0,1,0,1,neutral
+1267,0.02456140350877193,0.6,0.0,0.03508771929824561,1.0,0.0,0.05263157894736842,1.0,0.0,'target_Rice Avenue','Fabulous decor - makes you feel like youre in a trendy Manhattan restaurant, very very good food, cheaply-priced, generally friendly staff, and if youre a Manhattanite, or spend most of your time in Manhattan, Rice Avenue will make you feel at home very Soho/Village/Upper West Side minus the expensive prices and pretentious clientele all on Roosevelt Avenue ','JJ NN : VBZ PRP VB IN PRP VBP IN DT JJ NNP NN , RB RB JJ NN , RB HYPH VBN , RB JJ NN , CC IN PRP VBP DT NNP , CC VB JJS IN PRP$ NN IN NNP , NNP NNP MD VB PRP VB IN NNP NNP SYM NNP SYM NNP NNP NNP VBP DT JJ NNS CC JJ NN IN NNP NNP . ',57,1,7,1,0,0,0,0,0,0,positive
+1296,0.07692307692307693,0.8,-0.2,0.11538461538461539,1.0,0.0,0.038461538461538464,1.0,0.0,'target_view of the new york city skiline','Food was good and the view of the new york city skiline was terrific even on a foggy rainy day like that of when I went ','NN VBD JJ CC DT NN IN DT JJ NN NN NN VBD JJ RB IN DT JJ JJ NN IN DT IN WRB PRP VBD . ',26,0,2,1,0,0,0,0,0,0,positive
+1297,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I would highly recommand requesting a table by the window ','PRP MD RB VB VBG DT NN IN DT NN . ',10,0,1,1,0,0,0,0,0,0,positive
+1302,0.031578947368421054,0.6,0.0,0.10526315789473684,1.0,0.0,0.05263157894736842,1.0,0.0,'target_location','Love the scene first off- the place has a character and nice light to it very fortunate, location wise ','VB DT NN RB IN HYPH DT NN VBZ DT NN CC JJ NN IN NNP JJ , NN JJ . ',19,0,3,0,0,0,0,0,0,0,positive
+1361,0.025,0.4,0.0,0.0625,1.0,0.0,0.0,0.3333333333333333,0.0,'target_place','The place is a bit hidden away, but once you get there, its all worth it ','DT NN VBZ DT NN JJ RB , CC IN PRP VBP RB , PRP VBZ DT JJ PRP . ',16,0,2,0,0,0,0,0,0,1,neutral
+1433,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_view of river and NYC','Nice view of river and NYC ','JJ NN IN NN CC NNP . ',6,0,1,1,0,0,0,0,0,0,positive
+1489,0.05333333333333334,0.8,0.0,0.0,1.0,0.0,0.03333333333333333,0.5,0.0,'target_views','Everyone raved about the atmosphere (elegant rooms and absolutely incomparable views) and the fabulous food ','NN VBD IN DT NN -LRB- JJ NNS CC RB JJ NNS -RRB- CC DT JJ NN . ',15,1,4,0,0,0,0,0,0,0,positive
+1495,0.013333333333333334,0.0,-0.2,0.0,0.0,0.0,0.06666666666666667,0.5,0.0,'target_view','The high prices youre going to pay is for the view not for the food ','DT JJ NNS PRP VBP VBG TO VB VBZ IN DT NN RB IN DT NN . ',15,0,3,0,1,0,0,0,0,0,neutral
+1610,0.21818181818181817,0.6,0.0,0.36363636363636365,1.0,0.0,0.0,0.0,0.0,'target_neighborhood','great food, great wine list, great service in a great neighborhood ','JJ NN , JJ NN NN , JJ NN IN DT JJ NN . ',11,0,4,0,0,0,0,0,0,0,positive
+1774,0.02857142857142857,0.4,-0.2,0.05714285714285714,1.0,0.0,0.03333333333333333,1.0,0.0,'target_spot','Not only is it an adventure getting to this somewhat hidden spot, once you enter the unmarked wooden doors, the zen and intimate d?cor will make you feel like youre no longer in the city ','RB RB VBZ PRP DT NN VBG IN DT RB VBN NN , IN PRP VBP DT JJ JJ NNS , DT NNS CC JJ NN MD VB PRP VB IN PRP VBP RB RBR IN DT NN . ',35,0,3,0,1,0,0,0,0,0,neutral
+1801,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_view','Restaurant with a view ','NN IN DT NN ',4,0,1,0,0,0,0,0,0,0,neutral
+2030,0.0,0.0,0.0,-0.1111111111111111,1.0,0.0,-0.05555555555555555,0.0,0.0,'target_NULL',' Pretty cheap for sit down Mexican AND downtown ','RB JJ IN VB RP JJ CC NN . ',9,0,2,1,0,0,0,0,0,0,positive
+2118,0.02608695652173913,0.6,0.0,0.043478260869565216,1.0,0.0,0.0,0.5,0.0,'target_location','Its located in a strip mall near the Beverly Center, not the greatest location, but the food keeps me coming back for more ','PRP VBZ VBN IN DT NN NN IN DT NNP NNP , RB DT JJS NN , CC DT NN VBZ PRP VBG RB IN JJR . ',23,0,2,0,1,0,0,0,0,1,neutral
+2121,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL',' tucked away over by the Beverly Center ','VBN RB IN IN DT NNP NNP . ',8,0,1,1,0,0,0,0,0,0,neutral
+2249,0.028571428571428574,0.4,0.0,0.14285714285714285,1.0,0.0,0.07142857142857142,1.0,0.0,'target_location','Great food, spectacular location, and friendly service keep us coming back year after year ','JJ NN , JJ NN , CC JJ NN VBP PRP VBG RB NN IN NN . ',14,0,3,0,0,0,0,0,0,0,positive
+2377,0.027450980392156862,0.6,-0.2,0.0392156862745098,1.0,0.0,0.0196078431372549,1.0,0.0,'target_SOHO location','Your a sushi fan, you love expertly cut fish, great sake, a killer SOHO location, and of course: Salmon, Tuna, Fluke, Yellow Tail, Cod, Mackeral, Jellyfish, Sea Urchin, Shrimp, Lobster, Sea Bream, Trout, Milk Fish, Blue Fin Tuna, Eel, Crab, Sardine, Monk Fish, Roe, Scallop, Oysters, and a varity of Toro ','PRP$ DT JJ NN , PRP VBP RB JJ NN , JJ NN , DT NN NNP NN , CC IN NN : NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP NNP , NNP , NN NN , NNP NNP NNP , NNP , NNP , NNP , NNP NNP , NNP , NNP , NNP , CC DT NN IN NNP . ',51,0,26,1,0,0,0,0,0,0,positive
+2424,0.1,0.6,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_location','The only positive thing about Mioposto is the nice location ','DT JJ JJ NN IN NNP VBZ DT JJ NN . ',10,0,2,0,0,0,0,0,0,0,positive
+2546,0.0,0.0,0.0,0.0,0.0,0.0,0.05555555555555555,1.0,0.0,'target_location','If I needed to name some they would include the location to the beach or Golden Gate park ','IN PRP VBD TO VB DT PRP MD VB DT NN IN DT NN CC NNP NNP NN . ',18,0,1,1,0,0,0,0,0,0,positive
+2547,0.05333333333333334,0.6,0.0,0.06666666666666667,1.0,0.0,-0.016666666666666666,0.25,0.0,'target_NULL','Its great if you spent the day there and didnt want to drive to eat ','PRP$ JJ IN PRP VBD DT NN RB CC VBD RB VB TO VB TO VB . ',15,0,1,0,0,1,0,0,1,0,positive
+2564,0.04,0.6,-0.4,0.0,1.0,0.0,0.14,1.0,0.0,'target_location along the marina in Long Beach',' Schooner or Laters charming location along the marina in Long Beach and average food does not, unfortunately, compensate for its very poor customer service ','NNP CC NNP POS JJ NN IN DT NN IN NNP NNP CC JJ NN VBZ RB , RB , VB IN PRP$ RB JJ NN NN . ',25,0,3,1,1,0,0,0,0,0,positive
+2806,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_view','Much more than just a great view ','RB JJR IN RB DT JJ NN . ',7,1,2,0,0,0,0,0,0,0,positive
+2809,0.0064516129032258064,0.0,-0.2,0.06451612903225806,1.0,0.0,0.04838709677419355,1.0,0.0,'target_Sound views','Rays is something of a Seattle institution, but given its gorgeous Sound views, I had suspected that the accolades were more due to the scenery than to the food and service ','NNP POS VBZ NN IN DT NNP NN , CC VBN PRP$ JJ JJ NNS , PRP VBD VBN IN DT NNS VBD RBR JJ IN DT NN IN IN DT NN CC NN . ',31,0,1,1,0,0,0,0,0,1,positive
+2810,0.0375,0.6,0.0,0.0625,1.0,0.0,0.125,1.0,0.0,'target_views','Imagine my happy surprise upon finding that the views are only the third-best thing about Rays ','VB PRP$ JJ NN IN VBG IN DT NNS VBP RB DT RB HYPH JJS NN IN NNP . ',16,1,2,0,0,0,0,0,0,0,positive
+2834,0.028571428571428574,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_view','Oh yeah the view was good, too ','UH DT NN VBD JJ , RB . ',7,0,1,0,0,0,0,0,0,0,positive

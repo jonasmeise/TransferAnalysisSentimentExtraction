@@ -6,12 +6,20 @@ import java.util.HashMap;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.core.stopwords.StopwordsHandler;
 
-public class StopwordHandler implements StopwordsHandler{
+public class StopwordHandler implements StopwordsHandler, java.io.Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4488466685733581117L;
+	
 	HashMap<String, Boolean> myHash = new HashMap<String, Boolean>();
-	FileUtils fu;
+	
+	public StopwordHandler() {
+		this("src\\main\\resources\\stopwords.txt");
+	}
 	
 	public StopwordHandler(String filePath) {
-		fu = new FileUtils();
+		FileUtils fu = new FileUtils();
 		ArrayList<String> allStopwords = fu.readFromFileArrayList("src\\main\\resources\\stopwords.txt");
 		fu.close();
 		

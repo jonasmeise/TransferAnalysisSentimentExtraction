@@ -26,6 +26,7 @@ import webanno.custom.Valence;
 
 //BASED ON THIS MODEL (BASIC FEATURE SET, SECTION 3.2) DESCRIBED IN THIS PAPER:
 //http://aclweb.org/anthology/S/S16/S16-1051.pdf
+//Model version corresponds to the "n-grams + lx + nt + punctuation" approach 
 //AKTSKI at SemEval-2016 Task 5: Aspect Based Sentiment Analysis for Consumer Reviews
 //Pateria, Choubey
 //Classification type: SVM-RBF, C=100, gamma=0.001

@@ -115,46 +115,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	        		
 	        		ArrayList<Token> contextTokens = getContext(sentence, treeCollection, 3, 1000, searchTokens);
 	        		
-	        		for(SentimentLexicon singleLexi : sentimentLexicons) {
-	        			double currentValue = singleLexi.fetchPolarity(wordA, new String[] {"positive"})-singleLexi.fetchPolarity(wordA, new String[] {"negative"});
-	        			double currentValue2 = singleLexi.fetchPolarity(wordB, new String[] {"positive"})-singleLexi.fetchPolarity(wordB, new String[] {"negative"});
-	        			
-	        			if(currentValue>lexicons_max) {
-	        				lexicons_max = currentValue;
-	        			}
-	        			if(currentValue2>lexicons_max) {
-	        				lexicons_max = currentValue2;
-	        			}
-	        			if(currentValue<lexicons_min) {
-	        				lexicons_min = currentValue;
-	        			}
-	        			if(currentValue2<lexicons_min) {
-	        				lexicons_min = currentValue2;
-	        			}
-      			
-	        			lexicons_avg += currentValue + currentValue2;
-	        		}
-	        		
-	        		lexicons_avg = (lexicons_avg/(sentimentLexicons.size()*2));
-	        		word_distance = Math.abs(t1.getBegin() - t2.getBegin());
-	        		
-	        		boolean containsNegation=false;
-	        		for(Token singleToken : contextTokens) {
-	        			for(String negationWord : negationWords) {
-	        				if(singleToken.getLemma().getValue().contains(negationWord)) {
-	        					containsNegation=true;
-	        				}
-	        			}
-	        			
-	        			for(SentimentLexicon singleLexi : sentimentLexicons) {
-	        				context_lexicon_avg += singleLexi.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"})-singleLexi.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
-	        			}
-	        		}
-	        		
-	        		context_negation = containsNegation ? 1 : 0;
-	        		context_lexicon_avg = context_lexicon_avg/(sentimentLexicons.size()*contextTokens.size());
-	        		sentence_length = currentSentenceString.length()-1;
-	        			
+        			
 					String identifier;
 					
 					if(t1.getAspect()!=null && t2.getAspect()!=null) {
@@ -166,15 +127,46 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "");
 	    				}
 						
-						//find the value in returnList and replace it with the new one
-						
+	        		
+		        		for(SentimentLexicon singleLexi : sentimentLexicons) {
+		        			double currentValue = singleLexi.fetchPolarity(identifier, new String[] {"positive"})-singleLexi.fetchPolarity(wordA, new String[] {"negative"});
+		        			//double currentValue2 = singleLexi.fetchPolarity(wordB, new String[] {"positive"})-singleLexi.fetchPolarity(wordB, new String[] {"negative"});
+		        			
+		        			if(currentValue>lexicons_max) {
+		        				lexicons_max = currentValue;
+		        			}
+		        			if(currentValue<lexicons_min) {
+		        				lexicons_min = currentValue;
+		        			}
+	      			
+		        			lexicons_avg += currentValue;
+		        		}
+		        		
+		        		lexicons_avg = (lexicons_avg/(sentimentLexicons.size()));
+		        		
+		        		boolean containsNegation=false;
+		        		for(Token singleToken : contextTokens) {
+		        			for(String negationWord : negationWords) {
+		        				if(singleToken.getLemma().getValue().contains(negationWord)) {
+		        					containsNegation=true;
+		        				}
+		        			}
+		        			
+		        			for(SentimentLexicon singleLexi : sentimentLexicons) {
+		        				context_lexicon_avg += singleLexi.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"})-singleLexi.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
+		        			}
+		        		}
+		        		
+		        		context_negation = containsNegation ? 1 : 0;
+		        		context_lexicon_avg = context_lexicon_avg/(sentimentLexicons.size()*contextTokens.size());
+		        		sentence_length = currentSentenceString.length()-1;
+
 						ArrayList<String> returnInstance = new ArrayList<String>();
 						returnInstance.add("" + valueId);
 						valueId++;
 						
 						returnInstance.add(token.getLemma().getValue());
 						returnInstance.add(identifier);
-						returnInstance.add("" + word_distance);
 						
 						if(!constrained) {
 							returnInstance.add("" + lexicons_min);
@@ -227,6 +219,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 		negationWords.add("n't");
 		negationWords.add("need");
 		negationWords.add("must");
+		negationWords.add("should");
 		
 		sentimentLexicons = new ArrayList<SentimentLexicon>();
 		sentimentLexicons.add(new AFINN());
@@ -241,7 +234,6 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 			//of NN+, JJ+, VB+, RB
 			relations.add("wordA string");
 			relations.add("dependency_type string");
-			relations.add("word_distance numeric");
 			relations.add("lexicons_min numeric");
 			relations.add("lexicons_avg numeric");
 			relations.add("lexicons_max numeric");

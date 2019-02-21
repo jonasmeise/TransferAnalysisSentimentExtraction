@@ -24,6 +24,7 @@ import de.unidue.langtech.bachelor.meise.type.classifiers.*;
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.LibSVM;
 import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SGD;
 import weka.classifiers.functions.SimpleLinearRegression;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.AdditiveRegression;
@@ -53,19 +54,18 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained", "*.xmi");
-		myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\RQ2_learningtest\\constrained", "*.xmi");
+		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
-		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\", "output.xml", "true");
+		myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\unconstrained\\analysis.txt");
+		myPipeline.foldLearning("src\\main\\resources\\RQ2_learningtest\\unconstrained", "src\\main\\resources\\RQ2_learningtest\\unconstrained\\analysis.txt");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
-		File file = new File(inputFile);
-		
+		//Training data
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFile,
                 RawJsonReviewReader.PARAM_LANGUAGE, "en",
@@ -83,13 +83,34 @@ public class MainPipeline {
         
         AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
         
-        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AKTSKI_ClassifierGenerator.class, 
-        		AKTSKI_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-        		AKTSKI_ClassifierGenerator.PARAM_RELATION_NAME, "AKTSKI",
-        		AKTSKI_ClassifierGenerator.PARAM_CONSTRAINED, "false",
-        		AKTSKI_ClassifierGenerator.PARAM_USE_OLD_DATA, "true");
+        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(BUTknot_ClassifierGenerator.class, 
+        		BUTknot_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+        		BUTknot_ClassifierGenerator.PARAM_RELATION_NAME, "BUTknot",
+        		BUTknot_ClassifierGenerator.PARAM_CONSTRAINED, "true",
+        		BUTknot_ClassifierGenerator.PARAM_USE_OLD_DATA, "true",
+        		BUTknot_ClassifierGenerator.PARAM_IS_TEST_DATA, "false");
         
         SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, writer);
+        
+        
+        //Test data
+        CollectionReaderDescription reader2 = CollectionReaderFactory.createReaderDescription(
+                RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFile,
+                RawJsonReviewReader.PARAM_LANGUAGE, "en",
+                RawJsonReviewReader.PARAM_PATTERNS, "*.gold",
+                RawJsonReviewReader.PARAM_FOLDER_PATH, inputFile,
+                RawJsonReviewReader.PARAM_FILE_EXTENSION, ".gold",
+                RawJsonReviewReader.PARAM_USE_OLD_DATA, "true",
+                RawJsonReviewReader.PARAM_SEARCH_SUBFOLDERS, "false");
+        
+        AnalysisEngineDescription writer2 = AnalysisEngineFactory.createEngineDescription(BUTknot_ClassifierGenerator.class, 
+        		BUTknot_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+        		BUTknot_ClassifierGenerator.PARAM_RELATION_NAME, "BUTknot",
+        		BUTknot_ClassifierGenerator.PARAM_CONSTRAINED, "true",
+        		BUTknot_ClassifierGenerator.PARAM_USE_OLD_DATA, "true",
+        		BUTknot_ClassifierGenerator.PARAM_IS_TEST_DATA, "true");
+        
+        SimplePipeline.runPipeline(reader2, tokenizer, tagger, lemmatizer, dependency, writer2);
 	}
 	
 	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
@@ -104,14 +125,11 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-			 /*AnalysisEngineDescription rawDataAnalyser = AnalysisEngineFactory.createEngineDescription(DataStatistics.class, 
-					 DataStatistics.PARAM_OUTPUT_PATH, outputFile + "/sourceDataAnalysis.txt");*/
-			 
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator.class, 
-	        		AUEB_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		AUEB_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier3",
-	        		AUEB_ClassifierGenerator.PARAM_CONSTRAINED, "false",
-	        		AUEB_ClassifierGenerator.PARAM_USE_OLD_DATA, "true");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(RQ2_ReviewLevelRegression_ClassifierGenerator.class, 
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RQ2",
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, "true",
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -130,6 +148,7 @@ public class MainPipeline {
         		RQ2_ReviewLevelRegression_ClassifierGenerator.class, RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputPath,
         		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, "false",
         		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RQ2",
+        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_USE_OLD_DATA, "false",
         		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_XML_PATH, folderPath
         		);
         
@@ -142,15 +161,15 @@ public class MainPipeline {
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		 svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
 		//svm.setSVMType(new SelectedTag(LibSVM.SVMT, LibSVM.TAGS_SVMTYPE));
-		//svm.setProbabilityEstimates(true);
-		//svm.setDegree(3);
+		svm.setProbabilityEstimates(true);
+		//svm.setDegree(2);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		//svm.setCost(200);
-		//svm.setGamma(0.002);
-		//svm.setEps(0.0005);
+		svm.setCost(500);
+		svm.setGamma(0.001);
+		svm.setEps(0.00005);
 			
 		SimpleLinearRegression slr = new SimpleLinearRegression();
 		slr.setOutputAdditionalStats(true);
@@ -158,11 +177,11 @@ public class MainPipeline {
 		 
 		 Classifier myClassifier = null;
 		 LinearRegression lr = new LinearRegression(); 
-		 lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
+		 //lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
 		 //lr.setRidge(0.0000001);
 		 //lr.setDebug(true);
 	 
-		 IBk ibk = new IBk();
+		 IBk ibk = new IBk();	
 		 ibk.setKNN(1);
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
@@ -170,23 +189,30 @@ public class MainPipeline {
 		 
 		 
 		CVParameterSelection cps = new CVParameterSelection();
+		//svm.setWeights("1000 1");
 		cps.setClassifier(svm);
-		cps.setNumFolds(3);
+		cps.setNumFolds(4);
 		cps.setDebug(true);
 		String[] params = new String[3];
-		params[0] = "K 0 3 4";
-		params[1] = "C 0.001 100 3";
-		params[2] = "G 0.001 0.1 2";
+		params[0] = "D 2 4 3";
+		params[1] = "C 0.01 100 3";
+		params[2] = "G 0.0001 0.1 3";
 		cps.setCVParameters(params);
+		
+		SGD sgd = new SGD();
+		sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
+		sgd.setLearningRate(0.41);
+		//sgd.setEpsilon(0.40);
+		//sgd.setEpochs(10);
 		
 		AdditiveRegression ar = new AdditiveRegression();
 		ar.setDebug(true);
 		ar.setClassifier(svm);
 		
-		myClassifier = cps;
+		myClassifier = lr;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 myClassifierHandler.useCFV = true;
 		 //myClassifierHandler.testDataPath = 
-		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_RBF, 0, outputPath, false, myClassifier);
+		 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath, false, myClassifier);
 	}
 }

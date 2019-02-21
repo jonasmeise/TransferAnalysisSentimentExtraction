@@ -1,0 +1,509 @@
+@relation restaurant#general
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+0,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.06666666666666667,1.0,0.0,'target_place','Judging from previous posts this used to be a good place, but not any longer ','VBG IN JJ NNS DT VBD TO VB DT JJ NN , CC RB DT RBR . ',15,0,1,0,1,0,0,0,0,1,negative
+6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Avoid this place ','VB DT NN . ',3,1,1,0,0,0,0,0,0,0,negative
+8,0.05454545454545454,0.6,0.0,0.09090909090909091,1.0,0.0,0.0,0.0,0.0,'target_Saul','Saul is the best restaurant on Smith Street and in Brooklyn ','NNP VBZ DT JJS NN IN NNP NNP CC IN NNP . ',11,0,1,0,0,0,0,0,0,0,positive
+15,0.05714285714285715,0.0,-0.4,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_restaurant','I was very disappointed with this restaurant ','PRP VBD RB JJ IN DT NN . ',7,0,1,1,0,0,0,0,0,0,negative
+22,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','I/we will never go back to this place again ','PRP NFP PRP MD RB VB RB IN DT NN RB . ',9,0,1,0,0,0,0,0,0,0,negative
+23,0.03870967741935484,0.6,0.0,0.06451612903225806,1.0,0.0,0.03225806451612903,1.0,0.0,'target_Fish','Went on a 3 day oyster binge, with Fish bringing up the closing, and I am so glad this was the place it O trip ended, because it was so great ','VBD IN DT CD NN NN NN , IN NN VBG RP DT NN , CC PRP VBP RB JJ DT VBD DT NN PRP NNP NN VBD , IN PRP VBD RB JJ . ',31,1,1,1,0,0,0,0,0,0,positive
+27,0.08,0.0,-0.4,-0.2,0.0,0.0,-0.2,0.0,0.0,'target_NULL','You cant go wrong here ','PRP MD RB VB JJ RB . ',5,0,1,0,0,1,0,0,0,0,positive
+28,0.0,0.0,0.0,0.0,0.0,0.0,0.029411764705882353,0.5,0.0,'target_Restaurant Saul','Every time in New York I make it a point to visit Restaurant Saul on Smith Street ','DT NN IN NNP NNP PRP VBP PRP DT NN TO VB NNP NNP IN NNP NNP . ',17,0,1,1,0,0,0,0,0,0,positive
+33,0.0,0.0,0.0,0.0,0.0,0.0,-0.07142857142857142,0.5,0.0,'target_NULL','Cant wait wait for my next visit ','MD RB VB VB IN PRP$ JJ NN . ',7,0,1,0,0,1,0,0,0,0,positive
+37,0.12,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_pink pony','we love th pink pony ','PRP VBP DT JJ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+38,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_spot','THe perfect spot ','DT JJ NN . ',3,0,1,0,0,0,0,0,0,0,positive
+42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Dont judge this place prima facie, you have to try it to believe it, a home away from home for the literate heart ','VB RB VB DT NN NN NN , PRP VBP TO VB PRP TO VB PRP , DT NN RB IN NN IN DT JJ NN . ',23,0,1,0,0,1,0,1,0,0,positive
+47,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','well, i didnt find it there, and trust, i have told everyone i can think of about my experience ','UH , PRP VBD RB VB PRP RB , CC NN , PRP VBP VBN NN PRP MD VB IN IN PRP$ NN . ',19,0,1,0,0,1,0,0,1,0,negative
+50,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.0,0.0,0.0,'target_place','This place has got to be the best japanese restaurant in the new york area ','DT NN VBZ VBN TO VB DT JJS JJ NN IN DT JJ NN NN . ',15,0,1,0,0,0,0,0,0,0,positive
+51,0.12,0.6,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_NULL','I had a great experience ','PRP VBD DT JJ NN . ',5,0,1,1,0,0,0,0,0,0,positive
+54,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I have been going back again and again ','PRP VBP VBN VBG RB RB CC RB . ',8,0,1,1,0,0,0,0,0,0,positive
+66,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Im going back ','PRP VBP VBG RB . ',3,0,1,0,0,0,0,0,0,0,positive
+70,0.044444444444444446,0.4,0.0,0.2222222222222222,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','I will be going back and heartily recommend it ','PRP MD VB VBG RB CC RB VB PRP . ',9,1,1,1,0,0,0,0,0,0,positive
+91,0.04,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','A big disappointment, all around ','DT JJ NN , RB RB . ',5,0,1,1,0,0,0,0,0,0,negative
+97,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Worth the trip from Manhattan ','JJ DT NN IN NNP . ',5,0,1,0,0,0,0,0,0,0,positive
+98,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.047619047619047616,0.3333333333333333,0.0,'target_place','This place is worth an one-hour drive ','DT NN VBZ JJ DT CD HYPH NN NN . ',7,0,1,0,0,0,0,0,0,0,positive
+99,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I am so coming back here again, as much as I can ','PRP VBP RB VBG RB RB RB , RB RB IN PRP MD . ',12,0,1,1,0,0,0,0,0,0,positive
+100,0.0608695652173913,0.6,0.0,0.17391304347826086,1.0,0.0,0.07246376811594202,1.0,0.0,'target_Leon','Leon is an East Village gem: casual but hip, with well prepared basic French bistro fare, good specials, a warm and lively atmosphere ','NNP VBZ DT NNP NNP NN : JJ CC NN , IN RB VBN JJ JJ NN NN , JJ NNS , DT JJ CC JJ NN . ',23,0,5,0,0,0,0,0,0,1,positive
+106,0.06666666666666667,0.4,-0.4,0.0,1.0,0.0,0.08333333333333333,1.0,0.0,'target_NULL','Have been dozens of times and never failed to enjoy the experience ','VBP VBN NNS IN NNS CC RB VBD TO VB DT NN . ',12,0,1,0,0,0,0,0,0,0,positive
+107,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Our teenage kids love it, too ','PRP$ JJ NNS VBP PRP , RB . ',6,0,1,0,0,0,0,0,0,0,positive
+108,0.02857142857142857,0.0,-0.6,-0.047619047619047616,0.0,0.0,-0.047619047619047616,0.0,0.0,'target_Zucchero Pomodori','Everytime I decide to try another place on the UES, I get angry that I didnt just go to Zucchero Pomodori ','RB PRP VBP TO VB DT NN IN DT NNP , PRP VBP JJ IN PRP VBD RB RB VB IN NNP NNP . ',21,0,1,1,1,1,0,0,1,0,positive
+109,0.04,0.4,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_place','This is by far my favorite place in the neighborhood ','DT VBZ IN RB PRP$ JJ NN IN DT NN . ',10,0,1,0,0,0,0,0,0,0,positive
+121,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Make sure you try this place as often as you can ','VB JJ PRP VBP DT NN RB RB IN PRP MD . ',11,0,1,0,0,0,0,0,0,0,positive
+122,0.1,0.8,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_restaurant','This is a fun restaurant to go to ','DT VBZ DT NN NN TO VB IN . ',8,0,1,0,0,0,0,0,0,0,positive
+133,0.05,0.4,0.0,0.0,1.0,0.0,0.041666666666666664,0.3333333333333333,0.0,'target_NULL','Slightly on the pricey side but worth it ','RB IN DT JJ NN CC JJ PRP . ',8,1,2,0,0,0,0,0,0,1,positive
+139,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I will be back ','PRP MD VB RB . ',4,1,1,1,0,0,0,0,0,0,positive
+161,0.07272727272727274,0.8,0.0,0.09090909090909091,1.0,0.0,0.09090909090909091,1.0,0.0,'target_NULL','Ive been there three times and have always had wonderful experiences ','PRP VBP VBN RB CD NNS CC VBP RB VBN JJ NNS . ',11,0,1,0,0,0,0,0,0,0,positive
+165,0.012121212121212121,0.4,0.0,0.030303030303030304,1.0,0.0,0.030303030303030304,1.0,0.0,'target_Mizu','Im not sure where the other reviewers ate but it seems as if we visited two different restaurants because my friends and I all enjoy Mizu very much  and were repeat customers ','PRP VBP RB JJ WRB DT JJ NNS VBD CC PRP VBZ IN IN PRP VBD CD JJ NNS IN PRP$ NNS CC PRP DT VBP NNP RB RB . ',33,0,1,1,1,0,0,0,0,1,positive
+166,0.012121212121212121,0.4,0.0,0.030303030303030304,1.0,0.0,0.030303030303030304,1.0,0.0,'target_Mizu','Im not sure where the other reviewers ate but it seems as if we visited two different restaurants because my friends and I all enjoy Mizu very much  and were repeat customers ','CC PRP VBP JJ NNS . ',33,0,1,1,0,0,0,0,0,0,positive
+169,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.06666666666666667,1.0,0.0,'target_place','Judging from previous posts this used to be a good place, but not any longer ','. ',15,0,1,0,0,0,0,0,0,0,negative
+191,0.05714285714285715,0.4,-0.4,0.0,1.0,0.0,0.07142857142857142,1.0,0.0,'target_NULL','This is one of my favorite restaurants and it is not to be missed ','DT VBZ CD IN PRP$ JJ NNS CC PRP VBZ RB TO VB VBN . ',14,0,1,0,1,0,0,0,0,0,positive
+192,0.03636363636363637,0.4,0.0,0.18181818181818182,1.0,0.0,0.045454545454545456,0.5,0.0,'target_NULL','Your friends will thank you for introducing them to this gem ','PRP$ NNS MD VB PRP IN VBG PRP IN DT NN . ',11,1,1,0,0,0,0,0,0,0,positive
+193,0.021052631578947368,0.0,-0.4,-0.05263157894736842,1.0,0.0,-0.008771929824561408,0.5,0.0,'target_Leon','When we stumbled on Leon, we thought that we had found quite the gem BUT, we were certainly wrong ','WRB PRP VBD IN NNP , PRP VBD IN PRP VBD VBN PDT DT NN CC , PRP VBD RB JJ . ',19,0,1,1,0,0,0,0,0,1,negative
+199,0.0,0.0,0.0,0.0,0.0,0.0,0.03125,0.5,0.0,'target_NULL','Rude service, medicore food there are tons of restaurants in NY stay away from this one ','NNP NN , NN NN VBP NNS IN NNS IN NNP RB IN DT NN ',16,0,3,1,0,0,0,0,0,0,negative
+200,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Jekyll and Hyde','I had a grat time at Jekyll and Hyde ','PRP VBD DT JJ NN IN NNP CC NNP . ',9,1,1,1,0,0,0,0,0,0,positive
+201,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_NULL','I loved everythig about it-especially the shows and actors ','PRP VBD JJ IN PRP , RB DT NNS CC NNS . ',9,0,3,1,0,0,0,0,0,0,positive
+212,0.0,0.0,0.0,0.0,0.0,0.0,0.045454545454545456,0.5,0.0,'target_NULL','This was a repeat visit and well definitely be back again ','DT VBD DT NN NN CC PRP MD RB VB RB RB . ',11,0,1,0,0,0,0,0,0,0,positive
+224,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','A must try ','DT MD VB . ',3,1,1,1,0,0,0,0,0,0,positive
+225,0.055999999999999994,0.8,0.0,0.12,1.0,0.0,0.09333333333333332,1.0,0.0,'target_restaurant','On a recent Sunday afternoon, a friend and I accidently found this great restaurant on our way to see the pulitzer prize winning play DOUBT ','IN DT JJ NNP NN , DT NN CC PRP RB VBD DT JJ NN IN PRP$ NN TO VB DT NN NN VBG NN NNP . ',25,0,1,1,0,0,0,0,0,0,positive
+232,0.058823529411764705,0.6,-0.4,0.0,1.0,0.0,0.058823529411764705,1.0,0.0,'target_NULL','With so many poor experiences to be had in the theater district, is truly an excellent find ','IN RB JJ JJ NNS TO VB VBN IN DT NN NN , VBZ RB DT JJ NN . ',17,1,1,0,0,0,0,0,0,0,positive
+233,0.0,0.0,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_NULL','We will return many times for this oasis in mid-town ','PRP MD VB JJ NNS IN DT NN IN NN . ',10,0,1,0,0,0,0,0,0,0,positive
+235,0.023529411764705882,0.4,0.0,0.17647058823529413,1.0,0.0,0.08823529411764706,1.0,0.0,'target_NULL','All in all, this midtown gem instantly became one of my favorite sushi restaurants in the city ','DT IN DT , DT JJ NN RB VBD CD IN PRP$ JJ JJ NNS IN DT NN . ',17,0,1,0,0,0,0,0,0,0,positive
+242,0.03,0.6,0.0,0.05,1.0,0.0,0.0,0.0,0.0,'target_Cafe Spice','Ive been to at Cafe Spice probably 5-8 times, it is probably still the best Indian restaurant around Union Square ','PRP VBP VBN IN IN NNP NNP RB CD NNS , PRP VBZ RB RB DT JJS JJ NN IN NNP NNP . ',20,0,1,1,0,0,0,0,0,0,positive
+250,0.044444444444444446,0.0,-0.4,-0.1111111111111111,0.0,0.0,-0.1111111111111111,0.0,0.0,'target_Red Eye','I have NEVER been disappointed in the Red Eye ','PRP VBP RB VBN VBN IN DT NNP NNP . ',9,0,1,1,0,0,0,0,0,0,positive
+256,0.08,0.4,0.0,0.2,1.0,0.0,0.1,0.5,0.0,'target_NULL','I would highly recommend it ','PRP MD RB VB PRP . ',5,0,1,1,0,0,0,0,0,0,positive
+257,0.04,0.4,0.0,0.1,1.0,0.0,0.125,1.0,0.0,'target_NULL','Its one of our favorite places to eat in NY ','PRP VBZ CD IN PRP$ JJ NNS TO VB IN NNP . ',10,0,1,1,0,0,0,0,0,0,positive
+258,0.04615384615384615,0.6,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_Jekyll and hyde Pub','We had a great time at the Jekyll and hyde Pub last night ','PRP VBD DT JJ NN IN DT NNP CC VBD NNP JJ NN . ',13,0,1,0,0,0,0,0,0,0,positive
+259,0.03636363636363637,0.4,0.0,0.09090909090909091,1.0,0.0,0.13636363636363635,1.0,0.0,'target_restaurant','I highly recommend visiting this restaurant and having dinner and drinks ','PRP RB VBP VBG DT NN CC VBG NN CC NNS . ',11,1,1,1,0,0,0,0,0,0,positive
+261,0.05185185185185185,0.8,0.0,0.07407407407407407,1.0,0.0,0.037037037037037035,1.0,0.0,'target_Jekyll and Hyde Pub','My husband and I thougt it would be great to go to the Jekyll and Hyde Pub for our anniversary, and to our surprise it was fantastic ','PRP$ NN CC PRP VBP PRP MD VB JJ TO VB IN DT NNP CC NNP NNP IN PRP$ NN , CC IN PRP$ NN PRP VBD JJ . ',27,0,1,1,0,0,0,0,0,0,positive
+266,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Please take my advice, go and try this place ','UH VB PRP$ NN , VB CC VB DT NN . ',9,0,1,0,0,0,0,0,0,0,positive
+267,0.0,0.0,0.0,0.0,1.0,0.0,0.041666666666666664,0.5,0.0,'target_NULL','We were not dissappointed in the least bit by this little gem ','PRP VBD RB VBN IN DT JJS NN IN DT JJ NN . ',12,0,1,0,1,0,0,0,0,0,positive
+271,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_NULL','I loved it and would HIGHLY RECOMMEND ','PRP VBD PRP CC MD NNP NNP . ',7,0,1,1,0,0,0,0,0,0,positive
+282,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_restaurant','This restaurant was way overhyped ','DT NN VBD NN VBN . ',5,0,1,0,0,0,0,0,0,0,negative
+288,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_restaurant','The service was the only thing good about this restaurant ','DT NN VBD DT JJ NN JJ IN DT NN . ',10,0,2,0,0,0,0,0,0,0,negative
+297,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I definitely wouldnt go back ','PRP RB MD RB VB RB . ',5,0,1,1,0,1,0,0,0,0,negative
+300,0.09999999999999999,0.8,0.0,0.3333333333333333,1.0,0.0,0.125,1.0,0.0,'target_fresh restaurant','fresh restaurant was amazing  food was delicious and of course fresh ','JJ NN VBD JJ . ',12,0,2,1,0,0,0,0,0,0,positive
+302,0.09999999999999999,0.8,0.0,0.3333333333333333,1.0,0.0,0.125,1.0,0.0,'target_fresh restaurant','fresh restaurant was amazing  food was delicious and of course fresh ','NN VBD JJ CC IN NN JJ . ',12,0,2,1,0,0,0,0,0,0,positive
+306,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I will be going back very soon ','PRP MD VB VBG RB RB RB . ',7,0,1,1,0,0,0,0,0,0,positive
+307,0.12,0.6,0.0,0.4,1.0,0.0,0.2,1.0,0.0,'target_NULL','keep up the good work ','VB RP DT JJ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+309,0.26666666666666666,0.8,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','It was wonderful ','PRP VBD JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+316,0.10769230769230768,0.8,-0.2,0.23076923076923078,1.0,0.0,0.07692307692307693,1.0,0.0,'target_NULL','On a hot day it was fabulous to stop in and enjoy lunch ','IN DT JJ NN PRP VBD JJ TO VB RP CC VB NN . ',13,0,1,0,0,0,0,0,0,0,positive
+322,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','We will be back ','PRP MD VB RB . ',4,0,1,0,0,0,0,0,0,0,positive
+325,0.009523809523809525,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','In any event, this is a place Ill be sure to stop by again when Im in this part of town ','IN DT NN , DT VBZ DT NN PRP MD VB JJ TO VB RP RB WRB PRP VBP IN DT NN IN NN . ',21,0,1,0,0,0,0,0,0,0,positive
+326,0.06666666666666668,0.4,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_Big Wong','Big Wong gets big Ups for a fine establishment ','NNP NNP VBZ JJ NNP IN DT JJ NN . ',9,0,1,0,0,0,0,0,0,0,positive
+327,0.06,0.6,0.0,0.1,1.0,0.0,0.0,0.0,0.0,'target_NULL','They have it all -- great price, food, and service ','PRP VBP PRP DT : JJ NN , NN , CC NN . ',10,0,4,1,0,0,0,0,0,0,positive
+344,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Wed go back again ','PRP MD VB RB RB ',4,0,1,0,0,0,0,0,0,0,positive
+345,0.05,0.8,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_restaurant','I recently went to this restaurant with some co-workers for lunch and had an amazing time ','PRP RB VBD IN DT NN IN DT NNS IN NN CC VBD DT JJ NN . ',16,0,1,1,0,0,0,0,0,0,positive
+351,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.027777777777777776,0.3333333333333333,0.0,'target_NULL','Yes, the prices are high, but I felt it was worth it ','UH , DT NNS VBP JJ , CC PRP VBD PRP VBD JJ PRP . ',12,0,2,1,0,0,0,0,0,1,positive
+352,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.047619047619047616,0.3333333333333333,0.0,'target_NULL','We all felt it was worth it ','PRP DT VBD PRP VBD JJ PRP . ',7,0,1,0,0,0,0,0,0,0,positive
+359,0.0,0.0,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_NULL','it is not consistent ','PRP VBZ RB JJ . ',4,0,1,0,1,0,0,0,0,0,negative
+360,0.025,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,'target_Patis','And where does Patis go wrong; no where ','CC WRB VBZ NNPS VB JJ : DT WRB . ',8,0,1,0,0,0,0,0,0,0,positive
+363,0.08888888888888889,0.8,0.0,0.1111111111111111,1.0,0.0,0.1111111111111111,1.0,0.0,'target_Pastis','And evaluated on those terms Pastis is simply wonderful ','CC VBN IN DT NNS NNP VBZ RB JJ . ',9,0,1,0,0,0,0,0,0,0,positive
+371,0.044444444444444446,0.4,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,0.5,0.0,'target_NULL','Overall I would recommend it and go back again ','RB PRP MD VB PRP CC VB RB RB . ',9,0,1,1,0,0,0,0,0,0,positive
+377,0.0,0.0,0.0,0.0,0.0,0.0,-0.08333333333333333,0.0,0.0,'target_NULL','I cant wait to go back ','PRP MD RB VB TO VB RB . ',6,0,1,1,0,1,0,0,0,0,positive
+386,0.0,0.0,0.0,0.0,0.0,0.0,0.013157894736842105,0.25,0.0,'target_place','I go and eat out at many different restaurants and this is one place you have go and try ','PRP VBP CC VBP RB IN JJ JJ NNS CC DT VBZ CD NN PRP VBP VB CC VB . ',19,0,1,1,0,0,0,0,0,0,positive
+390,0.03076923076923077,0.4,0.0,0.0,1.0,0.0,0.07692307692307693,1.0,0.0,'target_NULL','I would defiantly come back here again as one of my top choices ','PRP MD RB VB RB RB RB IN CD IN PRP$ JJ NNS . ',13,0,1,1,0,0,0,0,0,0,positive
+392,0.12,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_place','I absolutely love this place ','PRP RB VBP DT NN . ',5,1,1,1,0,0,0,0,0,0,positive
+395,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Big thumbs up ','JJ NNS RP . ',3,1,1,0,0,0,0,0,0,0,positive
+404,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Check this place out ','VB DT NN RP . ',4,1,1,0,0,0,0,0,0,0,positive
+405,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','HIGHLY RECOMMENDED ','RB VBN . ',2,1,1,1,0,0,0,0,0,0,positive
+417,0.0,0.0,0.0,0.0,1.0,0.0,0.019230769230769232,0.5,0.0,'target_Teodora','To be completely fair, the only redeeming factor was the food, which was above average, but couldnt make up for all the other deficiencies of Teodora ','TO VB RB JJ , DT JJ JJ NN VBD DT NN , WDT VBD IN JJ , CC MD RB VB RP IN PDT DT JJ NNS IN NNP . ',26,0,2,0,0,1,0,0,0,1,negative
+421,0.05454545454545454,0.6,0.0,0.09090909090909091,1.0,0.0,-0.045454545454545456,0.0,0.0,'target_place','Cute place, nice wait staff but would never go there again ','JJ NN , JJ NN NN CC MD RB VB RB RB . ',11,0,3,0,0,0,0,0,0,1,negative
+424,0.08571428571428573,0.2,-0.4,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_restaurant','Skip this restaurant, its a big disappointment ','VB DT NN , PRP VBZ DT JJ NN . ',7,0,1,0,0,0,0,0,0,0,negative
+425,0.05454545454545456,0.4,-0.4,0.045454545454545456,1.0,0.0,0.0,1.0,0.0,'target_Myagi','Myagi is one of my favorite restaurants in the City; the place the negative reviews describe sound like they were somewhere else ','NNP VBZ CD IN PRP$ JJ NNS IN DT NNP : DT NN DT JJ NNS VBP JJ IN PRP VBD RB RB . ',22,0,1,0,0,0,0,0,0,0,positive
+433,0.03636363636363637,0.4,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_place','I highly recommend to anyone to give this place a try ','PRP RB VBP IN NN TO VB DT NN DT NN . ',11,0,1,1,0,0,0,0,0,0,positive
+434,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','You will find yourself returning quite often ','PRP MD VB PRP VBG RB RB . ',7,0,1,0,0,0,0,0,0,0,positive
+444,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Beautiful experience ','JJ NN . ',2,0,1,0,0,0,0,0,0,0,positive
+457,0.0,0.0,0.0,-0.05263157894736842,0.0,0.0,0.017543859649122806,0.3333333333333333,0.0,'target_NULL','All in all were already coming up with excuses to go ahead really soon in the next few wks ','DT IN DT PRP VBP RB VBG RP IN NNS TO VB RB RB RB IN DT JJ JJ NNS . ',19,1,1,0,0,0,0,0,0,0,positive
+461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','We will definitely go back ','PRP MD RB VB RB . ',5,0,1,0,0,0,0,0,0,0,positive
+482,0.0,0.0,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_Prune','Problem is nothing at Prune is particularly memorable ','NNP VBZ NN IN NNP VBZ RB JJ . ',8,0,1,0,1,0,0,0,0,0,negative
+483,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','No plans to return anytime soon ','DT NNS TO VB RB RB . ',6,0,1,0,0,0,0,0,0,0,negative
+485,0.0,0.0,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_restaurant','Our family never expected such incredible entertainment in a restaurant ','PRP$ NN RB VBD JJ JJ NN IN DT NN . ',10,0,1,0,0,0,0,0,0,0,positive
+489,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','We will go back every time we are in the City ','PRP MD VB RB DT NN PRP VBP IN DT NNP . ',11,0,1,0,0,0,0,0,0,0,positive
+490,0.018181818181818184,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Jekyll and Hyde','If you want something really different than try Jekyll and Hyde ','IN PRP VBP NN RB JJ IN VB NNP CC NNP . ',11,0,1,0,0,0,0,0,0,0,positive
+494,0.1,0.4,0.0,0.25,1.0,0.0,0.125,0.5,0.0,'target_NULL','I highly recommend it ','PRP RB VBP PRP . ',4,0,1,1,0,0,0,0,0,0,positive
+495,0.044444444444444446,0.8,0.0,0.05555555555555555,1.0,0.0,0.05555555555555555,1.0,0.0,'target_Jeckll and Hydes','However, I think Jeckll and Hydes t is one of those places that is fun to do once ','RB , PRP VBP NNP CC NNP NN VBZ CD IN DT NNS WDT VBZ JJ TO VB RB . ',18,0,1,1,0,0,0,0,0,0,positive
+496,0.12,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_NULL','We had a good time ','PRP VBD DT JJ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+501,0.13333333333333333,0.6,0.0,0.25,1.0,0.0,0.1111111111111111,1.0,0.0,'target_NULL','Food was good not great not worth the wait or another visit ','NN VBD JJ RB JJ RB JJ DT NN CC DT NN ',12,0,2,0,1,0,0,0,0,0,negative
+507,0.26666666666666666,0.8,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','It was wonderful ','PRP VBD JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+520,0.1,0.4,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_NULL','Highly recommended to all ','RB VBD IN DT . ',4,1,1,0,0,0,0,0,0,0,positive
+525,0.0,0.0,0.0,-0.14285714285714285,0.0,0.0,0.0,0.0,0.0,'target_place','I thought this place was totally overrated ','PRP VBD DT NN VBD RB JJ . ',7,0,1,1,0,0,0,0,0,0,negative
+526,0.10909090909090909,0.6,0.0,0.18181818181818182,1.0,0.0,0.09090909090909091,1.0,0.0,'target_NULL','Everything we had was good or ok but definitely nothing great ','NN PRP VBD VBD JJ CC JJ RB NN JJ . ',11,0,1,0,1,0,0,0,0,1,neutral
+529,0.022222222222222223,0.4,0.0,0.05555555555555555,1.0,0.0,0.018518518518518517,0.3333333333333333,0.0,'target_NULL','When you add it all together, it just doesnt seem worth it to me especially considering the prices ','WRB PRP VBP PRP DT RB , PRP RB VBZ RB VB JJ PRP IN RB VBG DT NNS . ',18,0,2,0,0,1,0,0,0,0,negative
+531,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Shabu-Shabu Restaurant','This is the BEST Shabu-Shabu Restaurant in the Try-State Area ','DT VBZ DT NNP NNP NNP IN DT NNP HYPH NNP NNP . ',10,0,1,1,0,0,0,0,0,0,positive
+542,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I must give it Yon out of Yon stars ','PRP MD VB PRP NNP IN IN NNP NNS . ',9,1,1,1,0,0,0,0,0,0,positive
+547,0.01904761904761905,0.4,0.0,0.047619047619047616,1.0,0.0,0.023809523809523808,0.5,0.0,'target_NULL','We liked it so much, that we will always make it a point to dine here when we visit New York ','PRP VBD PRP RB RB , IN PRP MD RB VB PRP DT NN TO VB RB WRB PRP VBP NNP NNP . ',21,0,1,0,0,0,0,0,0,0,positive
+560,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','A guaranteeed delight ','DT JJ NN . ',3,1,1,1,0,0,0,0,0,0,positive
+582,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I go twice a month ','PRP VBP RB DT NN . ',5,1,1,1,0,0,0,0,0,0,positive
+583,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Fantastic ','JJ . ',1,1,1,0,0,0,0,0,0,0,positive
+592,0.04,0.0,-0.4,-0.1,0.0,0.0,-0.05,0.0,0.0,'target_NULL','Save yourself the time and trouble and skip this one ','VB PRP DT NN CC NN CC VB DT NN . ',10,1,1,0,0,0,0,0,0,0,negative
+595,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Will not be back ','MD RB VB RB . ',4,0,1,0,1,0,0,0,0,0,negative
+601,0.08571428571428572,0.0,-0.6,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_Haru on Park S','Haru on Park S is simply disgusting ','NNP IN NNP NNP VBZ RB JJ . ',7,0,1,1,0,0,0,0,0,0,negative
+605,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Will never be back ','MD RB VB RB . ',4,0,1,0,0,0,0,0,0,0,negative
+610,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','wont come back again for sure ','MD RB VB RB RB IN JJ . ',6,1,1,0,0,0,0,0,0,0,negative
+611,0.03333333333333333,0.0,-0.4,-0.08333333333333333,0.0,0.0,-0.08333333333333333,0.0,0.0,'target_Roths','I have been to Roths twice and both times were very disappointing ','PRP VBP VBN IN NNP POS NN CC DT NNS VBD RB JJ . ',12,0,1,1,0,0,0,0,0,0,negative
+620,0.08,0.4,0.0,0.2,1.0,0.0,0.26666666666666666,1.0,0.0,'target_NULL','Overall, not worth the money ','RB , RB JJ DT NN . ',5,0,2,0,1,0,0,0,0,0,negative
+623,0.02666666666666667,0.0,-0.4,-0.06666666666666667,0.0,0.0,-0.06666666666666667,0.0,0.0,'target_NULL','Eating in, the atmosphere saves it, but at your desk, its a very disappointing experience ','VBG IN , DT NN VBZ PRP , CC IN PRP$ NN , PRP VBZ DT RB JJ NN . ',15,0,2,0,0,0,0,0,0,1,negative
+634,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PLACE','LLOOVVE THIS PLACE ','NNP NNP NNP . ',3,0,1,1,0,0,0,0,0,0,positive
+638,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_YUKA','Love YUKA ','NN NNP . ',2,0,1,1,0,0,0,0,0,0,positive
+640,0.10909090909090909,0.6,0.0,0.18181818181818182,1.0,0.0,0.18181818181818182,1.0,0.0,'target_Mermaid Inn','Mermaid Inn is an overall good restaurant with really good seafood ','NNP NNP VBZ DT JJ JJ NN IN RB JJ NN . ',11,0,2,0,0,0,0,0,0,0,positive
+653,0.0,0.0,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_NULL','We were very pleasantly surprised ','PRP VBD RB RB JJ . ',5,0,1,0,0,0,0,0,0,0,positive
+660,0.03636363636363637,0.4,0.0,0.09090909090909091,1.0,0.0,0.045454545454545456,0.5,0.0,'target_restaurant','I highly recommend the restaurant based on our experience last night ','PRP RB VBP DT NN VBN IN PRP$ NN JJ NN . ',11,0,1,1,0,0,0,0,0,0,positive
+682,0.1,0.4,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_NULL','Definitely a neighborhood favorite ','RB DT NN JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+683,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_place','I loved this place ','PRP VBD DT NN . ',4,1,1,1,0,0,0,0,0,0,positive
+690,0.06666666666666667,0.4,-0.6,0.0,1.0,0.0,-0.09523809523809523,0.0,0.0,'target_Cafe Noir','I like Cafe Noir dont get me wrong, it is jsut that the people who work there are evil and incompetent ','PRP VBP NNP NNP VBP RB VB PRP JJ , PRP VBZ VBN IN DT NNS WP VBP RB VBP JJ CC JJ . ',21,1,2,1,0,0,0,0,0,0,positive
+696,0.06666666666666668,0.6,-0.4,0.07407407407407407,1.0,0.0,0.037037037037037035,1.0,0.0,'target_Cafe Noir','The whole set up is truly unprofessional and I wish Cafe Noir would get some good staff, because despite the current one this is a great place ','DT JJ NN RP VBZ RB JJ CC PRP VBP NNP NNP MD VB DT JJ NN , IN IN DT JJ CD DT VBZ DT JJ NN . ',27,0,2,1,0,0,0,0,0,0,positive
+703,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_place','What a great place ','WDT DT JJ NN . ',4,0,1,0,0,0,0,0,0,0,positive
+704,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Never again ','RB RB . ',2,1,1,0,0,0,0,0,0,0,negative
+705,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','I absolutely Loved this place ','PRP RB VBD DT NN . ',5,0,1,1,0,0,0,0,0,0,positive
+706,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Everything was wonderful; food, drinks, staff, mileau ','NN VBD JJ : NN , NNS , NN , NN . ',7,0,5,0,0,0,0,0,0,0,positive
+711,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,0.5,0.0,'target_place','I would highly recommend this place ','PRP MD RB VB DT NN . ',6,1,1,1,0,0,0,0,0,0,positive
+712,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.0,0.0,0.0,'target_Casimir','I have been to Casimir over 5 times and I have always had a great time there ','PRP VBP VBN IN NNP IN CD NNS CC PRP VBP RB VBN DT JJ NN RB . ',17,0,1,1,0,0,0,0,0,0,positive
+720,0.02608695652173913,0.6,0.0,0.08695652173913043,1.0,0.0,0.08695652173913043,1.0,0.0,'target_NULL','My boyfriend and I went there to celebrate my birthday the other night and all I can say is that it was magnificent ','PRP$ NN CC PRP VBD RB TO VB PRP$ NN DT JJ NN CC DT PRP MD VB VBZ IN PRP VBD JJ . ',23,0,1,1,0,0,0,0,0,0,positive
+726,0.0,0.0,0.0,0.0,0.0,0.0,0.2,1.0,0.0,'target_restaurant','Nice Family owned traditional restaurant ','NNP NNP VBD JJ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+729,0.0,0.0,0.0,0.2,1.0,0.0,0.05,0.5,0.0,'target_NULL','I was pleasantly surprised to find this gem in Hoboken ','PRP VBD RB JJ TO VB DT NN IN NNP . ',10,0,1,1,0,0,0,0,0,0,positive
+735,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_restaurant','Overall, excellent restaurant ','RB , JJ NN . ',3,1,1,0,0,0,0,0,0,0,positive
+740,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I would go back ','PRP MD VB RB . ',4,0,1,1,0,0,0,0,0,0,positive
+763,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I will definetly be going back ','PRP MD RB VB VBG RB . ',6,0,1,1,0,0,0,0,0,0,positive
+771,0.2,0.4,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','highly recommended ','RB VBN . ',2,0,1,0,0,0,0,0,0,0,positive
+772,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Ive lived in NY for 5 years and this place has it all ','PRP VBP VBN IN NNP IN CD NNS CC DT NN VBZ PRP DT . ',13,0,1,1,0,0,0,0,0,0,positive
+782,0.0375,0.6,0.0,0.125,1.0,0.0,0.09375,1.0,0.0,'target_place','Im glad I was introduced to this place and this is a rare gem in NY ','PRP VBP JJ PRP VBD VBN IN DT NN CC DT VBZ DT JJ NN IN NNP . ',16,0,1,1,0,0,0,0,0,0,positive
+804,0.0,0.0,0.0,0.0,0.0,0.0,0.125,0.5,0.0,'target_NULL','Will absolutely visit again ','MD RB VB RB . ',4,0,1,0,0,0,0,0,0,0,positive
+807,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Go here ','VB RB . ',2,0,1,0,0,0,0,0,0,0,positive
+810,0.12,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_NULL','However, it is jus too good to not praise it ','RB , PRP VBZ RB RB JJ TO RB VB PRP . ',10,0,1,0,1,0,0,0,0,0,positive
+824,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Im sure Ill return for a final judgement tho ','PRP VBP JJ PRP MD VB IN DT JJ NN NN . ',9,0,1,0,0,0,0,0,0,0,neutral
+828,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Mizu','Mizu is the Japenese find in Grammercy ','NNP VBZ DT NNP NN IN NNP . ',7,0,1,0,0,0,0,0,0,0,positive
+834,0.011764705882352941,0.0,-0.2,-0.058823529411764705,0.0,0.0,0.029411764705882353,0.5,0.0,'target_Mizu','Warning: You may find it difficult to dine at other Japanese restaurants after a visit to Mizu ','NN : PRP MD VB PRP JJ TO VB IN JJ JJ NNS IN DT NN IN NNP . ',17,1,1,0,0,0,0,0,0,0,positive
+847,0.05,0.4,0.0,0.125,1.0,0.0,0.041666666666666664,0.3333333333333333,0.0,'target_NULL','Definitely worth the trip to Battery Park City ','RB JJ DT NN IN NNP NNP NNP . ',8,1,1,0,0,0,0,0,0,0,positive
+848,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_NULL','One of my favorite places in Manhattan ','CD IN PRP$ JJ NNS IN NNP . ',7,0,1,0,0,0,0,0,0,0,positive
+853,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.0,0.0,0.0,'target_NULL','(Besides that there should be more restaurants like it around the city) ','-LRB- IN IN EX MD VB JJR NNS IN PRP IN DT NN -RRB- . ',12,0,1,0,0,0,0,0,0,0,positive
+865,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_joint','Great neighborhood joint ','JJ NN JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+868,0.07058823529411765,0.6,0.0,0.11764705882352941,1.0,0.0,0.08823529411764706,1.0,0.0,'target_pizza place','This is a nice pizza place with good selection of thin crust pizza including the Basil slice ','DT VBZ DT JJ NN NN IN JJ NN IN JJ NN NN VBG DT NNP NN . ',17,0,4,0,0,0,0,0,0,0,positive
+875,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PIZZA 33','NO PIZZA 33 for me ','DT NNP CD IN PRP . ',5,1,1,1,0,0,0,0,0,0,negative
+881,0.011764705882352941,0.0,-0.4,-0.08823529411764706,1.0,0.0,-0.034313725490196074,0.5,0.0,'target_place','Calling the place Hampton Chutney Co  does warn you that these folks offer more style than substance, but in this unattractive room with unhelpful clerks there was a dearth of the former too ','VBG DT NN NNP NNP NNP VBZ VB PRP IN DT NNS VBP JJR NN IN NN , CC IN DT JJ NN IN JJ NNS EX VBD DT NN IN DT JJ RB . ',34,0,3,1,0,0,0,0,0,1,negative
+884,0.16,0.0,-0.8,0.0,0.0,0.0,-0.1,0.0,0.0,'target_place','Seriously, this place kicks ass ','RB , DT NN VBZ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+889,0.016,0.4,0.0,-0.04,0.0,0.0,-0.04,0.0,0.0,'target_NULL','It is nearly impossible to get a table, so if you ever have the chance to go here for dinner, DO NOT pass it up ','PRP VBZ RB JJ TO VB DT NN , CC IN PRP RB VBP DT NN TO VB RB IN NN , NNP RB VB PRP RP . ',25,0,1,1,1,0,0,0,0,0,positive
+906,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Pizza 33','Love Pizza 33 ','NNP NNP CD . ',3,0,1,1,0,0,0,0,0,0,positive
+915,0.0,0.0,0.0,-0.07692307692307693,0.0,0.0,0.0,0.0,0.0,'target_NULL','A little pricey but it really hits the spot on a Sunday morning ','DT JJ JJ CC PRP RB VBZ DT NN IN DT NNP NN . ',13,1,2,1,0,0,0,0,0,1,positive
+931,0.1,0.4,0.0,0.25,1.0,0.0,0.125,0.5,0.0,'target_NULL','I would highly recommend ','PRP MD RB VB . ',4,0,1,1,0,0,0,0,0,0,positive
+935,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Give it a try and enjoy ','VB PRP DT NN CC VB . ',6,0,1,0,0,0,0,0,0,0,positive
+939,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Would NEVER go back there ','MD RB VB RB RB . ',5,0,1,1,0,0,0,0,0,0,negative
+944,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.05555555555555555,0.3333333333333333,0.0,'target_NULL','Great atmoshere and worth every bit ','JJ NN CC JJ DT NN . ',6,0,2,0,0,0,0,0,0,0,positive
+950,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','What more can you ask for ','WP JJR MD PRP VB IN . ',6,1,1,0,0,0,0,0,0,0,positive
+952,0.0,0.0,0.0,0.0,0.0,0.0,0.16666666666666666,1.0,0.0,'target_restaurant','Everything about this restaurant was special ','NN IN DT NN VBD JJ . ',6,0,1,0,0,0,0,0,0,0,positive
+956,0.0,0.0,0.0,0.0,0.0,0.0,0.07142857142857142,0.5,0.0,'target_NULL','Im saving up for my next visit ','PRP VBP VBG RP IN PRP$ JJ NN . ',7,0,1,0,0,0,0,0,0,0,positive
+959,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_spot','It is definitely a good spot for snacks and chat ','PRP VBZ RB DT JJ NN IN NNS CC VB . ',10,0,1,0,0,0,0,0,0,0,positive
+960,0.020689655172413793,0.6,0.0,0.034482758620689655,1.0,0.0,0.034482758620689655,1.0,0.0,'target_Lucky Strike','As a retired hipster, I can say with some degree of certainty that for the last year Lucky Strike has been the best laid-back late night in the city ','IN DT JJ NN , PRP MD VB IN DT NN IN NN IN IN DT JJ NN NNP NNP VBZ VBN DT RBS VBN HYPH RP JJ NN IN DT NN . ',29,0,1,1,0,0,0,0,0,0,positive
+979,0.05714285714285715,0.0,-0.4,-0.14285714285714285,0.0,0.0,-0.14285714285714285,0.0,0.0,'target_place','You cant go wrong with this place ','PRP MD RB VB JJ IN DT NN . ',7,0,1,0,0,1,0,0,0,0,positive
+980,0.04615384615384615,0.6,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_Suan','Suan is a great place that I often take my friends (classmates) too ','NNP VBZ DT JJ NN WDT PRP RB VBP PRP$ NNS -LRB- NNS -RRB- RB . ',13,0,1,1,0,0,0,0,0,0,positive
+987,0.018181818181818184,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I wish they would change back to what it was before ','PRP VBP PRP MD VB RB IN WP PRP VBD RB . ',11,0,1,1,0,0,0,0,0,0,negative
+1018,0.15000000000000002,0.2,-0.4,-0.25,0.0,0.0,0.0,0.0,0.0,'target_NULL','Never fails to please ','RB VBZ TO VB . ',4,0,1,0,0,0,0,0,0,0,positive
+1027,0.015384615384615385,0.2,0.0,0.0,0.0,0.0,0.07692307692307693,1.0,0.0,'target_NULL','Been there, done that, and New York, its not that big a deal ','VBN RB , VBN DT , CC NNP NNP , PRP VBZ RB RB JJ DT NN . ',13,0,1,0,1,0,0,0,0,0,neutral
+1031,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.2222222222222222,1.0,0.0,'target_Rao','Rao is a good restaurant, but its nothing special ','NNP VBZ DT JJ NN , CC PRP VBZ NN JJ . ',9,0,1,0,1,0,0,0,0,1,neutral
+1063,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Fantastic place ','JJ NN . ',2,0,1,0,0,0,0,0,0,0,positive
+1065,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.6666666666666666,1.0,0.0,'target_NULL','A pleasant surprise ','DT JJ NN . ',3,0,1,1,0,0,0,0,0,0,positive
+1067,0.04285714285714286,0.6,0.0,0.07142857142857142,1.0,0.0,-0.10119047619047618,0.25,0.0,'target_Lucky Strike','Lucky Strike is a great casual place to just grab a bite to eat ','JJ NN VBZ DT JJ JJ NN TO RB VB DT NN TO VB . ',14,0,1,0,0,0,0,0,0,0,positive
+1075,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Heartland Brewery','I have been doing all of the above at the Heartland Brewery for over 5 years now and I HAVE NEVER BEEN DISAPPOINTED ','PRP VBP VBN VBG DT IN DT JJ IN DT NNP NNP IN IN CD NNS RB CC PRP VBP RB VBN NNP . ',23,1,1,1,0,0,0,0,0,0,positive
+1077,0.016666666666666666,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Go there once and oh yes you will go back you will ','VB RB RB CC UH NN MD VB NNP MD . ',12,0,1,0,0,0,0,0,0,0,positive
+1078,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_place','What a great place ','WDT DT JJ NN . ',4,1,1,0,0,0,0,0,0,0,positive
+1085,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Loved it ','VBD PRP . ',2,1,1,0,0,0,0,0,0,0,positive
+1087,0.05,0.4,0.0,0.125,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','It is expensive but well worth the money ','PRP VBZ JJ CC RB JJ DT NN . ',8,0,2,0,0,0,0,0,0,1,positive
+1088,0.03,0.6,0.0,0.05,1.0,0.0,0.0,0.0,0.0,'target_Corona','If you venture off the island of Manhattan and cant seem to find a great Italian restaurant, drive to Corona ','IN PRP VBP RP DT NN IN NNP CC MD RB VB TO VB DT JJ JJ NN , VB IN NNP . ',20,0,1,0,0,1,0,0,0,0,positive
+1107,0.08,0.4,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_place','I really liked this place ','PRP RB VBD DT NN . ',5,0,1,1,0,0,0,0,0,0,positive
+1120,0.08333333333333333,0.6,0.0,0.16666666666666666,1.0,0.0,0.125,1.0,0.0,'target_NULL','This is one of the best comfort food places in the city ','DT VBZ CD IN DT JJS NN NN NNS IN DT NN . ',12,0,1,0,0,0,0,0,0,0,positive
+1121,0.075,0.6,0.0,0.125,1.0,0.0,0.15625,1.0,0.0,'target_NULL','Its somewhere you can eat and be happy ','PRP VBZ RB PRP MD VB CC VB JJ . ',8,0,1,0,0,0,0,0,0,0,positive
+1131,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Have been several times and it never dissapoints ','VBP VBN JJ NNS CC PRP RB VBZ . ',8,0,1,0,0,0,0,0,0,0,positive
+1134,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Probably would not go again ','RB MD RB VB RB . ',5,0,1,0,1,0,0,0,0,0,negative
+1155,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_Faan','Faan is sooo good ','NNP VBZ RB JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+1161,0.04,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','What more could you want ','WP JJR MD PRP VB . ',5,1,1,0,0,0,0,0,0,0,positive
+1177,0.0,0.0,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_NULL','Wouldnt recomend it for dinner ','MD RB VB PRP IN NN . ',5,1,1,0,0,1,0,0,0,0,negative
+1210,0.023529411764705882,0.4,0.0,0.058823529411764705,1.0,0.0,0.0,0.0,0.0,'target_Raos','I have been to Raos probably 15 times the past 3 years and it keeps getting better ','PRP VBP VBN IN NNP POS RB CD NNS DT JJ CD NNS CC PRP VBZ VBG JJR . ',17,0,1,1,0,0,0,0,0,0,positive
+1211,0.02,0.4,0.0,0.05,1.0,0.0,0.05,1.0,0.0,'target_NULL','For those that go once and dont enjoy it, all I can say is that they just dont get it ','IN DT WDT VBP RB CC VBP RB VB PRP , DT PRP MD VB VBZ IN PRP RB VBP RB VB PRP . ',20,0,1,1,0,1,0,1,0,0,positive
+1215,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','My roommate and I LOVE this place ','PRP$ NN CC PRP VBP DT NN . ',7,0,1,1,0,0,0,0,0,0,positive
+1223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I wont go back unless someone else is footing the bill ','PRP MD RB VB RB IN NN RB VBZ VBG DT NN . ',11,0,2,1,0,1,0,0,0,0,negative
+1230,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_NULL','I loved it and would go again ','PRP VBD PRP CC MD VB RB . ',7,0,1,1,0,0,0,0,0,0,positive
+1248,0.017391304347826087,0.4,0.0,0.043478260869565216,1.0,0.0,0.014492753623188404,0.3333333333333333,0.0,'target_NULL','its a little out of the way if you dont live in the neighborhood, but definitely worth the trip from wherever you are ','PRP$ DT JJ IN IN DT NN IN PRP VBP RB VB IN DT NN , CC RB JJ DT NN IN WRB PRP VBP . ',23,0,2,0,0,1,0,1,0,1,positive
+1258,0.028571428571428574,0.0,-0.4,0.0,0.0,0.0,0.03571428571428571,0.5,0.0,'target_NULL','Price and quality of fish alone will keep us from making a return visit ','NN CC NN IN NN RB MD VB PRP IN VBG DT NN NN . ',14,0,3,0,0,0,0,0,0,0,negative
+1260,0.2,0.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','No thanks ','DT NNS . ',2,1,1,0,0,0,0,0,0,0,negative
+1261,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','This place, which is only a few months old, is perhaps Queens biggest secret ','DT NN , WDT VBZ RB DT JJ NNS JJ , VBZ RB NNP POS JJS NN . ',14,1,1,0,0,0,0,0,0,0,positive
+1272,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','We left, never to return ','PRP VBD , RB TO VB . ',5,0,1,0,0,0,0,0,0,0,negative
+1290,0.0,0.0,0.0,0.05263157894736842,1.0,0.0,-0.02631578947368421,0.0,0.0,'target_Areo','I went to Areo on a Sunday afternoon with four of my girlfriends, and spent three enjoyable hours there ','PRP VBD IN NNP IN DT NNP NN IN CD IN PRP$ NNS , CC VBD CD JJ NNS RB . ',19,0,1,1,0,0,0,0,0,0,positive
+1294,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Me and my girls will definitely go back ','PRP CC PRP$ NNS MD RB VB RB . ',8,0,1,0,0,0,0,0,0,0,positive
+1320,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PLACE','I lOVE THIS PLACE ','PRP VBP DT NNP . ',4,1,1,1,0,0,0,0,0,0,positive
+1321,0.09999999999999999,0.6,0.0,0.3333333333333333,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Keep up the good work guys ','VB RP DT JJ NN NNS . ',6,1,1,0,0,0,0,0,0,0,positive
+1322,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Al Di La','Love Al Di La ','NNP NNP NNP NNP ',4,0,1,0,0,0,0,0,0,0,positive
+1323,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,0.5,0.0,'target_place','I recommend this place to everyone ','PRP VBP DT NN IN NN . ',6,0,1,1,0,0,0,0,0,0,positive
+1325,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_NULL','One of my favorite places in Brooklyn ','CD IN PRP$ JJ NNS IN NNP . ',7,0,1,0,0,0,0,0,0,0,positive
+1336,0.0,0.0,0.0,0.0,0.0,0.0,-0.1,0.0,0.0,'target_NULL','Cant wait to go back ','MD RB VB TO VB RB . ',5,0,1,0,0,1,0,0,0,0,positive
+1337,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Cypriot restaurant','The Cypriot restaurant has a lot going for it ','DT NNP NN VBZ DT NN VBG IN PRP . ',9,0,1,0,0,0,0,0,0,0,positive
+1340,0.06666666666666668,0.8,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,1.0,0.0,'target_NULL','We had fun eating in there, we were there like around 3 a m  in the morning ','PRP VBD NN VBG IN RB , PRP VBD RB IN IN CD NN IN DT NN . ',18,1,1,1,0,0,0,0,0,0,positive
+1341,0.018181818181818184,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Will comeback for sure, wish they have it here in LA ','MD VB IN JJ , VBP PRP VBP PRP RB IN NNP . ',11,0,1,1,0,0,0,0,0,0,positive
+1359,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Love it ','VB PRP . ',2,0,1,0,0,0,0,0,0,0,positive
+1360,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_NULL','Very, very nice ','RB , RB JJ ',3,0,1,0,0,0,0,0,0,0,positive
+1362,0.025,0.4,0.0,0.0625,1.0,0.0,0.0,0.3333333333333333,0.0,'target_place','The place is a bit hidden away, but once you get there, its all worth it ','DT NN VBZ DT NN JJ RB , CC IN PRP VBP RB , PRP VBZ DT JJ PRP . ',16,0,2,0,0,0,0,0,0,1,positive
+1364,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.5,0.0,'target_NULL','not only is the food ','RB RB VBZ DT NN ',5,0,2,0,1,0,0,0,0,0,positive
+1365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Loved It ','VBD PRP ',2,0,1,0,0,0,0,0,0,0,positive
+1366,0.2,0.4,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','Highly recommended ','RB VBN . ',2,1,1,0,0,0,0,0,0,0,positive
+1369,0.0,0.0,0.0,0.0,0.0,0.0,0.038461538461538464,0.5,0.0,'target_NULL','My husband and I have been sold on this from the first visit ','PRP$ NN CC PRP VBP VBN VBN IN DT IN DT JJ NN . ',13,0,1,1,0,0,0,0,0,0,positive
+1373,0.028571428571428574,0.0,-0.2,-0.14285714285714285,0.0,0.0,0.0,0.0,0.0,'target_NULL','There are no negatives to speak of ','EX VBP DT NNS TO VB IN . ',7,0,1,0,0,0,0,0,0,0,positive
+1374,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','the bestt ','DT NN . ',2,1,1,0,0,0,0,0,0,0,positive
+1375,0.25,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_place','my favorite place lol ','PRP$ JJ NN NN ',4,0,1,0,0,0,0,0,0,0,positive
+1377,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','its alright ','PRP$ NN ',2,0,1,0,0,0,0,0,0,0,neutral
+1378,0.05,0.8,0.0,0.0,1.0,0.0,0.0625,1.0,0.0,'target_place','im not necessarily fanatical about this place, but it was a fun time for low pirces ','UH RB RB JJ IN DT NN , CC PRP VBD DT JJ NN IN JJ NNS . ',16,0,2,0,1,0,0,0,0,1,positive
+1381,0.06666666666666667,0.8,0.0,0.08333333333333333,1.0,0.0,0.16666666666666666,1.0,0.0,'target_restaraunt','its just a fun place to go, not a five star restaraunt ','PRP$ RB DT NN NN TO VB , RB DT CD NN NN . ',12,0,1,0,1,0,0,0,0,0,neutral
+1382,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Way below average ','NN IN JJ ',3,0,1,0,0,0,0,0,0,0,negative
+1386,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Would NEVER go back there ','MD RB VB RB ',5,0,1,1,0,0,0,0,0,0,negative
+1387,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_place','I love this place ','PRP VBP DT NN ',4,0,1,1,0,0,0,0,0,0,positive
+1391,0.125,0.6,0.0,0.25,1.0,0.0,0.125,1.0,0.0,'target_restaurant','I thought the restaurant was nice and clean ','PRP VBD DT NN VBD JJ CC JJ . ',8,0,2,1,0,0,0,0,0,0,positive
+1400,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Ill be back for sure ','PRP MD VB RB IN JJ . ',5,0,1,0,0,0,0,0,0,0,positive
+1401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PLACE','WORST PLACE ON SMITH STREET IN BROOKLYN ','JJS NNP NNP NNP NNP IN NNP ',7,0,1,1,0,0,0,0,0,0,negative
+1406,0.03076923076923077,0.4,0.0,0.07692307692307693,1.0,0.0,0.11538461538461539,1.0,0.0,'target_place','I would never recommend this place to anybody even for a casual dinner ','PRP MD RB VB DT NN TO VB RB IN DT JJ NN . ',13,0,1,1,0,0,0,0,0,0,negative
+1412,0.05,0.0,-0.4,-0.125,0.0,0.0,-0.125,0.0,0.0,'target_NULL','Went here on sat 1/26 and was disappointed ','VBD RB RB VBD CD CC VBD VBN . ',8,0,1,1,0,0,0,0,0,0,negative
+1423,0.0,0.0,0.0,0.0,0.0,0.0,0.1,1.0,0.0,'target_NULL','Save your money and your time and go somewhere else ','VB PRP$ NN CC PRP$ NN CC VB RB RB . ',10,0,1,0,0,0,0,0,0,0,negative
+1424,0.023076923076923075,0.0,-0.6,-0.038461538461538464,0.0,0.0,-0.019230769230769232,0.5,0.0,'target_place','Oh, and I never write reviews--I just was so moved by how bad this place was, I felt it was my duty to spread the word ','UH , CC PRP RB VBP NNS : PRP RB VBD RB VBN IN WRB JJ DT NN VBD , PRP VBD PRP VBD PRP$ NN TO VB DT NN . ',26,0,1,1,0,0,0,0,0,0,negative
+1429,0.16666666666666666,0.6,0.0,0.3333333333333333,1.0,0.0,0.25,1.0,0.0,'target_place','I highly recommend this beautiful place ','PRP RB VBP DT JJ NN . ',6,0,2,1,0,0,0,0,0,0,positive
+1434,0.05,0.4,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_NULL','I come here enjoy very much with husband ','PRP VBP RB VB RB RB IN NN . ',8,0,1,1,0,0,0,0,0,0,positive
+1456,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Indian Restaurant','Best Indian Restaurant in the City ','JJS NNP NNP IN DT NNP ',6,0,1,0,0,0,0,0,0,0,positive
+1462,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_restaurant','Best restaurant in Brooklyn ','JJS NN IN NNP ',4,0,1,0,0,0,0,0,0,0,positive
+1463,0.3,0.6,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','The best ','DT JJS . ',2,1,1,0,0,0,0,0,0,0,positive
+1466,0.08,0.8,0.0,0.1,1.0,0.0,0.0,0.0,0.0,'target_place','Great food, amazing service, this place is a class act ','JJ NN , JJ NN , DT NN VBZ DT NN NN . ',10,0,3,0,0,0,0,0,0,0,positive
+1469,0.0,0.0,0.0,0.0,0.0,0.0,0.08333333333333333,0.5,0.0,'target_place','This place is a must visit ','DT NN VBZ DT MD VB . ',6,1,1,0,0,0,0,0,0,0,positive
+1494,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Waters Edge','Thank you everyone at Waters Edge ','VBP PRP NN IN NNP POS NNP . ',6,0,1,0,0,0,0,0,0,0,positive
+1501,0.0,0.0,0.0,0.0,0.0,0.0,-0.08333333333333333,0.0,0.0,'target_NULL','$170 down the toilet ','$ CD IN DT NN . ',4,0,2,1,0,0,0,0,0,0,negative
+1518,0.034482758620689655,0.6,0.0,0.034482758620689655,1.0,0.0,0.10344827586206896,1.0,0.0,'target_restaurant','All in all, I would return - as it was a beautiful restaurant - but I hope the staff pays more attention to the little details in the future ','DT IN DT , PRP MD VB : IN PRP VBD DT JJ NN : CC PRP VBP DT NN VBZ JJR NN IN DT JJ NNS IN DT NN . ',29,0,3,1,0,0,0,0,0,1,positive
+1530,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_NULL','Will prob  not return but it is a great dinning experience to try atleast once ','MD VB . ',16,0,2,1,0,0,0,0,0,0,negative
+1531,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_NULL','Will prob  not return but it is a great dinning experience to try atleast once ','MD VB . ',16,0,2,1,0,0,0,0,0,0,positive
+1532,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_NULL','Will prob  not return but it is a great dinning experience to try atleast once ','RB VB CC PRP VBZ DT JJ NN NN TO VB RB RB . ',16,0,2,1,1,0,0,0,0,1,negative
+1533,0.0375,0.6,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_NULL','Will prob  not return but it is a great dinning experience to try atleast once ','RB VB CC PRP VBZ DT JJ NN NN TO VB RB RB . ',16,0,2,1,1,0,0,0,0,1,positive
+1534,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Impressed ','VBN . ',1,0,1,0,0,0,0,0,0,0,positive
+1548,0.10526315789473684,0.8,0.0,0.21052631578947367,1.0,0.0,0.05263157894736842,1.0,0.0,'target_place','amazing fun for hot dog lovers of all ages PLEASE do yourself a favor and check this place out ','JJ NN IN JJ NN NNS IN DT NNS NNP VBP PRP DT NN CC VB DT NN RP . ',19,1,2,1,0,0,0,0,0,0,positive
+1550,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','BEST DINING EXPERIENCE IN THE WEST VILLAGE ','JJS NNP NNP IN DT NNP NNP . ',7,1,1,1,0,0,0,0,0,0,positive
+1551,0.023529411764705882,0.4,0.0,0.0,0.0,0.0,0.058823529411764705,1.0,0.0,'target_Casa La Femme','Stepping into Casa La Femme last night was a true experience unlike any other in New York ','VBG IN NNP NNP NNP JJ NN VBD DT JJ NN IN DT JJ IN NNP NNP . ',17,1,1,0,0,0,0,0,0,0,positive
+1555,0.07058823529411765,0.6,0.0,0.11764705882352941,1.0,0.0,0.08823529411764706,1.0,0.0,'target_NULL','Highly impressed from the decor to the food to the hospitality to the great night I had ','RB JJ IN DT NN IN DT NN IN DT NN IN DT JJ NN PRP VBD . ',17,1,4,1,0,0,0,0,0,0,positive
+1560,0.03076923076923077,0.4,0.0,0.07692307692307693,1.0,0.0,0.02564102564102564,0.3333333333333333,0.0,'target_restaurant','I never write on these sites but this restaurant is def worth commending ','PRP RB VBP IN DT NNS CC DT NN VBZ IN JJ VBG . ',13,1,1,1,0,0,0,0,0,1,positive
+1561,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Great find in the West Village ','JJ NN IN DT NNP NNP . ',6,1,1,0,0,0,0,0,0,0,positive
+1565,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_place','Great place, great value ','JJ NN , JJ NN . ',4,0,2,0,0,0,0,0,0,0,positive
+1572,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Awesome ','JJ ',1,0,1,0,0,0,0,0,0,0,positive
+1574,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_NULL','Inexpensive, unassuming, great time ','JJ , JJ , JJ NN . ',4,1,2,0,0,0,0,0,0,0,positive
+1576,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Try it ','VB PRP . ',2,1,1,0,0,0,0,0,0,0,positive
+1577,0.3,0.6,0.0,0.5,1.0,0.0,0.5,1.0,0.0,'target_NULL','Very pleased ','RB JJ ',2,0,1,0,0,0,0,0,0,0,positive
+1603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Still we keep going back :) ','RB PRP VBP VBG RB . ',6,0,1,1,0,0,0,0,0,0,positive
+1606,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','you should travel from the Bronx to try it ','PRP MD VB IN DT NNP TO VB PRP . ',9,0,1,0,0,0,0,0,0,0,positive
+1612,0.2,0.6,0.0,0.2,1.0,0.0,0.4,1.0,0.0,'target_Patsys Pizza','Patsys Pizza = true love ','NNP POS NNP SYM JJ NN ',5,0,1,1,0,0,0,0,0,0,positive
+1621,0.05454545454545454,0.6,0.0,0.09090909090909091,1.0,0.0,0.09090909090909091,1.0,0.0,'target_NULL','For me dishes a little oily, but overall dining experience good ','IN PRP VBZ DT JJ JJ , CC JJ NN NN JJ . ',11,0,2,0,0,0,0,0,0,1,positive
+1637,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','AMAZING MY FAVORITE ','JJ NNP NNP . ',3,1,1,1,0,0,0,0,0,0,positive
+1641,0.0,0.0,0.0,0.0,0.0,0.0,0.041666666666666664,1.0,0.0,'target_NULL','The DJ is awesome, I have been there for my birthday and a bunch of other times with friends and I keep going back ','DT NNP VBZ JJ , PRP VBP VBN RB IN PRP$ NN CC DT NN IN JJ NNS IN NNS CC PRP VBP VBG RB . ',24,0,2,1,0,0,0,0,0,0,positive
+1645,0.025,0.4,0.0,0.0625,1.0,0.0,0.03125,0.5,0.0,'target_NULL','In the end you end up with a fair tab and NOTHING BUT A GREAT TIME ','IN DT NN PRP VBP RP IN DT JJ NN CC NN CC DT NNP NNP . ',16,1,2,1,1,0,0,0,0,1,positive
+1646,0.2,0.4,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','Highly recommended ','RB VBN . ',2,1,1,0,0,0,0,0,0,0,positive
+1647,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','One of the best, if not THE best, restaurants in Park Slope (and NY in general) ','CD IN DT JJS , IN RB DT JJS , NNS IN NNP NNP -LRB- CC NNP IN JJ -RRB- ',16,0,1,1,1,0,0,0,0,0,positive
+1649,0.0,0.0,0.0,0.0,0.0,0.0,0.25,1.0,0.0,'target_establishment','This establishment is the real deal ','DT NN VBZ DT JJ NN . ',6,0,1,0,0,0,0,0,0,0,positive
+1652,0.09565217391304347,1.0,0.0,0.13043478260869565,1.0,0.0,0.12318840579710146,1.0,0.0,'target_NULL','Wish NY had more of these kind of places: intimate, superb food, homey, top notch all the way around, certainly worth the wait ','NNP NNP VBD JJR IN DT NN IN NNS : JJ , JJ NN , NN , JJ NN PDT DT NN RB , RB JJ DT NN . ',23,0,3,1,1,0,0,0,0,0,positive
+1655,0.01904761904761905,0.4,0.0,0.0,1.0,0.0,0.015873015873015872,0.3333333333333333,0.0,'target_restaurant','I read reviews that called the restaurant too expensive and I thought to myself, but may be it is worth it ','PRP VBD NNS WDT VBD DT NN RB JJ CC PRP VBD IN PRP , CC MD VB PRP VBZ JJ PRP . ',21,0,2,1,0,0,0,0,0,1,negative
+1656,0.06153846153846154,0.6,0.0,0.07692307692307693,1.0,0.0,0.01282051282051282,0.3333333333333333,0.0,'target_NULL','I wanted to go there to see if it was worth it and sadly, curiousity got the best of me and I paid dearly for it ','PRP VBD TO VB RB TO VB IN PRP VBD JJ PRP CC RB , NN VBD DT JJS IN PRP CC PRP VBD RB IN PRP . ',26,0,2,1,0,0,0,0,0,0,negative
+1663,0.0,0.0,0.0,0.0,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Terrible Waste of money  scammers ','JJ NNP IN NN . ',6,0,2,1,0,0,0,0,0,0,negative
+1665,0.0,0.0,0.0,0.0,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Terrible Waste of money  scammers ','NNS ',6,0,2,1,0,0,0,0,0,0,negative
+1667,0.05714285714285715,0.4,-0.2,0.07142857142857142,1.0,0.0,0.07142857142857142,1.0,0.0,'target_Casa La Femme','I agree that dining at Casa La Femme is like no other dining experience ','PRP VBP IN NN IN NNP NNP NNP VBZ IN DT JJ NN NN . ',14,1,1,1,0,0,0,0,0,0,negative
+1668,0.024242424242424242,0.0,-0.4,0.0,0.0,0.0,-0.005050505050505046,1.0,0.0,'target_Casa La Femme','I literally just got back home after visiting Casa La Femme and was so offended by my visit felt it necessary to try and warn other diners who value their money and time ','PRP RB RB VBD RB RB IN VBG NNP NNP NNP CC VBD RB VBN IN PRP$ NN VBD PRP JJ TO VB CC VB JJ NNS WP VBP PRP$ NN CC NN . ',33,0,2,1,0,0,0,0,0,0,negative
+1670,0.02666666666666667,0.0,-0.4,-0.2,0.0,0.0,-0.13333333333333333,0.0,0.0,'target_NULL','And even more so unpleasant because it was so costly for such an unpleasant experience ','CC RB RBR RB JJ IN PRP VBD RB JJ IN PDT DT JJ NN . ',15,0,2,0,0,0,0,0,0,0,negative
+1674,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.03333333333333333,1.0,0.0,'target_NULL','We were ushered to the bar to wait momentarily and upon arrival were so excited ','PRP VBD VBN IN DT NN TO VB RB CC IN NN VBD RB JJ . ',15,0,1,0,0,0,0,0,0,0,positive
+1693,0.044444444444444446,0.2,-0.4,-0.1111111111111111,0.0,0.0,0.03703703703703704,1.0,0.0,'target_restaurant','I have never left a restaurant feeling as if i was abused, and wasted my hard earned money ','PRP VBP RB VBN DT NN VBG IN IN PRP VBD VBN , CC VBD PRP$ JJ VBD NN . ',18,0,2,1,0,0,0,0,0,0,negative
+1695,0.022222222222222223,0.0,-0.6,-0.037037037037037035,1.0,0.0,0.08641975308641975,1.0,0.0,'target_NULL','MY husbands birthday and my sons was not as it was intended  and we drove two hours to spend too much money to be treated terribly ','PRP$ NNS NN CC PRP$ NNS VBD RB IN PRP VBD VBN . ',27,0,3,1,1,0,0,0,0,0,negative
+1698,0.022222222222222223,0.0,-0.6,-0.037037037037037035,1.0,0.0,0.08641975308641975,1.0,0.0,'target_NULL','MY husbands birthday and my sons was not as it was intended  and we drove two hours to spend too much money to be treated terribly ','CC PRP VBD CD NNS TO VB RB JJ NN TO VB VBN RB . ',27,1,3,1,0,0,0,0,0,0,negative
+1701,0.03333333333333333,0.2,0.0,0.16666666666666666,1.0,0.0,0.0,0.0,0.0,'target_NULL','I wish I COULD be refunded ','PRP VBP PRP MD VB VBN . ',6,1,1,1,0,0,0,0,0,0,negative
+1714,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Probably would not go back here ','RB MD RB VB RB RB . ',6,0,1,0,1,0,0,0,0,0,negative
+1717,0.004878048780487805,0.0,-0.2,0.04878048780487805,1.0,0.0,0.024390243902439025,1.0,0.0,'target_place','I have it a 4 instead of 5 because of the price (just chicken tikka masala - no bread of rice - is $25), which I would expect at a upscale Indian restaurant but this place doesnt have an upscale feel ','PRP VBP PRP DT CD RB IN CD IN IN DT NN -LRB- RB NN NN NN : DT NN IN NN HYPH VBZ $ CD -RRB- , WDT PRP MD VB IN DT JJ JJ NN CC DT NN VBZ RB VB DT JJ NN . ',41,0,4,1,0,1,0,0,0,1,positive
+1726,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','One of the BEST ','CD IN DT NNP ',4,0,1,1,0,0,0,0,0,0,positive
+1727,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Bukhara Grill','Bukhara Grill, the tagline says it all  INDIAN SPICE RAVE ','NNP NNP , DT NN VBZ PRP DT . ',11,0,1,1,0,0,0,0,0,0,positive
+1728,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Bukhara Grill','Bukhara Grill, the tagline says it all  INDIAN SPICE RAVE ','`` NNP NNP NNP  ',11,0,1,1,0,0,0,0,0,0,positive
+1729,0.04,0.4,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_Bukhara','Bukhara is on my top 5 Indian places in NYC ','NNP VBZ IN PRP$ JJ CD JJ NNS IN NNP ',10,0,1,1,0,0,0,0,0,0,positive
+1730,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Wretched and retching ','VBN CC VBG ',3,0,1,0,0,0,0,0,0,0,negative
+1738,0.0,0.0,0.0,-0.05555555555555555,0.0,0.0,0.027777777777777776,0.5,0.0,'target_restaurant','It wasnt as if this restaurant had any major bragging points before hand, but now its simply repulsive ','PRP VBD RB IN IN DT NN VBD DT JJ NN NNS IN NN , CC RB PRP VBZ RB JJ . ',18,0,1,0,0,1,0,0,0,1,negative
+1745,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','More Williamsburg Garbage ','JJR NNP NNP ',3,0,1,0,0,0,0,0,0,0,negative
+1759,0.0,0.0,0.0,-0.2,0.0,0.0,-0.2,0.0,0.0,'target_NULL','Lives up to the hype ','VBZ RP IN DT NN ',5,0,1,0,0,0,0,0,0,0,positive
+1762,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_east village pizza','i love margherita pizza  i looove east village pizza ','PRP VBP TO NN PRP VBP NN NN NN ',10,0,2,1,0,0,0,0,0,0,positive
+1764,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Love this place, every time we are in the city this is one of the places we always go ','VB DT NN , DT NN PRP VBP IN DT NN DT VBZ CD IN DT NNS PRP RB VBP . ',19,0,1,0,0,0,0,0,0,0,positive
+1772,0.016,0.4,0.0,0.12,1.0,0.0,0.06,1.0,0.0,'target_modern Japanese brasserie','This is undoubtedly my favorite modern Japanese brasserie (that dont serve sushi), and in my opinion, one of the most romantic restaurants in the city ','DT VBZ RB PRP$ JJ JJ JJ NN -LRB- WDT VBP RB VB NNP -RRB- , CC IN PRP$ NN , CD IN DT RBS JJ NNS IN DT NN . ',25,1,2,0,0,1,0,1,0,0,positive
+1785,0.047368421052631574,0.6,0.0,0.13157894736842105,1.0,0.0,0.02631578947368421,1.0,0.0,'target_brasserie','Maybe it was the great company (I had friends visiting from Philly  yes, it was not a date this time) or the super reasonable price point, but I just cant say enough good things about this brasserie ','RB PRP VBD DT JJ NN -LRB- PRP VBD NNS VBG IN NNP UH , PRP VBD RB DT NN DT NN -RRB- CC DT JJ JJ NN NN , CC PRP RB MD RB VB JJ JJ NNS IN DT NN . ',38,0,2,1,1,1,0,0,0,1,positive
+1787,0.0,0.0,0.0,0.038461538461538464,1.0,0.0,0.09615384615384616,1.0,0.0,'target_Zenkichi','I dont usually visit the same establishment more than once, what more twice, but Ill come to Zenkichi anytime for a quiet, unhurried and memorable dinner ','PRP VBP RB RB VB DT JJ NN RBR IN RB , WP RBR RB , CC PRP MD VB TO VB RB IN DT JJ , JJ CC JJ NN . ',26,0,2,1,0,1,0,1,0,1,positive
+1789,0.0,0.0,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_NULL','Terrible would be a compliment ','JJ MD VB DT NN . ',5,1,1,0,0,0,0,0,0,0,negative
+1791,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Stay away ','VB RB ',2,0,1,0,0,0,0,0,0,0,negative
+1804,0.0,0.0,0.0,0.0,0.0,0.0,0.03571428571428571,0.5,0.0,'target_NULL','Price is high but the food is good, so I would come back again ','NN VBZ JJ CC DT NN VBZ JJ , CC PRP MD VB RB RB . ',14,0,3,1,0,0,0,0,0,1,positive
+1805,0.0,0.0,0.0,0.0,0.0,0.0,0.08333333333333333,0.5,0.0,'target_place','This place doesnt make any sense ','DT NN VBZ RB VB DT NN ',6,0,1,0,0,1,0,0,0,0,negative
+1806,0.06153846153846154,0.2,-0.4,-0.07692307692307693,0.0,0.0,-0.01282051282051281,1.0,0.0,'target_NULL','Just want to warn you all - dont waste your time and money ','RB VB TO VB PRP RB HYPH VB RB VB PRP$ NN CC NN . ',13,0,1,1,0,1,0,1,0,0,negative
+1815,0.06666666666666667,0.6,0.0,0.2222222222222222,1.0,0.0,0.1111111111111111,1.0,0.0,'target_place','Over all it was a very nice romantic place ','IN DT PRP VBD DT RB JJ JJ NN . ',9,0,2,0,0,0,0,0,0,0,positive
+1818,0.03333333333333333,0.0,-0.6,-0.05555555555555555,0.0,0.0,-0.05555555555555555,0.0,0.0,'target_restaurant','I must say I am surprised by the bad reviews of the restaurant earlier in the year, though ','PRP MD VB PRP VBP VBN IN DT JJ NNS IN DT NN RBR IN DT NN , RB . ',18,0,1,1,0,0,0,0,0,0,positive
+1819,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Dumbfoundingly Poor ','RB NNP ',2,0,1,0,0,0,0,0,0,0,negative
+1820,0.04,0.0,-0.4,-0.1,0.0,0.0,-0.1,0.0,0.0,'target_NULL','This was, from start to finish, a mind-bogglingly uncomfortable experience ','DT VBD , IN NN IN NN , DT NN HYPH RB JJ NN . ',10,0,1,0,0,0,0,0,0,0,negative
+1835,0.05217391304347827,0.0,-0.8,-0.043478260869565216,0.0,0.0,-0.021739130434782608,0.5,0.0,'target_NULL','At $120 for two people, however, this in no way represents value, unless youre looking to pay by the hour for passive-aggressive torture ','IN $ CD IN CD NNS , RB , DT IN DT NN VBZ NN , IN PRP VBP VBG TO VB IN DT NN IN JJ HYPH JJ NN . ',23,0,3,1,0,0,0,0,0,0,negative
+1837,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','On that scale, its a world-beater ','IN DT NN , PRP VBZ DT NN HYPH NN . ',6,0,1,0,0,0,0,0,0,0,negative
+1838,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_palce','How is this palce still open ','WRB VBZ DT NN RB JJ . ',6,1,1,0,0,0,0,0,0,0,negative
+1839,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I honestly dont even know where to begin ','PRP RB VBP RB RB VB WRB TO VB . ',8,0,1,1,0,1,0,1,0,0,negative
+1840,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.1111111111111111,1.0,0.0,'target_NULL','Everything was going good until we got our meals ','NN VBD VBG JJ IN PRP VBD PRP$ NNS . ',9,0,2,0,0,0,0,0,0,0,positive
+1853,0.0,0.0,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_NULL','you know what i mean all the positives things happening there made mw write this review ','PRP VBP WP PRP VBP PDT DT NNS NNS VBG RB VBN NNS VBP DT NN . ',16,0,1,0,0,0,0,0,0,0,positive
+1854,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Restaurant','Single Worst Restaurant in Manhattan ','JJ NNP NNP IN NNP ',5,0,1,0,0,0,0,0,0,0,negative
+1860,0.025,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Well they can run but they cant hide ','PRP MD VB CC PRP MD RB VB . ',8,0,1,0,0,1,0,0,0,1,negative
+1861,0.01904761904761905,0.4,0.0,0.047619047619047616,1.0,0.0,0.0,0.0,0.0,'target_place','How this place survives the competitive west village market in this economy, or any other for that matter, is beyond me ','WRB DT NN VBZ DT JJ NN NN NN IN DT NN , CC DT JJ IN DT NN , VBZ IN PRP . ',21,0,1,0,0,0,0,0,0,0,negative
+1865,0.05555555555555555,0.6,0.0,0.1111111111111111,1.0,0.0,0.07407407407407407,1.0,0.0,'target_Bark','Going to Bark is always worth the train ride, and will make your tongue and belly very happy ','VBG IN NNP VBZ RB JJ DT NN NN , CC MD VB PRP$ NN CC NN RB JJ . ',18,1,2,0,0,0,0,0,0,0,positive
+1868,0.12,0.6,0.0,0.2,1.0,0.0,0.1,0.5,0.0,'target_spot','But nonetheless--great spot, great food ','CC RB : JJ NN , JJ NN . ',5,0,2,0,0,0,1,0,0,1,positive
+1876,0.075,0.6,0.0,0.125,1.0,0.0,0.0,0.0,0.0,'target_The Four Seasons restaurant','The Four Seasons restaurant is a great experience ','DT NNP NNP NN VBZ DT JJ NN . ',8,0,1,0,0,0,0,0,0,0,positive
+1879,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Everyone must come here at least once ','NN MD VB RB IN JJS RB . ',7,0,1,0,0,0,0,0,0,0,positive
+1880,0.13333333333333333,0.4,0.0,0.3333333333333333,1.0,0.0,0.16666666666666666,0.5,0.0,'target_NULL','Highly recommend it ','RB VB PRP . ',3,1,1,0,0,0,0,0,0,0,positive
+1892,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','Dont go to this place ','VB RB VB IN DT NN . ',5,1,1,0,0,1,0,1,0,0,negative
+1893,0.049999999999999996,0.0,-0.6,-0.08333333333333333,0.0,0.0,0.0,1.0,0.0,'target_Casa la Femme','Had an awful experience at Casa la Femme on a Saturday dinner ','VBD DT JJ NN IN NNP NNP NNP IN DT NNP NN . ',12,0,1,0,0,0,0,0,0,0,negative
+1902,0.0,0.0,0.0,-0.3333333333333333,0.0,0.0,0.0,0.0,0.0,'target_NULL','What a hassle ','WP DT NN . ',3,1,1,0,0,0,0,0,0,0,negative
+1910,0.049999999999999996,0.0,-0.6,-0.08333333333333333,0.0,0.0,-0.08333333333333333,0.0,0.0,'target_NULL','I was one of the people that went for this horrible experience ','PRP VBD CD IN DT NNS WDT VBD IN DT JJ NN . ',12,0,1,1,0,0,0,0,0,0,negative
+1915,0.08,0.4,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_place','I generally like this place ','PRP RB VBP DT NN . ',5,0,1,1,0,0,0,0,0,0,positive
+1926,0.05,0.4,0.0,0.0625,1.0,0.0,0.0,0.0,0.0,'target_place','I wish I could like this place more, and I wish someone would retrain the staff ','PRP VBP PRP MD IN DT NN RBR , CC PRP VBP NN MD VB DT NN . ',16,0,2,1,0,0,0,0,0,0,negative
+1933,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','No Comparison ','DT NN ',2,0,1,0,0,0,0,0,0,0,positive
+1934,0.0,0.0,0.0,0.125,1.0,0.0,0.0,0.0,0.0,'target_place',' I cant say enough about this place ','PRP MD RB VB JJ IN DT NN . ',8,0,1,1,0,1,0,0,0,0,positive
+1938,0.014285714285714287,0.0,-0.2,-0.07142857142857142,0.0,0.0,0.0,0.0,0.0,'target_restaurant','Ive been to this restaurant over a dozen times with no complaints to date ','PRP VBP VBN IN DT NN IN DT NN NNS IN DT NNS IN NN . ',14,0,1,0,0,0,0,0,0,0,positive
+1948,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Overrated ','VBN ',1,0,1,0,0,0,0,0,0,0,negative
+1954,0.0,0.0,0.0,-0.16666666666666666,0.0,0.0,0.0,0.0,0.0,'target_place','Nice ambience, but highly overrated place ','NNP NN , CC RB JJ NN . ',6,0,2,0,0,0,0,0,0,1,negative
+1955,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I will not go back ','PRP MD RB VB RB . ',5,0,1,1,1,0,0,0,0,0,negative
+1960,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I will never return again ','PRP MD RB VB RB . ',5,0,1,1,0,0,0,0,0,0,negative
+1962,0.08,0.4,0.0,0.2,1.0,0.0,0.1,0.5,0.0,'target_Mioposto',' I highly recommend Mioposto ','PRP RB VBP NNP . ',5,0,1,1,0,0,0,0,0,0,positive
+1963,0.10769230769230768,0.8,0.0,0.15384615384615385,1.0,0.0,0.15384615384615385,1.0,0.0,'target_Italian restaurant','I am so happy to have a wonderful Italian restaurant in my neighborhood ','PRP VBP RB JJ TO VB DT JJ JJ NN IN PRP$ NN . ',13,0,1,1,0,0,0,0,0,0,positive
+1966,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_restaurant','I love this restaurant ','PRP VBP DT NN ',4,0,1,1,0,0,0,0,0,0,positive
+1970,0.2,0.8,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_NULL','It was absolutely amazing ','PRP VBD RB JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+1974,0.05454545454545454,0.0,-0.6,-0.09090909090909091,0.0,0.0,-0.09090909090909091,0.0,0.0,'target_place','I have not a bad thing to say about this place ','PRP VBP RB DT JJ NN TO VB IN DT NN . ',11,0,1,1,1,0,0,0,0,0,positive
+1975,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','AMAZING ','JJ . ',1,0,1,1,0,0,0,0,0,0,positive
+1976,0.0,0.0,0.0,0.0,0.0,0.0,-0.05,0.0,0.0,'target_NULL','I cannot wait to go back again this coming weekend ','PRP MD RB VB TO VB RB RB DT VBG NN . ',10,1,1,1,1,0,0,0,0,0,positive
+1977,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','Mmm  good ','NN . ',3,0,1,1,0,0,0,0,0,0,positive
+1978,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','Mmm  good ','JJ . ',3,1,1,1,0,0,0,0,0,0,positive
+1983,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL','Were going back  :D ','PRP VBP VBG RB . ',5,0,1,1,0,0,0,0,0,0,positive
+1984,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL','Were going back  :D ','. ',5,0,1,1,0,0,0,0,0,0,positive
+1991,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Very Disappointing ','RB JJ ',2,0,1,0,0,0,0,0,0,0,negative
+1992,0.03636363636363637,0.0,-0.4,-0.09090909090909091,1.0,0.0,-0.09090909090909091,0.0,0.0,'target_NULL',' I took my parents here for their anniversary-very very disappointed ','PRP VBD PRP$ NNS RB IN PRP$ NN : RB RB JJ . ',11,1,1,1,0,0,0,0,0,0,negative
+2000,0.2,0.0,-0.4,-0.5,0.0,0.0,-0.5,0.0,0.0,'target_NULL','Very disappointed ','RB JJ . ',2,0,1,0,0,0,0,0,0,0,negative
+2012,0.075,0.6,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_restaurant','Freshest sushi   I love this restaurant ','JJS UH PRP VBP DT NN . ',8,0,2,1,0,0,0,0,0,0,positive
+2021,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.0,1.0,0.0,'target_NULL','You are bound to have a very charming time ','PRP VBP VBN TO VB DT RB JJ NN . ',9,0,1,0,0,0,0,0,0,0,positive
+2022,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Not recommanded ','RB VBN . ',2,1,1,0,1,0,0,0,0,0,negative
+2025,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.1111111111111111,1.0,0.0,'target_NULL','It is not worth going at all and spend your money there ','PRP VBZ RB JJ VBG RB RB CC VB PRP$ NN RB . ',12,1,1,0,1,0,0,0,0,0,negative
+2035,0.044444444444444446,0.0,-0.4,-0.1111111111111111,0.0,0.0,-0.1111111111111111,0.0,0.0,'target_NULL','If youre in the area you shouldnt be disappointed ','IN PRP VBP IN DT NN PRP MD RB VB VBN . ',9,0,1,0,0,1,0,0,0,0,positive
+2037,0.05454545454545454,0.0,-0.6,-0.09090909090909091,1.0,0.0,-0.09090909090909091,0.0,0.0,'target_NULL','Ok   Maybe I went in on someones bad day ','RB PRP VBD RB IN NN POS JJ NN . ',11,0,1,1,0,0,0,0,0,0,negative
+2042,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I dont know if Ill be back ','PRP VBP RB VB IN PRP MD VB RB . ',7,0,1,1,0,1,0,1,0,0,negative
+2043,0.06315789473684211,0.6,0.0,0.10526315789473684,1.0,0.0,0.05263157894736842,1.0,0.0,'target_pizza place','Mama Mia  I live in the neighborhood and feel lucky to live by such a great pizza place ','NNP NNP PRP VBP IN DT NN CC VBP JJ TO VB IN PDT DT JJ NN NN . ',19,0,1,1,0,0,0,0,0,0,positive
+2049,0.025,0.4,0.0,0.125,1.0,0.0,0.020833333333333332,0.3333333333333333,0.0,'target_NULL','Its worth the wait, especially since theyll give you a call when the table is ready ','PRP$ JJ DT NN , RB IN PRP MD VB PRP DT NN WRB DT NN VBZ JJ . ',16,0,2,0,0,0,0,0,0,0,positive
+2052,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.06666666666666667,1.0,0.0,'target_place','Judging from previous posts this used to be a good place, but not any longer ','. ',15,0,1,0,0,0,0,0,0,0,negative
+2055,0.04285714285714286,0.6,0.0,0.07142857142857142,1.0,0.0,0.07142857142857142,1.0,0.0,'target_place','A perfect place to take out of town guests any time of the year ','DT JJ NN TO VB IN IN NN NNS DT NN IN DT NN . ',14,0,1,1,0,0,0,0,0,0,positive
+2058,0.2333333333333333,0.8,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_NULL','Endless fun, awesome music, great staff ','JJ NN , JJ NN , JJ NN . ',6,1,3,0,0,0,0,0,0,0,positive
+2059,0.06,0.6,0.0,0.1,1.0,0.0,0.0,0.0,0.0,'target_bar',' By far the best bar in the east village ','IN RB DT JJS NN IN DT JJ NN . ',10,0,1,1,0,0,0,0,0,0,positive
+2060,0.0,0.0,0.0,0.0,0.0,0.0,-0.023809523809523808,0.0,0.0,'target_NULL','I went there with some friends one night to play bingo and watch the sox game and it was a blast ','PRP VBD RB IN DT NNS CD NN TO VB NN CC VB DT NN NN CC PRP VBD DT NN . ',21,1,1,1,0,0,0,0,0,0,positive
+2062,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_NULL','Been there lots since and its always a good time ','VBN RB NNS IN CC PRP$ RB DT JJ NN . ',10,0,1,0,0,0,0,0,0,0,positive
+2066,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I FOUND A NEW HOME ON SECOND AVENUE ','PRP VBD DT NNP NNP NNP NNP NNP . ',8,1,1,1,0,0,0,0,0,0,positive
+2067,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Just go there and see for yourself ','RB VB RB CC VB IN PRP . ',7,0,1,0,0,0,0,0,0,0,positive
+2075,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Kudos to these guys ','NNS IN DT NNS . ',4,0,1,0,0,0,0,0,0,0,positive
+2076,0.0,0.0,0.0,0.0,0.0,0.0,0.027777777777777776,0.3333333333333333,0.0,'target_NULL','I found a new home and just moved with a long lease ','PRP VBD DT JJ NN CC RB VBD IN DT JJ NN . ',12,0,1,1,0,0,0,0,0,0,positive
+2092,0.007692307692307693,0.2,0.0,0.0,0.0,0.0,0.08333333333333334,1.0,0.0,'target_place','We are locals, and get the feeling the only way this place survives with such average food is because most customers are probably one-time customer tourists ','PRP VBP NNS , CC VB DT NN DT JJ NN DT NN VBZ IN JJ JJ NN VBZ IN JJS NNS VBP RB CD HYPH NN NN NNS . ',26,0,2,0,0,0,0,0,0,0,negative
+2096,0.04000000000000001,0.4,-0.2,0.06666666666666667,1.0,0.0,0.03333333333333333,0.5,0.0,'target_NULL','Unless you are just stopping in for a few drinks I wouldnt recommend going here ','IN PRP VBP RB VBG RP IN DT JJ NNS PRP MD RB VB VBG RB . ',15,0,2,1,0,1,0,0,0,0,negative
+2097,0.06666666666666667,0.0,-0.4,-0.16666666666666666,0.0,0.0,-0.16666666666666666,0.0,0.0,'target_NULL','You are likely to be disappointed ','PRP VBP JJ TO VB VBN . ',6,0,1,0,0,0,0,0,0,0,negative
+2109,0.03529411764705883,0.4,0.0,0.058823529411764705,1.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','I recommend it for a night when you want to splurge  (it was a bit expensive) ','PRP VBP PRP IN DT NN WRB PRP VBP TO VB . ',17,1,2,1,0,0,0,0,0,0,positive
+2111,0.03529411764705883,0.4,0.0,0.058823529411764705,1.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','I recommend it for a night when you want to splurge  (it was a bit expensive) ','-LRB- PRP VBD DT NN JJ -RRB- ',17,0,2,1,0,0,0,0,0,0,positive
+2120,0.0,0.0,0.0,0.0,0.0,0.0,-0.1111111111111111,0.0,0.0,'target_NULL','hidden little jem ','VBN JJ NN ',3,0,1,0,0,0,0,0,0,0,positive
+2145,0.4,0.8,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','awesome find ','JJ NN ',2,0,1,0,0,0,0,0,0,0,positive
+2150,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,'target_place',' I dont understand how I was a stranger to this place for so long  the fajita salad, the colorado, the fajitas - EVERYTHING is delicious ','PRP VBP RB VB WRB PRP VBD DT NN IN DT NN IN RB RB . ',27,0,5,1,0,1,0,1,0,0,positive
+2155,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,'target_place',' I dont understand how I was a stranger to this place for so long  the fajita salad, the colorado, the fajitas - EVERYTHING is delicious ','DT JJ NN , DT NN , DT NN HYPH NN VBZ JJ . ',27,0,5,1,0,0,0,0,0,0,positive
+2158,0.18333333333333332,0.6,0.0,0.3333333333333333,1.0,0.0,0.16666666666666666,1.0,0.0,'target_restaurant','best restaurant in the world, great decor, great customer service, friendly manager ','JJS NN IN DT NN , JJ NN , JJ NN NN , JJ NN ',12,0,4,0,0,0,0,0,0,0,positive
+2164,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_lunch spot','great lunch spot ','JJ NN NN ',3,0,1,0,0,0,0,0,0,0,positive
+2165,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_mexican spot',' Great financial district mexican spot ','JJ JJ NN JJ NN . ',6,0,1,1,0,0,0,0,0,0,positive
+2171,0.04285714285714286,0.6,0.0,0.07142857142857142,1.0,0.0,0.07142857142857142,1.0,0.0,'target_place','Everything Ive had here is good, taco salads, burritos, enchiladas i love this place ','NN PRP VBP VBN RB VBZ JJ , IN NNS , NNS , VBZ PRP VBP DT NN . ',14,0,5,0,0,0,0,0,0,0,positive
+2177,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Open Sesame',' Ive been to Open Sesame only once, but Im still reeling from the experience ','PRP VBP VBN TO VB NNP RB RB , CC PRP VBP RB VBG IN DT NN . ',15,1,1,1,0,0,0,0,0,1,positive
+2185,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_OPEN SESAME','GO TO OPEN SESAME ','NNP NNP NNP NNP . ',4,1,1,1,0,0,0,0,0,0,positive
+2199,0.016666666666666666,0.0,-0.2,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','However, this place is a gem, and I wont stop going back ','RB , DT NN VBZ DT NN , CC PRP MD RB VB VBG RB . ',12,0,1,1,0,1,0,0,0,0,positive
+2201,0.03333333333333333,0.0,-0.6,-0.05555555555555555,1.0,0.0,-0.05555555555555555,0.0,0.0,'target_restaurant',' My first time to dine at this restaurant was with my son and it was absolutely horrible ','PRP$ JJ NN TO VB IN DT NN VBD IN PRP$ NN CC PRP VBD RB JJ . ',18,1,1,1,0,0,0,0,0,0,negative
+2205,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL','HOWEVER, one Sunday afternoon my husband and I did go (although with my loud protests) and were pleasantly surprised ','RB , CD NNP NN PRP$ NN CC PRP VBD VB -LRB- IN IN PRP$ JJ NNS -RRB- CC VBD RB JJ . ',19,0,1,1,0,0,0,0,0,0,positive
+2212,0.044444444444444446,0.4,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,0.5,0.0,'target_NULL','It was like dining at a completely different restaurant ','PRP VBD IN NN IN DT RB JJ NN . ',9,0,1,0,0,0,0,0,0,0,positive
+2214,0.024999999999999998,0.6,0.0,0.041666666666666664,1.0,0.0,-0.013888888888888888,0.5,0.0,'target_NULL','We have since returned and also had a great experience, sampling more small plates and a variety of the beer ( cold and good) ','PRP VBP IN VBN CC RB VBD DT JJ NN , VBG JJR JJ NNS CC DT NN IN DT NN -LRB- JJ CC JJ -RRB- . ',24,0,2,1,0,0,0,0,0,0,positive
+2221,0.0,0.0,0.0,0.0,0.0,0.0,0.25,0.5,0.0,'target_NULL','Nice job ','JJ NN . ',2,1,1,0,0,0,0,0,0,0,positive
+2222,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PLACE','NOT THE PLACE IT ONCE WAS ','RB DT NNP NNP RB VBD ',6,0,1,1,1,0,0,0,0,0,negative
+2223,0.018750000000000003,0.2,-0.4,-0.03125,1.0,0.0,0.0078125,0.25,0.0,'target_place',' It is sad to see a place that was once &quot;THE&quot; place to meet and eat for Bfast or Lunch, now be the place that is a big &quot;DONT BOTHER &quot; ','PRP VBZ JJ TO VB DT NN WDT VBD RB CC NN : DT CC NN : NN TO VB CC VB IN NNP CC NNP , RB VB DT NN WDT VBZ DT JJ CC NN : NNP NNP NNP . ',32,0,1,1,0,0,0,0,0,0,negative
+2230,0.0,0.0,0.0,-0.027777777777777776,0.0,0.0,-0.036111111111111115,0.2,0.0,'target_establishment','This establishment really made a marked decline after ( and this is recurring story ) the airing of FOOD TELEVISIONS &quot;DINERS, DRIVE-INS, AND DIVES&quot; hosted by Guy Fieri, in which Schooner or Later was subject of ','DT NN RB VBD DT VBN NN IN -LRB- CC DT VBZ VBG NN -RRB- DT NN IN NN NNS CC NN : NNP , NNP HYPH NNP , CC NNP CC VBN : VBN IN NNP NNP , IN WDT NNP CC NNP VBD NN IN . ',36,0,1,1,0,0,0,0,0,0,negative
+2231,0.0,0.0,0.0,-0.1,0.0,0.0,0.0,0.0,0.0,'target_Scooner or Later','Perhaps now, Scooner or Later falls into the &quot;Dive&quot; category ','RB RB , NNP CC NNP VBZ IN DT CC NN : NNP CC NNP : NN . ',10,0,1,0,0,0,0,0,0,0,negative
+2232,0.0625,0.6,-0.4,0.0,1.0,0.0,0.015625,0.25,0.0,'target_NULL','This is sad for what once was one of the best places you could ever eat ','DT VBZ JJ IN WP RB VBD CD IN DT JJS NNS PRP MD RB VB . ',16,0,1,0,0,0,0,0,0,0,negative
+2233,0.03076923076923077,0.4,0.0,0.0,0.0,0.0,0.07692307692307693,1.0,0.0,'target_Scooner or Later','I hope one day Scooner or Later returns to what it once was ','PRP VBP CD NN NN CC NNP VBZ IN WP PRP RB VBD . ',13,0,1,1,0,0,0,0,0,0,negative
+2234,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Untill this happens, my advice is to STAY AWAY ','JJ DT VBZ , PRP$ NN VBZ TO VB NNP . ',9,0,1,1,0,0,0,0,0,0,negative
+2246,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Old Reliable ','NNP NNP ',2,0,1,0,0,0,0,0,0,0,positive
+2247,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Ray&apos;s',' After 12 years in Seattle Rays rates as the place we always go back to ','IN CD NNS IN NNP NNP POS NNS IN DT NN PRP RB VBP RB IN . ',16,0,1,1,0,0,0,0,0,0,positive
+2252,0.13333333333333333,0.4,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_NULL','I liked it ','PRP VBD PRP . ',3,0,1,1,0,0,0,0,0,0,positive
+2261,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,0.5,0.0,'target_place','Still I would recommend this place ','RB PRP MD VB DT NN . ',6,0,1,1,0,0,0,0,0,0,positive
+2262,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','WOW ','WRB . ',1,1,1,1,0,0,0,0,0,0,positive
+2263,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL',' IT CANT GET ANY BETTER ','NN NNP NNP NNP NNP NNP . ',6,1,1,1,0,0,0,0,0,0,positive
+2266,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','WHAT ELSE CAN YOU SAY NICE PEOPLE AMAZING FOOD WOW ','WDT NNP NNP NNP NNP NNP NNP NNP NN NNP ',10,0,3,1,0,0,0,0,0,0,positive
+2281,0.4,0.8,0.0,0.5,1.0,0.0,0.0,0.0,0.0,'target_NULL','absolutely fabulous ','RB JJ . ',2,1,1,0,0,0,0,0,0,0,positive
+2289,0.6,0.6,0.0,1.0,1.0,0.0,1.0,1.0,0.0,'target_NULL','splendid ','JJ ',1,0,1,0,0,0,0,0,0,0,positive
+2291,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.029411764705882353,1.0,0.0,'target_restaurant','I cant saybenough good things about this restaurant, and I cant wait for my next several visits ','PRP MD RB VB JJ NNS IN DT NN , CC PRP MD RB VB IN PRP$ JJ JJ NNS . ',17,0,1,1,0,1,0,0,0,0,positive
+2295,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Perfection ','NN . ',1,0,1,0,0,0,0,0,0,0,positive
+2298,0.075,0.6,0.0,0.125,1.0,0.0,0.0,0.0,0.0,'target_Sushi place','One of the best Sushi place in town ','CD IN DT JJS NNP NN IN NN . ',8,0,1,0,0,0,0,0,0,0,positive
+2304,0.015384615384615385,0.2,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_NULL','Thats a huge compliment, especially in the fickled restaurant business,  enough already ','DT VBZ DT JJ NN , RB IN DT JJ NN NN , . ',13,0,1,1,0,0,0,0,0,0,positive
+2305,0.015384615384615385,0.2,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_NULL','Thats a huge compliment, especially in the fickled restaurant business,  enough already ','RB RB . ',13,1,1,1,0,0,0,0,0,0,positive
+2317,0.02,0.2,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_NULL','I guarantee you wont be disappointed, theres also valet parking ','PRP VBP PRP MD RB VB VBN , EX VBZ RB DT NN . ',10,0,2,1,0,1,0,0,0,0,positive
+2319,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Addicting ','VBG . ',1,1,1,0,0,0,0,0,0,0,positive
+2320,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_Mexican place',' Best Mexican place for lunch in the financial district ','JJS JJ NN IN NN IN DT JJ NN . ',10,0,1,1,0,0,0,0,0,0,positive
+2326,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.058823529411764705,1.0,0.0,'target_NULL','I went there with a friend from out of town  and we were both very impressed ','PRP VBD RB IN DT NN IN IN IN NN . ',17,0,1,1,0,0,0,0,0,0,positive
+2327,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.058823529411764705,1.0,0.0,'target_NULL','I went there with a friend from out of town  and we were both very impressed ','CC PRP VBD DT RB JJ . ',17,1,1,1,0,0,0,0,0,0,positive
+2334,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Id go back there in a heartbeat ','PRP MD VB RB RB IN DT NN . ',7,0,1,0,0,0,0,0,0,0,positive
+2346,0.08750000000000001,0.8,0.0,0.1875,1.0,0.0,0.0625,1.0,0.0,'target_NULL',' This is one of my top lunch spots, huge portions, fast service and amazing margaritas ','DT VBZ CD IN PRP$ JJ NN NNS , JJ NNS , JJ NN CC JJ NNS . ',16,1,4,1,0,0,0,0,0,0,positive
+2352,0.15,0.6,0.0,0.25,1.0,0.0,0.25,1.0,0.0,'target_place','i love this place ','PRP VBP DT NN . ',4,1,1,0,0,0,0,0,0,0,positive
+2367,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','WAY OVER-RATED ','NNP NNP . ',2,1,1,1,0,0,0,0,0,0,negative
+2368,0.0,0.0,0.0,-0.16666666666666666,1.0,0.0,0.0,0.0,0.0,'target_place',' This place is unbelievably over-rated ','DT NN VBZ RB JJ . ',6,0,1,1,0,0,0,0,0,0,negative
+2373,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','10 ','CD . ',1,1,1,1,0,0,0,0,0,0,positive
+2400,0.0,0.0,0.0,0.0,0.0,0.0,0.011764705882352941,0.2,0.0,'target_place','There is only one place on the east coast that has it all, plus a lot more ','EX VBZ RB CD NN IN DT JJ NN WDT VBZ PRP DT , CC DT NN JJR . ',17,0,1,0,0,0,0,0,0,0,positive
+2401,0.02608695652173913,0.6,0.0,0.043478260869565216,1.0,0.0,-0.021739130434782608,0.0,0.0,'target_BLUE RIBBON SUSHI','Bring your cell phone cause you may have to wait to get into the best sushi restaurant in the world: BLUE RIBBON SUSHI ','VB PRP$ NN NN NN PRP MD VB TO VB TO VB IN DT JJS JJ NN IN DT NN : NNP NNP NNP . ',23,0,1,1,0,0,0,0,0,0,positive
+2402,0.1,0.8,0.0,0.125,1.0,0.0,-0.125,0.0,0.0,'target_NULL','Cut to the chase - this is amazing ','VB IN DT NN : DT VBZ JJ . ',8,1,1,1,0,0,0,0,0,0,positive
+2407,0.1,0.8,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_Blue Ribbon','Blue Ribbon lives up to its fantastic reputation ','NNP NNP VBZ RP IN PRP VBZ JJ NN . ',8,0,1,0,0,0,0,0,0,0,positive
+2408,0.0,0.0,0.0,0.07142857142857142,1.0,0.0,0.0,0.0,0.0,'target_NULL','I went here on a recommendation and will surely return time and time again ','PRP VBD RB IN DT NN CC MD RB VB NN CC NN RB . ',14,0,1,1,0,0,0,0,0,0,positive
+2409,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','What a find ','WP DT NN . ',3,1,1,0,0,0,0,0,0,0,positive
+2410,0.13333333333333333,0.4,0.0,0.3333333333333333,1.0,0.0,0.1111111111111111,0.3333333333333333,0.0,'target_NULL','Well worth it ','UH JJ PRP ',3,0,1,0,0,0,0,0,0,0,positive
+2425,0.1,0.6,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_Mioposto','The only positive thing about Mioposto is the nice location ','DT JJ JJ NN IN NNP VBZ DT JJ NN . ',10,0,2,0,0,0,0,0,0,0,negative
+2426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Love it every time ','VB PRP DT NN ',4,0,1,0,0,0,0,0,0,0,positive
+2427,0.03125,0.0,-0.6,-0.0625,0.0,0.0,-0.03125,0.0,0.0,'target_place','I was frankly shocked when I read the bad reviews - this place is fantastic; it has not let us down in any way, and weve eaten here more than 10 times ','PRP VBD RB VBN WRB PRP VBD DT JJ NNS : DT NN VBZ JJ : PRP VBZ RB VBN PRP RP IN DT NN , CC PRP VBP VBN RB JJR IN CD NNS . ',32,0,1,1,1,0,0,0,0,0,positive
+2431,0.06666666666666667,0.0,-0.4,-0.16666666666666666,0.0,0.0,-0.16666666666666666,0.0,0.0,'target_NULL','Never had one single problem there ','RB VBD CD JJ NN RB . ',6,0,1,0,0,0,0,0,0,0,positive
+2433,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_NULL',' This was  great dining experience ','DT VBD JJ NN NN . ',7,0,1,1,0,0,0,0,0,0,positive
+2434,0.023529411764705882,0.0,-0.4,-0.058823529411764705,0.0,0.0,0.0,0.0,0.0,'target_NULL','If youre going to see Danny Gans or just staying at the Mirage, dont miss this one ','IN PRP VBP VBG TO VB NNP NNP CC RB VBG IN DT NNP , VB RB VB DT NN . ',17,0,1,0,0,1,0,1,0,0,positive
+2440,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','COMPLETELY OVER RATED ','RB NNP NNP . ',3,1,1,1,0,0,0,0,0,0,negative
+2448,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_PLACE','AVOID THE PLACE ','VB DT NN ',3,0,1,1,0,0,0,0,0,0,negative
+2449,0.018181818181818184,0.0,-0.2,-0.09090909090909091,1.0,0.0,0.0,0.5,0.0,'target_NULL',' Save yourself the waste of time &amp; DO NOT visit ','VB PRP DT NN IN NN CC NN : NNP RB VB . ',11,0,1,1,1,0,0,0,0,0,negative
+2465,0.26666666666666666,0.8,0.0,0.3333333333333333,1.0,0.0,0.3333333333333333,1.0,0.0,'target_NULL','Always a winner ','RB DT NN . ',3,0,1,0,0,0,0,0,0,0,positive
+2479,0.02727272727272727,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_place','Its a great little place with tons of potential to be a neighborhood joint if the service werent so impersonal and corporate-like ','PRP VBZ DT JJ JJ NN IN NNS IN NN TO VB DT NN JJ IN DT NN VBD RB RB JJ CC JJ HYPH JJ . ',22,0,2,0,0,1,0,0,0,0,positive
+2490,0.06666666666666667,0.4,0.0,0.16666666666666666,1.0,0.0,0.0,0.0,0.0,'target_NULL','Doesnt get any better than that ','VBZ RB VB RB JJR IN DT . ',6,0,1,0,0,1,0,0,0,0,positive
+2521,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_restaurant','we are for sure coming back to this restaurant ','PRP VBP IN JJ VBG RB IN DT NN . ',9,0,1,0,0,0,0,0,0,0,positive
+2522,0.023809523809523808,0.4,-0.4,-0.023809523809523808,1.0,0.0,0.0,0.0,0.0,'target_NULL','it is sad there is not many people who frequent eating at places like these that look pricey because they are at the hotel  but they are definitely one you dont want to miss, esp if your in downtown san jose ','PRP VBZ JJ EX VBZ RB JJ NNS WP JJ VBG IN NNS IN DT WDT VBP JJ IN PRP VBP IN DT NN . ',42,0,1,1,1,0,0,0,0,0,positive
+2523,0.023809523809523808,0.4,-0.4,-0.023809523809523808,1.0,0.0,0.0,0.0,0.0,'target_NULL','it is sad there is not many people who frequent eating at places like these that look pricey because they are at the hotel  but they are definitely one you dont want to miss, esp if your in downtown san jose ','CC PRP VBP RB CD PRP VBP RB VB TO VB , RB IN PRP$ IN NN FW FW . ',42,0,1,1,0,0,0,0,0,1,positive
+2551,0.3,0.6,0.0,0.5,1.0,0.0,0.5,1.0,0.0,'target_NULL','Always good ','RB JJ . ',2,0,1,0,0,0,0,0,0,0,positive
+2588,0.03529411764705882,0.6,0.0,0.058823529411764705,1.0,0.0,0.11764705882352941,1.0,0.0,'target_Rays','We were only in Seattle for one night and Im so glad we picked Rays for dinner ','PRP VBD RB IN NNP IN CD NN CC PRP VBP RB JJ PRP VBD NNPS IN NN . ',17,1,1,0,0,0,0,0,0,0,positive
+2600,0.2,0.8,0.0,0.25,1.0,0.0,0.125,1.0,0.0,'target_place','The service is fantastic at this fun place ','DT NN VBZ JJ IN DT JJ NN . ',8,0,2,0,0,0,0,0,0,0,positive
+2601,0.02608695652173913,0.6,0.0,0.043478260869565216,1.0,0.0,0.0,0.0,0.0,'target_place','If there is a line very day of the week for the entire time a place is open, you know it is great ','IN EX VBZ DT NN RB NN IN DT NN IN DT JJ NN DT NN VBZ JJ , PRP VBP PRP VBZ JJ . ',23,0,1,0,0,0,0,0,0,0,positive
+2602,0.0,0.0,0.0,0.14285714285714285,1.0,0.0,0.0,0.5,0.0,'target_NULL','This is the case at this gem ','DT VBZ DT NN IN DT NN . ',7,0,1,0,0,0,0,0,0,0,positive
+2603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Standby','Best Neighborhood Standby ','JJS NNP NNP . ',3,0,1,0,0,0,0,0,0,0,positive
+2604,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','You Cant Go Wrong Here ','PRP MD RB VB NNP RB . ',5,0,1,0,0,1,0,0,0,0,positive
+2605,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.08333333333333333,1.0,0.0,'target_spot','In Grammercy/Union Square/East Village this is my neighbors and my favorite spot ','IN NNP SYM NNP NNP SYM NNP NNP DT VBZ PRP$ NNS CC PRP$ JJ NN . ',12,0,1,0,0,0,0,0,0,0,positive
+2638,0.0,0.0,0.0,0.0,0.0,0.0,0.022727272727272728,0.25,0.0,'target_restaurant','Overall, I would go back and eat at the restaurant again ','RB , PRP MD VB RB CC VB IN DT NN RB . ',11,0,1,1,0,0,0,0,0,0,positive
+2646,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','VERY GOOD ','RB JJ . ',2,1,1,1,0,0,0,0,0,0,positive
+2658,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Not sure if I would go back ','RB JJ IN PRP MD VB RB . ',7,0,1,1,1,0,0,0,0,0,negative
+2659,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_pizza joint','My favortie pizza joint in Seattle ','PRP$ NN NN JJ IN NNP ',6,0,1,0,0,0,0,0,0,0,positive
+2660,0.02,0.4,0.0,0.05,1.0,0.0,0.04,1.0,0.0,'target_restaurant',' This is my &quot;must bring out of town guests to&quot; restaurant and they always enjoy and rave about it ','DT VBZ PRP$ CC NN : MD VB IN IN NN NNS IN CC NN : NN CC PRP RB VBP CC VBP IN PRP . ',20,0,1,1,0,0,0,0,0,0,positive
+2661,0.016666666666666666,0.2,0.0,0.0,0.0,0.0,0.041666666666666664,0.5,0.0,'target_NULL','In fact, many want to return a second time during their visit ','IN NN , JJ VBP TO VB DT JJ NN IN PRP$ NN . ',12,0,1,0,0,0,0,0,0,0,positive
+2674,0.06,0.6,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_Mioposto Caf?',' My husband and I love eating at Mioposto Caf? ','PRP$ NN CC PRP VBP VBG IN NNP NNP . ',10,0,1,1,0,0,0,0,0,0,positive
+2685,0.0,0.0,0.0,0.0,0.0,0.0,-0.16666666666666666,0.0,0.0,'target_NULL','Worth the wait ','JJ DT NN ',3,0,1,0,0,0,0,0,0,0,positive
+2687,0.01904761904761905,0.4,0.0,0.047619047619047616,1.0,0.0,-0.007936507936507938,0.3333333333333333,0.0,'target_NULL',' Had to wait thirty minutes to get in the door on a tuesday morning, but it was so worth it ','VBD TO VB CD NNS TO VB IN DT NN IN DT JJ NN , CC PRP VBD RB JJ PRP . ',21,0,2,1,0,0,0,0,0,1,positive
+2694,0.018181818181818184,0.4,0.0,0.045454545454545456,1.0,0.0,0.045454545454545456,1.0,0.0,'target_NULL','Go with some friends, wait the half hour or so with a cup of joe, and enjoy more than your average breakfast ','VB IN DT NNS , VB DT JJ NN CC RB IN DT NN IN NNP , CC VB JJR IN PRP$ JJ NN . ',22,0,2,0,0,0,0,0,0,0,positive
+2696,0.05333333333333334,0.6,0.0,0.06666666666666667,1.0,0.0,0.0,0.0,0.0,'target_place','I dont know why anyone would want to write a great review about this place ','PRP VBP RB VB WRB NN MD VB TO VB DT JJ NN IN DT NN . ',15,0,1,1,0,1,0,1,0,0,negative
+2697,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','I have been to this place, folks and it is BAD ','PRP VBP VBN IN DT NN , NNS CC PRP VBZ JJ . ',11,0,1,1,0,0,0,0,0,0,negative
+2704,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','DONOT GO ','NNP NNP . ',2,1,1,1,1,0,0,0,0,0,negative
+2713,0.08,0.4,0.0,0.2,1.0,0.0,-0.03333333333333334,0.3333333333333333,0.0,'target_NULL','It was worth the wait ','PRP VBD JJ DT NN . ',5,0,1,0,0,0,0,0,0,0,positive
+2715,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Will definitely be back ','MD RB VB RB . ',4,0,1,0,0,0,0,0,0,0,positive
+2717,0.08695652173913043,0.8,0.0,0.17391304347826086,1.0,0.0,0.043478260869565216,1.0,0.0,'target_restaurant',' I recently had the pleasure of dining as this delightful restaurant on 2nd street and wow what a great evening we had ','PRP RB VBD DT NN IN NN IN DT JJ NN IN JJ NN CC UH WDT DT JJ NN PRP VBD . ',23,0,1,1,0,0,0,0,0,0,positive
+2726,0.0,0.0,0.0,0.0,0.0,0.0,-0.027777777777777776,0.0,0.0,'target_Open Sesame','To the owners of Open Sesame Bravo I cant wait to come back to dine at your restaurant ','IN DT NNS IN NNP NNP MD RB VB TO VB RB IN NN IN PRP$ NN . ',18,1,1,1,0,1,0,0,0,0,positive
+2730,0.0,0.0,0.0,0.0,0.0,0.0,0.07142857142857142,0.5,0.0,'target_NULL','Once youre inside, the real experience begins ','IN PRP VBP RB , DT JJ NN VBZ . ',7,0,1,0,0,0,0,0,0,0,positive
+2741,0.028571428571428574,0.4,0.0,0.07142857142857142,1.0,0.0,0.023809523809523808,0.3333333333333333,0.0,'target_NULL','I probably wouldnt go back though cuz I dont know if its worth it ','PRP RB MD RB VB RB RB `` IN PRP VBP RB VB IN PRP VBZ JJ PRP . ',14,0,1,1,0,1,0,1,0,0,negative
+2742,0.011764705882352941,0.0,-0.2,0.0,0.0,0.0,-0.058823529411764705,0.0,0.0,'target_NULL','Maybe Ill go back once more many years from now when Ive forgotten I went there already ','RB PRP MD VB RB RB RBR JJ NNS IN RB WRB PRP VBP VBN PRP VBD RB RB . ',17,0,1,1,0,0,0,0,0,0,negative
+2744,0.19999999999999998,0.0,-0.6,-0.3333333333333333,1.0,0.0,-0.3333333333333333,0.0,0.0,'target_NULL',' Not bad ','RB JJ . ',3,0,1,1,1,0,0,0,0,0,neutral
+2771,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','This place rocks ','DT NN NNS . ',3,1,1,0,0,0,0,0,0,0,positive
+2807,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_NULL','Much more than just a great view ','RB JJR IN RB DT JJ NN . ',7,1,2,0,0,0,0,0,0,0,positive
+2808,0.031578947368421054,0.6,0.0,0.15789473684210525,1.0,0.0,0.13157894736842105,1.0,0.0,'target_Ray&apos;s Boathouse',' I am exceedingly pleased to report that my dinner at Rays Boathouse last Friday completely exceeded my expectations ','PRP VBP RB JJ TO VB IN PRP$ NN IN NNP POS NNP JJ NNP RB VBD PRP$ NNS . ',19,0,1,1,0,0,0,0,0,0,positive
+2811,0.0375,0.6,0.0,0.0625,1.0,0.0,0.125,1.0,0.0,'target_Ray&apos;s','Imagine my happy surprise upon finding that the views are only the third-best thing about Rays ','VB PRP$ JJ NN IN VBG IN DT NNS VBP RB DT RB HYPH JJS NN IN NNP . ',16,1,2,0,0,0,0,0,0,0,positive
+2830,0.0,0.0,0.0,0.05555555555555555,1.0,0.0,0.05555555555555555,1.0,0.0,'target_Ray&apos;s Boathouse','All considered, I have to say that Rays Boathouse is deserving of its title as a Seattle institution ','DT VBN , PRP VBP TO VB IN NNP POS NNP VBZ JJ IN PRP$ NN IN DT NNP NN . ',18,0,1,1,0,0,0,0,0,0,positive

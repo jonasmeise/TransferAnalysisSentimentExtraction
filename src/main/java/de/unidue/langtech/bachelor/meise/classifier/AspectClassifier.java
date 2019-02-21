@@ -20,26 +20,20 @@ import weka.attributeSelection.ClassifierSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.LibSVM;
-import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.classifiers.functions.SGD;
-import weka.classifiers.functions.SGDText;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.classifiers.meta.FilteredClassifier;
-import weka.classifiers.trees.RandomForest;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SelectedTag;
-import weka.core.Stopwords;
-import weka.core.stopwords.AbstractStopwords;
-import weka.core.stopwords.StopwordsHandler;
-import weka.core.tokenizers.Tokenizer;
 import weka.filters.Filter;
 import weka.filters.MultiFilter;
+import weka.filters.supervised.instance.ClassBalancer;
 import weka.filters.unsupervised.attribute.NominalToBinary;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
-import libsvm.svm_parameter;
+import weka.packages.ThresholdSelector;
 
 public class AspectClassifier {
 	//a single Aspect Classifier for a set of Instances
@@ -53,7 +47,7 @@ public class AspectClassifier {
 	private int kernelType=0;
 	private int svmType=0;
 	public boolean idfTransformEnabled;
-	public boolean regression=false;
+	public boolean regression=true;
 	public Classifier outerParameterClassifier; //if called from outside, this thing needs to be set
 	public boolean mapToHistogram = true;
 	public double parameterHistogram = 0.8;
@@ -112,7 +106,7 @@ public class AspectClassifier {
 			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
 			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
 			svm.setProbabilityEstimates(true);
-			svm.setNormalize(true);
+			//svm.setNormalize(true);
 			svm.setShrinking(true);
 			
 			//weights?
@@ -132,6 +126,7 @@ public class AspectClassifier {
 			
 			if(!regression) {
 				//svm.setWeights((weightClassB/weightClassC) + " " + (weightClassA/weightClassC));
+				//svm.setWeights("1 15 1.3");
 				myLog.log("Weights set: " + svm.getWeights());
 			}
 
@@ -143,6 +138,8 @@ public class AspectClassifier {
 			//remove ID-Feature
 			removeFilter.setAttributeIndices("1");
 				
+			ClassBalancer cb = new ClassBalancer();
+			
 			svm.setDegree(2);
 			//for constrainedS1:
 			//svm.setCost(200);
@@ -163,31 +160,19 @@ public class AspectClassifier {
 			//svm.setCost(500);
 			//svm.setGamma(0.001);
 			//svm.setEps(0.00005);
-			
-			
-			cps = new CVParameterSelection();
-			cps.setClassifier(svm);
-			cps.setNumFolds(5);
-			cps.setDebug(true);
-			String[] params = new String[4];
-			params[0] = "D 2 2 1";
-			params[1] = "C 500 500 1";
-			params[2] = "G 0.0005 0.0015 3";
-			params[3] = "E 0.00005 0.0002 4";
-			cps.setCVParameters(params);
-				
-			ClassifierAttributeEval cae = new ClassifierAttributeEval();
-			cae.setClassifier(classifier);
-			cae.setEvaluationMeasure(new SelectedTag(ClassifierSubsetEval.EVAL_FMEASURE, ClassifierSubsetEval.TAGS_EVALUATION));
-			cae.setLeaveOneAttributeOut(true);
-			cae.setFolds(5);
-			
+
 			SGD sgd = new SGD();
 			sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
-			//sgd.setLearningRate(0.41);
-			//sgd.setEpsilon(0.40);
-			//sgd.setDoNotCheckCapabilities(true);
+			sgd.setLearningRate(0.2);
 
+			cps = new CVParameterSelection();
+			cps.setClassifier(sgd);
+			cps.setNumFolds(5);
+			cps.setDebug(true);
+			String[] params = new String[1];
+			params[0] = "L 0.01 0.4 5";
+			cps.setCVParameters(params);
+			
 			MultilayerPerceptron mp = new MultilayerPerceptron();
 			mp.setHiddenLayers("64,16");
 			mp.setAutoBuild(true);
@@ -210,7 +195,20 @@ public class AspectClassifier {
 			} else {
 				classifier.setClassifier(svm);
 			}
+
+			//classifier.setFilter(mf);
+			//classifier.buildClassifier(train);
 			
+			
+			/*
+			ThresholdSelector ts = new ThresholdSelector();
+			ts.setClassifier(sgd);
+			ts.setEvaluationMode(new SelectedTag(ThresholdSelector.EVAL_CROSS_VALIDATION, ThresholdSelector.TAGS_EVAL));
+			ts.setMeasure(new SelectedTag(ThresholdSelector.FMEASURE, ThresholdSelector.TAGS_MEASURE));
+			ts.setNumXValFolds(3);	
+			classifier.setClassifier(ts);
+			*/
+
 			classifier.setFilter(mf);
 			classifier.buildClassifier(train);
 			
@@ -227,7 +225,13 @@ public class AspectClassifier {
 		   buildClassifier(train);
 	
 		   Evaluation currentEvaluation;
-		   currentEvaluation = evalModel(classifier, test, folds, new Random());
+		   
+		   if(folds>0) {
+			   currentEvaluation = evalModel(classifier, test, folds, new Random());
+		   } else {
+			   currentEvaluation = new Evaluation(test);
+			   currentEvaluation.evaluateModel(classifier, test);
+		   }
 		   
 		   if(regression) {
 			   avgMeanErrorMapped=0;
@@ -363,6 +367,9 @@ public class AspectClassifier {
 		s2wFilter.setLowerCaseTokens(true);	
 		s2wFilter.setAttributeNamePrefix("s2w");
 		
+		s2wFilter.setMinTermFreq(6);
+		
+		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		//s2wFilter.setOutputWordCounts(true);
 		//keep word number instead of booleanic existence
 		myLog.log("Found " + attributeArray.length + " string attributes.");
@@ -427,7 +434,7 @@ public class AspectClassifier {
        BufferedReader inputReader = new BufferedReader(new FileReader(file));
        Instances data = new Instances(inputReader);
        data.setClassIndex(data.numAttributes() - posClass);
-       myLog.log("Found class attribute at '" + (data.numAttributes() - posClass) + "'.");
+       myLog.log("Found class attribute at '" + (data.numAttributes() - posClass) + "'. " + data.size() + " Instances loaded!");
 
        return data;
    }
