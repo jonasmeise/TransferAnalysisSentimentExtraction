@@ -1,1 +1,266 @@
-´
+ambience#general.arff.gold
+Precision	0.5510204081632653
+Recall	0.46551724137931033
+fMeasure0.5046728971962617
+Accuracy	91.35399673735726
+TP	27.0
+FP	22.0
+FN	31.0
+TN	533.0
+balanced accuracy	0.7129388008698353
+
+drinks#prices.arff.gold
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	99.18433931484502
+TP	0.0
+FP	2.0
+FN	3.0
+TN	608.0
+balanced accuracy	0.49836065573770494
+
+drinks#quality.arff.gold
+Precision	0.375
+Recall	0.14285714285714285
+fMeasure0.20689655172413796
+Accuracy	96.24796084828711
+TP	3.0
+FP	5.0
+FN	18.0
+TN	587.0
+balanced accuracy	0.5672055984555985
+
+drinks#style_options.arff.gold
+Precision	1.0
+Recall	0.3333333333333333
+fMeasure0.5
+Accuracy	98.69494290375204
+TP	4.0
+FP	0.0
+FN	8.0
+TN	601.0
+balanced accuracy	0.6666666666666666
+
+food#prices.arff.gold
+Precision	0.23529411764705882
+Recall	0.18181818181818182
+fMeasure0.20512820512820512
+Accuracy	94.94290375203916
+TP	4.0
+FP	13.0
+FN	18.0
+TN	578.0
+balanced accuracy	0.5799107829564683
+
+food#quality.arff.gold
+Precision	0.6638297872340425
+Recall	0.6527196652719666
+fMeasure0.6582278481012658
+Accuracy	73.5725938009788
+TP	156.0
+FP	79.0
+FN	83.0
+TN	295.0
+balanced accuracy	0.7207448593739512
+
+food#style_options.arff.gold
+Precision	0.391304347826087
+Recall	0.1875
+fMeasure0.25352112676056343
+Accuracy	91.35399673735726
+TP	9.0
+FP	14.0
+FN	39.0
+TN	551.0
+balanced accuracy	0.5813606194690266
+
+location#general.arff.gold
+Precision	0.6
+Recall	0.23076923076923078
+fMeasure0.33333333333333337
+Accuracy	98.04241435562805
+TP	3.0
+FP	2.0
+FN	10.0
+TN	598.0
+balanced accuracy	0.6137179487179487
+
+restaurant#general.arff.gold
+Precision	0.5095541401273885
+Recall	0.5369127516778524
+fMeasure0.5228758169934641
+Accuracy	76.18270799347471
+TP	80.0
+FP	77.0
+FN	69.0
+TN	387.0
+balanced accuracy	0.6854822379078918
+
+restaurant#miscellaneous.arff.gold
+Precision	0.28
+Recall	0.1891891891891892
+fMeasure0.22580645161290325
+Accuracy	92.16965742251223
+TP	7.0
+FP	18.0
+FN	30.0
+TN	558.0
+balanced accuracy	0.5789695945945946
+
+restaurant#prices.arff.gold
+Precision	0.42105263157894735
+Recall	0.34782608695652173
+fMeasure0.380952380952381
+Accuracy	95.75856443719412
+TP	8.0
+FP	11.0
+FN	15.0
+TN	579.0
+balanced accuracy	0.6645910095799558
+
+service#general.arff.gold
+Precision	0.7279411764705882
+Recall	0.6644295302013423
+fMeasure0.6947368421052632
+Accuracy	85.80750407830342
+TP	99.0
+FP	37.0
+FN	50.0
+TN	427.0
+balanced accuracy	0.7923440754454987
+
+
+ambience#general.arff.gold
+Precision	0.5652173913043478
+Recall	0.4482758620689655
+fMeasure0.4999999999999999
+Accuracy	91.51712887438825
+TP	26.0
+FP	20.0
+FN	32.0
+TN	535.0
+balanced accuracy	0.7061199130164648
+
+drinks#prices.arff.gold
+Precision	0.0
+Recall	0.0
+fMeasure0.0
+Accuracy	99.18433931484502
+TP	0.0
+FP	2.0
+FN	3.0
+TN	608.0
+balanced accuracy	0.49836065573770494
+
+drinks#quality.arff.gold
+Precision	0.375
+Recall	0.14285714285714285
+fMeasure0.20689655172413796
+Accuracy	96.24796084828711
+TP	3.0
+FP	5.0
+FN	18.0
+TN	587.0
+balanced accuracy	0.5672055984555985
+
+drinks#style_options.arff.gold
+Precision	1.0
+Recall	0.3333333333333333
+fMeasure0.5
+Accuracy	98.69494290375204
+TP	4.0
+FP	0.0
+FN	8.0
+TN	601.0
+balanced accuracy	0.6666666666666666
+
+food#prices.arff.gold
+Precision	0.2
+Recall	0.13636363636363635
+fMeasure0.16216216216216214
+Accuracy	94.94290375203916
+TP	3.0
+FP	12.0
+FN	19.0
+TN	579.0
+balanced accuracy	0.5580295339178588
+
+food#quality.arff.gold
+Precision	0.6787330316742082
+Recall	0.6276150627615062
+fMeasure0.6521739130434783
+Accuracy	73.89885807504078
+TP	150.0
+FP	71.0
+FN	89.0
+TN	303.0
+balanced accuracy	0.7188877452844964
+
+food#style_options.arff.gold
+Precision	0.42857142857142855
+Recall	0.1875
+fMeasure0.26086956521739124
+Accuracy	91.68026101141925
+TP	9.0
+FP	12.0
+FN	39.0
+TN	553.0
+balanced accuracy	0.5831305309734514
+
+location#general.arff.gold
+Precision	0.6
+Recall	0.23076923076923078
+fMeasure0.33333333333333337
+Accuracy	98.04241435562805
+TP	3.0
+FP	2.0
+FN	10.0
+TN	598.0
+balanced accuracy	0.6137179487179487
+
+restaurant#general.arff.gold
+Precision	0.5263157894736842
+Recall	0.5369127516778524
+fMeasure0.5315614617940199
+Accuracy	76.99836867862969
+TP	80.0
+FP	72.0
+FN	69.0
+TN	392.0
+balanced accuracy	0.6908701689423744
+
+restaurant#miscellaneous.arff.gold
+Precision	0.28
+Recall	0.1891891891891892
+fMeasure0.22580645161290325
+Accuracy	92.16965742251223
+TP	7.0
+FP	18.0
+FN	30.0
+TN	558.0
+balanced accuracy	0.5789695945945946
+
+restaurant#prices.arff.gold
+Precision	0.47058823529411764
+Recall	0.34782608695652173
+fMeasure0.39999999999999997
+Accuracy	96.08482871125612
+TP	8.0
+FP	9.0
+FN	15.0
+TN	581.0
+balanced accuracy	0.666285924834193
+
+service#general.arff.gold
+Precision	0.7404580152671756
+Recall	0.6510067114093959
+fMeasure0.6928571428571428
+Accuracy	85.97063621533442
+TP	97.0
+FP	34.0
+FN	52.0
+TN	430.0
+balanced accuracy	0.7888654246702151
+
+

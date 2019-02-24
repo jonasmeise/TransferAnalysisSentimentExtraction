@@ -1,4 +1,4 @@
-f1measure	unconstrained	0.6378
+f1measure	unconstrained	0.6478
 
 old:
-f1measure	unconstrained 0.67714
+f1measure	unconstrained 0.6771

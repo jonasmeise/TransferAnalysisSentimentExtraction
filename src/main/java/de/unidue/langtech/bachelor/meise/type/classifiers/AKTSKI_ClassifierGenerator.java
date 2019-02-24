@@ -326,15 +326,6 @@ public class AKTSKI_ClassifierGenerator extends ArffGenerator{
 			types[5] = "Preis-Leistungs-Verhltnis";
 			types[6] = "WLAN";
 			types[7] = "Sauberkeit";
-			
-			/*tagWordsForAspects.add("positive bar bath pool facility hotel onsen restaurant place spa");
-			tagWordsForAspects.add("service staff staffs concierge he she they lady woman ma receptionist");
-			tagWordsForAspects.add("area station subway restaurant hotel view metro airport location distance access");
-			tagWordsForAspects.add("time check coffee egg water tea experience breakfast stay food everything choice");
-			tagWordsForAspects.add("bathroom furniture space door room pillow bed amenities shower");
-			tagWordsForAspects.add("money price cost charge value");
-			tagWordsForAspects.add("wifi internet");
-			tagWordsForAspects.add("room towel window water smell cleaning shower hotel");*/
 		} else {
 			//load data separately for cross-checking
 			myReader = new RawJsonReviewReader();

@@ -99,7 +99,9 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
         			
     				for(Dependency singleDependency : dependencies) {
     					if(singleSentence.contains(singleDependency.getGovernor())) {
-							dependencyString = dependencyString + singleDependency.getDependencyType() + " ";
+							dependencyString = dependencyString + singleDependency.getDependencyType() + "_" + 
+									singleDependency.getGovernor().getLemma().getValue() + "_" +
+									singleDependency.getDependent().getLemma().getValue() + " ";
     					}
     				}
         			

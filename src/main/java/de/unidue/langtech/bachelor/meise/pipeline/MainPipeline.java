@@ -31,6 +31,7 @@ import weka.classifiers.meta.AdditiveRegression;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.SelectedTag;
 import weka.filters.unsupervised.attribute.StringToWordVector;
+import weka.packages.ThresholdSelector;
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import de.unidue.langtech.bachelor.meise.files.DataParser;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
@@ -55,7 +56,7 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "*.xmi");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
 		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
@@ -63,7 +64,7 @@ public class MainPipeline {
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
 		
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_BUTknot\\old\\constrained", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained\\analysis");
+		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained\\analysis");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -127,11 +128,11 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
-	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "OwnClassifier",
-	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
-	        		OwnClassifier_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator.class, 
+	        		OwnClassifier_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
+	        		OwnClassifier_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier",
+	        		OwnClassifier_ClassifierGenerator.PARAM_CONSTRAINED, "false",
+	        		OwnClassifier_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -162,15 +163,15 @@ public class MainPipeline {
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		//svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
-		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
+		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_C_SVC, LibSVM.TAGS_SVMTYPE));
 		svm.setProbabilityEstimates(true);
-		//svm.setDegree(2);
+		svm.setDegree(2);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		//svm.setCost(500);
-		//svm.setGamma(0.001);
-		//svm.setEps(0.00005);
+		svm.setCost(210);
+		svm.setGamma(0.0015);
+		svm.setEps(0.0001);
 			
 		SimpleLinearRegression slr = new SimpleLinearRegression();
 		slr.setOutputAdditionalStats(true);
@@ -203,20 +204,26 @@ public class MainPipeline {
 		SGD sgd = new SGD();
 		sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
 		sgd.setLearningRate(0.41);
-		//sgd.setEpsilon(0.40);
-		//sgd.setEpochs(10);
+		sgd.setEpsilon(0.01);
+		sgd.setEpochs(20);
 		
 		AdditiveRegression ar = new AdditiveRegression();
 		ar.setDebug(true);
 		ar.setClassifier(svm);
 		
+		ThresholdSelector ts = new ThresholdSelector();
+		ts.setClassifier(sgd);
+		ts.setManualThresholdValue(0.50);
 		
-		myClassifier = sgd;
+		myClassifier = svm;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
 		 myClassifierHandler.useCFV = true;
 		
 		//remove this part if you do not want to enable ablation test
 
+		 removeArray = new int[2];
+		 removeArray[0] = 0;
+		 removeArray[1] = 8; 
 		 
 		 
 		//this last part will be cycled over: in this case, all attributes 1-9 are removed (if they are nott already removed)
@@ -244,7 +251,7 @@ public class MainPipeline {
 				}
 			}
 		} else {
-			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", false, myClassifier);
+			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", false, myClassifier);
 		}
 	}
 }

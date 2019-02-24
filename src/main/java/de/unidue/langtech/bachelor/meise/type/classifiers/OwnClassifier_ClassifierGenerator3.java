@@ -31,12 +31,19 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	ArrayList<SentimentLexicon> sentimentLexicons;
 	StopwordHandler myStopwordHandler;
 	
+	public int sentenceCounter;
+	public int sentenceValenceCounter;
+	public int subsentenceCounter;
+	public int subsentenceValenceCounter;
+	
 	ArrayList<ArrayList<String>> sortedLines = new ArrayList<ArrayList<String>>();
 	
 	@Override
 	public Collection<ArrayList<String>> generateFeaturesFromCas(Sentence sentence) {
 		ArrayList<ArrayList<String>> returnList = new ArrayList<ArrayList<String>>();
 		Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
+		
+		sentenceCounter++;
 		
 		if(valueId < dataCutoff || dataCutoff==0) { //check if max amount of data is enabled
 
@@ -61,6 +68,15 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	        	
         	
         	subSentences = divideIntoSubSentences(sentence, treeCollection);
+        	
+        	subsentenceCounter += subSentences.size();
+        	
+        	if(selectCovered(Valence.class, sentence).size() > 0) {
+				sentenceValenceCounter++;
+        	}
+        	
+        	ArrayList<ArrayList<Token>> subSentenceList = new ArrayList<ArrayList<Token>>();
+        	
         	//generate all outputs, then overwrite specific ones
 			for(Valence singleValence : selectCovered(Valence.class, sentence)) {
         		AspectRating t1 = singleValence.getDependent();
@@ -102,6 +118,10 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	        					currentSentence = subSentence;
 	        				}
 	        			}
+	        		}
+	        		
+	        		if(!subSentenceList.contains(currentSentence)) {
+	        			subSentenceList.add(currentSentence);
 	        		}
 	        		
 	        		String currentSentenceString = "";
@@ -199,6 +219,8 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 					}
 				}
 			}
+			
+			subsentenceValenceCounter += subSentenceList.size();
 		}       
 		
 		return returnList;
@@ -258,6 +280,7 @@ public class OwnClassifier_ClassifierGenerator3 extends ArffGenerator{
 	}
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
+		myLog.log("Found reviews: " + sentenceCounter + "\nFound reviews with valences: " + sentenceValenceCounter + "\nFound sentences: " + subsentenceCounter + "\nFound sentences with valences: " + subsentenceValenceCounter);
 		writeOutput(sortedLines);
 	}	
 	

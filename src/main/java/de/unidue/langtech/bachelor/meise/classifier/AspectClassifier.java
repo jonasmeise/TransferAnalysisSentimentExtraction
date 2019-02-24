@@ -111,21 +111,6 @@ public class AspectClassifier {
 			//svm.setNormalize(true);
 			svm.setShrinking(true);
 			
-			//weights?
-			double weightClassA=0;
-			double weightClassB=0;
-			double weightClassC=1;
-			
-			for(Instance singleInstance : train) {
-				if(singleInstance.classValue()==0) {
-					weightClassA++;
-				} else if(singleInstance.classValue()==1){
-					weightClassB++;
-				} else {
-					weightClassC++;
-				}
-			}
-			
 			if(!regression) {
 				//svm.setWeights((weightClassB/weightClassC) + " " + (weightClassA/weightClassC));
 				//svm.setWeights("1 15 1.3");

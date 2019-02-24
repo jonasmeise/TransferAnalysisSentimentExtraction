@@ -30,7 +30,7 @@ import webanno.custom.Valence;
 //GridSearch was not performed, Meta-learning was realised with CVParameterSelection instead
 //Stemming -> Lemmatizing
 //	-> TF-IDF transformation while learning
-//uncontained version is not included
+//unconstrained version is not included
 
 
 public class AUEB_ClassifierGenerator extends ArffGenerator{
