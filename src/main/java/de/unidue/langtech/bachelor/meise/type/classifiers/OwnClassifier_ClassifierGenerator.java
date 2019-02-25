@@ -24,6 +24,8 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	int cutoff = 200; //Maximale Saetze/Datensatz
 	int dataCutoff = 0; //Maximale Datenentries pro Datensatz
 	int valueId=0;
+	int countNN, countJJ, countVB, countTotal;
+	int distanceRatingAspect;
 	
 	String regexIgnore = "[\'\"]";
 	ArrayList<String> negationWords;
@@ -81,7 +83,7 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
         				if(current_pos.contains("NN") || current_pos.contains("JJ") || current_pos.contains("VB") || current_pos.contains("RB")) {
         					if(constrained || !myStopwordHandler.isStopword(singleToken.getLemma().getValue().toLowerCase())) {
         						lemmas = lemmas + singleToken.getLemma().getValue() + " ";
-            				
+        						
 	            				for(SentimentLexicon singleLexicon : sentimentLexicons) {
 	            					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
 	            					double newNegValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"negative"});
@@ -167,7 +169,7 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
     					dependencyDistance = newDistance;
     				}
     			}
-				
+						
 				if(dependencyDistance>=0) {
 					ArrayList<Token> currentSentence = new ArrayList<Token>();
 	        		for(ArrayList<Token> subSentence : subSentences) {
@@ -192,15 +194,33 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	        		stringSentence = "'" + stringSentence.toLowerCase().replaceAll(regexIgnore, "") + "'";        		
 	        		
 					String identifier;
+					Token identifierToken;
 					
 					if(t1.getAspect()!=null && t2.getAspect()!=null) {
 						if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
 	    					//non-negated
 							identifier = t2.getAspect().replaceAll("[^\\x00-\\x7F]", "");
+							identifierToken = selectCovered(Token.class, t2).get(0);
 	    				} else {
 	    					//negated
 	    					identifier = t1.getAspect().replaceAll("[^\\x00-\\x7F]", "");
+	    					identifierToken = selectCovered(Token.class, t2).get(0);
 	    				}
+						
+						if(identifierToken.getPos().getPosValue().contains("JJ")) {
+							countJJ++;
+						} else if(identifierToken.getPos().getPosValue().contains("VB")) {
+							countVB++;
+						} else if(identifierToken.getPos().getPosValue().contains("NN")) {
+							countNN++;
+						}
+						
+						countTotal++;
+						int higherValue = (t1.getBegin() > t2.getBegin()) ? t1.getBegin() : t2.getBegin(); 
+						int lowerValue = (t1.getBegin() > t2.getBegin()) ? t2.getBegin() : t1.getBegin();
+						higherValue -= sentence.getBegin();
+						lowerValue -= sentence.getBegin();
+						distanceRatingAspect += sentence.getCoveredText().substring(lowerValue, higherValue).split(" ").length;
 						
 						//find the value in returnList and replace it with the new one
 						
@@ -299,7 +319,9 @@ public class OwnClassifier_ClassifierGenerator extends ArffGenerator{
 	}
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
-		writeOutput(sortedLines);
+		myLog.log("Sentiments with...\n...NN\t" + countNN + "\n...VB\t" + countVB + "\n...JJ\t" + countJJ + "\n\ntotal:\t" + countTotal);
+		myLog.log("Avg. distance between rating and aspect:\n" + ((double)distanceRatingAspect / (double)countTotal));
+		//writeOutput(sortedLines);
 	}	
 	
 	@Override

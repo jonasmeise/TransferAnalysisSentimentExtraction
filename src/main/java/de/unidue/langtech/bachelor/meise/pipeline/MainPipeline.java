@@ -56,7 +56,7 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
+		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
 		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
@@ -64,7 +64,7 @@ public class MainPipeline {
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
 		
-		myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained\\analysis");
+		//myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained\\analysis2");
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -163,15 +163,15 @@ public class MainPipeline {
 		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
 		 
 		 LibSVM svm = new LibSVM();
-		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_RBF, LibSVM.TAGS_KERNELTYPE));
+		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
 		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_C_SVC, LibSVM.TAGS_SVMTYPE));
 		svm.setProbabilityEstimates(true);
-		svm.setDegree(2);
+		//svm.setDegree(2);
 		svm.setNormalize(true);
 		svm.setShrinking(true);
-		svm.setCost(210);
-		svm.setGamma(0.0015);
-		svm.setEps(0.0001);
+		//svm.setCost(210);
+		//svm.setGamma(0.0015);
+		//svm.setEps(0.0001);
 			
 		SimpleLinearRegression slr = new SimpleLinearRegression();
 		slr.setOutputAdditionalStats(true);
@@ -217,13 +217,18 @@ public class MainPipeline {
 		
 		myClassifier = svm;
 		 //you may change myClassifier in order to set up a custom classifier algorithm
-		 myClassifierHandler.useCFV = true;
+		 myClassifierHandler.useCFV = false;
 		
 		//remove this part if you do not want to enable ablation test
 
-		 removeArray = new int[2];
+		 /*removeArray = new int[7];
 		 removeArray[0] = 0;
-		 removeArray[1] = 8; 
+		 removeArray[1] = 2; 
+		 removeArray[2] = 3; 
+		 removeArray[3] = 4; 
+		 removeArray[4] = 6; 
+		 removeArray[5] = 7; 
+		 removeArray[6] = 8; */
 		 
 		 
 		//this last part will be cycled over: in this case, all attributes 1-9 are removed (if they are nott already removed)
@@ -251,7 +256,7 @@ public class MainPipeline {
 				}
 			}
 		} else {
-			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),10,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", false, myClassifier);
+			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),4,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", true, myClassifier);
 		}
 	}
 }

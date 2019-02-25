@@ -240,7 +240,7 @@ public class ClassifierHandler extends JCasAnnotator_ImplBase{
 				for(Evaluation singleEval : allEvaluations) {
 					precision += singleEval.precision(0);
 					recall += singleEval.recall(0);
-					fMeasure += singleEval.fMeasure(0);
+					fMeasure += singleEval.weightedFMeasure();
 					accuracy += singleEval.pctCorrect();
 					
 					tp += singleEval.numTruePositives(0);
