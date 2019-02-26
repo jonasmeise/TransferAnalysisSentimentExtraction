@@ -103,39 +103,3 @@
 1741,0.3333333333333333,'place','dep_ideal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
 1744,0.15833333333333333,'Casa La Femme','dep_Femme dep_Casa dep_La dep_recommend ','dep_Femme_Casa dep_Casa_La dep_La_recommend ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
 1859,0.0,'they','dep_keep dep_stock ','dep_keep_stock ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2074,-0.18222222222222223,'balconey','dep_favorite dep_smoking dep_found ','dep_favorite_smoking dep_smoking_found dep_found_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2085,0.0,'crowd','dep_yuppies ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2123,0.10000000000000002,'service','dep_great dep_crowded ','dep_great_crowded ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2128,0.14444444444444446,'sign','dep_always dep_good dep_see ','dep_always_a dep_good_see ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2157,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
-2196,-0.1111111111111111,'seating','dep_drawback dep_crowded dep_seating dep_service dep_ ','dep_drawback_is dep_crowded_seating dep_seating_and dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2245,0.19047619047619047,'place','dep_s dep_great dep_place dep_enjoy dep_ ','dep_s_a dep_great_place dep_place_enjoy dep_enjoy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2275,0.13333333333333333,'place','dep_best dep_take ','dep_best_take dep_take_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2303,0,'Murphyaposs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2312,0.12380952380952381,'spot','dep_s dep_perfect dep_spot dep_! ','dep_s_the dep_perfect_spot dep_spot_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
-2318,-0.0,'parking','dep_valet dep_s ','dep_valet_s ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2332,0.6,'Space','dep_limited ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2340,0.7999999999999999,'Kid','dep_friendly ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2341,0.0,'years','dep_light dep_children ','dep_light_children ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2414,0.0,'reservations','dep_without ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2454,-0.0,'restaurant','dep_emailed ','dep_emailed_about ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2455,0.0,'month','dep_ago ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2458,-0.0,'amp','dep_link ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
-2461,0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2483,0.16666666666666666,'they','dep_deserve ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2548,0.0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2639,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,neutral
-2640,0.0,'place','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2652,-0.049999999999999996,'bathroom stall','dep_one dep_stall dep_bathroom ','dep_one_stall dep_stall_bathroom dep_bathroom_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2669,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
-2686,-0.0,'morning','dep_tuesday ','dep_tuesday_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2724,0.34444444444444444,'people','dep_happy dep_looking dep_music ','dep_happy_looking dep_looking_music ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2728,0.0,'place','dep_s dep_tiny dep_get ','dep_s_a dep_tiny_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,neutral
-2729,0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2752,0.0761904761904762,'place','dep_s dep_great dep_place dep_watch dep_ ','dep_s_a dep_great_place dep_place_watch dep_watch_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2768,0.06666666666666667,'restroom','dep_odd ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2769,-0.037037037037037035,'bathroom','dep_small ','dep_small_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2770,0.0,'bathroom','dep_casino ','dep_casino_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2828,0,'Rayaposs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,neutral
-2829,0.0,'table','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2833,0.0,'food','dep_server ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

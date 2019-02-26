@@ -96,28 +96,3 @@
 1781,0.037037037037037035,'BBE  fixe prix menu','dep_menu dep_BBE dep_ dep_fixe dep_prix dep_ dep_deal ','dep_menu_BBE dep_BBE_ dep__fixe dep_fixe_prix dep_prix_had dep__deal ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
 1803,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
 1867,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-1980,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-1995,-0.28888888888888886,'food','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2090,-0.3333333333333333,'food','dep_mediocre ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
-2190,0.09999999999999999,'open sesame combo plate','dep_plate dep_open dep_sesame dep_combo dep_bargain ','dep_plate_open dep_open_sesame dep_sesame_combo dep_combo_bargain ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2228,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2254,0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2297,0.0,'Sushi','dep_Good dep_Sushi dep_ dep_Price ','dep_Good_Sushi dep_Sushi_ dep__Price ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2355,0.08333333333333333,'lunch menu','dep_menu dep_lunch dep_deal ','dep_menu_lunch dep_lunch_deal ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
-2411,0.0,'sushi','dep_value ','dep_value_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2421,-0.3333333333333333,'food','dep_overpriced ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2507,0.09999999999999999,'yummy','dep_yummy dep_ ','dep_yummy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2528,-0.43333333333333335,'sushi','dep_good ','',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,negative
-2561,-0.10123456790123457,'sushi','dep_nt dep_cheapest dep_sushi dep_worth dep_ ','dep_nt_the dep_cheapest_sushi dep_sushi_but dep_worth_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2587,0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2614,0.05555555555555555,'price fixed preshow dinner','dep_dinner dep_fixed dep_preshow dep_price ','dep_dinner_fixed dep_fixed_preshow dep_preshow_price ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2647,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2655,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2657,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2700,0.13333333333333333,'chef special dinner','dep_dinner dep_chef dep_special ','dep_dinner_chef dep_chef_special dep_special_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2701,-0.0,'plate','dep_ dep_dollar ','dep__dollar dep_dollar_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2719,0.3,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2792,-0.1111111111111111,'pancakes','dep_inventive dep_ dep_ dep_different ','dep_inventive_ dep__ dep__different dep_different_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2795,0.0,'pancakes','dep_larger ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
-2802,-0.037037037037037035,'pancakes','dep_ dep_small ','dep__small dep_small_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2803,0.018518518518518517,'breakfast burrito','dep_burrito dep_breakfast dep_came dep_ dep_juice dep_tea ','dep_burrito_breakfast dep_breakfast_came dep_came_ dep__juice dep_juice_and dep_tea_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

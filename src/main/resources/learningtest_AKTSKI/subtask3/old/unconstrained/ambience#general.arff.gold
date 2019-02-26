@@ -1,0 +1,95 @@
+@relation ambience#general
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+25,-0.0,'ambience','dep_Nice dep_ambience dep_ dep_place dep_ ','dep_Nice_ambience dep_ambience_ dep__but dep_place_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+41,0.0,'ambiance','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+60,0.0,'place','dep_place dep_relax dep_ ','dep_place_relax dep_relax_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+65,-0.2333333333333333,'atmosphere','dep_liked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+91,0.05555555555555555,'space','dep_small ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+123,0.0,'deck','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+126,0.3833333333333333,'music','dep_ dep_awesome dep_fun dep_staff ','dep__awesome dep_awesome_fun dep_fun_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+135,0,'jukeboxaposs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+143,0.0,'upstairs','dep_place ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+154,0.0,'decor','dep_rustic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+169,0.35000000000000003,'ambience','dep_nice dep_food ','dep_nice_food ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+175,-0.16666666666666666,'ambiance','dep_break ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+176,0.0,'villa','dep_Mediterrean ','dep_Mediterrean_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+177,0.041666666666666664,'artwork','dep_music dep_kept ','dep_music_kept ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+178,0.0,'music','dep_artwork ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+226,0.6,'environment','dep_cosy dep_love ','dep_cosy_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+229,0.26666666666666666,'decor','dep_great dep_restaurant ','dep_great_restaurant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+233,0.26666666666666666,'atmosphere','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+254,0.0,'decor','dep_ethic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+276,0.43333333333333335,'band','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+286,0.0,'band','dep_playing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+305,0.0,'Place','dep_Cool dep_Open ','dep_Cool_Open dep_Open_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+311,0.39999999999999997,'ambience','dep_friendly dep_open ','dep_friendly_open ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+312,0.43333333333333335,'place','dep_charming ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+328,0.5333333333333333,'Atmosphere','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+338,0.2,'atmosphere','dep_awesome ','dep_awesome_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+372,0.08333333333333333,'spot','dep_cozy dep_spot ','dep_cozy_spot dep_spot_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+383,0.12380952380952381,'spot','dep_s dep_perfect dep_spot dep_! ','dep_s_the dep_perfect_spot dep_spot_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+386,0.05185185185185184,'ambiance','dep_list dep_forget ','dep_list_forget ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+401,0.0,'atmosphere','dep_okay ','',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+421,0.03333333333333333,'art on the walls','dep_art dep_Check dep_walls ','dep_art_Check dep_Check_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+473,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+475,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+483,0.26666666666666666,'setting','dep_nice dep_value ','dep_nice_value ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+520,0.16666666666666666,'atmosphere','dep_cozy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+534,0.10666666666666667,'waterfront setting','dep_classy dep_setting dep_waterfront ','dep_classy_setting dep_setting_waterfront dep_waterfront_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+562,-0.022222222222222227,'sound','dep_pleasant dep_hear dep_overbearing ','dep_pleasant_hear dep_hear_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+563,0.17777777777777778,'ambiance','dep_nice ','dep_nice_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+564,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+614,-0.0,'restaurant','dep_place ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+618,-0.0,'feel','dep_plus dep_open dep_feel dep_ ','dep_plus_is dep_open_feel dep_feel_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+619,-0.0,'glass walls','dep_walls dep_glass ','dep_walls_glass dep_glass_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+675,0.26666666666666666,'music','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+677,0.022222222222222223,'atmosphere','dep_lighthearted dep_lifts ','dep_lighthearted_lifts ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+678,-0.047619047619047616,'fun','dep_unpretentious dep_local dep_go dep_seek ','dep_unpretentious_local dep_local_go dep_go_seek ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+684,0.06666666666666667,'wood decor','dep_incredible dep_decor dep_wood ','dep_incredible_decor dep_decor_wood dep_wood_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+685,0.016666666666666666,'music','dep_hip dep_playing dep_ dep_something dep_pop dep_located dep_ dep_subwoofer ','dep_hip_playing dep_playing_ dep__something dep_something_pop dep_pop_located dep_located_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+686,-0.027777777777777776,'subwoofer to the sound system','dep_subwoofer dep_music dep_system dep_sound ','dep_subwoofer_music dep_music_to dep_system_sound ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+719,-0.1111111111111111,'feel','dep_crowded ','dep_crowded_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+735,0.07222222222222223,'decor','dep_feeling ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+736,0.2222222222222222,'feeling','dep_intimate dep_decor ','dep_intimate_decor dep_decor_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+739,0,'ambience','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+757,0.26666666666666666,'atmosphere','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+773,0.26666666666666666,'atmosphere','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+787,0.43333333333333335,'decor','dep_beautiful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+788,0.0,'music','dep_placegood dep_ dep_atmosphere dep_people ','dep_placegood_about dep__atmosphere dep_atmosphere_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+789,0.16666666666666666,'atmosphere','dep_music ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+790,0.13333333333333333,'vibe','dep_nice ','dep_nice_was ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+810,0.0,'Balcony','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+817,0.1111111111111111,'Indoor ambience','dep_ambience dep_Indoor dep_modern ','dep_ambience_Indoor dep_Indoor_modern ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+818,0.0,'balcony','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+827,0.0,'table','dep_private ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+833,0.0,'music','dep_Groovy dep_made ','dep_Groovy_made ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+843,0.16666666666666666,'atmosphere','dep_aspiring ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+844,0.39999999999999997,'decor','dep_festive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+848,0.0,'door','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+851,-0.0,'Snooze','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive

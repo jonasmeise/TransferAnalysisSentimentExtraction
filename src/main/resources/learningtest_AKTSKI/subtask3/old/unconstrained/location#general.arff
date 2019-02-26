@@ -50,16 +50,3 @@
 1610,0.17777777777777778,'neighborhood','dep_great ','dep_great_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
 1774,0.037037037037037035,'spot','dep_hidden ','dep_hidden_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
 1801,0.0,'view','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2030,0.0,'downtown','dep_Mexican ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2118,-0.0761904761904762,'location','dep_greatest dep_located dep_ dep_keeps ','dep_greatest_located dep_located_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2121,0.0,'Center','dep_Beverly ','dep_Beverly_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2249,0.25,'location','dep_spectacular dep_food ','dep_spectacular_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2377,0.048484848484848485,'SOHO location','dep_killer dep_location dep_SOHO dep_love dep_ dep_ dep_Fish dep_varity ','dep_killer_location dep_location_SOHO dep_SOHO_love dep_love_ dep__and dep__Fish dep_Fish_varity ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2424,0.08888888888888889,'location','dep_thing dep_nice dep_location dep_ ','dep_thing_is dep_nice_location dep_location_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2546,0.06666666666666667,'location','dep_include dep_park ','dep_include_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2547,0.08333333333333333,'day','dep_spent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2564,-0.08666666666666667,'location along the marina in Long Beach','dep_Later dep_charming dep_Schooner dep_along dep_location dep_marina dep_Beach dep_Long ','dep_Later_charming dep_charming_Schooner dep_Schooner_along dep_along_location dep_location_marina dep_marina_the dep_Beach_Long ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2806,0.13333333333333333,'view','dep_great ','dep_great_than ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
-2809,-0.13333333333333333,'Sound views','dep_gorgeous dep_views dep_Sound dep_given ','dep_gorgeous_views dep_views_Sound dep_Sound_given ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2810,0.0,'views','dep_thing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
-2834,0.43333333333333335,'view','dep_yeahthe dep_good ','dep_yeahthe_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

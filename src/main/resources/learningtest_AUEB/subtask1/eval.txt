@@ -1,1 +1,1 @@
-f1	constrained	0.49442
+f1	constrained	0.71717549149433200000

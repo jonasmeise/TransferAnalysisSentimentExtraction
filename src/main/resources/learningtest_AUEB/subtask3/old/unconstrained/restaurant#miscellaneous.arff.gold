@@ -1,0 +1,65 @@
+@relation restaurant#miscellaneous
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+144,0.02,0.4,0.0,0.05,1.0,0.0,0.06666666666666667,1.0,0.0,'target_balconey','Not alot of smoking places left in New York, but I have found my favorite smoking balconey in the city ','RB IN IN NN NNS VBN IN NNP NNP , CC PRP VBP VBN PRP$ JJ NN NN IN DT NN . ',20,0,1,1,1,0,0,0,0,1,positive
+155,0.0,0.0,0.0,0.0,0.0,0.0,0.125,1.0,0.0,'target_crowd','The crowd is mixed yuppies, young and old ','DT NN VBZ JJ NNS , JJ CC JJ . ',8,0,1,0,0,0,0,0,0,0,neutral
+193,0.08571428571428572,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL','Never too crowded and always great service ','RB RB JJ CC RB JJ NN . ',7,0,2,0,0,0,0,0,0,0,positive
+198,0.04,0.6,0.0,0.06666666666666667,1.0,0.0,0.06666666666666667,1.0,0.0,'target_NULL','You routinely see Indian families and friends dining there, which is always a good sign ','PRP RB VBP JJ NNS CC NNS NN RB , WDT VBZ RB DT JJ NN . ',15,0,1,0,0,0,0,0,0,0,positive
+227,0.020689655172413793,0.6,0.0,0.034482758620689655,1.0,0.0,0.028735632183908042,1.0,0.0,'target_place','I just found out that you can have the place to yourself on nights and weekends for a private party - cant wait to celebrate my next birthday there ','PRP RB VBD RP IN PRP MD VB DT NN IN PRP IN NNS CC NNS IN DT JJ NN : MD RB VB TO VB PRP$ JJ NN RB . ',29,0,1,1,0,1,0,0,0,0,positive
+266,0.0,0.0,0.0,-0.2727272727272727,0.0,0.0,-0.0606060606060606,0.0,0.0,'target_seating','The only drawback is the crowded seating and the slow service ','DT JJ NN VBZ DT JJ NN CC DT JJ NN . ',11,0,2,0,0,0,0,0,0,0,negative
+315,0.1,0.6,0.0,0.2,1.0,0.0,0.15,1.0,0.0,'target_place','Its a great place to enjoy food and meet friends ','PRP VBZ DT JJ NN TO VB NN CC VB NNS . ',10,0,2,0,0,0,0,0,0,0,positive
+345,0.031578947368421054,0.6,0.0,0.05263157894736842,1.0,0.0,0.07894736842105263,1.0,0.0,'target_place','The best place for a leisure Sunday breakfast amidst yachts, then take a stroll through the nearby Farmers Market ','DT JJS NN IN DT NN NNP NN IN NNS , RB VB DT NN IN DT JJ NNP POS NNP . ',19,0,1,0,0,0,0,0,0,0,positive
+373,0.06153846153846154,0.8,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_Murphy&apos;s',' I cant believe Murphys has been around for over 25 years, amazing ','PRP MD RB VB NNP POS VBZ VBN RB IN IN CD NNS , JJ . ',13,0,1,1,0,1,0,0,0,0,positive
+382,0.04285714285714286,0.6,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_spot','Its the perfect spot for a romantic date for 2 or a secret rendezvous ','PRP VBZ DT JJ NN IN DT JJ NN IN CD CC DT JJ NN . ',14,1,2,1,0,0,0,0,0,0,positive
+388,0.02,0.2,0.0,0.1,1.0,0.0,0.1,1.0,0.0,'target_NULL','I guarantee you wont be disappointed, theres also valet parking ','PRP VBP PRP MD RB VB VBN , EX VBZ RB DT NN . ',10,0,2,1,0,1,0,0,0,0,positive
+402,0.0,0.0,0.0,0.0,0.0,0.0,0.05,0.5,0.0,'target_Space','Space was limited, but the food made up for it ','NN VBD VBN , CC DT NN VBD RP IN PRP . ',10,0,2,0,0,0,0,0,0,1,negative
+410,0.021052631578947368,0.4,0.0,0.0,1.0,0.0,0.10526315789473684,1.0,0.0,'target_NULL','The prior reviews said Kid friendly  give me a break with two young children that is light years ','DT JJ NNS VBD NNP JJ . ',19,0,1,1,0,0,0,0,0,0,negative
+411,0.021052631578947368,0.4,0.0,0.0,1.0,0.0,0.10526315789473684,1.0,0.0,'target_NULL','The prior reviews said Kid friendly  give me a break with two young children that is light years ','VB PRP DT NN IN CD JJ NNS WDT VBZ JJ NNS . ',19,0,1,1,0,0,0,0,0,0,negative
+484,0.0,0.0,0.0,0.0,0.0,0.0,-0.05,0.0,0.0,'target_NULL','Good for late night dining (last minute planning) without reservations ','JJ IN JJ NN NN -LRB- JJ NN NN -RRB- IN NNS . ',10,0,1,0,0,0,0,0,0,0,positive
+524,0.0,0.0,0.0,0.0,1.0,0.0,-0.02857142857142857,0.0,0.0,'target_restaurant','I went home &amp; looked them up online again where I discovered there is a link for a give away that doesnt work so emailed the restaurant about the non existent service &amp; deceptive link ','PRP VBD RB CC NN : VBD PRP RP RB RB WRB PRP VBD EX VBZ DT NN IN DT NN RP DT VBZ RB VB RB VBD DT NN IN DT AFX JJ NN CC NN : JJ NN . ',35,0,1,1,0,1,1,0,0,0,negative
+525,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I never heard back from anyone more than a month ago ','PRP RB VBD RB IN NN JJR IN DT NN RB . ',11,0,1,1,0,0,0,0,0,0,negative
+528,0.0,0.0,0.0,0.05555555555555555,1.0,0.0,0.0,0.0,0.0,'target_NULL','As of writing this I just tried their give away a link again &amp; it still doesnt work ','IN IN VBG DT PRP RB VBD PRP$ VB RP DT NN RB CC NN : PRP RB VBZ RB VB . ',18,0,1,1,0,1,0,0,0,0,negative
+531,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_place','If you can, come to this place by boat and make it a whole evening ','IN PRP MD , VB IN DT NN IN NN CC VB PRP DT JJ NN . ',15,0,1,0,0,0,0,0,0,0,positive
+553,0.0,0.0,0.0,0.0,0.0,0.0,0.08333333333333333,0.5,0.0,'target_NULL','They have been featured on the food network and they deserve it ','PRP VBP VBN VBN IN DT NN NN CC PRP VBP PRP . ',12,0,1,0,0,0,0,0,0,0,positive
+617,0.0,0.0,0.0,0.058823529411764705,1.0,0.0,0.0,0.0,0.0,'target_NULL','Parking is reasonably good, they have their own lot and you can park in the park nearby ','NN VBZ RB JJ , PRP VBP PRP$ JJ NN CC PRP MD VB IN DT NN RB . ',17,0,1,0,0,0,0,0,0,0,positive
+651,0.08571428571428572,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_NULL','Never too crowded and always great service ','JJ NN . ',7,0,2,0,0,0,0,0,0,0,positive
+708,0.0,0.0,0.0,0.0,0.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','Just remember to dress a little urban-chic so you don t look too far out of place ','RB VB TO VB DT JJ JJ HYPH JJ RB PRP VBP . ',17,1,1,0,0,0,0,0,0,0,neutral
+709,0.0,0.0,0.0,0.0,0.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','Just remember to dress a little urban-chic so you don t look too far out of place ','NN VB RB RB IN IN NN . ',17,0,1,0,0,0,0,0,0,0,neutral
+720,0.014285714285714287,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_bathroom stall','Also, there was only one bathroom stall- probably need more for such big crowds ','RB , EX VBD RB CD NN NN : RB VBP RBR IN JJ JJ NNS . ',14,0,1,0,0,0,0,0,0,0,negative
+737,0.0,0.0,0.0,0.125,1.0,0.0,0.0,0.0,0.0,'target_NULL','Its just the right size for the menu ','PRP VBZ RB DT JJ NN IN DT NN . ',8,0,1,0,0,0,0,0,0,0,positive
+753,0.01904761904761905,0.4,0.0,0.047619047619047616,1.0,0.0,-0.007936507936507938,0.3333333333333333,0.0,'target_NULL',' Had to wait thirty minutes to get in the door on a tuesday morning, but it was so worth it ','VBD TO VB CD NNS TO VB IN DT NN IN DT JJ NN , CC PRP VBD RB JJ PRP . ',21,0,2,1,0,0,0,0,0,1,negative
+791,0.11249999999999999,0.6,0.0,0.1875,1.0,0.0,0.125,1.0,0.0,'target_people','There was a really nice vibe about the place good music, atmosphere and happy looking people ','EX VBD DT RB JJ NN IN DT NN NN , NN CC JJ VBG NNS . ',16,0,4,0,0,0,0,0,0,0,positive
+795,0.0,0.0,0.0,0.03125,1.0,0.0,0.0,0.0,0.0,'target_place','Its a tiny place so if you get there before 8pm on a weekend (Thurs Sun) you will find it easier to get a table or a seat at the sushi bar ','PRP VBZ DT JJ NN RB IN PRP VBP RB IN CD NN IN DT NN -LRB- NNP . ',32,1,1,0,0,0,0,0,0,0,neutral
+796,0.0,0.0,0.0,0.03125,1.0,0.0,0.0,0.0,0.0,'target_place','Its a tiny place so if you get there before 8pm on a weekend (Thurs Sun) you will find it easier to get a table or a seat at the sushi bar ','NNP -RRB- PRP MD VB PRP JJR TO VB DT NN CC DT NN IN DT JJ NN . ',32,0,1,0,0,0,0,0,0,0,neutral
+819,0.08571428571428572,0.6,0.0,0.14285714285714285,1.0,0.0,0.0,0.0,0.0,'target_place','Its a great place to people watch ','PRP VBZ DT JJ NN IN NNS VBP . ',7,0,1,0,0,0,0,0,0,0,positive
+835,0.023529411764705882,0.0,-0.4,-0.058823529411764705,0.0,0.0,0.029411764705882353,0.5,0.0,'target_restroom','I have a but here - there was a bathroom attendant in the restroom which was odd ','PRP VBP DT CC RB : EX VBD DT NN NN IN DT NN WDT VBD JJ . ',17,0,1,1,0,0,0,0,0,1,negative
+836,0.0,0.0,0.0,0.0,0.0,0.0,-0.023809523809523808,0.0,0.0,'target_bathroom','The bathroom itself is very small with two toilets and only one sink, the girl was staying totally on the way hanging out paper towels from the dispenser ','DT NN PRP VBZ RB JJ IN CD NNS CC RB CD NN , DT NN VBD VBG RB IN DT NN VBG RP NN NNS IN DT NN . ',28,0,1,0,0,0,0,0,0,0,negative
+837,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','I felt ackward and next time went to the casino bathroom ','PRP VBD JJ CC JJ NN VBD IN DT NN NN . ',11,0,1,1,0,0,0,0,0,0,negative
+895,0.0125,0.0,-0.4,0.03125,1.0,0.0,0.09375,1.0,0.0,'target_Ray&apos;s','Our server continued to be attentive throughout the night, but I did remain puzzled by one issue:  Who thinks that Rays is an appropriate place to take young children for dinner ','PRP$ NN VBD TO VB JJ IN DT NN , CC PRP VBD VB VBN IN CD NN : WP VBZ IN NNP POS VBZ DT JJ NN TO VB JJ NNS IN NN . ',32,1,2,1,0,0,0,0,0,1,neutral
+896,0.012121212121212121,0.0,-0.4,0.030303030303030304,1.0,0.0,0.03535353535353536,1.0,0.0,'target_NULL','Two rascally kids were seated near us for the first part of our dinner they were replaced by a delightful preteen who pretended to gag every time seafood was mentioned at her table ','CD RB NNS VBD VBN IN PRP IN DT JJ NN IN PRP$ NN VBD VBN IN DT JJ NN WP VBD IN NN DT NN NN VBD VBN IN PRP$ NN . ',33,0,1,0,0,0,0,0,0,0,negative
+900,0.05384615384615384,0.8,0.0,0.07692307692307693,1.0,0.0,0.06538461538461539,1.0,0.0,'target_NULL','While I could have done without the youth who shared the evening with us, our wonderful server and food made the experience a very positive one ','IN PRP MD VB VBN IN DT NN WP VBD DT NN IN PRP , PRP$ JJ NN CC NN VBD DT NN DT RB JJ NN . ',26,0,3,1,0,0,0,0,0,0,negative

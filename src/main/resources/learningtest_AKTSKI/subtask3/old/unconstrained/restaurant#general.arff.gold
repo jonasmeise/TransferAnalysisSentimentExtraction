@@ -1,0 +1,177 @@
+@relation restaurant#general
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+5,0.0,'Comparison','dep_Comparison ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+6,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+10,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+20,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+26,0.16666666666666666,'place','dep_overrated dep_ambience ','dep_overrated_ambience ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+27,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+32,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+34,0.6333333333333333,'Mioposto','dep_recommend ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+35,0.15555555555555556,'Italian restaurant','dep_wonderful dep_restaurant dep_Italian ','dep_wonderful_restaurant dep_restaurant_Italian dep_Italian_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+38,0.43333333333333335,'restaurant','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+42,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+46,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+47,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+48,-0.0,'weekend','dep_coming dep_go ','dep_coming_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+49,0.0,'Mmm','dep_Mmm dep_ ','dep_Mmm_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+50,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+55,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+56,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+63,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+64,0.0,'anniversary','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+72,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+84,0.43333333333333335,'restaurant','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+93,0.2888888888888889,'time','dep_charming ','dep_charming_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+94,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+97,-0.0,'money','dep_spend ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+105,-0.0,'area','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+106,0,'NULL','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+107,-0.15555555555555556,'day','dep_someone dep_bad ','dep_someone_bad dep_bad_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+112,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+113,0.08888888888888889,'pizza place','dep_great dep_place dep_pizza ','dep_great_place dep_place_pizza dep_pizza_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+119,0.16666666666666666,'table','dep_ready ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+125,0.17333333333333334,'place','dep_perfect dep_place dep_take dep_ ','dep_perfect_place dep_place_take dep_take_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+128,0.35000000000000003,'staff','dep_great dep_music ','dep_great_music ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+129,0.13333333333333333,'bar','dep_best ','dep_best_By ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+130,0.0,'blast','dep_went ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+132,0.17333333333333334,'time','dep_always dep_good dep_since ','dep_always_a dep_good_since ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+136,0.0,'AVENUE','dep_NEW dep_HOME dep_SECOND dep_FOUND ','dep_NEW_HOME dep_HOME_ON dep_SECOND_FOUND ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+137,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+145,0.0,'guys','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+146,0.0,'lease','dep_long ','dep_long_with ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+162,0.0,'place','dep_survives ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+166,-0.15833333333333333,'drinks','dep_recommend ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+167,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+179,0.0,'night','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+181,-0.06666666666666667,'bit','dep_ dep_expensive ','dep__expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+190,-0.05555555555555555,'jem','dep_little dep_hidden ','dep_little_hidden ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+215,0.3,'find','dep_awesome dep_find ','dep_awesome_find ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+220,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+225,0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+228,0.0761904761904762,'restaurant','dep_best dep_restaurant dep_ dep_decor dep_service dep_manager ','dep_best_restaurant dep_restaurant_in dep__decor dep_decor_service dep_service_manager ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+234,0.17777777777777778,'lunch spot','dep_great dep_spot dep_lunch ','dep_great_spot dep_spot_lunch ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+235,0.0,'mexican spot','dep_Great dep_financial dep_district dep_spot dep_mexican dep_ ','dep_Great_financial dep_financial_district dep_district_spot dep_spot_mexican dep_mexican_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+241,0.43333333333333335,'place','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+247,-0.0,'Open Sesame','dep_Sesame dep_Open ','dep_Sesame_Open dep_Open_once ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+255,0.0,'OPEN SESAME','dep_GO dep_SESAME dep_OPEN dep_!!! ','dep_GO_TO dep_SESAME_OPEN dep_OPEN_!!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+269,-0.25,'place','dep_gem ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+271,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+275,-0.1111111111111111,'protests','dep_loud ','dep_loud_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+282,0.0,'restaurant','dep_different ','dep_different_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+284,0.0,'beer','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+291,0.05555555555555555,'job','dep_Nice dep_job dep_! ','dep_Nice_job dep_job_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+292,-0.0,'PLACE','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+293,0.0,'place','dep_see dep_meet ','dep_see_once dep_meet_now ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+300,0.0,'establishment','dep_made ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+301,-0.08333333333333333,'Scooner or Later','dep_falls dep_Scooner dep_Later ','dep_falls_or dep_Scooner_Later ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+302,0.15416666666666667,'places','dep_best dep_eat ','dep_best_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+303,0.07777777777777778,'Scooner or Later','dep_one dep_day dep_hope dep_Scooner dep_returns ','dep_one_day dep_day_hope dep_hope_or dep_Scooner_returns ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+304,0.0,'AWAY','dep_STAY ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+316,0.0,'Reliable','dep_Old dep_Reliable ','dep_Old_Reliable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+317,0,'Rayaposs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+322,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+331,0.31666666666666665,'place','dep_recommend ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+332,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+333,0.0,'BETTER','dep_CA dep_NT dep_GET dep_BETTER dep_!!!!! ','dep_CA_NT dep_NT_GET dep_GET_ANY dep_BETTER_!!!!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+336,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+351,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+359,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+361,-0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+365,0.0,'Perfection','dep_Perfection dep_ ','dep_Perfection_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+368,0.08888888888888889,'Sushi place','dep_best dep_place dep_Sushi ','dep_best_place dep_place_Sushi dep_Sushi_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+374,0.0,'business','dep_fickled dep_restaurant dep_ ','dep_fickled_restaurant dep_restaurant_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+375,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+387,-0.0,'parking','dep_valet dep_s ','dep_valet_s ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+389,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+390,0.0,'Mexican place','dep_Best dep_place dep_Mexican dep_ ','dep_Best_place dep_place_Mexican dep_Mexican_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+396,0.0,'town','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+397,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+404,0.0,'heartbeat','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+416,0.16666666666666666,'service','dep_fast dep_spots ','dep_fast_spots ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+422,0.43333333333333335,'place','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+437,0.0,'OVERRATED','dep_WAY dep_OVERRATED dep_!!!! ','dep_WAY_OVERRATED dep_OVERRATED_!!!! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+438,0.0,'place','dep_overrated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+443,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+470,0.0,'place','dep_one ','dep_one_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+471,0.0,'BLUE RIBBON SUSHI','dep_SUSHI dep_BLUE dep_RIBBON dep_cause ','dep_SUSHI_BLUE dep_BLUE_RIBBON dep_RIBBON_cause ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+472,0.0,'chase','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+477,0.0,'Blue Ribbon','dep_Ribbon dep_Blue dep_lives ','dep_Ribbon_Blue dep_Blue_lives ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+478,0.0,'time','dep_return dep_time ','dep_return_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+479,0.0,'find','dep_find dep_! ','dep_find_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+480,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+495,0.0,'Mioposto','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+496,0.0,'time','dep_every dep_Love ','dep_every_Love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+497,-0.3,'place','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+501,0.0,'problem','dep_one dep_single ','dep_one_single dep_single_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+503,0.08888888888888889,'experience','dep_great dep_dining dep_experience dep_ ','dep_great_dining dep_dining_experience dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+504,0.09999999999999999,'one','dep_miss ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+510,0.0,'RATED','dep_COMPLETELY dep_RATED dep_! ','dep_COMPLETELY_OVER dep_RATED_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+518,0.0,'PLACE','dep_AVOID ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+519,-0.16666666666666666,'DO','dep_visit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+535,0.2333333333333333,'winner','dep_Always dep_winner dep_ ','dep_Always_a dep_winner_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+549,-0.05925925925925926,'place','dep_s dep_great dep_little dep_place dep_neighborhood dep_ ','dep_s_a dep_great_little dep_little_place dep_place_with dep_neighborhood_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+560,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+590,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+591,-0.0,'they','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+592,-0.0,'they','dep_one ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+620,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+657,0.0,'Rays','dep_picked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+669,0.3111111111111111,'place','dep_fun ','dep_fun_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+670,0.0,'place','dep_open ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+671,0.0,'gem','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+672,0.0,'Standby','dep_Best dep_Neighborhood dep_Standby dep_ ','dep_Best_Neighborhood dep_Neighborhood_Standby dep_Standby_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+673,-0.0,'Wrong','dep_Go ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+674,0.26666666666666666,'spot','dep_favorite dep_neighbors ','dep_favorite_neighbors ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+707,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+715,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+726,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+727,0.0,'pizza joint','dep_favortie dep_pizza dep_joint ','dep_favortie_pizza dep_pizza_joint dep_joint_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+728,0.14666666666666667,'restaurant','dep_bring dep_enjoy dep_rave ','dep_bring_and dep_enjoy_rave dep_rave_about ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+729,0.0,'visit','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+741,0.0,'Mioposto Caf','dep_Caf dep_Mioposto ','dep_Caf_Mioposto dep_Mioposto_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+752,0.0,'wait','dep_Worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+754,-0.0,'morning','dep_tuesday ','dep_tuesday_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+761,0.0,'breakfast','dep_average ','dep_average_than ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+763,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+764,0.0,'place','dep_ dep_folks ','dep__folks ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+771,-0.0,'GO','dep_DONOT dep_GO dep_! ','dep_DONOT_GO dep_GO_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+780,0.28888888888888886,'wait','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+782,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+784,0.18095238095238095,'restaurant','dep_delightful dep_wow ','dep_delightful_as dep_wow_what ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+793,-0.0,'Open Sesame','dep_SesameBravoI ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+797,0.05555555555555555,'experience','dep_real dep_begins ','dep_real_begins ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+808,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+809,0.0,'years','dep_many dep_go ','dep_many_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+811,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+838,0.0,'place','dep_rocks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+874,0.13333333333333333,'view','dep_great ','dep_great_than ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+875,0.0,'Rayaposs Boathouse','dep_Ray ','dep_Ray_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+878,0,'Rayaposs','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+897,0.16666666666666666,'Rayaposs Boathouse','dep_Ray dep_deserving ','dep_Ray_deserving ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

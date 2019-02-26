@@ -1,4 +1,4 @@
-accuracy	unconstrained	0.70815627372933251684017146356399
+accuracy	unconstrained	0.70944
 
 old accuracy	unconstrained
 (n-grams + lx + nt + punctuation) 0.71 (+/- 0.05)

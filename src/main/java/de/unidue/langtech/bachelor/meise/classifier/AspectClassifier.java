@@ -14,26 +14,16 @@ import java.util.Random;
 
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
-import de.unidue.langtech.bachelor.meise.type.StopwordHandler;
-import weka.attributeSelection.ClassifierAttributeEval;
-import weka.attributeSelection.ClassifierSubsetEval;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.functions.LibSVM;
-import weka.classifiers.functions.MultilayerPerceptron;
-import weka.classifiers.functions.SGD;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.SelectedTag;
 import weka.filters.Filter;
 import weka.filters.MultiFilter;
-import weka.filters.supervised.instance.ClassBalancer;
-import weka.filters.unsupervised.attribute.NominalToBinary;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.StringToWordVector;
-import weka.packages.ThresholdSelector;
 
 public class AspectClassifier {
 	//a single Aspect Classifier for a set of Instances
@@ -44,12 +34,11 @@ public class AspectClassifier {
 	public Evaluation evaluation;
 	private FileUtils fu;
 	private ConsoleLog myLog;
-	private int kernelType=0;
-	private int svmType=0;
 	public boolean idfTransformEnabled;
 	public boolean regression=true;
 	public Classifier outerParameterClassifier; //if called from outside, this thing needs to be set
 	public boolean mapToHistogram = true;
+	public boolean enableCPS = false;
 	public double parameterHistogram = 0.8;
 	
 	public int[] removeArray;
@@ -67,10 +56,8 @@ public class AspectClassifier {
 		myLog = new ConsoleLog();
 	}
 	
-	public AspectClassifier(int kernelType, int svmType, Classifier outerParameterClassifier) {
+	public AspectClassifier(Classifier outerParameterClassifier) {
 		this();
-		this.kernelType= kernelType;
-		this.svmType = svmType;
 		this.outerParameterClassifier = outerParameterClassifier;
 	}
 	
@@ -89,38 +76,9 @@ public class AspectClassifier {
 	
 	//Trains Classifier for given training Data
 	public Instances buildClassifier(Instances train) throws Exception{ 
-		   // further processing, classification, etc.
-			LibSVM svm = new LibSVM();
-			
-			List<Integer> stringIndices=new ArrayList<Integer>(); //random length
-			for(int i=0;i<train.numAttributes();i++) {
-				if(train.attribute(i).isString()) {
-					//System.out.println("String found in '" +train.attribute(i).name() + "'.");
-					//-1 because we remove the 0-index after all
-					stringIndices.add(i-1);
-				}
-			}
-			
-			StringToWordVector s2wFilter = createS2WVector(convertIntegers(stringIndices));
+			StringToWordVector s2wFilter = createS2WVector();
 			//s2wFilter.setDoNotOperateOnPerClassBasis(true);
-			myLog.log(stringIndices + " Kernel:" + kernelType);
-			
-			svm.setKernelType(new SelectedTag(kernelType, LibSVM.TAGS_KERNELTYPE));
-			svm.setSVMType(new SelectedTag(svmType, LibSVM.TAGS_SVMTYPE));
-			svm.setProbabilityEstimates(true);
-			//svm.setNormalize(true);
-			svm.setShrinking(true);
-			
-			if(!regression) {
-				//svm.setWeights((weightClassB/weightClassC) + " " + (weightClassA/weightClassC));
-				//svm.setWeights("1 15 1.3");
-				myLog.log("Weights set: " + svm.getWeights());
-			}
 
-			NominalToBinary ntb = new NominalToBinary();
-			ntb.setAttributeIndices("first-last");
-			ntb.setTransformAllValues(true);
-			
 			Remove removeFilter = new Remove();
 			//remove ID-Feature#
 			
@@ -130,59 +88,16 @@ public class AspectClassifier {
 				removeFilter.setAttributeIndices("1");
 			}
 			
-			ClassBalancer cb = new ClassBalancer();
-			
-			svm.setDegree(2);
-			//for constrainedS1:
-			//svm.setCost(200);
-			//svm.setGamma(0.002);
-			//svm.setEps(0.0005);
-			
-			//for unconstrainedS1:
-			//svm.setCost(210);
-			//svm.setGamma(0.0015);
-			//svm.setEps(0.0001);
-			
-			//for constrainedS3:
-			//svm.setCost(500);
-			//svm.setGamma(0.001);
-			//svm.setEps(0.00005);
-			
-			//for unconstrainedS3:
-			//svm.setCost(500);
-			//svm.setGamma(0.001);
-			//svm.setEps(0.00005);
-
-			SGD sgd = new SGD();
-			sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
-			sgd.setLearningRate(0.2);
-
-			cps = new CVParameterSelection();
-			cps.setClassifier(sgd);
-			cps.setNumFolds(5);
-			cps.setDebug(true);
-			String[] params = new String[1];
-			params[0] = "L 0.01 0.4 5";
-			cps.setCVParameters(params);
-			
-			MultilayerPerceptron mp = new MultilayerPerceptron();
-			mp.setHiddenLayers("64,16");
-			mp.setAutoBuild(true);
-			mp.setTrainingTime(2);
-			
 			MultiFilter mf = new MultiFilter();
 			mf.setInputFormat(train);
 			mf.setFilters(new Filter[] {removeFilter, s2wFilter});
 			
-			if(outerParameterClassifier!=null) {
-				myLog.log("Found classifier from outside...");
-				classifier.setClassifier(outerParameterClassifier);
-				
-				if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
-					cps = (CVParameterSelection) outerParameterClassifier;
-				}
-			} else {
-				classifier.setClassifier(svm);
+			myLog.log("Found classifier from outside...");
+			classifier.setClassifier(outerParameterClassifier);
+			
+			if(outerParameterClassifier.getClass().equals(CVParameterSelection.class)) {
+				cps = (CVParameterSelection) outerParameterClassifier;
+				enableCPS = true;
 			}
 
 			classifier.setFilter(mf);
@@ -203,7 +118,8 @@ public class AspectClassifier {
 		   Evaluation currentEvaluation;
 		   
 		   if(folds>0) {
-			   currentEvaluation = evalModel(classifier, test, folds, new Random());
+			   currentEvaluation = new Evaluation(test);
+			   currentEvaluation.evaluateModel(classifier, test);
 		   } else {
 			   currentEvaluation = new Evaluation(test);
 			   currentEvaluation.evaluateModel(classifier, test);
@@ -284,12 +200,12 @@ public class AspectClassifier {
 		   
 		   returnList.add(currentEvaluation);
 		   
-		   /*if(cps!=null && cps.getBestClassifierOptions()!=null) {
+		   if(enableCPS && cps!=null && cps.getBestClassifierOptions()!=null) {
 			   myLog.log("Best found parameters for this fold: ");
 			   for(String parameter : cps.getBestClassifierOptions()) {
 				   myLog.log(parameter);
 			   }
-		   }*/
+		   }
 		 
 		 if(regression) {
 			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError));
@@ -335,7 +251,7 @@ public class AspectClassifier {
 		saveModel(outputPath, classifier);
 	}
 	
-	private StringToWordVector createS2WVector(int[] attributeArray) {
+	private StringToWordVector createS2WVector() {
 		StringToWordVector s2wFilter;
 		s2wFilter = new StringToWordVector(); 
 		s2wFilter.setAttributeIndices("first-last");
@@ -347,9 +263,7 @@ public class AspectClassifier {
 		
 		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		//s2wFilter.setOutputWordCounts(true);
-		//keep word number instead of booleanic existence
-		myLog.log("Found " + attributeArray.length + " string attributes.");
-		
+
 		return s2wFilter;
 		
 	}

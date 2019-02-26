@@ -1,0 +1,51 @@
+@relation restaurant#prices
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+76,0.0,'service','dep_value ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+89,-0.16666666666666666,'place','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+99,0.0,'downtown','dep_Mexican ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+170,-0.08333333333333333,'food','dep_Excellent dep_expensive dep_ dep_ambience ','dep_Excellent_expensive dep_expensive_ dep__ambience ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,negative
+180,0.0,'night','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+182,-0.06666666666666667,'bit','dep_ dep_expensive ','dep__expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+184,0.16666666666666666,'prices','dep_reasonable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+364,0.0,'tip','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+400,0.16666666666666666,'price','dep_right ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+595,0.09523809523809523,'restaurant','dep_priced dep_pretense dep_ ','dep_priced_pretense dep_pretense_ ',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,negative
+598,-0.0,'alcohol','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+600,0.0,'restaurant','dep_categorized ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+603,-0.08333333333333333,'food','dep_ dep_service dep_ok dep_pricey ','dep__service dep_service_ok dep_ok_pricey ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+613,-0.0,'restaurant','dep_place ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+682,0,'service','','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+704,-0.16666666666666666,'tip','dep_tax ','',1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,neutral
+716,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+740,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+821,0.39999999999999997,'service','dep_improved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+834,-0.0,'places','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+842,0.3,'prices','dep_fabulous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+849,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+853,-0.0,'Snooze','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative

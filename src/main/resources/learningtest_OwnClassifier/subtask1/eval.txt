@@ -1,4 +1,3 @@
-f1	constrained			0.60767
-f1	constrained_without_dep		0.62092036401186500000
-f1	unconstrained			0.61823
-f1	unconstrained_without_dep	0.62524940244618400000
+f1	constrained			0.69927483279851500000
+f1	unconstrained			0.69465817599708000000
+f1	unconstrained_optimized		0.73616018195672700000

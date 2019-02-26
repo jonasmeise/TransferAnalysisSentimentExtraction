@@ -1,0 +1,95 @@
+@relation ambience#general
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+25,0.0,0.0,0.0,-0.16666666666666666,0.0,0.0,0.0,0.0,0.0,'target_ambience','Nice ambience, but highly overrated place ','NNP NN , CC RB JJ NN . ',6,0,2,0,0,0,0,0,0,1,positive
+41,0.0625,0.8,-0.2,0.0625,1.0,0.0,-0.041666666666666664,0.0,0.0,'target_ambiance',' I will never forget the amazing meal, service, and ambiance I experience at this restaurant ','PRP MD RB VB DT JJ NN , NN , CC IN PRP VBP IN DT NN . ',16,0,3,1,0,0,0,0,0,0,positive
+60,0.025,0.4,0.0,0.125,1.0,0.0,0.125,1.0,0.0,'target_place','This is the place to relax and enjoy the finest quality food the industry can offer ','DT VBZ DT NN TO VB CC VB DT JJS NN NN DT NN MD VB . ',16,0,2,0,0,0,0,0,0,0,positive
+65,0.05714285714285715,0.4,0.0,0.14285714285714285,1.0,0.0,0.05952380952380952,0.5,0.0,'target_atmosphere','I liked the atmosphere very much but the food was not worth the price ','PRP VBD DT NN RB RB CC DT NN VBD RB JJ DT NN . ',14,0,3,1,1,0,0,0,0,1,positive
+91,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.05555555555555556,1.0,0.0,'target_space','But the space is small and lovely, and the service is helpful ','CC DT NN VBZ JJ CC JJ , CC DT NN VBZ JJ . ',12,0,2,0,0,0,0,0,0,1,positive
+123,0.02608695652173913,0.6,0.0,0.0,1.0,0.0,-0.021739130434782608,0.0,0.0,'target_deck','  and the best summertime deck experience--they will even bring you a blanket if you get cold in the Seattle evening weather ','CC DT JJS NN NN NN : PRP MD RB VB PRP DT NN IN PRP VBP JJ IN DT NNP NN NN . ',23,0,2,1,0,0,0,0,0,0,positive
+126,0.2333333333333333,0.8,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_music','Endless fun, awesome music, great staff ','JJ NN , JJ NN , JJ NN . ',6,1,3,0,0,0,0,0,0,0,positive
+135,0.04285714285714286,0.6,0.0,0.07142857142857142,1.0,0.0,0.0,0.0,0.0,'target_jukebox&apos;s','Definitely has one of the best jukeboxs ive seen in a long long time ','RB VBZ CD IN DT JJS NN POS PRP VBP VBN IN DT JJ JJ NN . ',14,0,1,0,0,0,0,0,0,0,positive
+143,0.06,0.6,0.0,0.0,1.0,0.0,0.0,0.0,0.0,'target_upstairs','And the upstairs is a great place to hang out ','CC DT NN VBZ DT JJ NN TO VB RP . ',10,0,1,0,0,0,0,0,0,0,positive
+154,0.0,0.0,0.0,0.0,0.0,0.0,0.16666666666666666,1.0,0.0,'target_decor','The decor is rustic, traditional Japanese ','DT NN VBZ JJ , JJ JJ . ',6,0,1,0,0,0,0,0,0,0,neutral
+169,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_ambience','Excellent food, nice ambience, fairly expensive ','JJ NN , JJ NN , RB JJ ',6,0,3,0,0,0,0,0,0,0,positive
+175,0.023529411764705882,0.4,0.0,0.0,1.0,0.0,0.058823529411764705,1.0,0.0,'target_ambiance','The ambiance was a peaceful and relaxing break amongst all the kids running around in Downtown Disney ','DT NN VBD DT JJ CC VBG NN IN PDT DT NNS VBG RB IN NNP NNP . ',17,0,1,0,0,0,0,0,0,0,positive
+176,0.025806451612903226,0.6,0.0,0.06451612903225806,1.0,0.0,0.06989247311827958,1.0,0.0,'target_NULL','It was romantic - and even nice even with my sister, reminded me of Italy, and had artwork and music that kept up the feeling of being in a Mediterrean villa ','PRP VBD JJ : CC RB JJ RB IN PRP$ NN , VBD PRP IN NNP , CC VBD NN CC NN WDT VBD RP DT NN IN VBG IN DT JJ NN . ',31,0,3,1,0,0,0,0,0,0,positive
+177,0.025806451612903226,0.6,0.0,0.06451612903225806,1.0,0.0,0.06989247311827958,1.0,0.0,'target_artwork','It was romantic - and even nice even with my sister, reminded me of Italy, and had artwork and music that kept up the feeling of being in a Mediterrean villa ','PRP VBD JJ : CC RB JJ RB IN PRP$ NN , VBD PRP IN NNP , CC VBD NN CC NN WDT VBD RP DT NN IN VBG IN DT JJ NN . ',31,0,3,1,0,0,0,0,0,0,positive
+178,0.025806451612903226,0.6,0.0,0.06451612903225806,1.0,0.0,0.06989247311827958,1.0,0.0,'target_music','It was romantic - and even nice even with my sister, reminded me of Italy, and had artwork and music that kept up the feeling of being in a Mediterrean villa ','PRP VBD JJ : CC RB JJ RB IN PRP$ NN , VBD PRP IN NNP , CC VBD NN CC NN WDT VBD RP DT NN IN VBG IN DT JJ NN . ',31,0,3,1,0,0,0,0,0,0,positive
+226,0.1142857142857143,0.6,0.0,0.2857142857142857,1.0,0.0,0.2857142857142857,1.0,0.0,'target_environment','I love the warm &amp; cosy environment ','PRP VBP DT JJ CC NN : JJ NN . ',7,0,1,1,0,0,0,0,0,0,positive
+229,0.18333333333333332,0.6,0.0,0.3333333333333333,1.0,0.0,0.16666666666666666,1.0,0.0,'target_decor','best restaurant in the world, great decor, great customer service, friendly manager ','JJS NN IN DT NN , JJ NN , JJ NN NN , JJ NN ',12,0,4,0,0,0,0,0,0,0,positive
+233,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_atmosphere','the atmosphere is great ','DT NN VBZ JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+254,0.03636363636363637,0.4,0.0,0.18181818181818182,1.0,0.0,0.09090909090909091,1.0,0.0,'target_decor','The staff are friendly and the decor was ethic and colorful ','DT NN VBP JJ CC DT NN VBD JJ CC JJ . ',11,0,2,0,0,0,0,0,0,0,positive
+276,0.06,0.6,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_band','The band was very good and the service was attentive ','DT NN VBD RB JJ CC DT NN VBD JJ . ',10,0,2,0,0,0,0,0,0,0,positive
+286,0.06153846153846154,0.8,0.0,0.07692307692307693,1.0,0.0,0.07692307692307693,1.0,0.0,'target_band','Sunday afternoons there is a band playing and it is lots of fun ','NNP NNS EX VBZ DT NN VBG CC PRP VBZ NNS IN NN . ',13,0,1,0,0,0,0,0,0,0,positive
+305,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Place','Open &amp; Cool Place with the Best Pizza and Coffee ','VB CC VB : NNP NNP IN DT NNP NNP CC NNP ',10,0,3,0,0,0,0,0,0,0,positive
+311,0.08,0.4,0.0,0.2,1.0,0.0,0.2,1.0,0.0,'target_ambience','Great open and friendly ambience ','RB JJ CC JJ NN . ',5,0,1,0,0,0,0,0,0,0,positive
+312,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_place','This place is charming and relaxing ','DT NN VBZ JJ CC JJ . ',6,0,1,0,0,0,0,0,0,0,positive
+328,0.19999999999999998,0.6,0.0,0.3333333333333333,1.0,0.0,0.0,0.0,0.0,'target_Atmosphere','Atmosphere was nice ','NNP VBD JJ . ',3,0,1,0,0,0,0,0,0,0,positive
+338,0.13333333333333333,0.8,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,0.5,0.0,'target_atmosphere','Great food with an awesome atmosphere ','JJ NN IN DT JJ NN . ',6,1,2,0,0,0,0,0,0,0,positive
+372,0.0,0.0,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_spot','A cozy spot for 2 ','DT JJ NN IN CD ',5,0,1,1,0,0,0,0,0,0,positive
+383,0.04285714285714286,0.6,0.0,0.14285714285714285,1.0,0.0,0.14285714285714285,1.0,0.0,'target_spot','Its the perfect spot for a romantic date for 2 or a secret rendezvous ','PRP VBZ DT JJ NN IN DT JJ NN IN CD CC DT JJ NN . ',14,1,2,1,0,0,0,0,0,0,positive
+386,0.015384615384615385,0.0,-0.2,0.0,0.0,0.0,-0.012820512820512818,0.5,0.0,'target_ambiance','The restaurant offers an extensive wine list and an ambiance you wont forget ','DT NN VBZ DT JJ NN NN CC DT NN PRP MD RB VB . ',13,1,2,0,0,1,0,0,0,0,positive
+401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_atmosphere','The atmosphere was just okay ','DT NN VBD RB JJ . ',5,0,1,0,0,0,0,0,0,0,neutral
+421,0.0,0.0,0.0,0.1111111111111111,1.0,0.0,0.05555555555555555,0.5,0.0,'target_art on the walls','Check out the art on the walls, very colorful ','VB RP DT NN IN DT NNS , RB JJ . ',9,1,1,0,0,0,0,0,0,0,positive
+473,0.0,0.0,0.0,0.0,0.0,0.0,0.25,1.0,0.0,'target_NULL','Its unpretentious and underground ','PRP VBZ JJ CC JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+475,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Its fresh, welcoming, delicious, and relaxing ','PRP VBZ JJ , JJ , JJ , CC VBG . ',6,0,2,0,0,0,0,0,0,0,positive
+483,0.06666666666666667,0.6,0.0,0.1111111111111111,1.0,0.0,0.0,0.0,0.0,'target_setting','Great value sushi with high quality &amp; nice setting ','JJ NN FW IN JJ NN CC NN , JJ NN . ',9,0,3,0,0,0,0,0,0,0,positive
+520,0.03333333333333333,0.0,-0.6,0.0,1.0,0.0,-0.05555555555555555,0.0,0.0,'target_atmosphere','When I got there I sat up stairs where the atmosphere was cozy &amp; the service was horrible ','WRB PRP VBD RB PRP VBD RP NNS WRB DT NN VBD JJ CC NN : DT NN VBD JJ . ',18,1,2,1,0,0,0,0,0,0,positive
+534,0.06,0.6,0.0,0.1,1.0,0.0,0.0,0.0,0.0,'target_waterfront setting','Great seasonal fish and seafood, with a classy waterfront setting ','JJ JJ NN CC NN , IN DT JJ NN NN . ',10,0,3,0,0,0,0,0,0,0,positive
+562,0.04,0.6,0.0,0.0,1.0,0.0,0.0,1.0,0.0,'target_NULL','You can easily hear him though so it was a pleasant sound and not overbearing ','PRP MD RB VB PRP RB RB PRP VBD DT JJ NN CC RB JJ . ',15,0,1,0,1,0,0,0,0,0,positive
+563,0.13333333333333333,0.6,0.0,0.25,1.0,0.0,0.08333333333333333,1.0,0.0,'target_ambiance','the ambiance of the restaurant was nice and good for fine dinning ','DT NN IN DT NN VBD JJ CC JJ IN JJ NN . ',12,0,1,0,0,0,0,0,0,0,positive
+564,0.06153846153846154,0.4,-0.4,0.0,1.0,0.0,-0.07692307692307693,0.0,0.0,'target_NULL','not too fine thought that you feel uncomfortable and have to dress up ','RB RB JJ VBD IN PRP VBP JJ CC VBP TO VB RP . ',13,0,1,0,1,0,0,0,0,0,positive
+614,0.0,0.0,0.0,0.0,1.0,0.0,0.05263157894736842,1.0,0.0,'target_restaurant','Food wise, its ok but a bit pricey for what you get considering the restaurant isnt a fancy place ','NN JJ , PRP$ UH CC DT NN JJ IN WP PRP VBP VBG DT NN VBZ RB DT JJ NN . ',19,0,3,0,0,1,0,0,0,1,neutral
+618,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_feel','Another plus is the open feel of the restaurant with glass walls on all sides ','DT NN VBZ DT JJ NN IN DT NN IN NN NNS IN DT NNS . ',15,0,2,0,1,0,0,0,0,0,positive
+619,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_glass walls','Another plus is the open feel of the restaurant with glass walls on all sides ','DT NN VBZ DT JJ NN IN DT NN IN NN NNS IN DT NNS . ',15,0,2,0,1,0,0,0,0,0,positive
+675,0.048,0.4,-0.2,0.08,1.0,0.0,0.1,1.0,0.0,'target_music','The music is great, no night better or worse, the bar tenders are generous with the pouring, and the lighthearted atmosphere will lifts you spirits ','DT NN VBZ JJ , DT NN RBR CC RBR , DT NN NNS VBP JJ IN DT NN , CC DT JJ NN MD VBZ PRP NNS . ',25,0,3,0,0,0,0,0,0,0,positive
+677,0.048,0.4,-0.2,0.08,1.0,0.0,0.1,1.0,0.0,'target_atmosphere','The music is great, no night better or worse, the bar tenders are generous with the pouring, and the lighthearted atmosphere will lifts you spirits ','DT NN VBZ JJ , DT NN RBR CC RBR , DT NN NNS VBP JJ IN DT NN , CC DT JJ NN MD VBZ PRP NNS . ',25,0,3,0,0,0,0,0,0,0,positive
+678,0.06153846153846154,0.8,0.0,0.07692307692307693,1.0,0.0,0.15384615384615385,1.0,0.0,'target_NULL','Seriously, you cant go wrong, if it is unpretentious local fun you seek ','RB , PRP MD RB VB JJ , IN PRP VBZ JJ JJ NN PRP VBP . ',13,0,1,0,0,1,0,0,0,0,positive
+684,0.0,0.0,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_wood decor','When I walked in, I was taken aback by their incredible wood decor ','WRB PRP VBD RB , PRP VBD VBN RB IN PRP$ JJ NN NN . ',13,0,1,1,0,0,0,0,0,0,positive
+685,0.014285714285714287,0.0,-0.4,-0.03571428571428571,0.0,0.0,0.0,1.0,0.0,'target_music','The music playing was very hip, 20-30 something pop music, but the subwoofer to the sound system was located under my seat, which became annoying midway through dinner ','DT NN VBG VBD RB JJ , CD NN NN NN , CC DT NN IN DT NN NN VBD VBN IN PRP$ NN , WDT VBD JJ NN IN NN . ',28,0,2,1,0,0,0,0,0,1,positive
+686,0.014285714285714287,0.0,-0.4,-0.03571428571428571,0.0,0.0,0.0,1.0,0.0,'target_subwoofer to the sound system','The music playing was very hip, 20-30 something pop music, but the subwoofer to the sound system was located under my seat, which became annoying midway through dinner ','DT NN VBG VBD RB JJ , CD NN NN NN , CC DT NN IN DT NN NN VBD VBN IN PRP$ NN , WDT VBD JJ NN IN NN . ',28,0,2,1,0,0,0,0,0,1,negative
+719,0.0,0.0,0.0,-0.14285714285714285,0.0,0.0,-0.07142857142857142,0.0,0.0,'target_feel','The waiter was a bit unfriendly and the feel of the restaurant was crowded ','DT NN VBD DT NN JJ CC DT NN IN DT NN VBD JJ . ',14,0,2,0,0,0,0,0,0,0,negative
+735,0.037500000000000006,0.4,0.0,0.125,1.0,0.0,0.14583333333333334,1.0,0.0,'target_decor','I also really enjoy the simplicity of the decor and intimate feeling of a small restaurant ','PRP RB RB VBP DT NN IN DT NN CC JJ NN IN DT JJ NN . ',16,0,2,1,0,0,0,0,0,0,positive
+736,0.037500000000000006,0.4,0.0,0.125,1.0,0.0,0.14583333333333334,1.0,0.0,'target_feeling','I also really enjoy the simplicity of the decor and intimate feeling of a small restaurant ','PRP RB RB VBP DT NN IN DT NN CC JJ NN IN DT JJ NN . ',16,0,2,1,0,0,0,0,0,0,positive
+739,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_ambience','Excellent food, nice ambience, fairly expensive ','JJ ',6,0,3,0,0,0,0,0,0,0,positive
+757,0.15,0.6,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_atmosphere','The atmosphere was great ','DT NN VBD JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+773,0.09999999999999999,0.6,0.0,0.14285714285714285,1.0,0.0,0.07142857142857142,1.0,0.0,'target_atmosphere',' The atmosphere is great for any special occasion you might want to celebrate ','DT NN VBZ JJ IN DT JJ NN PRP MD VB TO VB . ',14,0,1,1,0,0,0,0,0,0,positive
+787,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.3333333333333333,1.0,0.0,'target_decor','The decor was beautiful and unique ','DT NN VBD JJ CC JJ . ',6,0,1,0,0,0,0,0,0,0,positive
+788,0.11249999999999999,0.6,0.0,0.1875,1.0,0.0,0.125,1.0,0.0,'target_music','There was a really nice vibe about the place good music, atmosphere and happy looking people ','EX VBD DT RB JJ NN IN DT NN NN , NN CC JJ VBG NNS . ',16,0,4,0,0,0,0,0,0,0,positive
+789,0.11249999999999999,0.6,0.0,0.1875,1.0,0.0,0.125,1.0,0.0,'target_atmosphere','There was a really nice vibe about the place good music, atmosphere and happy looking people ','EX VBD DT RB JJ NN IN DT NN NN , NN CC JJ VBG NNS . ',16,0,4,0,0,0,0,0,0,0,positive
+790,0.11249999999999999,0.6,0.0,0.1875,1.0,0.0,0.125,1.0,0.0,'target_vibe','There was a really nice vibe about the place good music, atmosphere and happy looking people ','EX VBD DT RB JJ NN IN DT NN NN , NN CC JJ VBG NNS . ',16,0,4,0,0,0,0,0,0,0,positive
+810,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_Balcony','Sit in the Balcony ','VB IN DT NNP ',4,0,1,0,0,0,0,0,0,0,positive
+817,0.0,0.0,0.0,0.25,1.0,0.0,0.0,0.0,0.0,'target_Indoor ambience','Indoor ambience was modern ','JJ NN VBD JJ . ',4,0,1,0,0,0,0,0,0,0,positive
+818,0.05454545454545454,0.6,0.0,0.09090909090909091,1.0,0.0,0.0,0.0,0.0,'target_balcony','If its nice outside, request for a table in the balcony ','IN PRP VBZ JJ RB , NN IN DT NN IN DT NN . ',11,0,1,0,0,0,0,0,0,0,positive
+827,0.05454545454545454,0.6,0.0,0.18181818181818182,1.0,0.0,0.0,0.0,0.0,'target_table','We were seated right away, the table was private and nice ','PRP VBD VBN RB RB , DT NN VBD JJ CC JJ . ',11,0,2,0,0,0,0,0,0,0,positive
+833,0.0,0.0,0.0,0.0,0.0,0.0,0.25,1.0,0.0,'target_music','Groovy music made the dinner casual ','JJ NN VBD DT NN JJ . ',6,0,1,0,0,0,0,0,0,0,positive
+843,0.10000000000000002,0.8,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,1.0,0.0,'target_atmosphere','The atmosphere is aspiring, and  the decor is festive and amazing ','DT NN VBZ VBG , CC DT NN VBZ JJ CC JJ . ',12,0,2,1,0,0,0,0,0,0,positive
+844,0.10000000000000002,0.8,0.0,0.16666666666666666,1.0,0.0,0.08333333333333333,1.0,0.0,'target_decor','The atmosphere is aspiring, and  the decor is festive and amazing ','DT NN VBZ VBG , CC DT NN VBZ JJ CC JJ . ',12,0,2,1,0,0,0,0,0,0,positive
+848,0.02,0.4,0.0,0.05,1.0,0.0,0.0,0.0,0.0,'target_NULL','Drinks are suberb, and I feel like I am in a Third World country when I walk in the door ','NNPS VBP JJ , CC PRP VBP IN PRP VBP IN DT NNP NNP NN WRB PRP VBP IN DT NN . ',20,0,2,1,0,0,0,0,0,0,positive
+851,0.02631578947368421,0.6,0.0,0.02631578947368421,1.0,0.0,0.0,1.0,0.0,'target_Snooze','The presentation of Snooze is excellent and it is one of those places that you feel more sophisticated just for being there; but peel back the layers and you have an overpriced IHOP with a high brow menu ','DT NN IN NNP VBZ JJ CC PRP VBZ CD IN DT NNS WDT PRP VBP RBR JJ RB IN VBG RB : CC VB RP DT NNS CC PRP VBP DT VBN NNP IN DT JJ NN NN . ',38,0,3,1,0,0,0,0,0,1,positive

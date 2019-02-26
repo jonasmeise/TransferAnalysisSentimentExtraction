@@ -29,7 +29,7 @@ import webanno.custom.Valence;
 //Embeddings for Aspect Based Sentiment Analysis
 //Dionysios Xenos, Panagiotis Theodorakakos, John Pavlopoulos,
 //Prodromos Malakasiotis and Ion Androutsopoulos
-//Classification type: SVM
+//Classification type: Logistic regression
 //feature-model-space has been changed, features were compressed into more basic feature representations since not all features were mentioned
 //input-output format is normalized to match the current Task; the model itself is not changed
 //relative-score data statistics of training set are not included, same reasoning as AUEB_ClassifierGenerator
@@ -330,7 +330,13 @@ public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 			myReader = new RawJsonReviewReader();
 			myReader.folderPath = "src\\main\\resources\\SEABSA16_data";
 			myReader.useOldData = true;
-			myReader.fileExtension = ".xml";
+			
+			if(!isTestData ) {
+				myReader.fileExtension = ".xml";
+			} else {
+				myReader.fileExtension = ".gold";
+			}
+			
 			myReader.external_Initialize(-1);
 			
 			types = getAspectLabelsOldData();

@@ -1,0 +1,1012 @@
+@relation food#quality
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+3,-0.16666666666666666,'food','dep_lousy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+7,0.16666666666666666,'food','dep_consistently ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+9,0.075,'foie gras terrine with figs','dep_gras dep_foie dep_terrine dep_amazing dep_figs ','dep_gras_foie dep_foie_terrine dep_terrine_amazing dep_amazing_with dep_figs_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+10,0.15,'duck confit','dep_confit dep_duck dep_amazing ','dep_confit_duck dep_duck_amazing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+14,-0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+18,-0.0,'Food','dep_okay ','',0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,neutral
+19,0.3111111111111111,'Chow fun','dep_fun dep_Chow dep_dry ','dep_fun_Chow dep_Chow_dry ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+20,0.0,'pork shu mai','dep_mai dep_pork dep_shu dep_dry ','dep_mai_pork dep_pork_shu dep_shu_dry dep_dry_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+25,-0.0,'oysters','dep_devine ','dep_devine_where ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+29,0.43333333333333335,'service','dep_excellent ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+32,0.06666666666666667,'duck breast special','dep_breast dep_duck dep_special ','dep_breast_duck dep_duck_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+34,0.17333333333333334,'spicy tuna roll','dep_roll dep_spicy dep_tuna dep_good ','dep_roll_spicy dep_spicy_tuna dep_tuna_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+35,0.13666666666666666,'rock shrimp tempura','dep_tempura dep_rock dep_shrimp dep_awesome ','dep_tempura_rock dep_rock_shrimp dep_shrimp_awesome ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+39,0.0,'Food','dep_Food dep_ dep_ ','dep_Food_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+43,0.3333333333333333,'food','dep_decent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+52,0.5333333333333333,'Food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+55,-0.016666666666666666,'sea urchin','dep_urchin dep_sea dep_rose dep_ ','dep_urchin_sea dep_sea_rose dep_rose_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+56,-0.0,'buttery','dep_slightly dep_fishy ','dep_slightly_fishy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+57,0.0,'sushi','dep_seemed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+60,0.047619047619047616,'half price sushi deal','dep_price dep_half dep_deal dep_sushi ','dep_price_half dep_half_of dep_deal_sushi dep_sushi_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+64,0.14444444444444446,'food','dep_prepared ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+67,0.11555555555555555,'Prix Fixe menu','dep_menu dep_Prix dep_Fixe dep_worth ','dep_menu_Prix dep_Prix_Fixe dep_Fixe_worth ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+72,0.06666666666666667,'food','dep_much dep_tasty dep_ ','dep_much_tasty dep_tasty_is dep__all ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+74,-0.13333333333333333,'dishes','dep_almost dep_great ','dep_almost_all ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+75,-0.11666666666666665,'somosas','dep_like dep_ dep_chai ','dep_like_ dep__chai ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+76,-0.0,'chai','dep_somosas ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+77,-0.2333333333333333,'chole','dep_like ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+78,-0.0,'dhosas','dep_dissapointing dep_dhal ','dep_dissapointing_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+79,-0.0,'dhal','dep_dhosas ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+82,-0.0,'food','dep_spicy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+86,0.0,'food','dep_consider ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,neutral
+88,-0.16666666666666666,'ingredients','dep_fancy dep_use dep_even dep_make ','dep_fancy_use dep_use_even dep_even_make ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+89,-0.43333333333333335,'pizza','dep_good ','dep_good_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+90,-0.0,'crust','dep_get ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+92,0.10666666666666667,'meals','dep_best ','dep_best_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+93,0.3,'seafood','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+96,-0.0,'ingredients','dep_superfresh ','dep_superfresh_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+102,-0.43333333333333335,'specials','dep_good dep_fare ','dep_good_fare ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+104,-0.03209876543209877,'French bistro fare','dep_prepared dep_basic dep_fare dep_French dep_bistro dep_ dep_specials dep_atmosphere ','dep_prepared_basic dep_basic_fare dep_fare_French dep_French_bistro dep_bistro_with dep__specials dep_specials_atmosphere ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+112,0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+114,0.08888888888888889,'food','dep_great dep_ dep_wine dep_service ','dep_great_have dep__wine dep_wine_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+123,0.09999999999999999,'pizza','dep_yummy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+128,-0.0,'lunch','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+129,0.3333333333333333,'Sauce','dep_watery ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+130,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+134,0.0,'pizza','dep_Great dep_pizza dep_service dep_ ','dep_Great_pizza dep_pizza_and dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+140,0.06666666666666667,'sushi','dep_best dep_sushi dep_ dep_ ','dep_best_sushi dep_sushi_in dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+142,-0.3,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+143,0.0,'tuna of gari','dep_Get dep_tuna dep_gari ','dep_Get_of dep_tuna_gari ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+144,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+154,-0.08750000000000001,'French food','dep_best dep_food dep_French dep_packed dep_find ','dep_best_food dep_food_French dep_French_packed dep_packed_find ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+156,-0.0,'crust','dep_tastes ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+157,-0.0,'pizza','dep_Pizza ','dep_Pizza_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+160,-0.26666666666666666,'food','dep_great ','dep_great_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+168,0.0,'Spicy Scallop roll','dep_roll dep_Spicy dep_Scallop ','dep_roll_Spicy dep_Spicy_Scallop dep_Scallop_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+170,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+171,0.8666666666666667,'Moules','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+172,0.0,'lobster ravioli','dep_ravioli dep_lobster dep_salty ','dep_ravioli_lobster dep_lobster_salty ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+180,0.0,'chefs specials','dep_chef dep_Try ','dep_chef_Try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+185,0.08333333333333333,'exotic food','dep_food dep_exotic dep_presented ','dep_food_exotic dep_exotic_presented ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+198,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+206,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+207,0.21666666666666667,'tuna','dep_excellent dep_potatoes ','dep_excellent_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+208,0.0,'wasabe potatoes','dep_potatoes dep_wasabe dep_tuna ','dep_potatoes_wasabe dep_wasabe_tuna ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+214,0.26666666666666666,'food','dep_great dep_service ','dep_great_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+216,0.3333333333333333,'pizza','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+217,0.13333333333333333,'fresh mozzarella','dep_mozzarella dep_fresh dep_use ','dep_mozzarella_fresh dep_fresh_use ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+219,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+221,0.13333333333333333,'salad','dep_best ','dep_best_By ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+222,0.0,'dining','dep_quality ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+226,0.0,'theater','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+228,0.0,'chicken pot pie','dep_pie dep_chicken dep_pot dep_excpetiona ','dep_pie_chicken dep_chicken_pot dep_pot_excpetiona ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+230,0.06666666666666667,'cheeseburger','dep_huge ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+236,0.0,'lobster teriyaki','dep_teriyaki dep_lobster dep_Try ','dep_teriyaki_lobster dep_lobster_Try dep_Try_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+237,0.08333333333333333,'rose special roll','dep_roll dep_special dep_rose ','dep_roll_special dep_special_rose ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+245,0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+246,0.0,'raw vegatables in side orders','dep_vegatables dep_raw dep_orders dep_side ','dep_vegatables_raw dep_raw_of dep_orders_side ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+254,0.26666666666666666,'food','dep_diamond dep_delicious ','dep_diamond_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+255,0.2074074074074074,'balance of herbs and tomatoes','dep_delicious dep_perfect dep_balance dep_herbs dep_tomatoes ','dep_delicious_the dep_perfect_with dep_balance_herbs dep_herbs_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+263,0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+264,0.0,'pumkin tortelini','dep_must dep_tortelini dep_pumkin dep_dish ','dep_must_be dep_tortelini_pumkin dep_pumkin_dish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+269,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+272,0.0,'food','dep_delicous dep_service ','dep_delicous_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+274,0.3333333333333333,'pizza','dep_enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+275,0.041666666666666664,'santa fe chopped salad','dep_salad dep_santa dep_fe dep_chopped dep_enjoyed dep_fish dep_chips ','dep_salad_santa dep_santa_fe dep_fe_chopped dep_chopped_enjoyed dep_enjoyed_and dep_fish_chips ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+276,0.0,'fish and chips','dep_salad ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+277,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+283,0.055555555555555546,'chow fun and chow see','dep_fun dep_chow dep_bland dep_see ','dep_fun_chow dep_chow_bland dep_bland_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+284,0.2,'way','dep_cooked dep_bland ','dep_cooked_bland ',0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+285,-0.0,'scallion pancakes','dep_pancakes dep_scallion dep_nothing dep_ ','dep_pancakes_scallion dep_scallion_and dep_nothing_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+286,0.1111111111111111,'fried dumplings','dep_dumplings dep_fried dep_nothing ','dep_dumplings_fried dep_fried_nothing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+290,0.0,'sushi','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+291,0,'tuna','','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+292,0,'rolls','','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+294,0,'sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+295,0.0,'tuna','dep_soggy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+296,0.0,'rolls','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+301,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+303,0.6666666666666666,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+308,0.0,'chef','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+310,0.3333333333333333,'salads','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+311,0.0,'Pams special fried fish','dep_Pam dep_fish dep_special dep_fried ','dep_Pam_fish dep_fish_special dep_special_fried dep_fried_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+313,-0.0,'nothing','dep_people ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+319,0.6,'Salads','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+320,0.17777777777777778,'salads','dep_great dep_got ','dep_great_got ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+321,0.16666666666666666,'Ingredients','dep_organic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+323,0.19166666666666665,'sushi','dep_good dep_ dep_inexpensive dep_sushi dep_ ','dep_good_ dep__inexpensive dep_inexpensive_sushi dep_sushi_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+329,0.0,'food','dep_price ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+341,0.0,'pasta dish','dep_dish dep_pasta ','dep_dish_pasta dep_pasta_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+342,0.0,'tiramisu','dep_cake ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+343,0.08333333333333333,'chocolate cake','dep_tiramisu dep_cake dep_chocolate ','dep_tiramisu_cake dep_cake_chocolate dep_chocolate_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+347,0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+353,0.21666666666666667,'food','dep_good dep_get dep_service ','dep_good_get dep_get_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+355,-0.07777777777777778,'food','dep_bad dep_get dep_service dep_ dep_sometimes ','dep_bad_get dep_get_and dep_service_ dep__sometimes ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+358,-0.15555555555555556,'good','dep_service dep_bad ','dep_service_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+362,-0.0,'stuff','dep_simple dep_Cassuolet ','dep_simple_Cassuolet ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+364,0.43333333333333335,'pizza','dep_good ','dep_good_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+366,0.19999999999999998,'raddichio','dep_bitter ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+367,0.19999999999999998,'raddichio','dep_bitter ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+368,0.0,'mushroom pizza','dep_pizza dep_mushroom dep_got dep_tasted ','dep_pizza_mushroom dep_mushroom_got dep_got_tasted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+372,0.0,'MMmmm','dep_MMmmm dep_ ','dep_MMmmm_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+373,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+380,-0.16666666666666666,'food','dep_lousy ','dep_lousy_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+381,-0.0,'hanger steak','dep_steak dep_hanger ','dep_steak_hanger dep_hanger_was ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+382,-0.0,'tuna','dep_flavorless ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+387,0.21666666666666667,'food','dep_excellent dep_service ','dep_excellent_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+389,-0.2,'filet mignon dish','dep_dish dep_filet dep_mignon dep_superb ','dep_dish_filet dep_filet_mignon dep_mignon_superb ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+393,0.3,'sushi','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+398,-0.023809523809523808,'beef and noodle soup dishes','dep_ordered dep_beef dep_dishes dep_noodle dep_soup ','dep_ordered_and dep_beef_dishes dep_dishes_noodle dep_noodle_soup ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+399,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+400,-0.2888888888888889,'meal','dep_good ','dep_good_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+416,-0.12666666666666665,'food','dep_ dep_factor dep_fair ','dep__factor dep_factor_was ',1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+418,-0.3333333333333333,'Fish','dep_overdone ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+422,0.2333333333333333,'dessert','dep_recommended ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+427,0.19999999999999998,'fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+428,0.0,'tuna tartar appetizer','dep_appetizer dep_tuna dep_tartar ','dep_appetizer_tuna dep_tuna_tartar dep_tartar_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+429,0.0,'pizza','dep_receipies ','dep_receipies_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+430,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+435,-0.18333333333333335,'food','dep_great dep_serve ','dep_great_serve ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+438,0.0,'food','dep_speaks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+442,-0.1380952380952381,'meal','dep_real dep_enjoying dep_ dep_clubhouse ','dep_real_enjoying dep_enjoying_in dep__not ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+454,-0.17333333333333334,'New England Chowder','dep_Chowder dep_New dep_England dep_good ','dep_Chowder_New dep_New_England dep_England_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+455,-0.0,'Lobster Bisque','dep_Bisque dep_Lobster ','dep_Bisque_Lobster dep_Lobster_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+456,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+458,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+459,0.0,'chicken vindaloo','dep_vindaloo dep_chicken dep_get ','dep_vindaloo_chicken dep_chicken_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+460,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+463,0.3,'food','dep_terrific dep_service ','dep_terrific_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+467,0.3,'food','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+469,0,'Chefs tasting menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+470,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+472,0.0,'Chefs tasting menu','dep_Chef dep_menu dep_tasting dep_get dep_bottle ','dep_Chef_menu dep_menu_tasting dep_tasting_get dep_get_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+473,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+475,0,'Chefs tasting menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+480,0.047619047619047616,'grilled branzino','dep_special dep_ dep_branzino dep_grilled dep_ordered dep_infused ','dep_special_ dep__branzino dep_branzino_grilled dep_grilled_ordered dep_ordered_infused ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+486,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+492,-0.0,'food','dep_tradional ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+500,-0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+502,0.0,'pizza','dep_Great dep_pizza dep_ ','dep_Great_pizza dep_pizza_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+504,0.26666666666666666,'pizza','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+508,0.0,'fish','dep_quality dep_service ','dep_quality_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+514,0.0,'sushi','dep_Excellent dep_Delivery ','dep_Excellent_Delivery ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+516,-0.0,'bite','dep_take ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+517,0.0,'salads','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+519,0.19999999999999998,'lox','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+521,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+532,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+534,0.3333333333333333,'ShabuShabu','dep_loves ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+540,0.16666666666666666,'food','dep_art ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+543,0.2222222222222222,'Taxan','dep_Taxan dep_delicious dep_! ','dep_Taxan_delicious dep_delicious_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+546,0.0,'food','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+550,0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+551,-0.26666666666666666,'dishes','dep_disappointment ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+552,0.0,'specials','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+553,0.0,'regular menufare','dep_menufare dep_regular ','dep_menufare_regular dep_regular_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+554,0.03333333333333333,'parmesean porcini souffle','dep_Whether dep_s dep_souffle dep_parmesean dep_porcini dep_transported dep_lamb ','dep_Whether_it dep_s_the dep_souffle_parmesean dep_parmesean_porcini dep_porcini_transported dep_transported_or ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+555,0.01234567901234568,'lamb glazed with balsamic vinegar','dep_souffle dep_glazed dep_lamb dep_vinegar dep_balsamic dep_transported dep_bite ','dep_souffle_glazed dep_glazed_lamb dep_lamb_with dep_vinegar_balsamic dep_balsamic_transported dep_transported_bite ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+557,0.0,'food','dep_light dep_ ','dep_light_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+561,-0.041666666666666664,'food','dep_serve dep_wine ','dep_serve_and dep_wine_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+565,0.0,'marinaraarrabiatta sauce','dep_marinara dep_ dep_arrabiatta dep_try dep_ dep_mmmmmmmm ','dep_marinara_ dep__arrabiatta dep_arrabiatta_try dep_try_ dep__mmmmmmmm ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+566,0.0,'mozzarella en Carozza','dep_mmmmmmmm dep_en dep_mozzarella dep_Carozza ','dep_mmmmmmmm_en dep_en_mozzarella dep_mozzarella_Carozza ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+567,0.0,'Carozza','dep_en ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+568,0,'marinaraarrabiatta sauce','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+569,0,'mozzarella en Carozza','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+570,0.6666666666666666,'everything','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+572,0.0,'food','dep_everytime dep_ dep_service dep_value ','dep_everytime_ dep__service dep_service_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+575,0.27777777777777773,'food','dep_authentic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+576,0.0,'Paris','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+584,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+590,-0.28888888888888886,'food','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+593,0.0,'dishes','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+596,-0.0,'vegetarian dishes','dep_dishes dep_vegetarian ','dep_dishes_vegetarian dep_vegetarian_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+597,-0.0,'nonveg selections','dep_selections dep_nonveg ','dep_selections_nonveg dep_nonveg_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+602,-0.19999999999999998,'fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+603,-0.0,'rice','dep_tasted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+604,-0.03333333333333333,'sushi','dep_worst dep_tried ','dep_worst_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+606,0.0,'sushi','dep_husband ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+607,0.0,'soy sauce','dep_things dep_salty dep_sauce dep_soy dep_rice dep_ ','dep_things_are dep_salty_sauce dep_sauce_soy dep_soy_rice dep_rice_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+608,0.0,'rice','dep_ dep_sodium dep_ dep_ dep_vinegar dep_ dep_soaked dep_sauce dep_scallion ','dep__sodium dep_sodium_ dep__ dep__vinegar dep_vinegar_ dep__soaked dep_soaked_sauce dep_sauce_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+612,0.0,'Pad Thai','dep_Thai dep_Pad dep_Try ','dep_Thai_Pad dep_Pad_Try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+615,0.2333333333333333,'food','dep_nasty ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+630,0.16666666666666666,'food','dep_tasty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+635,0.8666666666666667,'Food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+636,0.39999999999999997,'Fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+639,0.43333333333333335,'seafood','dep_good ','dep_good_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+642,-0.0,'dishes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+643,0.21666666666666667,'lobster sandwich','dep_sandwich dep_lobster dep_good ','dep_sandwich_lobster dep_lobster_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+644,0.17500000000000002,'spaghetti with Scallops and Shrimp','dep_good dep_great dep_spaghetti dep_Scallops dep_Shrimp ','dep_good_the dep_great_with dep_spaghetti_Scallops dep_Scallops_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+648,0.17333333333333334,'seafood','dep_good dep_though dep_ dep_high ','dep_good_though dep_though_ dep__high ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+650,-0.0,'lobster sandwich','dep_sandwich dep_lobster dep_ ','dep_sandwich_lobster dep_lobster_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+654,-0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+655,-0.08333333333333333,'halibut special','dep_special dep_halibut ','dep_special_halibut ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+656,-0.0,'steak','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+661,-0.0,'foods','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+662,0.0,'foods','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+663,0.07037037037037036,'jelly fish','dep_fish dep_jelly dep_recommend dep_ dep_chicken dep_dumplings dep_certainly ','dep_fish_jelly dep_jelly_recommend dep_recommend_ dep__chicken dep_chicken_and dep_dumplings_certainly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+664,-0.2222222222222222,'drunken chicken','dep_chicken dep_drunken dep_fish ','dep_chicken_drunken dep_drunken_fish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+665,0.0,'soupy dumplings','dep_dumplings dep_soupy dep_fish ','dep_dumplings_soupy dep_soupy_fish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+666,0.0,'stir fry blue crab','dep_fry dep_stir dep_certainly dep_crab dep_blue ','dep_fry_stir dep_stir_certainly dep_certainly_crab dep_crab_blue ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+671,0.43333333333333335,'food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+672,0.2888888888888889,'Cheese plate','dep_plate dep_Cheese dep_delight ','dep_plate_Cheese dep_Cheese_delight ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+678,0.0,'asparagus truffle oil parmesan bruschetta','dep_oil dep_bruschetta dep_parmesan dep_asparagus ','dep_oil_bruschetta dep_bruschetta_parmesan dep_parmesan_asparagus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+681,0.0,'specials','dep_seasonal dep_try ','dep_seasonal_try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+685,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+697,0.43333333333333335,'Pizza','dep_good ','dep_good_here ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+698,0.0,'Salads','dep_way ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+699,0.0,'calamari','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+700,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+707,0.18666666666666665,'food','dep_wonderful dep_ dep_drinks dep_staff dep_mileau ','dep_wonderful_ dep__drinks dep_drinks_staff dep_staff_mileau ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+713,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+721,0.1111111111111111,'caviar','dep_spectacular ','dep_spectacular_From ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+724,0.24444444444444446,'caviar','dep_delicious dep_top dep_grade dep_wants dep_service ','dep_delicious_top dep_top_grade dep_grade_wants dep_wants_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+727,0.0,'ingredients','dep_Fresh dep_ingredients dep_made dep_ ','dep_Fresh_ingredients dep_ingredients_and dep_made_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+728,0.0,'order','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+732,0.05555555555555555,'dim sum','dep_sum dep_dim dep_try dep_ dep_goodnot ','dep_sum_dim dep_dim_try dep_try_ dep__goodnot ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+737,0.0,'food','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+738,0.125,'dishes','dep_surprising dep_tasty dep_including ','dep_surprising_tasty dep_tasty_including ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+741,0.0,'cheesecake','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+742,0.13333333333333333,'pastries','dep_several dep_nice ','dep_several_other dep_nice_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+743,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+744,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+751,-0.0,'taste','dep_much ','dep_much_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+752,-0.0,'food','dep_trendi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+754,0.0,'food','dep_spicy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+755,0.0,'spice','dep_took ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+756,-0.07333333333333333,'Tom Kha soup','dep_soup dep_Tom dep_Kha dep_pathetic ','dep_soup_Tom dep_Tom_Kha dep_Kha_pathetic ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+757,-0.4962962962962963,'Thai','dep_good dep_authentic dep_want ','dep_good_authentic dep_authentic_want ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+758,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+759,0.14444444444444446,'pesto pizza','dep_pizza dep_pesto dep_excellent dep_thincrust ','dep_pizza_pesto dep_pesto_excellent dep_excellent_thincrust dep_thincrust_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+760,0.0,'spicy Italian cheese','dep_cheese dep_spicy dep_Italian ','dep_cheese_spicy dep_spicy_Italian dep_Italian_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+764,0.0,'lobster sandwich','dep_sandwich dep_lobster ','dep_sandwich_lobster dep_lobster_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+767,0.13333333333333333,'french fries','dep_fries dep_french dep_best ','dep_fries_french dep_french_best ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+768,0.0,'scallops','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+769,0.4666666666666666,'sauce','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+773,0.020833333333333332,'food','dep_Great dep_food dep_ dep_menu dep_service dep_setting dep_ ','dep_Great_food dep_food_ dep__menu dep_menu_service dep_service_and dep_setting_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+777,0.1111111111111111,'dishes','dep_unique dep_offered ','dep_unique_offered ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+778,0.08333333333333333,'lamb sausages','dep_sausages dep_lamb ','dep_sausages_lamb dep_lamb_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+779,0.05555555555555555,'sardines with biscuits','dep_unique dep_sardines dep_biscuits dep_ dep_shrimp ','dep_unique_with dep_sardines_biscuits dep_biscuits_ dep__shrimp ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+780,0.0,'large whole shrimp','dep_shrimp dep_large dep_whole dep_sardines ','dep_shrimp_large dep_large_whole dep_whole_sardines dep_sardines_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+781,0.10476190476190476,'pistachio ice cream','dep_amazing dep_cream dep_pistachio dep_ice dep_ ','dep_amazing_cream dep_cream_pistachio dep_pistachio_ice dep_ice_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+784,0.3333333333333333,'food','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+785,0.0,'sushi','dep_sashimi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+786,0.016666666666666666,'ceviche mix special','dep_mix dep_ceviche dep_please dep_ ','dep_mix_ceviche dep_ceviche_please dep_please_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+787,0.0,'crab dumplings','dep_dumplings dep_crab dep_ ','dep_dumplings_crab dep_crab_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+788,0.0,'assorted sashimi','dep_ dep_sashimi dep_assorted dep_ dep_sushi dep_rolls ','dep__sashimi dep_sashimi_assorted dep_assorted_ dep__sushi dep_sushi_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+789,0.0,'sushi','dep_sashimi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+790,0.0,'rolls','dep_sashimi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+792,0.0,'banana tempura','dep_tempura dep_banana dep_types ','dep_tempura_banana dep_banana_types ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+796,0.0,'food','dep_arrived ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+800,0.6,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+801,-0.17777777777777778,'Guacamoleshrimp appetizer','dep_appetizer dep_Guacamoleshrimp dep_great ','dep_appetizer_Guacamoleshrimp dep_Guacamoleshrimp_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+802,-0.21666666666666667,'filet','dep_ dep_good ','dep__good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+803,-0.15555555555555556,'frites','dep_like dep_came ','dep_like_came ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+811,0.13333333333333333,'pizza','dep_best dep_ ','dep_best_ dep__in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+812,0.0,'crust','dep_thin ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+814,0.19999999999999998,'ingredients','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+815,0.19999999999999998,'fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+816,0.15833333333333333,'Sophia pizza','dep_pizza dep_Sophia dep_recommend ','dep_pizza_Sophia dep_Sophia_recommend ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+817,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+818,0.3333333333333333,'food','dep_mediocre ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+822,0.15,'food','dep_great dep_want dep_plus dep_service ','dep_great_want dep_want_plus dep_plus_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+829,0.20833333333333334,'kitchen food','dep_food dep_kitchen dep_delicious ','dep_food_kitchen dep_kitchen_delicious ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+830,0.0,'Sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+832,-0.1111111111111111,'cuisine','dep_cuisine dep_attentive dep_ ','dep_cuisine_attentive dep_attentive_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+836,-0.0,'food','dep_match ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+838,0.0,'smoked salmon and roe appetizer','dep_salmon dep_smoked dep_ordered dep_appetizer dep_roe ','dep_salmon_smoked dep_smoked_ordered dep_ordered_appetizer dep_appetizer_roe ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+839,0.3,'entree','dep_bland ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+841,-0.4666666666666666,'dessert','dep_inspired ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+843,-0.08333333333333333,'menu','dep_expensive ','dep_expensive_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+845,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+849,-0.06666666666666667,'Taiwanese food','dep_Authentic dep_food dep_Taiwanese dep_cheap dep_ ','dep_Authentic_food dep_food_Taiwanese dep_Taiwanese_cheap dep_cheap_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+851,0,'Taiwanese food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+854,-0.1,'cold appetizer dishes','dep_dishes dep_cold dep_appetizer dep_taste ','dep_dishes_cold dep_cold_appetizer dep_appetizer_taste ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+855,0.16666666666666666,'food','dep_delicious dep_simple dep_food dep_ ','dep_delicious_simple dep_simple_food dep_food_in ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+859,0.09333333333333332,'scallops','dep_like dep_mahi ','dep_like_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+860,0.0,'mahi mahi on saffron risotto','dep_mahi dep_scallops dep_ dep_risotto dep_saffron dep_yum dep_! ','dep_mahi_scallops dep_scallops_ dep__risotto dep_risotto_saffron dep_saffron_yum dep_yum_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+861,-0.08333333333333333,'chicken and mashed potatos','dep_devoured dep_potatos dep_mashed ','dep_devoured_potatos dep_potatos_mashed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+862,0.0,'crab cakes','dep_Delicious dep_cakes dep_crab dep_ ','dep_Delicious_cakes dep_cakes_crab dep_crab_too ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+864,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+867,0.11481481481481481,'selection of thin crust pizza','dep_place dep_good dep_selection dep_pizza dep_thin dep_crust dep_including ','dep_place_good dep_good_with dep_selection_pizza dep_pizza_thin dep_thin_crust dep_crust_including ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+869,0.041666666666666664,'Basil slice','dep_slice dep_Basil dep_including ','dep_slice_Basil dep_Basil_including ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+870,-0.2333333333333333,'calzones','dep_horrific ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+871,0.0,'they','dep_stuff ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+876,0.06666666666666667,'planet','dep_different dep_ dep_complimentary ','dep_different_from dep__complimentary ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+878,0.16666666666666666,'dosas','dep_skimpy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+879,0.0,'sandwiches','dep_dry ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+887,0.0,'food','dep_magnificant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+888,0.023809523809523808,'Italian food','dep_Best dep_food dep_Italian dep_means dep_ ','dep_Best_food dep_food_Italian dep_Italian_had dep_means_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+893,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+894,0.07407407407407407,'basic dishes','dep_especially dep_dishes dep_basic dep_delicious dep_ dep_drinks ','dep_especially_their dep_dishes_basic dep_basic_delicious dep_delicious_ dep__and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+897,0.0,'sushi','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+899,0.0,'apppetizers','dep_Unique dep_apppetizers dep_ ','dep_Unique_apppetizers dep_apppetizers_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+900,0.0,'sushimi cucumber roll','dep_roll dep_sushimi dep_cucumber dep_Try ','dep_roll_sushimi dep_sushimi_cucumber dep_cucumber_Try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+901,0.047619047619047616,'spreads','dep_Good dep_spreads dep_ dep_selections dep_tasty dep_ ','dep_Good_spreads dep_spreads_ dep__selections dep_selections_and dep_tasty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+903,0.3333333333333333,'bagels','dep_tasty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+907,0,'Pizza','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+908,0.0,'Pizza','dep_Pizza dep_ ','dep_Pizza_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+910,0.03333333333333333,'cream cheeses','dep_cheeses dep_cream ','dep_cheeses_cream dep_cream_are ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+916,-0.0,'Bagels','dep_ok ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,neutral
+919,-0.0,'bagels','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+920,-0.0,'bagels','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+921,-0.049999999999999996,'turkey burgers','dep_burgers dep_turkey dep_scary ','dep_burgers_turkey dep_turkey_scary ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+922,0.041666666666666664,'Japanese food','dep_food dep_Japanese dep_encountered ','dep_food_Japanese dep_Japanese_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+923,0.027777777777777776,'soup for the udon','dep_sauce dep_soup dep_udon ','dep_sauce_for dep_soup_udon dep_udon_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+924,-0.2333333333333333,'sushi','dep_awful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+925,0.0,'rice','dep_quality ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+926,0.0,'rice','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+927,-0.2,'sushi','dep_bland ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+929,0.0,'Japanese cuisine','dep_cuisine dep_Japanese ','dep_cuisine_Japanese dep_Japanese_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+932,0.5333333333333333,'Food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+940,0.0,'Pizza','dep_Awsome dep_slice ','dep_Awsome_slice ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+941,0.0,'Margheritta slice','dep_Pizza dep_especially dep_slice dep_Margheritta dep_ ','dep_Pizza_especially dep_especially_the dep_slice_Margheritta dep_Margheritta_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+948,0.3333333333333333,'food','dep_reliable ','',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,positive
+951,0.18055555555555555,'Thai food','dep_authentic dep_food dep_Thai ','dep_authentic_food dep_food_Thai dep_Thai_For ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+954,0.39999999999999997,'flavors','dep_robust ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+955,0.13333333333333333,'brioche and lollies','dep_favors dep_brioche dep_lollies dep_cute ','dep_favors_and dep_brioche_lollies dep_lollies_as ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+957,-0.0,'salmon','dep_tried dep_salad ','dep_tried_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+958,-0.0,'crab salad','dep_salad dep_crab dep_salmon ','dep_salad_crab dep_crab_salmon ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+962,0.09999999999999999,'food','dep_yummy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+963,0.06666666666666667,'mussels in spicy tomato sauce','dep_ dep_perfection dep_mussels dep_sauce dep_spicy dep_tomato dep_fries ','dep__perfection dep_perfection_to dep_mussels_sauce dep_sauce_spicy dep_spicy_tomato dep_tomato_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+964,0.0,'fries','dep_shoestring dep_crispy dep_mussels ','dep_shoestring_crispy dep_crispy_mussels ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+983,0.0,'Thai','dep_LOVE ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+984,0.0,'noodles with shrimp and chicken and coconut juice','dep_MUST dep_noodles dep_shrimp dep_chicken dep_juice dep_coconut ','dep_MUST_with dep_noodles_shrimp dep_shrimp_and dep_chicken_juice dep_juice_coconut ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+985,-0.0,'chef','dep_changed dep_staff ','dep_changed_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+988,-0.16666666666666666,'food','dep_inconsistent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+992,0.43333333333333335,'food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+993,0.0,'balsamic vinegar over icecream','dep_vinegar dep_balsamic dep_try dep_icecream ','dep_vinegar_balsamic dep_balsamic_try dep_try_over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+994,-0.0,'Go Go Hamburgers','dep_Hamburgers dep_Go dep_say dep_ ','dep_Hamburgers_Go dep_Go_say dep_say_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+995,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+999,-0.08333333333333333,'dim sum','dep_sum dep_dim ','dep_sum_dim dep_dim_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1000,0.0,'table','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1004,-0.041666666666666664,'turnip cake','dep_cake dep_turnip dep_skip ','dep_cake_turnip dep_turnip_skip ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1005,-0.027777777777777776,'roast pork buns','dep_buns dep_roast dep_pork dep_skip dep_custards ','dep_buns_roast dep_roast_pork dep_pork_skip dep_skip_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1006,0.0,'egg custards','dep_custards dep_egg dep_buns ','dep_custards_egg dep_egg_buns ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1008,0.0,'corner','dep_around dep_get ','dep_around_the ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1009,0.12000000000000001,'braised lamb shank in red wine','dep_shank dep_braised dep_lamb dep_choose dep_wine dep_red dep_ dep_excellent ','dep_shank_braised dep_braised_lamb dep_lamb_choose dep_choose_in dep_wine_red dep_red_ dep__excellent ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1012,-0.4444444444444444,'meal','dep_great dep_enjoy ','dep_great_enjoy ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1016,0.07777777777777777,'pad se ew chicken','dep_pad dep_chicken dep_se dep_ew dep_delicious dep_ dep_thai dep_oily dep_ ','dep_pad_chicken dep_chicken_se dep_se_ew dep_ew_delicious dep_delicious_ dep__thai dep_thai_oily dep_oily_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1017,0.09722222222222221,'pad thai','dep_pad dep_delicious dep_ dep_however dep_thai dep_oily dep_ ','dep_pad_delicious dep_delicious_ dep__however dep_however_thai dep_thai_oily dep_oily_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1019,0.2,'bagels','dep_delicious dep_bagels dep_ dep_right dep_ ','dep_delicious_bagels dep_bagels_ dep__right dep_right_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1020,0.17777777777777778,'Spreads','dep_great dep_toppings ','dep_great_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1021,0.0,'toppings','dep_Spreads ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1028,0.3333333333333333,'food','dep_decent ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1032,0.027777777777777776,'food','dep_Great dep_food dep_ dep_prices dep_service dep_ ','dep_Great_food dep_food_ dep__prices dep_prices_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1035,-0.25,'eats','dep_cheap dep_place ','dep_cheap_place ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1037,0.03333333333333333,'indian food','dep_amanzing dep_food dep_indian ','dep_amanzing_food dep_food_indian dep_indian_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1044,0.0,'Appetizers','dep_ok ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1046,-0.024999999999999998,'potato stuff kanish','dep_poor dep_suggestiontry dep_stuff dep_potato dep_gave dep_kanish dep_one ','dep_poor_suggestiontry dep_suggestiontry_the dep_stuff_potato dep_potato_gave dep_gave_kanish dep_kanish_one ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1047,0.0,'salmon','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1048,0.0,'chicken','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1050,-0.5333333333333333,'Dessert','dep_bother ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1055,0.43333333333333335,'antipasta','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1056,0.17333333333333334,'calamari','dep_especially dep_excellent dep_ dep_mains ','dep_especially_the dep_excellent_ dep__mains ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1057,0.0,'pasta mains','dep_filling dep_mains dep_pasta dep_calamari ','dep_filling_mains dep_mains_pasta dep_pasta_calamari ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1071,0,'Prix Fixe menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1081,0.26666666666666666,'food','dep_great ','dep_great_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1089,0.0,'food','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1096,-0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1100,0.15555555555555556,'food','dep_bad ','dep_bad_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1101,0.0,'porcini mushroom pasta special','dep_special dep_porcini dep_mushroom dep_pasta dep_tasteless ','dep_special_porcini dep_porcini_mushroom dep_mushroom_pasta dep_pasta_tasteless ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1102,0.0,'seafood tagliatelle','dep_tagliatelle dep_seafood ','dep_tagliatelle_seafood dep_seafood_was ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1103,0.041666666666666664,'dissapointment','dep_real dep_dissapointment dep_ ','dep_real_dissapointment dep_dissapointment_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1104,-0.0,'tiramisu','dep_icing dep_resembled ','dep_icing_resembled ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1105,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1108,0.21666666666666667,'eater','dep_m dep_good ','dep_m_a ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1110,0.06666666666666667,'BBQ ribs','dep_best dep_Chinese dep_style dep_ribs dep_BBQ ','dep_best_Chinese dep_Chinese_style dep_style_ribs dep_ribs_BBQ dep_BBQ_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1112,0.0,'rice dishes','dep_dishes dep_rice dep_ dep_varieties dep_porridge ','dep_dishes_rice dep_rice_ dep__or dep_varieties_porridge ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1113,0.0,'congee rice porridge','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1116,-0.3,'food','dep_great dep_want ','dep_great_want ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1122,0.4666666666666666,'food','dep_wonderful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1128,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1132,-0.0,'chicken casserole','dep_casserole dep_chicken dep_ordered ','dep_casserole_chicken dep_chicken_ordered dep_ordered_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1135,-0.2333333333333333,'food','dep_fine ','',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1136,0.0,'chicken','dep_ dep_beef ','dep__beef ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1137,0.0,'beef','dep_chicken ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1138,0.0,'lamb dishes','dep_stick dep_dishes dep_ ','dep_stick_dishes dep_dishes_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1141,-0.19999999999999998,'food','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1142,0.3,'sauces','dep_bland ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1143,-0.0,'Thai','dep_nt dep_Thai dep_ ','dep_nt_Thai dep_Thai_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1147,0.0,'Food','','',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+1150,0.041666666666666664,'Pakistani food','dep_Authentic dep_food dep_Pakistani dep_ ','dep_Authentic_food dep_food_Pakistani dep_Pakistani_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1153,0.46666666666666673,'food','dep_good dep_straight ','dep_good_straight ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1156,0.1288888888888889,'pad thai','dep_best dep_pad dep_ ','dep_best_pad dep_pad_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1162,-0.16666666666666666,'food','dep_aweful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1163,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1164,0.0,'mussles','dep_things ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1165,-0.3,'seabass','dep_bland ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1166,-0.017777777777777774,'goat cheese salad','dep_salad dep_goat dep_cheese dep_missing ','dep_salad_goat dep_goat_cheese dep_cheese_missing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1167,0.0,'penne w chicken','dep_w dep_ ','dep_w_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1168,0.0,'bones','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1169,0,'mussles','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1170,0,'seabass','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1171,0,'goat cheese salad','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1172,0,'penne w chicken','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1173,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1176,0.43333333333333335,'desert','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1180,0.3,'food','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1182,0.13333333333333333,'pizza','dep_fresh dep_doughy dep_pastas ','dep_fresh_doughy dep_doughy_pastas ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1192,0.0,'roti rolls','dep_rolls dep_roti dep_try ','dep_rolls_roti dep_roti_try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1193,0.07916666666666666,'Unda Egg rolls','dep_simple dep_rolls dep_Unda dep_ dep_Egg dep_ dep_recommend ','dep_simple_rolls dep_rolls_Unda dep_Unda_ dep__Egg dep_Egg_ dep__recommend ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1194,-0.020833333333333332,'spices','dep_Delicate dep_spices dep_ dep_onions dep_eggs dep_kick dep_ ','dep_Delicate_spices dep_spices_ dep__onions dep_onions_eggs dep_eggs_and dep_kick_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1195,0.0,'onions','dep_spices ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1196,0.0,'eggs','dep_spices ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1197,-0.022222222222222216,'roti','dep_ dep_ass dep_kick ','dep__ass dep_ass_kick ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1198,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1200,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1201,0.20833333333333334,'Thai food','dep_decent dep_food dep_Thai ','dep_decent_food dep_food_Thai dep_Thai_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1204,-0.43333333333333335,'food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1206,0.25833333333333336,'Beef noodle soup','dep_soup dep_Beef dep_noodle dep_good ','dep_soup_Beef dep_Beef_noodle dep_noodle_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1209,0.03333333333333333,'Taiwanese food','dep_Best dep_food dep_Taiwanese dep_! ','dep_Best_food dep_food_Taiwanese dep_Taiwanese_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1219,0.43333333333333335,'sushi','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1220,-0.041666666666666664,' piece dim sum combo','dep_ dep_ dep_piece dep_combo dep_dim dep_sum dep_got ','dep__ dep__piece dep_piece_combo dep_combo_dim dep_dim_sum dep_sum_got ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1226,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1227,0.0,'crabmeat lasagna','dep_lasagna dep_crabmeat ','dep_lasagna_crabmeat dep_crabmeat_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1228,0.05555555555555555,'chocolate bread pudding','dep_pudding dep_chocolate dep_bread ','dep_pudding_chocolate dep_chocolate_bread dep_bread_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1231,0.08333333333333333,'Indian food','dep_Great dep_food dep_Indian dep_incredible dep_ ','dep_Great_food dep_food_Indian dep_Indian_and dep_incredible_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1236,0.1,'food','dep_Great dep_food dep_reasonable dep_ ','dep_Great_food dep_food_and dep_reasonable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1238,0.14761904761904762,'Chinese food','dep_Simply dep_good dep_tasting dep_food dep_Chinese dep_ ','dep_Simply_good dep_good_tasting dep_tasting_food dep_food_Chinese dep_Chinese_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1243,0.35000000000000003,'food','dep_great dep_music ','dep_great_music ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1249,0.17333333333333334,'Japanese Tapas','dep_Consistently dep_good dep_Tapas dep_Japanese dep_ ','dep_Consistently_good dep_good_Tapas dep_Tapas_Japanese dep_Japanese_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1252,0.0,'Yakitori bbq meats','dep_Yakitori dep_ dep_ ','dep_Yakitori_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1253,-0.0,'fish','dep_presliced dep_low dep_quality dep_mind dep_ dep_staff dep_chef ','dep_presliced_low dep_low_quality dep_quality_mind dep_mind_ dep__staff dep_staff_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1257,0.0,'fish','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1259,-0.03333333333333333,'chef','dep_drop ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1263,0.17333333333333334,'food','dep_re dep_ dep_good dep_feel dep_staff ','dep_re_ dep__good dep_good_feel dep_feel_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1279,0.0,'food','dep_overated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1280,0.0,'food','dep_okay ','',0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,neutral
+1282,0.19999999999999998,'food','dep_solid dep_decor ','dep_solid_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1293,0.43333333333333335,'food','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1295,0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1303,0.43333333333333335,'pizza','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1307,0.0,'La Rosa','dep_Rosa dep_La dep_waltzes ','dep_Rosa_La dep_La_waltzes ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1318,-0.0,'Thin Crust Pizzas','dep_Best dep_Pizzas dep_Thin dep_Crust dep_Jazz ','dep_Best_Pizzas dep_Pizzas_Thin dep_Thin_Crust dep_Crust_Jazz ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1319,-0.0,'Lasagna Menu','dep_Menu dep_Lasagna dep_Jazz ','dep_Menu_Lasagna dep_Lasagna_Jazz dep_Jazz_is ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1324,0.05555555555555555,'food','dep_Great dep_food dep_ ','dep_Great_food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1326,0.16666666666666666,'pastas','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1327,0.0,'risottos','dep_ dep_sepia ','dep__sepia ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1328,0.12000000000000001,'sepia','dep_ dep_particularly dep_risottos dep_fantastic ','dep__particularly dep_particularly_the dep_risottos_fantastic ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1329,0.15,'braised rabbit','dep_rabbit dep_braised dep_amazing ','dep_rabbit_braised dep_braised_amazing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1331,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1332,-0.3333333333333333,'food','dep_mediocre ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+1335,0.17333333333333334,'dogs','dep_best dep_hot dep_eaten ','dep_best_hot dep_hot_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1338,-0.08888888888888889,'pork souvlaki','dep_best dep_souvlaki dep_pork dep_thing ','dep_best_souvlaki dep_souvlaki_pork dep_pork_thing dep_thing_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1342,0.03333333333333333,'food','dep_Excellent dep_food dep_ dep_use dep_ ','dep_Excellent_food dep_food_ dep__use dep_use_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1345,0.2888888888888889,'meal','dep_good ','dep_good_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1348,0.0,'Sushi','dep_Reliable dep_ dep_Fresh dep_Sushi ','dep_Reliable_ dep__Fresh dep_Fresh_Sushi ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1349,0,'Sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1350,0.0,'Sushi','dep_Sushi dep_ ','dep_Sushi_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1351,0,'Sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1352,0.0,'sushi','dep_neighborhood ','dep_neighborhood_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1353,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1355,0.0,'sashimi','dep_Excellent dep_sashimi dep_ dep_ ','dep_Excellent_sashimi dep_sashimi_ dep__and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1356,0.0,'millennium roll','dep_roll dep_millennium ','dep_roll_millennium dep_millennium_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1358,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1363,-0.041666666666666664,'food','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1367,0.05555555555555555,'food','dep_Excellent dep_food ','dep_Excellent_food dep_food_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1372,-0.08333333333333333,'indochinese food','dep_indo dep_ dep_chinese dep_savor ','dep_indo_ dep__chinese dep_chinese_savor ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1376,-0.21666666666666667,'chicken pasta','dep_pasta dep_chicken dep_love ','dep_pasta_chicken dep_chicken_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1380,-0.8666666666666667,'lobster','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1383,-0.16666666666666666,'pizza','dep_overrated ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1385,0.16666666666666666,'staff','dep_rude ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1388,-0.0,'pizza','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1393,0.0,'vitello alla marsala','dep_marsala dep_vitello dep_alla dep_ordered ','dep_marsala_vitello dep_vitello_alla dep_alla_ordered ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1394,0.0,'veal','dep_cooked dep_mushrooms ','dep_cooked_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1395,0.0,'mushrooms','dep_veal ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1396,-0.0,'potato balls','dep_balls dep_potato dep_dry ','dep_balls_potato dep_potato_dry ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1397,0,'potato balls','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1404,-0.19999999999999998,'food','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1407,0,'spicy tuna roll','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1408,0,'rock shrimp tempura','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1409,0.19999999999999998,'food','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1414,0.39999999999999997,'food','dep_warm ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1417,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1418,0.0,'Seafood Dynamite','dep_Dynamite dep_Seafood dep_otherworldly ','dep_Dynamite_Seafood dep_Seafood_otherworldly ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1419,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1420,0.0,'Sushi','dep_Favorite dep_Sushi ','dep_Favorite_Sushi dep_Sushi_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1421,-0.3,'guacamole','dep_bland ','dep_bland_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1425,0.0,'Indian Food','dep_Great dep_Food dep_Indian dep_! ','dep_Great_Food dep_Food_Indian dep_Indian_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1432,0.0,'Food','dep_OK ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1437,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1439,0.24444444444444446,'baba ganoush','dep_Watch dep_delicious dep_enjoy dep_ganoush dep_lemony dep_ ','dep_Watch_delicious dep_delicious_enjoy dep_enjoy_ganoush dep_ganoush_lemony dep_lemony_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1446,0.10666666666666667,'omlette for brunch','dep_great dep_omlette dep_brunch ','dep_great_for dep_omlette_brunch ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1447,-0.19999999999999998,'spinach','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1448,0.09999999999999999,'quacamole','dep_yummy ','dep_yummy_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1449,0.02857142857142857,'wings with chimmichuri','dep_yummy dep_wings dep_chimmichuri ','dep_yummy_with dep_wings_chimmichuri ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1450,-0.0761904761904762,'chicken in the salads','dep_weakness dep_chicken dep_salads dep_ ','dep_weakness_is dep_chicken_in dep_salads_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1451,0.0,'seasoning','dep_average ','dep_average_on ',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1452,-0.0,'portobello and asparagus mole','dep_portobello dep_mole dep_asparagus ','dep_portobello_mole dep_mole_asparagus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1453,0.11904761904761904,'food','dep_Overall dep_ dep_decent dep_food dep_ ','dep_Overall_ dep__decent dep_decent_food dep_food_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1458,-0.3,'food','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1459,0.13333333333333333,'gyros','dep_best dep_consider ','dep_best_consider dep_consider_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1460,-0.10833333333333334,'Greek and Cypriot dishes','dep_various dep_excellent dep_Greek dep_dishes dep_Cypriot ','dep_various_excellent dep_excellent_and dep_Greek_dishes dep_dishes_Cypriot ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1461,-0.08333333333333333,'gyro','dep_reason ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1464,0.027777777777777776,'food','dep_Great dep_food dep_ dep_service dep_act dep_ ','dep_Great_food dep_food_ dep__service dep_service_act dep_act_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1467,0.16666666666666666,'veal','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1468,0.0,'flavors','dep_blowing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1470,0.39999999999999997,'Delicious','dep_creative dep_ ','dep_creative_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1480,-0.0,'dishes','dep_ordered ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1481,-0.0,'dish','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1490,0.2,'food','dep_fabulous dep_rooms ','dep_fabulous_rooms ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1496,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1499,0.0,'stuff tilapia','dep_tilapia dep_stuff dep_horridtasted ','dep_tilapia_stuff dep_stuff_horridtasted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1500,0.2333333333333333,'dessert','dep_better ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1507,-0.11851851851851852,'bread','dep_horrible dep_received ','dep_horrible_received ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1508,-0.019047619047619042,'appetizer of olives','dep_ dep_free dep_disappointing dep_appetizer dep_olives ','dep__free dep_free_disappointing dep_disappointing_of dep_appetizer_olives ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1509,0.25416666666666665,'main course','dep_course dep_main dep_wonderful ','dep_course_main dep_main_wonderful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1510,0.0,'fish','dep_husband ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1511,0.08333333333333333,'filet','dep_ dep_exceeded ','dep__exceeded ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1512,-0.0,'pear torte','dep_torte dep_pear ','dep_torte_pear dep_pear_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1526,-0.0,'food','dep_ok ','',0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,neutral
+1529,-0.0,'food','dep_restaurant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1535,0.041666666666666664,'food','dep_Subtle dep_food dep_service ','dep_Subtle_food dep_food_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1538,0.39999999999999997,'food','dep_type dep_enjoy ','dep_type_enjoy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1549,0.0,'hot dog','dep_lovers ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1553,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1557,0.0,'Food','dep_took ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1562,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1564,0.0,'food','dep_times ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1567,0.0,'food','dep_flavorful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1575,0.0,'Sushi','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1578,0.19999999999999998,'rolls','dep_Good dep_creative dep_rolls dep_! ','dep_Good_creative dep_creative_rolls dep_rolls_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1581,0.13333333333333333,'rolls','dep_great dep_norwegetan dep_color ','dep_great_have dep_norwegetan_color ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1582,0.11333333333333334,'triple color and norwegetan rolls','dep_great dep_color dep_triple dep_awesome dep_rolls dep_norwegetan dep_ ','dep_great_have dep_color_triple dep_triple_awesome dep_awesome_and dep_rolls_norwegetan dep_norwegetan_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1584,-0.0,'dessert','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1587,0.14814814814814814,'banana chocolate dessert','dep_delicious dep_dessert dep_banana dep_chocolate dep_ dep_well dep_tempura ','dep_delicious_dessert dep_dessert_banana dep_banana_chocolate dep_chocolate_have dep__well dep_well_tempura ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1588,0.14444444444444446,'green tea tempura','dep_great dep_tempura dep_green dep_tea dep_dessert ','dep_great_tempura dep_tempura_green dep_green_tea dep_tea_dessert ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1589,0.3333333333333333,'appetizers','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1590,0.05555555555555555,'food','dep_Amazing dep_food dep_ ','dep_Amazing_food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1592,0.05555555555555555,'food','dep_Great dep_food dep_! ','dep_Great_food dep_food_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1593,0.1111111111111111,'modern Japanese','dep_Japanese dep_modern ','dep_Japanese_modern dep_modern_of ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1597,0.125,'modern Japanese food','dep_food dep_modern dep_Japanese ','dep_food_modern dep_modern_Japanese dep_Japanese_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1599,0.19999999999999998,'chicken lollipop','dep_lollipop dep_chicken dep_favorite ','dep_lollipop_chicken dep_chicken_favorite ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1600,0.0,'dishes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1601,0.0,'Chilli Chicken','dep_Chicken dep_Chilli dep_oily ','dep_Chicken_Chilli dep_Chilli_oily ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1602,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1604,-0.15555555555555556,'food','dep_horrible ','dep_horrible_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1605,-0.26666666666666666,'food','dep_disappointing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1607,0.11666666666666667,'food','dep_great dep_food dep_ dep_list dep_service dep_ ','dep_great_food dep_food_ dep__list dep_list_service dep_service_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1611,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1613,0.13333333333333333,'pizza','dep_best dep_Hands ','dep_best_Hands dep_Hands_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1614,0.21666666666666667,'hot dogs','dep_great dep_dogs dep_hot dep_ ','dep_great_dogs dep_dogs_hot dep_hot_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1615,0.08333333333333333,'hot dogs','dep_dogs dep_hot dep_juicy ','dep_dogs_hot dep_hot_juicy ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1616,0.26666666666666666,'toppings','dep_great dep_place ','dep_great_place ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1618,0.26666666666666666,'taste','dep_great dep_taste ','dep_great_taste ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1619,0.0,'taste','dep_Great dep_ dep_original dep_taste dep_ ','dep_Great_ dep__original dep_original_taste dep_taste_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1620,-0.0,'dishes','dep_dishes dep_oily dep_ dep_experience dep_ ','dep_dishes_oily dep_oily_ dep__but dep_experience_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1626,0.35000000000000003,'food','dep_great dep_food ','dep_great_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1629,0.14,'indian chinese food','dep_great dep_food dep_indian dep_chinese ','dep_great_food dep_food_indian dep_indian_chinese dep_chinese_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1630,0.16666666666666666,'value','dep_phenomenal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1635,-0.0,'food','dep_speaks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1636,0.0,'Indian Chinese','dep_Best dep_Chinese dep_Indian dep_! ','dep_Best_Chinese dep_Chinese_Indian dep_Indian_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1648,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1651,-0.32063492063492066,'food','dep_intimate dep_ dep_superb dep_homey dep_way dep_worth ','dep_intimate_ dep__superb dep_superb_had dep_homey_way dep_way_worth ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1658,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1659,0.0,'dessserts','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1662,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1688,0.21666666666666667,'food','dep_good dep_dancers ','dep_good_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1691,0.0,'meal','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1705,0.14444444444444446,'Thai style Fried Sea Bass','dep_style dep_Thai dep_Basswhich dep_good ','dep_style_Thai dep_Thai_had dep_Basswhich_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1706,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1707,0.0,'grilled Mahi Mahi','dep_Mahi dep_grilled dep_ dep_drenched ','dep_Mahi_grilled dep_grilled_had dep__drenched ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1709,0.21666666666666667,'lobster roll','dep_roll dep_lobster dep_excellent ','dep_roll_lobster dep_lobster_excellent ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1711,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1715,0.05555555555555555,'Indian food','dep_Great dep_food dep_Indian ','dep_Great_food dep_food_Indian ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1724,-0.05555555555555555,'Indian food','dep_food dep_Indian ','dep_food_Indian dep_Indian_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1731,0.0,'food','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1735,0.0,'toilet','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1736,0.0,'meal','dep_eaten ','dep_eaten_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1739,0.0,'risk','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1747,-0.0,'bibimbap','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1750,0,'nakgibokum','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1751,-0.1111111111111111,'stirfried squid','dep_fried dep_ dep_tasted ','dep_fried_ dep__tasted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1752,0.0,'sauce','dep_tasted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1753,0.0,'side dishes','dep_dishes dep_side dep_passable ','dep_dishes_side dep_side_passable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1757,0.0,'dish','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1760,0.05555555555555555,'farro salad','dep_salad dep_farro dep_tasty dep_potatoes ','dep_salad_farro dep_farro_tasty dep_tasty_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1761,-0.06666666666666667,'mashed yukon potatoes','dep_potatoes dep_mashed dep_yukon dep_salad ','dep_potatoes_mashed dep_mashed_yukon dep_yukon_salad ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1763,0.14444444444444446,'margherita pizza','dep_love dep_pizza dep_margherita dep_looove dep_east dep_village ','dep_love_pizza dep_pizza_margherita dep_margherita_looove dep_looove_east dep_east_village ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1765,0.0,'slice of NYC pizza','dep_quintessential dep_slice dep_pizza dep_NYC dep_ ','dep_quintessential_slice dep_slice_of dep_pizza_NYC dep_NYC_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1766,0.0,'crust','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1767,0.0,'sauce','dep_light ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1768,0.0,'cheese','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1769,-0.18666666666666665,'margherita pizza','dep_pizza dep_margherita dep_like dep_better ','dep_pizza_margherita dep_margherita_like dep_like_better ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1770,-0.8666666666666667,'they','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1783,0.0,'Grilled Black Cod','dep_Cod dep_Grilled dep_Black dep_picked dep_dish ','dep_Cod_Grilled dep_Grilled_Black dep_Black_picked dep_picked_dish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1784,0.07777777777777778,'Grilled Salmon dish','dep_Cod dep_dish dep_Grilled dep_Salmon dep_better ','dep_Cod_the dep_dish_Grilled dep_Grilled_Salmon dep_Salmon_better ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1792,0.0,'Shabu Shabu','dep_Great dep_Shabu ','dep_Great_Shabu ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1793,-0.0,'dishes','dep_couple dep_tried ','dep_couple_other ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1794,-0.0,'Shabu Shabu','dep_Shabu ','dep_Shabu_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1795,0.1380952380952381,'Korean food','dep_classic dep_food dep_Korean dep_twists dep_like ','dep_classic_food dep_food_Korean dep_Korean_of dep_twists_like ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1796,-0.018518518518518528,'fusion twists','dep_twists dep_fusion dep_food ','dep_twists_fusion dep_fusion_food ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1797,0.11666666666666665,'pork belly tacos','dep_tacos dep_pork dep_belly dep_like ','dep_tacos_pork dep_pork_belly dep_belly_like ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1798,-0.3,'hot dogs','dep_dogs dep_hot dep_good ','dep_dogs_hot dep_hot_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1799,-0.25,'pork croquette sandwich','dep_reason dep_fantastic dep_sandwich dep_pork dep_croquette dep_good dep_ dep_perfect ','dep_reason_is dep_fantastic_sandwich dep_sandwich_pork dep_pork_croquette dep_croquette_good dep_good_ dep__perfect ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1800,-0.0,'bun','dep_supermarket dep_squishy ','dep_supermarket_squishy dep_squishy_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1802,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1810,0.2111111111111111,'food','dep_weird ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1812,-0.09999999999999999,'food','dep_comforting dep_serve ','dep_comforting_serve ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1813,-0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1827,0.0,'appetizer','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1828,-0.0,'food','dep_quality ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1841,0.0,'meals','dep_got ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1844,0.0,'spinach','dep_undercooked dep_potatoes ','dep_undercooked_of ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1846,-0.0,'spinach','dep_stomach dep_undercooked ','dep_stomach_again ',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1850,0.17333333333333334,'pizza','dep_good dep_pizza dep_ ','dep_good_pizza dep_pizza_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1851,0.0,'crust','dep_cooked ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1856,0.43333333333333335,'pita','dep_good dep_decor ','dep_good_decor ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1857,0.0,'hummus','dep_decor ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1858,0.08333333333333333,'grilled octopus','dep_octopus dep_grilled dep_decor dep_tasty ','dep_octopus_grilled dep_grilled_decor dep_decor_tasty ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1862,0.0,'Hot Dogs','dep_Great dep_Dogs dep_Hot dep_! ','dep_Great_Dogs dep_Dogs_Hot dep_Hot_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1863,-0.08333333333333333,'hot dogs','dep_dogs dep_hot dep_notch ','dep_dogs_hot dep_hot_notch ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1864,-0.2,'Slamwich','dep_re dep_amazing ','dep_re_amazing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1866,0.0,'belly','dep_tongue ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1869,-0.26666666666666666,'food','dep_great dep_spot ','dep_great_spot ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1870,-0.041666666666666664,'food','dep_Fabulous dep_food dep_ dep_put ','dep_Fabulous_food dep_food_ dep__put ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1874,0.24000000000000002,'Lamb special','dep_special dep_Lamb dep_perfect ','dep_special_Lamb dep_Lamb_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1875,0.17333333333333334,'flank steak','dep_steak dep_flank dep_good ','dep_steak_flank dep_flank_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1877,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1881,0.0,'Hot Dogs','dep_Dogs dep_Hot dep_Taking ','dep_Dogs_Hot dep_Hot_Taking ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1883,-0.041666666666666664,'hot dog','dep_dog dep_hot dep_joint dep_average dep_get ','dep_dog_hot dep_hot_for dep_joint_your dep_average_get ',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1884,0.08333333333333333,'hot dog','dep_dog dep_hot dep_elevated ','dep_dog_hot dep_hot_elevated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1903,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1905,0.0,'staff','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1916,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1928,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1929,0.21666666666666667,'sushi','dep_Serves dep_good dep_sushi dep_ ','dep_Serves_good dep_good_sushi dep_sushi_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1931,0.0,'Green Tea creme brulee','dep_brulee dep_Green dep_Tea dep_creme dep_must ','dep_brulee_Green dep_Green_Tea dep_Tea_creme dep_creme_must ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1932,0.008333333333333331,'restaurant','dep_leave ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1935,0.26666666666666666,'sushi','dep_great ','dep_great_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1942,0.05555555555555555,'food','dep_Good dep_food dep_! ','dep_Good_food dep_food_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1943,0.2222222222222222,'meal','dep_delicious dep_get ','dep_delicious_get ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1946,0.13333333333333333,'onion rings','dep_rings dep_onion dep_great ','dep_rings_onion dep_onion_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1947,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1949,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1950,0.16666666666666666,'lemon chicken','dep_chicken dep_lemon dep_tasted ','dep_chicken_lemon dep_lemon_tasted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1951,-0.03333333333333333,'honey walnut prawns','dep_prawns dep_honey dep_walnut dep_donuts ','dep_prawns_honey dep_honey_walnut dep_walnut_donuts ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1961,0.0,'Italian Food','dep_Fabulous dep_Food dep_Italian dep_! ','dep_Fabulous_Food dep_Food_Italian dep_Italian_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1965,0.0,'food','dep_reminds ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1967,0.08888888888888889,'meal','dep_amazing dep_forget dep_ dep_service ','dep_amazing_forget dep_forget_ dep__service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1972,0.16666666666666666,'food','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1979,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1981,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1982,0.0,'Kafta plate','dep_plate dep_Kafta ','dep_plate_Kafta dep_Kafta_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1985,0.0,'meal','dep_Finally dep_meal dep_remember dep_! ','dep_Finally_a dep_meal_remember dep_remember_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1986,0.0,'food','dep_high dep_quality dep_delivers dep_service dep_ dep_period ','dep_high_quality dep_quality_delivers dep_delivers_and dep_service_ dep__period ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1989,0.26,'food','dep_finest dep_quality dep_enjoy dep_offer ','dep_finest_quality dep_quality_enjoy dep_enjoy_offer ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1990,0.041666666666666664,'food','dep_real dep_ ','dep_real_ dep__for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1994,-0.28888888888888886,'food','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1996,-0.0,'food','dep_okay ','dep_okay_here ',0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1997,-0.0,'Rice','dep_dry ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1998,-0.39999999999999997,'tuna','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1999,-0.0,'Nothing','dep_came ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2001,0.0,'fish','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2005,0.19999999999999998,'fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2006,0.0,'rolls','dep_tend ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2011,0.21666666666666667,'sushi','dep_Freshest dep_sushi dep_love dep_ ','dep_Freshest_sushi dep_sushi_love dep_love_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2013,0.05555555555555555,'miso soup','dep_soup dep_miso ','dep_soup_miso dep_miso_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2014,-0.16666666666666666,'rolls','dep_complex ','dep_complex_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2015,0.0,'sashimi','dep_tasted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2016,0.3333333333333333,'apps','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2023,-0.26666666666666666,'food','dep_great ','',0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2026,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2033,0.4666666666666666,'food','dep_fine ','',0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2034,0.0,'salsa','dep_ dep_normal ','dep__normal dep_normal_than ',0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+2038,-0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2044,0.19999999999999998,'pizza','dep_warm ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2045,-0.0,'sauce','dep_much dep_dough ','dep_much_dough ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2046,0.0,'Sushi','dep_Best dep_Sushi dep_ ','dep_Best_Sushi dep_Sushi_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2047,0.09333333333333332,'Everything','dep_Everything dep_want dep_ dep_fresh dep_ ','dep_Everything_want dep_want_ dep__fresh dep_fresh_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2051,0.10666666666666667,'calamari','dep_best dep_calamari dep_! ','dep_best_calamari dep_calamari_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2063,0.0,'pizza','dep_rocks ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2068,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2077,0.3333333333333333,'sushi','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2079,0.0,'Jellyfish','dep_ dep_Mackerel dep_Tuna dep_roll ','dep__Mackerel dep_Mackerel_Tuna dep_Tuna_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2080,0.0,'Horse Mackerel','dep_Mackerel dep_Horse dep_Jellyfish ','dep_Mackerel_Horse dep_Horse_Jellyfish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2081,0.0,'Blue Fin Tuna','dep_Tuna dep_Blue dep_Fin dep_Jellyfish ','dep_Tuna_Blue dep_Blue_Fin dep_Fin_Jellyfish ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2082,0.0,'Sake Ikura roll','dep_roll dep_Sake dep_Ikura dep_Jellyfish dep_among ','dep_roll_Sake dep_Sake_Ikura dep_Ikura_Jellyfish dep_Jellyfish_among ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2087,0.08333333333333333,'food','dep_Mediocre dep_food ','dep_Mediocre_food ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,neutral
+2089,-0.3333333333333333,'food','dep_mediocre ','',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+2091,0.0,'food','dep_average ','dep_average_with ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2098,-0.08333333333333333,'food','dep_Excellent dep_expensive dep_ dep_ambience ','dep_Excellent_expensive dep_expensive_ dep__ambience ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+2101,-0.08888888888888889,'pumpkin ravioli','dep_ravioli dep_pumpkin dep_loved dep_gnocchi ','dep_ravioli_pumpkin dep_pumpkin_loved dep_loved_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2102,-0.0,'goat cheese gnocchi','dep_gnocchi dep_goat dep_cheese dep_ravioli dep_ ','dep_gnocchi_goat dep_goat_cheese dep_cheese_ravioli dep_ravioli_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2104,-0.0625,'filet mignon on top of spinach and mashed potatoes','dep_ravioli dep_instead dep_plate dep_gnocchis dep_ dep_mignon dep_filet dep_loved dep_top dep_spinach dep_potatoes dep_mashed ','dep_ravioli_instead dep_instead_plate dep_plate_gnocchis dep_gnocchis_ dep__her dep_mignon_filet dep_filet_loved dep_loved_top dep_top_on dep_spinach_and dep_potatoes_mashed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2113,0.041666666666666664,'Indian food','dep_Best dep_food dep_Indian ','dep_Best_food dep_food_Indian dep_Indian_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2115,0.0,'chicken curry','dep_curry dep_chicken dep_masala dep_tikka ','dep_curry_chicken dep_chicken_masala dep_masala_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2116,0.0,'chicken tikka masala','dep_curry dep_tikka dep_chicken dep_masala dep_dishes dep_ ','dep_curry_tikka dep_tikka_chicken dep_chicken_masala dep_masala_dishes dep_dishes_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2117,0.0,'chana masala garbanzo beans','dep_masala dep_chana dep_ dep_ ','dep_masala_chana dep_chana_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2119,-0.0,'food','dep_keeps ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2124,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2125,0.10555555555555556,'saag','dep_various dep_recommend dep_paneer dep_korma ','dep_various_recommend dep_recommend_and dep_paneer_korma ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2126,0.0,'paneer','dep_saag ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2127,0.0,'korma','dep_saag ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2130,-0.04666666666666666,'food','dep_Nice dep_food dep_spice dep_! ','dep_Nice_food dep_food_but dep_spice_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2131,-0.04666666666666666,'food','dep_Nice dep_food dep_spice dep_! ','dep_Nice_food dep_food_but dep_spice_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+2132,0.16666666666666666,'meal','dep_enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2133,0.06666666666666667,'lamb korma','dep_yummy dep_korma dep_lamb dep_ dep_paneer dep_samosas dep_naan ','dep_yummy_korma dep_korma_lamb dep_lamb_had dep__paneer dep_paneer_samosas dep_samosas_naan ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2134,0.0,'saag paneer','dep_paneer dep_saag dep_korma ','dep_paneer_saag dep_saag_korma ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2135,0.0,'samosas','dep_korma ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2136,0.0,'naan','dep_korma ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2137,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2138,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2140,-0.0,'food','dep_mild ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2141,-0.0,'naan','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2142,-0.08333333333333333,'bhartha','dep_enjoyed dep_ dep_tomatoey ','dep_enjoyed_ dep__tomatoey ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2143,0.17333333333333334,'chickpeas','dep_Even dep_good dep_ dep_find ','dep_Even_the dep_good_ dep__find ',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2146,0,'fajita salad','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2147,0,'colorado','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2148,0,'fajitas','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2149,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2151,0.0,'fajita salad','dep_salad dep_fajita dep_ dep_colorado dep_fajitas dep_ ','dep_salad_fajita dep_fajita_ dep__colorado dep_colorado_fajitas dep_fajitas_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2152,0.0,'colorado','dep_salad ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2153,0.2222222222222222,'fajitas','dep_salad dep_delicious ','dep_salad_delicious ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2154,0.3333333333333333,'EVERYTHING','dep_ dep_delicious ','dep__delicious ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2162,0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2168,0.17333333333333334,'taco salads','dep_good dep_salads dep_taco dep_ dep_burritos ','dep_good_salads dep_salads_taco dep_taco_ dep__burritos ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2169,0.0,'burritos','dep_salads ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2170,0.8666666666666667,'enchiladas','dep_good dep_love ','dep_good_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2172,0.43333333333333335,'place','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2175,0.0,'Lebanese Food','dep_Food dep_Lebanese dep_! ','dep_Food_Lebanese dep_Lebanese_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2176,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2178,0.16666666666666666,'food','dep_unforgettable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2180,0.0,'food','','',0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+2181,0.0,'chicken shawarma','dep_shawarma dep_chicken ','dep_shawarma_chicken dep_chicken_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2182,-0.009523809523809525,'treat','dep_tastly dep_ dep_flaky dep_treat dep_! ','dep_tastly_ dep__flaky dep_flaky_treat dep_treat_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2186,0.0,'Hummus','dep_Holy dep_Hummus dep_! ','dep_Holy_Hummus dep_Hummus_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2187,0.16666666666666666,'food','dep_incredible ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2188,0.0,'lunch','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2189,0.8666666666666667,'Dinners','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2192,0.0,'side of potatoes','dep_side dep_potatoes ','dep_side_potatoes ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2193,0.0,'labne yogurt dip','dep_dip ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2194,0.09166666666666667,'hummus','dep_best dep_serve ','dep_best_serve dep_serve_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2204,-0.25,'meal','dep_mediocre dep_beer ','dep_mediocre_beer ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+2208,0.0787878787878788,'shoe string onions','dep_onions dep_shoe dep_string dep_good dep_ dep_pizza dep_asparagus dep_brie ','dep_onions_shoe dep_shoe_string dep_string_good dep_good_ dep__pizza dep_pizza_asparagus dep_asparagus_and dep_brie_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2209,0.0,'goat cheese pizza','dep_pizza dep_goat dep_cheese dep_onions ','dep_pizza_goat dep_goat_cheese dep_cheese_onions ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2210,0.0,'grilled asparagus','dep_asparagus dep_grilled dep_onions ','dep_asparagus_grilled dep_grilled_onions ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2211,-0.06666666666666667,'fried brie with fruit','dep_brie dep_fried dep_onions dep_fruit ','dep_brie_fried dep_fried_onions dep_onions_fruit dep_fruit_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2225,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2236,0.0,'Pizza','dep_Best dep_Coffee ','dep_Best_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2238,0.16666666666666666,'pizza menu','dep_delicious dep_menu dep_pizza ','dep_delicious_menu dep_menu_pizza dep_pizza_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2244,0.7999999999999999,'food','dep_enjoy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2248,0.0,'food','dep_Great dep_keep dep_ dep_location dep_service ','dep_Great_keep dep_keep_ dep__location dep_location_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2251,0.0,'food','dep_Enjoyed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2253,0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2255,0.0,'kafta plate','dep_plate dep_kafta ','dep_plate_kafta dep_kafta_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2257,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2264,0.0,'FOOD','dep_WOW ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2267,0.041666666666666664,'food','dep_Great dep_food dep_! ','dep_Great_food dep_food_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2269,0.0,'Eggs','dep_fruit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2270,0.0,'pancakes','dep_fruit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2271,0.0,'potatoes','dep_fruit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2272,0.10666666666666667,'fresh fruit','dep_Eggs dep_ dep_pancakes dep_potatoes dep_fruit dep_fresh dep_delicious dep_yogurt dep_ ','dep_Eggs_ dep__pancakes dep_pancakes_potatoes dep_potatoes_fruit dep_fruit_fresh dep_fresh_delicious dep_delicious_and dep_yogurt_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2273,0.0,'yogurt','dep_fruit ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2274,-0.16666666666666666,'they','dep_serve ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2276,-0.26666666666666666,'meal','dep_great dep_fish ','dep_great_fish ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,positive
+2277,-0.048484848484848485,'fish on the omikase platter','dep_meal dep_fish dep_decadent dep_platter dep_omikase dep_stringiness dep_ dep_perfect ','dep_meal_the dep_fish_decadent dep_decadent_on dep_platter_omikase dep_omikase_stringiness dep_stringiness_ dep__this ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,positive
+2282,0.0,'sushi','dep_Unbeatable dep_sushi dep_! ','dep_Unbeatable_sushi dep_sushi_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2283,0.0,'thumbs','dep_Two dep_thumbs dep_! ','dep_Two_thumbs dep_thumbs_up ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2284,-0.16666666666666666,'freshness','dep_concerned ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2285,0.0,'nigiri','dep_mouth dep_sashmi ','dep_mouth_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2286,0.0,'sashmi','dep_nigiri ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2287,0.16666666666666666,'rolls','dep_tasty dep_Melt ','dep_tasty_Melt ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2288,0.0,'oyster roll','dep_roll dep_oyster dep_try ','dep_roll_oyster dep_oyster_try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2290,0.13333333333333333,'sushi','dep_best dep_describe ','dep_best_describe dep_describe_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2292,0.08888888888888889,'Chuwam Mushi','dep_best dep_Mushi dep_Chuwam dep_ ','dep_best_Mushi dep_Mushi_Chuwam dep_Chuwam_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2293,-0.16666666666666666,'day','dep_cold ','dep_cold_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2296,0.0,'Sushi','dep_Good dep_Sushi dep_ dep_Price ','dep_Good_Sushi dep_Sushi_ dep__Price ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2299,0.24000000000000002,'house special roll','dep_roll dep_house dep_special dep_good ','dep_roll_house dep_house_special dep_special_good ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2306,0.0,'Brunch','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2307,0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2308,0,'egg white omelet','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2309,0,'Brunch','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2310,0.14444444444444446,'food','dep_prepared ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2311,0.09999999999999999,'egg white omelet','dep_omelet dep_egg dep_white dep_prepared ','dep_omelet_egg dep_egg_white dep_white_prepared ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2314,0.16666666666666666,'desserts','dep_scrumptious ','dep_scrumptious_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2321,0.041666666666666664,'enchiladas','dep_Love dep_soup ','dep_Love_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2322,0.05555555555555555,'chicken soup','dep_soup dep_chicken dep_enchiladas ','dep_soup_chicken dep_chicken_enchiladas ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2323,0.0,'specials','dep_check ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2324,0.0,'cooks','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2328,0.43333333333333335,'sushi','dep_excellent ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2333,-0.0,'food','dep_made ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2342,-0.0,'Caesar salad','dep_salad dep_Caesar dep_ordered ','dep_salad_Caesar dep_Caesar_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2343,-0.5,'nothing','dep_decent dep_exceptional ','dep_decent_exceptional ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2344,0.03333333333333333,'food','dep_Great dep_food dep_ dep_Margaritas dep_! ','dep_Great_food dep_food_ dep__Margaritas dep_Margaritas_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2353,-0.15555555555555556,'meal','dep_one dep_bad ','dep_one_bad dep_bad_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2354,0.041666666666666664,'indain food','dep_food dep_indain dep_try ','dep_food_indain dep_indain_try dep_try_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2357,0.06666666666666667,'ingrediants','dep_Fresh dep_ingrediants dep_tasty dep_ ','dep_Fresh_ingrediants dep_ingrediants_and dep_tasty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2358,0.06666666666666667,'ingrediants','dep_Fresh dep_ingrediants dep_tasty dep_ ','dep_Fresh_ingrediants dep_ingrediants_and dep_tasty_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2359,0.0,'cooking','dep_Moms ','dep_Moms_to ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2360,0.0,'food','dep_Best dep_ dep_service ','dep_Best_ dep__service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2362,0.16666666666666666,'fish','dep_freshest ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2369,0.041666666666666664,'brunch food','dep_average dep_food dep_brunch dep_get ','dep_average_food dep_food_brunch dep_brunch_get ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2371,-0.0,'regular menu','dep_menu dep_regular dep_average ','dep_menu_regular dep_regular_average ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2374,0.19999999999999998,'sushi','dep_fan ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2378,0.0,'Salmon','dep_Fish dep_ dep_Tuna dep_Fluke dep_Tail dep_Cod dep_Mackeral dep_Jellyfish dep_Urchin dep_Shrimp dep_Lobster dep_Bream dep_Trout ','dep_Fish_ dep__Tuna dep_Tuna_Fluke dep_Fluke_Tail dep_Tail_Cod dep_Cod_Mackeral dep_Mackeral_Jellyfish dep_Jellyfish_Urchin dep_Urchin_Shrimp dep_Shrimp_Lobster dep_Lobster_Bream dep_Bream_Trout ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2379,0.0,'Tuna','dep_Salmon dep_Blue dep_Fin dep_Fish dep_ dep_Eel dep_Crab dep_Sardine ','dep_Salmon_Blue dep_Blue_Fin dep_Fin_Fish dep_Fish_ dep__Eel dep_Eel_Crab dep_Crab_Sardine ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2380,0.0,'Fluke','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2381,0.0,'Yellow Tail','dep_Tail dep_Yellow dep_Salmon ','dep_Tail_Yellow dep_Yellow_Salmon ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2382,0.0,'Cod','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2383,0.0,'Mackeral','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2384,0.0,'Jellyfish','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2385,0.0,'Sea Urchin','dep_Urchin dep_Sea dep_Salmon dep_Bream ','dep_Urchin_Sea dep_Sea_Salmon dep_Salmon_Bream ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2386,0.0,'Shrimp','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2387,0.0,'Lobster','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2388,0.0,'Sea Bream','dep_Urchin dep_Bream dep_Sea dep_Salmon ','dep_Urchin_Bream dep_Bream_Sea dep_Sea_Salmon ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2389,0.0,'Trout','dep_Salmon ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2390,0.0,'Milk Fish','dep_Salmon dep_Fish dep_Milk dep_location dep_ dep_Tuna dep_Monk dep_Roe dep_Scallop ','dep_Salmon_Fish dep_Fish_Milk dep_Milk_location dep_location_ dep__Tuna dep_Tuna_Monk dep_Monk_Roe dep_Roe_Scallop ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2391,0.0,'Blue Fin Tuna','dep_Salmon dep_Tuna dep_Blue dep_Fin dep_Fish dep_ dep_Eel dep_Crab dep_Sardine ','dep_Salmon_Tuna dep_Tuna_Blue dep_Blue_Fin dep_Fin_Fish dep_Fish_ dep__Eel dep_Eel_Crab dep_Crab_Sardine ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2392,0.0,'Eel','dep_Tuna ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2393,0.0,'Crab','dep_Tuna ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2394,0.0,'Sardine','dep_Tuna ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2395,0.0,'Monk Fish','dep_Salmon dep_Milk dep_location dep_ dep_Tuna dep_Fish dep_Monk dep_Roe dep_Scallop ','dep_Salmon_Milk dep_Milk_location dep_location_ dep__Tuna dep_Tuna_Fish dep_Fish_Monk dep_Monk_Roe dep_Roe_Scallop ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2396,0.0,'Roe','dep_Fish ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2397,0.0,'Scallop','dep_Fish dep_ dep_Oysters ','dep_Fish_ dep__Oysters ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2398,0.0,'Oysters','dep_Scallop ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2404,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2406,0.13333333333333333,'tuna','dep_best dep_Hands ','dep_best_Hands dep_Hands_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2412,0.0,'sushi','dep_value ','dep_value_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2415,0.16666666666666666,'rolls','dep_tasty ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2416,0.0,'smoked yellowtail','dep_yellowtail dep_smoked ','dep_yellowtail_smoked dep_smoked_as ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2417,0.0,'Chefaposs Choice for sushi','dep_Chef dep_Try dep_Choice dep_sushi ','dep_Chef_Try dep_Try_for dep_Choice_sushi ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2419,-0.04,'pizza','dep_service dep_ dep_poor dep_pizza dep_ ','dep_service_ dep__poor dep_poor_pizza dep_pizza_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2422,0.06666666666666667,'pizza','dep_places dep_pizza dep_Mioposto dep_lacks ','dep_places_and dep_pizza_Mioposto dep_Mioposto_lacks ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2423,-0.16666666666666666,'pizza','dep_frozen ','dep_frozen_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2428,0.3,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2432,0.0,'Seafood','dep_Seafood dep_Plus ','dep_Seafood_Plus ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2435,0.0,'appetizer of oysters lobster crab small size','dep_appetizer dep_oysters dep_ dep_crab dep_ dep_ ','dep_appetizer_of dep_oysters_ dep__crab dep_crab_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2436,0.10666666666666667,'Seabass on lobster risotto','dep_best dep_Seabass dep_risotto dep_lobster ','dep_best_on dep_Seabass_risotto dep_risotto_lobster ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2437,0.3333333333333333,'Caesar salad','dep_salad dep_Caesar dep_superb ','dep_salad_Caesar dep_Caesar_superb ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2439,0.0,'dessert','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2441,-0.0,'food','dep_ok dep_buy ','dep_ok_the ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2459,0.0,'Crab Cakes','dep_Best dep_Cakes dep_Crab ','dep_Best_Cakes dep_Cakes_Crab dep_Crab_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2460,-0.0,'cakes','dep_making ','dep_making_myself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2462,0.0,'seasonal fish','dep_Great dep_fish dep_seasonal dep_seafood dep_ dep_ ','dep_Great_fish dep_fish_seasonal dep_seasonal_and dep_seafood_ dep__with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2463,0.0,'seafood','dep_fish ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2466,0.0,'Pizza','dep_Great dep_Pizza dep_ dep_Service ','dep_Great_Pizza dep_Pizza_ dep__Service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2468,0.0,'pizza','dep_Love dep_especially dep_mushroom ','dep_Love_especially dep_especially_the ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2469,0.0,'mushroom pizza','dep_Love dep_especially dep_pizza dep_mushroom ','dep_Love_especially dep_especially_the dep_pizza_mushroom ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2470,0.21666666666666667,'caeser salad','dep_salad dep_caeser dep_love ','dep_salad_caeser dep_caeser_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2477,-0.10666666666666667,'pizza','dep_great dep_service ','dep_great_about ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2481,0.0,'Breakfast','dep_Great dep_Breakfast ','dep_Great_Breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2482,0.0,'breakfast','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2484,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2486,0.8666666666666667,'breakfast','dep_love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2487,-0.06666666666666667,'crab eggs benedict','dep_eggs dep_crab dep_benedict dep_addicting ','dep_eggs_crab dep_crab_benedict dep_benedict_addicting ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2488,-0.03333333333333333,'menu items','dep_items dep_menu dep_hit ','dep_items_menu dep_menu_hit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2491,0.17500000000000002,'chinese food','dep_best dep_food dep_chinese dep_tasted ','dep_best_food dep_food_chinese dep_chinese_tasted ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2498,0.0,'prawns','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2499,0.0,'batter','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2500,0,'walnuts','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2501,0,'prawns','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2502,0,'batter','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2503,0,'walnuts','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2504,0,'prawns','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2505,0,'batter','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2506,0.03333333333333333,'walnuts','dep_cut ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2508,0.09999999999999999,'yummy','dep_yummy dep_ ','dep_yummy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2509,0.11666666666666667,'honey walnyt prawns','dep_best dep_walnyt dep_honey dep_prawns dep_ ','dep_best_walnyt dep_walnyt_honey dep_honey_prawns dep_prawns_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2510,0.19999999999999998,'brocollis','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2511,0,'scallops','','',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2512,0,'prawns','','',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2513,-0.0,'brocolli','dep_finish ','',0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2514,0.09999999999999999,'scallops','dep_fresh dep_prawns ','dep_fresh_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2515,0.0,'prawns','dep_scallops ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2516,0,'brocolli','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2517,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2518,0.0,'mango ginger creme brulee','dep_brulee dep_mango dep_ginger dep_creme ','dep_brulee_mango dep_mango_ginger dep_ginger_creme dep_creme_had ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2519,0,'mango ginger creme brulee','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2520,0.0,'mouth','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2525,-0.43333333333333335,'sushi','dep_good ','',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,positive
+2533,-0.08333333333333333,'food','dep_ dep_service dep_ok dep_pricey ','dep__service dep_service_ok dep_ok_pricey ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2543,-0.05555555555555555,'Food','dep_pricey dep_wise dep_ dep_ok dep_bit ','dep_pricey_wise dep_wise_ dep__ok dep_ok_but ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2553,0.03333333333333333,'Spanish Mackeral special appetizer','dep_Amazing dep_appetizer dep_Spanish dep_Mackeral dep_special dep_sushi dep_ dep_um dep_ ','dep_Amazing_appetizer dep_appetizer_Spanish dep_Spanish_Mackeral dep_Mackeral_special dep_special_and dep_sushi_ dep__um dep_um_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2554,0.17333333333333334,'box sushi','dep_perfect dep_sushi dep_box dep_appetizer dep_ ','dep_perfect_sushi dep_sushi_box dep_box_appetizer dep_appetizer_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2555,0.0,'eel with avodcao','dep_ dep_eel dep_avodcao ','dep__with dep_eel_avodcao ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2556,0.26666666666666666,'omikase','dep_disappoint ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2558,-0.13333333333333333,'specialty rolls','dep_rolls dep_specialty dep_impressive ','dep_rolls_specialty dep_specialty_impressive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2560,0.0,'Green tea creme brulee','dep_brulee dep_Green dep_tea dep_creme dep_gets ','dep_brulee_Green dep_Green_tea dep_tea_creme dep_creme_gets ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2562,-0.10123456790123457,'sushi','dep_nt dep_cheapest dep_sushi dep_worth dep_ ','dep_nt_the dep_cheapest_sushi dep_sushi_but dep_worth_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2565,-0.0,'food','dep_average dep_Schooner ','dep_average_Schooner ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2567,0.16666666666666666,'food','dep_good dep_indifferent dep_ dep_staff ','dep_good_indifferent dep_indifferent_ dep__staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2578,0,'sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2579,0.19999999999999998,'fish','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2581,0,'fish','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2584,0.0,'Dungeness crabs','dep_crabs dep_Dungeness dep_! ','dep_crabs_Dungeness dep_Dungeness_here ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2585,0.0,'seafood dinners','dep_high dep_quality dep_dinners dep_seafood ','dep_high_quality dep_quality_dinners dep_dinners_seafood dep_seafood_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2590,0.015873015873015876,'black cod in sake kasu','dep_cod dep_black dep_enjoyed dep_kasu dep_sake ','dep_cod_black dep_black_enjoyed dep_enjoyed_in dep_kasu_sake ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2591,-0.037037037037037035,'dessert of a port and chocolate tasting','dep_unusual dep_dessert dep_port dep_tastingyummy ','dep_unusual_with dep_dessert_port dep_port_a ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2593,0.0,'Breakfast','dep_Great dep_Breakfast ','dep_Great_Breakfast ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2595,-0.027777777777777776,'corn beef hash','dep_hash dep_corn dep_beef dep_drinks ','dep_hash_corn dep_corn_beef dep_beef_drinks ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2597,0.0,'B Fast burritos','dep_coffee dep_ dep_burritos dep_B dep_Fast dep_drinks ','dep_coffee_ dep__burritos dep_burritos_B dep_B_Fast dep_Fast_drinks ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2610,0.15,'cheese fries','dep_fries dep_cheese dep_awesome ','dep_fries_cheese dep_cheese_awesome ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2611,0.0,'Food','dep_Good dep_Food dep_ dep_Service dep_Prices dep_ ','dep_Good_Food dep_Food_ dep__Service dep_Service_Prices dep_Prices_ ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2618,0.0,'shellfish and shrimp appetizer','dep_got dep_shellfish dep_appetizer dep_shrimp ','dep_got_and dep_shellfish_appetizer dep_appetizer_shrimp ',0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,neutral
+2620,-0.027777777777777776,'seafood','dep_nt dep_freshest dep_OK dep_ever dep_ dep_taste dep_presentation ','dep_nt_the dep_freshest_OK dep_OK_ever dep_ever_ dep__but dep_taste_and ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2621,0.0,'asparagus','dep_picked dep_ dep_turned ','dep_picked_ dep__turned ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2622,0.0,' oz steak','dep_oz dep_ dep_steak dep_came ','dep_oz_ dep__steak dep_steak_came ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2623,0.0,'steak','dep_done ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2624,0,'peppercorn sauce','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,neutral
+2625,0,'red wine reduction','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,neutral
+2626,0.0,'peppercorn sauce','dep_either dep_sauce dep_peppercorn dep_reduction ','dep_either_a dep_sauce_peppercorn dep_peppercorn_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2627,0.0,'red wine reduction','dep_reduction dep_red dep_wine dep_sauce ','dep_reduction_red dep_red_wine dep_wine_sauce ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2628,0.0,'steak','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2629,0.0,'signature','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2630,0.0,'MSG','dep_MSG dep_ ','dep_MSG_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+2631,0.0,'restaurant','dep_left ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2632,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2633,0.0,'desert','dep_ending ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2634,0.2888888888888889,'dinner','dep_perfect ','dep_perfect_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2642,-0.14444444444444446,'food','dep_ dep_good dep_sake dep_know dep_japanese ','dep__good dep_good_sake dep_sake_know dep_know_japanese dep_japanese_about ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2645,-0.0,'lobster  ways','dep_BEST dep_ways dep_lobster dep_ dep_dishes ','dep_BEST_was dep_ways_lobster dep_lobster_ dep__dishes ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2648,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2654,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+2662,0.3333333333333333,'pizza','dep_delicious ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2663,0.3,'salads','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2673,0,'sushi','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2675,0,'pizzas','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2679,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2680,0,'pizzas','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2681,0.0,'Pizza Ensalata','dep_Ensalata dep_Pizza dep_Try ','dep_Ensalata_Pizza dep_Pizza_Try ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2682,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2688,-0.2333333333333333,'food','dep_sinful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2691,-0.0,'pancakes','dep_specialty dep_decadent dep_pancakes dep_ dep_times dep_wowed dep_ ','dep_specialty_here dep_decadent_pancakes dep_pancakes_ dep__but dep_times_and dep_wowed_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2692,-0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2693,0.0,'breakfast','dep_average ','dep_average_than ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2695,0.0,'eats','dep_Good dep_eats dep_ ','dep_Good_eats dep_eats_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2698,0.0,'fish','dep_use dep_half ','dep_use_half ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2699,0.13333333333333333,'chef special dinner','dep_dinner dep_chef dep_special ','dep_dinner_chef dep_chef_special dep_special_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2702,-0.05555555555555555,'exotic fish','dep_fish dep_exotic ','dep_fish_exotic dep_exotic_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2705,0,'crab cakes','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2707,0.07407407407407407,'honwy walnut prawns','dep_dish dep_prawns dep_honwy dep_walnut dep_ dep_outstanding dep_ ','dep_dish_are dep_prawns_honwy dep_honwy_walnut dep_walnut_ dep__outstanding dep_outstanding_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+2712,0.3333333333333333,'food','dep_outstanding ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2716,0.0,'Delicious','dep_Delicious dep_! ','dep_Delicious_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2718,0.3,'food','dep_fantastic ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2727,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2731,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2733,0.19999999999999998,'sushi','dep_fresh ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+2734,0,'sushi','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2735,0.0,'place','dep_portions ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2740,-0.17777777777777778,'pizza','dep_best ','dep_best_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2745,0.8666666666666667,'Food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2748,-0.39999999999999997,'appetizer','dep_interesting ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2749,-0.08333333333333333,'Creme Brulee','dep_Brulee dep_Creme dep_savory ','dep_Brulee_Creme dep_Creme_savory ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2758,0.0,'food','dep_exeptional ','dep_exeptional_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2763,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2764,-0.17777777777777778,'filet mignon','dep_mignon dep_filet dep_best ','dep_mignon_filet dep_filet_best ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2773,0.3,'service','dep_awesome ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2774,0.04,'chips  and salsa','dep_yummy dep_chips dep_salsa ','dep_yummy_and dep_chips_salsa ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2778,0.03333333333333333,'Raouls chicken vegetable soup','dep_soup dep_Raouls dep_chicken dep_vegetable dep_rocks ','dep_soup_Raouls dep_Raouls_chicken dep_chicken_vegetable dep_vegetable_rocks ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2779,0.0,'catering','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+2796,-0.0,'eggs','dep_send ','',0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2797,0.15,'meal','dep_rejected ','',0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2798,0.0,'dish','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+2814,-0.12962962962962965,'manila clams','dep_feeling dep_ dep_Ray dep_fantastic dep_clams dep_manila dep_seasoned dep_scallops dep_pile dep_ ','dep_feeling_ dep__Ray dep_Ray_fantastic dep_fantastic_clams dep_clams_manila dep_manila_seasoned dep_seasoned_with dep_scallops_and dep_pile_ ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2815,-0.06666666666666667,'soy dressing','dep_tasty dep_dressing dep_soy ','dep_tasty_in dep_dressing_soy ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2816,-0.06666666666666667,'butter sauce','dep_sublime dep_sauce dep_butter dep_atop ','dep_sublime_sauce dep_sauce_butter dep_butter_atop ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2817,-0.0,'Shilshole Sampler','dep_assortment ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2819,0.08333333333333333,'seared Alaskan sea scallops','dep_scallops dep_seared dep_Alaskan dep_sea dep_enjoyed dep_complemented dep_ dep_hearts dep_fennel ','dep_scallops_seared dep_seared_Alaskan dep_Alaskan_sea dep_sea_enjoyed dep_enjoyed_complemented dep_complemented_ dep__hearts dep_hearts_fennel ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2821,-0.0,'scallops','dep_cooked ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2823,0.05555555555555555,'grilled Alaskan King Salmon','dep_Salmon dep_grilled dep_Alaskan dep_King dep_enjoyed ','dep_Salmon_grilled dep_grilled_Alaskan dep_Alaskan_King dep_King_enjoyed ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2824,0.1111111111111111,'creamed Washington russet potatoes','dep_delectable dep_Washington dep_creamed dep_enjoyed dep_potatoes dep_russet dep_beans ','dep_delectable_Washington dep_Washington_creamed dep_creamed_with dep_enjoyed_potatoes dep_potatoes_russet dep_russet_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2825,0.1388888888888889,'green beans','dep_crisp dep_beans dep_green dep_potatoes ','dep_crisp_beans dep_beans_green dep_green_potatoes ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2826,0.0,'plate','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+2832,0.0,'food','dep_server ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

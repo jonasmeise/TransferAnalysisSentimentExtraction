@@ -91,24 +91,3 @@
 1834,-0.24166666666666667,'torture','dep_passive dep_ dep_aggressive ','dep_passive_ dep__aggressive dep_aggressive_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
 1882,-0.0,'Bark','','',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
 1900,0.25,'restaurant','dep_expensive dep_NYC dep_disrespectful ','dep_expensive_NYC dep_NYC_disrespectful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2004,0.0,'service','dep_value ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2017,-0.16666666666666666,'place','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2029,0.0,'downtown','dep_Mexican ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2100,-0.08333333333333333,'food','dep_Excellent dep_expensive dep_ dep_ambience ','dep_Excellent_expensive dep_expensive_ dep__ambience ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,negative
-2110,0.0,'night','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
-2112,-0.06666666666666667,'bit','dep_ dep_expensive ','dep__expensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2114,0.16666666666666666,'prices','dep_reasonable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2294,0.0,'tip','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2330,0.16666666666666666,'price','dep_right ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2526,0.09523809523809523,'restaurant','dep_priced dep_pretense dep_ ','dep_priced_pretense dep_pretense_ ',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,negative
-2529,-0.0,'alcohol','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2531,0.0,'restaurant','dep_categorized ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2534,-0.08333333333333333,'food','dep_ dep_service dep_ok dep_pricey ','dep__service dep_service_ok dep_ok_pricey ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2544,-0.0,'restaurant','dep_place ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2613,0,'service','','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
-2635,-0.16666666666666666,'tip','dep_tax ','',1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,neutral
-2754,0.39999999999999997,'service','dep_improved ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2767,-0.0,'places','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2775,0.3,'prices','dep_fabulous ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
-2782,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
-2786,-0.0,'Snooze','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative

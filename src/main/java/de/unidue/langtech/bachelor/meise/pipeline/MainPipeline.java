@@ -30,10 +30,8 @@ import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.AdditiveRegression;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.SelectedTag;
-import weka.filters.unsupervised.attribute.StringToWordVector;
 import weka.packages.ThresholdSelector;
-import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
-import de.unidue.langtech.bachelor.meise.files.DataParser;
+import de.unidue.langtech.bachelor.meise.evaluation.*;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 
 public class MainPipeline {
@@ -56,15 +54,15 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
-		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_BUTknot\\old\\constrained");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
+		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
 		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
 		
-		//myPipeline.foldLearning("src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained", "src\\main\\resources\\learningtest_AUEB\\subtask1\\old\\constrained\\analysis2");
+		myPipeline.foldLearning();
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -86,12 +84,12 @@ public class MainPipeline {
         
         AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
         
-        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(BUTknot_ClassifierGenerator.class, 
-        		BUTknot_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-        		BUTknot_ClassifierGenerator.PARAM_RELATION_NAME, "BUTknot",
-        		BUTknot_ClassifierGenerator.PARAM_CONSTRAINED, "true",
-        		BUTknot_ClassifierGenerator.PARAM_USE_OLD_DATA, "true",
-        		BUTknot_ClassifierGenerator.PARAM_IS_TEST_DATA, "false");
+        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator3.class, 
+        		AUEB_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+        		AUEB_ClassifierGenerator3.PARAM_RELATION_NAME, "AKTSKI",
+        		AUEB_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
+        		AUEB_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
+        		AUEB_ClassifierGenerator3.PARAM_IS_TEST_DATA, "false");
         
         SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, writer);
         
@@ -106,12 +104,12 @@ public class MainPipeline {
                 RawJsonReviewReader.PARAM_USE_OLD_DATA, "true",
                 RawJsonReviewReader.PARAM_SEARCH_SUBFOLDERS, "false");
         
-        AnalysisEngineDescription writer2 = AnalysisEngineFactory.createEngineDescription(BUTknot_ClassifierGenerator.class, 
-        		BUTknot_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-        		BUTknot_ClassifierGenerator.PARAM_RELATION_NAME, "BUTknot",
-        		BUTknot_ClassifierGenerator.PARAM_CONSTRAINED, "true",
-        		BUTknot_ClassifierGenerator.PARAM_USE_OLD_DATA, "true",
-        		BUTknot_ClassifierGenerator.PARAM_IS_TEST_DATA, "true");
+        AnalysisEngineDescription writer2 = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator3.class, 
+        		AUEB_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+        		AUEB_ClassifierGenerator3.PARAM_RELATION_NAME, "AKTSKI",
+        		AUEB_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
+        		AUEB_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
+        		AUEB_ClassifierGenerator3.PARAM_IS_TEST_DATA, "true");
         
         SimplePipeline.runPipeline(reader2, tokenizer, tagger, lemmatizer, dependency, writer2);
 	}
@@ -159,9 +157,7 @@ public class MainPipeline {
         SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
 	
-	public void foldLearning(String arffFileFolder, String outputPath) throws Exception {
-		 ClassifierHandler myClassifierHandler = new ClassifierHandler();
-		 
+	public void foldLearning() throws Exception {	 
 		 LibSVM svm = new LibSVM();
 		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
 		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_C_SVC, LibSVM.TAGS_SVMTYPE));
@@ -188,75 +184,9 @@ public class MainPipeline {
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 		 ibk.setMeanSquared(true);
-		 
-		 
-		CVParameterSelection cps = new CVParameterSelection();
-		//svm.setWeights("1000 1");
-		cps.setClassifier(svm);
-		cps.setNumFolds(4);
-		cps.setDebug(true);
-		String[] params = new String[3];
-		params[0] = "D 2 4 3";
-		params[1] = "C 0.01 100 3";
-		params[2] = "G 0.0001 0.1 3";
-		cps.setCVParameters(params);
-		
-		SGD sgd = new SGD();
-		sgd.setLossFunction(new SelectedTag(SGD.LOGLOSS, SGD.TAGS_SELECTION));
-		sgd.setLearningRate(0.41);
-		sgd.setEpsilon(0.01);
-		sgd.setEpochs(20);
-		
-		AdditiveRegression ar = new AdditiveRegression();
-		ar.setDebug(true);
-		ar.setClassifier(svm);
-		
-		ThresholdSelector ts = new ThresholdSelector();
-		ts.setClassifier(sgd);
-		ts.setManualThresholdValue(0.50);
-		
-		myClassifier = svm;
-		 //you may change myClassifier in order to set up a custom classifier algorithm
-		 myClassifierHandler.useCFV = false;
-		
-		//remove this part if you do not want to enable ablation test
 
-		 /*removeArray = new int[7];
-		 removeArray[0] = 0;
-		 removeArray[1] = 2; 
-		 removeArray[2] = 3; 
-		 removeArray[3] = 4; 
-		 removeArray[4] = 6; 
-		 removeArray[5] = 7; 
-		 removeArray[6] = 8; */
-		 
-		 
-		//this last part will be cycled over: in this case, all attributes 1-9 are removed (if they are nott already removed)
-		if(removeArray!=null) {
-			int maxIteration = removeArray[removeArray.length-1];
-			
-			for(int i=1;i<maxIteration;i++) {
-				//check if it isn't already included
-				String alreadyIncluded="";
-				boolean allGood=true;
-				
-				for(int check=0;check<removeArray.length-1;check++) {
-					alreadyIncluded += removeArray[check];
-					if(removeArray[check]==i) {
-						allGood=false;
-					}
-				}
-				
-				if(allGood) {
-					removeArray[removeArray.length-1] = i;
-					System.out.println("Ablation test: Remove features '" + alreadyIncluded + "' + '" + i + "'.");
-					myClassifierHandler.removeArray = removeArray;
-						 
-					myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),5,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + "_" + alreadyIncluded + "_" + i + ".txt", false, myClassifier);
-				}
-			}
-		} else {
-			 myClassifierHandler.generateFoldsAndLearn(fu.getFilesInFolder(arffFileFolder, ".arff", false),4,1,LibSVM.KERNELTYPE_LINEAR, 0, outputPath + ".txt", true, myClassifier);
-		}
+		BUTknot_Evaluator myEvaluator = new BUTknot_Evaluator();
+		myEvaluator.useOldData(true);
+		myEvaluator.execute(1);
 	}
 }

@@ -1,0 +1,51 @@
+@relation restaurant#prices
+
+@attribute id numeric
+@attribute lexi1_avg numeric
+@attribute lexi1_high numeric
+@attribute lexi1_low numeric
+@attribute lexi2_avg numeric
+@attribute lexi2_high numeric
+@attribute lexi2_low numeric
+@attribute lexi3_avg numeric
+@attribute lexi3_high numeric
+@attribute lexi3_low numeric
+@attribute target string
+@attribute unigrams string
+@attribute POS string
+@attribute unigrams_count numeric
+@attribute ends_on_special numeric
+@attribute different_aspects numeric
+@attribute includes_capslock numeric
+@attribute negation_type_1 numeric
+@attribute negation_type_2 numeric
+@attribute negation_type_3 numeric
+@attribute negation_type_4 numeric
+@attribute negation_type_5 numeric
+@attribute negation_type_6 numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+76,0.0,0.0,0.0,-0.1111111111111111,0.0,0.0,-0.1111111111111111,0.0,0.0,'target_NULL','However, the value and service are both severely lacking ','RB , DT NN CC NN VBP DT RB VBG . ',9,0,2,0,0,0,0,0,0,0,negative
+89,0.0,0.0,0.0,-0.1111111111111111,0.0,0.0,-0.05555555555555555,0.0,0.0,'target_place','The only drawback is that this place is really expensive and the portions are on the small side ','DT JJ NN VBZ IN DT NN VBZ RB JJ CC DT NNS VBP IN DT JJ NN . ',18,0,2,0,0,0,0,0,0,0,negative
+99,0.0,0.0,0.0,-0.1111111111111111,1.0,0.0,-0.05555555555555555,0.0,0.0,'target_NULL',' Pretty cheap for sit down Mexican AND downtown ','RB JJ IN VB RP JJ CC NN . ',9,0,2,1,0,0,0,0,0,0,positive
+170,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Excellent food, nice ambience, fairly expensive ','JJ NN , JJ NN , RB JJ ',6,0,3,0,0,0,0,0,0,0,negative
+180,0.03529411764705883,0.4,0.0,0.058823529411764705,1.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','I recommend it for a night when you want to splurge  (it was a bit expensive) ','PRP VBP PRP IN DT NN WRB PRP VBP TO VB . ',17,1,2,1,0,0,0,0,0,0,negative
+182,0.03529411764705883,0.4,0.0,0.058823529411764705,1.0,0.0,0.029411764705882353,0.5,0.0,'target_NULL','I recommend it for a night when you want to splurge  (it was a bit expensive) ','-LRB- PRP VBD DT NN JJ -RRB- ',17,0,2,1,0,0,0,0,0,0,negative
+184,0.06,0.6,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_NULL','The best thing is, the prices are also quite reasonable ','DT JJS NN VBZ , DT NNS VBP RB RB JJ . ',10,0,1,0,0,0,0,0,0,0,positive
+364,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','$6 with tip ','$ CD IN NN . ',3,0,1,1,0,0,0,0,0,0,positive
+400,0.0,0.0,0.0,0.2,1.0,0.0,0.0,0.0,0.0,'target_NULL','The price was right too ','DT NN VBD JJ RB . ',5,0,1,0,0,0,0,0,0,0,positive
+595,0.022222222222222223,0.6,-0.2,0.0,1.0,0.0,-0.027777777777777776,0.0,0.0,'target_restaurant',' The sushi here is perfectly good, but for $5 a piece, either the slices of fish should be larger, or there should be no pretense that this is a moderately priced restaurant (even for NYC) ','DT NNS RB VBZ RB JJ , CC IN $ CD DT NN , CC DT NNS IN NN MD VB JJR , CC EX MD VB DT NN IN DT VBZ DT RB VBN NN -LRB- RB IN NNP -RRB- . ',36,0,4,1,0,0,0,0,0,1,negative
+598,0.0,0.0,0.0,0.0,0.0,0.0,-0.03333333333333333,0.5,0.0,'target_NULL','We easily spent more than $40 per person (not including alcohol) and were still hungry ','PRP RB VBD JJR IN $ CD IN NN -LRB- RB VBG NN -RRB- CC VBD RB JJ . ',15,0,2,1,1,0,0,0,0,0,negative
+600,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.0,0.0,0.0,'target_restaurant','Im astonished that this restaurant is categorized as $$$ rather than $$$$ ','PRP VBP JJ IN DT NN VBZ VBN IN $ $ $ RB IN $ $ $ $ . ',12,0,1,1,0,0,0,0,0,0,negative
+603,0.0,0.0,0.0,-0.2,0.0,0.0,0.1,0.5,0.0,'target_NULL','Terrible service, food ok, pricey ','JJ NN , NN UH , JJ ',5,0,3,0,0,0,0,0,0,0,negative
+613,0.0,0.0,0.0,0.0,1.0,0.0,0.05263157894736842,1.0,0.0,'target_restaurant','Food wise, its ok but a bit pricey for what you get considering the restaurant isnt a fancy place ','NN JJ , PRP$ UH CC DT NN JJ IN WP PRP VBP VBG DT NN VBZ RB DT JJ NN . ',19,0,3,0,0,1,0,0,0,1,negative
+682,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Good Food, Great Service, Average Prices (For the Strip) ','NNP NNP , NNP NNP , JJ NNS -LRB- IN DT NNP -RRB- ',9,0,3,0,0,0,0,0,0,0,neutral
+704,0.0,0.0,0.0,0.0,0.0,0.0,0.020833333333333332,1.0,0.0,'target_NULL','The dinner only took us about an hour and the prices were alright for the strip, almost $50/pp after tax and tip (about average) ','DT NN RB VBD PRP IN DT NN CC DT NNS VBD RB IN DT NN , RB $ CD SYM NN IN NN CC NN -LRB- IN JJ -RRB- . ',24,0,2,0,0,0,0,0,0,0,neutral
+716,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Overpriced ','VBN ',1,0,1,0,0,0,0,0,0,0,negative
+740,0.09999999999999999,0.6,0.0,0.16666666666666666,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Excellent food, nice ambience, fairly expensive ','JJ ',6,0,3,0,0,0,0,0,0,0,negative
+821,0.03333333333333333,0.4,0.0,0.08333333333333333,1.0,0.0,0.16666666666666666,1.0,0.0,'target_NULL','Although the service could be improved considering the money you put in ','IN DT NN MD VB VBN VBG DT NN PRP VBP RP . ',12,0,2,0,0,0,0,0,0,0,negative
+834,0.02727272727272727,0.6,0.0,0.09090909090909091,1.0,0.0,0.11363636363636363,1.0,0.0,'target_NULL','The most pleasant surprise was the check that did not exceed my expectations as it always happens in most of the places ','DT RBS JJ NN VBD DT NN WDT VBD RB VB PRP$ NNS IN PRP RB VBZ IN JJS IN DT NNS . ',22,0,1,0,1,0,0,0,0,0,positive
+842,0.06153846153846154,0.8,0.0,0.07692307692307693,1.0,0.0,0.0,0.0,0.0,'target_NULL','The chips  and salsa are so yummy, and the prices are fabulous ','DT NNS CC NN VBP RB JJ , CC DT NNS VBP JJ . ',13,0,2,1,0,0,0,0,0,0,positive
+849,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'target_NULL','Insultingly Overpriced ','RB VBN ',2,0,1,0,0,0,0,0,0,0,negative
+853,0.02631578947368421,0.6,0.0,0.02631578947368421,1.0,0.0,0.0,1.0,0.0,'target_Snooze','The presentation of Snooze is excellent and it is one of those places that you feel more sophisticated just for being there; but peel back the layers and you have an overpriced IHOP with a high brow menu ','DT NN IN NNP VBZ JJ CC PRP VBZ CD IN DT NNS WDT PRP VBP RBR JJ RB IN VBG RB : CC VB RP DT NNS CC PRP VBP DT VBN NNP IN DT JJ NN NN . ',38,0,3,1,0,0,0,0,0,1,negative
