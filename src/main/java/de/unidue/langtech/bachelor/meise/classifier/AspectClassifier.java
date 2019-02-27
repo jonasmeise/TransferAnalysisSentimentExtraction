@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+import de.unidue.langtech.bachelor.meise.evaluation.Baseline2_Evaluator;
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.classifiers.Classifier;
@@ -30,6 +31,7 @@ public class AspectClassifier {
 	
 	public String sourcePath;
 	public FilteredClassifier classifier;
+	public ClassifierHandler caller;
 	public Instances instances;
 	public Evaluation evaluation;
 	private FileUtils fu;
@@ -259,6 +261,9 @@ public class AspectClassifier {
 		s2wFilter.setLowerCaseTokens(true);	
 		s2wFilter.setAttributeNamePrefix("s2w");
 		
+		if(caller!=null && caller.getClass().equals(Baseline2_Evaluator.class)) {
+			s2wFilter.setWordsToKeep(1000);
+		}
 		//s2wFilter.setMinTermFreq(8);
 		
 		s2wFilter.setDoNotOperateOnPerClassBasis(true);

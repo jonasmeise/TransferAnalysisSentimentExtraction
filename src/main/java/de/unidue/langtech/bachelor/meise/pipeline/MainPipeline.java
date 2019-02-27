@@ -54,7 +54,7 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask1\\unconstrained", "*.xmi");
+		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
 		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
@@ -126,11 +126,11 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator.class, 
-	        		OwnClassifier_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFile, 
-	        		OwnClassifier_ClassifierGenerator.PARAM_RELATION_NAME, "OwnClassifier",
-	        		OwnClassifier_ClassifierGenerator.PARAM_CONSTRAINED, "false",
-	        		OwnClassifier_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Baseline2_ClassifierGenerator3.class, 
+	        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		Baseline2_ClassifierGenerator3.PARAM_RELATION_NAME, "Baseline2",
+	        		Baseline2_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
+	        		Baseline2_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -185,8 +185,8 @@ public class MainPipeline {
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 		 ibk.setMeanSquared(true);
 
-		BUTknot_Evaluator myEvaluator = new BUTknot_Evaluator();
-		myEvaluator.useOldData(true);
-		myEvaluator.execute(1);
+		Baseline2_Evaluator myEvaluator = new Baseline2_Evaluator();
+		myEvaluator.useOldData(false);
+		myEvaluator.execute(3);
 	}
 }

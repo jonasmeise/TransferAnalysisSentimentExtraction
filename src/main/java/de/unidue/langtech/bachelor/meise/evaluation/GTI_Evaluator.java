@@ -32,22 +32,6 @@ public class GTI_Evaluator extends ClassifierHandler{
 			
 			LibSVM svm = new LibSVM();
 			svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
-
-
-			//CVP was already conducted, the optimal parameters are in svm
-			CVParameterSelection cvp = new CVParameterSelection();
-			cvp.setClassifier(svm);
-			String[] options = new String[3];
-			options[0] = "K 0 3 4";
-			options[1] = "C 0.01 1000 10";
-			options[2] = "G 0.0001 0.01 10";
-			
-			try {
-				cvp.setNumFolds(5);
-				cvp.setCVParameters(options);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			
 			generateFoldsAndLearn(fetchFiles(), 10, 1, false, svm);
 		} else {

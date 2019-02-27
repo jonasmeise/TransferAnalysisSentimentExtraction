@@ -55,7 +55,8 @@ public abstract class ClassifierHandler{
 			try {
 				//if learning for folds: continue from her
 				ArrayList<Evaluation> allEvaluations;
-				AspectClassifier foldClassifier = new AspectClassifier(outerParameterClassifier);;
+				AspectClassifier foldClassifier = new AspectClassifier(outerParameterClassifier);
+				foldClassifier.caller = this;
 				foldClassifier.idfTransformEnabled=idfTransformEnabled;
 				
 				if(removeArray!=null) {

@@ -6,6 +6,7 @@ import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.SGD;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.SelectedTag;
+import weka.packages.ThresholdSelector;
 
 public class Baseline2_Evaluator extends ClassifierHandler{
 	
@@ -36,8 +37,19 @@ public class Baseline2_Evaluator extends ClassifierHandler{
 			if(removeArray==null) {
 				setOutputPath(sourcePath + "analysis.txt");
 			}
+			
+			svm.setProbabilityEstimates(true);
+			ThresholdSelector ts = new ThresholdSelector();
 
-			generateFoldsAndLearn(fetchFiles(), 10, 1, false, svm);
+			try {
+				ts.setManualThresholdValue(0.4);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			ts.setClassifier(svm);
+
+			generateFoldsAndLearn(fetchFiles(), 10, 1, false, ts);
 		} else {
 			myLog.log("Wrong slot: " + slot);
 		}

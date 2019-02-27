@@ -20,6 +20,10 @@ import de.unidue.langtech.bachelor.meise.type.Tree;
 import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
+//based on SE-ABSA16's Baseline for Slot 1
+//the 1000-words-to-keep threshold is manually set in AspectClassifier's createS2W-method
+
+
 public class Baseline2_ClassifierGenerator3 extends ArffGenerator{
 
 	int cutoff = 200; //Maximale Saetze/Datensatz
@@ -88,10 +92,10 @@ public class Baseline2_ClassifierGenerator3 extends ArffGenerator{
 						unigrams += singleToken.getLemma().getValue() + " ";
 					}
 					
-					fullList.add("'target_" + identifierString.replaceAll(regexIgnore, "") + "'");
+					fullList.add("'target_" + identifier.replaceAll(regexIgnore, "") + "'");
 					fullList.add("'" + unigrams.replaceAll(regexIgnore, "") + "'");
 
-					fullList.add(identifier.replaceAll(regexIgnore, ""));
+					fullList.add("valence");
 
 					fullList.add(currentValence);
 					sortedLines.add(fullList);
@@ -127,27 +131,20 @@ public class Baseline2_ClassifierGenerator3 extends ArffGenerator{
 		String[] types = new String[1];
 		types[0] = "valence";
 		
-		String[] types2 = new String[8];
-		types2[0] = "Ausstattung";
-		types2[1] = "Hotelpersonal";
-		types2[2] = "Lage";
-		types2[3] = "OTHER";
-		types2[4] = "Komfort";
-		types2[5] = "Preis-Leistungs-Verhltnis";
-		types2[6] = "WLAN";
-		types2[7] = "Sauberkeit";
+		String[] types2 = new String[1];
+		types2[0] = "valence";
 		
 		for(int i=0;i<types2.length;i++) {
 			ArrayList<String> relations = new ArrayList<String>();
 			
 			relations.add("id numeric");
 			//for nouns, verbs, adjectives
-			relations.add("target string");
+			relations.add("aspectlabel string");
 			relations.add("unigrams string");
 
 			relations.add("type string");
 			
-			relations.add("aspecttype " + generateTupel(new String[] {"positive", "negative"}));	
+			relations.add("polarity " + generateTupel(new String[] {"positive", "negative"}));	
 			
 			allClassAttributes.add(types2[i]);
 			

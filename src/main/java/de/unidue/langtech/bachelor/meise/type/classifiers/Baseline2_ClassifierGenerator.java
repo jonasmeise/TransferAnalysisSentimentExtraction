@@ -2,6 +2,9 @@ package de.unidue.langtech.bachelor.meise.type.classifiers;
 
 import static org.apache.uima.fit.util.JCasUtil.selectCovered;
 
+//based on SE-ABSA16's Baseline for Slot 1
+//the 1000-words-to-keep threshold is manually set in AspectClassifier's createS2W-method
+
 import java.util.ArrayList;
 import java.util.Collection;
 
