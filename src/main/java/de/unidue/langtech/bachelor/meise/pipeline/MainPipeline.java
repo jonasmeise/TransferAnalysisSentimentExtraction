@@ -36,14 +36,7 @@ import de.unidue.langtech.bachelor.meise.files.FileUtils;
 
 public class MainPipeline {
 	
-	String inputFilePath = "src/main/resources/dataset5";
-	String outputFilePath = "src/main/resources/dataset5/output_5.tsv";
-	String modelFilePath = "src/main/resources/data800.model";
-	String arffFilePath = "src/main/resources/data800.arff";
-	String tsvOutput = "src/main/resources/output3.tsv";
 	FileUtils fu;
-	public boolean constrained = true;
-	public int[] removeArray;
 	
 	public MainPipeline() {
 		fu = new FileUtils();
@@ -54,15 +47,16 @@ public class MainPipeline {
 
 		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
 		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
+		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
 		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
 		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
 		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
 		
 		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
-		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");
+		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");		
 		
-		myPipeline.foldLearning();
+		//myPipeline.foldLearning();
+		myPipeline.executeAnnotationStudy();
 	}
 	
 	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
@@ -135,30 +129,23 @@ public class MainPipeline {
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
 	
-	public void executeReviewRegressionTask(String xmiPath, String folderPath, String outputPath, String namingConvention, String checkSubfolders) throws UIMAException, IOException {
-		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+	public void executeAnnotationStudy() throws UIMAException, IOException {
+		System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+		 
+        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
                 XmiReader.PARAM_SOURCE_LOCATION,
-                xmiPath,
+                "src\\main\\resources\\dataset2\\split",
                 XmiReader.PARAM_PATTERNS, "*.xmi",
                 XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
         
-		AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
-		
-        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(
-        		RQ2_ReviewLevelRegression_ClassifierGenerator.class, RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputPath,
-        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, "false",
-        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RQ2",
-        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_USE_OLD_DATA, "false",
-        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_XML_PATH, folderPath
-        		);
+        AnalysisEngineDescription annotationStudy = AnalysisEngineFactory.createEngineDescription(AnnotationStudy.class);
         
-        //SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, arffGenerator, exporter);
-        SimplePipeline.runPipeline(reader, lemmatizer, writer);
+        SimplePipeline.runPipeline(reader, annotationStudy);
 	}
 	
 	public void foldLearning() throws Exception {	 
-		 LibSVM svm = new LibSVM();
+		/* LibSVM svm = new LibSVM();
 		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
 		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_C_SVC, LibSVM.TAGS_SVMTYPE));
 		svm.setProbabilityEstimates(true);
@@ -183,10 +170,10 @@ public class MainPipeline {
 		 ibk.setKNN(3);
 		 ibk.setDebug(true);
 		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
-		 ibk.setMeanSquared(true);
+		 ibk.setMeanSquared(true);*/
 
-		Baseline2_Evaluator myEvaluator = new Baseline2_Evaluator();
+		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
 		myEvaluator.useOldData(false);
-		myEvaluator.execute(3);
+		myEvaluator.setUpAblation("0", 23, 3);
 	}
 }

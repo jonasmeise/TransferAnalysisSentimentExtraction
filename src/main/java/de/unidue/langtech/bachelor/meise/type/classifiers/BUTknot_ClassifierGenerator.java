@@ -30,11 +30,10 @@ import webanno.custom.Valence;
 //BUTknot at SemEval-2016 Task 5: SVM and CRF for Aspect Detection and Unsupervised Aspect-Based Sentiment Analysis
 //Jakub MachaLcek
 //Model version includes all features until the "POS filter" domain as presented in table 3
-//Removed POS: -
-//Classification type: stochastic gradient descent (logistic regression)
-//input-output format is normalized to match the current Task; the model itself is not changed
-
-
+//"model recognition" is not implemented, since this implementation works on the restaurant and not the laptop domain
+//CLASS IS NOT EVALUATED:
+//-the difference between the stated performance in the paper and our rebuilt performance is too high
+//	=> class can not be deemed viable
 
 public class BUTknot_ClassifierGenerator extends ArffGenerator{
 

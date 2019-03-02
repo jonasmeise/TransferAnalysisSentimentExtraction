@@ -117,6 +117,8 @@ public class AspectClassifier {
 		   //build-Classifier loescht automatisch 0
 		   buildClassifier(train);
 	
+		   saveModel("currentmodel.model", classifier);
+		   
 		   Evaluation currentEvaluation;
 		   
 		   if(folds>0) {

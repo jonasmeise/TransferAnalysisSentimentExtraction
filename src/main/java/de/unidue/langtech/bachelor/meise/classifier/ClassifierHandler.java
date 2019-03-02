@@ -24,6 +24,7 @@ public abstract class ClassifierHandler{
 	public String outputPath;
 	
 	public boolean slot1=false;
+	public double numFolds;
 	
 	public boolean useCFV;
 

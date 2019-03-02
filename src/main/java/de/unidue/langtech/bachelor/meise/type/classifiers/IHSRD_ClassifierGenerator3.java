@@ -26,8 +26,9 @@ import webanno.custom.Valence;
 //Detecting Sentiment Polarity Using the Heatmap of Sentence
 //Maryna Chernyshevich
 //Classification type: back-propagation network
-//SO lexica are produced with sentimentLexica instead of online reviews -> change from unconstrained to constrained
-//separator for opinion extraction has pairs excluded due to architecture constraints
+//CLASS IS NOT IMPLEMENTED:
+//	-it is not stated, which reviews from Amazon and Yelp are used to what extent in generating sentiment values
+//	-the process for creating wordlists and tuning scores is not described
 
 
 public class IHSRD_ClassifierGenerator3 extends ArffGenerator{

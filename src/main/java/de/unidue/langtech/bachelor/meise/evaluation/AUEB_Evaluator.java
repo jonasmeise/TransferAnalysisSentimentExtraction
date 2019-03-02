@@ -52,7 +52,7 @@ public class AUEB_Evaluator extends ClassifierHandler{
 			cvp.setClassifier(svm);
 			String[] options = new String[3];
 			options[0] = "K 0 3 4";
-			options[1] = "C 0.01 1000 10";
+			options[1] = "C 0.01 1000 10";		
 			options[2] = "G 0.0001 0.01 10";
 			
 			try {

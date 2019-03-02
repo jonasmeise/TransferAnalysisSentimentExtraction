@@ -24,8 +24,8 @@ import webanno.custom.Valence;
 //Syntactico-Semantic Knowledge for Aspect Based Sentiment Analysis
 //Caroline Brun and Julien Perez and Claude Roux
 //Classification type: Connected Conditional Random Fields 
-//Training file for word is included as a fixed list
-//input-output format is normalized to match the current Task; the model itself is not changed
+//CLASS IS NOT IMPLEMENTED:
+//-feature dataset link that is given in the task does not work
 
 public class XRCE_ClassifierGenerator3 extends ArffGenerator {
 	int cutoff = 200; //Maximale Saetze/Datensatz

@@ -1,6 +1,7 @@
 package de.unidue.langtech.bachelor.meise.evaluation;
 
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
+import weka.attributeSelection.CfsSubsetEval;
 import weka.classifiers.functions.LibSVM;
 import weka.core.SelectedTag;
 
@@ -13,11 +14,14 @@ public class AKTSKI_Evaluator extends ClassifierHandler{
 	
 	public AKTSKI_Evaluator() {
 		super();
+		numFolds = 10;
 	}
 	
 	public void execute(int slot, int[] removeArray) {
 		if(removeArray==null) {
 			setOutputPath(sourcePath + "analysis.txt");
+		} else {
+			numFolds = 5;
 		}
 		
 		if(slot==3) {
