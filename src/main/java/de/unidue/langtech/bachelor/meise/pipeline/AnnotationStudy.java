@@ -69,7 +69,6 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 		
 		CodingAnnotationStudy study = new CodingAnnotationStudy(2);
 
-		
 		for(int i=0;i<200;i++) {
 			System.out.println(arrayListA.get(i) + "\n" + arrayListB.get(i));
 			String[] splitA = arrayListA.get(i).split("   ");
