@@ -45,21 +45,18 @@ public class MainPipeline {
 	public static void main(String[] args) throws Exception {
 		MainPipeline myPipeline = new MainPipeline();
 
-		//myPipeline.run_read("src/main/resources/dataset5","src/main/resources/learningtest", null, "src/main/resources/dataset5/test.txt");
-		//myPipeline.run_read("src/main/resources/", "*.xmi");
-		//myPipeline.createArff("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
-		//myPipeline.run("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
-		//myPipeline.run(myPipeline.inputFilePath, myPipeline.outputFilePath);
-		//myPipeline.foldLearning("src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\unconstrained\\analysis_test1.txt");
-		
-		//myPipeline.executeReviewRegressionTask("src\\main\\resources", "src\\main\\resources","src\\main\\resources\\RQ2_learningtest\\unconstrained", "output.xml", "true");
-		//myPipeline.valenceStatsRegressionTask("src\\main\\resources\\dataset5", "src\\main\\resources\\RQ2_learningtest_hotel-level");		
-		
-		//myPipeline.foldLearning();
+		/* 
+		 * Choose one of the following methods for executing the pipelines:
+		 * Make sure to change the ClassifierGenerator for the corresponding models and set the model paths accordinly
+		 *
+		myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
+		myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
+		myPipeline.foldLearning();
 		myPipeline.executeAnnotationStudy();
+		*/
 	}
 	
-	public void run(String inputFile, String outputFile) throws UIMAException, IOException {
+	public void buildFilesOldDomain(String inputFile, String outputFile) throws UIMAException, IOException {
 		//Training data
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFile,
@@ -108,7 +105,7 @@ public class MainPipeline {
         SimplePipeline.runPipeline(reader2, tokenizer, tagger, lemmatizer, dependency, writer2);
 	}
 	
-	public void createArff(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
+	public void buildFilesNewDomain(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 		 
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
@@ -145,33 +142,6 @@ public class MainPipeline {
 	}
 	
 	public void foldLearning() throws Exception {	 
-		/* LibSVM svm = new LibSVM();
-		svm.setKernelType(new SelectedTag(LibSVM.KERNELTYPE_LINEAR, LibSVM.TAGS_KERNELTYPE));
-		svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_C_SVC, LibSVM.TAGS_SVMTYPE));
-		svm.setProbabilityEstimates(true);
-		//svm.setDegree(2);
-		svm.setNormalize(true);
-		svm.setShrinking(true);
-		//svm.setCost(210);
-		//svm.setGamma(0.0015);
-		//svm.setEps(0.0001);
-			
-		SimpleLinearRegression slr = new SimpleLinearRegression();
-		slr.setOutputAdditionalStats(true);
-		
-		 
-		 Classifier myClassifier = null;
-		 LinearRegression lr = new LinearRegression(); 
-		 //lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
-		 //lr.setRidge(0.0000001);
-		 //lr.setDebug(true);
-	 
-		 IBk ibk = new IBk();	
-		 ibk.setKNN(3);
-		 ibk.setDebug(true);
-		 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
-		 ibk.setMeanSquared(true);*/
-
 		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
 		myEvaluator.useOldData(false);
 		myEvaluator.setUpAblation("0", 23, 3);

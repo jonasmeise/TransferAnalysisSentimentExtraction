@@ -2,6 +2,9 @@ package de.unidue.langtech.bachelor.meise.evaluation;
 
 import de.unidue.langtech.bachelor.meise.classifier.ClassifierHandler;
 import weka.classifiers.functions.LibSVM;
+import weka.classifiers.functions.LinearRegression;
+import weka.classifiers.functions.SimpleLinearRegression;
+import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.CVParameterSelection;
 import weka.core.SelectedTag;
 
@@ -63,9 +66,29 @@ public class Regression_Evaluator extends ClassifierHandler{
 				e.printStackTrace();
 			}
 			
-			generateFoldsAndLearn(fetchFiles(), 10, 1, true, svm);
+			generateFoldsAndLearn(fetchFiles(), 10, 1, true, cvp);
+		} else if(classifierType.equals("slr")){
+			SimpleLinearRegression slr = new SimpleLinearRegression();
+			slr.setOutputAdditionalStats(true);
+			
+			generateFoldsAndLearn(fetchFiles(), 10, 1, true, slr);
+		} else if(classifierType.equals("knn")){ 
+			 IBk ibk = new IBk();	
+			 ibk.setKNN(3);
+			 ibk.setDebug(true);
+			 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
+			 ibk.setMeanSquared(true);
+			 
+			 generateFoldsAndLearn(fetchFiles(), 10, 1, true, ibk);
+		} else if(classifierType.equals("lr")) {
+			 LinearRegression lr = new LinearRegression(); 
+			 lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
+			 lr.setRidge(0.0000001);
+			 lr.setDebug(true);
+			 
+			 generateFoldsAndLearn(fetchFiles(), 10, 1, true, lr);
 		} else {
-			myLog.log("Wrong slot: " + slot);
+			myLog.log("Wrong classifier type: " + classifierType);
 		}
 	}
 
