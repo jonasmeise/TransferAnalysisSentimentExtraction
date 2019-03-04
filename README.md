@@ -73,6 +73,8 @@ The evaluator class for each model is contained in the folder [\evaluation\\](ht
 
 # Structure
 
+## Folders
+
 The main data for this program is included in [resources](https://github.com/jonasmeise/AutomaticAspectExtraction/tree/master/src/main/resources). The sub-folders include...
 
 * **folders with "_\_learningtest_"** --> The model-specific instances of each reconstructed and implemented model, as well as their analysis in .txt format. If possible, do not edit these folders, since they contain the evaluation data of this thesis.
@@ -96,3 +98,5 @@ The main data for this program is included in [resources](https://github.com/jon
 **"stopwords.txt"** --> The file with NLKT stopword list.
 
 All other files can mostly be ignored.
+
+## Class Descriptions
