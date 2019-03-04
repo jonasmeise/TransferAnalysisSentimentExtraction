@@ -18,8 +18,8 @@ In the current iteration, the code does not execute any of the tasks represented
 
 ``foldLearning()``
 
-## Example Run
-For example, if you want to build the Baseline2 model (Simple Classifier) for Slot 3 of the new data, enable the following method calls in MainPipeline. If you chose to execute the method, make sure to delete the preexisting files in the output folder first.
+## Example Run: Data Generation
+If you want to build the Baseline2 model (Simple Classifier) for Slot 3 of the new data, enable the following method calls in MainPipeline. If you chose to execute the method, make sure to delete the preexisting files in the output folder first.
 
 ```java
 public static void main(String[] args) throws Exception {
@@ -50,6 +50,22 @@ AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription
 An exemplary call for each main method is included in the comment section of the ``main()`` method. 
 To properly execute method, make sure to correctly address the folder paths with the respective data - a short guideline for handling the data is presented in **Structure**.
 Be careful with executing any methods, since any new generated data will be appended to older files. To circumvent this scenario, redirect the output into a preferably empty folder by setting the according file path.
+
+## Example Run: Evaluation
+
+If you want to run the evaluation process for a model, execute the method ``foldLearning()``.
+
+```java
+public void foldLearning() throws Exception {	 
+		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
+		myEvaluator.useOldData(false);
+		//myEvaluator.setUpAblation("0", 23, 3);
+		myEvaluator.execute(3);
+	}
+```
+The evaluator class for each model is contained in the folder [\evaluation\\](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise/evaluation). Following commands can be executed:
+
+``useOldData(boolean)`` enables the evaluation on either the new data (``false``) or the old data (``true``). Old data is evaluated on a fixed training/test data split, while the new domain is evaluated with 10-folded cross validation. The ``analysis.txt`` file is autmoatically generated in the corresponding folder as presented in **[Structure](#structure)**.
 
 # Structure
 
