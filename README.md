@@ -59,13 +59,17 @@ If you want to run the evaluation process for a model, execute the method ``fold
 public void foldLearning() throws Exception {	 
 		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
 		myEvaluator.useOldData(false);
-		//myEvaluator.setUpAblation("0", 23, 3);
+		//myEvaluator.setUpAblation("0,1,2", 23, 3);
 		myEvaluator.execute(3);
 	}
 ```
 The evaluator class for each model is contained in the folder [\evaluation\\](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise/evaluation). Following commands can be executed:
 
-``useOldData(boolean)`` enables the evaluation on either the new data (``false``) or the old data (``true``). Old data is evaluated on a fixed training/test data split, while the new domain is evaluated with 10-folded cross validation. The ``analysis.txt`` file is autmoatically generated in the corresponding folder as presented in **[Structure](#structure)**.
+``useOldData(boolean)`` enables the evaluation on either the new data (``false``) or the old data (``true``). Old data is evaluated on a fixed training/test data split, while the new domain is evaluated with 10-folded cross validation. 
+
+``execute(slot)`` executes evaluation for a specific slot. If the slot does not exist for the model, an error prompt will be shown. The ``analysis.txt`` file is autmoatically generated in the corresponding folder as presented in **[Structure](#structure)**.
+
+``setUpAblation(alreadyRemoved, maxFeatures, slot)`` executes an iterative execution slot on a reduced set of features. The string ``alreadyRemoved`` indicates the features that are _already_ removed. "0" is the standard value, since for every model, the first feature (ID) is always removed. Additional numbers are added by separating them with a comma. The integer ``maxFeatures`` refers to the maximum number of features (counting from 1, including the final class label). For each feature that is not already contained in ``alreadyRemoved`` and its index is smaller than ``maxFeatures``, it will be removed once in the ablation test. The final integer ``slot`` refers to the used slot for the test - it equals the ``slot`` parameter of the ``execute(slot)`` method. The method produces an analysis file for each iteration (with the syntax "ablation_alreadyRemoved_currentlyRemoved.txt") in the base folder of the respective model. To run multiple iterative ablationm test runs, the ``alreadyRemoved`` has to manually updated by the user and the method needs to be called again.
 
 # Structure
 
