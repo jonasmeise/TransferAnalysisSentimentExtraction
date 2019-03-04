@@ -26,4 +26,8 @@ Be careful with executing any methods, since any new generated data will be appe
 
 The main data for this program is included in [resources](https://github.com/jonasmeise/AutomaticAspectExtraction/tree/master/src/main/resources). It includes
 
-* **folders with _\_learningtest_** --> The model-specific instances of each reconstructed and implemented model, as well as their analysis.
+* **folders with _\_learningtest_** --> The model-specific instances of each reconstructed and implemented model, as well as their analysis in .txt format. If possible, do not edit these folders, since they contain the evaluation data of this thesis.
+
+* **folders with datasetX** --> The annotation data of each hotel X (1 to 5), in plain .txt form, parsed .xml form, converted .tsv form (for importing them into WebAnno) and the final .xmi JCas annotation file. The .xmi files are equal with the ones present in the root [resources](https://github.com/jonasmeise/AutomaticAspectExtraction/tree/master/src/main/resources) folder. For [dataset1](https://github.com/jonasmeise/AutomaticAspectExtraction/tree/master/src/main/resources/dataset1) and [dataset2](https://github.com/jonasmeise/AutomaticAspectExtraction/tree/master/src/main/resources/dataset2), the different annotations of both the curator and the respective annotator are included.
+
+* **sentimentlexicon** --> The data files for the three sentiment lexicons that are used in the thesis.
