@@ -32,7 +32,7 @@ The main data for this program is included in [resources](https://github.com/jon
   
   * **unconstrained** --> The unconstrained data for the reconstructed task.
   
-  Constrained and unconstrained folders are further split into the slots that the model was tested on. Each slot folder contains the learning instances (.arff), a raw performance of each classifier (analysis.txt or analysis_old.txt) and a calculated final performance score (eval.txt).
+  Constrained and unconstrained folders are further split into the slots that the model was tested on. Each slot folder contains the learning instances (.arff), a raw performance of each classifier (analysis.txt or analysis_old.txt) and a calculated final performance score (eval.txt). The paths to these final sub-folders are used when generating the output data for the classifier models. We recommend to exchange this file path with a custom folder, otherwise the files are overwritten and corrupted.
   
   * **old** --> The comparison data for the old SE-ABSA16 task.
   
@@ -43,3 +43,7 @@ The main data for this program is included in [resources](https://github.com/jon
 * **"sentimentlexicon"** --> The data files for the three sentiment lexicons that are used in the thesis.
 
 **"SEABSA16_data"** --> The original training and test data that was available in the SemEval 2016 ABSA task.
+
+**"stopwords.txt"** --> The file with NLKT stopword list.
+
+All other files can mostly be ignored.
