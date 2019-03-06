@@ -245,7 +245,7 @@ public class AspectClassifier {
 		 return returnList;
 	}
 	
-	//import Instances -> learn and export model
+	//import Instances -> learn and export models
 	public void learnAndExport(String inputPath, String outputPath) throws IOException, URISyntaxException, Exception {
 		learnAndExport(getData(inputPath, 1), outputPath);
 	}
