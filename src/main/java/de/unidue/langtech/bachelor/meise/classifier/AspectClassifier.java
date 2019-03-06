@@ -272,6 +272,7 @@ public class AspectClassifier {
 		//s2wFilter.setMinTermFreq(8);
 		//s2wFilter.setOutputWordCounts(true);
 
+		
 		return s2wFilter;
 		
 	}
