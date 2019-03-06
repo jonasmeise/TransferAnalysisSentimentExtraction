@@ -262,24 +262,19 @@ public class AspectClassifier {
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);	
 		s2wFilter.setAttributeNamePrefix("s2w");
+		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		
 		if(caller!=null && caller.getClass().equals(Baseline2_Evaluator.class)) {
 			s2wFilter.setWordsToKeep(1000);
+			s2wFilter.setLowerCaseTokens(false);	
+			s2wFilter.setDoNotOperateOnPerClassBasis(false);
 		}
 		//s2wFilter.setMinTermFreq(8);
-		
-		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		//s2wFilter.setOutputWordCounts(true);
 
 		return s2wFilter;
 		
 	}
-	
-   private Evaluation evalModel(Classifier classifier, Instances data, Integer numberIterations, Random randData ) throws Exception {
-       Evaluation eval = new Evaluation(data);
-       eval.crossValidateModel(classifier, data, numberIterations, randData);
-       return eval;
-   }
    
    public void loadModels(String filePath) throws Exception {
 	   sourcePath = new File(filePath).getName();

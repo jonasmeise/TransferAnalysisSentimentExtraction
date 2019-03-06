@@ -1,0 +1,5 @@
+f1-score 	constrained	0.6149061
+
+
+old:
+f1-score	constrained	0.59928

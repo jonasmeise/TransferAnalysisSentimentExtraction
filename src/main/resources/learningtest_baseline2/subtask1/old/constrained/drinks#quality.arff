@@ -1,0 +1,1303 @@
+@relation drinks#quality
+
+@attribute id numeric
+@attribute words string
+@attribute aspecttype {true, false}
+
+@data
+7,'Judging from previous posts this used to be a good place , but not any longer . ',false
+19,'We , there were four of us , arrived at noon - the place was empty - and the staff acted like we were imposing on them and they were very rude . ',false
+31,'They never brought us complimentary noodles , ignored repeated requests for sugar , and threw our dishes on the table . ',false
+43,'The food was lousy - too sweet or too salty and the portions tiny . ',false
+55,'After all that , they complained to me about the small tip . ',false
+67,'Avoid this place ! ',false
+79,'I have eaten at Saul , many times , the food is always consistently , outrageously good . ',false
+91,'Saul is the best restaurant on Smith Street and in Brooklyn . ',false
+103,'The duck confit is always amazing and the foie gras terrine with figs was out of this world . ',false
+115,'The wine list is interesting and has many good values . ',false
+127,'For the price , you can not eat this well in Manhattan . ',false
+139,'I was very disappointed with this restaurant . ',false
+151,'Ive asked a cart attendant for a lotus leaf wrapped rice and she replied back rice and just walked away . ',false
+163,'I had to ask her three times before she finally came back with the dish Ive requested . ',false
+175,'Food was okay , nothing great . ',false
+187,'Chow fun was dry ; pork shu mai was more than usually greasy and had to share a table with loud and rude family . ',false
+199,'I / we will never go back to this place again . ',false
+211,'Went on a 3 day oyster binge , with Fish bringing up the closing , and I am so glad this was the place it O trip ended , because it was so great ! ',false
+223,'Service was devine , oysters where a sensual as they come , and the price ca nt be beat !!! ',false
+235,'You ca nt go wrong here . ',false
+247,'Every time in New York I make it a point to visit Restaurant Saul on Smith Street . ',false
+259,'Everything is always cooked to perfection , the service is excellent , the decor cool and understated . ',false
+271,'I had the duck breast special on my last visit and it was incredible . ',false
+283,'Ca nt wait wait for my next visit . ',false
+295,'The spicy tuna roll was unusually good and the rock shrimp tempura was awesome , great appetizer to share ! ',false
+307,'We went around 9:30 on a Friday and it had died down a bit by then so the service was great ! ',false
+319,'we love th pink pony . ',false
+331,'THe perfect spot . ',false
+343,'Food - awesome . ',false
+355,'Service- friendly and attentive . ',false
+367,'Ambiance - relaxed and stylish . ',false
+379,'Do nt judge this place prima facie , you have to try it to believe it , a home away from home for the literate heart . ',false
+391,'the food is decent . ',false
+403,'however , it s the service that leaves a bad taste in my mouth . ',false
+415,'i happen to have a policy that goes along with a little bit of self - respect , which includes not letting a waiter intimidate me , i.e. make me feel bad asking for trivialities like water , or the check . ',false
+427,'i know , you were too busy showing off your vintage tee shirt and looking bored , but my agenda is i m here to eat and enjoy the company of friends , seeking a pleasant experience . ',false
+439,'well , i did nt find it there , and trust , i have told everyone i can think of about my experience . ',false
+451,'the last time i walked by it looked pretty empty . ',false
+463,'hmmm . ',false
+475,'This place has got to be the best japanese restaurant in the new york area . ',false
+487,'I had a great experience . ',false
+499,'Food is great . ',false
+511,'Service is top notch . ',false
+523,'I have been going back again and again . ',false
+535,'I tend to judge a sushi restaurant by its sea urchin , which was heavenly at sushi rose . ',false
+547,'It melted in my little mouth and the perfect consistency - not too fishy , creamy , and slightly buttery . ',false
+559,'The sushi seemed pretty fresh and was adequately proportioned . ',false
+571,'The rice to fish ration was also good -- they did nt try to overpack the rice . ',false
+583,'We took advanatage of the half price sushi deal on saturday so it was well worth it . ',false
+595,'Surprisingly nothing could be further from the truth . ',false
+607,'In the evening , this place attracted a well dressed , with it , NY crowd . ',false
+619,'The food was well prepared and the service impecable . ',false
+631,'I m going back . ',false
+643,'The Prix Fixe menu is worth every penny and you get more than enough ( both in quantity AND quality ) . ',false
+655,'I will be going back and heartily recommend it ! ',false
+667,'$ 6 and there is much tasty food , all of it fresh and continually refilled . ',false
+679,'I am not a vegetarian but , almost all the dishes were great . ',false
+691,'I like the somosas , chai , and the chole , but the dhosas and dhal were kinda dissapointing . ',false
+703,'The service varys from day to day - sometimes they re very nice , and sometimes not . ',false
+715,'The kitchen however , is almost always slow . ',false
+727,'Also , specify if you like your food spicy - its rather bland if you dont . ',false
+739,'The ambience is pretty and nice for conversation , so a casual lunch here would probably be best . ',false
+751,'However , go for the ambience , and consider the food just a companion for a trip across the world ! ',false
+763,'It looked like shredded cheese partly done - still in strips . ',false
+775,'Yes , they use fancy ingredients , but even fancy ingredients do nt make for good pizza unless someone knows how to get the crust right . ',false
+787,'A big disappointment , all around . ',false
+799,'I think I ve had some the best meals of my life at minnow . ',false
+811,'The seafood is amazing , there s a good wine list , and the ever - changing menu always offers some great surprises . ',false
+823,'The combination of super-fresh ingredients in the dishes are unusual but really delicious . ',false
+835,'Worth the trip from Manhattan . ',false
+847,'This place is worth an one - hour drive . ',false
+859,'I am so coming back here again , as much as I can . ',false
+871,'Leon is an East Village gem : casual but hip , with well prepared basic French bistro fare , good specials , a warm and lively atmosphere . ',false
+883,'My wife and I always enjoy the young , not always well trained but nevertheless friendly , staff , all of whom have a story . ',false
+895,'Have been dozens of times and never failed to enjoy the experience . ',false
+907,'Our teenage kids love it , too . ',false
+919,'Everytime I decide to try another place on the UES , I get angry that I did nt just go to Zucchero Pomodori . ',false
+931,'This is by far my favorite place in the neighborhood . ',false
+943,'The service is excellent , the decor is great , and the food is delicious and comes in large portions . ',false
+955,'We have been to this place many times , and always have great food , wine , and service . ',true
+967,'We were worried we would have trouble getting in , but somehow managed to have a short wait . ',false
+979,'As always we had a great glass of wine while we waited . ',true
+991,'When we sat , we got great and fast service . ',false
+1003,'The people that work there are always so friendly you forget you are in New York sometimes . ',false
+1015,'Make sure you try this place as often as you can . ',false
+1027,'This is a fun restaurant to go to . ',false
+1039,'The pizza is yummy and I like the atmoshpere . ',false
+1051,'But the pizza is way to expensive . ',false
+1063,'A large is $ 20 , and toppings are about $ 3 each . ',false
+1075,'I went there for lunch and it was not as good as I expected from the reviews I read . ',false
+1087,'Sauce was watery and the food did nt have much flavor . ',false
+1099,'Service was prompt , friendly and great . ',false
+1111,'Slightly on the pricey side but worth it ! ',false
+1123,'Great pizza and fantastic service . ',false
+1135,'There was a small wait , but shorter than I expected . ',false
+1147,'Located at the end of a magnificent block . ',false
+1159,'Very cozy and warm inside . ',false
+1171,'I will be back ! ',false
+1183,'This is the best sushi in new york city - hands down . ',false
+1195,'The place is small and cramped but the food is fantastic . ',false
+1207,'Get the tuna of gari . ',false
+1219,'It s all about the food !! ',false
+1231,'but when we looked at the menu , there were nt a lot of choices , most of them were dumplings in the appetizer section . ',false
+1243,'The Steak Tartare is a great bet , they fix it for you at the table . ',false
+1255,'Admittedly some nights inside the restaurant were rather warm , but the open kitchen is part of the charm . ',false
+1267,'Great wine selection , Gigondas is worth the price , and the house champagne is a great value . ',true
+1279,'It may be a bit packed on weekends , but the vibe is good and it is the best French food you will find in the area . ',false
+1291,'Have recommended the place to friends , always gets good response . ',false
+1303,'Pizza - the only pizza in NYC that should not have additional toppings - the crust tastes like the best , freshly baked bread ! ',false
+1315,'I take all my NYC guests to VTs . ',false
+1327,'Not sure where the previous reviewer , lonk , dined , but Saul is in a great neighborhood and has great food ! ',false
+1339,'I ve been there three times and have always had wonderful experiences . ',false
+1351,'I d highly recommend it for a special occasion -- it provides and intimate setting and nice service . ',false
+1363,'I m not sure where the other reviewers ate but it seems as if we visited two different restaurants because my friends and I all enjoy Mizu very much . ',false
+1375,'and we re repeat customers . ',false
+1387,'Even after they overcharged me the last time I was there . ',false
+1399,'Make sure you have the Spicy Scallop roll . ',false
+1411,'. ',false
+1423,'it s delicious ! ',false
+1435,'Moules were excellent , lobster ravioli was VERY salty ! ',false
+1447,'Took my mom for Mother s Day , and the maitre d  was pretty rude . ',false
+1459,'Told us to sit anywhere , and when we sat he said the table was reserved . ',false
+1471,'Stepped on my foot on the SECOND time he reached over me to adjust lighting . ',false
+1483,'Tiny dessert was $ 8.00.just plain overpriced for what it is . ',false
+1495,'The drinks are always welll made and wine selection is fairly priced . ',true
+1507,'Try their chef s specials -- they are to die for . ',false
+1519,'Service is not exactly five star , but that s not really a big deal . ',false
+1531,'Downstairs lounge is always a good attraction ',false
+1543,'Raga s is a romantic , cozy restaurant . ',false
+1555,'The exotic food is beautifully presented and is a delight in delicious combinations . ',false
+1567,'It is also extremely well priced . ',false
+1579,'The staff is incredibly helpful and attentive . ',false
+1591,'The bar is very well stocked with interesting beers and well priced wines . ',false
+1603,'This is one of my favorite restaurants and it is not to be missed . ',false
+1615,'Your friends will thank you for introducing them to this gem ! ',false
+1627,'When we stumbled on Leon , we thought that we had found quite the gem BUT , we were certainly wrong . ',false
+1639,'The waitress moved our table practically into the bathroom and when we asked to cancel our dinner orders because we did not want to eat sitting on the toilet , we were told no. ',false
+1651,'Then , to top things off , she dropped used silverware on my boyfriend s jacket and did not stop to apologize or clean the mess that was left on clothes . ',false
+1663,'Such a disappointment . ',false
+1675,'Rude service , medicore food.there are tons of restaurants in NY.stay away from this one ',false
+1687,'I had a grat time at Jekyll and Hyde ! ',false
+1699,'I loved everythig about it - especially the shows and actors . ',false
+1711,'Our server was very helpful and friendly . ',false
+1723,'I am bringing my whole family back next time . ',false
+1735,'The food was good too . ',false
+1747,'The tuna and wasabe potatoes are excellent . ',false
+1759,'The outdoor atmosphere of sitting on the sidewalk watching the world go by 50 feet away on 6th avenue on a cool evening was wonderful . ',false
+1771,'Inside is a little cramped , but to be expected . ',false
+1783,'Service was prompt and courteous . ',false
+1795,'This was a repeat visit and we ll definitely be back again . ',false
+1807,'Great service , great food . ',false
+1819,'Prices are in line . ',false
+1831,'The pizza is delicious - they use fresh mozzarella instead of the cheap , frozen , shredded cheese common to most pizzarias . ',false
+1843,'Two complaints - their appetizer selection stinks , it would be nice to get some mozzarella sticks on the menu . ',false
+1855,'Also , because it is so thin , it gets cold very quickly and its not that filling . ',false
+1867,'By far the best salad I have had in a fast food restaurant . ',false
+1879,'fine dining restaurant quality . ',false
+1891,'Over 100 different choices to create your own . ',false
+1903,'A must try ! ',false
+1915,'On a recent Sunday afternoon , a friend and I accidently found this great restaurant on our way to see the pulitzer prize winning play DOUBT . ',false
+1927,'This was the perfect quiet , relaxing , and delicious accompaniment to our afternoon of theater . ',false
+1939,'The chicken pot pie is excpetiona , the cheeseburger huge and delictable , and the service professional wan warm . ',false
+1951,'With so many poor experiences to be had in the theater district , is truly an excellent find ! ',false
+1963,'We will return many times for this oasis in mid-town . ',false
+1975,'The sake menu should not be overlooked ! ',false
+1987,'All in all , this midtown gem instantly became one of my favorite sushi restaurants in the city . ',false
+1999,'Try the lobster teriyaki and the rose special roll . ',false
+2011,'Wine list selection is good and wine - by - the - glass was generously filled to the top . ',false
+2023,'Traditional French decour was pleasant though the hall was rather noisy - the restaurant was full and we had to raise our voices to be able to maintain a conversation . ',false
+2035,'I ve been to at Cafe Spice probably 5-8 times , it is probably still the best Indian restaurant around Union Square . ',false
+2047,'To sum it up : Service varies from good to mediorce , depending on which waiter you get ; generally it is just average Ok . ',false
+2059,'Seating is always prompt , though the restaurant does fill up in the evening . ',false
+2071,'Food is usually very good , though ocasionally I wondered about freshmess of raw vegatables in side orders . ',false
+2083,'As many other reviewers noticed , your order is often slow to arrive - this is particularly true in the evening but is not a problem during lunch time . ',false
+2095,'The decor is vibrant and eye - pleasing with several semi-private boths on the right side of the dining hall , which are great for a date . ',false
+2107,'I have NEVER been disappointed in the Red Eye . ',false
+2119,'The first time I went , and was completely taken by the live jazz band and atmosphere , I ordered the Lobster Cobb Salad . ',false
+2131,'The restaurant is cute but not upscale . ',false
+2143,'The food is a diamond in rough -- the food is delicious and homemade with the perfect balance of herbs and tomatoes . ',false
+2155,'I would highly recommend it . ',false
+2167,'It s one of our favorite places to eat in NY . ',false
+2179,'We had a great time at the Jekyll and hyde Pub last night . ',false
+2191,'I highly recommend visiting this restaurant and having dinner and drinks ! ',false
+2203,'If you are the type of person who likes being scared and entertained , this is a great place to go and eat . ',false
+2215,'My husband and I thougt it would be great to go to the Jekyll and Hyde Pub for our anniversary , and to our surprise it was fantastic . ',false
+2227,'The have over 100 different beers to offer thier guest so that made my husband very happy and the food was delicious , if I must recommend a dish it must be the pumkin tortelini . ',false
+2239,'The entertainment was great they have shows that go on through out the dinner . ',false
+2251,'Please take my advice , go and try this place . ',false
+2263,'We were not dissappointed in the least bit by this little gem . ',false
+2275,'The bagel was huge . ',false
+2287,'They were served warm and had a soft fluffy interior . ',false
+2299,'The workers there also absolutely load the bagel with cream cheese ( gets a little messy ) . ',false
+2311,'I loved it and would HIGHLY RECOMMEND . ',false
+2323,'This was my frist time at Cafe St. Bart s and I must say how delicous the food and the service was . ',false
+2335,'Other guests enjoyed pizza , santa fe chopped salad and fish and chips . ',false
+2347,'I highly recommend Cafe St. Bart s for their food , the ambience and wonderful service . ',false
+2359,'All the staff is absolutely professional !! ',false
+2371,'There s nice and quiet , small but enough for 6 ( or more ) . ',false
+2383,'This restaurant was way overhyped . ',false
+2395,'My chow fun and chow see was really bland and oily . ',false
+2407,'Okay - i do nt mind the oily part ( cause most are cooked that way ) but it was way too bland . ',false
+2419,'The scallion pancakes and fried dumplings were nothing out of the ordinary . ',false
+2431,'The service was the only thing good about this restaurant . ',false
+2443,'It s boring on the inside , and our sushi was pretty below average . ',false
+2455,'the tuna was soggy and the other rolls had no flavor . ',false
+2467,'I definitely would nt go back . ',false
+2479,'The price is reasonable although the service is poor . ',false
+2491,'fresh restaurant was amazing . ',false
+2503,'food was delicious and of course fresh . ',false
+2515,'great for a romantic evening , or a fun evening with friends . ',false
+2527,'I will be going back very soon . ',false
+2539,'keep up the good work . ',false
+2551,'Hats off to the chef . ',false
+2563,'It was wonderful . ',false
+2575,'the salads are delicious , both refreshing and very spicy . ',false
+2587,'We had Pam s special fried fish and it was amazing . ',false
+2599,'too large for just two people but nothing was left . ',false
+2611,'Great vibe , lots of people . ',false
+2623,'I did nt complain , I liked the atmosphere so much . ',false
+2635,'On a hot day it was fabulous to stop in and enjoy lunch . ',false
+2647,'Ambience is so cute and quaint , good for business although we were there on vacation . ',false
+2659,'Salads were fantastic . ',false
+2671,'Although we were looking for regular lettuce and some walnuts the salads we got were great . ',false
+2683,'Ingredients are organic which is a real plus for me . ',false
+2695,'We will be back . ',false
+2707,'This is some really good , inexpensive sushi . ',false
+2719,'In any event , this is a place I ll be sure to stop by again when I m in this part of town . ',false
+2731,'Big Wong gets big Ups for a fine establishment . ',false
+2743,'They have it all -- great price , food , and service . ',false
+2755,'The atmosphere is noisy and the waiters are literally walking around doing things as fast as they can . ',false
+2767,'The food is prepared quickly and efficiently . ',false
+2779,'And it all comes at a very reasonable price ( congee , noodles , and rice dishes are no more than $ 3-6 each ) . ',false
+2791,'The takeout is great too since they give high quality tupperware as well . ',false
+2803,'This place is always very crowded and popular . ',false
+2815,'We both opted for a pasta dish and they were served timely and fresh . ',false
+2827,'We concluded with tiramisu chocolate cake , both were delicious . ',false
+2839,'We d go back again ',false
+2851,'I recently went to this restaurant with some co-workers for lunch and had an amazing time . ',false
+2863,'The staff was accomodating , the food was absolutely delicious and the place is lovely . ',false
+2875,'We even had a visit from the Manager who wanted to make sure we were enjoying ourselves . ',false
+2887,'Yes , the prices are high , but I felt it was worth it . ',false
+2899,'We all felt it was worth it . ',false
+2911,'sometimes i get good food and ok service . ',false
+2923,'sometimes i get bad food and bad service , sometimes i get good good and bad service . ',false
+2935,'it is not consistent . ',false
+2947,'And where does Patis go wrong ; no where . ',false
+2959,'You are not eating haut cuisine with subtle hints of whatever but : Cassuolet , Steake Fritte , Tripe Stew , etc ; simple stuff . ',false
+2971,'And evaluated on those terms Pastis is simply wonderful . ',false
+2983,'Right off the L in Brooklyn this is a nice cozy place with good pizza . ',false
+2995,'Mine was a little burnt but still delicious with goat cheese and panchetta ( raddichio was kind of bitter though ) . ',false
+3007,'My friend got the mushroom pizza which tasted better . ',false
+3019,'The sangria was pretty tasty and good on a hot muggy day . ',true
+3031,'Kind of a small place but I guess if they are not too busy might be able to fit a group or kids . ',false
+3043,'Overall I would recommend it and go back again . ',false
+3055,'MMmmm . ',false
+3067,'it was delicious . ',false
+3079,'Service was slow , but the people were friendly . ',false
+3091,'It s a nice place to relax and have conversation . ',false
+3103,'I ca nt wait to go back . ',false
+3115,'Ambience is delightful , service impeccable . ',false
+3127,'I m still mad that i had to pay for lousy food . ',false
+3139,'The hanger steak was like rubber and the tuna was flavorless not to mention it tasted like it had just been thawed . ',false
+3151,'Service was also horrible and the ambience is not that great . ',false
+3163,'DO not try unless you re just going there to hang out like the rest of the hipsters who apparently have no sense of taste . ',false
+3175,'I go and eat out at many different restaurants and this is one place you have go and try . ',false
+3187,'This is my first time writing a review for a restaurant because the food and service was excellent . ',false
+3199,'The filet mignon dish was superb ! ',false
+3211,'I would defiantly come back here again as one of my top choices . ',false
+3223,'It s a small cute restaurant . ',false
+3235,'I absolutely love this place !!! ',false
+3247,'The sushi is amazing !!! ',false
+3259,'And amazingly cheap . ',false
+3271,'Big thumbs up ! ',false
+3283,'Very affordable and excellent ambient ! ',false
+3295,'We ordered some beef and noodle soup dishes from the Thai section of the menu but nothing we got was Thai . ',false
+3307,'We were very disappointed . ',false
+3319,'We wo nt go to this place again for a good meal . ',false
+3331,'However , I think this place is a good hang out spot . ',false
+3343,'It is one the nicest outdoor restaurants I have ever seen in NY -- I am from Italy and this place rivals the ones in my country . ',false
+3355,'They tell me they are going to cover the garden in glass for the winter , so i m looking forward to going there on a snowy night to enjoy it . ',false
+3367,'Check this place out ! ',false
+3379,'HIGHLY RECOMMENDED !!!!! ',false
+3391,'First of all , this place is *not* romantic , as claimed by Citysearch s editorial review . ',false
+3403,'Either that , or the editor s idea of romance must be sharing a conversation with the next table , while trying to speak louder than the traffic on 57th . ',false
+3415,'The tables are crammed way too close , the menu is typical of any Italian restaurant , and the wine list is simply overpriced . ',false
+3427,'Slightly above average wines start at $ 70+ with only one selection listed at $ 30+ . ',true
+3439,'Service is not what one would expect from a joint in this price category . ',false
+3451,'For instance , plates were just dumped on the table , I was handed the wine list upside down , etc. ',false
+3463,'Somehow working the italian charm with constant mille grazie does not constitute proper service . ',false
+3475,'To be completely fair , the only redeeming factor was the food , which was above average , but could nt make up for all the other deficiencies of Teodora . ',false
+3487,'Fish was overdone . ',false
+3499,'Cute place , nice wait staff but would never go there again . ',false
+3511,'Someone else recommended the dessert - we also left that . ',false
+3523,'One of us actually liked the expresso - that s it . ',true
+3535,'Skip this restaurant , it s a big disappointment . ',false
+3547,'Myagi is one of my favorite restaurants in the City ; the place the negative reviews describe sound like they were somewhere else . ',false
+3559,'I ve never had bad service and the fish is fresh and delicious . ',false
+3571,'Their tuna tartar appetizer is to die for . ',false
+3583,'I come from a family of pizzeria owners , and I m almost ashamed to say that the pizza in Fornino s blows my families receipies away . ',false
+3595,'It is simply amazing . ',false
+3607,'The place is so cool and the service is prompt and curtious . ',false
+3619,'I highly recommend to anyone to give this place a try . ',false
+3631,'You will find yourself returning quite often . ',false
+3643,'A restaurant that does nt try to do anything except serve great food with great service in a pleasant atmosphere . ',false
+3655,'No gimmicks here -- the food speaks for itself in its freshness and preparation . ',false
+3667,'The dining room is quietly elegant with no music to shout over -- how refreshing ! ',false
+3679,'The service was impeccable and unobtrusive -- the staff knows what they are there to do -- to know their menu , present your meal , and attend to your needs . ',false
+3691,'Looking around , I saw a room full of New Yorkers enjoying a real meal in a real restaurant , not a clubhouse of the fabulous trying to be seen . ',false
+3703,'Beautiful experience . ',false
+3715,'The view is breathtaking the service is top notch . ',false
+3727,'the ambiance is wonderfull . ',false
+3739,'The staff offers impeccable service . ',false
+3751,'I had Lobster Bisque it has 2 oz . ',false
+3763,'of Maine Lobster in it . ',false
+3775,'My boyfriend had the New England Chowder it was good but I think the award should go to the Lobster Bisque . ',false
+3787,'It s cuz it s so good you need to taste it !!! ',false
+3799,'All in all we re already coming up with excuses to go ahead really soon in the next few wks !!!! ',false
+3811,'My wife and I ate here earlier this week and have not stopped ranting and raving about the food . ',false
+3823,'If you like spicy food get the chicken vindaloo . ',false
+3835,'It s very spicy but not offensive . ',false
+3847,'We will definitely go back . ',false
+3859,'Go to Volare for 1 st class service and terrific food . ',false
+3871,'The portions are large and the servers always surprise us with a different starter . ',false
+3883,'The wine list is excellent . ',false
+3895,'The food is amazing . ',false
+3907,'especially if you get the Chef s tasting menu and your favourite bottle ( or two ! ) ',false
+3919,'of wine from an extensive selection of wines . ',false
+3931,'The place is small and intimate and you may feel a little crowded , but the service is excellent and it s great for friends out , a romantic date , or a special occassion . ',false
+3943,'The menu is very limited - i think we counted 4 or 5 entrees . ',false
+3955,'We ordered the special , grilled branzino , that was so infused with bone , it was difficult to eat . ',false
+3967,'The decor in this place is very diner - ish and the kind of place you expect in the East Village - not romantic , just simple , small and sparse . ',false
+3979,'Problem is nothing at Prune is particularly memorable . ',false
+3991,'No plans to return anytime soon . ',false
+4003,'This place is so much fun . ',false
+4015,'Our family never expected such incredible entertainment in a restaurant . ',false
+4027,'Our food was great too ! ',false
+4039,'And really large portions . ',false
+4051,'The staff was the friendliest that have seen in New York . ',false
+4063,'We will go back every time we are in the City . ',false
+4075,'If you want something really different than try Jekyll and Hyde . ',false
+4087,'It is a lot of fun with live entertainment and all kinds of Disney type special effects . ',false
+4099,'The food was pretty tradional but it was hot and good with large portions . ',false
+4111,'I highly recommend it . ',false
+4123,'However , I think Jeckll and Hydes t is one of those places that is fun to do once . ',false
+4135,'We had a good time . ',false
+4147,'Went there with my wife and we had to wait for a table even though you could see there many that were empty with not reservation sigh on them . ',false
+4159,'Service was slow had to wait to order and get food although not crowded . ',false
+4171,'Drinks way over priced . ',false
+4183,'Food was good not great not worth the wait or another visit ',false
+4195,'Great pizza for lunch place . ',false
+4207,'Service was quick . ',false
+4219,'The pizza was great . ',false
+4231,'And it was quick which is very important . ',false
+4243,'Have the iced tea . ',true
+4255,'It was wonderful . ',false
+4267,'Whenever you need a Sushi fix , Mizu will be there with quality fish and great service . ',false
+4279,'Delivery is fast too . ',false
+4291,'Great friendly service , Fast seating , Fast Delivery , Excellent sushi . ',false
+4303,'A little overpriced but worth it once you take a bite . ',false
+4315,'They have a huge selection of different cream cheeses and all of their salads are great . ',false
+4327,'The lox is always fresh too . ',false
+4339,'Highly recommended to all ! ',false
+4351,'Not impressed with the food . ',false
+4363,'Prices too high for this cramped and unappealing resturant . ',false
+4375,'Zero ambiance to boot . ',false
+4387,'I thought this place was totally overrated . ',false
+4399,'Everything we had was good or ok.but definitely nothing great . ',false
+4411,'The ambience was nice , but service was nt so great . ',false
+4423,'When you add it all together , it just does nt seem worth it to me.especially considering the prices . ',false
+4435,'This is the BEST Shabu-Shabu Restaurant in the Try - State Area . ',false
+4447,'I have lived in Japan for 7 years and the taste of the food and the feel of the restaurant is like being back in Japan . ',false
+4459,'Thius is a must for anyone who loves Shabu-Shabu . ',false
+4471,'The atmosphere is nothing special , but it feels like a Sushi establishment in Tokyo . ',false
+4483,'The owner and staff are all Japanese as well and that adds to the entire ambiance . ',false
+4495,'Despite a slightly limited menu , everything prepared is done to perfection , ultra fresh and a work of food art . ',false
+4507,'I must give it Yon out of Yon stars ! ',false
+4519,'Taxan delicious ! ',false
+4531,'The prices were CHEAP compared to the quality of service and food . ',false
+4543,'We liked it so much , that we will always make it a point to dine here when we visit New York . ',false
+4555,'Moderate prices . ',false
+4567,'A little noise but I think that was because of our party ! ',false
+4579,'The food is delicious - from the specials to the regular menu-fare , the dishes are never a disappointment . ',false
+4591,'Whether it s the parmesean porcini souffle or the lamb glazed with balsamic vinegar , you will surely be transported to Northern Italy with one bite . ',false
+4603,'Although the tables may be closely situated , the candle - light , food - quality and service overcompensate . ',false
+4615,'A guaranteeed delight ! ',false
+4627,'I have known about this secret for the last 13 years , Emilio ( the Godfather ) has continued to serve food and wine for the gods at mortal prices . ',true
+4639,'If you go , try the marinara / arrabiatta sauce , the mozzarella en Carozza is mmmmmmmm . ',false
+4651,'everything is just delicious . ',false
+4663,'Check out the secret back room . ',false
+4675,'I found the food , service and value exceptional everytime I have been there . ',false
+4687,'The food was authentic . ',false
+4699,'I felt as though I were eating in Paris . ',false
+4711,'The service was excellent - friendly and attentive . ',false
+4723,'The prices are wonderfully low . ',false
+4735,'Very good wine choices . ',false
+4747,'Great staff . ',false
+4759,'Always great service ! ',false
+4771,'I go twice a month ! ',false
+4783,'Fantastic ! ',false
+4795,'The food is good , I ca nt lie . ',false
+4807,'But the staff was so horrible to us . ',false
+4819,'The hostess and the waitress were incredibly rude and did everything they could to rush us out . ',false
+4831,'We were planning to get dessert but the waitress basically through the bill at us before we had a chance to order . ',false
+4843,'This place is pricey , and yes , the food is worth it ; but the service makes you feel like you should be paying a quater of the price . ',false
+4855,'Save yourself the time and trouble and skip this one ! ',false
+4867,'I ate here a week ago and found most dishes average at best and too expensive . ',false
+4879,'Will not be back . ',false
+4891,'Do nt dine at Tamarind for the vegetarian dishes , they are simply not up to par with the non-veg selections . ',false
+4903,'Decor is nice though service can be spotty . ',false
+4915,'This place is always packed . ',false
+4927,'Haru on Park S is simply disgusting . ',false
+4939,'The fish was not fresh and the rice tasted old and stale . ',false
+4951,'Quite frankly , this is some of the worst sushi I have ever tried . ',false
+4963,'Will never be back . ',false
+4975,'honestly the worst sushi my husband and i had in our entire lives . ',false
+4987,'the only things u could really taste are the very salty soy sauce ( even its low sodium ) , the vinegar - soaked rice , and the scallion on top of the fish . ',false
+4999,'the waitstaffs are nice though . ',false
+5011,'wo nt come back again for sure ! ',false
+5023,'I have been to Roth s twice and both times were very disappointing . ',false
+5035,'Try the Pad Thai , it s fabulous and their prices are so cheap ! ',false
+5047,'Just because it s cheap does NOT mean the portions are small or the food is nasty , IT IS GREAT ! ',false
+5059,'They forgot a sandwich , did nt include plastic forks , and did nt include pita with the hummus platter . ',false
+5071,'Also , the sandwiches ( nearing $ 7 ) did nt come with anything like chips or a side . ',false
+5083,'Overall , not worth the money . ',false
+5095,'Eating in , the atmosphere saves it , but at your desk , it s a very disappointing experience . ',false
+5107,'This restaurant is VEGETARIAN ; there are NO MEAT dishes whatsoever . ',false
+5119,'The seats are uncomfortable if you are sitting against the wall on wooden benches . ',false
+5131,'It s a rather cramped and busy restaurant and it closes early . ',false
+5143,'Patroon features a nice cigar bar and has great staff . ',false
+5155,'The food is tasty and portion sizes are appropriate . ',false
+5167,'This is a nice restaurant if you are looking for a good place to host an intimate dinner meeting with business associates . ',false
+5179,'Not a great place for family or general dining . ',false
+5191,'LLOOVVE THIS PLACE . ',false
+5203,'Food is excellent . ',false
+5215,'Fish is so very fresh . ',false
+5227,'Waitstaff are very friendly . ',false
+5239,'Love YUKA . ',false
+5251,'Mermaid Inn is an overall good restaurant with really good seafood . ',false
+5263,'The menu is limited but almost all of the dishes are excellent . ',false
+5275,'The lobster sandwich is good and the spaghetti with Scallops and Shrimp is great . ',false
+5287,'The service is good and ambience is good for a date or group outing . ',false
+5299,'The only fallback on this restaurant is the prices . ',false
+5311,'Even though its good seafood , the prices are too high . ',false
+5323,'The lobster sandwich is $ 24 and although it was good it was not nearly enough to warrant that price . ',false
+5335,'We were very pleasantly surprised . ',false
+5347,'The food was delicious ( I had a halibut special , my husband had steak ) , and the service was top - notch . ',false
+5359,'When my dessert came , there was a candle in it - not because anyone asked for one - but because the waiter must have seen me opening my birthday card and gift , and said he knew it was a special occassion of some sort . ',false
+5371,'Truly the mark of an attentive waiter . ',false
+5383,'I highly recommend the restaurant based on our experience last night . ',false
+5395,'We ate at this Thai place following the reviews but very unhappy with the foods . ',false
+5407,'We thought that this place is using too much of MSG cooking in the foods . ',false
+5419,'I recommend the jelly fish , drunken chicken and the soupy dumplings , certainly the stir fry blue crab . ',false
+5431,'The food is so cheap and the waiters are nice . ',false
+5443,'Of course , it is crowded but who cares . ',false
+5455,'Authentic Shanghai style and I can not recommend a better Shanghai place in New York . ',false
+5467,'Have frequented  ino for several years and the food remains excellent . ',false
+5479,'Cheese plate is a varied delight and great bargain at $ 10 . ',false
+5491,'The large selection of bruschettas , paninis , tramezzinis keep the palate from stagnating . ',false
+5503,'( The asparagus , truffle oil , parmesan bruschetta is a winner ! ) ',false
+5515,'Wine list is extensive without being over-priced . ',false
+5527,'Be sure to try the seasonal , and always delicious , specials . ',false
+5539,'Definitely a neighborhood favorite . ',false
+5551,'I loved this place !! ',false
+5563,'I almost hesititate to write a review because the atmosphere was so great and I would hate for it too become to crowded . ',false
+5575,'The food was very good , a great deal , and the place its self was great . ',false
+5587,'The wait staff is very freindly , they make it feel like you re eating in a freindly little european town . ',false
+5599,'I like Cafe Noir do nt get me wrong , it is jsut that the people who work there are evil and incompetent !! ',false
+5611,'The service was terrible , we had to wait for everything and ask several of different people for the same thing before we were allowed to be served . ',false
+5623,'The waitress , seems to be more concerned of looking good than actually waitressing . ',false
+5635,'After dinner the manager grabbed my boyfriend , asked him : Where are you from.maybe you do nt know how things work in America.and in the end stormed away almost teareyed yelling that tips are the only thing they survive on . ',false
+5647,'We did tip , I guess the model / waitress just wanted more and complained to the manager . ',false
+5659,'The whole set up is truly unprofessional and I wish Cafe Noir would get some good staff , because despite the current one this is a great place . ',false
+5671,'Pizza here is consistently good . ',false
+5683,'Salads are a delicious way to begin the meal . ',false
+5695,'You should pass on the calamari . ',false
+5707,'It is thick and slightly soggy . ',false
+5719,'Decor is charming . ',false
+5731,'Service is average . ',false
+5743,'What a great place . ',false
+5755,'Never again ! ',false
+5767,'I absolutely Loved this place . ',false
+5779,'Everything was wonderful ; food , drinks , staff , mileau . ',true
+5791,'I would highly recommend this place ! ',false
+5803,'I have been to Casimir over 5 times and I have always had a great time there . ',false
+5815,'The food is great and reasonably priced . ',false
+5827,'I have tried to make reservations , but both times , the hostess did nt have my name . ',false
+5839,'If the weather is nice , try to snag an outside table . ',false
+5851,'The staff has been nice , but they seemed really stressed and the unisex bathroom needs to be cleaned more often . ',false
+5863,'My boyfriend and I went there to celebrate my birthday the other night and all I can say is that it was magnificent . ',false
+5875,'From the spectacular caviar to the hospitable waitstaff , I felt like royalty and enjoyed every second of it . ',false
+5887,'Considering we were the last patrons there and it was after the closing time , the waitstaff did not rush us at all and made us feel comfortable and relaxed . ',false
+5899,'I highly recommend Caviar Russe to anyone who wants delicious top grade caviar and fantastic service . ',false
+5911,'Nice Family owned traditional restaurant . ',false
+5923,'Fresh ingredients and everything is made to order . ',false
+5935,'I was pleasantly surprised to find this gem in Hoboken . ',false
+5947,'Friendly staff that actually let s you enjoy your meal and the company you re with . ',false
+5959,'I also ordered the Change Mojito , which was out of this world . ',true
+5971,'My friends settled for rice dishes , but we came back the following day to try the dim sum , which was good.not outstanding , but good . ',false
+5983,'We ate out in the back patio , which is worth it as it s cool and the music is hear well there . ',false
+5995,'Overall , excellent restaurant ! ',false
+6007,'The buffet had a nice selection . ',false
+6019,'The food was average or above including some surprising tasty dishes . ',false
+6031,'Service was also very good . ',false
+6043,'I would go back . ',false
+6055,'I got an excellent piece of cheesecake and we had several other nice pastries . ',false
+6067,'I would recommend Roxy s for that , but not for their food . ',false
+6079,'My son and his girlfriend both wanted cheeseburgers and they were huge ! ',false
+6091,'But , they were too big for the bun . ',false
+6103,'Consequently , their burgers fell apart in their hands and made such a mess that they did nt feel like finishing them . ',false
+6115,'Also they were $ 15 each ! ',false
+6127,'I had a huge pastrami sandwich on a roll . ',false
+6139,'It was $ 14 not really bad for a pound of Pastrami - but it did nt have much taste - I ve had better for less elsewhere ! ',false
+6151,'This place is really trendi but they have forgotten about the most important part of a restaurant , the food . ',false
+6163,'The last two times I ordered from here my food was soo spicy that I could barely eat it , and the spice took away from the flavor of the dish . ',false
+6175,'And the Tom Kha soup was pathetic . ',false
+6187,'If you want good authentic Thai this place is not the place to go . ',false
+6199,'We went here for lunch a couple of weeks ago on a Saturday , and I was thoroughly impressed with the food . ',false
+6211,'The pesto pizza was excellent , thin-crust pizza with a nice amount of spicy Italian cheese that I d never heard of before . ',false
+6223,'Conveniently located too , being right on Bedford ave . ',false
+6235,'THe back garden sitting area is very pleasant , where you can see their personal herb garden . ',false
+6247,'I will definetly be going back . ',false
+6259,'We had the lobster sandwich and it was FANTASTIC . ',false
+6271,'My husband said he could ve eaten several more , the portion was fine for me he even exclaimed that the french fries were the best he has had . ',false
+6283,'We had the scallops as an appetizer and they were delicious and the sauce was wonderful . ',false
+6295,'and you ca nt beat the prices . ',false
+6307,'highly recommended . ',false
+6319,'I ve lived in NY for 5 years and this place has it all . ',false
+6331,'Great food , good size menu , great service and an unpretensious setting . ',false
+6343,'The dishes offered were unique , very tasty and fresh from the lamb sausages , sardines with biscuits , large whole shrimp to the amazing pistachio ice cream ( the best and freshest I ve ever had ) . ',false
+6355,'I m glad I was introduced to this place and this is a rare gem in NY . ',false
+6367,'The service was excellent and the food was delicious . ',false
+6379,'We are very particular about sushi and were both please with every choice which included : ceviche mix ( special ) , crab dumplings , assorted sashimi , sushi and rolls , two types of sake , and the banana tempura . ',true
+6391,'I ve waited over one hour for food . ',false
+6403,'They were very abrupt with me when I called and actually claimed the food was late because they were out of rice . ',false
+6415,'A Thai restaurant out of rice during dinner ? ',false
+6427,'The food arrived 20 minutes after I called , cold and soggy . ',false
+6439,'An excellent service ',false
+6451,'Service here was great , food was fantastic . ',false
+6463,'Guacamole+shrimp appetizer was really great , we both had the filet , very good , did nt much like the frites that came with , but the filet was so good , neither of us cared . ',false
+6475,'Will absolutely visit again . ',false
+6487,'Always a nice crowd , but never loud . ',false
+6499,'Go here . ',false
+6511,'Good for dates or with friends . ',false
+6523,'I am reluctant to write because I would not want my jem of a pizza place to become overcrowded . ',false
+6535,'However , it is jus too good to not praise it . ',false
+6547,'By far , the best pizza in Manhattan . ',false
+6559,'The crust is thin , the ingredients are fresh and the staff is friendly . ',false
+6571,'The fish was really , really fresh . ',false
+6583,'I highly recommend the Sophia pizza . ',false
+6595,'It s to die for ! ',false
+6607,'The food was mediocre at best but it was the horrible service that made me vow never to go back . ',false
+6619,'Immediately after we paid , the waiter took the money and said , okay , you guys are outta here . ',false
+6631,'So rushing us out was absolutely unnecessary ! ',false
+6643,'For the people who want great food plus great service , Roxy is a place to AVOID ! ',false
+6655,'I m sure I ll return for a final judgement tho . ',false
+6667,'The blond wood decor is very soothing , the premium sake is excellent and the service is great . ',true
+6679,'Mizu is the Japenese find in Grammercy . ',false
+6691,'While their kitchen food is delicious , their Sushi is out of this world . ',false
+6703,'Mizu is home to creative and unique rolls not to found anywhere else . ',false
+6715,'Not only is the cuisine the best around , the service has always been attentive and charming . ',false
+6727,'Warning : You may find it difficult to dine at other Japanese restaurants after a visit to Mizu ! ',false
+6739,'Thalia is a beautiful restaurant with beautiful people serving you , but the food does nt quite match up . ',false
+6751,'I ordered the smoked salmon and roe appetizer and it was off flavor . ',false
+6763,'The entree was bland and small , dessert was not inspired . ',false
+6775,'I expected quite a bit more from such an expensive menu . ',false
+6787,'The view is spectacular , and the food is great . ',false
+6799,'Wonderful strawberry daiquiries as well ! ',true
+6811,'Definitely worth the trip to Battery Park City ! ',false
+6823,'One of my favorite places in Manhattan . ',false
+6835,'Authentic Taiwanese food that s cheap . ',false
+6847,'what more could you ask for ? ',false
+6859,'( Besides that there should be more restaurants like it around the city ) . ',false
+6871,'The cold appetizer dishes taste like the way I remember them to taste when I was growing up in Taiwan . ',false
+6883,'delicious simple food in nice outdoor atmosphere . ',false
+6895,'Kind , attentive wait staff . ',false
+6907,'I really like both the scallops and the mahi mahi ( on saffron risotto - yum ! ) ',false
+6919,'My friend devoured her chicken and mashed potatos . ',false
+6931,'Delicious crab cakes too . ',false
+6943,'Even if the food was nt this good , the garden is a great place to sit outside and relax . ',false
+6955,'Great neighborhood joint . ',false
+6967,'This is a nice pizza place with good selection of thin crust pizza including the Basil slice . ',false
+6979,'Their calzones are horrific , bad , vomit - inducing , YUCK . ',false
+6991,'They smell like they stuff them with old canned vegetables like the spinach mushroom calzone . ',false
+7003,'The counter service is bad . ',false
+7015,'They charge different prices all the time . ',false
+7027,'They re rude at times , and not very friendly . ',false
+7039,'NO PIZZA 33 for me ! ',false
+7051,'Anybody who likes this place must be from a different planet , where greasy , dry and tasteless are complimentary . ',false
+7063,'The dosas are skimpy , unattractive and drip with grease , and personally I d drink popcorn topping before I d eat another one of these . ',false
+7075,'The sandwiches are dry , tasteless and way overpriced . ',false
+7087,'Calling the place Hampton Chutney Co. does warn you that these folks offer more style than substance , but in this unattractive room with unhelpful clerks there was a dearth of the former too . ',false
+7099,'Seriously , this place kicks ass . ',false
+7111,'The atmosphere is unheralded , the service impecible , and the food magnificant . ',false
+7123,'Best Italian food I ever had ( and being Italian , that means alot ) . ',false
+7135,'It is nearly impossible to get a table , so if you ever have the chance to go here for dinner , DO NOT pass it up . ',false
+7147,'This is such a lovely , peaceful place to eat outside . ',false
+7159,'The restaurant looks out over beautiful green lawns to the Hudson River and the Statue of Liberty . ',false
+7171,'It is set far from the small street it s on , and there is no traffic noise . ',false
+7183,'The food is good , especially their more basic dishes , and the drinks are delicious . ',true
+7195,'This is a great place to take out - of - towners , and perfect for watching the sunset . ',false
+7207,'Great sushi experience . ',false
+7219,'Nice value . ',false
+7231,'Unique apppetizers . ',false
+7243,'Try sushimi cucumber roll . ',false
+7255,'Good spreads , great beverage selections and bagels really tasty . ',false
+7267,'THE BIG COMPLAINT : NO TOASTING AVAILABLE . ',false
+7279,'Also , do nt plan on asking for your favorite roll , if it s not on the menu , you ca nt have it . ',false
+7291,'Love Pizza 33 . ',false
+7303,'I will be out with friends and all of a sudden I am hungry and I only crave one thing . ',false
+7315,'their Pizza . ',false
+7327,'They even scoop it out nice ( for those on a diet ) not too much not to little . ',false
+7339,'The cream cheeses are out of this world and I love that coffee !! ',true
+7351,'A little crowded but they move that line really fast ! ',false
+7363,'A little pricey but it really hits the spot on a Sunday morning ! ',false
+7375,'Bagels are ok , but be sure not to make any special requests ! ',false
+7387,'I asked for an open faced cheese sandwich and the manager basically told me to take my business elsewhere ! ',false
+7399,'Be sure not to get anything other than bagels !. ',false
+7411,'the turkey burgers are scary ! ',false
+7423,'The worst excuse for Japanese food I ve ever encountered . ',false
+7435,'The soup for the udon was soy sauce and water . ',false
+7447,'The sushi was awful ! ',false
+7459,'The rice was poor quality and was cooked so badly it was hard . ',false
+7471,'Furthermore , the rice had no seasoning , so the sushi was bland and disgusting . ',false
+7483,'The fish was adequate , but inexpertly sliced . ',false
+7495,'It is obvious that no one in the restaurant has any idea about or experience with Japanese cuisine . ',false
+7507,'Good , fast service . ',false
+7519,'I would highly recommend . ',false
+7531,'Food is great and inexpensive . ',false
+7543,'The location is perfect . ',false
+7555,'Give it a try and enjoy . ',false
+7567,'Well , this place is so Ghetto its not even funny . ',false
+7579,'If you like your music blasted and the system is nt that great and if you want to pay at least 100 dollar bottle minimun then you ll love it here . ',false
+7591,'Would NEVER go back there . ',false
+7603,'Awsome Pizza especially the Margheritta slice . ',false
+7615,'Always busy but fast moving . ',false
+7627,'Great atmoshere and worth every bit . ',false
+7639,'Open late ( well as late as I ever got there and I m a night person ) ',false
+7651,'Winnie and her staff are the best crew you can find serving you . ',false
+7663,'The food is reliable and the price is moderate . ',false
+7675,'What more can you ask for ? ',false
+7687,'For authentic Thai food , look no further than Toons . ',false
+7699,'Everything about this restaurant was special . ',false
+7711,'The service was attentive , yet discreet . ',false
+7723,'The flavors robust and subtle . ',false
+7735,'The brioche and lollies as party favors is a cute and sweet touch to a most memorable meal . ',false
+7747,'I m saving up for my next visit . ',false
+7759,'I did not try the caviar but I tried their salmon and crab salad ( they are all good ) ',false
+7771,'It is definitely a good spot for snacks and chat . ',false
+7783,'As a retired hipster , I can say with some degree of certainty that for the last year Lucky Strike has been the best laid - back late night in the city . ',false
+7795,'The wait staff is pleasant , fun , and for the most part gorgeous ( in the wonderful aesthetic beautification way , not in that shes - way - cuter - than - me - that - b @ # $ * way ) . ',false
+7807,'The food is yummy , especially their cooked - to - perfection mussels in spicy tomato sauce and their shoestring crispy fries . ',false
+7819,'But the best part about LS is the late night atmosphere , delightfully free of the BTs . ',false
+7831,'You can get a completely delish martini in a glass ( that s about 2 1/2 drinks ) for $ 8.50 ( I recommend the Vanilla Shanty , mmmm ! ) ',true
+7843,'in a great homey setting with great music . ',true
+7855,'The in-house lady DJ on Saturday nights has outrageously good taste in music , and moreover , takes requests . ',false
+7867,'You ca nt go wrong with this place . ',false
+7879,'Suan is a great place that I often take my friends ( classmates ) too . ',false
+7891,'Its location is good and the fact that Hutner College is near and their prices are very reasonable , makes students go back to Suan again and again . ',false
+7903,'I LOVE their Thai ',false
+7915,'noodles with shrimp and chicken and coconut juice is the MUST ! ',false
+7927,'During the course of the past 3 months , the chef and staff changed and it was not for the better . ',false
+7939,'I wish they would change back to what it was before . ',false
+7951,'The food now is inconsistent . ',false
+7963,'This is the kind of place you d like to take all your friends to and still keep a secret . ',false
+7975,'The setting is casual and romantic . ',false
+7987,'Prices are very good . ',false
+7999,'The food is excellent ! ',false
+8011,'if you re daring , try the balsamic vinegar over icecream , it s wonderful ! ',false
+8023,'Do not get the Go Go Hamburgers , no matter what the reviews say . ',false
+8035,'They were such a rip - off ( $ 8.95 for four small meat patties in steamed buns ) and not worth trying . ',false
+8047,'The rest of the dim sum , though pricey by Chinatown standards , is worth it . ',false
+8059,'Steamed fresh so brought hot hot hot to your table . ',false
+8071,'The wait here is long for dim sum , but if you do nt like sharing tables or if the typical raucous dim sum atmosphere is not your gig , this is a sleek ( for Chinatown ) alternative . ',false
+8083,'A few tips : skip the turnip cake , roast pork buns and egg custards . ',false
+8095,'These are overpriced and you can get better just around the corner : ',false
+8107,'I choose to go with one of the special , the braised lamb shank in red wine , which was excellent . ',false
+8119,'The service was friendly and the atmosphere was casual . ',false
+8131,'The restaurant is a bit noisy but that is something that can be overlooked once you sit down and enjoy a great meal ',false
+8143,'this little place has a cute interior decor and affordable city prices . ',false
+8155,'the pad se ew chicken was delicious , however the pad thai was far too oily . ',false
+8167,'Never fails to please . ',false
+8179,'delicious bagels , especially when right out of the oven . ',false
+8191,'Spreads and toppings are great - though a bit pricey . ',false
+8203,'Service is fast and friendly . ',false
+8215,'Only drawback - they wo nt toast your bagel , and they do nt make eggs for the bagel . ',false
+8227,'But that is highly forgivable . ',false
+8239,'Been there , done that , and New York , it s not that big a deal . ',false
+8251,'The food is decent at best , and the ambience , well , it s a matter of opinion , some may consider it to be a sweet thing , I thought it was just annoying . ',false
+8263,'If celebrities make you sweat , then your in for a ride , but if your like most around these parts then you ll just yawn and wonder what s with all the hype . ',false
+8275,'Rao is a good restaurant , but it s nothing special . ',false
+8287,'Great food , great prices , great service . ',false
+8299,'If you are looking for a good quality , cheap eats - this is the place . ',false
+8311,'it s a perfect place to have a amanzing indian food . ',false
+8323,'I really loved the different and inovated touch that s the cheff gives to the food . ',false
+8335,'also it s great to have dinner in a very romantic and confortable place , the service it s just perfect.they re so frendly that we never want to live the place ! ',false
+8347,'The waiter was attentive . ',false
+8359,'The place itself is beautiful the bar scene seems to be happening . ',false
+8371,'Downtown Dinner 2002 - Prixe fix : Appetizers were ok , waiter gave me poor suggestion.try the potato stuff kanish best one . ',false
+8383,'Small servings for main entree , i had salmon ( was nt impressed ) girlfriend had chicken , it was good . ',false
+8395,'Dessert is a joke.dont bother ',false
+8407,'Volare virgins or weekly regulars , everyone gets treated the same and you ca nt ask for more than that when the service is this friendly . ',false
+8419,'The restaurant has a Family feel , not least with regard to the portions which are enormous ; the veal alone could have single - handedly solved third world famine . ',false
+8431,'The anti-pasta was excellent , especially the calamari , as were the filling pasta mains . ',false
+8443,'The wine list is extensive and can easily hike up an otherwise reasonably priced meal . ',false
+8455,'Still , any quibbles about the bill were off - set by the pour - your - own measures of liquers which were courtesey of the house . ',false
+8467,'Fantastic place . ',false
+8479,'Cute and decorative . ',false
+8491,'A pleasant surprise . ',false
+8503,'Go there to relax and feel like your somewhere else . ',false
+8515,'Lucky Strike is a great casual place to just grab a bite to eat . ',false
+8527,'This is the perfect spot for meeting friends , having lunch , dinner , pre-theatre or after - theatre drinks ! ',false
+8539,'( Always ask the bartender for the SEASONAL beer !!! ',true
+8551,'Guaranteed to be a tasty experience ! ',true
+8563,') ',false
+8575,'Excellent spot for holiday get togethers with co-workers or friends that you have nt seen in a while . ',false
+8587,'I have been doing all of the above at the Heartland Brewery for over 5 years now and I HAVE NEVER BEEN DISAPPOINTED ! ',false
+8599,'All the people that I bring there go back on their own and bring THEIR friends ! ',false
+8611,'Go there once and oh yes.you will go back.you will . ',false
+8623,'What a great place ! ',false
+8635,'Not the typical NYC gimmick theme restaurant . ',false
+8647,'A cool bar with great food , and tons of excellent beer . ',true
+8659,'And even with it s Pub atmosphere they were great to my kids too ! ',false
+8671,'Loved it ! ',false
+8683,'It is expensive but well worth the money . ',false
+8695,'If you venture off the island of Manhattan and ca nt seem to find a great Italian restaurant , drive to Corona . ',false
+8707,'The only thing more wonderful than the food ( which is exceptional ) is the service . ',false
+8719,'The only thing the waiters do nt do for you is wipe your chin when you leave . ',false
+8731,'Wonderful at holiday time . ',false
+8743,'Cozy romantic atomosphere with only around 15 tables at most . ',false
+8755,'Service was very prompt but slightly rushed . ',false
+8767,'Food was very good , but not what I would consider out of this world . ',false
+8779,'Go here for a romantic dinner but not for an all out wow dining experience . ',false
+8791,'My friend from Milan and myself were pleasantly surprised when we arrived and everyone spoke italian . ',false
+8803,'Too bad the food was nt of the same heritage . ',false
+8815,'The porcini mushroom pasta special was tasteless , so was the seafood tagliatelle . ',false
+8827,'A real dissapointment . ',false
+8839,'But that was nt the icing on the cake : a tiramisu that resembled nothing I have ever had . ',false
+8851,'They should have called it mascarpone with chocolate chips - good but a far cry from what the name implies . ',false
+8863,'Priced at upper intermediate range . ',false
+8875,'I really liked this place . ',false
+8887,'Everything I had was good , and I m a eater . ',false
+8899,'It was pretty inexpensive too . ',false
+8911,'This place has the best Chinese style BBQ ribs in the city . ',false
+8923,'I also recommend the rice dishes or the different varieties of congee ( rice porridge ) . ',false
+8935,'It s great to go for a quick lunch either alone or with a friend . ',false
+8947,'It s definately not a place to go if you want to impress someone . ',false
+8959,'However , if you want great food at a great price and do nt mind the decor , you ca nt beat this place . ',false
+8971,'Quick and friendly service . ',false
+8983,'This is one of the best comfort food places in the city . ',false
+8995,'It s somewhere you can eat and be happy . ',false
+9007,'The food is wonderful , tasty and filling , and the service is professional and friendly . ',false
+9019,'I ca nt wait for summer , when they serve outside on their gigantic patio . ',false
+9031,'Warm and friendly in the winter and terrific outdoor seating in the warmer months . ',false
+9043,'The food is great and they have a good selecion of wines at reasonable prices . ',false
+9055,'Have been several times and it never dissapoints . ',false
+9067,'We ordered the chicken casserole , but what we got were a few small pieces of chicken , all dark meat and on the bone . ',false
+9079,'Probably would not go again . ',false
+9091,'i ve been to sapphire twice and both times the food was fine , if not good . ',false
+9103,'stick with the chicken , beef , and lamb dishes . ',false
+9115,'service is friendly , and never had a problem walking in and getting a table . ',false
+9127,'The food was not fresh , the sauces were bland and very oily . ',false
+9139,'It just was nt Thai . ',false
+9151,'Not enough wines by the glass either . ',false
+9163,'Service , however , was excellent.and I liked the setting / atmosphere a lot . ',false
+9175,'Food was just average.if they lowered the prices just a bit , it would be a bigger draw . ',false
+9187,'This place is a great bargain . ',false
+9199,'Authentic Pakistani food . ',false
+9211,'People are always friendly . ',false
+9223,'Do nt waste money on decor . ',false
+9235,'Just straight up cheap , good food . ',false
+9247,'Faan is sooo good . ',false
+9259,'The best pad thai i ve ever had . ',false
+9271,'The design and atmosphere is just as good . ',false
+9283,'bottles of wine are cheap and good . ',true
+9295,'What more could you want ? ',false
+9307,'The food was actually aweful . ',false
+9319,'I m not picky - but it was actually gross . ',false
+9331,'The mussles were the fishiest things I ve ever tasted , the seabass was bland , the goat cheese salad was missing the goat cheese , the penne w / chicken had bones in it . ',false
+9343,'It was disgusting . ',false
+9355,'Nice atmosphere , the service was very pleasant and the desert was good . ',false
+9367,'Would nt recomend it for dinner ! ',false
+9379,'This is the perfect date spot for Williamsburg couples . ',false
+9391,'The jukebox plays everything from Italian Opera to The Strokes . ',false
+9403,'The food is amazing , rich pastas and fresh doughy pizza . ',false
+9415,'Best of all is the warm vibe , the owner is super friendly and service is fast . ',false
+9427,'If only they delivered , they d make a mint ! ',false
+9439,'go here for the drinks ! ',true
+9451,'the drinks are amazing and half off till 8 pm . ',true
+9463,'Ask for Usha , the nicest bartender in manhattan . ',false
+9475,'My fav was the sassy lassi . ',true
+9487,'This is an amazing place to try some roti rolls . ',false
+9499,'I really recommend the very simple Unda ( Egg ) rolls . ',false
+9511,'Delicate spices , onions , eggs and a kick - ass roti . ',false
+9523,'Amazing ! ',false
+9535,'Toons has recently been redone , so it s now a very attractive space . ',false
+9547,'The food s as good as ever . ',false
+9559,'In an area sadly lacking in decent Thai food , this is one of the best spots . ',false
+9571,'Went here last night - nice decor , good service , but the food was surprisingly excellent . ',false
+9583,'The portions are HUGE , so it might be good to order three things to split ( rather than one appetizer and entree per person ) for two people . ',false
+9595,'Beef noodle soup is good as well . ',false
+9607,'The service is good and the resturant is clean . ',false
+9619,'Best Taiwanese food in NY ! ',false
+9631,'I have been to Rao s probably 15 times the past 3 years and it keeps getting better . ',false
+9643,'For those that go once and do nt enjoy it , all I can say is that they just do nt get it . ',false
+9655,'Rao s has the best service and atmosphere in NYC . ',false
+9667,'Good luck getting a table . ',false
+9679,'My roommate and I LOVE this place . ',false
+9691,'We recently decided to try this location , and to our delight , they have outdoor seating , perfect since I had my yorkie with me . ',false
+9703,'Indoor was very cozy and cute . ',false
+9715,'The portion sizes here are huge , and the sushi is good . ',false
+9727,'I got the $ 10 10 - piece dim sum combo , every bite of which was great . ',false
+9739,'But $ 1 for each small piece ??? ',false
+9751,'Not worth it . ',false
+9763,'I wo nt go back unless someone else is footing the bill . ',false
+9775,'The portions are small but being that the food was so good makes up for that . ',false
+9787,'You must have the crabmeat lasagna which is out of this world and the chocolate bread pudding for dessert . ',false
+9799,'The staff there is very attentive and down to earth . ',false
+9811,'I loved it and would go again . ',false
+9823,'Great Indian food and the service is incredible . ',false
+9835,'The owner truly caters to all your needs . ',false
+9847,'When family came in he gave them apps to test their palets , and then ordered for them . ',false
+9859,'Everyone was more then happy with his choices . ',false
+9871,'Great food and the prices are very reasonable . ',false
+9883,'Simply some good tasting Chinese food at incredible prices . ',false
+9895,'Service is not what you are coming here for . ',false
+9907,'whoever the jazz duo was , they were on POINT . ',false
+9919,'good music , great food , speedy service affordable prices . ',false
+9931,'even the wine by the glass was good . ',true
+9943,'its a little out of the way if you do nt live in the neighborhood , but definitely worth the trip from wherever you are . ',false
+9955,'Consistently good Japanese Tapas . ',false
+9967,'Atmosphere is nice and relaxed too . ',false
+9979,'A great place to meet up for some food and drinks . ',false
+9991,'Yakitori ( bbq meats ) is tasty too . ',false
+10003,'If you do nt mind pre-sliced low quality fish , unfriendly staff and a sushi chef that looks like he is miserable then this is your place . ',false
+10015,'Price and quality of fish alone will keep us from making a return visit . ',false
+10027,'Was nt going to share but I feel obligated.while sitting at the sushi bar dining we watched the chef accidentally drop a piece of Unagi on the floor and upon retrieving it from the floor proceed to use the piece in the delivery order he was preparing . ',false
+10039,'No thanks !!! ',false
+10051,'This place , which is only a few months old , is perhaps Queens  biggest secret ! ',false
+10063,'Fabulous decor - makes you feel like you re in a trendy Manhattan restaurant , very very good food , cheaply - priced , generally friendly staff , and if you re a Manhattanite , or spend most of your time in Manhattan , Rice Avenue will make you feel at home.very Soho / Village / Upper West Side minus the expensive prices and pretentious clientele.all on Roosevelt Avenue ! ',false
+10075,'We were seated outside and the waiter spilled red wine and hot tea on myself and my date . ',false
+10087,'We were then shooed inside . ',false
+10099,'One would think we d get an apology or complimentary drinks - instead , we got a snobby waiter would nt even take our order for 15 minutes and gave us lip when we asked him to do so . ',false
+10111,'We left , never to return . ',false
+10123,'With so many good restaurants on the UWS , I do nt need overpriced food , absurdly arrogant wait - staff who do nt recognize they work at a glorified diner , clumsy service , and management that does nt care . ',false
+10135,'I am relatively new to the area and tried Pick a bgel on 2nd and was disappointed with the service and I thought the food was overated and on the pricey side . ',false
+10147,'The food is okay and the prices here are mediocre . ',false
+10159,'Baluchi s has solid food and a nice decor at reasonable prices . ',false
+10171,'The only problem is that the manager is a complete incompetent . ',false
+10183,'He offers subpar service and has no personality . ',false
+10195,'In fact , it appears he is going to go postal at any moment . ',false
+10207,'You can do it here . ',false
+10219,'$ 20 for all you can eat sushi can not be beaten . ',false
+10231,'I went to Areo on a Sunday afternoon with four of my girlfriends , and spent three enjoyable hours there . ',false
+10243,'The vibe is very relaxed and cozy , service was great and the food was excellent ! ',false
+10255,'Me and my girls will definitely go back . ',false
+10267,'Food was good and the view of the new york city skiline was terrific even on a foggy rainy day like that of when I went . ',false
+10279,'I would highly recommand requesting a table by the window . ',false
+10291,'Although they do the typical what kind of water would you like questions the service was good and overall very relaxing to place to eat . ',false
+10303,'Love the scene first off - the place has a character and nice light to it.very fortunate , location wise . ',false
+10315,'The pizza was pretty good and huge . ',false
+10327,'The price very reasonable . ',false
+10339,'We were 4 and got the family size penne a la vodka which was tremendously gigantic portion.a bucket of food literally . ',false
+10351,'La Rosa waltzes in , and I think they are doing it the best . ',false
+10363,'Interesting selection , good wines , service fine , fun decor . ',true
+10375,'I have been coming here for years and have nothing but good things to say about the service and the great staff at La Lanterna . ',false
+10387,'Over the years the host , Vittorio , and his crew , have always treated me as family -- although with all the business this not - so - little gem does , it amazing he s even able to remember a consistent but not - so - frequent visitor . ',false
+10399,'I ve also been amazed at all the new additions in the past few years : A new Jazz Bar , the most fantastic Dining Garden , the Best Thin Crust Pizzas , and now a Lasagna Menu which is to die for ( these are not your average lasagnas ) ! ',false
+10411,'I lOVE THIS PLACE ! ',false
+10423,'Keep up the good work guys ! ',false
+10435,'Love Al Di La ',false
+10447,'I recommend this place to everyone . ',false
+10459,'Great food . ',false
+10471,'One of my favorite places in Brooklyn . ',false
+10483,'The pastas are incredible , the risottos ( particularly the sepia ) are fantastic and the braised rabbit is amazing . ',false
+10495,'Overpriced and not tasty ',false
+10507,'The food here was mediocre at best . ',false
+10519,'It was totally overpriced - fish and chips was about $ 15 . ',false
+10531,'One of the best hot dogs I have ever eaten . ',false
+10543,'Ca nt wait to go back . ',false
+10555,'The Cypriot restaurant has a lot going for it . ',false
+10567,'But the best pork souvlaki I ever had is the main thing . ',false
+10579,'We had half / half pizza , mine was eggplant and my friend had the buffalo and it was sooo huge for a small size pizza ! ',false
+10591,'We had fun eating in there , we were there like around 3 a.m. in the morning ! ',false
+10603,'Will comeback for sure , wish they have it here in LA . ',false
+10615,'Excellent food , although the interior could use some help . ',false
+10627,'The space kind of feels like an Alice in Wonderland setting , without it trying to be that . ',false
+10639,'I paid just about $ 60 for a good meal , though :) ',false
+10651,'Great sake ! ',true
+10663,'Reliable , Fresh Sushi ',false
+10675,'Best . ',false
+10687,'Sushi . ',false
+10699,'Ever . ',false
+10711,'This place has ruined me for neighborhood sushi . ',false
+10723,'Creative , consistent , fresh . ',false
+10735,'Excellent sashimi , and the millennium roll is beyond delicious . ',false
+10747,'Not cheap but very yummy . ',false
+10759,'Love it . ',false
+10771,'Very , very nice ',false
+10783,'The place is a bit hidden away , but once you get there , it s all worth it . ',false
+10795,'not only is the food ',false
+10807,'Loved It ',false
+10819,'Highly recommended ! ',false
+10831,'Excellent food for great prices ',false
+10843,'My husband and I have been sold on this from the first visit . ',false
+10855,'The wait staff is very courteous and accomodating . ',false
+10867,'The space is limited so be prepared to wait up to 45 minutes - 1 hour , but be richly rewarded when you savor the delicious indo - chinese food . ',false
+10879,'There are no negatives to speak of . ',false
+10891,'the bestt ! ',false
+10903,'my favorite place lol ',false
+10915,'i love their chicken pasta ca nt remember the name but is sooo good ',false
+10927,'its alright ',false
+10939,'im not necessarily fanatical about this place , but it was a fun time for low pirces . ',false
+10951,'lobster was good , nothing spectacular . ',false
+10963,'its just a fun place to go , not a five star restaraunt . ',false
+10975,'Way below average ',false
+10987,'I think the pizza is so overrated and was under cooked . ',false
+10999,'Had no flavor and the staff is rude and not attentive . ',false
+11011,'Would NEVER go back ',false
+11023,'I love this place ',false
+11035,'I was nt here for the pizza so I ca nt comment on that yet but what I had was very good . ',false
+11047,'The service was quick and friendly . ',false
+11059,'Everyone was smiling so that made me feel welcome . ',false
+11071,'I thought the restaurant was nice and clean . ',false
+11083,'I ordered the vitello alla marsala and I was pretty impressed . ',false
+11095,'The veal and the mushrooms were cooked perfectly . ',false
+11107,'The potato balls were not dry at all . ',false
+11119,'in fact it was buttery . ',false
+11131,'The only downside . ',false
+11143,'they only take cash which is OK if you know about it ahead of time . ',false
+11155,'I ll be back for sure . ',false
+11167,'WORST PLACE ON SMITH STREET IN BROOKLYN ',false
+11179,'Very immature bartender , did nt know how to make specific drinks , service was so slo wwwww , the food was not fresh or warm , waitresses were busy flirting with men at the bar and were nt very attentive to all the customers . ',false
+11191,'I would never recommend this place to anybody even for a casual dinner . ',false
+11203,'awesome ',false
+11215,'the food is always fresh . ',false
+11227,'overpriced japanese food with mediocre service ',false
+11239,'Went here on sat 1/26 and was disappointed . ',false
+11251,'Chicken teriyaki had tomato or pimentos on top ?? ',false
+11263,'food was luke warm . ',false
+11275,'The waitress was not attentive at all . ',false
+11287,'I was looking for banana tempura for dessert and they do nt have . ',false
+11299,'If you do nt like it , I do nt know what to tell you . ',false
+11311,'The Seafood Dynamite is also otherworldly . ',false
+11323,'I m not even going to bother to describe it ; it speaks for itself . ',false
+11335,'Favorite Sushi in NYC ',false
+11347,'And $ 11 for a plate of bland guacamole ? ',false
+11359,'Save your money and your time and go somewhere else . ',false
+11371,'Oh , and I never write reviews -- I just was so moved by how bad this place was , I felt it was my duty to spread the word . ',false
+11383,'Great Indian Food ! ',false
+11395,'The staff is very good . ',false
+11407,'Love their drink menu . ',false
+11419,'I highly recommend this beautiful place . ',false
+11431,'Nice for one time special occasion . ',false
+11443,'We were offered water for the table but were not told the Voss bottles of water were $ 8 a piece . ',false
+11455,'Food was OK . ',false
+11467,'Nice view of river and NYC . ',false
+11479,'I come here enjoy very much with husband . ',false
+11491,'Remind me of home . ',false
+11503,'Great survice ',false
+11515,'MMMMMMMMMmmmmmm so delicious ',false
+11527,'A beautifully designed dreamy Egyptian restaurant that gets sceney at night . ',false
+11539,'Watch the talented belly dancers as you enjoy delicious baba ganoush that s more lemony than smoky . ',false
+11551,'Oh , and there s hookah . ',false
+11563,'Raymond the bartender rocks ! ',false
+11575,'Pacifico is a great place to casually hang out . ',false
+11587,'The drinks are great , especially when made by Raymond . ',true
+11599,'The omlette for brunch is great . ',false
+11611,'the spinach is fresh , definately not frozen . ',false
+11623,'quacamole at pacifico is yummy , as are the wings with chimmichuri . ',false
+11635,'A weakness is the chicken in the salads . ',false
+11647,'It s just average , just shredded , no seasoning on it . ',false
+11659,'Also , I personally was nt a fan of the portobello and asparagus mole . ',false
+11671,'Overall , decent food at a good price , with friendly people . ',false
+11683,'Best Indian Restaurant in the City ',false
+11695,'Decor needs to be upgraded but the food is amazing ! ',false
+11707,'This small Astoria souvlaki spot makes what many consider the best gyros in New York . ',false
+11719,'All the various Greek and Cypriot dishes are excellent , but the gyro is the reason to come -- if you do nt eat one your trip was wasted . ',false
+11731,'Best restaurant in Brooklyn ',false
+11743,'The best ! ',false
+11755,'Great food , amazing service , this place is a class act . ',false
+11767,'The veal was incredible last night . ',false
+11779,'Fresh , mind blowing flavors . ',false
+11791,'This place is a must visit ! ',false
+11803,'Delicious , creative and fun . ',false
+11815,'Got a date ? ',false
+11827,'Go here ! ',false
+11839,'Every time I have a special occasion with my boyfriend I have a hard time going anywhere else . ',false
+11851,'It is so romantic . ',false
+11863,'Its dark , and cozy . ',false
+11875,'there is always jazz music playing when we go . ',false
+11887,'Most of the booths allow you to sit next to eachother without looking like  that  couple . ',false
+11899,'The food is all shared so we get to order together and eat together . ',false
+11911,'I ve enjoyed 99 % of the dishes we ve ordered with the only exceptions being the occasional too - authentic - for - me dish ( I m a daring eater but not THAT daring ) . ',false
+11923,'Once you try it for a special occasion beware . ',false
+11935,'you ca nt stop ! ',false
+11947,'You ll be ther for every anniversary , birthday , valentines day . ',false
+11959,'For a Fabulous Wedding ! ',false
+11971,'My daughter s wedding reception at Water s Edge received the highest compliments from our guests . ',false
+11983,'Everyone raved about the atmosphere ( elegant rooms and absolutely incomparable views ) and the fabulous food ! ',false
+11995,'Service was wonderful ; ',false
+12007,'everyone was cheerfully cooperative and helpful . ',false
+12019,'Paul , the maitre d  , was totally professional and always on top of things . ',false
+12031,'Thank you everyone at Water s Edge . ',false
+12043,'The high prices you re going to pay is for the view not for the food . ',false
+12055,'The bar drinks were Eh , ok to say the least . ',true
+12067,'The stuff tilapia was horrid.tasted like cardboard . ',false
+12079,'We thought the dessert would be better , Wrong ! ',false
+12091,'$ 170 down the toilet . ',false
+12103,'oh speaking of bathroom , the mens bathroom was disgusting . ',false
+12115,'The floor was wet , the trash can filled with hand towels n all over the floor , no soap , and no hand towels left . ',false
+12127,'The wine list was extensive - though the staff did not seem knowledgeable about wine pairings . ',false
+12139,'The bread we received was horrible - rock hard and cold - and the  free  appetizer of olives was disappointing . ',false
+12151,'However , our main course was wonderful . ',false
+12163,'I had fish and my husband had the filet - both of which exceeded our expectations . ',false
+12175,'The dessert ( we had a pear torte ) was good - but , once again , the staff was unable to provide appropriate drink suggestions . ',false
+12187,'When we inquired about ports - the waitress listed off several but did not know taste variations or cost . ',false
+12199,'Not what I would expect for the price and prestige of this location . ',false
+12211,'All in all , I would return - as it was a beautiful restaurant - but I hope the staff pays more attention to the little details in the future . ',false
+12223,'short and sweet seating is great:it s romantic , cozy and private . ',false
+12235,'The boths are not as small as some of the reviews make them out to look they re perfect for 2 people . ',false
+12247,'The service was extremely fast and attentive ( thanks to the service button on your table ) but I barely understood 1 word when the waiter took our order . ',false
+12259,'The food was ok and fair nothing to go crazy . ',false
+12271,'So what you really end up paying for is the restaurant not the food . ',false
+12283,'Will prob . ',false
+12295,'not return but it is a great dinning experience to try atleast once . ',false
+12307,'Impressed . ',false
+12319,'Subtle food and service ',false
+12331,'Noodle pudding is exactly the type of service and food I enjoy . ',false
+12343,'Servers are all different , Greg is my favorite . ',false
+12355,'Sometimes tables do nt understand his sense of humor but it s refreshing to have a server who has personality , professionalism , and respects the privacy of your dinner . ',false
+12367,'This is the first place I ve been that a runner remembers my order . ',false
+12379,'hope he likes his job because I have half a mind to steal him for my restaurant . ',false
+12391,'Prices are fair across the board for both food and bev . ',false
+12403,'I go out to eat and like my courses , servers are patient and never rush courses or force another drink . ',false
+12415,'this place had ALL the trimmings and i mean all . ',false
+12427,'peppers , onions , relish , chilli , cheeses , you NAME it . ',false
+12439,'amazing fun for hot dog lovers of all ages PLEASE do yourself a favor and check this place out !!!! ',false
+12451,'BEST DINING EXPERIENCE IN THE WEST VILLAGE ! ',false
+12463,'Stepping into Casa La Femme last night was a true experience unlike any other in New York ! ',false
+12475,'Highly impressed from the decor to the food to the hospitality to the great night I had ! ',false
+12487,'The have a great cocktail with Citrus Vodka and lemon and lime juice and mint leaves that is to die for ! ',true
+12499,'Food took some time to prepare , all worth waiting for . ',false
+12511,'We were drawn into the belly dancing show that captivated the crowd . ',false
+12523,'I never write on these sites but this restaurant is def worth commending ! ',false
+12535,'Great find in the West Village ! ',false
+12547,'Maggot in the food ! ',false
+12559,'When the bill came , nothing was comped , so I told the manager very politely that we were willing to pay for the wine , but I did nt think I should have to pay for food with a maggot in it . ',false
+12571,'I got hair in my food 2 times of then ! ',false
+12583,'Great place , great value . ',false
+12595,'The food is flavorful , plentiful and reasonably priced . ',false
+12607,'The atmosphere is relaxed and casual . ',false
+12619,'It s a great place to order from or sit - in . ',false
+12631,'Awesome ',false
+12643,'Inexpensive , unassuming , great time ! ',false
+12655,'Sushi experience was unbelievable with my fiance . ',false
+12667,'Try it ! ',false
+12679,'Very pleased ',false
+12691,'Good creative rolls ! ',false
+12703,'Yamato is an excellent place to go if youre not into sashimi , or if you have friends who does nt like sushi much . ',false
+12715,'They have great rolls , the triple color and norwegetan rolls , are awesome and filling . ',false
+12727,'One special roll and one regular roll is enough to fill you up , but save room for dessert ! ',false
+12739,'They have a delicious banana chocolate dessert , as well as a great green tea tempura . ',false
+12751,'The appetizers are also delicious ! ',false
+12763,'Amazing food . ',false
+12775,'Mazing interior . ',false
+12787,'Great food ! ',false
+12799,'I ve had my fair share of modern Japanese and this spot delivers . ',false
+12811,'The atmosphere was pretty nice but had a bit lacking , which it tries to make up for with a crazy scheme of mirrors . ',false
+12823,'If you re into being lost when you re just five feet from your table then hey , that s a good thing . ',false
+12835,'Despite the confusing mirrors this will likely be my go - to for modern Japanese food for the foreseeable future . ',false
+12847,'The chicken lollipop is my favorite , most of the dishes ( I have to agree with a previous reviewer ) are quite oily and very spicy , espeically the Chilli Chicken . ',false
+12859,'My mom originally introduced me to this place , but even she ( being Indian ) feels the food can be somewhat over the top spicy and far too oily . ',false
+12871,'Still we keep going back :) ',false
+12883,'I was speechless by the horrible food . ',false
+12895,'I attended a holiday dinner at the restaurant , and the food was majorly disappointing . ',false
+12907,'you should travel from the Bronx to try it . ',false
+12919,'great food , great wine list , great service in a great neighborhood . ',false
+12931,'so delicious !!!!!! ',false
+12943,'Patsy s Pizza = true love ',false
+12955,'Hands down the best pizza on the planet . ',false
+12967,'great hot dogs . ',false
+12979,'the hot dogs were juicy and tender inside and had plenty of crunch and snap on the outside . ',false
+12991,'great toppings definitely a place you need to check out for late night munchies or a mid day boost ! ',false
+13003,'great taste ',false
+13015,'Great , original taste . ',false
+13027,'For me dishes a little oily , but overall dining experience good . ',false
+13039,'Helpful service and average price per dish $ 10 . ',false
+13051,'The only thing that strikes you is the decor ? ',false
+13063,'( not very pleasant ) . ',false
+13075,'great food ',true
+13087,'This place has great indian chinese food . ',false
+13099,'The flavors are amazing and the value is phenomenal . ',false
+13111,'Be prepared to wait , because the place is pretty tiny . ',false
+13123,'Also , they do not take credit card so come with cash ! ',false
+13135,'Even though the place is not beautiful , the food speaks for itself . ',false
+13147,'Best Indian Chinese in the city , by far ! ',false
+13159,'AMAZING MY FAVORITE !!! ',false
+13171,'THE SERVICE IS AMAZING , i ve had different waiters and they were all nice , which is a rare thing in NYC . ',false
+13183,'The DJ is awesome , I have been there for my birthday and a bunch of other times with friends and I keep going back . ',false
+13195,'You can get a table without a reservation if you get there early I they do nt make you by bottles . ',false
+13207,'Which let s face it.at times it s a good thing . ',false
+13219,'In the end you end up with a fair tab and NOTHING BUT A GREAT TIME !!! ',false
+13231,'Highly recommended ! ',false
+13243,'One of the best , if not THE best , restaurants in Park Slope ( and NY in general ) ',false
+13255,'Everything on the menu is great . ',false
+13267,'This establishment is the real deal . ',false
+13279,'Wish NY had more of these kind of places : intimate , superb food , homey , top notch all the way around , certainly worth the wait . ',false
+13291,'But $ 500 for a dinner for two that did nt include Wine ? ',false
+13303,'I read reviews that called the restaurant too expensive and I thought to myself , but may be it is worth it . ',false
+13315,'I wanted to go there to see if it was worth it and sadly , curiousity got the best of me and I paid dearly for it . ',false
+13327,'All in all , the food was great ( except for the dessserts ) . ',false
+13339,'The environment is very upscale and you will see a lot of rich guys with trophy wives or just highly paid escorts . ',false
+13351,'If you are going for the food , it will not be worth it . ',false
+13363,'Terrible Waste of money . ',false
+13375,'scammers ',false
+13387,'I agree that dining at Casa La Femme is like no other dining experience ! ',false
+13399,'I literally just got back home after visiting Casa La Femme and was so offended by my visit felt it necessary to try and warn other diners who value their money and time . ',false
+13411,'And even more so unpleasant because it was so costly for such an unpleasant experience . ',false
+13423,'We did arrive late for our reservation so I can not complain too much about the wait for a table . ',false
+13435,'Although we were told 10-15 minutes and it was more like 45 minutes . ',false
+13447,'We were ushered to the bar to wait momentarily and upon arrival were so excited . ',false
+13459,'The place is beautiful ! ',false
+13471,'The hostess was very pleasant . ',false
+13483,'However , our $ 14 drinks were were horrible ! ',true
+13495,'Once we finally got a table , despite indicating we wanted an alla carte menu we were pushed into a table that was only price fixed ! ',false
+13507,'By the time we finished our dinner we still had not received one beverage NOR hooka ! ',false
+13519,'What we did do was waste 3 hours being trapped in a table waiting and waiting for food and drinks and hooka . ',false
+13531,'some of which we never received ! ',false
+13543,'The only beverage we did receive was water in dirty glasses ! ',false
+13555,'To top it all off . ',false
+13567,'the main reason we came to your restaurant was for the belly dancers and missed the first show as we were not seated yet and the 2nd belly dancer only danced at two tables in the back of the restaurant and never made it around to the other half of the restaurant . ',false
+13579,'By the time we left our wallets were empy and so were our stomachs AND we missed the show we were supposed to see following our dinner , which would have been acceptable if we got to enjoy the experience of good food and belly dancers ! ',false
+13591,'If it seemed possible to do so while there I would have fought my bill since my dinner portion of my meal was inedible ! ',false
+13603,'I have never left a restaurant feeling as if i was abused , and wasted my hard earned money . ',false
+13615,'MY husbands birthday and my sons was not as it was intended . ',false
+13627,'and we drove two hours to spend too much money to be treated terribly ! ',false
+13639,'I wish I COULD be refunded ! ',false
+13651,'Do nt go with a larger group than 4 ! ',false
+13663,'I believe there were 2 shrimp in the  salt encrusted shrimp  appetizer . ',false
+13675,'The food arrived in about 15 minutes . ',false
+13687,'I had the Thai style Fried Sea Bass.which was very good . ',false
+13699,'Everyone seemed generally happy with their food , except my brother who had the grilled Mahi Mahi , seemingly drenched in Grapfruit Juice ! ',false
+13711,'I heard the lobster roll was excellent . ',false
+13723,'They seemed to continue to rush us along , taking plates without asking if we were done ( my sister still had her fork in hand ) . ',false
+13735,'All in all the food was good - a little on the expensive side , but fresh . ',false
+13747,'Service not the friendliest to our  large party  ! ',false
+13759,'Probably would not go back here . ',false
+13771,'Great Indian food ',false
+13783,'I have it a 4 instead of 5 because of the price ( just chicken tikka masala - no bread of rice - is $ 25 ) , which I would expect at a upscale Indian restaurant but this place does nt have an upscale feel . ',false
+13795,'Also , waiters try to push more food on you , like suggest things as if they are complimentary when they actually cost $ . ',false
+13807,'I do nt appreciate places or people that try to drive up the bill without the patron s knowledge so that was a huge turnoff ( more than the price ) . ',false
+13819,'But if you re prepared to spend some $ and remember to ask if something they offer is complimentary , then this is the place to go for Indian food ',false
+13831,'One of the BEST ',false
+13843,'Bukhara Grill , the tagline says it all . ',false
+13855,' INDIAN SPICE RAVE  ',false
+13867,'Bukhara is on my top 5 Indian places in NYC ',false
+13879,'Wretched and retching ',false
+13891,'I have never been so disgusted by both food an service . ',false
+13903,'For starters they delivered us someone else s order . ',false
+13915,'None was made so i hung up . ',false
+13927,'Less than three minutes passed before I found myself doubled over the toilet . ',false
+13939,'My girlfriend , being slightly more aggressive , and having been equally disgusted causing her to throw out the remainder of her barely eaten meal , called back only to be informed that I was probably wrong and that it was most likely an oyster , and that we were also blacklisted from their restaurant . ',false
+13951,'It was nt as if this restaurant had any major bragging points before hand , but now it s simply repulsive . ',false
+13963,'Eat at your own risk . ',false
+13975,'Gorgeous place ideal for a romantic dinner ',false
+13987,'The service was spectacular as the waiter knew everything about the menu and his recommendations were amazing ! ',false
+13999,'I completely recommend Casa La Femme for any special occasion and to REALLY impress your date . ',false
+14011,'More Williamsburg Garbage ',false
+14023,'The dishes came out around 5 minutes apart . ',false
+14035,'The bibimbap was average , but the stone bowl was nt even close to sizzling . ',false
+14047,'Too bad I had paid an extra $ 2 for the stone bowl . ',false
+14059,'The nakgi - bokum was horrible . ',false
+14071,'Easily the worst stir - fried squid I ve ever tasted . ',false
+14083,'The sauce tasted more like Chinese fast food than decent Korean . ',false
+14095,'The side dishes were passable , and I did get a refill upon request . ',false
+14107,'The real problem I had with this place was the complete lack of service . ',false
+14119,'As to my comment about the food , no apology or acknowledgment was made . ',false
+14131,'My wife had barely touched that mess of a dish . ',false
+14143,'We were charged full price . ',false
+14155,'Lives up to the hype ',false
+14167,'The farro salad and the mashed yukon potatoes were also extremely tasty . ',false
+14179,'i love margherita pizza i looove east village pizza ',false
+14191,'Love this place , every time we are in the city this is one of the places we always go . ',false
+14203,'A quintessential slice of NYC pizza . ',false
+14215,'The crust has a great bite and a good chew , the sauce is light with a nice acidity to it , the salt from the cheese is great , really heightens the flavor of all the other components . ',false
+14227,'Personally I like the margherita pizza better , but they are all good . ',false
+14239,'Possibly the Most Romantic Restaurant in the City ',false
+14251,'This is undoubtedly my favorite modern Japanese brasserie ( that do nt serve sushi ) , and in my opinion , one of the most romantic restaurants in the city ! ',false
+14263,'Not only is it an adventure getting to this somewhat hidden spot , once you enter the unmarked wooden doors , the zen and intimate d?cor will make you feel like you re no longer in the city . ',false
+14275,'If you re planning to come here , make sure that your date is someone whom you really like since you ll be ushered to private booths where there will be no people or food watching ( choose the ones on the ground level that have glass ceilings so you may see the stars in the sky ! ) ',false
+14287,'It s just you and your date and an occasional cute  excuse me  before the waiter opens the little curtain to your booth ! ',false
+14299,'My party had the BBE $ 29 fixe prix menu , which was such a wonderful deal since it also came with a flight of sake ! ',false
+14311,'I picked the Grilled Black Cod as my entree , which I absolutely devoured while someone commented that the Grilled Salmon dish was better . ',false
+14323,'Maybe it was the great company ( I had friends visiting from Philly yes , it was not a date this time ) or the super reasonable price point , but I just ca nt say enough good things about this brasserie . ',false
+14335,'I do nt usually visit the same establishment more than once , what more twice , but I ll come to Zenkichi anytime for a quiet , unhurried and memorable dinner . ',false
+14347,'Terrible would be a compliment ! ',false
+14359,'The service leaves much to be desired , from feeling like you are rushed the place your order , to being ignored the rest of the night . ',false
+14371,'Stay away ',false
+14383,'Great Shabu Shabu ',false
+14395,'I tried a couple other dishes but was nt too impressed . ',false
+14407,'But for the Shabu Shabu , you wo nt find much better in NY . ',false
+14419,'Dokebi gives Williamsburg the right one - two punch of classic Korean food and fusion twists like pork belly tacos . ',false
+14431,'The hot dogs are good , yes , but the reason to get over here is the fantastic pork croquette sandwich , perfect on its supermarket squishy bun . ',false
+14443,'Restaurant with a view ',false
+14455,'Price is high but the food is good , so I would come back again . ',false
+14467,'This place does nt make any sense ',false
+14479,'Just want to warn you all - do nt waste your time and money . ',false
+14491,'This place has totally weird decor , stairs going up with mirrored walls - I am surprised how no one yet broke their head or fall off the stairs - mirrored walls make you dizzy and delusional . ',false
+14503,'This place is not inviting and the food is totally weird . ',false
+14515,'The concept of japanese tapas is newly created and clearly does nt work . ',false
+14527,'The food they serve is not comforting , not appetizing and uncooked . ',false
+14539,'The food was great and tasty , but the sitting space was too small , I do nt like being cramp in a corner . ',false
+14551,'Over all it was a very nice romantic place . ',false
+14563,'Our waitress was nt mean , but not especially warm or attentive either . ',false
+14575,'I must say I am surprised by the bad reviews of the restaurant earlier in the year , though . ',false
+14587,'Dumbfoundingly Poor ',false
+14599,'This was , from start to finish , a mind - bogglingly uncomfortable experience . ',false
+14611,'Lexicographers take note : a new and fascinating definition of rudeness is alive and flourishing right here in Brooklyn . ',false
+14623,'The servers at Flatbush Farm appear to have perfected that ghastly technique of making you feel guilty and ashamed for deigning to attract their attention . ',false
+14635,'Polite acknowledgement is out ; ',false
+14647,'supercilious scorn is in . ',false
+14659,'And how many times can you pick up the same perfectly aligned set of napkins , inspect them vapidly and plonk them down in exactly the same place instead of venturing a glance at people who are there to help you make the rent ? ',false
+14671,'A different server enhanced the fun , dumping our entrees in front of us halfway through our appetizer ( which was delicious ) . ',false
+14683,'Overall the food quality was pretty good , though I hear the salmon is much better when it has nt sat cooling in front of the guest . ',false
+14695,'The place has a nice fit - out , some attractive furnishings and , from what I could tell , a reasonable wine list ( I was given the food menu when I asked for the carte des vins ) ',false
+14707,'At $ 120 for two people , however , this in no way represents value , unless you re looking to pay by the hour for passive - aggressive torture . ',false
+14719,'On that scale , it s a world - beater . ',false
+14731,'How is this palce still open ? ',false
+14743,'I honestly do nt even know where to begin . ',false
+14755,'Everything was going good until we got our meals . ',false
+14767,'I took one look at the chicken and I was appalled . ',false
+14779,'It was served with skin , over a bed of extremely undercooked spinach and mashed potatoes . ',false
+14791,'At this point , the waitress comes over and asks us if everything was okay , I was literally so shocked that I was speechless and did nt say anything , and guess what , the waitress WALKED away . ',false
+14803,'So , I switch with my boyfriend again to see if maybe I could stomach the meat and spinach again , but the spinach was so undercooked that I just could not bite through it . ',false
+14815,'I could nt even enjoy the mashed potatoes because it was hidden completely under the chicken and spinach . ',false
+14827,'This is where it really really gets bad : the manager said , there is absolutely nothing we can do , it s a matter of taste that she did nt like it , and I can not comp it . ',false
+14839,'Again , no apology , no is there anything else I can get you , no can I get you a drink to make up for it , nothing !!!! ',false
+14851,'it was really good pizza . ',false
+14863,'the crust was imazingly cooked well and pizza was fully loaded : ) : ) : ) ',false
+14875,'you know what i mean all the positives things happening there made mw write this review . ',false
+14887,'Single Worst Restaurant in Manhattan ',false
+14899,'I ll being with a couple of positives : cool decor , good pita and hummus , and grilled octopus that was actually pretty tasty . ',false
+14911,'The reason there are 4 different results on citysearch for the same place is because they keep trying to start a new thread so they can stock it with positive reviews . ',false
+14923,'Well.they can run but they ca nt hide . ',false
+14935,'How this place survives the competitive west village market in this economy , or any other for that matter , is beyond me . ',false
+14947,'Great Hot Dogs ! ',false
+14959,'The hot dogs are top notch , and they re Slamwich is amazing ! ',false
+14971,'Going to Bark is always worth the train ride , and will make your tongue and belly very happy ! ',false
+14983,'Only complaint is the pricing -- I believe it would be more reasonable to pay a dollar less on each item listed on the menu . ',false
+14995,'But nonetheless -- great spot , great food . ',false
+15007,'Fabulous food - if the front of house staff do nt put you off ',false
+15019,'So , if you re walking by and thinking about dining , you might want to see who s going to be seating you first . ',false
+15031,'Maitre-D-  Eat and get out  ',false
+15043,'I had the Lamb special which was perfect . ',false
+15055,'My father had the flank steak which was very good , and my mother had the swordfish . ',false
+15067,'The Four Seasons restaurant is a great experience . ',false
+15079,'The food is great and the environment is even better . ',false
+15091,'Everyone must come here at least once . ',false
+15103,'Highly recommend it ! ',false
+15115,'Taking Hot Dogs to the next level ',false
+15127,'At first glance this place seems a bit pricey for a hot dog joint , but at Bark you do nt just get your average hot dog . ',false
+15139,'Here the hot dog is elevated to the level of a real entree with numerous variations available . ',false
+15151,'Great Atmosphere ',false
+15163,'Cool atmosphere , the fire place in the back really ads to it but needs a bit more heat throughout on a cold night . ',false
+15175,'Poor service and management ',false
+15187,'Do nt go to this place ! ',false
+15199,'Had an awful experience at Casa la Femme on a Saturday dinner . ',false
+15211,'Appetizers took nearly an hour . ',false
+15223,'When the main course finally arrived ( another 45mins ) half of our order was missing . ',false
+15235,'Never got an explanation as to what was going on . ',false
+15247,'The manager was rude and handled the situation extremely poorly . ',false
+15259,'When we threatened to leave , we were offered a meager discount even though half the order was missing . ',false
+15271,'On the way out , we heard of other guests complaining about similar issues . ',false
+15283,'Ca nt believe how an expensive NYC restaurant can be so disrespectful to its clients . ',false
+15295,'What a hassle ! ',false
+15307,'The food is very good , but not outstanding . ',false
+15319,'There is no way it justifies the accolades it receives , the attitude of the staff or the wait for a table . ',false
+15331,'On our last visit , they skipped over our name on the list , leaving us waiting an extra hour for a table . ',false
+15343,'Mistakes happen , but they are usually accompanied by an apology , perhaps even a glass of wine.but not the grunt that we received from the Al Di La staff . ',false
+15355,'So rude !!! ',false
+15367,'I was one of the people that went for this horrible experience . ',false
+15379,'The only thing that my friend left out is that when we sat down at the bar the bartender disappeared . ',false
+15391,'I asked for a menu and the same waitress looked at my like I was insane . ',false
+15403,'I was shocked that my friends wanted to stay after the waitress said ,  can I help you  and  how many are in your party .  ',false
+15415,'bad staff ',false
+15427,'I generally like this place . ',false
+15439,'The food is good . ',false
+15451,'The design of the space is good . ',false
+15463,'But the service is HORRID ! ',false
+15475,'I was there for brunch recently , and we were tag teamed by a waitress and a waiter . ',false
+15487,'The waiter delivered our food while holding what appeared to be a plastic bag of garbage in one hand . ',false
+15499,'I ca nt believe that it was , but please put the bag down before delivering food ! ',false
+15511,'The waitress came to check in on us every few minutes , and began to clear the plates while half of us were still eating ( a big pet peeve of mine that happens almost everywhere , so I try to ignore it ) . ',false
+15523,'I could nt ignore the fact that she reach over the plate of one of my friends , who was in mid bite , to clear the table . ',false
+15535,'She then put the check down without asking if we were done , and came to check on the bill every two minutes , even though we were one of three occupied tables . ',false
+15547,'I wish I could like this place more , and I wish someone would retrain the staff . ',false

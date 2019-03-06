@@ -57,10 +57,18 @@ public class Baseline2_Evaluator extends ClassifierHandler{
 
 	@Override
 	public void setSourcePath() {
-		sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask3\\constrained\\";
+		if(useCFV) {
+			sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask3\\constrained\\";
+		} else {
+			sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask3\\old\\constrained\\";
+		}
 	}
 	
 	public void setSourcePath_Slot1() {
-		sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask1\\constrained\\";
+		if(useCFV) {
+			sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask1\\constrained\\";
+		} else {
+			sourcePath = "src\\main\\resources\\learningtest_baseline2\\subtask1\\old\\constrained\\";
+		}
 	}
 }

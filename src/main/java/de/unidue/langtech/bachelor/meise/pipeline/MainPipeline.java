@@ -49,14 +49,17 @@ public class MainPipeline {
 		 * Choose one of the following methods for executing the pipelines:
 		 * Make sure to change the ClassifierGenerator for the corresponding models and set the model paths accordinly
 		 *
-		myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained", "*.xmi");
+		myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_Baseline2\\subtask3\\constrained");
 		myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_AUEB\\subtask3\\old\\unconstrained");
 		myPipeline.foldLearning();
 		myPipeline.executeAnnotationStudy();
 		*/
+		
+		//myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_baseline2\\subtask3\\old\\constrained");
+		myPipeline.foldLearning();
 	}
 	
-	public void buildFilesOldDomain(String inputFile, String outputFile) throws UIMAException, IOException {
+	public void buildFilesOldDomain(String inputFile, String outputFolder) throws UIMAException, IOException {
 		//Training data
 		CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
                 RawJsonReviewReader.class, RawJsonReviewReader.PARAM_SOURCE_LOCATION, inputFile,
@@ -75,12 +78,12 @@ public class MainPipeline {
         
         AnalysisEngineDescription dependency = AnalysisEngineFactory.createEngineDescription(MaltParser.class, MaltParser.PARAM_LANGUAGE, "en");
         
-        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator3.class, 
-        		AUEB_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-        		AUEB_ClassifierGenerator3.PARAM_RELATION_NAME, "AKTSKI",
-        		AUEB_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
-        		AUEB_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
-        		AUEB_ClassifierGenerator3.PARAM_IS_TEST_DATA, "false");
+        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Baseline2_ClassifierGenerator3.class, 
+        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFolder, 
+        		Baseline2_ClassifierGenerator3.PARAM_RELATION_NAME, "Baseline2",
+        		Baseline2_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
+        		Baseline2_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
+        		Baseline2_ClassifierGenerator3.PARAM_IS_TEST_DATA, "false");
         
         SimplePipeline.runPipeline(reader, tokenizer, tagger, lemmatizer, dependency, writer);
         
@@ -95,30 +98,30 @@ public class MainPipeline {
                 RawJsonReviewReader.PARAM_USE_OLD_DATA, "true",
                 RawJsonReviewReader.PARAM_SEARCH_SUBFOLDERS, "false");
         
-        AnalysisEngineDescription writer2 = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator3.class, 
-        		AUEB_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
-        		AUEB_ClassifierGenerator3.PARAM_RELATION_NAME, "AKTSKI",
-        		AUEB_ClassifierGenerator3.PARAM_CONSTRAINED, "false",
-        		AUEB_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
-        		AUEB_ClassifierGenerator3.PARAM_IS_TEST_DATA, "true");
+        AnalysisEngineDescription writer2 = AnalysisEngineFactory.createEngineDescription(Baseline2_ClassifierGenerator3.class, 
+        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFolder, 
+        		Baseline2_ClassifierGenerator3.PARAM_RELATION_NAME, "Baseline2",
+        		Baseline2_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
+        		Baseline2_ClassifierGenerator3.PARAM_USE_OLD_DATA, "true",
+        		Baseline2_ClassifierGenerator3.PARAM_IS_TEST_DATA, "true");
         
         SimplePipeline.runPipeline(reader2, tokenizer, tagger, lemmatizer, dependency, writer2);
 	}
 	
-	public void buildFilesNewDomain(String inputFile, String outputFile, String typeFile) throws UIMAException, IOException {
+	public void buildFilesNewDomain(String inputFile, String outputFolder) throws UIMAException, IOException {
 		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
 		 
 	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
 	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
 	                XmiReader.PARAM_SOURCE_LOCATION,
 	                inputFile,
-	                XmiReader.PARAM_PATTERNS, typeFile,
+	                XmiReader.PARAM_PATTERNS, "*.xmi",
 	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
 	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Baseline2_ClassifierGenerator3.class, 
-	        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFile, 
+	        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFolder, 
 	        		Baseline2_ClassifierGenerator3.PARAM_RELATION_NAME, "Baseline2",
 	        		Baseline2_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
 	        		Baseline2_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
@@ -142,8 +145,10 @@ public class MainPipeline {
 	}
 	
 	public void foldLearning() throws Exception {	 
-		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
-		myEvaluator.useOldData(false);
-		myEvaluator.setUpAblation("0", 23, 3);
+		Baseline2_Evaluator myEvaluator = new Baseline2_Evaluator();
+		myEvaluator.useOldData(true);
+		//myEvaluator.setUpAblation("0", 23, 3);
+		
+		//myEvaluator.execute(1);
 	}
 }

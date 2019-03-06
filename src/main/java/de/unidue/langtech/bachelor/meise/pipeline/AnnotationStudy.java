@@ -105,8 +105,6 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 		}
 		
 		CohenKappaAgreement kappa = new CohenKappaAgreement(study);
-		System.out.println(kappa.calculateAgreement());
-		System.out.println(kappa.calculateExpectedAgreement());
-		System.out.println(kappa.calculateMaximumAgreement());
+		System.out.println("Cohen's Kappa: " + kappa.calculateAgreement());
 	}	
 }

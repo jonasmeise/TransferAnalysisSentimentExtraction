@@ -33,7 +33,7 @@ import webanno.custom.Valence;
 //feature-model-space has been changed, features were compressed into more basic feature representations since not all features were mentioned
 //input-output format is normalized to match the current Task; the model itself is not changed
 //relative-score data statistics of training set are not included, same reasoning as AUEB_ClassifierGenerator
-//negation lexicon could not be found - using the short compiled list of AKTSKI_ClassifierGenerator instead
+//negation lexicon could not be found - using our short compiled list instead
 
 public class AUEB_ClassifierGenerator3 extends ArffGenerator{
 
