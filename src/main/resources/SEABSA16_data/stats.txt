@@ -1,14 +1,14 @@
-restaurant#general	564
-restaurant#prices	101
-restaurant#miscellaneous	131
-ambience#general	321
-drinks#prices		24
-drinks#quality		69
-drinks#style_options	44
-food#prices		113
-food#quality		1162
-food#style_options	192
-service#general		604
-location		41
-
-total			3366
+restaurant#general	142
+restaurant#prices	21
+restaurant#miscellaneous	33
+ambience#general	66
+drinks#prices	4
+drinks#quality	22
+drinks#style_options	12
+food#prices	23
+food#quality	313
+food#style_options	55
+service#general	155
+location	4
+	
+	850
