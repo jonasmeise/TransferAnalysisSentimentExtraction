@@ -30,7 +30,7 @@ import webanno.custom.Valence;
 //Dionysios Xenos, Panagiotis Theodorakakos, John Pavlopoulos,
 //Prodromos Malakasiotis and Ion Androutsopoulos
 //Classification type: Logistic regression
-//feature-model-space has been changed, features were compressed into more basic feature representations since not all features were mentioned
+//features were compressed into more basic feature representations since not all features were listed
 //input-output format is normalized to match the current Task; the model itself is not changed
 //relative-score data statistics of training set are not included, same reasoning as AUEB_ClassifierGenerator
 //negation lexicon could not be found - using our short compiled list instead

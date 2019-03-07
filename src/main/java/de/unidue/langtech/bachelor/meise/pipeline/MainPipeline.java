@@ -55,7 +55,7 @@ public class MainPipeline {
 		myPipeline.executeAnnotationStudy();
 		*/
 		
-		//myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_baseline2\\subtask3\\old\\constrained");
+		myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_baseline2\\subtask1\\old\\constrained");
 		myPipeline.foldLearning();
 	}
 	
