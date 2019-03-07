@@ -74,7 +74,7 @@ The evaluator class for each model is contained in the folder [\evaluation\\](ht
 
 ## How are the models evaluated? How do you get the performance values?
 
-For each model, the same procedure is done:
+For each model, the same procedure is done. 
 
 ```java
 	buildFilesOldDomain("src//main//resources//SEABSA16_data", "src//main//resources//learningtest_modelXXX//subtaskX//old//constrained//");
@@ -89,6 +89,8 @@ _or_
 	foldLearning();
 ``` 
 for generating the training files (``.arff``) and the evaluation file ``analysis.txt`` regarding the **new** data.
+
+The objects, methods and parameters are set within method as described in **[Setup](#setup)**.
 
 We manually combined the individual performance results of the binary classifiers with the labels, as described in the thesis, and calculated the final score of a model. The singular performances of each classifier are in the ``analysis.txt`` file of each model folder. The weights for the hotel domain are presented in table 3.2 of the thesis (percentage share), the distribution of labels in the test data of the restaurant domain are included in the file [stats.txt](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/resources/SEABSA16_data/stats.txt).
 
