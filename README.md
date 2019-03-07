@@ -6,8 +6,9 @@ This github repository contains the programming project which accompanies the ba
 
 
 # Setup
-The program represents the framework we used for implementing annotation procession, model construction and evaluation. 
-The main pipeline is by running the code within the class [MainPipeline.java](https://github.com/jonasmeise/AutomaticAspectExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/MainPipeline.java).
+The program represents the framework we used for implementing annotation procession, model construction and evaluation. This is a Maven project, so downloading and importing the ``pom.xml`` in the main folder is the first step.
+
+The main pipeline is executed by running the code within the class [MainPipeline.java](https://github.com/jonasmeise/AutomaticAspectExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/MainPipeline.java).
 In the current iteration, the code does not execute any of the tasks represented in the thesis. In exchange, a couple of methods are already implemented:
 
 ``buildFilesOldDomain(String inputFile, String outputFolder)``
@@ -70,6 +71,26 @@ The evaluator class for each model is contained in the folder [\evaluation\\](ht
 ``execute(slot)`` executes evaluation for a specific slot. If the slot does not exist for the model, an error prompt will be shown. The ``analysis.txt`` file is autmoatically generated in the corresponding folder as presented in **[Structure](#structure)**.
 
 ``setUpAblation(alreadyRemoved, maxFeatures, slot)`` executes an iterative execution slot on a reduced set of features. The string ``alreadyRemoved`` indicates the features that are _already_ removed. "0" is the standard value, since for every model, the first feature (ID) is always removed. Additional numbers are added by separating them with a comma. The integer ``maxFeatures`` refers to the maximum number of features (counting from 1, including the final class label). For each feature that is not already contained in ``alreadyRemoved`` and its index is smaller than ``maxFeatures``, it will be removed once in the ablation test. The final integer ``slot`` refers to the used slot for the test - it equals the ``slot`` parameter of the ``execute(slot)`` method. The method produces an analysis file for each iteration (with the naming syntax ``ablation_alreadyRemoved_currentlyRemoved.txt``) in the base folder of the respective model. To run multiple iterative ablationm test runs, the ``alreadyRemoved`` has to manually updated by the user and the method needs to be called again.
+
+## How are the models evaluated? How do you get the performance values?
+
+For each model, the same procedure is done:
+
+```java
+	buildFilesOldDomain("src//main//resources//SEABSA16_data", "src//main//resources//learningtest_modelXXX//subtaskX//old//constrained//");
+	foldLearning();
+``` 
+for generating the training files (``.arff``), test files (``.gold``) and the evaluation file ``analysis.txt`` regarding the **old** data.
+
+_or_
+
+```java
+	buildFilesNewDomain("src//main//resources", "src//main//resources//learningtest_modelXXX//subtaskX//constrained//");
+	foldLearning();
+``` 
+for generating the training files (``.arff``) and the evaluation file ``analysis.txt`` regarding the **new** data.
+
+We manually combined the individual performance results of the binary classifiers with the labels, as described in the thesis, and calculated the final score of a model. The singular performances of each classifier are in the ``analysis.txt`` file of each model folder. The weights for the hotel domain are presented in table 3.2 of the thesis (percentage share), the distribution of labels in the test data of the restaurant domain are included in the file [stats.txt](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/resources/SEABSA16_data/stats.txt).
 
 # Structure
 
