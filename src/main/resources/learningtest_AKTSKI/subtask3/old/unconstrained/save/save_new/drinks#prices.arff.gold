@@ -1,0 +1,32 @@
+@relation drinks#prices
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+854,0.0,'orange juice','dep_juice dep_orange ','dep_juice_orange dep_orange_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+856,-0.015873015873015872,'juice','dep_getting dep_small dep_fact ','dep_getting_small dep_small_fact dep_fact_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+871,0.0,'orange juice','dep_juice dep_orange dep_burrito ','dep_juice_orange dep_orange_burrito ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+872,0.0,'iced tea','dep_tea dep_iced dep_burrito ','dep_tea_iced dep_iced_burrito ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

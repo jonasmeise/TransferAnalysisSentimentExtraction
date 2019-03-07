@@ -9,7 +9,7 @@ public class AKTSKI_Evaluator extends ClassifierHandler{
 	
 	public AKTSKI_Evaluator(boolean oldData) {
 		this();
-		useCFV = true;
+		useCFV = !oldData;
 	}
 	
 	public AKTSKI_Evaluator() {
@@ -22,6 +22,10 @@ public class AKTSKI_Evaluator extends ClassifierHandler{
 			setOutputPath(sourcePath + "analysis.txt");
 		} else {
 			numFolds = 5;
+			
+			if(this.removeArray==null) {
+				this.removeArray = removeArray;
+			}
 		}
 		
 		if(slot==3) {

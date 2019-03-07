@@ -1,0 +1,133 @@
+ambience#general.arff.gold
+Precision	0.9253731343283582
+Recall	1.0
+fMeasure0.9612403100775194
+Accuracy	92.53731343283582
+TP	62.0
+FP	5.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+drinks#prices.arff.gold
+Precision	0.0
+Recall	NaN
+fMeasureNaN
+Accuracy	0.0
+TP	0.0
+FP	4.0
+FN	0.0
+TN	0.0
+balanced accuracy	NaN
+
+drinks#quality.arff.gold
+Precision	0.9545454545454546
+Recall	1.0
+fMeasure0.9767441860465117
+Accuracy	95.45454545454545
+TP	21.0
+FP	1.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+drinks#style_options.arff.gold
+Precision	0.9166666666666666
+Recall	1.0
+fMeasure0.9565217391304348
+Accuracy	91.66666666666667
+TP	11.0
+FP	1.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+food#prices.arff.gold
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	60.869565217391305
+TP	0.0
+FP	0.0
+FN	6.0
+TN	17.0
+balanced accuracy	0.5
+
+food#quality.arff.gold
+Precision	0.8579881656804734
+Recall	1.0
+fMeasure0.9235668789808917
+Accuracy	85.79881656804734
+TP	290.0
+FP	48.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+food#style_options.arff.gold
+Precision	0.5576923076923077
+Recall	0.9354838709677419
+fMeasure0.6987951807228916
+Accuracy	54.54545454545455
+TP	29.0
+FP	23.0
+FN	2.0
+TN	1.0
+balanced accuracy	0.48857526881720426
+
+location#general.arff.gold
+Precision	0.8461538461538461
+Recall	1.0
+fMeasure0.9166666666666666
+Accuracy	84.61538461538461
+TP	11.0
+FP	2.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#general.arff.gold
+Precision	0.7583892617449665
+Recall	1.0
+fMeasure0.8625954198473283
+Accuracy	75.83892617449665
+TP	113.0
+FP	36.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#miscellaneous.arff.gold
+Precision	0.4594594594594595
+Recall	1.0
+fMeasure0.6296296296296297
+Accuracy	45.945945945945944
+TP	17.0
+FP	20.0
+FN	0.0
+TN	0.0
+balanced accuracy	0.5
+
+restaurant#prices.arff.gold
+Precision	NaN
+Recall	0.0
+fMeasureNaN
+Accuracy	65.21739130434783
+TP	0.0
+FP	0.0
+FN	6.0
+TN	17.0
+balanced accuracy	0.5
+
+service#general.arff.gold
+Precision	0.75
+Recall	0.6
+fMeasure0.6666666666666665
+Accuracy	68.55345911949685
+TP	45.0
+FP	15.0
+FN	30.0
+TN	69.0
+balanced accuracy	0.7107142857142856
+
+

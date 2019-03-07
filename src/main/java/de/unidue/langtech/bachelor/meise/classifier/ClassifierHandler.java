@@ -45,6 +45,11 @@ public abstract class ClassifierHandler{
 	 }
 	  
 	 public void generateFoldsAndLearn(Collection<String> arffFileInputs, int numFolds, int classAttributeAt, boolean idfTransformEnabled, Classifier outerParameterClassifier) {
+		 if(fu==null && myLog==null) {
+			 fu = new FileUtils();
+			 myLog = new ConsoleLog();
+		 }
+		 
 		 ArrayList<String> analysisString = new ArrayList<String>();
 		 allData="";
 		 

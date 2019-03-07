@@ -55,7 +55,7 @@ public class MainPipeline {
 		myPipeline.executeAnnotationStudy();
 		*/
 		
-		myPipeline.buildFilesOldDomain("src\\main\\resources\\SEABSA16_data", "src\\main\\resources\\learningtest_baseline2\\subtask1\\old\\constrained");
+		//myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\constrained");
 		myPipeline.foldLearning();
 	}
 	
@@ -120,11 +120,11 @@ public class MainPipeline {
 	        
 			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
 	        
-	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(Baseline2_ClassifierGenerator3.class, 
-	        		Baseline2_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFolder, 
-	        		Baseline2_ClassifierGenerator3.PARAM_RELATION_NAME, "Baseline2",
-	        		Baseline2_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
-	        		Baseline2_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(OwnClassifier_ClassifierGenerator3.class, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_OUTPUT_PATH, outputFolder, 
+	        		OwnClassifier_ClassifierGenerator3.PARAM_RELATION_NAME, "OwnClassifier",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_CONSTRAINED, "true",
+	        		OwnClassifier_ClassifierGenerator3.PARAM_USE_OLD_DATA, "false");
 	        
 	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
 	}
@@ -145,10 +145,21 @@ public class MainPipeline {
 	}
 	
 	public void foldLearning() throws Exception {	 
-		Baseline2_Evaluator myEvaluator = new Baseline2_Evaluator();
-		myEvaluator.useOldData(true);
-		//myEvaluator.setUpAblation("0", 23, 3);
+		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
 		
+		//enable/disable old domain
+		myEvaluator.useOldData(false);
+		
+		
+		//feature analysis/ablation
+		myEvaluator.setUpAblation("0,1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22", 5, 3);
+		
+		//manual removal of features:
+		//myEvaluator.setOutputPath(myEvaluator.sourcePath + "_0142122_neutral.txt");
+		//myEvaluator.execute(3, new int[] {0,4,22});
+		//myEvaluator.execute(3, new int[] {0,1,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22});
+		
+		//general evaluation:
 		//myEvaluator.execute(1);
 	}
 }

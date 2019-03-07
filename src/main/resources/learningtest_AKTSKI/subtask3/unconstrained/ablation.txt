@@ -1,0 +1,43 @@
+	0.842969
+-1	0.838707
+-2	0.836817
+-3	0.786527
+-4	0.848407
+-neutral0.838080
+-21	0.838704
+-22	0.838277
+
+-> remove feature 4 (dep_bigrams)
+	0.848407
+-1	0.848612
+-2	0.844187
+-3	0.775223
+-neutral0.847348
+-21	0.849451
+-22	0.848392
+
+-> remove feature 1 (sentiment avg.)
+	0.848612
+-2	0.844611
+-3	0.775223
+-neutral0.847561
+-21	0.848402
+-22	0.848180
+
+-> remove feature 21+22 (punctuation)
+	0.848691
+-2	0.843327
+-3	0.775223
+-neutral0.846714
+
+-> remove feature neutral
+	0.846714
+-2	0.842703
+-3	0.773110
+
+-> remove feature 2 (target_word)
+	0.842703
+-3	0.713622
+
+rating:
+dep_uni > target_word > neutral > punc > avg_senti > dep_bi

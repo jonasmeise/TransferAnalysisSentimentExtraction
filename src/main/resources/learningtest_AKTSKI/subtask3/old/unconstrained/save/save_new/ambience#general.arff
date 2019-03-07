@@ -1,0 +1,238 @@
+@relation ambience#general
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+31,0.2833333333333333,'decor','dep_cool ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+41,0.0,'Ambiance','dep_Ambiance dep_ dep_ ','dep_Ambiance_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+83,0.2833333333333333,'ambience','dep_pretty ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+85,0.0,'ambience','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+101,-0.5,'Leon','dep_gem ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+103,-0.13333333333333333,'atmosphere','dep_warm dep_fare ','dep_warm_fare ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+111,0.26666666666666666,'decor','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+124,0.2333333333333333,'atmoshpere','dep_like ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+138,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+141,0.05555555555555555,'place','dep_small ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+147,-0.0,'open kitchen','dep_kitchen dep_open dep_part ','dep_kitchen_open dep_open_part ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+148,-0.0,'restaurant','dep_inside ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+152,-0.0761904761904762,'food','dep_best dep_French dep_packed dep_find ','dep_best_French dep_French_packed dep_packed_find ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+153,-0.43333333333333335,'vibe','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+162,0.3333333333333333,'setting','dep_intimate dep_provides ','dep_intimate_provides ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+182,0.15555555555555556,'Downstairs lounge','dep_lounge dep_Downstairs dep_attraction ','dep_lounge_Downstairs dep_Downstairs_attraction ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+183,0,'Ragas','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+202,0.0,'shows','dep_everythig dep_actors ','dep_everythig_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+203,0.0,'actors','dep_shows ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+210,0.6666666666666666,'Inside','dep_cramped ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+227,0.0,'theater','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+240,0.21666666666666667,'Traditional French decour','dep_decour dep_Traditional dep_French dep_pleasant ','dep_decour_Traditional dep_Traditional_French dep_French_pleasant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+241,-0.3,'hall','dep_noisy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+248,0.26666666666666666,'decor','dep_vibrant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+249,0.0,'semiprivate boths','dep_several dep_boths dep_semiprivate ','dep_several_boths dep_boths_semiprivate dep_semiprivate_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+251,0.0,'live jazz band','dep_band dep_live dep_jazz dep_atmosphere ','dep_band_live dep_live_jazz dep_jazz_by ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+252,0.0,'atmosphere','dep_band ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+253,-0.39999999999999997,'restaurant','dep_cute ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+265,0.0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+278,0.0,'ambience','dep_Bart dep_service ','dep_Bart_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+281,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+289,0.0,'sushi','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+293,0.0,'flavor','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+304,0.0,'friends','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+314,0.0,'vibe','dep_Great dep_vibe dep_ dep_lots dep_ ','dep_Great_vibe dep_vibe_ dep__lots dep_lots_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+315,-0.2333333333333333,'atmosphere','dep_liked ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+317,0.7999999999999999,'Ambience','dep_cute ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+331,-0.3,'atmosphere','dep_noisy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+348,0.43333333333333335,'place','dep_lovely ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+365,0.12380952380952381,'place','dep_nice dep_cozy dep_Brooklyn ','dep_nice_cozy dep_cozy_Brooklyn dep_Brooklyn_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+376,0.0761904761904762,'place','dep_s dep_nice dep_place dep_relax dep_ ','dep_s_a dep_nice_place dep_place_relax dep_relax_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+378,0.6666666666666666,'Ambience','dep_delightful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+384,-0.26666666666666666,'ambience','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+391,0.0984126984126984,'restaurant','dep_s dep_small dep_cute dep_restaurant dep_ ','dep_s_a dep_small_cute dep_cute_restaurant dep_restaurant_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+396,0.6,'ambient','dep_excellent dep_affordable ','dep_excellent_affordable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+401,-0.16666666666666666,'place','dep_hang ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+402,0.0,'country','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+406,-0.0,'place','dep_not ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+407,0.0,'th','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+408,0.0,'tables','dep_way ','',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,negative
+420,-0.0,'place','dep_Cute dep_place dep_ dep_staff dep_go dep_ ','dep_Cute_place dep_place_ dep__staff dep_staff_but dep_go_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+432,0.2833333333333333,'place','dep_cool ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+437,-0.2888888888888889,'atmosphere','dep_pleasant ','dep_pleasant_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+439,0.19999999999999998,'dining room','dep_room dep_dining dep_elegant ','dep_room_dining dep_dining_elegant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+443,-0.05555555555555555,'restaurant','dep_real ','dep_real_in ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+447,0,'ambiance','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+450,0.0,'ambiance','dep_wonderfull ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+477,0.05555555555555555,'place','dep_small ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+481,-0.0,'decor','dep_diner ','dep_diner_in ',0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+484,0.4666666666666666,'place','dep_fun ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+491,0.08333333333333333,'effects','dep_Disney dep_type dep_special ','dep_Disney_type dep_type_special dep_special_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+523,-0.5,'resturant','dep_unappealing dep_cramped ','dep_unappealing_cramped ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+524,0.0,'ambiance','dep_Zero dep_ambiance dep_ ','dep_Zero_ambiance dep_ambiance_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+527,-0.26666666666666666,'ambience','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+533,0.0,'feel','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+535,-0.0,'atmosphere','dep_nothing ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+538,0.0,'ambiance','dep_entire ','dep_entire_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+549,-0.0,'party','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,neutral
+556,0,'candlelight','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+559,0.0,'tables','dep_situated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+571,0.0,'back room','dep_secret dep_room dep_back dep_Check ','dep_secret_room dep_room_back dep_back_Check ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+598,0.5333333333333333,'Decor','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+622,-0.0,'atmosphere','dep_saves ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+625,-0.26666666666666666,'seats','dep_uncomfortable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+627,-0.08333333333333333,'restaurant','dep_s dep_cramped dep_restaurant dep_closes dep_ ','dep_s_a dep_cramped_restaurant dep_restaurant_and dep_closes_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+628,0.10666666666666667,'cigar bar','dep_nice dep_bar dep_cigar dep_features ','dep_nice_bar dep_bar_cigar dep_cigar_features ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+646,0.8666666666666667,'ambience','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+684,0.26666666666666666,'atmosphere','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+687,0.2888888888888889,'place','dep_deal dep_great ','dep_deal_great ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+701,0.8666666666666667,'Decor','dep_charming ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+710,0.16666666666666666,'mileau','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+716,-0.125,'outside table','dep_table dep_outside dep_snag ','dep_table_outside dep_outside_snag ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+719,-0.0,'unisex bathroom','dep_bathroom dep_unisex dep_needs ','dep_bathroom_unisex dep_unisex_needs ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+733,0.09629629629629628,'back patio','dep_patio dep_back dep_ dep_worth ','dep_patio_back dep_back_in dep__worth ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+734,0.0,'music','dep_hear ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+753,-0.0,'place','dep_trendi ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+762,0.10333333333333333,'back garden sitting area','dep_area dep_back dep_garden dep_sitting dep_pleasant dep_personal dep_herb dep_see ','dep_area_back dep_back_garden dep_garden_sitting dep_sitting_pleasant dep_pleasant_their dep_personal_herb dep_herb_see ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+776,0.05555555555555555,'setting','dep_unpretensious dep_food ','dep_unpretensious_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+806,-0.025000000000000005,'crowd','dep_Always dep_nice dep_crowd dep_ dep_loud dep_ ','dep_Always_a dep_nice_crowd dep_crowd_ dep__but dep_loud_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+825,0.10666666666666667,'blond wood decor','dep_decor dep_blond dep_wood dep_soothing ','dep_decor_blond dep_blond_wood dep_wood_soothing ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+837,-0.0,'Thalia','dep_restaurant ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+857,0.13333333333333333,'outdoor atmosphere','dep_nice dep_atmosphere dep_outdoor ','dep_nice_atmosphere dep_atmosphere_outdoor dep_outdoor_in ',0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+863,-0.0,'garden','dep_place ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+882,0.16666666666666666,'room','dep_unattractive ','dep_unattractive_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+885,0.0,'atmosphere','dep_unheralded ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+890,0.175,'place','dep_lovely dep_ dep_peaceful dep_place dep_eat dep_ ','dep_lovely_ dep__peaceful dep_peaceful_place dep_place_eat dep_eat_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+936,-0.0,'place','dep_Ghetto ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+938,-0.16666666666666666,'music','dep_blasted ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+943,0.11555555555555555,'atmoshere','dep_Great dep_atmoshere dep_worth dep_ ','dep_Great_atmoshere dep_atmoshere_and dep_worth_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+965,-0.029166666666666664,'late night atmosphere','dep_part dep_atmosphere dep_late dep_night dep_free ','dep_part_is dep_atmosphere_late dep_late_night dep_night_free ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+970,0,'setting','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+971,0,'music','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+976,0.0,'setting','dep_homey ','dep_homey_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+977,0.26666666666666666,'music','dep_great ','dep_great_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+978,0.0,'inhouse lady DJ','dep_lady dep_inhouse dep_DJ ','dep_lady_inhouse dep_inhouse_has dep_DJ_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+990,0.0,'setting','dep_casual ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1002,0.1111111111111111,'atmosphere','dep_typical dep_raucous dep_dim dep_sum dep_gig ','dep_typical_raucous dep_raucous_dim dep_dim_sum dep_sum_gig ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,negative
+1011,0.0,'atmosphere','dep_casual ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1013,0.3,'restaurant','dep_noisy ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1014,0.1380952380952381,'interior decor','dep_cute dep_decor dep_interior dep_prices ','dep_cute_decor dep_decor_interior dep_interior_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1029,0.17777777777777778,'ambience','dep_decent dep_ dep_well dep_matter dep_consider ','dep_decent_ dep__well dep_well_matter dep_matter_consider ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1039,0.13333333333333333,'place','dep_romantic dep_live ','dep_romantic_in ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1042,0.0,'place','dep_seems ','dep_seems_itself ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1043,0.0,'bar scene','dep_scene dep_bar dep_seems ','dep_scene_bar dep_bar_seems ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1052,-0.0,'feel','dep_Family dep_ dep_least ','dep_Family_has dep__least ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1064,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1066,0.15555555555555556,'somewhere','dep_like dep_else ','dep_like_else ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1079,0.041666666666666664,'restaurant','dep_typical dep_NYC dep_gimmick dep_theme dep_restaurant dep_ ','dep_typical_NYC dep_NYC_gimmick dep_gimmick_theme dep_theme_restaurant dep_restaurant_ ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,positive
+1080,0.07083333333333333,'bar','dep_cool dep_bar dep_ dep_tons dep_ ','dep_cool_bar dep_bar_with dep__and dep_tons_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1093,0.13333333333333333,'atomosphere','dep_Cozy dep_romantic dep_atomosphere dep_ ','dep_Cozy_romantic dep_romantic_atomosphere dep_atomosphere_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1097,-0.0,'experience','dep_dining ','dep_dining_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1117,-0.0,'decor','dep_mind ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1125,-0.037037037037037035,'patio','dep_gigantic ','dep_gigantic_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1126,0.1111111111111111,'months','dep_warmer ','dep_warmer_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1127,0.12000000000000001,'outdoor seating','dep_terrific dep_seating dep_outdoor dep_winter ','dep_terrific_seating dep_seating_outdoor dep_outdoor_winter dep_winter_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1146,0,'settingatmosphere','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1152,-0.0,'decor','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1157,0.21666666666666667,'design','dep_good dep_atmosphere ','dep_good_and ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1158,0.0,'atmosphere','dep_design ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1174,0.43333333333333335,'atmosphere','dep_Nice dep_pleasant ','dep_Nice_pleasant ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1179,0.0,'jukebox','dep_plays ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1183,0.15555555555555556,'vibe','dep_Best dep_warm dep_ dep_super ','dep_Best_is dep_warm_ dep__super ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1199,0.0,'Toons','dep_redone ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1202,-0.13333333333333333,'decor','dep_nice dep_ dep_ dep_service ','dep_nice_ dep__ dep__service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1208,0.39999999999999997,'resturant','dep_clean ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1213,0.0,'atmosphere','dep_service ','dep_service_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1216,0.17333333333333334,'outdoor seating','dep_seating dep_outdoor dep_ dep_perfect ','dep_seating_outdoor dep_outdoor_have dep__perfect ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1217,0.3333333333333333,'Indoor','dep_cozy ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1241,0.0,'jazz duo','dep_duo dep_jazz ','dep_duo_jazz dep_jazz_were ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1242,0.2,'music','dep_good dep_music dep_ dep_food dep_prices dep_ ','dep_good_music dep_music_ dep__food dep_food_prices dep_prices_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1250,0.0,'Atmosphere','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1262,0.0,'decor','dep_Fabulous dep_feel dep_ ','dep_Fabulous_feel dep_feel_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1266,0.0,'Rice Avenue','dep_Avenue dep_Rice dep_Manhattanite dep_Roosevelt ','dep_Avenue_Rice dep_Rice_Manhattanite dep_Manhattanite_Roosevelt dep_Roosevelt_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1283,0.17500000000000002,'decor','dep_nice dep_food ','dep_nice_food dep_food_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1291,0.2333333333333333,'vibe','dep_relaxed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1299,0.027777777777777776,'place','dep_relaxing dep_eat ','dep_relaxing_eat ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,positive
+1300,0.0,'scene','dep_Love ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1301,0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1310,0.4666666666666666,'decor','dep_fun dep_service ','dep_fun_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,positive
+1316,-0.12000000000000001,'Dining Garden','dep_fantastic dep_Garden dep_Dining dep_Bar ','dep_fantastic_Garden dep_Garden_Dining dep_Dining_Bar ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1317,-0.04242424242424242,'Jazz Bar','dep_new dep_amazed dep_Bar dep_Jazz dep_ dep_Garden dep_Pizzas dep_Menu ','dep_new_amazed dep_amazed_Bar dep_Bar_Jazz dep_Jazz_ dep__Garden dep_Garden_Pizzas dep_Pizzas_and ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1343,0.0,'interior','dep_use ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1344,0.4666666666666666,'space','dep_kind ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1392,0.26666666666666666,'restaurant','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1428,0.5,'place','dep_beautiful dep_recommend ','dep_beautiful_recommend ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1438,0.0,'Egyptian restaurant','dep_designed dep_dreamy dep_restaurant dep_Egyptian dep_gets dep_ ','dep_designed_dreamy dep_dreamy_restaurant dep_restaurant_Egyptian dep_Egyptian_gets dep_gets_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1440,0.06666666666666667,'belly dancers','dep_talented dep_dancers dep_belly dep_Watch ','dep_talented_dancers dep_dancers_belly dep_belly_Watch ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1441,0.0,'hookah','dep_s ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1457,-0.0,'Decor','dep_needs ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1475,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1476,0.0,'dark','dep_dark dep_ dep_cozy dep_ ','dep_dark_ dep__and dep_cozy_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1477,0.0,'music','dep_always dep_jazz dep_playing ','dep_always_jazz dep_jazz_is ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1478,0.0,'booths','','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1487,0.0,'atmosphere','dep_rooms ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1488,0.1380952380952381,'rooms','dep_ dep_elegant dep_atmosphere dep_views dep_ dep_food ','dep__elegant dep_elegant_atmosphere dep_atmosphere_and dep_views_ dep__food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1503,-0.09333333333333332,'mens bathroom','dep_bathroom dep_mens dep_disgusting ','dep_bathroom_mens dep_mens_disgusting ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1504,0.0,'towels','dep_hand dep_soap ','dep_hand_with ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1519,-0.14814814814814814,'restaurant','dep_beautiful dep_return dep_ dep_hope ','dep_beautiful_return dep_return_ dep__but ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1521,0.0,'seating','dep_short dep_greatit ','dep_short_greatit ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1522,0.05555555555555555,'boths','dep_small ','',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1528,-0.03333333333333333,'restaurant','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1552,0.0,'decor','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1559,0.03333333333333333,'belly dancing show','dep_dancing dep_belly dep_drawn dep_captivated ','dep_dancing_belly dep_belly_into dep_drawn_captivated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1570,0.2333333333333333,'atmosphere','dep_relaxed ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1591,0.0,'interior','dep_Mazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1594,-0.26666666666666666,'atmosphere','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1595,0.11666666666666667,'scheme of mirrors','dep_crazy dep_scheme dep_mirrors ','dep_crazy_with dep_scheme_mirrors ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1596,0.17333333333333334,'thing','dep_s dep_good dep_feet ','dep_s_a dep_good_feet ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1598,-0.06666666666666667,'mirrors','dep_confusing dep_Despite ','dep_confusing_Despite ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1624,0.016666666666666666,'decor','dep_strikes ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1625,0,'decor','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1634,-0.43333333333333335,'place','dep_beautiful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1640,0.3,'DJ','dep_awesome ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1650,-0.32063492063492066,'food','dep_intimate dep_ dep_superb dep_homey dep_way dep_worth ','dep_intimate_ dep__superb dep_superb_had dep_homey_way dep_way_worth ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1660,0.16666666666666666,'environment','dep_upscale ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,neutral
+1675,0.43333333333333335,'place','dep_beautiful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1720,-0.1111111111111111,'feel','dep_upscale ','dep_upscale_have ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1740,0.3333333333333333,'place','dep_ideal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1771,0.0,'Restaurant','dep_Possibly dep_Romantic dep_Restaurant ','dep_Possibly_the dep_Romantic_Restaurant dep_Restaurant_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1773,-0.11333333333333333,'modern Japanese brasserie','dep_undoubtedly dep_favorite dep_brasserie dep_modern dep_Japanese dep_ dep_! ','dep_undoubtedly_my dep_favorite_brasserie dep_brasserie_modern dep_modern_Japanese dep_Japanese_ dep__! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1775,-0.0,'unmarked wooden doors','dep_doors dep_unmarked dep_wooden dep_enter ','dep_doors_unmarked dep_unmarked_wooden dep_wooden_enter ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1776,-0.3333333333333333,'dcor','dep_intimate dep_zen ','dep_intimate_zen ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1777,0.0,'private booths','dep_booths dep_private dep_people ','dep_booths_private dep_private_to ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1778,0.0,'glass ceilings','dep_ceilings dep_glass ','dep_ceilings_glass dep_glass_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1779,0.0,'waiter','dep_opens ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+1788,-0.0,'Zenkichi','dep_come dep_anytime ','dep_come_anytime dep_anytime_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1807,-0.10555555555555556,'decor','dep_weird dep_ dep_going ','dep_weird_has dep__going ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1808,0.0,'mirrored walls','dep_walls dep_mirrored dep_make ','dep_walls_mirrored dep_mirrored_with ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1809,-0.19999999999999998,'place','dep_inviting ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1814,0.027777777777777776,'sitting space','dep_space dep_sitting dep_small ','dep_space_sitting dep_sitting_small ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1816,0.17142857142857143,'place','dep_nice dep_romantic ','dep_nice_romantic dep_romantic_Over ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1830,0,'fitout','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1831,0.1111111111111111,'furnishings','dep_attractive ','dep_attractive_out ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1855,0.04722222222222222,'decor','dep_ll dep_ dep_cool dep_decor dep_ dep_pita dep_hummus dep_octopus dep_ ','dep_ll_being dep__cool dep_cool_decor dep_decor_ dep__pita dep_pita_and dep_hummus_octopus dep_octopus_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1878,0.2333333333333333,'environment','dep_better ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1886,0.0,'Atmosphere','dep_Great dep_Atmosphere ','dep_Great_Atmosphere ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1887,-0.0,'atmosphere','dep_Cool dep_ads ','dep_Cool_ads ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1888,-0.02666666666666667,'fire place','dep_place dep_fire dep_ads ','dep_place_fire dep_fire_ads dep_ads_in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1889,0.16666666666666666,'night','dep_cold ','dep_cold_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1917,0.0,'space','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive

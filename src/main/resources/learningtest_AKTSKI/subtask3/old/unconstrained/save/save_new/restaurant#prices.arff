@@ -1,0 +1,93 @@
+@relation restaurant#prices
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+13,-0.0,'price','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+26,-0.0,'price','dep_beat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+132,0.1111111111111111,'side','dep_pricey ','dep_pricey_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+215,0.0,'line','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+298,-0.09999999999999999,'service','dep_poor ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+328,0.0,'service','dep_price ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+350,-0.0,'prices','dep_high ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+397,0.6,'ambient','dep_excellent dep_affordable ','dep_excellent_affordable ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+522,-0.5,'resturant','dep_unappealing dep_cramped ','dep_unappealing_cramped ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+530,-0.0,'prices','dep_considering ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+544,0.0,'food','dep_service ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+548,0.0,'prices','dep_Moderate dep_prices dep_ ','dep_Moderate_prices dep_prices_ ',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,neutral
+574,0.16666666666666666,'service','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+578,0.0,'prices','dep_low ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+589,0.16666666666666666,'place','dep_pricey ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+613,-0.25,'prices','dep_cheap ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+616,0.2333333333333333,'food','dep_nasty ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,positive
+621,-0.28888888888888886,'money','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+647,0.0,'restaurant','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+770,-0.0,'prices','dep_beat ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+898,0.0,'value','dep_Nice dep_value dep_ ','dep_Nice_value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+914,-0.0,'morning','dep_Sunday ','dep_Sunday_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+949,0.08333333333333333,'price','dep_moderate ','',0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,neutral
+982,0.0,'Suan','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+991,0.8666666666666667,'Prices','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1015,0.0,'place','dep_little ','dep_little_has ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1033,0.35000000000000003,'service','dep_great dep_food ','dep_great_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1061,0.0,'house','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1086,-0.28888888888888886,'money','dep_worth ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1106,0.0,'range','dep_upper dep_intermediate ','dep_upper_intermediate dep_intermediate_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1109,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1149,0.3,'place','dep_bargain ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1224,-0.0,'bill','dep_footing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1237,0.1,'food','dep_Great dep_food dep_reasonable dep_ ','dep_Great_food dep_food_and dep_reasonable_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1245,0.0,'service','dep_prices ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1268,0.0,'Rice Avenue','dep_Avenue dep_Rice dep_Manhattanite dep_Roosevelt ','dep_Avenue_Rice dep_Rice_Manhattanite dep_Manhattanite_Roosevelt dep_Roosevelt_on ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1281,0.0,'food','dep_okay ','',0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,neutral
+1284,0,'Baluchis','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1305,0.16666666666666666,'price','dep_reasonable ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1379,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1497,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1502,0.0,'toilet','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1516,-0.0,'location','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,neutral
+1527,-0.03333333333333333,'restaurant','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1566,0.0,'place','dep_Great dep_place dep_ dep_value dep_ ','dep_Great_place dep_place_ dep__value dep_value_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1573,0.14444444444444446,'time','dep_Inexpensive dep_ dep_unassuming dep_great dep_time dep_! ','dep_Inexpensive_ dep__unassuming dep_unassuming_great dep_great_time dep_time_! ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1644,-0.0,'TIME','dep_GREAT dep_tab ','dep_GREAT_tab ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,positive
+1654,0.16666666666666666,'restaurant','dep_expensive ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1657,0.0,'curiousity','dep_got ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1664,0.0,'money','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1666,0.0,'scammers','dep_scammers ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1669,0.0,'Casa La Femme','dep_Femme dep_Casa dep_La dep_visiting ','dep_Femme_Casa dep_Casa_La dep_La_visiting ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1671,-0.16666666666666666,'experience','dep_unpleasant ','dep_unpleasant_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1689,0.21666666666666667,'food','dep_good dep_dancers ','dep_good_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1692,0.0,'meal','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1694,0.14444444444444446,'restaurant','dep_feeling ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1696,-0.16666666666666666,'sons','dep_birthday ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1699,0.0,'money','dep_much dep_treated ','dep_much_treated ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+1718,-0.0,'place','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1723,-0.0,'price','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1725,-0.03209876543209877,'place','dep_prepared dep_ dep_place dep_go ','dep_prepared_ dep__then dep_place_go ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1786,-0.0,'brasserie','','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1834,-0.24166666666666667,'torture','dep_passive dep_ dep_aggressive ','dep_passive_ dep__aggressive dep_aggressive_for ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1882,-0.0,'Bark','','',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1900,0.25,'restaurant','dep_expensive dep_NYC dep_disrespectful ','dep_expensive_NYC dep_NYC_disrespectful ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

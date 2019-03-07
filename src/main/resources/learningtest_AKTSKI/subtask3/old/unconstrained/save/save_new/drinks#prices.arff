@@ -1,0 +1,46 @@
+@relation drinks#prices
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+12,0.19999999999999998,'wine list','dep_list dep_wine dep_interesting ','dep_list_wine dep_wine_interesting ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+151,0.0,'house champagne','dep_champagne dep_house dep_value ','dep_champagne_house dep_house_value ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+179,0.0,'wine selection','dep_selection dep_wine dep_priced ','dep_selection_wine dep_wine_priced ',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+190,0.0,'wines','dep_priced dep_beers ','dep_priced_beers ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+410,0.0,'wine list','dep_list dep_wine dep_typical ','dep_list_wine dep_wine_typical ',0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,negative
+412,0.0,'wines','dep_average dep_start ','dep_average_start ',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+499,0.0,'Drinks','dep_priced ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+564,0.16666666666666666,'wine','dep_food ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+680,0.05555555555555555,'Wine list','dep_list dep_Wine dep_extensive ','dep_list_Wine dep_Wine_extensive ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+937,0.04666666666666666,'bottle minimun','dep_least dep_dollar dep_minimun dep_bottle dep_pay ','dep_least_dollar dep_dollar_minimun dep_minimun_bottle dep_bottle_pay ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+968,0.0,'martini','dep_delish dep_ ','dep_delish_ dep__in ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+974,0,'martini','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1130,0.12380952380952381,'selecion of wines','dep_good dep_selecion dep_wines ','dep_good_have dep_selecion_wines dep_wines_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1159,-0.125,'bottles of wine','dep_cheap dep_bottles dep_wine ','dep_cheap_of dep_bottles_wine ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1189,0.3,'drinks','dep_amazing ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1431,-0.0,'Voss bottles of water','dep_offered dep_bottles dep_Voss dep_told dep_water ','dep_offered_for dep_bottles_Voss dep_Voss_told dep_told_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1544,0.16666666666666666,'bev','dep_food ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1678,0.0,'drinks','dep_ ','dep__were ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative

@@ -1,0 +1,98 @@
+@relation food#prices
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+61,0.047619047619047616,'half price sushi deal','dep_price dep_half dep_deal dep_sushi ','dep_price_half dep_half_of dep_deal_sushi dep_sushi_on ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+69,0.11555555555555555,'Prix Fixe menu','dep_menu dep_Prix dep_Fixe dep_worth ','dep_menu_Prix dep_Prix_Fixe dep_Fixe_worth ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+73,0.06666666666666667,'food','dep_much dep_tasty dep_ ','dep_much_tasty dep_tasty_is dep__all ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+125,-0.0,'pizza','dep_way ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+126,0.0,'toppings','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+127,0.0,'toppings','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+177,0.0,'dessert','dep_Tiny dep_ ','dep_Tiny_ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+186,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+324,0.19166666666666665,'sushi','dep_good dep_ dep_inexpensive dep_sushi dep_ ','dep_good_ dep__inexpensive dep_inexpensive_sushi dep_sushi_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+334,0.08333333333333333,'price','dep_reasonable dep_noodles ','dep_reasonable_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+335,0.0,'congee','dep_noodles ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+336,0.0,'noodles','dep_ dep_congee dep_ dep_price dep_dishes dep_ ','dep__congee dep_congee_ dep__price dep_price_and dep_dishes_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+337,0.0,'rice dishes','dep_dishes dep_rice dep_noodles ','dep_dishes_rice dep_rice_noodles ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+394,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+515,-0.0,'bite','dep_take ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+563,-0.041666666666666664,'food','dep_serve dep_wine ','dep_serve_and dep_wine_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+594,0.0,'dishes','dep_average ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+619,-0.0,'sandwiches','dep_ dep_ ','dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+649,0.17333333333333334,'seafood','dep_good dep_though dep_ dep_high ','dep_good_though dep_though_ dep__high ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+652,-0.0,'lobster sandwich','dep_sandwich dep_lobster dep_ ','dep_sandwich_lobster dep_lobster_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+667,-0.25,'food','dep_cheap ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+674,0.2888888888888889,'Cheese plate','dep_plate dep_Cheese dep_delight ','dep_plate_Cheese dep_Cheese_delight ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+686,0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+714,0.26666666666666666,'food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+748,0.0,'they','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,negative
+750,-0.0,'taste','dep_much ','dep_much_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,neutral
+842,-0.08333333333333333,'menu','dep_expensive ','dep_expensive_from ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+850,-0.06666666666666667,'Taiwanese food','dep_Authentic dep_food dep_Taiwanese dep_cheap dep_ ','dep_Authentic_food dep_food_Taiwanese dep_Taiwanese_cheap dep_cheap_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+852,0,'Taiwanese food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,positive
+880,0.0,'sandwiches','dep_dry ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+933,0.5333333333333333,'Food','dep_great ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+997,0,'they','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+998,-0.08333333333333333,'dim sum','dep_sum dep_dim ','dep_sum_dim dep_dim_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1007,0.0,'corner','dep_around dep_get ','dep_around_the ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1022,0.17777777777777778,'Spreads','dep_great dep_toppings ','dep_great_and ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1023,0.0,'toppings','dep_Spreads ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1036,-0.25,'eats','dep_cheap dep_place ','dep_cheap_place ',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1060,0.0,'meal','dep_priced dep_hike ','dep_priced_hike ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1073,0,'Prix Fixe menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1118,-0.3,'food','dep_great dep_want ','dep_great_want ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1148,0.0,'Food','','',1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1154,0.46666666666666673,'food','dep_good dep_straight ','dep_good_straight ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1221,0.037037037037037035,'piece','dep_small ','dep_small_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1222,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1239,0.14761904761904762,'Chinese food','dep_Simply dep_good dep_tasting dep_food dep_Chinese dep_ ','dep_Simply_good dep_good_tasting dep_tasting_food dep_food_Chinese dep_Chinese_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1256,0.0,'fish','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1264,0.17333333333333334,'food','dep_re dep_ dep_good dep_feel dep_staff ','dep_re_ dep__good dep_good_feel dep_feel_staff ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1273,0.13333333333333333,'food','dep_overpriced dep_need dep_ dep_staff dep_service ','dep_overpriced_need dep_need_ dep__staff dep_staff_service ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1278,0.0,'food','dep_overated ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1289,-0.030952380952380953,'all you can eat sushi','dep_eat dep_sushi dep_beaten ','dep_eat_all dep_sushi_beaten ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1330,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1333,0.0,'chips','dep_fish ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1334,0.0,'fish and chips','dep_ dep_fish dep_chips ','dep__and dep_fish_chips ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1346,0.2888888888888889,'meal','dep_good ','dep_good_for ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+1357,0,'NULL','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1368,0.05555555555555555,'food','dep_Excellent dep_food ','dep_Excellent_food dep_food_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1410,-0.125,'japanese food','dep_overpriced dep_food dep_japanese ','dep_overpriced_food dep_food_japanese dep_japanese_with ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+1422,-0.3,'guacamole','dep_bland ','dep_bland_of ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1454,0.11904761904761904,'food','dep_Overall dep_ dep_decent dep_food dep_ ','dep_Overall_ dep__decent dep_decent_food dep_food_at ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1543,0.0,'food','dep_bev ','',0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,positive
+1569,0.0,'food','dep_flavorful ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1623,0.0,'dish','dep_per ','',1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1631,0.16666666666666666,'value','dep_phenomenal ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+1653,-0.06666666666666667,'dinner for two','dep_ dep_dinner dep_two ','dep__a dep_dinner_two ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,negative
+1712,-0.0,'food','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1719,-0.0,'chicken tikka masala','dep_masala dep_chicken dep_tikka dep_ dep_ ','dep_masala_chicken dep_chicken_tikka dep_tikka_ dep__ ',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,negative
+1749,-0.041666666666666664,'stone bowl','dep_bowl dep_stone ','dep_bowl_stone dep_stone_for ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1781,0.037037037037037035,'BBE  fixe prix menu','dep_menu dep_BBE dep_ dep_fixe dep_prix dep_ dep_deal ','dep_menu_BBE dep_BBE_ dep__fixe dep_fixe_prix dep_prix_had dep__deal ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+1803,-0.43333333333333335,'food','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative
+1867,0.0,'menu','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,negative

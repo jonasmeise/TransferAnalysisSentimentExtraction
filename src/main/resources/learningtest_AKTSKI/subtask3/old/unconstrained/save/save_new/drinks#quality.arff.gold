@@ -1,0 +1,50 @@
+@relation drinks#quality
+
+@attribute id numeric
+@attribute sentiment_average numeric
+@attribute target_word string
+@attribute dependency_related_unigrams string
+@attribute dependency_related_bigrams string
+@attribute feature_1 numeric
+@attribute feature_2 numeric
+@attribute feature_3 numeric
+@attribute feature_4 numeric
+@attribute feature_5 numeric
+@attribute feature_6 numeric
+@attribute feature_7 numeric
+@attribute feature_8 numeric
+@attribute feature_9 numeric
+@attribute feature_10 numeric
+@attribute feature_11 numeric
+@attribute feature_12 numeric
+@attribute feature_13 numeric
+@attribute feature_14 numeric
+@attribute feature_15 numeric
+@attribute feature_16 numeric
+@attribute punctuation_exclamation numeric
+@attribute punctuation_question numeric
+@attribute aspecttype {positive, neutral, negative}
+
+@data
+109,-0.26666666666666666,'margaritas','dep_nice ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+164,0.8666666666666667,'Drinks','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+165,-0.15833333333333333,'drinks','dep_recommend ','',0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,positive
+243,0.26666666666666666,'margaritas','dep_great ','dep_great_have ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+270,0.35000000000000003,'beer','dep_great dep_beer ','dep_great_beer ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+273,0.08,'beer','dep_warm dep_meal ','dep_warm_for ',0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,negative
+283,0.0,'beer','dep_ ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+290,0.0,'wine','dep_experience ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+307,0.0,'Coffee','dep_Pizza ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+310,0.43333333333333335,'coffe','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+350,0.2888888888888889,'sake','dep_perfect dep_suggested ','dep_perfect_suggested ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+415,0.31666666666666665,'Margaritas','dep_better dep_food ','dep_better_food ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+419,0.3,'margaritas','dep_amazing dep_spots ','dep_amazing_spots ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,positive
+446,0.7000000000000001,'sake','dep_great dep_love ','dep_great_love ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+508,0.0,'bottle of wine','dep_Great dep_bottle dep_wine dep_ ','dep_Great_bottle dep_bottle_of dep_wine_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+555,-0.09333333333333332,'bloody mary','dep_mean dep_mary dep_bloody dep_make ','dep_mean_mary dep_mary_bloody dep_bloody_make ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+663,-0.015873015873015872,'drinks','dep_Great dep_drinks dep_ dep_hash dep_burritos dep_menu dep_ ','dep_Great_drinks dep_drinks_ dep__hash dep_hash_burritos dep_burritos_menu dep_menu_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+665,0.0,'coffee','dep_burritos ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+710,-0.25833333333333336,'sake','dep_good dep_sake dep_food dep_ ','dep_good_sake dep_sake_food dep_food_ ',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+712,0.0,'sake','dep_suggestions ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+778,0.43333333333333335,'coffee','dep_good ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
+847,0.0,'Drinks','dep_suberb ','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,positive
