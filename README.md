@@ -125,7 +125,7 @@ All other files can be ignored.
 
 ## Class Descriptions
 
-The final section includes a description of all classes, to give you a general idea about what exactly they do. Our implemented classes can be found in the folder [/meise/](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise). The other classes are either auto-generated (WebAnno-classes) or external classes, which are used as a surrogate for methods that are not yet implemented in Maven-libraries (Weka).
+The final section includes a description of all classes, to give you a general idea about what exactly they do. Our implemented classes can be found in the folder [/meise/](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise). The other classes are either auto-generated (WebAnno-classes) or external classes, which are used as a surrogate for methods that are not yet implemented in Maven-libraries (Weka's ThresholdSelector).
 
 [AspectClassifier](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/classifier/AspectClassifier.java): Handles the actual learning process, as well as regression analysis (+ allocation algorithm). Uses Weka and its supportive modules to generate data and evaluation scores, as e.g. String2WordVector.
 
@@ -135,8 +135,7 @@ The final section includes a description of all classes, to give you a general i
 
 [DataParser](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/DataParser.java): Parses raw ``.txt`` content into ``.xml``, is able to read ``.xml`` into abstract objects.
 
-[FileUtils]
-(https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/FileUtils.java): General I/O operations, combined in a single class.
+[FileUtils](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/FileUtils.java): General I/O operations, combined in a single class.
 
 [RawJsonReviewReader](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/RawJsonReviewReader.java): Class that works as a pipeline reader. Is able to fetch both old and new data and input it into the pipeline.
 
