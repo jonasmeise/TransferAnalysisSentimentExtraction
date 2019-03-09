@@ -121,10 +121,41 @@ The main data for this program is included in [resources](https://github.com/jon
 
 **"stopwords.txt"** --> The file with NLKT stopword list.
 
-All other files can mostly be ignored.
+All other files can be ignored.
 
 ## Class Descriptions
 
 The final section includes a description of all classes, to give you a general idea about what exactly they do. Our implemented classes can be found in the folder [/meise/](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise). The other classes are either auto-generated (WebAnno-classes) or external classes, which are used as a surrogate for methods that are not yet implemented in Maven-libraries (Weka).
 
+[AspectClassifier](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/classifier/AspectClassifier.java): Handles the actual learning process, as well as regression analysis (+ allocation algorithm). Uses Weka and its supportive modules to generate data and evaluation scores, as e.g. String2WordVector.
 
+[ClassifierHandler](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/classifier/ClassifierHandler.java): The interface between an external learning call and AspectClassifier. It handles ablation testing, parameter selection and I/O operations. All ``_Evaluator`` are extended ClassifierHandlers.
+
+[ConsoleLog](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/extra/ConsoleLog.java): A custom console class, which automatically prints the calling method in addition to the console text.
+
+[DataParser](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/DataParser.java): Parses raw ``.txt`` content into ``.xml``, is able to read ``.xml`` into abstract objects.
+
+[FileUtils]
+(https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/FileUtils.java): General I/O operations, combined in a single class.
+
+[RawJsonReviewReader](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/RawJsonReviewReader.java): Class that works as a pipeline reader. Is able to fetch both old and new data and input it into the pipeline.
+
+[AnnotationStudy](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/AnnotationStudy.java): Performs the annotation study on a folder with two ``.xml`` files (by two annotators). It checks the shared and unique labels of each annotator and uses them to calculate Cohen's Kappa for both annotators.
+
+[MainPipeline](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/MainPipeline.java): Main pipeline. Program is executed from here, change up methods and method calls as necessary.
+
+[TSVExporter](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/TSVExporter.java): Class that works as a pipeline wrier. Exports pre-annotated (tokens, POS, dependencies) into the ``.tsv`` format. ``.tsv`` files are used for importing the annotation files into WebAnno.
+
+[CustomLexicon](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/sentimentlexicon/CustomLexicon.java): A dummy class for a completely empty lexicon, which needs to be filled during runtime. For external lexicon loading, use SentimentLexicon.
+
+[ArffGenerator](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/type/ArffGenerator.java): The abstract framework class for all ``_ClassifierGenerator`` classes. It sets up the feature, data input and output, sentence-wise execution and auxilary functions.
+
+[ReviewData](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/type/ReviewData.java): The abstract representation of a review within the Java program. It is created by RawJsonReviewReader or DataParser.
+
+[SentimentLexicon](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/type/SentimentLexicon.java): Implements the framework for a sentiment lexicon. AFINN, BingLiu and EmoLex inherit this type.
+
+[StopwordHandler](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/type/StopwordHandler.java): Handles the stopwords and implements Weka's StopwordHandlers interface. Uses the existing NLTK word list for checking whether a single word is a stopword or not.
+
+[Tree](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/type/Tree.java). A custom-built class that represents a tree-shaped data structure. It is used to build sentence dependency trees, find the root of a sentence, calculate the dependency distance between two tokens etc..
+
+All classes that are not named, are not categorized with one of the earlier structures like ``_ClassifierGenerator`` or ``_Evaluator`` and are contained in the [/meise/](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise) folder have been redacted and are not used in the final version.
