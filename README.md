@@ -143,7 +143,7 @@ The final section includes a description of all classes, to give you a general i
 
 [MainPipeline](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/MainPipeline.java): Main pipeline. Program is executed from here, change up methods and method calls as necessary.
 
-[TSVExporter](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/TSVExporter.java): Class that works as a pipeline wrier. Exports pre-annotated (tokens, POS, dependencies) into the ``.tsv`` format. ``.tsv`` files are used for importing the annotation files into WebAnno.
+[TSVExporter](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/TSVExporter.java): Class that works as a pipeline writer. Exports pre-annotated (tokens, POS, dependencies) into the ``.tsv`` format. ``.tsv`` files are used for importing the annotation files into WebAnno.
 
 [CustomLexicon](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/sentimentlexicon/CustomLexicon.java): A dummy class for a completely empty lexicon, which needs to be filled during runtime. For external lexicon loading, use SentimentLexicon.
 
