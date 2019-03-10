@@ -1,6 +1,9 @@
 package de.unidue.langtech.bachelor.meise.pipeline;
 
+import static org.apache.uima.fit.util.JCasUtil.selectCovered;
+
 import java.util.ArrayList;
+import java.util.Collection;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
@@ -12,6 +15,10 @@ import org.dkpro.statistics.agreement.coding.CodingAnnotationStudy;
 import org.dkpro.statistics.agreement.coding.CohenKappaAgreement;
 
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
+import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
+import de.tudarmstadt.ukp.dkpro.core.api.syntax.type.dependency.Dependency;
+import de.unidue.langtech.bachelor.meise.type.Tree;
+import webanno.custom.AspectRating;
 import webanno.custom.Valence;
 
 public class AnnotationStudy extends JCasAnnotator_ImplBase{
@@ -34,23 +41,66 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 		for(Sentence sentence : JCasUtil.select(aJCas, Sentence.class)) {
 			String valences = "";
 			
-			for(Valence valence :  JCasUtil.selectCovered(Valence.class, sentence)) {
-				if(valence.getGovernor()!=null && valence.getDependent()!=null && valence.getValenceRating()!=null) {					
-					String toAdd =  valence.getValenceRating() + "_" + valence.getGovernor().getAspect();
-					
-					if(!valences.contains(toAdd)) {
-						valences = valences + toAdd + "   ";
-					}
- 				}
+			Collection<ArrayList<Token>> subSentences = new ArrayList<ArrayList<Token>>();
+			Collection<Dependency> dependencies =  selectCovered(Dependency.class, sentence);
+        	ArrayList<Tree<Token>> treeCollection = new ArrayList<Tree<Token>>();
+				
+        	ArrayList<Token> roots = new ArrayList<Token>();
+        	for(Dependency dpElement : dependencies) {
+				if(dpElement.getDependencyType().toLowerCase().compareTo("root") == 0) {
+					roots.add(dpElement.getGovernor());
+				}
 			}
-			
-			if(annotatorA) {			
-				arrayListA.add(valences);
-			} else {
-				arrayListB.add(valences);
-			}
-			
+        	
+        	for(Token root : roots) {
+	        	Tree<Token> tree = new Tree<Token>(root);
+	        	tree.generateTreeOfDependency(dependencies, root);
+	        	tree.setParentDependencyType("ROOT");
+	        	
+	        	treeCollection.add(tree);
+	        	subSentences.add(tree.getAllObjects());	
+        	}
+        	
+        	int currentCounter=0;
+        	
+        	for(ArrayList<Token> subSentence : subSentences) {		
+        		valences = "";
+				for(Valence valence :  JCasUtil.selectCovered(Valence.class, sentence)) {
+					if(valence.getGovernor()!=null && valence.getDependent()!=null && valence.getValenceRating()!=null) {		
+						AspectRating t1 = valence.getDependent();
+		        		AspectRating t2 = valence.getGovernor();
+		        		
+		    			int dependencyDistance = treeCollection.get(currentCounter).tokenDistanceInTree(selectCovered(Token.class, t1).get(0),selectCovered(Token.class, t2).get(0));
+								
+						if(dependencyDistance>=0) {
+							AspectRating identifier=null;
+							
+							if(t1.getAspect()!=null && t2.getAspect()!=null) {
+								if(t1.getAspect().toLowerCase().compareTo("ratingofaspect")==0) {
+			    					//non-negated
+									identifier = t2;
+			    				} else {
+			    					//negated
+			    					identifier = t1;
+			    				}
+							
+								if(identifier!=null) {
+									String toAdd =  valence.getValenceRating() + "_" + identifier.getAspect() + "_" + identifier.getCoveredText();
+									
+									if(!valences.contains(toAdd)) {
+										valences = valences + toAdd + "   ";
+									}
+								}
+							}
+						}
+	 				}
+				}	
+				
+			arrayListA.add(valences);
+			currentCounter++;
 			counter++;
+				
+        	}
 		}
 	}
 	
@@ -68,8 +118,8 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 		System.out.println("List B: " + arrayListB.size() + " entries.");
 		
 		CodingAnnotationStudy study = new CodingAnnotationStudy(2);
-
-		for(int i=0;i<200;i++) {
+		
+		/*for(int i=0;i<200;i++) {
 			System.out.println(arrayListA.get(i) + "\n" + arrayListB.get(i));
 			String[] splitA = arrayListA.get(i).split("   ");
 			String[] splitB = arrayListB.get(i).split("   ");
@@ -91,7 +141,7 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 						System.out.println(splitString + "-" + splitString);
 					} else {
 						study.addItem(splitString, "");
-						System.out.println(splitString + "-");
+						System.out.println(splitString + "-null");
 					}
 				}
 			}
@@ -99,9 +149,15 @@ public class AnnotationStudy extends JCasAnnotator_ImplBase{
 			for(String splitString : splitB) {
 				if(!splitString.equals("???") && !splitString.equals("") && splitString.length()>10) {
 					study.addItem("", splitString);
-					System.out.println("-" + splitString);
+					System.out.println("null-" + splitString);
 				}
-			}
+			}*/
+			
+		int i=0;
+		while(i < arrayListA.size() && i < arrayListB.size()) {
+			System.out.println("Annotator 1:" + arrayListA.get(i) + "\n" + "Annotator 2:" + arrayListB.get(i) + "\n -----------------");
+			study.addItem(arrayListA.get(i), arrayListB.get(i));
+			i++;
 		}
 		
 		CohenKappaAgreement kappa = new CohenKappaAgreement(study);

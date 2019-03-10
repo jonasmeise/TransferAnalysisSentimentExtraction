@@ -39,5 +39,6 @@
 	0.842703
 -3	0.713622
 
-rating:
+(majority baseline)
+importance:
 dep_uni > target_word > neutral > punc > avg_senti > dep_bi

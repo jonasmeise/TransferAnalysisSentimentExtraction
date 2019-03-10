@@ -56,7 +56,8 @@ public class MainPipeline {
 		*/
 		
 		//myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\constrained");
-		myPipeline.foldLearning();
+		//myPipeline.foldLearning();
+		myPipeline.executeAnnotationStudy();
 	}
 	
 	public void buildFilesOldDomain(String inputFile, String outputFolder) throws UIMAException, IOException {

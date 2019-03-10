@@ -42,4 +42,4 @@ full	0.7500
 
 (majority baseline)
 importance:
-dep_uni > dep_bi > avg_senti > punctuation > target word > neutral word
+dep_uni > dep_bi > avg_senti > punctuation > target_word > neutral
