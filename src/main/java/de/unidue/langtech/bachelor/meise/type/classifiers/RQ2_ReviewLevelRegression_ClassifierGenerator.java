@@ -93,8 +93,6 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			myLog.log("Split review into " + splitReview.length + " parts.");
     			
     			if(splitReview.length==2) {
-    				//we don't know if it's positive or negative....
-    				//TODO: negation and shifters
     				for(Token singleToken : fullSentenceToken) {
         				for(SentimentLexicon singleLexicon : sentimentLexicons) {	
         					double newPosValue = singleLexicon.fetchPolarity(singleToken.getLemma().getValue(), new String[] {"positive"});
@@ -210,15 +208,34 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			
     			String positiveLemmas = "";
     			String negativeLemmas = "";
+    			String titleLemmas = "";
     			String positiveValences = "";
     			String negativeValences = "";
     			
     			for(Token singleToken : posTokens) {
-    				positiveLemmas += singleToken.getLemma().getValue() + " ";
+    				String lemmaToAdd = singleToken.getLemma().getValue();
+    				
+    				if(!myStopwordHandler.isStopword(lemmaToAdd)) {
+    					positiveLemmas += lemmaToAdd + " ";
+    				}
     			}
+    			
     			for(Token singleToken : negTokens) {
-    				negativeLemmas += singleToken.getLemma().getValue() + " ";
+					String lemmaToAdd = singleToken.getLemma().getValue();
+    				
+    				if(!myStopwordHandler.isStopword(lemmaToAdd)) {
+    					negativeLemmas += lemmaToAdd + " ";
+    				}
     			}
+    			
+    			for(Token singleToken : titleTokens) {
+					String lemmaToAdd = singleToken.getLemma().getValue();
+    				
+    				if(!myStopwordHandler.isStopword(lemmaToAdd)) {
+    					titleLemmas += lemmaToAdd + " ";
+    				}
+    			}
+    			
     			for(Valence singleValence : posValences) {
     				String prefix = "";
     				
@@ -244,13 +261,13 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
     			
 				singleLine.add("" + valueId);
 				
-				singleLine.add("'" + title.replaceAll(regexIgnore, "").toLowerCase() + "'");
+				singleLine.add("'" + titleLemmas.replaceAll(regexIgnore, "").toLowerCase() + "'");
 				singleLine.add("'" + positiveLemmas.replaceAll(regexIgnore, "").toLowerCase() + "'");
 				singleLine.add("'" + negativeLemmas.replaceAll(regexIgnore, "").toLowerCase() + "'");
 				
 				if(!constrained) {
-					singleLine.add("'" + positiveValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
-					singleLine.add("'" + negativeValences.replaceAll(regexIgnore, "").replaceAll("[_]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
+					singleLine.add("'" + positiveValences.replaceAll(regexIgnore, "").replaceAll("[+-]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
+					singleLine.add("'" + negativeValences.replaceAll(regexIgnore, "").replaceAll("[+-]*RatingOfAspect", "").replaceAll("[^\\x00-\\x7F]", "").toLowerCase() + "'");
 				} else {
 					singleLine.add("''");
 					singleLine.add("''");
@@ -319,7 +336,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 			
 			relations.add("id numeric");
 			
-			relations.add("title string");
+			relations.add("title_lemma string");
 			relations.add("positive_part_lemma string");
 			relations.add("negative_part_lemma string");
 			relations.add("aspects_in_positive string");
@@ -352,7 +369,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 	}
 	
 	public void collectionProcessComplete() throws AnalysisEngineProcessException {
-		try {
+		/*try {
 			fu.createWriter(outputPath + "\\score_data.txt");
 			
 			for(double key=58;key<=100;key++) {
@@ -365,6 +382,7 @@ public class RQ2_ReviewLevelRegression_ClassifierGenerator extends ArffGenerator
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		*/
 		
 		writeOutput(sortedLines);
 	}	

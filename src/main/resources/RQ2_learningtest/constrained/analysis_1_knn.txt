@@ -1,0 +1,154 @@
+
+Correlation coefficient                  0.5144
+Mean absolute error                      0.6386
+Root mean squared error                  0.8716
+Relative absolute error                 80.7674 %
+Root relative squared error             89.0121 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5491
+Mean absolute error                      0.5923
+Root mean squared error                  0.7827
+Relative absolute error                 78.0882 %
+Root relative squared error             85.4776 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5119
+Mean absolute error                      0.679 
+Root mean squared error                  0.8717
+Relative absolute error                 82.4794 %
+Root relative squared error             86.0818 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4944
+Mean absolute error                      0.7024
+Root mean squared error                  0.9003
+Relative absolute error                 81.9067 %
+Root relative squared error             88.3954 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5074
+Mean absolute error                      0.7231
+Root mean squared error                  0.9003
+Relative absolute error                 83.8632 %
+Root relative squared error             87.3761 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4156
+Mean absolute error                      0.7324
+Root mean squared error                  0.9446
+Relative absolute error                 87.6975 %
+Root relative squared error             94.3321 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5474
+Mean absolute error                      0.6474
+Root mean squared error                  0.8261
+Relative absolute error                 80.3738 %
+Root relative squared error             83.9131 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5096
+Mean absolute error                      0.7068
+Root mean squared error                  0.9223
+Relative absolute error                 80.6907 %
+Root relative squared error             88.9001 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5443
+Mean absolute error                      0.6596
+Root mean squared error                  0.8388
+Relative absolute error                 79.1855 %
+Root relative squared error             85.4068 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5324
+Mean absolute error                      0.5823
+Root mean squared error                  0.7971
+Relative absolute error                 77.448  %
+Root relative squared error             86.5799 %
+Total Number of Instances              100     
+
+Model 1:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 2:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 3:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 4:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 5:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 6:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 7:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 8:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 9:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+Model 10:
+
+FilteredClassifier using weka.classifiers.lazy.IBk -K 3 -W 0 -E -F -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -output-debug-info on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+IB1 instance-based classifier
+using 3 similarity-weighted nearest neighbour(s) for classification
+
+Average root mean squared error:	0.8655381514204457
+Mapped average root mean squared error:	0.8682810413371964
+

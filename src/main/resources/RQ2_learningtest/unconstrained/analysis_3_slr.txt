@@ -1,0 +1,244 @@
+
+Correlation coefficient                  0.1007
+Mean absolute error                      0.808 
+Root mean squared error                  0.9876
+Relative absolute error                102.1898 %
+Root relative squared error            100.8547 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.143 
+Mean absolute error                      0.7537
+Root mean squared error                  0.9105
+Relative absolute error                 99.3614 %
+Root relative squared error             99.4326 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.151 
+Mean absolute error                      0.8297
+Root mean squared error                  1.0059
+Relative absolute error                100.7744 %
+Root relative squared error             99.3278 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.1207
+Mean absolute error                      0.8487
+Root mean squared error                  1.0144
+Relative absolute error                 98.9561 %
+Root relative squared error             99.6071 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.2944
+Mean absolute error                      0.8654
+Root mean squared error                  1.0158
+Relative absolute error                100.3694 %
+Root relative squared error             98.5802 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.2659
+Mean absolute error                      0.8219
+Root mean squared error                  0.9918
+Relative absolute error                 98.4187 %
+Root relative squared error             99.0474 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.2373
+Mean absolute error                      0.8003
+Root mean squared error                  0.9675
+Relative absolute error                 99.3602 %
+Root relative squared error             98.2714 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.1675
+Mean absolute error                      0.8578
+Root mean squared error                  1.0336
+Relative absolute error                 97.9241 %
+Root relative squared error             99.6318 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.09  
+Mean absolute error                      0.8284
+Root mean squared error                  0.9919
+Relative absolute error                 99.4502 %
+Root relative squared error            100.9958 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                 -0.0334
+Mean absolute error                      0.7936
+Root mean squared error                  0.9453
+Relative absolute error                105.555  %
+Root relative squared error            102.6875 %
+Total Number of Instances              100     
+
+Model 1:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.62 * s2w-ausstattung + 8.05
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.623         0.09405       -6.62466
+const                   8.0534        0.03505      229.77797
+Degrees of freedom = 898
+R^2 value = 0.04659
+Adjusted R^2 = 0.04553
+F-statistic = 43.88607
+Model 2:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.6 * s2w-ausstattung + 8.03
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.5958        0.093         -6.40623
+const                   8.0339        0.03548      226.43146
+Degrees of freedom = 898
+R^2 value = 0.0437
+Adjusted R^2 = 0.04264
+F-statistic = 41.03984
+Model 3:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.61 * s2w-ausstattung + 8.04
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.6108        0.09415       -6.48684
+const                   8.0374        0.03495      229.97893
+Degrees of freedom = 898
+R^2 value = 0.04476
+Adjusted R^2 = 0.0437
+F-statistic = 42.07905
+Model 4:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.6 * s2w-ausstattung + 8.05
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.6035        0.09222       -6.54485
+const                   8.0458        0.03505      229.57108
+Degrees of freedom = 898
+R^2 value = 0.04553
+Adjusted R^2 = 0.04447
+F-statistic = 42.83502
+Model 5:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.54 * s2w-ausstattung + 8.01
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.5435        0.09194       -5.91178
+const                   8.0122        0.03508      228.42325
+Degrees of freedom = 898
+R^2 value = 0.03746
+Adjusted R^2 = 0.03639
+F-statistic = 34.94914
+Model 6:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.56 * s2w-ausstattung + 8.06
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.5603        0.09433       -5.93941
+const                   8.0579        0.03501      230.12723
+Degrees of freedom = 898
+R^2 value = 0.0378
+Adjusted R^2 = 0.03673
+F-statistic = 35.27656
+Model 7:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.57 * s2w-ausstattung + 8.02
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.5704        0.09303       -6.13133
+const                   8.0231        0.03522      227.80498
+Degrees of freedom = 898
+R^2 value = 0.04018
+Adjusted R^2 = 0.03911
+F-statistic = 37.59323
+Model 8:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.59 * s2w-ausstattung + 8.05
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.5945        0.09322       -6.37713
+const                   8.0548        0.03488      230.93535
+Degrees of freedom = 898
+R^2 value = 0.04333
+Adjusted R^2 = 0.04226
+F-statistic = 40.66783
+Model 9:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w-ausstattung
+-0.62 * s2w-ausstattung + 8.04
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable            Coefficient     SE of Coef        t-Stat
+s2w-ausstattung        -0.6232        0.09338       -6.67454
+const                   8.0351        0.03508      229.07076
+Degrees of freedom = 898
+R^2 value = 0.04726
+Adjusted R^2 = 0.0462
+F-statistic = 44.54953
+Model 10:
+
+FilteredClassifier using weka.classifiers.functions.SimpleLinearRegression -additional-stats on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear regression on s2w+hotelpersonal
+0.41 * s2w+hotelpersonal + 7.83
+Predicting 0 if attribute value is missing.
+Regression Analysis:
+Variable              Coefficient     SE of Coef        t-Stat
+s2w+hotelpersonal         0.4073        0.07114        5.72483
+const                     7.8345        0.03968      197.43991
+Degrees of freedom = 898
+R^2 value = 0.03521
+Adjusted R^2 = 0.03414
+F-statistic = 32.77366
+
+Average root mean squared error:	0.9864184884546491
+Mapped average root mean squared error:	0.9913121379964455
+

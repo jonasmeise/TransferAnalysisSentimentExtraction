@@ -14,6 +14,7 @@ public class Regression_Evaluator extends ClassifierHandler{
 	
 	public Regression_Evaluator(boolean oldData) {
 		this();
+		useOldData(oldData);
 	}
 	
 	public Regression_Evaluator() {
@@ -35,43 +36,65 @@ public class Regression_Evaluator extends ClassifierHandler{
 		execute(slot);
 	}
 	
-	public void execute(int slot, String classifierType) {
+	public void execute(int slot, String classifierType) {	
 		if(slot==1) {
 			constrained = true;
+			removeArray = new int[10];
+			removeArray[0] = 0;
+			removeArray[1] = 4;
+			removeArray[2] = 5;
+			removeArray[3] = 6;
+			removeArray[4] = 7;
+			removeArray[5] = 8;
+			removeArray[6] = 9;
+			removeArray[7] = 10;
+			removeArray[8] = 11;
+			removeArray[9] = 12;
 		} else {
 			constrained = false;
+			
+			if(slot == 3) {
+				removeArray = new int[4];
+				removeArray[0] = 0;
+				removeArray[1] = 1;
+				removeArray[2] = 2;
+				removeArray[3] = 3;
+			}
 		}
 		
 		execute(slot, null, classifierType);
 	}
 	
 	public void execute(int slot, int[] removeArray, String classifierType) {
-		if(removeArray==null) {
-			setOutputPath(sourcePath + "analysis_" + classifierType + ".txt");
-		}
-		
+		//if(removeArray==null) {
+			setSourcePath();
+			setOutputPath(sourcePath + "analysis_" + slot + "_" + classifierType + ".txt");
+		//}
+
 		if(classifierType.equals("esvr")) {
 			LibSVM svm = new LibSVM();
 			svm.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
 			
 			CVParameterSelection cvp = new CVParameterSelection();
-			String[] parameters = new String[3];
-			parameters[0] = "K 0 3 4";
-			parameters[1] = "C 0.01 100 5";
-			parameters[2] = "P 0.01 0.5 3";
+			String[] parameters = new String[2];
+			parameters[0] = "C 0.01 100 5";
+			parameters[1] = "P 0.01 0.5 5";
 			
 			try {
 				cvp.setOptions(parameters);
+				cvp.setNumFolds(5);
+				cvp.setClassifier(svm);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
-			generateFoldsAndLearn(fetchFiles(), 10, 1, true, cvp);
+			generateFoldsAndLearn(fetchFiles(), 10, 1, false, svm);
+
 		} else if(classifierType.equals("slr")){
 			SimpleLinearRegression slr = new SimpleLinearRegression();
 			slr.setOutputAdditionalStats(true);
 			
-			generateFoldsAndLearn(fetchFiles(), 10, 1, true, slr);
+			generateFoldsAndLearn(fetchFiles(), 10, 1, false, slr);
 		} else if(classifierType.equals("knn")){ 
 			 IBk ibk = new IBk();	
 			 ibk.setKNN(3);
@@ -79,14 +102,14 @@ public class Regression_Evaluator extends ClassifierHandler{
 			 ibk.setDistanceWeighting(new SelectedTag(IBk.WEIGHT_SIMILARITY, IBk.TAGS_WEIGHTING));
 			 ibk.setMeanSquared(true);
 			 
-			 generateFoldsAndLearn(fetchFiles(), 10, 1, true, ibk);
+			 generateFoldsAndLearn(fetchFiles(), 10, 1, false, ibk);
 		} else if(classifierType.equals("lr")) {
 			 LinearRegression lr = new LinearRegression(); 
 			 lr.setAttributeSelectionMethod(new SelectedTag(LinearRegression.SELECTION_M5, LinearRegression.TAGS_SELECTION));
 			 lr.setRidge(0.0000001);
 			 lr.setDebug(true);
 			 
-			 generateFoldsAndLearn(fetchFiles(), 10, 1, true, lr);
+			 generateFoldsAndLearn(fetchFiles(), 10, 1, false, lr);
 		} else {
 			myLog.log("Wrong classifier type: " + classifierType);
 		}

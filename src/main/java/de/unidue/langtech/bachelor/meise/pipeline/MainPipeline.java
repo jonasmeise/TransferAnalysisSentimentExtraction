@@ -56,8 +56,9 @@ public class MainPipeline {
 		*/
 		
 		//myPipeline.buildFilesNewDomain("src\\main\\resources", "src\\main\\resources\\learningtest_OwnClassifier\\subtask3\\constrained");
-		//myPipeline.foldLearning();
-		myPipeline.executeAnnotationStudy();
+		myPipeline.foldLearning();
+		//myPipeline.executeAnnotationStudy();
+		//myPipeline.executeRegressionTask("src\\main\\resources", "src\\main\\resources\\RQ2_learningtest\\unconstrained", false);
 	}
 	
 	public void buildFilesOldDomain(String inputFile, String outputFolder) throws UIMAException, IOException {
@@ -145,15 +146,40 @@ public class MainPipeline {
         SimplePipeline.runPipeline(reader, annotationStudy);
 	}
 	
+	public void executeRegressionTask(String inputFile, String outputFolder, boolean constrained) throws UIMAException, IOException {
+		 System.setProperty("DKPRO_HOME", System.getProperty("user.home")+"/Desktop/");
+		 
+	        CollectionReaderDescription reader = CollectionReaderFactory.createReaderDescription(
+	                XmiReader.class, XmiReader.PARAM_LANGUAGE, "x-undefined",
+	                XmiReader.PARAM_SOURCE_LOCATION,
+	                inputFile,
+	                XmiReader.PARAM_PATTERNS, "*.xmi",
+	                XmiReader.PARAM_TYPE_SYSTEM_FILE, "src/main/resources/typesystem.xml");
+	        
+			 AnalysisEngineDescription lemmatizer = AnalysisEngineFactory.createEngineDescription(ClearNlpLemmatizer.class);
+	        
+	        AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(RQ2_ReviewLevelRegression_ClassifierGenerator.class, 
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFolder, 
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_RELATION_NAME, "RegressionClassifier",
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_CONSTRAINED, String.valueOf(constrained),
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_USE_OLD_DATA, "false",
+	        		RQ2_ReviewLevelRegression_ClassifierGenerator.PARAM_XML_PATH, "src\\main\\resources");
+	        
+	        SimplePipeline.runPipeline(reader, lemmatizer, writer);
+	}
+	
 	public void foldLearning() throws Exception {	 
-		AKTSKI_Evaluator myEvaluator = new AKTSKI_Evaluator();
+		Regression_Evaluator myEvaluator = new Regression_Evaluator();
+		myEvaluator.useOldData(false);
+		myEvaluator.execute(3, "esvr");
+		
 		
 		//enable/disable old domain
-		myEvaluator.useOldData(false);
+		//myEvaluator.useOldData(false);
 		
 		
 		//feature analysis/ablation
-		myEvaluator.setUpAblation("0,1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22", 5, 3);
+		//myEvaluator.setUpAblation("0,1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22", 5, 3);
 		
 		//manual removal of features:
 		//myEvaluator.setOutputPath(myEvaluator.sourcePath + "_0142122_neutral.txt");

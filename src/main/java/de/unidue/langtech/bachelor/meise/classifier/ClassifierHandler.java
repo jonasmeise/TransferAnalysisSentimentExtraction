@@ -52,15 +52,17 @@ public abstract class ClassifierHandler{
 		 
 		 ArrayList<String> analysisString = new ArrayList<String>();
 		 allData="";
+		 boolean regression = false;
 		 
 		 myLog.log("This class is called from outside. Manually setting attributes...");
-		 
 		 myLog.log("WARNING: This current method will not generate any data, but only will analyse already existing .arff files with crossfold validation");	 
 		 
 		for(String arffFileInput : arffFileInputs) {
 			try {
 				//if learning for folds: continue from her
 				ArrayList<Evaluation> allEvaluations;
+				ArrayList<String> classifierDescriptions = new ArrayList<String>();
+				
 				AspectClassifier foldClassifier = new AspectClassifier(outerParameterClassifier);
 				foldClassifier.caller = this;
 				foldClassifier.idfTransformEnabled=idfTransformEnabled;
@@ -77,9 +79,11 @@ public abstract class ClassifierHandler{
 				if(useCFV) {
 					Instances data = foldClassifier.getData(arffFileInput, classAttributeAt);
 					System.out.println(classAttributeAt);
+					regression = foldClassifier.regression;
 					
 					foldClassifier.folds = numFolds;
 					allEvaluations = foldClassifier.learn(data);
+					classifierDescriptions.addAll(foldClassifier.classifierDescriptions);
 				} else {
 					foldClassifier.folds = 0;
 					
@@ -87,66 +91,97 @@ public abstract class ClassifierHandler{
 					myLog.log(arffFileInput + ".gold");
 					Instances test = foldClassifier.getData(arffFileInput + ".gold", classAttributeAt);
 					
+					regression = foldClassifier.regression;
+					
 					myLog.log("Found training data (" + train.size() + ") and test data (" + test.size() + ").");
 					
 					allEvaluations = foldClassifier.learn(train, test);
+					classifierDescriptions.addAll(foldClassifier.classifierDescriptions);
 					numFolds = 1;
 				}
 				
-				double precision=0, recall=0, fMeasure=0, accuracy=0;
-
-				double tp=0;
-				double tn=0;
-				double fp=0;
-				double fn=0;
-				int counter=0;
+				myLog.log("Regression active: [" + regression + "].");
 				
-				for(Evaluation singleEval : allEvaluations) {
-			
-					myLog.log("fold " + (++counter) + "/" + allEvaluations.size());
-					for(int singleClass=0;singleClass<((!useCFV&&!slot1)?3:2);singleClass++) {
-						myLog.log("Class " + singleClass + ": " + (singleEval.getClassPriors()[singleClass] / singleEval.numInstances()));		
+				if(!regression) {
+					double precision=0, recall=0, fMeasure=0, accuracy=0;
+	
+					double tp=0;
+					double tn=0;
+					double fp=0;
+					double fn=0;
+					int counter=0;
+					
+					for(Evaluation singleEval : allEvaluations) {
+				
+						myLog.log("fold " + (++counter) + "/" + allEvaluations.size());
+						for(int singleClass=0;singleClass<((!useCFV&&!slot1)?3:2);singleClass++) {
+							myLog.log("Class " + singleClass + ": " + (singleEval.getClassPriors()[singleClass] / singleEval.numInstances()));		
+						}
+						
+						tp += singleEval.numTruePositives(0);
+						tn += singleEval.numTrueNegatives(0);
+						fp += singleEval.numFalsePositives(0);
+						fn += singleEval.numFalseNegatives(0);	
+						
+						accuracy += singleEval.pctCorrect();
 					}
 					
-					tp += singleEval.numTruePositives(0);
-					tn += singleEval.numTrueNegatives(0);
-					fp += singleEval.numFalsePositives(0);
-					fn += singleEval.numFalseNegatives(0);	
+					tp = tp / numFolds;
+					tn = tn / numFolds;
+					fp = fp / numFolds;
+					fn = fn / numFolds;
 					
-					accuracy += singleEval.pctCorrect();
+					recall = tp / (tp + fn);
+					precision = tp / (tp + fp);
+					accuracy = accuracy / numFolds;
+					
+					fMeasure = 2*recall*precision / (precision + recall);
+						
+					System.out.println("Precision\t" + precision);
+					System.out.println("Recall\t" + recall);
+					System.out.println("fMeasure" + fMeasure);
+					System.out.println("Accuracy\t" + accuracy);
+					
+					analysisString.add(foldClassifier.sourcePath);
+					analysisString.add("Precision\t" + precision);
+					analysisString.add("Recall\t" + recall);
+					analysisString.add("fMeasure" + fMeasure);
+					analysisString.add("Accuracy\t" + accuracy);
+					
+					double balancedAccuracy = (tp / (tp + fn) + tn / (tn + fp))/2;
+					
+					analysisString.add("TP\t" + tp);
+					analysisString.add("FP\t" + fp);
+					analysisString.add("FN\t" + fn);
+					analysisString.add("TN\t" + tn);
+					analysisString.add("balanced accuracy\t" + balancedAccuracy);
+					
+					analysisString.add("");
+				} else {
+					double averageRMSerror=0;
+					
+					for(Evaluation singleEval : allEvaluations) {
+						analysisString.add(singleEval.toSummaryString());
+						averageRMSerror += singleEval.rootMeanSquaredError();
+					}
+					
+					int counter=0;
+					
+					for(String singleDescription : classifierDescriptions) {
+						String[] split = singleDescription.split("\n");
+						analysisString.add("Model " + (++counter) + ":\n");
+						
+						for(String singleLine : split) {
+							if(!singleLine.startsWith("@") && !singleLine.isEmpty()) {
+								analysisString.add(singleLine);
+							}	
+						}
+					}
+					
+					analysisString.add("\nAverage root mean squared error:\t" + averageRMSerror/numFolds);
+					analysisString.add("Mapped average root mean squared error:\t" + foldClassifier.mappedSquaredMeanError/numFolds);
 				}
 				
-				tp = tp / numFolds;
-				tn = tn / numFolds;
-				fp = fp / numFolds;
-				fn = fn / numFolds;
-				
-				recall = tp / (tp + fn);
-				precision = tp / (tp + fp);
-				accuracy = accuracy / numFolds;
-				
-				fMeasure = 2*recall*precision / (precision + recall);
-					
-				System.out.println("Precision\t" + precision);
-				System.out.println("Recall\t" + recall);
-				System.out.println("fMeasure" + fMeasure);
-				System.out.println("Accuracy\t" + accuracy);
-				
-				analysisString.add(foldClassifier.sourcePath);
-				analysisString.add("Precision\t" + precision);
-				analysisString.add("Recall\t" + recall);
-				analysisString.add("fMeasure" + fMeasure);
-				analysisString.add("Accuracy\t" + accuracy);
-				
-				double balancedAccuracy = (tp / (tp + fn) + tn / (tn + fp))/2;
-				
-				analysisString.add("TP\t" + tp);
-				analysisString.add("FP\t" + fp);
-				analysisString.add("FN\t" + fn);
-				analysisString.add("TN\t" + tn);
-				analysisString.add("balanced accuracy\t" + balancedAccuracy);
-				
-				analysisString.add("");
 				myLog.log("Completed " + numFolds +"-folded learning for '" + arffFileInput + "'.");
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -1,0 +1,144 @@
+
+Correlation coefficient                  0.5096
+Mean absolute error                      0.7265
+Root mean squared error                  0.8894
+Relative absolute error                 91.8892 %
+Root relative squared error             90.8308 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4935
+Mean absolute error                      0.6956
+Root mean squared error                  0.8276
+Relative absolute error                 91.6967 %
+Root relative squared error             90.3742 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5591
+Mean absolute error                      0.7414
+Root mean squared error                  0.9047
+Relative absolute error                 90.0556 %
+Root relative squared error             89.3376 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5796
+Mean absolute error                      0.7449
+Root mean squared error                  0.8951
+Relative absolute error                 86.8591 %
+Root relative squared error             87.8889 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5684
+Mean absolute error                      0.7866
+Root mean squared error                  0.9229
+Relative absolute error                 91.2357 %
+Root relative squared error             89.5675 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.5084
+Mean absolute error                      0.7661
+Root mean squared error                  0.9325
+Relative absolute error                 91.7373 %
+Root relative squared error             93.1254 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.6089
+Mean absolute error                      0.7142
+Root mean squared error                  0.8753
+Relative absolute error                 88.6781 %
+Root relative squared error             88.9064 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.588 
+Mean absolute error                      0.772 
+Root mean squared error                  0.9181
+Relative absolute error                 88.1267 %
+Root relative squared error             88.4987 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.3679
+Mean absolute error                      0.779 
+Root mean squared error                  0.9234
+Relative absolute error                 93.5223 %
+Root relative squared error             94.0264 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.477 
+Mean absolute error                      0.6953
+Root mean squared error                  0.8392
+Relative absolute error                 92.4804 %
+Root relative squared error             91.156  %
+Total Number of Instances              100     
+
+Model 1:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -1994100016 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 2:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed 771825197 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 3:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -2053189534 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 4:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -1715157148 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 5:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -1645040831 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 6:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -1370751816 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 7:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed -349164752 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 8:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed 723160185 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 9:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed 1906710083 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Model 10:
+
+FilteredClassifier using weka.classifiers.functions.LibSVM -S 3 -K 2 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model C:\Users\Jonas\Downloads\de.unidue.langtech.bachelor.meise\de.unidue.langtech.bachelor.meise -seed 1672669453 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2,3,4,5 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Average root mean squared error:	0.8928109721509129
+Mapped average root mean squared error:	0.9052397777929745
+

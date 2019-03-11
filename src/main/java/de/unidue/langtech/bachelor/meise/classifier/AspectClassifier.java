@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 
 import de.unidue.langtech.bachelor.meise.evaluation.Baseline2_Evaluator;
+import de.unidue.langtech.bachelor.meise.evaluation.Regression_Evaluator;
 import de.unidue.langtech.bachelor.meise.extra.ConsoleLog;
 import de.unidue.langtech.bachelor.meise.files.FileUtils;
 import weka.classifiers.Classifier;
@@ -41,7 +42,9 @@ public class AspectClassifier {
 	public Classifier outerParameterClassifier; //if called from outside, this thing needs to be set
 	public boolean mapToHistogram = true;
 	public boolean enableCPS = false;
-	public double parameterHistogram = 0.8;
+	public double parameterHistogram = 1;
+	public double mappedSquaredMeanError=0;
+	public ArrayList<String> classifierDescriptions;
 	
 	public int[] removeArray;
 	
@@ -51,6 +54,7 @@ public class AspectClassifier {
 	int folds = 10;
 	
 	public AspectClassifier() {
+		classifierDescriptions = new ArrayList<String>();
 		fu = new FileUtils();
 		sourcePath = "";
 		instances = null;
@@ -156,7 +160,7 @@ public class AspectClassifier {
 				   spanValue = Math.abs(maximalValue - minimalValue)*10;
 				   
 				   myLog.log("span value: " + spanValue);
-				   minimalAcceptanceValue = (train.size()/spanValue) * parameterHistogram;
+				   minimalAcceptanceValue = (train.size()/spanValue);
 				   
 				   for(Double key : histogram.keySet()) {
 					   myLog.log(key + "-" + histogram.get(key) + " ? " + minimalAcceptanceValue);
@@ -186,12 +190,12 @@ public class AspectClassifier {
 				   double difference = Math.abs(testInstance.classValue()-dblMappedScore);
 				   difference = difference * difference;
 				   
-				   System.out.println(testInstance.classValue() + "-(" + dblMappedScore + "<" + initialScore + ") --> " + difference);
+				   //System.out.println(testInstance.classValue() + "-(" + dblMappedScore + "<" + initialScore + ") --> " + difference);
 				   avgMeanErrorMapped += difference;
 				   
 			   }
 			   
-			   System.out.println(classifier.toString());
+			   classifierDescriptions.add(classifier.toString());
 			   
 			   avgMeanErrorMappedCumulated += (avgMeanErrorMapped/test.size());
 			   
@@ -213,7 +217,11 @@ public class AspectClassifier {
 		 
 		 if(regression) {
 			 myLog.log("AVG. SQUARED MEAN ERROR: " + (avgMeanError));
+			 
+			 avgMeanErrorMappedCumulated = Math.sqrt(avgMeanErrorMappedCumulated);
+			 
 			 myLog.log("AVG. SQUARED MAPPED ERROR: " + (avgMeanErrorMappedCumulated));
+			 mappedSquaredMeanError+= avgMeanErrorMappedCumulated;
 		 }
 		 
 		 return returnList;
@@ -262,17 +270,16 @@ public class AspectClassifier {
 		s2wFilter.setIDFTransform(idfTransformEnabled);
 		s2wFilter.setLowerCaseTokens(true);	
 		s2wFilter.setAttributeNamePrefix("s2w");
-		s2wFilter.setDoNotOperateOnPerClassBasis(true);
 		
 		if(caller!=null && caller.getClass().equals(Baseline2_Evaluator.class)) {
 			s2wFilter.setWordsToKeep(1000);
 			s2wFilter.setLowerCaseTokens(false);	
 			s2wFilter.setDoNotOperateOnPerClassBasis(false);
 		}
-		//s2wFilter.setMinTermFreq(8);
-		//s2wFilter.setOutputWordCounts(true);
-
 		
+		if(caller!=null && caller.getClass().equals(Regression_Evaluator.class)) {
+			s2wFilter.setMinTermFreq(5);
+		}
 		return s2wFilter;
 		
 	}

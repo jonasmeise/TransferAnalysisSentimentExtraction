@@ -1,0 +1,299 @@
+
+Correlation coefficient                  0.2542
+Mean absolute error                      0.792 
+Root mean squared error                  0.9761
+Relative absolute error                100.1777 %
+Root relative squared error             99.6882 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.3895
+Mean absolute error                      0.7003
+Root mean squared error                  0.8455
+Relative absolute error                 92.3259 %
+Root relative squared error             92.3336 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.3551
+Mean absolute error                      0.7755
+Root mean squared error                  0.9509
+Relative absolute error                 94.1986 %
+Root relative squared error             93.8976 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.451 
+Mean absolute error                      0.7279
+Root mean squared error                  0.9091
+Relative absolute error                 84.8704 %
+Root relative squared error             89.2687 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.389 
+Mean absolute error                      0.8088
+Root mean squared error                  0.9631
+Relative absolute error                 93.8088 %
+Root relative squared error             93.4722 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4811
+Mean absolute error                      0.7077
+Root mean squared error                  0.8966
+Relative absolute error                 84.7393 %
+Root relative squared error             89.5356 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4427
+Mean absolute error                      0.7455
+Root mean squared error                  0.8911
+Relative absolute error                 92.5524 %
+Root relative squared error             90.5185 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.4168
+Mean absolute error                      0.7955
+Root mean squared error                  0.9543
+Relative absolute error                 90.8149 %
+Root relative squared error             91.9897 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.2707
+Mean absolute error                      0.8022
+Root mean squared error                  0.9745
+Relative absolute error                 96.3018 %
+Root relative squared error             99.2254 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0.3953
+Mean absolute error                      0.7214
+Root mean squared error                  0.8503
+Relative absolute error                 95.9527 %
+Root relative squared error             92.3658 %
+Total Number of Instances              100     
+
+Model 1:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.4931 * sentiment_avg_in_pos +
+     -0.1393 * sentiment_max_in_neg +
+      0.3419 * sentiment_min_in_neg +
+      0.3682 * s2w+ausstattung +
+      0.2743 * s2w+hotelpersonal +
+      0.3587 * s2w+komfort +
+      0.2393 * s2w+other +
+     -0.4776 * s2w-ausstattung +
+     -0.4093 * s2w-hotelpersonal +
+     -0.1847 * s2w-komfort +
+     -0.1974 * s2w-lage +
+     -0.1479 * s2w-other +
+     -0.2472 * s2w-preis-leistungs-verhltnis +
+     -0.3731 * s2w-sauberkeit +
+      7.9823
+Model 2:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.7295 * sentiment_avg_in_pos +
+     -0.1026 * sentiment_max_in_neg +
+      0.3481 * sentiment_min_in_neg +
+      0.011  * relation_of_type +
+      0.3435 * s2w+ausstattung +
+      0.2525 * s2w+hotelpersonal +
+      0.3177 * s2w+komfort +
+      0.2073 * s2w+other +
+      0.1573 * s2w+preis-leistungs-verhltnis +
+     -0.4217 * s2w-ausstattung +
+     -0.4251 * s2w-hotelpersonal +
+     -0.1898 * s2w-komfort +
+     -0.1586 * s2w-other +
+     -0.198  * s2w-preis-leistungs-verhltnis +
+     -0.3047 * s2w-sauberkeit +
+      7.9097
+Model 3:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+     -0.1327 * sentiment_max_in_neg +
+      0.3414 * s2w+ausstattung +
+      0.2776 * s2w+hotelpersonal +
+      0.3255 * s2w+komfort +
+      0.2414 * s2w+other +
+     -0.4653 * s2w-ausstattung +
+     -0.4493 * s2w-hotelpersonal +
+     -0.2308 * s2w-komfort +
+     -0.3034 * s2w-lage +
+     -0.2023 * s2w-other +
+     -0.2179 * s2w-preis-leistungs-verhltnis +
+     -0.3544 * s2w-sauberkeit +
+      8.0217
+Model 4:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+     -0.1125 * sentiment_max_in_neg +
+      0.2792 * sentiment_min_in_neg +
+      0.31   * s2w+ausstattung +
+      0.2376 * s2w+hotelpersonal +
+      0.3235 * s2w+komfort +
+      0.2593 * s2w+other +
+      0.2118 * s2w+preis-leistungs-verhltnis +
+     -0.4545 * s2w-ausstattung +
+     -0.4704 * s2w-hotelpersonal +
+     -0.1966 * s2w-komfort +
+     -0.1948 * s2w-lage +
+     -0.181  * s2w-other +
+     -0.1964 * s2w-preis-leistungs-verhltnis +
+     -0.3423 * s2w-sauberkeit +
+      8.0201
+Model 5:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.2201 * sentiment_avg_in_tit +
+     -0.1236 * sentiment_max_in_neg +
+      0.3938 * s2w+ausstattung +
+      0.2736 * s2w+hotelpersonal +
+      0.3207 * s2w+komfort +
+      0.2648 * s2w+other +
+      0.1724 * s2w+preis-leistungs-verhltnis +
+     -0.3966 * s2w-ausstattung +
+     -0.4354 * s2w-hotelpersonal +
+     -0.1931 * s2w-komfort +
+     -0.2158 * s2w-lage +
+     -0.2089 * s2w-other +
+     -0.339  * s2w-sauberkeit +
+      7.8556
+Model 6:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.1855 * sentiment_avg_in_tit +
+      0.4163 * sentiment_min_in_neg +
+      0.3426 * s2w+ausstattung +
+      0.253  * s2w+hotelpersonal +
+      0.3172 * s2w+komfort +
+      0.2708 * s2w+other +
+      0.1894 * s2w+preis-leistungs-verhltnis +
+     -0.4091 * s2w-ausstattung +
+     -0.4236 * s2w-hotelpersonal +
+     -0.2069 * s2w-komfort +
+     -0.2512 * s2w-lage +
+     -0.161  * s2w-other +
+     -0.1942 * s2w-preis-leistungs-verhltnis +
+     -0.3693 * s2w-sauberkeit +
+      7.9238
+Model 7:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.4865 * sentiment_min_in_neg +
+      0.0107 * relation_of_type +
+      0.3113 * s2w+ausstattung +
+      0.2151 * s2w+hotelpersonal +
+      0.3267 * s2w+komfort +
+      0.2323 * s2w+other +
+      0.2226 * s2w+preis-leistungs-verhltnis +
+     -0.4128 * s2w-ausstattung +
+     -0.4733 * s2w-hotelpersonal +
+     -0.1996 * s2w-komfort +
+     -0.1813 * s2w-other +
+     -0.3328 * s2w-sauberkeit +
+      7.9492
+Model 8:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.1689 * sentiment_avg_in_tit +
+     -0.1183 * sentiment_max_in_neg +
+      0.0109 * relation_of_type +
+      0.3026 * s2w+ausstattung +
+      0.2812 * s2w+hotelpersonal +
+      0.3087 * s2w+komfort +
+      0.2349 * s2w+other +
+      0.2316 * s2w+preis-leistungs-verhltnis +
+     -0.4506 * s2w-ausstattung +
+     -0.4245 * s2w-hotelpersonal +
+     -0.2307 * s2w-komfort +
+     -0.2584 * s2w-lage +
+     -0.2272 * s2w-other +
+     -0.3673 * s2w-sauberkeit +
+      7.9416
+Model 9:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+      0.5892 * sentiment_avg_in_pos +
+     -0.1634 * sentiment_max_in_neg +
+      0.3456 * sentiment_min_in_neg +
+      0.0128 * relation_of_type +
+      0.3352 * s2w+ausstattung +
+      0.2713 * s2w+hotelpersonal +
+      0.2906 * s2w+komfort +
+      0.2756 * s2w+other +
+      0.2079 * s2w+preis-leistungs-verhltnis +
+     -0.4629 * s2w-ausstattung +
+     -0.4156 * s2w-hotelpersonal +
+     -0.1518 * s2w-komfort +
+     -0.1742 * s2w-other +
+     -0.3262 * s2w-sauberkeit +
+      7.9043
+Model 10:
+
+FilteredClassifier using weka.classifiers.functions.LinearRegression -S 0 -R 1.0E-7 -output-debug-info -num-decimal-places 4 on data filtered through weka.filters.MultiFilter -F "weka.filters.unsupervised.attribute.Remove -R 1-4" -F "weka.filters.unsupervised.attribute.StringToWordVector -R 1,2 -P s2w -W 1000 -prune-rate -1.0 -N 0 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 5 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\""
+Filtered Header
+Classifier Model
+Linear Regression Model
+score =
+     -0.1784 * sentiment_max_in_neg +
+      0.3266 * s2w+ausstattung +
+      0.3106 * s2w+hotelpersonal +
+      0.3499 * s2w+komfort +
+      0.2074 * s2w+other +
+      0.194  * s2w+preis-leistungs-verhltnis +
+     -0.3666 * s2w-ausstattung +
+     -0.4839 * s2w-hotelpersonal +
+     -0.2141 * s2w-komfort +
+     -0.2352 * s2w-lage +
+     -0.191  * s2w-other +
+     -0.2704 * s2w-preis-leistungs-verhltnis +
+     -0.374  * s2w-sauberkeit +
+      8.015 
+
+Average root mean squared error:	0.9211583893248718
+Mapped average root mean squared error:	0.9294535108768276
+

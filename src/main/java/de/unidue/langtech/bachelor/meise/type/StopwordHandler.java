@@ -25,11 +25,11 @@ public class StopwordHandler implements StopwordsHandler, java.io.Serializable{
 		
 		for(String stopword : allStopwords) {
 			myHash.put(stopword, true);
+			//System.out.println("Added stopword '" + stopword + "'.");
 		}
 	}
 	
 	public boolean isStopword(String arg0) {
-		// TODO Auto-generated method stub
 		if(arg0!=null) {
 			return myHash.containsKey(arg0);
 		} else {

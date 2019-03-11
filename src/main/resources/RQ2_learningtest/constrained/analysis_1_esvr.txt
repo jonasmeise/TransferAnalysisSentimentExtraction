@@ -1,0 +1,83 @@
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8037
+Root mean squared error                  0.9851
+Relative absolute error                101.6538 %
+Root relative squared error            100.6052 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.7621
+Root mean squared error                  0.92  
+Relative absolute error                100.4681 %
+Root relative squared error            100.4689 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8221
+Root mean squared error                  1.0131
+Relative absolute error                 99.8602 %
+Root relative squared error            100.0404 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8612
+Root mean squared error                  1.0188
+Relative absolute error                100.419  %
+Root relative squared error            100.0318 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8944
+Root mean squared error                  1.0557
+Relative absolute error                103.7329 %
+Root relative squared error            102.4586 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.866 
+Root mean squared error                  1.031 
+Relative absolute error                103.697  %
+Root relative squared error            102.9656 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8113
+Root mean squared error                  0.9955
+Relative absolute error                100.7333 %
+Root relative squared error            101.1187 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.8824
+Root mean squared error                  1.0489
+Relative absolute error                100.7385 %
+Root relative squared error            101.1037 %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.833 
+Root mean squared error                  0.9862
+Relative absolute error                100      %
+Root relative squared error            100.418  %
+Total Number of Instances              100     
+
+
+Correlation coefficient                  0     
+Mean absolute error                      0.761 
+Root mean squared error                  0.922 
+Relative absolute error                101.2264 %
+Root relative squared error            100.1547 %
+Total Number of Instances              100     
+
+Average root mean squared error:	0.9976275022554832
+Mapped average root mean squared error:	0.997444888061889
+
