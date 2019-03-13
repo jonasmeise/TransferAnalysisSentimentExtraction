@@ -64,11 +64,11 @@ To correctly choose the right model, you have to specify the model classifier ``
 ```java
 AnalysisEngineDescription writer = AnalysisEngineFactory.createEngineDescription(AUEB_ClassifierGenerator.class, 
 	        		AUEB_ClassifierGenerator.PARAM_OUTPUT_PATH, outputFolder, 
-	        		AUEB_ClassifierGenerator..PARAM_RELATION_NAME, "AUEB",
-	        		AUEB_ClassifierGenerator..PARAM_CONSTRAINED, "true",
-	        		AUEB_ClassifierGenerator..PARAM_USE_OLD_DATA, "false");
+	        		AUEB_ClassifierGenerator.PARAM_RELATION_NAME, "AUEB",
+	        		AUEB_ClassifierGenerator.PARAM_CONSTRAINED, "true",
+	        		AUEB_ClassifierGenerator.PARAM_USE_OLD_DATA, "false");
 ```
-``AUEB_ClassifierGenerator.class`` can be interchanged with any of the generator models that are in [\classifiers\\](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise/type/classifiers). No suffix in the class name indicates Slot 1, the suffix indicates the Slot 3 model.
+``AUEB_ClassifierGenerator.class`` can be interchanged with any of the generator models that are in [\classifiers\\](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/tree/master/src/main/java/de/unidue/langtech/bachelor/meise/type/classifiers). No suffix in the class name indicates Slot 1, the suffix 3 indicates the Slot 3 model.
 
 ``PARAM_OUTPUT_PATH`` sets the output folder for the .arff files. This parameter is already set due to the method call.
 ``PARAM_RELATION_NAME`` sets the relation name for the .arff files. This is an optional parameter, it does not change the data itself.
