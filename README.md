@@ -189,7 +189,7 @@ The final section includes a description of all classes. The code itself can be 
 
 [RawJsonReviewReader](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/files/RawJsonReviewReader.java): Class that works as a pipeline reader. It is able to fetch both old and new data and input it into the pipeline. It also is used as an external provider for the SE-ABSA16 review data; classifiers that operate on the old domain use it to fetch the annotation of the old restaurant reviews.
 
-[AnnotationStudy](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/AnnotationStudy.java): Performs the annotation study on a folder with two ``.xml`` files (by two annotators). It calculates Cohen's Kappa for the annotation labels of a single sentence (all annotation targets: aspect label, target word, polarity), which were found by both annotators.
+[AnnotationStudy](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/AnnotationStudy.java): Performs the annotation study on a folder with two ``.xmi`` annotation files (by two annotators). It calculates Cohen's Kappa for the annotation labels of a single sentence (all annotation targets: aspect label, target word, polarity), which were found by both annotators.
 
 [MainPipeline](https://github.com/jonasmeise/TransferAnalysisSentimentExtraction/blob/master/src/main/java/de/unidue/langtech/bachelor/meise/pipeline/MainPipeline.java): Main pipeline. Program is executed from here, change up methods and method calls as necessary.
 
